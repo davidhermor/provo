@@ -24,15 +24,15 @@
       from { opacity: 0; transform: translateY(8px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    .animate-fade { animation: fadeSlide 0.25s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+    .animate-fade { animation: fadeSlide 0.24s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
 
   <!-- Sticky Deep Navy Navbar (#002B5C in both Light & Dark modes) -->
   <header class="sticky top-0 z-40 bg-[#002B5C] text-white border-b border-white/10 shadow-sm">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
-      <div class="flex items-center gap-4">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-3">
         <a href="index.html" class="flex items-center shrink-0 focus:outline-none" title="PROVO">
           <img
             src="https://i.postimg.cc/vBt4qH44/download.png"
@@ -42,34 +42,38 @@
           />
           <span id="provoFallback" class="hidden font-extrabold tracking-wider text-lg text-white">PROVO</span>
         </a>
-        <span class="hidden md:inline-block h-5 w-px bg-white/20"></span>
-        <span class="hidden md:inline-block text-xs font-semibold uppercase tracking-wider text-cyan-200">
+        <span class="hidden lg:inline-block h-5 w-px bg-white/20"></span>
+        <span class="hidden lg:inline-block text-xs font-semibold uppercase tracking-wider text-cyan-200">
           A2–B1 Grammar Lab
         </span>
       </div>
 
       <!-- Main Navigation Tabs -->
-      <nav class="flex items-center gap-1 bg-white/10 p-1 rounded-xl" aria-label="Lesson sections">
-        <button data-tab="warmup" class="nav-tab px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 bg-white text-[#002B5C]">
+      <nav class="flex items-center gap-1 bg-white/10 p-1 rounded-xl overflow-x-auto max-w-full" aria-label="Lesson sections">
+        <button data-tab="warmup" class="nav-tab px-2.5 sm:px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 whitespace-nowrap bg-white text-[#002B5C]">
           <i data-lucide="mic" class="w-4 h-4"></i>
           <span>Warm-Up</span>
         </button>
-        <button data-tab="grammar" class="nav-tab px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 text-white/85 hover:text-white hover:bg-white/10">
+        <button data-tab="grammar" class="nav-tab px-2.5 sm:px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 whitespace-nowrap text-white/85 hover:text-white hover:bg-white/10">
           <i data-lucide="layers" class="w-4 h-4"></i>
           <span>Grammar</span>
         </button>
-        <button data-tab="vocabulary" class="nav-tab px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 text-white/85 hover:text-white hover:bg-white/10">
+        <button data-tab="vocabulary" class="nav-tab px-2.5 sm:px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 whitespace-nowrap text-white/85 hover:text-white hover:bg-white/10">
           <i data-lucide="book-open" class="w-4 h-4"></i>
           <span>Vocabulary</span>
         </button>
-        <button data-tab="practice" class="nav-tab px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 text-white/85 hover:text-white hover:bg-white/10">
+        <button data-tab="practice" class="nav-tab px-2.5 sm:px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 whitespace-nowrap text-white/85 hover:text-white hover:bg-white/10">
           <i data-lucide="check-circle-2" class="w-4 h-4"></i>
           <span>Practice</span>
+        </button>
+        <button data-tab="challenges" class="nav-tab px-2.5 sm:px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 whitespace-nowrap text-white/85 hover:text-white hover:bg-white/10">
+          <i data-lucide="zap" class="w-4 h-4"></i>
+          <span>Live Lab</span>
         </button>
       </nav>
 
       <!-- Right Controls -->
-      <div class="flex items-center gap-2">
+      <div class="flex items-center gap-2 shrink-0">
         <button
           id="themeToggle"
           type="button"
@@ -91,12 +95,12 @@
   </header>
 
   <!-- Compact Hero Strip -->
-  <section class="bg-gradient-to-r from-[#002B5C] via-[#005A8D] to-[#0089A7] text-white py-8 px-4 sm:px-6">
+  <section class="bg-gradient-to-r from-[#002B5C] via-[#005A8D] to-[#0089A7] text-white py-7 px-4 sm:px-6">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4">
       <div>
         <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-white/15 text-xs font-semibold mb-2">
           <i data-lucide="sparkles" class="w-3.5 h-3.5 text-cyan-200"></i>
-          <span>PROVO • Interactive Lesson</span>
+          <span>PROVO • Interactive Lesson Template</span>
         </div>
         <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">
           Present Simple vs. Present Continuous
@@ -107,7 +111,7 @@
       </div>
       <div class="flex items-center gap-2 self-start md:self-auto bg-black/20 backdrop-blur-sm px-3.5 py-2 rounded-2xl border border-white/15 text-xs">
         <i data-lucide="message-circle" class="w-4 h-4 text-cyan-200"></i>
-        <span>Conversation &amp; Grammar</span>
+        <span>Speaking • Grammar • Live Lab</span>
       </div>
     </div>
   </section>
@@ -121,7 +125,6 @@
 
         <!-- Left / Main Stage (7 cols) -->
         <div class="lg:col-span-7 space-y-4">
-          <!-- Question Counter & Shuffle -->
           <div class="flex flex-wrap items-center justify-between gap-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl px-4 py-3 shadow-sm">
             <div class="flex items-center gap-2 text-sm font-semibold">
               <span id="qBadge" class="px-2.5 py-1 rounded-lg bg-[#002B5C] text-white text-xs font-bold">Q1 / 10</span>
@@ -141,10 +144,9 @@
             </div>
           </div>
 
-          <!-- Speaking Question Card -->
           <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-sm">
-            <!-- Custom Scene Illustration -->
-            <div id="questionScene" class="mb-5 rounded-2xl overflow-hidden border border-slate-200/80 dark:border-slate-700/80 bg-[#F0F6FA] dark:bg-slate-800/60 h-36 sm:h-40 flex items-center justify-center"></div>
+            <!-- Everyday Scene Illustration with safe fallback -->
+            <div id="questionScene" class="mb-5 rounded-2xl overflow-hidden border border-slate-200/80 dark:border-slate-700/80 bg-[#F0F6FA] dark:bg-slate-800/60 h-40 sm:h-44 flex items-center justify-center"></div>
 
             <p class="text-xs font-bold uppercase tracking-wider text-[#0089A7] mb-2">Speaking Prompt</p>
             <h2 id="questionText" class="text-xl sm:text-2xl font-bold leading-snug text-slate-900 dark:text-white">
@@ -154,7 +156,6 @@
               Compare what happens regularly with what is happening right now.
             </p>
 
-            <!-- Collapsible Sentence Starters -->
             <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800">
               <button id="toggleStarters" type="button" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#005A8D] dark:text-cyan-300 hover:underline">
                 <i data-lucide="lightbulb" class="w-4 h-4"></i>
@@ -166,20 +167,17 @@
             </div>
           </div>
 
-          <!-- Quick Question Selector Pills -->
           <div class="flex flex-wrap gap-1.5" id="questionPills"></div>
         </div>
 
         <!-- Right / Voice Note Recorder to Drive (5 cols) -->
         <div class="lg:col-span-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm space-y-5">
-          <div class="flex items-start justify-between gap-2">
-            <div>
-              <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#0089A7]">
-                <i data-lucide="upload-cloud" class="w-4 h-4"></i>
-                <span>Google Drive Submission</span>
-              </span>
-              <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white mt-0.5">Record &amp; Send Voice Note</h3>
-            </div>
+          <div>
+            <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#0089A7]">
+              <i data-lucide="upload-cloud" class="w-4 h-4"></i>
+              <span>Google Drive Submission</span>
+            </span>
+            <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white mt-0.5">Record &amp; Send Voice Note</h3>
           </div>
 
           <div>
@@ -194,7 +192,6 @@
             />
           </div>
 
-          <!-- Recorder Controls -->
           <div class="bg-[#F0F6FA] dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700 rounded-2xl p-4 space-y-4">
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-2">
@@ -221,7 +218,6 @@
             <audio id="audioPreview" controls class="w-full hidden rounded-xl"></audio>
           </div>
 
-          <!-- Send & Backup Actions -->
           <div class="space-y-2.5">
             <button
               id="btnSendDrive"
@@ -251,9 +247,7 @@
 
     <!-- ==================== TAB 2: GRAMMAR & INTERACTIVE SWITCHER ==================== -->
     <section id="panel-grammar" class="tab-panel hidden animate-fade space-y-8">
-      <!-- Visual Timelines Comparison -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- Present Simple Card -->
         <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm">
           <div class="flex items-center justify-between mb-3">
             <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-[#002B5C] text-white">PRESENT SIMPLE</span>
@@ -280,7 +274,6 @@
           </div>
         </div>
 
-        <!-- Present Continuous Card -->
         <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm">
           <div class="flex items-center justify-between mb-3">
             <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-[#0089A7] text-white">PRESENT CONTINUOUS</span>
@@ -348,12 +341,12 @@
       </div>
     </section>
 
-    <!-- ==================== TAB 3: VOCABULARY WITH PRONUNCIATION ==================== -->
+    <!-- ==================== TAB 3: ACTIVE VOCABULARY CARDS ==================== -->
     <section id="panel-vocabulary" class="tab-panel hidden animate-fade space-y-6">
       <div class="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <h2 class="text-xl font-extrabold text-[#002B5C] dark:text-white">Key Vocabulary &amp; Time Markers</h2>
-          <p class="text-sm text-slate-500 dark:text-slate-400">Click the speaker icon to hear natural English pronunciation.</p>
+          <h2 class="text-xl font-extrabold text-[#002B5C] dark:text-white">Active Vocabulary &amp; Trap Alerts</h2>
+          <p class="text-sm text-slate-500 dark:text-slate-400">Test recall before revealing definitions, listen to pronunciation, and spot common traps.</p>
         </div>
         <div id="vocabFilters" class="flex flex-wrap gap-1.5"></div>
       </div>
@@ -362,7 +355,6 @@
 
     <!-- ==================== TAB 4: INTERACTIVE PRACTICE ==================== -->
     <section id="panel-practice" class="tab-panel hidden animate-fade space-y-6">
-      <!-- Progress Header -->
       <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div class="flex-1">
           <div class="flex justify-between text-xs font-bold mb-1.5">
@@ -388,6 +380,31 @@
       <div id="answerKeyBox" class="hidden bg-[#F0F6FA] dark:bg-slate-900 border border-[#0089A7]/30 rounded-2xl p-5 text-xs space-y-1.5"></div>
     </section>
 
+    <!-- ==================== TAB 5: LIVE LAB (SPOT THE TRAP + RAPID DECISIONS) ==================== -->
+    <section id="panel-challenges" class="tab-panel hidden animate-fade space-y-8">
+      <!-- Spot the Trap -->
+      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm space-y-4">
+        <div class="flex items-center justify-between gap-2">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-[#0089A7]">Error Hunting</span>
+            <h2 class="text-xl font-extrabold text-[#002B5C] dark:text-white">Spot the Trap</h2>
+          </div>
+          <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">Tap a sentence to inspect the fix</span>
+        </div>
+        <div id="trapList" class="space-y-3"></div>
+      </div>
+
+      <!-- Rapid-Fire Decision Cards -->
+      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm space-y-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-[#005A8D] dark:text-cyan-300">Quick Situations</span>
+          <h2 class="text-xl font-extrabold text-[#002B5C] dark:text-white">Rapid-Fire Decisions</h2>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Pick the natural tense for each situation and explain it out loud or in a voice note.</p>
+        </div>
+        <div id="rapidList" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-5 px-4 text-center text-xs text-slate-500 dark:text-slate-400">
@@ -404,6 +421,8 @@
         q: "What do you usually do on weekday mornings, and what are you doing right now?",
         tag: "Daily Habit vs. Right Now",
         hint: "Contrast a regular routine with your current moment.",
+        photo: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=75",
+        photoAlt: "Morning coffee cup on a table",
         starters: [
           "On weekday mornings I usually..., whereas right now I'm...",
           "Every morning I..., and at this exact moment I'm..."
@@ -413,6 +432,8 @@
         q: "Are you working on or learning anything temporary this month that isn't part of your normal routine?",
         tag: "Temporary Project",
         hint: "Think of a short-term course, project, or new habit.",
+        photo: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=900&q=75",
+        photoAlt: "Notebook and pen on a desk",
         starters: [
           "This month I'm focusing on..., even though normally I...",
           "At the moment I'm trying to..., which is new for me."
@@ -422,6 +443,8 @@
         q: "How often do you check your messages, and are you waiting for an important reply today?",
         tag: "Frequency vs. Today",
         hint: "Use a frequency adverb plus a 'today' example.",
+        photo: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=75",
+        photoAlt: "Smartphone held in hand",
         starters: [
           "I normally check my messages..., and today I'm...",
           "I hardly ever..., but today I'm expecting..."
@@ -431,6 +454,8 @@
         q: "What kind of food do you eat most days, and what are you craving right now?",
         tag: "Diet vs. Craving",
         hint: "Remember 'crave' or 'want' are usually stative.",
+        photo: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=75",
+        photoAlt: "Fresh food bowl on a table",
         starters: [
           "Most days I eat..., and right now I really want...",
           "I tend to have..., though at the moment I feel like..."
@@ -440,6 +465,8 @@
         q: "Does your city or neighborhood seem to be changing lately? Give an example.",
         tag: "Changing Situations",
         hint: "Present Continuous describes ongoing changes.",
+        photo: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=900&q=75",
+        photoAlt: "City street and buildings",
         starters: [
           "In my area, more people are... lately.",
           "Things are changing around here because..."
@@ -449,6 +476,8 @@
         q: "What do you do to relax after a busy day, and what are you planning to do this evening?",
         tag: "Routine vs. Evening Plan",
         hint: "Combine a habit with a definite arrangement.",
+        photo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=75",
+        photoAlt: "Calm sunset view",
         starters: [
           "To unwind, I usually..., and tonight I'm...",
           "After a long day I often..., and this evening I'm meeting..."
@@ -458,6 +487,8 @@
         q: "Which household task do you do regularly, and who is doing chores around your home today?",
         tag: "Chores & Today",
         hint: "Practice third-person singular or continuous forms.",
+        photo: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=75",
+        photoAlt: "Tidying and cleaning at home",
         starters: [
           "I regularly... around the house, and today...",
           "Nobody usually..., except today when..."
@@ -467,6 +498,8 @@
         q: "Do you prefer studying or working in the morning or at night? Why?",
         tag: "Preference (Stative)",
         hint: "Use 'prefer' in the Present Simple.",
+        photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=900&q=75",
+        photoAlt: "Laptop and study workspace",
         starters: [
           "I definitely prefer... because I concentrate better when...",
           "I'm not a morning person, so I prefer..."
@@ -476,6 +509,8 @@
         q: "What are people around you doing right now, and how do they usually spend their free time?",
         tag: "Others Now vs. Usually",
         hint: "Contrast someone's current action with their usual habit.",
+        photo: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=75",
+        photoAlt: "Friends spending time together",
         starters: [
           "Right now, ... is/are ..., while usually they...",
           "At this moment, my family/colleagues are..."
@@ -485,6 +520,8 @@
         q: "What is one grammar rule in English that still confuses you, and how are you practicing it?",
         tag: "Challenge vs. Current Effort",
         hint: "Connect a persistent challenge with current practice.",
+        photo: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=900&q=75",
+        photoAlt: "Writing notes while studying",
         starters: [
           "I sometimes confuse... with..., so right now I'm...",
           "It still trips me up when..., which is why I'm..."
@@ -492,101 +529,25 @@
       }
     ];
 
-    function getSceneSvg(idx) {
-      const scenes = [
-        `<svg viewBox="0 0 420 130" class="w-full h-full">
-          <rect width="420" height="130" fill="#F0F6FA" />
-          <circle cx="85" cy="44" r="18" fill="#0089A7" opacity="0.22" />
-          <circle cx="85" cy="44" r="9" fill="#0089A7" />
-          <path d="M48 104 Q85 72 122 104 Z" fill="#005A8D" opacity="0.25" />
-          <line x1="210" y1="22" x2="210" y2="108" stroke="#CBD5E1" stroke-dasharray="4 4" stroke-width="1.5" />
-          <rect x="255" y="34" width="120" height="62" rx="14" fill="#FFFFFF" stroke="#002B5C" stroke-width="2" />
-          <circle cx="290" cy="65" r="13" fill="#002B5C" />
-          <rect x="312" y="54" width="48" height="7" rx="3.5" fill="#0089A7" />
-          <rect x="312" y="68" width="32" height="6" rx="3" fill="#94A3B8" />
-        </svg>`,
-        `<svg viewBox="0 0 420 130" class="w-full h-full">
-          <rect width="420" height="130" fill="#F0F6FA" />
-          <rect x="115" y="26" width="190" height="78" rx="16" fill="#FFFFFF" stroke="#005A8D" stroke-width="2" />
-          <rect x="136" y="46" width="84" height="8" rx="4" fill="#002B5C" />
-          <rect x="136" y="63" width="145" height="6" rx="3" fill="#CBD5E1" />
-          <rect x="136" y="78" width="105" height="10" rx="5" fill="#0089A7" opacity="0.25" />
-          <circle cx="276" cy="50" r="10" fill="#0089A7" />
-        </svg>`,
-        `<svg viewBox="0 0 420 130" class="w-full h-full">
-          <rect width="420" height="130" fill="#F0F6FA" />
-          <rect x="172" y="18" width="76" height="94" rx="14" fill="#002B5C" />
-          <rect x="179" y="28" width="62" height="72" rx="8" fill="#FFFFFF" />
-          <rect x="188" y="38" width="34" height="10" rx="5" fill="#0089A7" />
-          <rect x="198" y="55" width="34" height="10" rx="5" fill="#005A8D" />
-          <rect x="188" y="72" width="26" height="10" rx="5" fill="#CBD5E1" />
-        </svg>`,
-        `<svg viewBox="0 0 420 130" class="w-full h-full">
-          <rect width="420" height="130" fill="#F0F6FA" />
-          <ellipse cx="210" cy="78" rx="76" ry="21" fill="#FFFFFF" stroke="#002B5C" stroke-width="2" />
-          <ellipse cx="210" cy="75" rx="52" ry="12" fill="#0089A7" opacity="0.22" />
-          <path d="M184 48 Q189 36 184 25" fill="none" stroke="#005A8D" stroke-width="2.5" stroke-linecap="round" />
-          <path d="M210 45 Q215 33 210 22" fill="none" stroke="#0089A7" stroke-width="2.5" stroke-linecap="round" />
-          <path d="M236 48 Q241 36 236 25" fill="none" stroke="#005A8D" stroke-width="2.5" stroke-linecap="round" />
-        </svg>`,
-        `<svg viewBox="0 0 420 130" class="w-full h-full">
-          <rect width="420" height="130" fill="#F0F6FA" />
-          <rect x="115" y="52" width="44" height="54" rx="6" fill="#005A8D" />
-          <rect x="170" y="32" width="54" height="74" rx="6" fill="#002B5C" />
-          <rect x="235" y="44" width="48" height="62" rx="6" fill="#0089A7" />
-          <line x1="90" y1="106" x2="330" y2="106" stroke="#002B5C" stroke-width="2.5" />
-        </svg>`,
-        `<svg viewBox="0 0 420 130" class="w-full h-full">
-          <rect width="420" height="130" fill="#F0F6FA" />
-          <path d="M225 32 A26 26 0 1 0 250 78 A22 22 0 1 1 225 32 Z" fill="#002B5C" />
-          <circle cx="155" cy="48" r="5" fill="#0089A7" />
-          <circle cx="275" cy="40" r="4" fill="#005A8D" />
-          <rect x="135" y="85" width="150" height="13" rx="6.5" fill="#FFFFFF" stroke="#005A8D" stroke-width="1.5" />
-        </svg>`,
-        `<svg viewBox="0 0 420 130" class="w-full h-full">
-          <rect width="420" height="130" fill="#F0F6FA" />
-          <path d="M130 66 L210 24 L290 66" fill="none" stroke="#002B5C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-          <rect x="150" y="64" width="120" height="42" rx="8" fill="#FFFFFF" stroke="#005A8D" stroke-width="2" />
-          <rect x="196" y="76" width="28" height="30" rx="4" fill="#0089A7" opacity="0.25" />
-        </svg>`,
-        `<svg viewBox="0 0 420 130" class="w-full h-full">
-          <rect width="420" height="130" fill="#F0F6FA" />
-          <rect x="110" y="38" width="86" height="54" rx="14" fill="#002B5C" />
-          <rect x="224" y="38" width="86" height="54" rx="14" fill="#FFFFFF" stroke="#0089A7" stroke-width="2" />
-          <path d="M202 65 L218 65" stroke="#0089A7" stroke-width="3" stroke-linecap="round" />
-        </svg>`,
-        `<svg viewBox="0 0 420 130" class="w-full h-full">
-          <rect width="420" height="130" fill="#F0F6FA" />
-          <circle cx="145" cy="52" r="14" fill="#002B5C" />
-          <path d="M122 98 Q145 72 168 98 Z" fill="#002B5C" />
-          <circle cx="210" cy="46" r="16" fill="#0089A7" />
-          <path d="M184 98 Q210 68 236 98 Z" fill="#0089A7" />
-          <circle cx="275" cy="52" r="14" fill="#005A8D" />
-          <path d="M252 98 Q275 72 298 98 Z" fill="#005A8D" />
-        </svg>`,
-        `<svg viewBox="0 0 420 130" class="w-full h-full">
-          <rect width="420" height="130" fill="#F0F6FA" />
-          <rect x="125" y="30" width="170" height="70" rx="14" fill="#FFFFFF" stroke="#002B5C" stroke-width="2" />
-          <circle cx="160" cy="65" r="16" fill="#0089A7" opacity="0.2" />
-          <path d="M153 65 L158 70 L168 59" fill="none" stroke="#0089A7" stroke-width="2.5" stroke-linecap="round" />
-          <rect x="188" y="53" width="84" height="8" rx="4" fill="#002B5C" />
-          <rect x="188" y="69" width="60" height="6" rx="3" fill="#94A3B8" />
-        </svg>`
-      ];
-      return scenes[idx % scenes.length];
+    function getFallbackScene(idx) {
+      return `
+        <div class="w-full h-full flex flex-col items-center justify-center bg-[#F0F6FA] dark:bg-slate-800 text-[#002B5C] dark:text-cyan-200 px-4 text-center">
+          <i data-lucide="image" class="w-7 h-7 text-[#0089A7] mb-1.5"></i>
+          <span class="text-xs font-bold uppercase tracking-wider">Prompt #${idx + 1} Visual Cue</span>
+        </div>
+      `;
     }
 
-    function getVocabMiniSvg(cat) {
-      if (cat === 'Frequency') {
-        return `<svg viewBox="0 0 48 28" class="w-11 h-7 shrink-0"><circle cx="10" cy="14" r="5" fill="#002B5C"/><circle cx="24" cy="14" r="5" fill="#005A8D"/><circle cx="38" cy="14" r="5" fill="#0089A7"/></svg>`;
-      }
-      if (cat === 'Temporary') {
-        return `<svg viewBox="0 0 48 28" class="w-11 h-7 shrink-0"><rect x="6" y="7" width="36" height="14" rx="7" fill="#0089A7" opacity="0.18" stroke="#0089A7" stroke-width="1.5"/><circle cx="32" cy="14" r="4" fill="#0089A7"/></svg>`;
-      }
-      if (cat === 'Right Now') {
-        return `<svg viewBox="0 0 48 28" class="w-11 h-7 shrink-0"><circle cx="24" cy="14" r="9" fill="#005A8D" opacity="0.2"/><circle cx="24" cy="14" r="4.5" fill="#002B5C"/></svg>`;
-      }
-      return `<svg viewBox="0 0 48 28" class="w-11 h-7 shrink-0"><rect x="8" y="6" width="32" height="16" rx="5" fill="#002B5C" opacity="0.15" stroke="#002B5C" stroke-width="1.5"/><line x1="15" y1="14" x2="33" y2="14" stroke="#002B5C" stroke-width="2"/></svg>`;
+    function renderSceneMedia(item, idx) {
+      return `
+        <img
+          src="${item.photo}"
+          alt="${item.photoAlt}"
+          class="w-full h-full object-cover"
+          loading="lazy"
+          onerror="this.parentElement.innerHTML = \`${getFallbackScene(idx).replace(/`/g, '').trim()}\`; lucide.createIcons();"
+        />
+      `;
     }
 
     const SWITCHER_ITEMS = [
@@ -623,18 +584,18 @@
     ];
 
     const VOCABULARY = [
-      { term: "every other day", pos: "time phrase", cat: "Frequency", def: "Once every two days (e.g., Monday, Wednesday, Friday).", ex: "I go for a long walk every other day." },
-      { term: "nowadays", pos: "adverb", cat: "Temporary", def: "At the present time, in contrast to the past.", ex: "More people work remotely nowadays." },
-      { term: "at the moment", pos: "phrase", cat: "Right Now", def: "Right now or during this current period.", ex: "She is helping a student at the moment." },
-      { term: "cut down on", pos: "phrasal verb", cat: "Temporary", def: "Reduce the amount or frequency of something.", ex: "I'm cutting down on sugar this month." },
-      { term: "take for granted", pos: "idiom", cat: "Stative", def: "Fail to appreciate something because it feels constant.", ex: "We shouldn't take good health for granted." },
-      { term: "on a regular basis", pos: "phrase", cat: "Frequency", def: "Repeatedly at steady intervals.", ex: "We review speaking strategies on a regular basis." },
-      { term: "currently", pos: "adverb", cat: "Temporary", def: "At this exact time or period.", ex: "He is currently preparing for his exam." },
-      { term: "keep up with", pos: "phrasal verb", cat: "Temporary", def: "Stay informed or match the pace of something.", ex: "It's tough to keep up with every new app." },
-      { term: "belong to", pos: "verb phrase", cat: "Stative", def: "Be the property of someone (not used in continuous).", ex: "This notebook belongs to PROVO." },
-      { term: "hardly ever", pos: "adverb phrase", cat: "Frequency", def: "Almost never; very rarely.", ex: "I hardly ever skip my morning routine." },
-      { term: "for the time being", pos: "phrase", cat: "Temporary", def: "For now, until something changes.", ex: "We'll use this room for the time being." },
-      { term: "figure out", pos: "phrasal verb", cat: "Temporary", def: "Find the answer or solve a problem.", ex: "I'm figuring out how to organize my schedule." }
+      { term: "every other day", pos: "time phrase", cat: "Frequency", def: "Once every two days (e.g., Monday, Wednesday, Friday).", ex: "I go for a long walk every other day.", trap: "Not 'each two days'." },
+      { term: "nowadays", pos: "adverb", cat: "Temporary", def: "At the present time, in contrast to the past.", ex: "More people work remotely nowadays.", trap: "False friend alert: 'actually' = en realidad, not 'actualmente'." },
+      { term: "at the moment", pos: "phrase", cat: "Right Now", def: "Right now or during this current period.", ex: "She is helping a student at the moment.", trap: "Pairs naturally with Present Continuous." },
+      { term: "cut down on", pos: "phrasal verb", cat: "Temporary", def: "Reduce the amount or frequency of something.", ex: "I'm cutting down on sugar this month.", trap: "Don't drop 'on' before the object." },
+      { term: "take for granted", pos: "idiom", cat: "Stative", def: "Fail to appreciate something because it feels constant.", ex: "We shouldn't take good health for granted.", trap: "Keep 'granted'—not 'grand'." },
+      { term: "on a regular basis", pos: "phrase", cat: "Frequency", def: "Repeatedly at steady intervals.", ex: "We review speaking strategies on a regular basis.", trap: "Formal/natural alternative to 'regularly'." },
+      { term: "currently", pos: "adverb", cat: "Temporary", def: "At this exact time or period.", ex: "He is currently preparing for his exam.", trap: "Often paired with Present Continuous." },
+      { term: "keep up with", pos: "phrasal verb", cat: "Temporary", def: "Stay informed or match the pace of something.", ex: "It's tough to keep up with every new app.", trap: "Keep 'with' at the end." },
+      { term: "belong to", pos: "verb phrase", cat: "Stative", def: "Be the property of someone (not used in continuous).", ex: "This notebook belongs to PROVO.", trap: "Avoid 'is belonging to'." },
+      { term: "hardly ever", pos: "adverb phrase", cat: "Frequency", def: "Almost never; very rarely.", ex: "I hardly ever skip my morning routine.", trap: "Already negative—do not add 'not'." },
+      { term: "for the time being", pos: "phrase", cat: "Temporary", def: "For now, until something changes.", ex: "We'll use this room for the time being.", trap: "Signals a temporary arrangement." },
+      { term: "figure out", pos: "phrasal verb", cat: "Temporary", def: "Find the answer or solve a problem.", ex: "I'm figuring out how to organize my schedule.", trap: "Can separate: 'figure it out'." }
     ];
 
     const EXERCISES = [
@@ -648,6 +609,56 @@
       { id: 8, prompt: "8. She ___ (own) a small acoustic guitar.", ans: ["owns"], hint: "'Own' expresses possession (stative)." },
       { id: 9, prompt: "9. Why ___ you ___ (wear) a coat indoors?", ans: ["are wearing"], hint: "Write: are wearing", checkCustom: v => /^are\b.*\bwearing\b/i.test(v.trim()) },
       { id: 10, prompt: "10. They ___ (go) to the mountains every weekend.", ans: ["go"], hint: "Regular habit with 'they'." }
+    ];
+
+    const TRAPS = [
+      {
+        wrong: "She is having two brothers.",
+        fix: "She <strong>has</strong> two brothers.",
+        why: "'Have' meaning possession is stative—use Present Simple."
+      },
+      {
+        wrong: "I am knowing the answer to that question.",
+        fix: "I <strong>know</strong> the answer to that question.",
+        why: "'Know' describes a mental state, not an action in progress."
+      },
+      {
+        wrong: "Every Tuesday I am going to my English class.",
+        fix: "Every Tuesday I <strong>go</strong> to my English class.",
+        why: "Regular weekly routines take Present Simple."
+      },
+      {
+        wrong: "Be quiet! The baby sleeps right now.",
+        fix: "Be quiet! The baby <strong>is sleeping</strong> right now.",
+        why: "'Right now' after an alert signals an action in progress."
+      }
+    ];
+
+    const RAPID_CARDS = [
+      {
+        situation: "Your phone rings while you are cooking pasta.",
+        options: ["Present Continuous", "Present Simple"],
+        best: "Present Continuous",
+        note: "Explain what you are doing at that exact moment."
+      },
+      {
+        situation: "You talk about how often you go for a walk on weekends.",
+        options: ["Present Simple", "Present Continuous"],
+        best: "Present Simple",
+        note: "Describe a repeated weekend habit."
+      },
+      {
+        situation: "You are staying at a friend's place for three days while your flat is painted.",
+        options: ["Present Continuous", "Present Simple"],
+        best: "Present Continuous",
+        note: "Highlight the temporary situation around now."
+      },
+      {
+        situation: "You state what you like or dislike about mornings.",
+        options: ["Present Simple", "Present Continuous"],
+        best: "Present Simple",
+        note: "'Like' and 'prefer' are stative verbs."
+      }
     ];
 
     // ==================== THEME & TABS ====================
@@ -696,7 +707,7 @@
     function renderQuestion(idx) {
       qIndex = (idx + QUESTIONS.length) % QUESTIONS.length;
       const item = QUESTIONS[qIndex];
-      questionScene.innerHTML = getSceneSvg(qIndex);
+      questionScene.innerHTML = renderSceneMedia(item, qIndex);
       qBadge.textContent = `Q${qIndex + 1} / ${QUESTIONS.length}`;
       qFocusTag.textContent = item.tag;
       questionText.textContent = item.q;
@@ -919,9 +930,10 @@
       renderSwitcher();
     });
 
-    // ==================== VOCABULARY WITH AUDIO ====================
+    // ==================== VOCABULARY WITH RECALL TOGGLE & AUDIO ====================
     const vocabCategories = ['All', 'Frequency', 'Temporary', 'Right Now', 'Stative'];
     let activeVocabCat = 'All';
+    const revealedTerms = new Set();
     const vocabFilters = document.getElementById('vocabFilters');
     const vocabGrid = document.getElementById('vocabGrid');
 
@@ -933,6 +945,12 @@
       window.speechSynthesis.speak(utter);
     }
 
+    window.toggleVocabMeaning = (term) => {
+      if (revealedTerms.has(term)) revealedTerms.delete(term);
+      else revealedTerms.add(term);
+      renderVocab();
+    };
+
     function renderVocab() {
       vocabFilters.innerHTML = vocabCategories.map(cat => `
         <button type="button" onclick="setVocabCat('${cat}')" class="px-3 py-1.5 rounded-xl text-xs font-bold transition ${
@@ -943,24 +961,34 @@
       `).join('');
 
       const list = activeVocabCat === 'All' ? VOCABULARY : VOCABULARY.filter(v => v.cat === activeVocabCat);
-      vocabGrid.innerHTML = list.map(v => `
-        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-sm flex flex-col justify-between gap-3">
-          <div>
-            <div class="flex items-start justify-between gap-2">
-              <div class="flex items-center gap-2">
-                ${getVocabMiniSvg(v.cat)}
+      vocabGrid.innerHTML = list.map(v => {
+        const isOpen = revealedTerms.has(v.term);
+        const safeTerm = v.term.replace(/'/g, "\\'");
+        return `
+          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-sm flex flex-col justify-between gap-3">
+            <div>
+              <div class="flex items-start justify-between gap-2">
                 <h3 class="text-base font-extrabold text-[#002B5C] dark:text-white">${v.term}</h3>
+                <div class="flex items-center gap-1">
+                  <button type="button" onclick="toggleVocabMeaning('${safeTerm}')" class="px-2 py-1 rounded-lg text-[11px] font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-[#0089A7]/15 transition">
+                    ${isOpen ? 'Hide' : 'Meaning'}
+                  </button>
+                  <button type="button" onclick="speakWord('${safeTerm}')" class="p-1.5 rounded-lg bg-[#F0F6FA] dark:bg-slate-800 text-[#005A8D] dark:text-cyan-300 hover:bg-[#0089A7] hover:text-white transition" title="Listen">
+                    <i data-lucide="volume-2" class="w-4 h-4"></i>
+                  </button>
+                </div>
               </div>
-              <button type="button" onclick="speakWord('${v.term.replace(/'/g, "\\'")}')" class="p-1.5 rounded-lg bg-[#F0F6FA] dark:bg-slate-800 text-[#005A8D] dark:text-cyan-300 hover:bg-[#0089A7] hover:text-white transition" title="Listen">
-                <i data-lucide="volume-2" class="w-4 h-4"></i>
-              </button>
+              <span class="inline-block mt-1.5 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">${v.pos} • ${v.cat}</span>
+              ${isOpen
+                ? `<p class="text-xs text-slate-700 dark:text-slate-200 mt-2.5">${v.def}</p>
+                   <p class="text-[11px] font-semibold text-amber-700 dark:text-amber-300 mt-2 bg-amber-500/10 px-2.5 py-1.5 rounded-lg">Tip: ${v.trap}</p>`
+                : `<p class="text-xs italic text-slate-400 dark:text-slate-500 mt-2.5">Tap “Meaning” to check definition &amp; usage tip.</p>`
+              }
             </div>
-            <span class="inline-block mt-2 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">${v.pos} • ${v.cat}</span>
-            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2.5">${v.def}</p>
+            <p class="text-xs italic text-[#005A8D] dark:text-cyan-300 border-t border-slate-100 dark:border-slate-800 pt-2.5">“${v.ex}”</p>
           </div>
-          <p class="text-xs italic text-[#005A8D] dark:text-cyan-300 border-t border-slate-100 dark:border-slate-800 pt-2.5">“${v.ex}”</p>
-        </div>
-      `).join('');
+        `;
+      }).join('');
       lucide.createIcons();
     }
 
@@ -1040,11 +1068,68 @@
       keyBox.classList.toggle('hidden');
     });
 
+    // ==================== LIVE LAB: SPOT THE TRAP + RAPID DECISIONS ====================
+    const trapList = document.getElementById('trapList');
+    const rapidList = document.getElementById('rapidList');
+
+    window.toggleTrap = (idx) => {
+      const el = document.getElementById(`trap-detail-${idx}`);
+      el.classList.toggle('hidden');
+    };
+
+    function renderTraps() {
+      trapList.innerHTML = TRAPS.map((t, i) => `
+        <button type="button" onclick="toggleTrap(${i})" class="w-full text-left p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-[#0089A7] bg-slate-50/70 dark:bg-slate-800/40 transition">
+          <div class="flex items-center justify-between gap-2">
+            <span class="text-sm font-bold text-slate-900 dark:text-white">${t.wrong}</span>
+            <span class="text-[11px] font-bold uppercase tracking-wider text-[#0089A7]">Inspect</span>
+          </div>
+          <div id="trap-detail-${i}" class="hidden mt-3 pt-3 border-t border-slate-200 dark:border-slate-700 text-xs space-y-1">
+            <div class="text-emerald-700 dark:text-emerald-300 font-bold">Fix: ${t.fix}</div>
+            <div class="text-slate-600 dark:text-slate-300">${t.why}</div>
+          </div>
+        </button>
+      `).join('');
+    }
+
+    window.pickRapid = (cardIdx, choice) => {
+      const card = RAPID_CARDS[cardIdx];
+      const fb = document.getElementById(`rapid-fb-${cardIdx}`);
+      fb.classList.remove('hidden');
+      if (choice === card.best) {
+        fb.className = 'mt-3 text-xs font-semibold text-emerald-700 dark:text-emerald-300 bg-emerald-500/10 p-2.5 rounded-xl';
+        fb.textContent = `Spot on (${card.best}): ${card.note}`;
+      } else {
+        fb.className = 'mt-3 text-xs font-semibold text-amber-700 dark:text-amber-300 bg-amber-500/10 p-2.5 rounded-xl';
+        fb.textContent = `Try ${card.best}: ${card.note}`;
+      }
+    };
+
+    function renderRapid() {
+      rapidList.innerHTML = RAPID_CARDS.map((r, i) => `
+        <div class="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-800/40 flex flex-col justify-between gap-3">
+          <p class="text-sm font-bold text-slate-900 dark:text-white">${r.situation}</p>
+          <div>
+            <div class="flex flex-wrap gap-2">
+              ${r.options.map(opt => `
+                <button type="button" onclick="pickRapid(${i}, '${opt}')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-[#0089A7] transition">
+                  ${opt}
+                </button>
+              `).join('')}
+            </div>
+            <div id="rapid-fb-${i}" class="hidden"></div>
+          </div>
+        </div>
+      `).join('');
+    }
+
     // Init
     renderQuestion(0);
     renderSwitcher();
     renderVocab();
     renderExercises();
+    renderTraps();
+    renderRapid();
     lucide.createIcons();
   </script>
 </body>

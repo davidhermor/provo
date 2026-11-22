@@ -529,26 +529,18 @@
       }
     ];
 
-    function getFallbackScene(idx) {
-      return `
-        <div class="w-full h-full flex flex-col items-center justify-center bg-[#F0F6FA] dark:bg-slate-800 text-[#002B5C] dark:text-cyan-200 px-4 text-center">
-          <i data-lucide="image" class="w-7 h-7 text-[#0089A7] mb-1.5"></i>
-          <span class="text-xs font-bold uppercase tracking-wider">Prompt #${idx + 1} Visual Cue</span>
-        </div>
-      `;
-    }
-
-    function renderSceneMedia(item, idx) {
+        function renderSceneMedia(item, idx) {
       return `
         <img
           src="${item.photo}"
           alt="${item.photoAlt}"
           class="w-full h-full object-cover"
           loading="lazy"
-          onerror="this.parentElement.innerHTML = \`${getFallbackScene(idx).replace(/`/g, '').trim()}\`; lucide.createIcons();"
+          data-prompt-num="${idx + 1}"
         />
       `;
     }
+
 
     const SWITCHER_ITEMS = [
       {
@@ -704,19 +696,19 @@
     const startersBox = document.getElementById('startersBox');
     const questionPills = document.getElementById('questionPills');
 
-    function renderQuestion(idx) {
-      qIndex = (idx + QUESTIONS.length) % QUESTIONS.length;
-      const item = QUESTIONS[qIndex];
-      questionScene.innerHTML = renderSceneMedia(item, qIndex);
-      qBadge.textContent = `Q${qIndex + 1} / ${QUESTIONS.length}`;
-      qFocusTag.textContent = item.tag;
-      questionText.textContent = item.q;
-      questionHint.textContent = item.hint;
-      startersList.innerHTML = item.starters.map(s => `<li>${s}</li>`).join('');
-      startersBox.classList.add('hidden');
-      renderPills();
-      lucide.createIcons();
-    }
+     const sceneImg = questionScene.querySelector('img');
+ if (sceneImg) {
+   sceneImg.addEventListener('error', () => {
+     questionScene.innerHTML = `
+       <div class="w-full h-full flex flex-col items-center justify-center bg-[#F0F6FA] dark:bg-slate-800 text-[#002B5C] dark:text-cyan-200 px-4 text-center">
+         <i data-lucide="image" class="w-7 h-7 text-[#0089A7] mb-1.5"></i>
+         <span class="text-xs font-bold uppercase tracking-wider">Prompt #${qIndex + 1} Visual Cue</span>
+       </div>
+     `;
+     lucide.createIcons();
+   }, { once: true });
+ }
+
 
     function renderPills() {
       questionPills.innerHTML = QUESTIONS.map((_, i) => `

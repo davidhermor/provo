@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Present Simple | PROVO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <style>
+    @keyframes stageIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .stage-anim { animation: stageIn 0.28s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+  </style>
+</head>
+<body class="bg-[#F4F6F9] text-slate-900 dark:bg-[#141518] dark:text-zinc-100 min-h-screen flex flex-col transition-colors duration-200 selection:bg-[#0089A7] selection:text-white">
+
+  <!-- Sticky Deep Navy Navbar (#002B5C in both modes) -->
+  <header class="sticky top-0 z-40 bg-[#002B5C] text-white border-b border-white/10 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-3.5">
+        <a href="index.html" class="flex items-center shrink-0" title="PROVO">
+          <img
+            src="https://i.postimg.cc/vBt4qH44/download.png"
+            alt="PROVO"
+            class="h-8 w-auto object-contain block"
+            onerror="this.style.display='none'; document.getElementById('provoFallback').classList.remove('hidden');"
+          />
+          <span id="provoFallback" class="hidden font-extrabold tracking-widest text-lg text-white">PROVO</span>
+        </a>
+        <span class="hidden md:inline-block h-4 w-px bg-white/20"></span>
+        <span id="headerStageLabel" class="hidden md:inline-block text-xs font-bold uppercase tracking-[0.18em] text-cyan-200">
+          01 · Overview
+        </span>
+      </div>
+
+      <!-- Stage Switcher Pills -->
+      <div id="stagePills" class="flex items-center gap-1 overflow-x-auto py-1"></div>
+
+      <!-- Right Controls -->
+      <div class="flex items-center gap-2 shrink-0">
+        <button
+          id="themeToggle"
+          type="button"
+          class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition"
+          title="Toggle Light / Dark Mode"
+          aria-label="Toggle Light / Dark Mode"
+        >
+          <i id="themeIcon" data-lucide="sun" class="w-4 h-4"></i>
+        </button>
+        <a
+          href="index.html"
+          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-white/10 hover:bg-white/20 text-white transition"
+        >
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          <span class="hidden sm:inline">All Lessons</span>
+        </a>
+      </div>
+    </div>
+    <div class="w-full h-1 bg-black/25">
+      <div id="progressLine" class="h-full bg-[#0089A7] transition-all duration-300" style="width: 14.28%"></div>
+    </div>
+  </header>
+
+  <!-- Main Stage Container -->
+  <main class="max-w-6xl w-full mx-auto px-4 sm:px-6 py-8 sm:py-12 flex-1 flex flex-col justify-center">
+
+    <!-- ==================== 01: EDITORIAL COVER ==================== -->
+    <section data-stage="0" class="lesson-stage stage-anim">
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 shadow-xl">
+        <div class="lg:col-span-6 h-80 sm:h-[470px] relative bg-slate-900 overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1050&q=80"
+            alt="Morning coffee routine on a minimalist table"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent"></div>
+          <div class="absolute bottom-5 left-6 right-6 flex items-center justify-between text-xs text-white/80 font-semibold tracking-wider uppercase">
+            <span>PROVO · Core Grammar</span>
+            <span>Routines &amp; Facts</span>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 p-8 sm:p-12 flex flex-col justify-center space-y-6">
+          <div class="inline-flex items-center gap-2 self-start px-3 py-1 rounded-full bg-[#0089A7]/15 border border-[#0089A7]/30 text-[#005A8D] dark:text-cyan-300 text-xs font-extrabold uppercase tracking-[0.18em]">
+            <i data-lucide="repeat" class="w-3.5 h-3.5"></i>
+            <span>Interactive Lesson</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl font-extrabold uppercase tracking-tight leading-[1.06] text-[#002B5C] dark:text-white">
+            Present<br/>
+            Simple<br/>
+            <span class="text-[#0089A7]">Mastery</span>
+          </h1>
+
+          <p class="text-slate-600 dark:text-zinc-300 text-base leading-relaxed">
+            Build effortless accuracy with habits, schedules, permanent truths, and third-person forms through clean, guided stages.
+          </p>
+
+          <div class="pt-2 flex flex-wrap items-center gap-4">
+            <button
+              type="button"
+              onclick="goStage(1)"
+              class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-[#002B5C] to-[#005A8D] hover:from-[#005A8D] hover:to-[#0089A7] text-white text-sm font-bold shadow-lg shadow-[#002B5C]/20 transition"
+            >
+              <span>Begin Stage 02</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+            <span class="text-xs font-medium text-slate-500 dark:text-zinc-400">7 stages · Sentence builder &amp; voice notes</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 02: LEAD-IN & VOICE RECORDER ==================== -->
+    <section data-stage="1" class="lesson-stage hidden stage-anim space-y-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-white/10 pb-4">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 02</span>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Lead-In</h2>
+        </div>
+        <p class="text-sm text-slate-500 dark:text-zinc-400">Tap the everyday scenes that match your routine, then speak or record a voice note.</p>
+      </div>
+
+      <div id="leadCardsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div class="lg:col-span-7 bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 sm:p-8 space-y-5 shadow-sm">
+          <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#005A8D] dark:text-cyan-300">Discussion Prompts</h3>
+          <ol class="space-y-4 text-sm sm:text-base text-slate-700 dark:text-zinc-200 list-decimal list-inside">
+            <li class="leading-relaxed">How does your weekday morning start, and what do you almost never skip?</li>
+            <li class="leading-relaxed">What does someone close to you (a partner, friend, or family member) do every single day?</li>
+            <li class="leading-relaxed">Which household or work tasks do you find tiring, and how often do you do them?</li>
+            <li class="leading-relaxed">What simple habit helps you reset when your week gets hectic?</li>
+          </ol>
+        </div>
+
+        <!-- Voice Note Recorder -->
+        <div class="lg:col-span-5 bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 space-y-4 shadow-sm">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-extrabold uppercase tracking-[0.18em] text-[#0089A7]">Voice Note · Drive</span>
+            <span id="recTimer" class="font-mono text-xs font-bold text-slate-500 dark:text-zinc-400">00:00</span>
+          </div>
+          <input
+            id="studentNameInput"
+            type="text"
+            placeholder="Your name (e.g. Sofía Gómez)"
+            class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-[#141518] border border-slate-200 dark:border-white/10 text-sm focus:outline-none focus:ring-2 focus:ring-[#0089A7]"
+          />
+          <div class="flex items-center gap-2">
+            <button id="btnRecord" type="button" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold transition">
+              <i data-lucide="mic" class="w-4 h-4"></i>
+              <span>Record</span>
+            </button>
+            <button id="btnStop" type="button" disabled class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-900 disabled:opacity-40 text-white text-xs font-bold transition">
+              <i data-lucide="square" class="w-4 h-4"></i>
+              <span>Stop</span>
+            </button>
+            <button id="btnClearAudio" type="button" disabled class="p-2.5 rounded-xl border border-slate-200 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/5 disabled:opacity-40 transition" title="Discard">
+              <i data-lucide="trash-2" class="w-4 h-4"></i>
+            </button>
+          </div>
+          <audio id="audioPreview" controls class="w-full hidden rounded-xl"></audio>
+          <div class="flex flex-col sm:flex-row gap-2">
+            <button id="btnSendDrive" type="button" disabled class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#002B5C] hover:bg-[#005A8D] disabled:opacity-40 text-white text-xs font-bold transition">
+              <i data-lucide="send" class="w-3.5 h-3.5"></i>
+              <span id="sendLabel">Send to Teacher</span>
+            </button>
+            <button id="btnDownloadAudio" type="button" disabled class="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl border border-slate-200 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/5 disabled:opacity-40 text-xs font-semibold transition">
+              <i data-lucide="download" class="w-3.5 h-3.5"></i>
+              <span>Backup</span>
+            </button>
+          </div>
+          <div id="uploadFeedback" class="hidden text-xs font-semibold px-3 py-2 rounded-xl"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 03: VOCABULARY MATCH ==================== -->
+    <section data-stage="2" class="lesson-stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-white/10 pb-4">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 03</span>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Vocabulary Match</h2>
+        </div>
+        <div class="flex items-center gap-3">
+          <span id="vocabMatchStatus" class="text-xs font-bold text-[#005A8D] dark:text-cyan-300">Pick a definition on the left, then tap its phrase</span>
+          <button type="button" onclick="resetVocabMatch()" class="text-xs px-3 py-1.5 rounded-lg border border-slate-300 dark:border-white/15 hover:bg-slate-100 dark:hover:bg-white/5 font-semibold">Reset</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div id="vocabDefsCol" class="lg:col-span-7 space-y-2.5"></div>
+        <div class="lg:col-span-5 bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 space-y-4 shadow-sm">
+          <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-slate-500 dark:text-zinc-400">Expressions &amp; Pronunciation</h3>
+          <div id="vocabWordsCol" class="flex flex-wrap gap-2.5"></div>
+          <div id="vocabExampleBox" class="hidden pt-4 border-t border-slate-200 dark:border-white/10 text-xs text-slate-600 dark:text-zinc-300 space-y-1"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 04: GRAMMAR STUDIO & INTERACTIVE BUILDER ==================== -->
+    <section data-stage="3" class="lesson-stage hidden stage-anim space-y-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-white/10 pb-4">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 04</span>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Grammar Studio</h2>
+        </div>
+        <p class="text-sm text-slate-500 dark:text-zinc-400">Test how subjects, third-person endings, negatives, and questions work.</p>
+      </div>
+
+      <!-- 3 Core Pillars -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div class="bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 space-y-2.5 shadow-sm">
+          <span class="inline-block px-2.5 py-1 rounded-lg bg-[#002B5C] text-white text-[11px] font-extrabold uppercase">01 · Habits &amp; Facts</span>
+          <h3 class="text-base font-extrabold text-[#002B5C] dark:text-white">Repeated Actions &amp; Truths</h3>
+          <p class="text-xs text-slate-600 dark:text-zinc-300 leading-relaxed">
+            Use Present Simple for daily routines, schedules, general truths, and stative verbs (<em>like, love, prefer, know, want, need</em>).
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 space-y-2.5 shadow-sm">
+          <span class="inline-block px-2.5 py-1 rounded-lg bg-[#005A8D] text-white text-[11px] font-extrabold uppercase">02 · He / She / It</span>
+          <h3 class="text-base font-extrabold text-[#002B5C] dark:text-white">Third-Person Endings</h3>
+          <p class="text-xs text-slate-600 dark:text-zinc-300 leading-relaxed">
+            Add <strong>-s</strong> (<em>works, plays</em>), <strong>-es</strong> after <em>-ch, -sh, -x, -o, -ss</em> (<em>watches, goes</em>), or <strong>-ies</strong> for consonant + <em>y</em> (<em>studies, tries</em>).
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 space-y-2.5 shadow-sm">
+          <span class="inline-block px-2.5 py-1 rounded-lg bg-[#0089A7] text-white text-[11px] font-extrabold uppercase">03 · Do / Does</span>
+          <h3 class="text-base font-extrabold text-[#002B5C] dark:text-white">Negatives &amp; Questions</h3>
+          <p class="text-xs text-slate-600 dark:text-zinc-300 leading-relaxed">
+            Use <strong>don't / doesn't + base verb</strong> and <strong>Do / Does + subject + base verb</strong>. Never keep <em>-s</em> on the main verb after <em>doesn't</em> or <em>does</em>.
+          </p>
+        </div>
+      </div>
+
+      <!-- Interactive Sentence Form Inspector -->
+      <div class="bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 sm:p-8 space-y-6 shadow-sm">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Interactive Form Inspector</span>
+            <h3 class="text-xl font-extrabold text-[#002B5C] dark:text-white mt-0.5">Switch Subject &amp; Sentence Type</h3>
+          </div>
+          <div class="flex flex-wrap gap-1.5 bg-slate-100 dark:bg-[#141518] p-1 rounded-xl border border-slate-200 dark:border-white/10 text-xs font-bold">
+            <button type="button" data-form="aff" class="form-btn px-3.5 py-1.5 rounded-lg bg-[#002B5C] text-white transition">Affirmative (+)</button>
+            <button type="button" data-form="neg" class="form-btn px-3.5 py-1.5 rounded-lg text-slate-600 dark:text-zinc-300 transition">Negative (−)</button>
+            <button type="button" data-form="q" class="form-btn px-3.5 py-1.5 rounded-lg text-slate-600 dark:text-zinc-300 transition">Question (?)</button>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-2" id="subjectSelector"></div>
+
+        <div id="inspectorPreview" class="p-6 rounded-2xl bg-[#F4F6F9] dark:bg-[#141518] border border-[#0089A7]/25 space-y-2"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 05: SUMMARY CLOZE ==================== -->
+    <section data-stage="4" class="lesson-stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-white/10 pb-4">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 05</span>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Rule Summary</h2>
+        </div>
+        <p class="text-sm text-slate-500 dark:text-zinc-400">Select a slot, click a word from the bank, and check your summary.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 shadow-sm">
+        <div class="lg:col-span-4 h-64 lg:h-auto bg-slate-900">
+          <img
+            src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=850&q=80"
+            alt="Notebook and pen on a clean desk"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="lg:col-span-8 p-6 sm:p-8 space-y-6">
+          <div class="flex flex-wrap gap-2" id="clozeChips"></div>
+          <p class="text-slate-700 dark:text-zinc-200 text-sm sm:text-base leading-loose" id="clozeText"></p>
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <button type="button" onclick="checkCloze()" class="px-5 py-2.5 rounded-xl bg-[#002B5C] hover:bg-[#005A8D] text-white text-xs font-bold transition">
+              Check Summary
+            </button>
+            <button type="button" onclick="resetCloze()" class="px-4 py-2.5 rounded-xl border border-slate-300 dark:border-white/15 hover:bg-slate-100 dark:hover:bg-white/5 text-xs font-semibold transition">
+              Clear
+            </button>
+            <span id="clozeMsg" class="text-xs font-bold"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 06: PRACTICE & ODD ONE OUT ==================== -->
+    <section data-stage="5" class="lesson-stage hidden stage-anim space-y-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-white/10 pb-4">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 06</span>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Practice &amp; Odd One Out</h2>
+        </div>
+        <p class="text-sm text-slate-500 dark:text-zinc-400">Choose the right Present Simple form and spot the item that doesn't fit.</p>
+      </div>
+
+      <!-- Verb Choice Grid -->
+      <div class="space-y-4">
+        <div id="practiceGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+        <div class="flex items-center gap-3">
+          <button type="button" onclick="checkPractice()" class="px-5 py-2.5 rounded-xl bg-[#002B5C] hover:bg-[#005A8D] text-white text-xs font-bold transition">
+            Check Verb Choices
+          </button>
+          <span id="practiceResult" class="text-sm font-bold text-[#005A8D] dark:text-cyan-300"></span>
+        </div>
+      </div>
+
+      <!-- Odd One Out -->
+      <div class="space-y-4 pt-2">
+        <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Odd One Out</h3>
+        <div id="oddGrid" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 07: ROUTINE TIMELINE ==================== -->
+    <section data-stage="6" class="lesson-stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-white/10 pb-4">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 07</span>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Your Routine Timeline</h2>
+        </div>
+        <p class="text-sm text-slate-500 dark:text-zinc-400">Map four everyday anchors in Present Simple and use them as a speaking guide.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-5 space-y-2.5 shadow-sm">
+          <span class="w-9 h-9 rounded-full bg-[#002B5C] text-white text-xs font-extrabold flex items-center justify-center">01</span>
+          <h3 class="text-sm font-extrabold uppercase tracking-wider text-[#002B5C] dark:text-white">Morning Anchor</h3>
+          <p class="text-xs text-slate-500 dark:text-zinc-400">What do you do almost every morning?</p>
+          <input type="text" placeholder="e.g. I drink coffee and check..." class="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-[#141518] border border-slate-200 dark:border-white/10 text-xs focus:outline-none focus:border-[#0089A7]" />
+        </div>
+
+        <div class="bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-5 space-y-2.5 shadow-sm">
+          <span class="w-9 h-9 rounded-full bg-[#005A8D] text-white text-xs font-extrabold flex items-center justify-center">02</span>
+          <h3 class="text-sm font-extrabold uppercase tracking-wider text-[#002B5C] dark:text-white">Work / Study Rhythm</h3>
+          <p class="text-xs text-slate-500 dark:text-zinc-400">What is your typical schedule or habit?</p>
+          <input type="text" placeholder="e.g. Classes start at..." class="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-[#141518] border border-slate-200 dark:border-white/10 text-xs focus:outline-none focus:border-[#0089A7]" />
+        </div>
+
+        <div class="bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-5 space-y-2.5 shadow-sm">
+          <span class="w-9 h-9 rounded-full bg-[#0089A7] text-white text-xs font-extrabold flex items-center justify-center">03</span>
+          <h3 class="text-sm font-extrabold uppercase tracking-wider text-[#002B5C] dark:text-white">Someone Else's Habit</h3>
+          <p class="text-xs text-slate-500 dark:text-zinc-400">Practice -s / -es / -ies for he, she, or it.</p>
+          <input type="text" placeholder="e.g. My friend goes..." class="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-[#141518] border border-slate-200 dark:border-white/10 text-xs focus:outline-none focus:border-[#0089A7]" />
+        </div>
+
+        <div class="bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-5 space-y-2.5 shadow-sm">
+          <span class="w-9 h-9 rounded-full bg-[#0089A7]/20 border border-[#0089A7] text-[#005A8D] dark:text-cyan-300 text-xs font-extrabold flex items-center justify-center">04</span>
+          <h3 class="text-sm font-extrabold uppercase tracking-wider text-[#002B5C] dark:text-white">Preference / Fact</h3>
+          <p class="text-xs text-slate-500 dark:text-zinc-400">State a preference or permanent truth.</p>
+          <input type="text" placeholder="e.g. I prefer quiet mornings..." class="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-[#141518] border border-slate-200 dark:border-white/10 text-xs focus:outline-none focus:border-[#0089A7]" />
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Editorial Bottom Stage Bar -->
+  <footer class="border-t border-slate-200 dark:border-white/10 bg-white dark:bg-[#141518] py-4 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      <button id="btnPrev" type="button" onclick="goStage(currentStage - 1)" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-300 dark:border-white/15 hover:bg-slate-100 dark:hover:bg-white/5 disabled:opacity-30 text-xs font-bold transition">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Previous</span>
+      </button>
+
+      <span id="stageCounter" class="text-xs font-extrabold tracking-widest uppercase text-slate-500 dark:text-zinc-400">
+        01 / 07
+      </span>
+
+      <button id="btnNext" type="button" onclick="goStage(currentStage + 1)" class="inline-flex items-center gap-2 px-5 py-2 rounded-xl bg-[#002B5C] hover:bg-[#005A8D] disabled:opacity-30 text-xs font-bold text-white transition">
+        <span>Next Stage</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    const DRIVE_UPLOAD_URL = "https://script.google.com/macros/s/AKfycbwBcX7Z4aABKplkUkpYvM2wEnsBHhWCZzi7dFGDkeUarkXwv-RRI0JXAPDakjkrCrBc/exec";
+
+    const STAGES = [
+      "01 · Overview",
+      "02 · Lead-In",
+      "03 · Vocabulary Match",
+      "04 · Grammar Studio",
+      "05 · Rule Summary",
+      "06 · Practice",
+      "07 · Timeline"
+    ];
+
+    let currentStage = 0;
+    const stageSections = document.querySelectorAll('.lesson-stage');
+    const stagePills = document.getElementById('stagePills');
+    const progressLine = document.getElementById('progressLine');
+    const headerStageLabel = document.getElementById('headerStageLabel');
+    const stageCounter = document.getElementById('stageCounter');
+    const btnPrev = document.getElementById('btnPrev');
+    const btnNext = document.getElementById('btnNext');
+
+    function goStage(idx) {
+      if (idx < 0 || idx >= stageSections.length) return;
+      currentStage = idx;
+      stageSections.forEach((sec, i) => sec.classList.toggle('hidden', i !== currentStage));
+      headerStageLabel.textContent = STAGES[currentStage];
+      stageCounter.textContent = `${String(currentStage + 1).padStart(2, '0')} / ${String(stageSections.length).padStart(2, '0')}`;
+      progressLine.style.width = `${((currentStage + 1) / stageSections.length) * 100}%`;
+      btnPrev.disabled = currentStage === 0;
+      btnNext.disabled = currentStage === stageSections.length - 1;
+      renderStagePills();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      lucide.createIcons();
+    }
+
+    function renderStagePills() {
+      stagePills.innerHTML = STAGES.map((_, i) => `
+        <button
+          type="button"
+          onclick="goStage(${i})"
+          class="px-2.5 py-1 rounded-lg text-[11px] font-bold transition ${
+            i === currentStage
+              ? 'bg-white text-[#002B5C]'
+              : 'text-white/75 hover:text-white hover:bg-white/10'
+          }"
+        >${String(i + 1).padStart(2, '0')}</button>
+      `).join('');
+    }
+
+    // Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const savedTheme = localStorage.getItem('provoSimpleTheme');
+    if (savedTheme === 'light') {
+      document.documentElement.classList.remove('dark');
+      themeIcon.setAttribute('data-lucide', 'moon');
+    }
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('provoSimpleTheme', isDark ? 'dark' : 'light');
+      themeIcon.setAttribute('data-lucide', isDark ? 'sun' : 'moon');
+      lucide.createIcons();
+    });
+
+    // 02: Lead-In Cards
+    const LEAD_CARDS = [
+      { title: "Morning Coffee & News", photo: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&q=75" },
+      { title: "Walking & Trails", photo: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=700&q=75" },
+      { title: "Daily Commute", photo: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=700&q=75" },
+      { title: "Home Cooking", photo: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=700&q=75" },
+      { title: "Reading & Study", photo: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=700&q=75" },
+      { title: "Evening Wind-Down", photo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=700&q=75" }
+    ];
+    const pickedLead = new Set();
+
+    function renderLeadCards() {
+      const grid = document.getElementById('leadCardsGrid');
+      grid.innerHTML = LEAD_CARDS.map((c, i) => {
+        const active = pickedLead.has(i);
+        return `
+          <button
+            type="button"
+            onclick="toggleLead(${i})"
+            class="group relative h-40 rounded-2xl overflow-hidden border-2 text-left transition ${
+              active ? 'border-[#0089A7] ring-2 ring-[#0089A7]/35' : 'border-slate-200 dark:border-white/10 hover:border-[#0089A7]/60'
+            }"
+          >
+            <img src="${c.photo}" alt="${c.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent"></div>
+            <div class="absolute inset-0 flex items-center justify-center p-4">
+              <span class="text-base sm:text-lg font-extrabold text-white text-center drop-shadow">${c.title}</span>
+            </div>
+            ${active ? `<span class="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-[#0089A7] text-[10px] font-extrabold uppercase text-white">Picked</span>` : ''}
+          </button>
+        `;
+      }).join('');
+    }
+
+    window.toggleLead = (i) => {
+      if (pickedLead.has(i)) pickedLead.delete(i);
+      else pickedLead.add(i);
+      renderLeadCards();
+    };
+
+    // 03: Vocabulary Match
+    const VOCAB_ITEMS = [
+      { id: 1, def: "Once every two days (e.g., Mon, Wed, Fri)", phrase: "every other day", ex: "I go running every other day." },
+      { id: 2, def: "Almost never; very rarely", phrase: "hardly ever", ex: "We hardly ever eat out on Mondays." },
+      { id: 3, def: "Repeatedly at steady, predictable intervals", phrase: "on a regular basis", ex: "She updates her notes on a regular basis." },
+      { id: 4, def: "At all times; without exception in a routine", phrase: "always", ex: "The 7:15 train always leaves on time." },
+      { id: 5, def: "Not often; only occasionally", phrase: "once in a while", ex: "I bake treats once in a while." },
+      { id: 6, def: "To be the property of someone", phrase: "belong to", ex: "This guitar belongs to my brother." }
+    ];
+    let activeDef = null;
+    const doneMatches = new Set();
+
+    function speakPhrase(text) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'en-US';
+      window.speechSynthesis.speak(u);
+    }
+
+    function renderVocabMatch() {
+      const defs = document.getElementById('vocabDefsCol');
+      const words = document.getElementById('vocabWordsCol');
+
+      defs.innerHTML = VOCAB_ITEMS.map(item => {
+        const matched = doneMatches.has(item.id);
+        const sel = activeDef === item.id;
+        return `
+          <button
+            type="button"
+            onclick="pickDef(${item.id})"
+            ${matched ? 'disabled' : ''}
+            class="w-full text-left p-4 rounded-2xl border transition flex items-center justify-between gap-3 ${
+              matched
+                ? 'bg-emerald-500/10 border-emerald-500/35 text-emerald-700 dark:text-emerald-300'
+                : sel
+                  ? 'bg-[#005A8D]/15 border-[#0089A7] text-[#002B5C] dark:text-white'
+                  : 'bg-white dark:bg-[#1C1E24] border-slate-200 dark:border-white/10 hover:border-[#0089A7]/50'
+            }"
+          >
+            <span class="text-xs sm:text-sm"><strong class="text-[#0089A7] mr-2">${item.id}.</strong>${item.def}</span>
+            ${matched ? `<span class="text-xs font-extrabold px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 shrink-0">${item.phrase}</span>` : ''}
+          </button>
+        `;
+      }).join('');
+
+      const sorted = [...VOCAB_ITEMS].sort((a, b) => a.phrase.localeCompare(b.phrase));
+      words.innerHTML = sorted.map(item => {
+        const matched = doneMatches.has(item.id);
+        const safe = item.phrase.replace(/'/g, "\\'");
+        return `
+          <div class="inline-flex items-center rounded-xl border ${matched ? 'border-emerald-500/30 bg-emerald-500/10 opacity-50' : 'border-slate-200 dark:border-white/15 bg-slate-50 dark:bg-[#141518]'}">
+            <button type="button" onclick="pickPhrase(${item.id})" ${matched ? 'disabled' : ''} class="px-3.5 py-2 text-xs font-bold hover:text-[#0089A7] transition">
+              ${item.phrase}
+            </button>
+            <button type="button" onclick="speakPhrase('${safe}')" class="pr-2.5 pl-1 py-2 text-slate-400 hover:text-[#0089A7] transition" title="Listen">
+              <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        `;
+      }).join('');
+      lucide.createIcons();
+    }
+
+    window.pickDef = (id) => {
+      activeDef = id;
+      document.getElementById('vocabMatchStatus').textContent = `Definition #${id} selected — tap its matching phrase`;
+      renderVocabMatch();
+    };
+
+    window.pickPhrase = (id) => {
+      const status = document.getElementById('vocabMatchStatus');
+      const exBox = document.getElementById('vocabExampleBox');
+      if (activeDef === null) {
+        status.textContent = "Select a numbered definition on the left first.";
+        return;
+      }
+      if (activeDef === id) {
+        doneMatches.add(id);
+        const item = VOCAB_ITEMS.find(x => x.id === id);
+        activeDef = null;
+        status.textContent = `Matched (${doneMatches.size} / ${VOCAB_ITEMS.length})`;
+        exBox.classList.remove('hidden');
+        exBox.innerHTML = `<span class="font-bold text-[#005A8D] dark:text-cyan-300">Example:</span> “${item.ex}”`;
+        renderVocabMatch();
+      } else {
+        status.textContent = "Not a match for that definition — try another phrase.";
+      }
+    };
+
+    window.resetVocabMatch = () => {
+      doneMatches.clear();
+      activeDef = null;
+      document.getElementById('vocabMatchStatus').textContent = "Pick a definition on the left, then tap its matching phrase";
+      document.getElementById('vocabExampleBox').classList.add('hidden');
+      renderVocabMatch();
+    };
+
+    // 04: Grammar Form Inspector
+    const SUBJECTS = [
+      { key: "i", label: "I", aff: "I <strong>drink</strong> black coffee every morning.", neg: "I <strong>don't drink</strong> coffee late at night.", q: "<strong>Do</strong> I need to bring a notebook?", rule: "Base verb with 'I'; auxiliary 'do / don't'." },
+      { key: "she", label: "She", aff: "She <strong>studies</strong> English twice a week.", neg: "She <strong>doesn't study</strong> on Sundays.", q: "<strong>Does</strong> she <strong>study</strong> in the morning?", rule: "Consonant + y → -ies in affirmative; base verb 'study' after doesn't / Does." },
+      { key: "he", label: "He", aff: "He <strong>watches</strong> football on weekends.", neg: "He <strong>doesn't watch</strong> much TV.", q: "<strong>Does</strong> he <strong>watch</strong> the evening match?", rule: "Verbs ending in -ch take -es in affirmative; base verb 'watch' in negatives/questions." },
+      { key: "they", label: "They", aff: "They <strong>live</strong> in a quiet neighborhood.", neg: "They <strong>don't live</strong> far from the station.", q: "<strong>Do</strong> they <strong>live</strong> near the park?", rule: "Plural subject takes the base verb without -s." }
+    ];
+    let currentSubj = "she";
+    let currentForm = "aff";
+
+    function renderInspector() {
+      const selBox = document.getElementById('subjectSelector');
+      selBox.innerHTML = SUBJECTS.map(s => `
+        <button
+          type="button"
+          onclick="setSubject('${s.key}')"
+          class="px-4 py-1.5 rounded-xl text-xs font-extrabold border transition ${
+            currentSubj === s.key
+              ? 'bg-[#005A8D] text-white border-[#005A8D]'
+              : 'bg-slate-50 dark:bg-[#141518] border-slate-200 dark:border-white/10 hover:border-[#0089A7]'
+          }"
+        >${s.label}</button>
+      `).join('');
+
+      const subjObj = SUBJECTS.find(s => s.key === currentSubj);
+      const sentence = subjObj[currentForm];
+      document.getElementById('inspectorPreview').innerHTML = `
+        <div class="text-lg sm:text-xl font-bold text-[#002B5C] dark:text-white">${sentence}</div>
+        <div class="text-xs text-slate-600 dark:text-zinc-300">${subjObj.rule}</div>
+      `;
+    }
+
+    window.setSubject = (key) => {
+      currentSubj = key;
+      renderInspector();
+    };
+
+    document.querySelectorAll('.form-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentForm = btn.dataset.form;
+        document.querySelectorAll('.form-btn').forEach(b => {
+          b.className = b.dataset.form === currentForm
+            ? 'form-btn px-3.5 py-1.5 rounded-lg bg-[#002B5C] text-white transition'
+            : 'form-btn px-3.5 py-1.5 rounded-lg text-slate-600 dark:text-zinc-300 transition';
+        });
+        renderInspector();
+      });
+    });
+
+    // 05: Rule Summary Cloze
+    const CLOZE_BANK = ["habits", "base", "does", "stative", "schedules"];
+    const CLOZE_KEY = ["habits", "schedules", "base", "does", "stative"];
+    const CLOZE_STATE = ["", "", "", "", ""];
+    let activeSlot = 0;
+
+    function renderCloze() {
+      document.getElementById('clozeChips').innerHTML = CLOZE_BANK.map(w => `
+        <button type="button" onclick="putCloze('${w}')" class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-[#141518] border border-slate-200 dark:border-white/15 hover:border-[#0089A7] text-xs font-bold text-[#005A8D] dark:text-cyan-300 transition">
+          ${w}
+        </button>
+      `).join('');
+
+      const segs = [
+        "We use the Present Simple for regular ",
+        " and fixed ",
+        ". With <em>he, she,</em> or <em>it</em>, we add <strong>-s / -es / -ies</strong> in positive sentences, but return to the ",
+        " form when ",
+        " or <em>doesn't</em> is used. We also use it with ",
+        " verbs like <em>prefer</em> and <em>know</em>."
+      ];
+
+      let out = "";
+      for (let i = 0; i < segs.length; i++) {
+        out += segs[i];
+        if (i < 5) {
+          const val = CLOZE_STATE[i];
+          const sel = activeSlot === i;
+          out += `<button type="button" onclick="pickSlot(${i})" class="mx-1 px-3 py-0.5 rounded-lg border-b-2 font-bold text-xs sm:text-sm transition ${
+            sel ? 'border-[#0089A7] bg-[#0089A7]/15 text-[#002B5C] dark:text-white' : 'border-slate-400 bg-slate-100 dark:bg-[#141518] text-[#005A8D] dark:text-cyan-300'
+          }">${val || `(${i + 1})`}</button>`;
+        }
+      }
+      document.getElementById('clozeText').innerHTML = out;
+    }
+
+    window.pickSlot = (i) => {
+      activeSlot = i;
+      renderCloze();
+    };
+
+    window.putCloze = (w) => {
+      CLOZE_STATE[activeSlot] = w;
+      if (activeSlot < 4) activeSlot++;
+      renderCloze();
+    };
+
+    window.checkCloze = () => {
+      let score = 0;
+      CLOZE_KEY.forEach((k, i) => { if (CLOZE_STATE[i] === k) score++; });
+      const msg = document.getElementById('clozeMsg');
+      msg.textContent = `${score} / ${CLOZE_KEY.length} correct`;
+      msg.className = score === 5 ? "text-xs font-bold text-emerald-600 dark:text-emerald-400" : "text-xs font-bold text-amber-600 dark:text-amber-300";
+    };
+
+    window.resetCloze = () => {
+      for (let i = 0; i < CLOZE_STATE.length; i++) CLOZE_STATE[i] = "";
+      activeSlot = 0;
+      document.getElementById('clozeMsg').textContent = "";
+      renderCloze();
+    };
+
+    // 06: Practice & Odd One Out
+    const PRACTICE_QS = [
+      { q: "1. My brother ___ to work by bike every day.", opts: ["go", "goes"], ans: "goes" },
+      { q: "2. They ___ meat; they follow a vegetarian diet.", opts: ["don't eat", "doesn't eat"], ans: "don't eat" },
+      { q: "3. ___ your sister speak Portuguese?", opts: ["Do", "Does"], ans: "Does" },
+      { q: "4. I really ___ quiet mornings with a cup of tea.", opts: ["prefer", "prefers"], ans: "prefer" }
+    ];
+    const practicePicked = {};
+
+    function renderPractice() {
+      document.getElementById('practiceGrid').innerHTML = PRACTICE_QS.map((item, i) => `
+        <div class="bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-2xl p-5 space-y-3 shadow-sm">
+          <p class="text-sm font-bold">${item.q}</p>
+          <div class="flex flex-wrap gap-2">
+            ${item.opts.map(o => `
+              <button type="button" onclick="choosePractice(${i}, '${o.replace(/'/g, "\\'")}')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold border transition ${
+                practicePicked[i] === o
+                  ? 'bg-[#002B5C] text-white border-[#002B5C]'
+                  : 'bg-slate-50 dark:bg-[#141518] border-slate-200 dark:border-white/10 hover:border-[#0089A7]'
+              }">${o}</button>
+            `).join('')}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    window.choosePractice = (i, o) => {
+      practicePicked[i] = o;
+      renderPractice();
+    };
+
+    window.checkPractice = () => {
+      let c = 0;
+      PRACTICE_QS.forEach((item, i) => { if (practicePicked[i] === item.ans) c++; });
+      document.getElementById('practiceResult').textContent = `Score: ${c} / ${PRACTICE_QS.length}`;
+    };
+
+    const ODD_ITEMS = [
+      { label: "Group 1 · Frequency", opts: ["usually", "every morning", "hardly ever", "yesterday"], odd: "yesterday", note: "'Yesterday' refers to past time, not Present Simple frequency." },
+      { label: "Group 2 · 3rd Person -s", opts: ["she walks", "he studies", "it flies", "she don't run"], odd: "she don't run", note: "Use 'she doesn't run' with third-person singular." },
+      { label: "Group 3 · Stative Verbs", opts: ["know", "prefer", "belong", "cook"], odd: "cook", note: "'Cook' is a dynamic action verb; the others express states." }
+    ];
+
+    function renderOdd() {
+      document.getElementById('oddGrid').innerHTML = ODD_ITEMS.map((g, gi) => `
+        <div class="bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-2xl p-5 space-y-2.5 shadow-sm">
+          <div class="text-xs font-extrabold uppercase tracking-wider text-[#0089A7]">${g.label}</div>
+          <div class="space-y-1.5">
+            ${g.opts.map((o, oi) => `
+              <button type="button" onclick="testOdd(${gi}, '${o.replace(/'/g, "\\'")}')" class="w-full text-left px-3 py-2 rounded-xl bg-slate-50 dark:bg-[#141518] border border-slate-200 dark:border-white/10 hover:border-[#0089A7] text-xs font-semibold transition">
+                <strong class="text-[#0089A7] mr-2">${String.fromCharCode(65 + oi)}.</strong>${o}
+              </button>
+            `).join('')}
+          </div>
+          <div id="odd-note-${gi}" class="hidden text-xs p-2.5 rounded-xl font-semibold"></div>
+        </div>
+      `).join('');
+    }
+
+    window.testOdd = (gi, chosen) => {
+      const g = ODD_ITEMS[gi];
+      const box = document.getElementById(`odd-note-${gi}`);
+      box.classList.remove('hidden');
+      if (chosen === g.odd) {
+        box.className = 'text-xs p-2.5 rounded-xl font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        box.textContent = `Correct! ${g.note}`;
+      } else {
+        box.className = 'text-xs p-2.5 rounded-xl font-semibold bg-amber-500/15 text-amber-700 dark:text-amber-200';
+        box.textContent = `Odd one out is '${g.odd}'. ${g.note}`;
+      }
+    };
+
+    // Voice Note Recorder
+    const studentNameInput = document.getElementById('studentNameInput');
+    studentNameInput.value = localStorage.getItem('provoStudentName') || '';
+    studentNameInput.addEventListener('input', () => {
+      localStorage.setItem('provoStudentName', studentNameInput.value.trim());
+    });
+
+    let mediaRecorder = null;
+    let audioChunks = [];
+    let audioBlob = null;
+    let selectedMime = 'audio/webm';
+    let recSec = 0;
+    let recTimerId = null;
+
+    const btnRecord = document.getElementById('btnRecord');
+    const btnStop = document.getElementById('btnStop');
+    const btnClearAudio = document.getElementById('btnClearAudio');
+    const btnSendDrive = document.getElementById('btnSendDrive');
+    const btnDownloadAudio = document.getElementById('btnDownloadAudio');
+    const audioPreview = document.getElementById('audioPreview');
+    const recTimer = document.getElementById('recTimer');
+    const uploadFeedback = document.getElementById('uploadFeedback');
+
+    function showRecMsg(msg, ok = true) {
+      uploadFeedback.classList.remove('hidden');
+      uploadFeedback.className = ok
+        ? 'text-xs font-semibold px-3 py-2 rounded-xl bg-emerald-500/15 text-emerald-700 dark:text-emerald-300'
+        : 'text-xs font-semibold px-3 py-2 rounded-xl bg-rose-500/15 text-rose-700 dark:text-rose-300';
+      uploadFeedback.textContent = msg;
+    }
+
+    btnRecord.addEventListener('click', async () => {
+      uploadFeedback.classList.add('hidden');
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        if (MediaRecorder.isTypeSupported('audio/webm')) selectedMime = 'audio/webm';
+        else if (MediaRecorder.isTypeSupported('audio/mp4')) selectedMime = 'audio/mp4';
+        else selectedMime = '';
+
+        audioChunks = [];
+        mediaRecorder = selectedMime ? new MediaRecorder(stream, { mimeType: selectedMime }) : new MediaRecorder(stream);
+        mediaRecorder.ondataavailable = e => { if (e.data && e.data.size > 0) audioChunks.push(e.data); };
+        mediaRecorder.onstop = () => {
+          stream.getTracks().forEach(t => t.stop());
+          audioBlob = new Blob(audioChunks, { type: mediaRecorder.mimeType || selectedMime || 'audio/webm' });
+          audioPreview.src = URL.createObjectURL(audioBlob);
+          audioPreview.classList.remove('hidden');
+          btnSendDrive.disabled = false;
+          btnDownloadAudio.disabled = false;
+          btnClearAudio.disabled = false;
+        };
+
+        mediaRecorder.start();
+        recSec = 0;
+        recTimer.textContent = '00:00';
+        recTimerId = setInterval(() => {
+          recSec++;
+          recTimer.textContent = `${String(Math.floor(recSec / 60)).padStart(2, '0')}:${String(recSec % 60).padStart(2, '0')}`;
+        }, 1000);
+
+        btnRecord.disabled = true;
+        btnStop.disabled = false;
+        btnClearAudio.disabled = true;
+        btnSendDrive.disabled = true;
+      } catch (err) {
+        showRecMsg('Microphone unavailable. Open via HTTPS and allow mic permissions.', false);
+      }
+    });
+
+    btnStop.addEventListener('click', () => {
+      clearInterval(recTimerId);
+      if (mediaRecorder && mediaRecorder.state !== 'inactive') mediaRecorder.stop();
+      btnRecord.disabled = false;
+      btnStop.disabled = true;
+    });
+
+    btnClearAudio.addEventListener('click', () => {
+      audioBlob = null;
+      audioPreview.classList.add('hidden');
+      btnSendDrive.disabled = true;
+      btnDownloadAudio.disabled = true;
+      btnClearAudio.disabled = true;
+      recTimer.textContent = '00:00';
+      uploadFeedback.classList.add('hidden');
+    });
+
+    btnDownloadAudio.addEventListener('click', () => {
+      if (!audioBlob) return;
+      const name = (studentNameInput.value.trim() || 'Student').replace(/\s+/g, '_');
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(audioBlob);
+      a.download = `PROVO-Present-Simple-${name}.webm`;
+      a.click();
+    });
+
+    btnSendDrive.addEventListener('click', () => {
+      const studentName = studentNameInput.value.trim();
+      if (!studentName) {
+        showRecMsg('Enter your name before sending.', false);
+        studentNameInput.focus();
+        return;
+      }
+      if (!audioBlob) return;
+      btnSendDrive.disabled = true;
+      document.getElementById('sendLabel').textContent = 'Uploading...';
+
+      const reader = new FileReader();
+      reader.onloadend = async () => {
+        try {
+          const base64Audio = String(reader.result).split(',')[1];
+          const res = await fetch(DRIVE_UPLOAD_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify({
+              studentName,
+              lessonTitle: 'Present-Simple',
+              questionNumber: currentStage + 1,
+              mimeType: audioBlob.type || 'audio/webm',
+              audioBase64: base64Audio
+            })
+          });
+          const data = await res.json();
+          if (data.status === 'ok') showRecMsg(`Sent to Drive as ${data.fileName}`, true);
+          else throw new Error(data.message || 'Upload error');
+        } catch (err) {
+          showRecMsg('Could not upload automatically. Use Backup to download the audio.', false);
+        } finally {
+          btnSendDrive.disabled = false;
+          document.getElementById('sendLabel').textContent = 'Send to Teacher';
+        }
+      };
+      reader.readAsDataURL(audioBlob);
+    });
+
+    // Init
+    goStage(0);
+    renderLeadCards();
+    renderVocabMatch();
+    renderInspector();
+    renderCloze();
+    renderPractice();
+    renderOdd();
+    lucide.createIcons();
+  </script>
+</body>
+</html>

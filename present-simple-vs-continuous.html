@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Present Simple vs Present Continuous | PROVO</title>
+  <title>Present Simple vs. Present Continuous | PROVO</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -14,30 +14,17 @@
       darkMode: 'class',
       theme: {
         extend: {
-          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
-          colors: {
-            provo: {
-              navy: '#002B5C',
-              ocean: '#005A8D',
-              teal: '#0089A7',
-              ice: '#F0F6FA'
-            }
-          }
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] }
         }
       }
     };
   </script>
   <style>
-    @keyframes pulseSoft {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(0, 137, 167, 0.45); }
-      50% { box-shadow: 0 0 0 12px rgba(0, 137, 167, 0); }
-    }
     @keyframes fadeSlide {
       from { opacity: 0; transform: translateY(8px); }
       to { opacity: 1; transform: translateY(0); }
     }
     .animate-fade { animation: fadeSlide 0.25s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
-    .timer-alert { animation: pulseSoft 1.2s infinite; border-color: #0089A7 !important; }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
@@ -119,8 +106,8 @@
         </p>
       </div>
       <div class="flex items-center gap-2 self-start md:self-auto bg-black/20 backdrop-blur-sm px-3.5 py-2 rounded-2xl border border-white/15 text-xs">
-        <i data-lucide="clock" class="w-4 h-4 text-cyan-200"></i>
-        <span>Speaking Timer: <strong>20s / 30s</strong></span>
+        <i data-lucide="message-circle" class="w-4 h-4 text-cyan-200"></i>
+        <span>Conversation &amp; Grammar</span>
       </div>
     </div>
   </section>
@@ -156,6 +143,9 @@
 
           <!-- Speaking Question Card -->
           <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-sm">
+            <!-- Custom Scene Illustration -->
+            <div id="questionScene" class="mb-5 rounded-2xl overflow-hidden border border-slate-200/80 dark:border-slate-700/80 bg-[#F0F6FA] dark:bg-slate-800/60 h-36 sm:h-40 flex items-center justify-center"></div>
+
             <p class="text-xs font-bold uppercase tracking-wider text-[#0089A7] mb-2">Speaking Prompt</p>
             <h2 id="questionText" class="text-xl sm:text-2xl font-bold leading-snug text-slate-900 dark:text-white">
               Loading question...
@@ -174,31 +164,6 @@
                 <ul id="startersList" class="list-disc list-inside space-y-1 text-slate-700 dark:text-slate-200"></ul>
               </div>
             </div>
-
-            <!-- 20s / 30s Timer Bar -->
-            <div id="timerBox" class="mt-6 bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-2xl p-4 transition">
-              <div class="flex flex-wrap items-center justify-between gap-3">
-                <div class="flex items-center gap-3">
-                  <span id="timerDisplay" class="font-mono text-2xl font-extrabold text-[#002B5C] dark:text-white">00:30</span>
-                  <div class="flex rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-0.5 text-xs font-bold">
-                    <button type="button" data-preset="20" class="preset-btn px-2.5 py-1 rounded-lg text-slate-600 dark:text-slate-300 transition">20s</button>
-                    <button type="button" data-preset="30" class="preset-btn px-2.5 py-1 rounded-lg bg-[#002B5C] text-white transition">30s</button>
-                  </div>
-                </div>
-                <div class="flex items-center gap-2">
-                  <button id="timerPlayPause" type="button" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#005A8D] hover:bg-[#002B5C] text-white text-xs font-bold transition">
-                    <i id="timerPlayIcon" data-lucide="play" class="w-3.5 h-3.5"></i>
-                    <span id="timerPlayLabel">Start</span>
-                  </button>
-                  <button id="timerReset" type="button" class="p-2 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-200/60 dark:hover:bg-slate-700 transition" title="Reset timer">
-                    <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
-                  </button>
-                </div>
-              </div>
-              <div class="w-full h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden mt-3">
-                <div id="timerBar" class="h-full bg-gradient-to-r from-[#005A8D] to-[#0089A7] w-full transition-all duration-200"></div>
-              </div>
-            </div>
           </div>
 
           <!-- Quick Question Selector Pills -->
@@ -213,7 +178,7 @@
                 <i data-lucide="upload-cloud" class="w-4 h-4"></i>
                 <span>Google Drive Submission</span>
               </span>
-              <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white mt-0.5">Record & Send Voice Note</h3>
+              <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white mt-0.5">Record &amp; Send Voice Note</h3>
             </div>
           </div>
 
@@ -292,12 +257,11 @@
         <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm">
           <div class="flex items-center justify-between mb-3">
             <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-[#002B5C] text-white">PRESENT SIMPLE</span>
-            <span class="text-xs font-semibold text-[#005A8D] dark:text-cyan-300">Habits, Facts & Routines</span>
+            <span class="text-xs font-semibold text-[#005A8D] dark:text-cyan-300">Habits, Facts &amp; Routines</span>
           </div>
           <p class="text-sm text-slate-600 dark:text-slate-300 mb-4">
             Use the base verb (<strong>+s / +es</strong> for <em>he, she, it</em>) for repeated actions, permanent truths, schedules, and stative verbs.
           </p>
-          <!-- Inline SVG Timeline -->
           <svg viewBox="0 0 400 70" class="w-full h-16 mb-4">
             <line x1="20" y1="38" x2="380" y2="38" stroke="#94A3B8" stroke-width="2" stroke-dasharray="4 4" />
             <circle cx="70" cy="38" r="8" fill="#002B5C" />
@@ -310,7 +274,7 @@
             <text x="310" y="60" text-anchor="middle" font-size="10" fill="#64748B">Sun</text>
           </svg>
           <div class="bg-[#F0F6FA] dark:bg-slate-800 rounded-2xl p-3.5 text-xs space-y-1">
-            <div><strong class="text-[#002B5C] dark:text-cyan-300">+</strong> She <u>drinks</u> mate every morning.</div>
+            <div><strong class="text-[#002B5C] dark:text-cyan-300">+</strong> She <u>drinks</u> coffee every morning.</div>
             <div><strong class="text-[#002B5C] dark:text-cyan-300">−</strong> They <u>don't work</u> on Sundays.</div>
             <div><strong class="text-[#002B5C] dark:text-cyan-300">?</strong> <u>Does</u> he <u>speak</u> English?</div>
           </div>
@@ -320,12 +284,11 @@
         <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm">
           <div class="flex items-center justify-between mb-3">
             <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-[#0089A7] text-white">PRESENT CONTINUOUS</span>
-            <span class="text-xs font-semibold text-[#0089A7] dark:text-cyan-300">Right Now & Temporary</span>
+            <span class="text-xs font-semibold text-[#0089A7] dark:text-cyan-300">Right Now &amp; Temporary</span>
           </div>
           <p class="text-sm text-slate-600 dark:text-slate-300 mb-4">
             Use <strong>am / is / are + verb-ing</strong> for actions happening at the moment of speaking, temporary situations, or fixed arrangements.
           </p>
-          <!-- Inline SVG Timeline -->
           <svg viewBox="0 0 400 70" class="w-full h-16 mb-4">
             <line x1="20" y1="38" x2="380" y2="38" stroke="#94A3B8" stroke-width="2" />
             <rect x="135" y="25" width="130" height="26" rx="13" fill="#0089A7" fill-opacity="0.2" stroke="#0089A7" stroke-width="2" />
@@ -352,7 +315,7 @@
             <button id="modeContinuous" type="button" class="px-3.5 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 transition">Present Continuous</button>
           </div>
         </div>
-        <div id="switcherRows" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+        <div id="switcherRows" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
       </div>
 
       <!-- Action vs. Stative Verbs -->
@@ -389,7 +352,7 @@
     <section id="panel-vocabulary" class="tab-panel hidden animate-fade space-y-6">
       <div class="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <h2 class="text-xl font-extrabold text-[#002B5C] dark:text-white">Key Vocabulary & Time Markers</h2>
+          <h2 class="text-xl font-extrabold text-[#002B5C] dark:text-white">Key Vocabulary &amp; Time Markers</h2>
           <p class="text-sm text-slate-500 dark:text-slate-400">Click the speaker icon to hear natural English pronunciation.</p>
         </div>
         <div id="vocabFilters" class="flex flex-wrap gap-1.5"></div>
@@ -529,6 +492,103 @@
       }
     ];
 
+    function getSceneSvg(idx) {
+      const scenes = [
+        `<svg viewBox="0 0 420 130" class="w-full h-full">
+          <rect width="420" height="130" fill="#F0F6FA" />
+          <circle cx="85" cy="44" r="18" fill="#0089A7" opacity="0.22" />
+          <circle cx="85" cy="44" r="9" fill="#0089A7" />
+          <path d="M48 104 Q85 72 122 104 Z" fill="#005A8D" opacity="0.25" />
+          <line x1="210" y1="22" x2="210" y2="108" stroke="#CBD5E1" stroke-dasharray="4 4" stroke-width="1.5" />
+          <rect x="255" y="34" width="120" height="62" rx="14" fill="#FFFFFF" stroke="#002B5C" stroke-width="2" />
+          <circle cx="290" cy="65" r="13" fill="#002B5C" />
+          <rect x="312" y="54" width="48" height="7" rx="3.5" fill="#0089A7" />
+          <rect x="312" y="68" width="32" height="6" rx="3" fill="#94A3B8" />
+        </svg>`,
+        `<svg viewBox="0 0 420 130" class="w-full h-full">
+          <rect width="420" height="130" fill="#F0F6FA" />
+          <rect x="115" y="26" width="190" height="78" rx="16" fill="#FFFFFF" stroke="#005A8D" stroke-width="2" />
+          <rect x="136" y="46" width="84" height="8" rx="4" fill="#002B5C" />
+          <rect x="136" y="63" width="145" height="6" rx="3" fill="#CBD5E1" />
+          <rect x="136" y="78" width="105" height="10" rx="5" fill="#0089A7" opacity="0.25" />
+          <circle cx="276" cy="50" r="10" fill="#0089A7" />
+        </svg>`,
+        `<svg viewBox="0 0 420 130" class="w-full h-full">
+          <rect width="420" height="130" fill="#F0F6FA" />
+          <rect x="172" y="18" width="76" height="94" rx="14" fill="#002B5C" />
+          <rect x="179" y="28" width="62" height="72" rx="8" fill="#FFFFFF" />
+          <rect x="188" y="38" width="34" height="10" rx="5" fill="#0089A7" />
+          <rect x="198" y="55" width="34" height="10" rx="5" fill="#005A8D" />
+          <rect x="188" y="72" width="26" height="10" rx="5" fill="#CBD5E1" />
+        </svg>`,
+        `<svg viewBox="0 0 420 130" class="w-full h-full">
+          <rect width="420" height="130" fill="#F0F6FA" />
+          <ellipse cx="210" cy="78" rx="76" ry="21" fill="#FFFFFF" stroke="#002B5C" stroke-width="2" />
+          <ellipse cx="210" cy="75" rx="52" ry="12" fill="#0089A7" opacity="0.22" />
+          <path d="M184 48 Q189 36 184 25" fill="none" stroke="#005A8D" stroke-width="2.5" stroke-linecap="round" />
+          <path d="M210 45 Q215 33 210 22" fill="none" stroke="#0089A7" stroke-width="2.5" stroke-linecap="round" />
+          <path d="M236 48 Q241 36 236 25" fill="none" stroke="#005A8D" stroke-width="2.5" stroke-linecap="round" />
+        </svg>`,
+        `<svg viewBox="0 0 420 130" class="w-full h-full">
+          <rect width="420" height="130" fill="#F0F6FA" />
+          <rect x="115" y="52" width="44" height="54" rx="6" fill="#005A8D" />
+          <rect x="170" y="32" width="54" height="74" rx="6" fill="#002B5C" />
+          <rect x="235" y="44" width="48" height="62" rx="6" fill="#0089A7" />
+          <line x1="90" y1="106" x2="330" y2="106" stroke="#002B5C" stroke-width="2.5" />
+        </svg>`,
+        `<svg viewBox="0 0 420 130" class="w-full h-full">
+          <rect width="420" height="130" fill="#F0F6FA" />
+          <path d="M225 32 A26 26 0 1 0 250 78 A22 22 0 1 1 225 32 Z" fill="#002B5C" />
+          <circle cx="155" cy="48" r="5" fill="#0089A7" />
+          <circle cx="275" cy="40" r="4" fill="#005A8D" />
+          <rect x="135" y="85" width="150" height="13" rx="6.5" fill="#FFFFFF" stroke="#005A8D" stroke-width="1.5" />
+        </svg>`,
+        `<svg viewBox="0 0 420 130" class="w-full h-full">
+          <rect width="420" height="130" fill="#F0F6FA" />
+          <path d="M130 66 L210 24 L290 66" fill="none" stroke="#002B5C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+          <rect x="150" y="64" width="120" height="42" rx="8" fill="#FFFFFF" stroke="#005A8D" stroke-width="2" />
+          <rect x="196" y="76" width="28" height="30" rx="4" fill="#0089A7" opacity="0.25" />
+        </svg>`,
+        `<svg viewBox="0 0 420 130" class="w-full h-full">
+          <rect width="420" height="130" fill="#F0F6FA" />
+          <rect x="110" y="38" width="86" height="54" rx="14" fill="#002B5C" />
+          <rect x="224" y="38" width="86" height="54" rx="14" fill="#FFFFFF" stroke="#0089A7" stroke-width="2" />
+          <path d="M202 65 L218 65" stroke="#0089A7" stroke-width="3" stroke-linecap="round" />
+        </svg>`,
+        `<svg viewBox="0 0 420 130" class="w-full h-full">
+          <rect width="420" height="130" fill="#F0F6FA" />
+          <circle cx="145" cy="52" r="14" fill="#002B5C" />
+          <path d="M122 98 Q145 72 168 98 Z" fill="#002B5C" />
+          <circle cx="210" cy="46" r="16" fill="#0089A7" />
+          <path d="M184 98 Q210 68 236 98 Z" fill="#0089A7" />
+          <circle cx="275" cy="52" r="14" fill="#005A8D" />
+          <path d="M252 98 Q275 72 298 98 Z" fill="#005A8D" />
+        </svg>`,
+        `<svg viewBox="0 0 420 130" class="w-full h-full">
+          <rect width="420" height="130" fill="#F0F6FA" />
+          <rect x="125" y="30" width="170" height="70" rx="14" fill="#FFFFFF" stroke="#002B5C" stroke-width="2" />
+          <circle cx="160" cy="65" r="16" fill="#0089A7" opacity="0.2" />
+          <path d="M153 65 L158 70 L168 59" fill="none" stroke="#0089A7" stroke-width="2.5" stroke-linecap="round" />
+          <rect x="188" y="53" width="84" height="8" rx="4" fill="#002B5C" />
+          <rect x="188" y="69" width="60" height="6" rx="3" fill="#94A3B8" />
+        </svg>`
+      ];
+      return scenes[idx % scenes.length];
+    }
+
+    function getVocabMiniSvg(cat) {
+      if (cat === 'Frequency') {
+        return `<svg viewBox="0 0 48 28" class="w-11 h-7 shrink-0"><circle cx="10" cy="14" r="5" fill="#002B5C"/><circle cx="24" cy="14" r="5" fill="#005A8D"/><circle cx="38" cy="14" r="5" fill="#0089A7"/></svg>`;
+      }
+      if (cat === 'Temporary') {
+        return `<svg viewBox="0 0 48 28" class="w-11 h-7 shrink-0"><rect x="6" y="7" width="36" height="14" rx="7" fill="#0089A7" opacity="0.18" stroke="#0089A7" stroke-width="1.5"/><circle cx="32" cy="14" r="4" fill="#0089A7"/></svg>`;
+      }
+      if (cat === 'Right Now') {
+        return `<svg viewBox="0 0 48 28" class="w-11 h-7 shrink-0"><circle cx="24" cy="14" r="9" fill="#005A8D" opacity="0.2"/><circle cx="24" cy="14" r="4.5" fill="#002B5C"/></svg>`;
+      }
+      return `<svg viewBox="0 0 48 28" class="w-11 h-7 shrink-0"><rect x="8" y="6" width="32" height="16" rx="5" fill="#002B5C" opacity="0.15" stroke="#002B5C" stroke-width="1.5"/><line x1="15" y1="14" x2="33" y2="14" stroke="#002B5C" stroke-width="2"/></svg>`;
+    }
+
     const SWITCHER_ITEMS = [
       {
         simple: "She <strong>lives</strong> in Manresa.",
@@ -553,6 +613,12 @@
         continuous: "He <strong>is thinking</strong> about joining the evening group.",
         simpleNote: "Stative verb: personal opinion.",
         contNote: "Dynamic verb: actively considering."
+      },
+      {
+        simple: "We <strong>have</strong> a small garden.",
+        continuous: "We <strong>are having</strong> lunch on the terrace.",
+        simpleNote: "Stative meaning: possession.",
+        contNote: "Dynamic meaning: experiencing a meal."
       }
     ];
 
@@ -616,8 +682,9 @@
       });
     });
 
-    // ==================== WARM-UP STAGE & TIMER ====================
+    // ==================== WARM-UP STAGE ====================
     let qIndex = 0;
+    const questionScene = document.getElementById('questionScene');
     const questionText = document.getElementById('questionText');
     const questionHint = document.getElementById('questionHint');
     const qBadge = document.getElementById('qBadge');
@@ -629,6 +696,7 @@
     function renderQuestion(idx) {
       qIndex = (idx + QUESTIONS.length) % QUESTIONS.length;
       const item = QUESTIONS[qIndex];
+      questionScene.innerHTML = getSceneSvg(qIndex);
       qBadge.textContent = `Q${qIndex + 1} / ${QUESTIONS.length}`;
       qFocusTag.textContent = item.tag;
       questionText.textContent = item.q;
@@ -658,72 +726,6 @@
     });
     document.getElementById('toggleStarters').addEventListener('click', () => {
       startersBox.classList.toggle('hidden');
-    });
-
-    // 20s & 30s Timer
-    let presetSec = 30;
-    let remainingSec = 30;
-    let timerInterval = null;
-    const timerDisplay = document.getElementById('timerDisplay');
-    const timerBar = document.getElementById('timerBar');
-    const timerBox = document.getElementById('timerBox');
-    const timerPlayLabel = document.getElementById('timerPlayLabel');
-
-    function updateTimerUI() {
-      const m = String(Math.floor(remainingSec / 60)).padStart(2, '0');
-      const s = String(remainingSec % 60).padStart(2, '0');
-      timerDisplay.textContent = `${m}:${s}`;
-      timerBar.style.width = `${Math.max(0, (remainingSec / presetSec) * 100)}%`;
-    }
-
-    function stopTimer() {
-      clearInterval(timerInterval);
-      timerInterval = null;
-      timerPlayLabel.textContent = 'Start';
-      document.getElementById('timerPlayIcon').setAttribute('data-lucide', 'play');
-      lucide.createIcons();
-    }
-
-    document.querySelectorAll('.preset-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        stopTimer();
-        timerBox.classList.remove('timer-alert');
-        presetSec = Number(btn.dataset.preset);
-        remainingSec = presetSec;
-        document.querySelectorAll('.preset-btn').forEach(b => {
-          b.className = 'preset-btn px-2.5 py-1 rounded-lg text-slate-600 dark:text-slate-300 transition';
-        });
-        btn.className = 'preset-btn px-2.5 py-1 rounded-lg bg-[#002B5C] text-white transition';
-        updateTimerUI();
-      });
-    });
-
-    document.getElementById('timerPlayPause').addEventListener('click', () => {
-      if (timerInterval) {
-        stopTimer();
-        return;
-      }
-      if (remainingSec <= 0) remainingSec = presetSec;
-      timerBox.classList.remove('timer-alert');
-      timerPlayLabel.textContent = 'Pause';
-      document.getElementById('timerPlayIcon').setAttribute('data-lucide', 'pause');
-      lucide.createIcons();
-
-      timerInterval = setInterval(() => {
-        remainingSec--;
-        updateTimerUI();
-        if (remainingSec <= 0) {
-          stopTimer();
-          timerBox.classList.add('timer-alert');
-        }
-      }, 1000);
-    });
-
-    document.getElementById('timerReset').addEventListener('click', () => {
-      stopTimer();
-      timerBox.classList.remove('timer-alert');
-      remainingSec = presetSec;
-      updateTimerUI();
     });
 
     // ==================== VOICE RECORDER & DRIVE UPLOAD ====================
@@ -945,12 +947,15 @@
         <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-sm flex flex-col justify-between gap-3">
           <div>
             <div class="flex items-start justify-between gap-2">
-              <h3 class="text-base font-extrabold text-[#002B5C] dark:text-white">${v.term}</h3>
+              <div class="flex items-center gap-2">
+                ${getVocabMiniSvg(v.cat)}
+                <h3 class="text-base font-extrabold text-[#002B5C] dark:text-white">${v.term}</h3>
+              </div>
               <button type="button" onclick="speakWord('${v.term.replace(/'/g, "\\'")}')" class="p-1.5 rounded-lg bg-[#F0F6FA] dark:bg-slate-800 text-[#005A8D] dark:text-cyan-300 hover:bg-[#0089A7] hover:text-white transition" title="Listen">
                 <i data-lucide="volume-2" class="w-4 h-4"></i>
               </button>
             </div>
-            <span class="inline-block mt-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">${v.pos} • ${v.cat}</span>
+            <span class="inline-block mt-2 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">${v.pos} • ${v.cat}</span>
             <p class="text-xs text-slate-600 dark:text-slate-300 mt-2.5">${v.def}</p>
           </div>
           <p class="text-xs italic text-[#005A8D] dark:text-cyan-300 border-t border-slate-100 dark:border-slate-800 pt-2.5">“${v.ex}”</p>
@@ -1037,7 +1042,6 @@
 
     // Init
     renderQuestion(0);
-    updateTimerUI();
     renderSwitcher();
     renderVocab();
     renderExercises();

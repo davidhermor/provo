@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Present Simple vs. Present Continuous | PROVO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+          colors: {
+            provo: {
+              navy: '#002B5C',
+              ocean: '#005A8D',
+              teal: '#0089A7',
+              ice: '#F0F6FA'
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    @keyframes pulseSoft {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(0, 137, 167, 0.45); }
+      50% { box-shadow: 0 0 0 12px rgba(0, 137, 167, 0); }
+    }
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade { animation: fadeSlide 0.25s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+    .timer-alert { animation: pulseSoft 1.2s infinite; border-color: #0089A7 !important; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
+
+  <!-- Sticky Deep Navy Navbar (#002B5C in both Light & Dark modes) -->
+  <header class="sticky top-0 z-40 bg-[#002B5C] text-white border-b border-white/10 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="flex items-center shrink-0 focus:outline-none" title="PROVO">
+          <img
+            src="https://i.postimg.cc/vBt4qH44/download.png"
+            alt="PROVO"
+            class="h-8 w-auto object-contain block"
+            onerror="this.style.display='none'; document.getElementById('provoFallback').classList.remove('hidden');"
+          />
+          <span id="provoFallback" class="hidden font-extrabold tracking-wider text-lg text-white">PROVO</span>
+        </a>
+        <span class="hidden md:inline-block h-5 w-px bg-white/20"></span>
+        <span class="hidden md:inline-block text-xs font-semibold uppercase tracking-wider text-cyan-200">
+          A2–B1 Grammar Lab
+        </span>
+      </div>
+
+      <!-- Main Navigation Tabs -->
+      <nav class="flex items-center gap-1 bg-white/10 p-1 rounded-xl" aria-label="Lesson sections">
+        <button data-tab="warmup" class="nav-tab px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 bg-white text-[#002B5C]">
+          <i data-lucide="mic" class="w-4 h-4"></i>
+          <span>Warm-Up</span>
+        </button>
+        <button data-tab="grammar" class="nav-tab px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 text-white/85 hover:text-white hover:bg-white/10">
+          <i data-lucide="layers" class="w-4 h-4"></i>
+          <span>Grammar</span>
+        </button>
+        <button data-tab="vocabulary" class="nav-tab px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 text-white/85 hover:text-white hover:bg-white/10">
+          <i data-lucide="book-open" class="w-4 h-4"></i>
+          <span>Vocabulary</span>
+        </button>
+        <button data-tab="practice" class="nav-tab px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 text-white/85 hover:text-white hover:bg-white/10">
+          <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+          <span>Practice</span>
+        </button>
+      </nav>
+
+      <!-- Right Controls -->
+      <div class="flex items-center gap-2">
+        <button
+          id="themeToggle"
+          type="button"
+          class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition"
+          title="Toggle Light/Dark Mode"
+          aria-label="Toggle Light/Dark Mode"
+        >
+          <i id="themeIcon" data-lucide="moon" class="w-4 h-4"></i>
+        </button>
+        <a
+          href="index.html"
+          class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-[#0089A7]/25 hover:bg-[#0089A7]/40 text-cyan-100 border border-cyan-300/25 transition"
+        >
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          <span>All Lessons</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Compact Hero Strip -->
+  <section class="bg-gradient-to-r from-[#002B5C] via-[#005A8D] to-[#0089A7] text-white py-8 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-white/15 text-xs font-semibold mb-2">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-cyan-200"></i>
+          <span>PROVO • Interactive Lesson</span>
+        </div>
+        <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">
+          Present Simple vs. Present Continuous
+        </h1>
+        <p class="text-sm sm:text-base text-white/85 mt-1 max-w-2xl">
+          Contrast habits and permanent facts with actions in progress, temporary trends, and dynamic vs. stative meanings.
+        </p>
+      </div>
+      <div class="flex items-center gap-2 self-start md:self-auto bg-black/20 backdrop-blur-sm px-3.5 py-2 rounded-2xl border border-white/15 text-xs">
+        <i data-lucide="clock" class="w-4 h-4 text-cyan-200"></i>
+        <span>Speaking Timer: <strong>20s / 30s</strong></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl w-full mx-auto px-4 sm:px-6 py-8 flex-1">
+
+    <!-- ==================== TAB 1: WARM-UP & VOICE RECORDER ==================== -->
+    <section id="panel-warmup" class="tab-panel animate-fade space-y-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+
+        <!-- Left / Main Stage (7 cols) -->
+        <div class="lg:col-span-7 space-y-4">
+          <!-- Question Counter & Shuffle -->
+          <div class="flex flex-wrap items-center justify-between gap-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl px-4 py-3 shadow-sm">
+            <div class="flex items-center gap-2 text-sm font-semibold">
+              <span id="qBadge" class="px-2.5 py-1 rounded-lg bg-[#002B5C] text-white text-xs font-bold">Q1 / 10</span>
+              <span id="qFocusTag" class="px-2.5 py-1 rounded-lg bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300 text-xs font-semibold">Routines vs. Right Now</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <button id="prevQ" type="button" class="p-2 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition" title="Previous question">
+                <i data-lucide="chevron-left" class="w-4 h-4"></i>
+              </button>
+              <button id="nextQ" type="button" class="p-2 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition" title="Next question">
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </button>
+              <button id="shuffleQ" type="button" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-xs font-semibold transition">
+                <i data-lucide="shuffle" class="w-3.5 h-3.5 text-[#0089A7]"></i>
+                <span>Random</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Speaking Question Card -->
+          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-sm">
+            <p class="text-xs font-bold uppercase tracking-wider text-[#0089A7] mb-2">Speaking Prompt</p>
+            <h2 id="questionText" class="text-xl sm:text-2xl font-bold leading-snug text-slate-900 dark:text-white">
+              Loading question...
+            </h2>
+            <p id="questionHint" class="text-sm text-slate-500 dark:text-slate-400 mt-3">
+              Compare what happens regularly with what is happening right now.
+            </p>
+
+            <!-- Collapsible Sentence Starters -->
+            <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800">
+              <button id="toggleStarters" type="button" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#005A8D] dark:text-cyan-300 hover:underline">
+                <i data-lucide="lightbulb" class="w-4 h-4"></i>
+                <span>Useful Sentence Starters</span>
+              </button>
+              <div id="startersBox" class="hidden mt-3 bg-[#F0F6FA] dark:bg-slate-800/70 border border-[#0089A7]/20 rounded-2xl p-4 space-y-2 text-sm">
+                <ul id="startersList" class="list-disc list-inside space-y-1 text-slate-700 dark:text-slate-200"></ul>
+              </div>
+            </div>
+
+            <!-- 20s / 30s Timer Bar -->
+            <div id="timerBox" class="mt-6 bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-2xl p-4 transition">
+              <div class="flex flex-wrap items-center justify-between gap-3">
+                <div class="flex items-center gap-3">
+                  <span id="timerDisplay" class="font-mono text-2xl font-extrabold text-[#002B5C] dark:text-white">00:30</span>
+                  <div class="flex rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-0.5 text-xs font-bold">
+                    <button type="button" data-preset="20" class="preset-btn px-2.5 py-1 rounded-lg text-slate-600 dark:text-slate-300 transition">20s</button>
+                    <button type="button" data-preset="30" class="preset-btn px-2.5 py-1 rounded-lg bg-[#002B5C] text-white transition">30s</button>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button id="timerPlayPause" type="button" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#005A8D] hover:bg-[#002B5C] text-white text-xs font-bold transition">
+                    <i id="timerPlayIcon" data-lucide="play" class="w-3.5 h-3.5"></i>
+                    <span id="timerPlayLabel">Start</span>
+                  </button>
+                  <button id="timerReset" type="button" class="p-2 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-200/60 dark:hover:bg-slate-700 transition" title="Reset timer">
+                    <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="w-full h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden mt-3">
+                <div id="timerBar" class="h-full bg-gradient-to-r from-[#005A8D] to-[#0089A7] w-full transition-all duration-200"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Question Selector Pills -->
+          <div class="flex flex-wrap gap-1.5" id="questionPills"></div>
+        </div>
+
+        <!-- Right / Voice Note Recorder to Drive (5 cols) -->
+        <div class="lg:col-span-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm space-y-5">
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#0089A7]">
+                <i data-lucide="upload-cloud" class="w-4 h-4"></i>
+                <span>Google Drive Submission</span>
+              </span>
+              <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white mt-0.5">Record & Send Voice Note</h3>
+            </div>
+          </div>
+
+          <div>
+            <label for="studentNameInput" class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5">
+              Student Name
+            </label>
+            <input
+              id="studentNameInput"
+              type="text"
+              placeholder="e.g. Sofía Gómez"
+              class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#0089A7]"
+            />
+          </div>
+
+          <!-- Recorder Controls -->
+          <div class="bg-[#F0F6FA] dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700 rounded-2xl p-4 space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span id="recDot" class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
+                <span id="recStatusText" class="text-xs font-bold text-slate-600 dark:text-slate-300">Ready to record</span>
+              </div>
+              <span id="recTimer" class="font-mono text-xs font-bold text-slate-500 dark:text-slate-400">00:00</span>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2">
+              <button id="btnRecord" type="button" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold transition">
+                <i data-lucide="mic" class="w-4 h-4"></i>
+                <span>Record</span>
+              </button>
+              <button id="btnStop" type="button" disabled class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-900 disabled:opacity-40 text-white text-xs font-bold transition">
+                <i data-lucide="square" class="w-4 h-4"></i>
+                <span>Stop</span>
+              </button>
+              <button id="btnClearAudio" type="button" disabled class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 disabled:opacity-40 hover:bg-slate-100 dark:hover:bg-slate-800 transition" title="Discard recording">
+                <i data-lucide="trash-2" class="w-4 h-4 text-slate-600 dark:text-slate-300"></i>
+              </button>
+            </div>
+
+            <audio id="audioPreview" controls class="w-full hidden rounded-xl"></audio>
+          </div>
+
+          <!-- Send & Backup Actions -->
+          <div class="space-y-2.5">
+            <button
+              id="btnSendDrive"
+              type="button"
+              disabled
+              class="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-[#002B5C] to-[#005A8D] hover:opacity-95 disabled:opacity-40 text-white text-sm font-bold shadow-sm transition"
+            >
+              <i id="sendIcon" data-lucide="send" class="w-4 h-4"></i>
+              <span id="sendLabel">Send to Teacher (Drive)</span>
+            </button>
+
+            <button
+              id="btnDownloadAudio"
+              type="button"
+              disabled
+              class="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-40 text-xs font-semibold text-slate-700 dark:text-slate-200 transition"
+            >
+              <i data-lucide="download" class="w-3.5 h-3.5"></i>
+              <span>Download Local Backup</span>
+            </button>
+          </div>
+
+          <div id="uploadFeedback" class="hidden text-xs font-semibold px-3.5 py-2.5 rounded-xl"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 2: GRAMMAR & INTERACTIVE SWITCHER ==================== -->
+    <section id="panel-grammar" class="tab-panel hidden animate-fade space-y-8">
+      <!-- Visual Timelines Comparison -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Present Simple Card -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm">
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-[#002B5C] text-white">PRESENT SIMPLE</span>
+            <span class="text-xs font-semibold text-[#005A8D] dark:text-cyan-300">Habits, Facts & Routines</span>
+          </div>
+          <p class="text-sm text-slate-600 dark:text-slate-300 mb-4">
+            Use the base verb (<strong>+s / +es</strong> for <em>he, she, it</em>) for repeated actions, permanent truths, schedules, and stative verbs.
+          </p>
+          <!-- Inline SVG Timeline -->
+          <svg viewBox="0 0 400 70" class="w-full h-16 mb-4">
+            <line x1="20" y1="38" x2="380" y2="38" stroke="#94A3B8" stroke-width="2" stroke-dasharray="4 4" />
+            <circle cx="70" cy="38" r="8" fill="#002B5C" />
+            <circle cx="150" cy="38" r="8" fill="#002B5C" />
+            <circle cx="230" cy="38" r="8" fill="#002B5C" />
+            <circle cx="310" cy="38" r="8" fill="#002B5C" />
+            <text x="70" y="60" text-anchor="middle" font-size="10" fill="#64748B">Mon</text>
+            <text x="150" y="60" text-anchor="middle" font-size="10" fill="#64748B">Wed</text>
+            <text x="230" y="60" text-anchor="middle" font-size="10" fill="#64748B">Fri</text>
+            <text x="310" y="60" text-anchor="middle" font-size="10" fill="#64748B">Sun</text>
+          </svg>
+          <div class="bg-[#F0F6FA] dark:bg-slate-800 rounded-2xl p-3.5 text-xs space-y-1">
+            <div><strong class="text-[#002B5C] dark:text-cyan-300">+</strong> She <u>drinks</u> mate every morning.</div>
+            <div><strong class="text-[#002B5C] dark:text-cyan-300">−</strong> They <u>don't work</u> on Sundays.</div>
+            <div><strong class="text-[#002B5C] dark:text-cyan-300">?</strong> <u>Does</u> he <u>speak</u> English?</div>
+          </div>
+        </div>
+
+        <!-- Present Continuous Card -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm">
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-[#0089A7] text-white">PRESENT CONTINUOUS</span>
+            <span class="text-xs font-semibold text-[#0089A7] dark:text-cyan-300">Right Now & Temporary</span>
+          </div>
+          <p class="text-sm text-slate-600 dark:text-slate-300 mb-4">
+            Use <strong>am / is / are + verb-ing</strong> for actions happening at the moment of speaking, temporary situations, or fixed arrangements.
+          </p>
+          <!-- Inline SVG Timeline -->
+          <svg viewBox="0 0 400 70" class="w-full h-16 mb-4">
+            <line x1="20" y1="38" x2="380" y2="38" stroke="#94A3B8" stroke-width="2" />
+            <rect x="135" y="25" width="130" height="26" rx="13" fill="#0089A7" fill-opacity="0.2" stroke="#0089A7" stroke-width="2" />
+            <circle cx="200" cy="38" r="6" fill="#0089A7" />
+            <text x="200" y="62" text-anchor="middle" font-size="10" font-weight="bold" fill="#0089A7">IN PROGRESS / NOW</text>
+          </svg>
+          <div class="bg-[#F0F6FA] dark:bg-slate-800 rounded-2xl p-3.5 text-xs space-y-1">
+            <div><strong class="text-[#0089A7] dark:text-cyan-300">+</strong> She <u>is recording</u> a voice note right now.</div>
+            <div><strong class="text-[#0089A7] dark:text-cyan-300">−</strong> They <u>aren't watching</u> TV this week.</div>
+            <div><strong class="text-[#0089A7] dark:text-cyan-300">?</strong> <u>Are</u> you <u>meeting</u> Tom at 6?</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Tense Switcher -->
+      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-[#0089A7]">Interactive Contrast Lab</span>
+            <h3 class="text-xl font-extrabold text-[#002B5C] dark:text-white">Tense Switcher</h3>
+          </div>
+          <div class="inline-flex rounded-xl bg-slate-100 dark:bg-slate-800 p-1 text-xs font-bold">
+            <button id="modeSimple" type="button" class="px-3.5 py-1.5 rounded-lg bg-[#002B5C] text-white transition">Present Simple</button>
+            <button id="modeContinuous" type="button" class="px-3.5 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 transition">Present Continuous</button>
+          </div>
+        </div>
+        <div id="switcherRows" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+      </div>
+
+      <!-- Action vs. Stative Verbs -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white dark:bg-slate-900 border border-emerald-500/30 rounded-3xl p-6 shadow-sm">
+          <h4 class="font-extrabold text-emerald-700 dark:text-emerald-400 flex items-center gap-2 mb-2">
+            <i data-lucide="activity" class="w-4 h-4"></i>
+            <span>Dynamic / Action Verbs (Both Tenses)</span>
+          </h4>
+          <p class="text-xs text-slate-600 dark:text-slate-300 mb-3">
+            Physical or mental actions that can be repeated or paused: <em>run, cook, walk, study, travel, work</em>.
+          </p>
+          <p class="text-xs bg-emerald-500/10 text-emerald-800 dark:text-emerald-200 p-3 rounded-xl">
+            <strong>Meaning shift:</strong> <em>I <u>think</u> about grammar</em> (opinion) vs. <em>I'<u>m thinking</u> about our trip</em> (mental process right now).
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-slate-900 border border-amber-500/30 rounded-3xl p-6 shadow-sm">
+          <h4 class="font-extrabold text-amber-700 dark:text-amber-400 flex items-center gap-2 mb-2">
+            <i data-lucide="pause-circle" class="w-4 h-4"></i>
+            <span>Stative Verbs (Usually Present Simple)</span>
+          </h4>
+          <p class="text-xs text-slate-600 dark:text-slate-300 mb-3">
+            States, emotions, possession, and senses: <em>know, believe, want, need, love, hate, prefer, own, belong, seem</em>.
+          </p>
+          <p class="text-xs bg-amber-500/10 text-amber-800 dark:text-amber-200 p-3 rounded-xl">
+            <strong>Avoid:</strong> <span class="line-through">I am knowing</span> / <span class="line-through">She is wanting</span> → Use <strong>I know</strong> / <strong>She wants</strong>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 3: VOCABULARY WITH PRONUNCIATION ==================== -->
+    <section id="panel-vocabulary" class="tab-panel hidden animate-fade space-y-6">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <h2 class="text-xl font-extrabold text-[#002B5C] dark:text-white">Key Vocabulary & Time Markers</h2>
+          <p class="text-sm text-slate-500 dark:text-slate-400">Click the speaker icon to hear natural English pronunciation.</p>
+        </div>
+        <div id="vocabFilters" class="flex flex-wrap gap-1.5"></div>
+      </div>
+      <div id="vocabGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+    </section>
+
+    <!-- ==================== TAB 4: INTERACTIVE PRACTICE ==================== -->
+    <section id="panel-practice" class="tab-panel hidden animate-fade space-y-6">
+      <!-- Progress Header -->
+      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div class="flex-1">
+          <div class="flex justify-between text-xs font-bold mb-1.5">
+            <span class="text-[#002B5C] dark:text-cyan-300">Completion Progress</span>
+            <span id="progressLabel">0 / 10 answered</span>
+          </div>
+          <div class="w-full h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+            <div id="progressBar" class="h-full bg-gradient-to-r from-[#005A8D] to-[#0089A7] w-0 transition-all duration-300"></div>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="btnCheckAll" type="button" class="px-4 py-2 rounded-xl bg-[#002B5C] hover:bg-[#005A8D] text-white text-xs font-bold transition">
+            Check Answers
+          </button>
+          <button id="btnToggleKey" type="button" class="px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-xs font-semibold transition">
+            Answer Key
+          </button>
+        </div>
+      </div>
+
+      <div id="scoreBanner" class="hidden rounded-2xl p-4 font-bold text-sm border"></div>
+      <div id="exercisesContainer" class="space-y-4"></div>
+      <div id="answerKeyBox" class="hidden bg-[#F0F6FA] dark:bg-slate-900 border border-[#0089A7]/30 rounded-2xl p-5 text-xs space-y-1.5"></div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-5 px-4 text-center text-xs text-slate-500 dark:text-slate-400">
+    <strong>PROVO</strong> • Present Simple vs. Present Continuous
+  </footer>
+
+  <script>
+    // Google Apps Script endpoint for saving student voice notes to Google Drive
+    const DRIVE_UPLOAD_URL = "https://script.google.com/macros/s/AKfycbwBcX7Z4aABKplkUkpYvM2wEnsBHhWCZzi7dFGDkeUarkXwv-RRI0JXAPDakjkrCrBc/exec";
+
+    // ==================== LESSON DATA ====================
+    const QUESTIONS = [
+      {
+        q: "What do you usually do on weekday mornings, and what are you doing right now?",
+        tag: "Daily Habit vs. Right Now",
+        hint: "Contrast a regular routine with your current moment.",
+        starters: [
+          "On weekday mornings I usually..., whereas right now I'm...",
+          "Every morning I..., and at this exact moment I'm..."
+        ]
+      },
+      {
+        q: "Are you working on or learning anything temporary this month that isn't part of your normal routine?",
+        tag: "Temporary Project",
+        hint: "Think of a short-term course, project, or new habit.",
+        starters: [
+          "This month I'm focusing on..., even though normally I...",
+          "At the moment I'm trying to..., which is new for me."
+        ]
+      },
+      {
+        q: "How often do you check your messages, and are you waiting for an important reply today?",
+        tag: "Frequency vs. Today",
+        hint: "Use a frequency adverb plus a 'today' example.",
+        starters: [
+          "I normally check my messages..., and today I'm...",
+          "I hardly ever..., but today I'm expecting..."
+        ]
+      },
+      {
+        q: "What kind of food do you eat most days, and what are you craving right now?",
+        tag: "Diet vs. Craving",
+        hint: "Remember 'crave' or 'want' are usually stative.",
+        starters: [
+          "Most days I eat..., and right now I really want...",
+          "I tend to have..., though at the moment I feel like..."
+        ]
+      },
+      {
+        q: "Does your city or neighborhood seem to be changing lately? Give an example.",
+        tag: "Changing Situations",
+        hint: "Present Continuous describes ongoing changes.",
+        starters: [
+          "In my area, more people are... lately.",
+          "Things are changing around here because..."
+        ]
+      },
+      {
+        q: "What do you do to relax after a busy day, and what are you planning to do this evening?",
+        tag: "Routine vs. Evening Plan",
+        hint: "Combine a habit with a definite arrangement.",
+        starters: [
+          "To unwind, I usually..., and tonight I'm...",
+          "After a long day I often..., and this evening I'm meeting..."
+        ]
+      },
+      {
+        q: "Which household task do you do regularly, and who is doing chores around your home today?",
+        tag: "Chores & Today",
+        hint: "Practice third-person singular or continuous forms.",
+        starters: [
+          "I regularly... around the house, and today...",
+          "Nobody usually..., except today when..."
+        ]
+      },
+      {
+        q: "Do you prefer studying or working in the morning or at night? Why?",
+        tag: "Preference (Stative)",
+        hint: "Use 'prefer' in the Present Simple.",
+        starters: [
+          "I definitely prefer... because I concentrate better when...",
+          "I'm not a morning person, so I prefer..."
+        ]
+      },
+      {
+        q: "What are people around you doing right now, and how do they usually spend their free time?",
+        tag: "Others Now vs. Usually",
+        hint: "Contrast someone's current action with their usual habit.",
+        starters: [
+          "Right now, ... is/are ..., while usually they...",
+          "At this moment, my family/colleagues are..."
+        ]
+      },
+      {
+        q: "What is one grammar rule in English that still confuses you, and how are you practicing it?",
+        tag: "Challenge vs. Current Effort",
+        hint: "Connect a persistent challenge with current practice.",
+        starters: [
+          "I sometimes confuse... with..., so right now I'm...",
+          "It still trips me up when..., which is why I'm..."
+        ]
+      }
+    ];
+
+    const SWITCHER_ITEMS = [
+      {
+        simple: "She <strong>lives</strong> in Manresa.",
+        continuous: "She <strong>is living</strong> in Barcelona this month.",
+        simpleNote: "Permanent or long-term home base.",
+        contNote: "Temporary stay for a limited period."
+      },
+      {
+        simple: "I <strong>cook</strong> dinner at home.",
+        continuous: "I <strong>am cooking</strong> dinner right now.",
+        simpleNote: "General habit / usual activity.",
+        contNote: "Action in progress at this moment."
+      },
+      {
+        simple: "They <strong>travel</strong> abroad twice a year.",
+        continuous: "They <strong>are traveling</strong> to Italy next week.",
+        simpleNote: "Repeated yearly pattern.",
+        contNote: "Arranged near-future plan."
+      },
+      {
+        simple: "He <strong>thinks</strong> this course is practical.",
+        continuous: "He <strong>is thinking</strong> about joining the evening group.",
+        simpleNote: "Stative verb: personal opinion.",
+        contNote: "Dynamic verb: actively considering."
+      }
+    ];
+
+    const VOCABULARY = [
+      { term: "every other day", pos: "time phrase", cat: "Frequency", def: "Once every two days (e.g., Monday, Wednesday, Friday).", ex: "I go for a long walk every other day." },
+      { term: "nowadays", pos: "adverb", cat: "Temporary", def: "At the present time, in contrast to the past.", ex: "More people work remotely nowadays." },
+      { term: "at the moment", pos: "phrase", cat: "Right Now", def: "Right now or during this current period.", ex: "She is helping a student at the moment." },
+      { term: "cut down on", pos: "phrasal verb", cat: "Temporary", def: "Reduce the amount or frequency of something.", ex: "I'm cutting down on sugar this month." },
+      { term: "take for granted", pos: "idiom", cat: "Stative", def: "Fail to appreciate something because it feels constant.", ex: "We shouldn't take good health for granted." },
+      { term: "on a regular basis", pos: "phrase", cat: "Frequency", def: "Repeatedly at steady intervals.", ex: "We review speaking strategies on a regular basis." },
+      { term: "currently", pos: "adverb", cat: "Temporary", def: "At this exact time or period.", ex: "He is currently preparing for his exam." },
+      { term: "keep up with", pos: "phrasal verb", cat: "Temporary", def: "Stay informed or match the pace of something.", ex: "It's tough to keep up with every new app." },
+      { term: "belong to", pos: "verb phrase", cat: "Stative", def: "Be the property of someone (not used in continuous).", ex: "This notebook belongs to PROVO." },
+      { term: "hardly ever", pos: "adverb phrase", cat: "Frequency", def: "Almost never; very rarely.", ex: "I hardly ever skip my morning routine." },
+      { term: "for the time being", pos: "phrase", cat: "Temporary", def: "For now, until something changes.", ex: "We'll use this room for the time being." },
+      { term: "figure out", pos: "phrasal verb", cat: "Temporary", def: "Find the answer or solve a problem.", ex: "I'm figuring out how to organize my schedule." }
+    ];
+
+    const EXERCISES = [
+      { id: 1, prompt: "1. Right now, Liam ___ (read) his notes before class.", ans: ["is reading", "'s reading"], hint: "Action happening at the moment of speaking." },
+      { id: 2, prompt: "2. My sister usually ___ (drink) coffee, not tea.", ans: ["drinks"], hint: "Repeated habit with third-person singular." },
+      { id: 3, prompt: "3. Look! The train ___ (arrive) at platform 2.", ans: ["is arriving", "'s arriving"], hint: "Use 'Look!' as a clue for right now." },
+      { id: 4, prompt: "4. I ___ (not / understand) what you mean by that.", ans: ["don't understand", "do not understand"], hint: "'Understand' is a stative verb." },
+      { id: 5, prompt: "5. This week we ___ (test) a new speaking activity.", ans: ["are testing", "'re testing"], hint: "Temporary situation around now." },
+      { id: 6, prompt: "6. ___ your brother ___ (play) an instrument?", ans: ["does play"], hint: "Question in Present Simple (write: does play).", checkCustom: v => /^does\s+.*\bplay\b/i.test(v.trim()) || v.trim().toLowerCase() === "does play" },
+      { id: 7, prompt: "7. We ___ (meet) our tutor tomorrow afternoon.", ans: ["are meeting", "'re meeting"], hint: "Definite arrangement." },
+      { id: 8, prompt: "8. She ___ (own) a small acoustic guitar.", ans: ["owns"], hint: "'Own' expresses possession (stative)." },
+      { id: 9, prompt: "9. Why ___ you ___ (wear) a coat indoors?", ans: ["are wearing"], hint: "Write: are wearing", checkCustom: v => /^are\b.*\bwearing\b/i.test(v.trim()) },
+      { id: 10, prompt: "10. They ___ (go) to the mountains every weekend.", ans: ["go"], hint: "Regular habit with 'they'." }
+    ];
+
+    // ==================== THEME & TABS ====================
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    if (localStorage.getItem('provoTheme') === 'dark') {
+      document.documentElement.classList.add('dark');
+      themeIcon.setAttribute('data-lucide', 'sun');
+    }
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('provoTheme', isDark ? 'dark' : 'light');
+      themeIcon.setAttribute('data-lucide', isDark ? 'sun' : 'moon');
+      lucide.createIcons();
+    });
+
+    const navTabs = document.querySelectorAll('.nav-tab');
+    const panels = document.querySelectorAll('.tab-panel');
+    navTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.tab;
+        navTabs.forEach(t => {
+          t.classList.remove('bg-white', 'text-[#002B5C]');
+          t.classList.add('text-white/85', 'hover:text-white', 'hover:bg-white/10');
+        });
+        tab.classList.add('bg-white', 'text-[#002B5C]');
+        tab.classList.remove('text-white/85', 'hover:text-white', 'hover:bg-white/10');
+
+        panels.forEach(p => p.classList.add('hidden'));
+        document.getElementById(`panel-${target}`).classList.remove('hidden');
+        lucide.createIcons();
+      });
+    });
+
+    // ==================== WARM-UP STAGE & TIMER ====================
+    let qIndex = 0;
+    const questionText = document.getElementById('questionText');
+    const questionHint = document.getElementById('questionHint');
+    const qBadge = document.getElementById('qBadge');
+    const qFocusTag = document.getElementById('qFocusTag');
+    const startersList = document.getElementById('startersList');
+    const startersBox = document.getElementById('startersBox');
+    const questionPills = document.getElementById('questionPills');
+
+    function renderQuestion(idx) {
+      qIndex = (idx + QUESTIONS.length) % QUESTIONS.length;
+      const item = QUESTIONS[qIndex];
+      qBadge.textContent = `Q${qIndex + 1} / ${QUESTIONS.length}`;
+      qFocusTag.textContent = item.tag;
+      questionText.textContent = item.q;
+      questionHint.textContent = item.hint;
+      startersList.innerHTML = item.starters.map(s => `<li>${s}</li>`).join('');
+      startersBox.classList.add('hidden');
+      renderPills();
+      lucide.createIcons();
+    }
+
+    function renderPills() {
+      questionPills.innerHTML = QUESTIONS.map((_, i) => `
+        <button type="button" onclick="renderQuestion(${i})" class="w-8 h-8 rounded-lg text-xs font-bold transition ${
+          i === qIndex
+            ? 'bg-[#002B5C] text-white'
+            : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:border-[#0089A7]'
+        }">${i + 1}</button>
+      `).join('');
+    }
+
+    document.getElementById('prevQ').addEventListener('click', () => renderQuestion(qIndex - 1));
+    document.getElementById('nextQ').addEventListener('click', () => renderQuestion(qIndex + 1));
+    document.getElementById('shuffleQ').addEventListener('click', () => {
+      let next = Math.floor(Math.random() * QUESTIONS.length);
+      if (next === qIndex && QUESTIONS.length > 1) next = (next + 1) % QUESTIONS.length;
+      renderQuestion(next);
+    });
+    document.getElementById('toggleStarters').addEventListener('click', () => {
+      startersBox.classList.toggle('hidden');
+    });
+
+    // 20s & 30s Timer
+    let presetSec = 30;
+    let remainingSec = 30;
+    let timerInterval = null;
+    const timerDisplay = document.getElementById('timerDisplay');
+    const timerBar = document.getElementById('timerBar');
+    const timerBox = document.getElementById('timerBox');
+    const timerPlayLabel = document.getElementById('timerPlayLabel');
+
+    function updateTimerUI() {
+      const m = String(Math.floor(remainingSec / 60)).padStart(2, '0');
+      const s = String(remainingSec % 60).padStart(2, '0');
+      timerDisplay.textContent = `${m}:${s}`;
+      timerBar.style.width = `${Math.max(0, (remainingSec / presetSec) * 100)}%`;
+    }
+
+    function stopTimer() {
+      clearInterval(timerInterval);
+      timerInterval = null;
+      timerPlayLabel.textContent = 'Start';
+      document.getElementById('timerPlayIcon').setAttribute('data-lucide', 'play');
+      lucide.createIcons();
+    }
+
+    document.querySelectorAll('.preset-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        stopTimer();
+        timerBox.classList.remove('timer-alert');
+        presetSec = Number(btn.dataset.preset);
+        remainingSec = presetSec;
+        document.querySelectorAll('.preset-btn').forEach(b => {
+          b.className = 'preset-btn px-2.5 py-1 rounded-lg text-slate-600 dark:text-slate-300 transition';
+        });
+        btn.className = 'preset-btn px-2.5 py-1 rounded-lg bg-[#002B5C] text-white transition';
+        updateTimerUI();
+      });
+    });
+
+    document.getElementById('timerPlayPause').addEventListener('click', () => {
+      if (timerInterval) {
+        stopTimer();
+        return;
+      }
+      if (remainingSec <= 0) remainingSec = presetSec;
+      timerBox.classList.remove('timer-alert');
+      timerPlayLabel.textContent = 'Pause';
+      document.getElementById('timerPlayIcon').setAttribute('data-lucide', 'pause');
+      lucide.createIcons();
+
+      timerInterval = setInterval(() => {
+        remainingSec--;
+        updateTimerUI();
+        if (remainingSec <= 0) {
+          stopTimer();
+          timerBox.classList.add('timer-alert');
+        }
+      }, 1000);
+    });
+
+    document.getElementById('timerReset').addEventListener('click', () => {
+      stopTimer();
+      timerBox.classList.remove('timer-alert');
+      remainingSec = presetSec;
+      updateTimerUI();
+    });
+
+    // ==================== VOICE RECORDER & DRIVE UPLOAD ====================
+    const studentNameInput = document.getElementById('studentNameInput');
+    studentNameInput.value = localStorage.getItem('provoStudentName') || '';
+    studentNameInput.addEventListener('input', () => {
+      localStorage.setItem('provoStudentName', studentNameInput.value.trim());
+    });
+
+    let mediaRecorder = null;
+    let audioChunks = [];
+    let audioBlob = null;
+    let selectedMime = 'audio/webm';
+    let recSeconds = 0;
+    let recInterval = null;
+
+    const btnRecord = document.getElementById('btnRecord');
+    const btnStop = document.getElementById('btnStop');
+    const btnClearAudio = document.getElementById('btnClearAudio');
+    const btnSendDrive = document.getElementById('btnSendDrive');
+    const btnDownloadAudio = document.getElementById('btnDownloadAudio');
+    const audioPreview = document.getElementById('audioPreview');
+    const recDot = document.getElementById('recDot');
+    const recStatusText = document.getElementById('recStatusText');
+    const recTimer = document.getElementById('recTimer');
+    const uploadFeedback = document.getElementById('uploadFeedback');
+
+    function showFeedback(msg, type = 'info') {
+      uploadFeedback.classList.remove('hidden', 'bg-emerald-500/15', 'text-emerald-700', 'dark:text-emerald-300', 'bg-rose-500/15', 'text-rose-700', 'dark:text-rose-300', 'bg-sky-500/15', 'text-sky-700', 'dark:text-sky-300');
+      if (type === 'success') uploadFeedback.classList.add('bg-emerald-500/15', 'text-emerald-700', 'dark:text-emerald-300');
+      else if (type === 'error') uploadFeedback.classList.add('bg-rose-500/15', 'text-rose-700', 'dark:text-rose-300');
+      else uploadFeedback.classList.add('bg-sky-500/15', 'text-sky-700', 'dark:text-sky-300');
+      uploadFeedback.textContent = msg;
+    }
+
+    btnRecord.addEventListener('click', async () => {
+      uploadFeedback.classList.add('hidden');
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        if (MediaRecorder.isTypeSupported('audio/webm')) selectedMime = 'audio/webm';
+        else if (MediaRecorder.isTypeSupported('audio/mp4')) selectedMime = 'audio/mp4';
+        else selectedMime = '';
+
+        audioChunks = [];
+        mediaRecorder = selectedMime ? new MediaRecorder(stream, { mimeType: selectedMime }) : new MediaRecorder(stream);
+
+        mediaRecorder.ondataavailable = e => {
+          if (e.data && e.data.size > 0) audioChunks.push(e.data);
+        };
+
+        mediaRecorder.onstop = () => {
+          stream.getTracks().forEach(t => t.stop());
+          const finalType = mediaRecorder.mimeType || selectedMime || 'audio/webm';
+          audioBlob = new Blob(audioChunks, { type: finalType });
+          audioPreview.src = URL.createObjectURL(audioBlob);
+          audioPreview.classList.remove('hidden');
+          btnSendDrive.disabled = false;
+          btnDownloadAudio.disabled = false;
+          btnClearAudio.disabled = false;
+          recDot.className = 'w-2.5 h-2.5 rounded-full bg-emerald-500';
+          recStatusText.textContent = 'Recording ready';
+        };
+
+        mediaRecorder.start();
+        recSeconds = 0;
+        recTimer.textContent = '00:00';
+        recInterval = setInterval(() => {
+          recSeconds++;
+          const m = String(Math.floor(recSeconds / 60)).padStart(2, '0');
+          const s = String(recSeconds % 60).padStart(2, '0');
+          recTimer.textContent = `${m}:${s}`;
+        }, 1000);
+
+        btnRecord.disabled = true;
+        btnStop.disabled = false;
+        btnClearAudio.disabled = true;
+        btnSendDrive.disabled = true;
+        recDot.className = 'w-2.5 h-2.5 rounded-full bg-rose-500 animate-ping';
+        recStatusText.textContent = 'Recording...';
+      } catch (err) {
+        showFeedback('Microphone access blocked or unavailable. Open via HTTPS and allow mic permissions.', 'error');
+      }
+    });
+
+    btnStop.addEventListener('click', () => {
+      clearInterval(recInterval);
+      if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+        mediaRecorder.stop();
+      }
+      btnRecord.disabled = false;
+      btnStop.disabled = true;
+    });
+
+    btnClearAudio.addEventListener('click', () => {
+      audioBlob = null;
+      audioChunks = [];
+      audioPreview.classList.add('hidden');
+      audioPreview.removeAttribute('src');
+      btnSendDrive.disabled = true;
+      btnDownloadAudio.disabled = true;
+      btnClearAudio.disabled = true;
+      recTimer.textContent = '00:00';
+      recDot.className = 'w-2.5 h-2.5 rounded-full bg-slate-400';
+      recStatusText.textContent = 'Ready to record';
+      uploadFeedback.classList.add('hidden');
+    });
+
+    btnDownloadAudio.addEventListener('click', () => {
+      if (!audioBlob) return;
+      const name = (studentNameInput.value.trim() || 'Student').replace(/\s+/g, '_');
+      const ext = audioBlob.type.includes('mp4') ? 'm4a' : 'webm';
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(audioBlob);
+      a.download = `PROVO-PS-vs-PC-Q${qIndex + 1}-${name}.${ext}`;
+      a.click();
+    });
+
+    btnSendDrive.addEventListener('click', () => {
+      const studentName = studentNameInput.value.trim();
+      if (!studentName) {
+        showFeedback('Please enter your name before sending.', 'error');
+        studentNameInput.focus();
+        return;
+      }
+      if (!audioBlob) return;
+
+      btnSendDrive.disabled = true;
+      document.getElementById('sendLabel').textContent = 'Uploading...';
+      showFeedback('Uploading voice note to Google Drive...', 'info');
+
+      const reader = new FileReader();
+      reader.onloadend = async () => {
+        try {
+          const base64Audio = String(reader.result).split(',')[1];
+          const res = await fetch(DRIVE_UPLOAD_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify({
+              studentName,
+              lessonTitle: 'PS-vs-PC',
+              questionNumber: qIndex + 1,
+              mimeType: audioBlob.type || 'audio/webm',
+              audioBase64: base64Audio
+            })
+          });
+          const data = await res.json();
+          if (data.status === 'ok') {
+            showFeedback(`Sent to teacher! Saved as ${data.fileName}`, 'success');
+          } else {
+            throw new Error(data.message || 'Upload failed');
+          }
+        } catch (err) {
+          showFeedback('Could not upload automatically. Use "Download Local Backup" and send it manually.', 'error');
+        } finally {
+          btnSendDrive.disabled = false;
+          document.getElementById('sendLabel').textContent = 'Send to Teacher (Drive)';
+        }
+      };
+      reader.readAsDataURL(audioBlob);
+    });
+
+    // ==================== GRAMMAR SWITCHER ====================
+    let switcherMode = 'simple';
+    const switcherRows = document.getElementById('switcherRows');
+    const modeSimple = document.getElementById('modeSimple');
+    const modeContinuous = document.getElementById('modeContinuous');
+
+    function renderSwitcher() {
+      switcherRows.innerHTML = SWITCHER_ITEMS.map(item => {
+        const isSim = switcherMode === 'simple';
+        return `
+          <div class="p-4 rounded-2xl border ${isSim ? 'border-[#002B5C]/25 bg-[#F0F6FA]/60 dark:bg-slate-800/50' : 'border-[#0089A7]/35 bg-[#0089A7]/5 dark:bg-slate-800/70'} space-y-1.5">
+            <div class="text-base font-bold text-slate-900 dark:text-white">${isSim ? item.simple : item.continuous}</div>
+            <div class="text-xs text-slate-600 dark:text-slate-300">${isSim ? item.simpleNote : item.contNote}</div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    modeSimple.addEventListener('click', () => {
+      switcherMode = 'simple';
+      modeSimple.className = 'px-3.5 py-1.5 rounded-lg bg-[#002B5C] text-white transition';
+      modeContinuous.className = 'px-3.5 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 transition';
+      renderSwitcher();
+    });
+
+    modeContinuous.addEventListener('click', () => {
+      switcherMode = 'continuous';
+      modeContinuous.className = 'px-3.5 py-1.5 rounded-lg bg-[#0089A7] text-white transition';
+      modeSimple.className = 'px-3.5 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 transition';
+      renderSwitcher();
+    });
+
+    // ==================== VOCABULARY WITH AUDIO ====================
+    const vocabCategories = ['All', 'Frequency', 'Temporary', 'Right Now', 'Stative'];
+    let activeVocabCat = 'All';
+    const vocabFilters = document.getElementById('vocabFilters');
+    const vocabGrid = document.getElementById('vocabGrid');
+
+    function speakWord(text) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = 'en-US';
+      window.speechSynthesis.speak(utter);
+    }
+
+    function renderVocab() {
+      vocabFilters.innerHTML = vocabCategories.map(cat => `
+        <button type="button" onclick="setVocabCat('${cat}')" class="px-3 py-1.5 rounded-xl text-xs font-bold transition ${
+          activeVocabCat === cat
+            ? 'bg-[#002B5C] text-white'
+            : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:border-[#0089A7]'
+        }">${cat}</button>
+      `).join('');
+
+      const list = activeVocabCat === 'All' ? VOCABULARY : VOCABULARY.filter(v => v.cat === activeVocabCat);
+      vocabGrid.innerHTML = list.map(v => `
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-sm flex flex-col justify-between gap-3">
+          <div>
+            <div class="flex items-start justify-between gap-2">
+              <h3 class="text-base font-extrabold text-[#002B5C] dark:text-white">${v.term}</h3>
+              <button type="button" onclick="speakWord('${v.term.replace(/'/g, "\\'")}')" class="p-1.5 rounded-lg bg-[#F0F6FA] dark:bg-slate-800 text-[#005A8D] dark:text-cyan-300 hover:bg-[#0089A7] hover:text-white transition" title="Listen">
+                <i data-lucide="volume-2" class="w-4 h-4"></i>
+              </button>
+            </div>
+            <span class="inline-block mt-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">${v.pos} • ${v.cat}</span>
+            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2.5">${v.def}</p>
+          </div>
+          <p class="text-xs italic text-[#005A8D] dark:text-cyan-300 border-t border-slate-100 dark:border-slate-800 pt-2.5">“${v.ex}”</p>
+        </div>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    window.setVocabCat = (cat) => {
+      activeVocabCat = cat;
+      renderVocab();
+    };
+
+    // ==================== SELF-CHECK PRACTICE ====================
+    const exercisesContainer = document.getElementById('exercisesContainer');
+    const progressBar = document.getElementById('progressBar');
+    const progressLabel = document.getElementById('progressLabel');
+
+    function renderExercises() {
+      exercisesContainer.innerHTML = EXERCISES.map(ex => `
+        <div id="ex-card-${ex.id}" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-sm space-y-2.5">
+          <div class="text-sm font-bold text-slate-900 dark:text-white">${ex.prompt}</div>
+          <input
+            type="text"
+            data-ex-id="${ex.id}"
+            placeholder="Type your answer..."
+            class="ex-input w-full sm:w-80 px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#0089A7]"
+          />
+          <div id="ex-msg-${ex.id}" class="text-xs font-semibold hidden"></div>
+        </div>
+      `).join('');
+
+      document.querySelectorAll('.ex-input').forEach(inp => {
+        inp.addEventListener('input', updateProgress);
+      });
+    }
+
+    function updateProgress() {
+      const inputs = document.querySelectorAll('.ex-input');
+      const filled = Array.from(inputs).filter(i => i.value.trim().length > 0).length;
+      progressLabel.textContent = `${filled} / ${inputs.length} answered`;
+      progressBar.style.width = `${(filled / inputs.length) * 100}%`;
+    }
+
+    document.getElementById('btnCheckAll').addEventListener('click', () => {
+      let score = 0;
+      EXERCISES.forEach(ex => {
+        const inp = document.querySelector(`.ex-input[data-ex-id="${ex.id}"]`);
+        const msg = document.getElementById(`ex-msg-${ex.id}`);
+        const card = document.getElementById(`ex-card-${ex.id}`);
+        const val = inp.value.trim().toLowerCase().replace(/\s+/g, ' ');
+
+        const isCorrect = ex.checkCustom
+          ? ex.checkCustom(val)
+          : ex.ans.some(a => a.toLowerCase() === val);
+
+        msg.classList.remove('hidden', 'text-emerald-600', 'dark:text-emerald-400', 'text-rose-600', 'dark:text-rose-400');
+        if (isCorrect) {
+          score++;
+          msg.textContent = 'Correct!';
+          msg.classList.add('text-emerald-600', 'dark:text-emerald-400');
+          card.classList.add('border-emerald-500/40');
+        } else {
+          msg.textContent = `Check: ${ex.ans[0]} (${ex.hint})`;
+          msg.classList.add('text-rose-600', 'dark:text-rose-400');
+          card.classList.remove('border-emerald-500/40');
+        }
+      });
+
+      const banner = document.getElementById('scoreBanner');
+      banner.classList.remove('hidden');
+      banner.className = 'rounded-2xl p-4 font-bold text-sm border bg-[#F0F6FA] dark:bg-slate-900 border-[#0089A7]/40 text-[#002B5C] dark:text-cyan-300';
+      banner.textContent = `Score: ${score} / ${EXERCISES.length}`;
+    });
+
+    document.getElementById('btnToggleKey').addEventListener('click', () => {
+      const keyBox = document.getElementById('answerKeyBox');
+      if (keyBox.innerHTML.trim() === '') {
+        keyBox.innerHTML = `<div class="font-extrabold text-[#002B5C] dark:text-cyan-300 mb-1">Answer Key</div>` +
+          EXERCISES.map(e => `<div><strong>${e.id}.</strong> ${e.ans.join(' / ')}</div>`).join('');
+      }
+      keyBox.classList.toggle('hidden');
+    });
+
+    // Init
+    renderQuestion(0);
+    updateTimerUI();
+    renderSwitcher();
+    renderVocab();
+    renderExercises();
+    lucide.createIcons();
+  </script>
+</body>
+</html>

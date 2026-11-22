@@ -1,0 +1,2824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mastering the Present Continuous (A1–A2) | PROVO </title>
+  
+  <!-- Plus Jakarta Sans Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --provo-navy: #002B5C;
+      --provo-blue: #005A8D;
+      --provo-teal: #0089A7;
+      --provo-teal-light: #e0f4f7;
+      --provo-teal-glow: rgba(0, 137, 167, 0.18);
+      --provo-ice: #F0F6FA;
+      --page-bg: #F7FAFC;
+      --card-bg: #FFFFFF;
+      --text-main: #0a192f;
+      --text-muted: #4a5568;
+      --border: #cbd5e1;
+      --border-light: #e2e8f0;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --error: #b91c1c;
+      --error-light: #fee2e2;
+      --warning: #b45309;
+      --warning-light: #fef3c7;
+      --shadow-sm: 0 2px 4px rgba(0, 43, 92, 0.04);
+      --shadow: 0 4px 10px rgba(0, 43, 92, 0.07), 0 1px 3px rgba(0, 43, 92, 0.04);
+      --shadow-lg: 0 12px 24px -4px rgba(0, 43, 92, 0.12), 0 4px 8px -2px rgba(0, 43, 92, 0.04);
+      --radius: 14px;
+      --radius-sm: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background-color: var(--page-bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Sticky Navigation */
+    header.site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--provo-navy);
+      border-bottom: 2px solid var(--provo-teal);
+      box-shadow: 0 4px 14px rgba(0, 43, 92, 0.3);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      gap: 0.75rem;
+    }
+
+    .brand img {
+      height: 36px;
+      max-height: 36px;
+      width: auto;
+      display: block;
+    }
+
+    .brand-fallback {
+      display: none;
+      background: var(--provo-teal);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: 0.05em;
+      padding: 0.35rem 0.85rem;
+      border-radius: 6px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.6rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #FFFFFF;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: #ffffff;
+      background-color: var(--provo-teal);
+    }
+
+    /* Main Container */
+    main {
+      max-width: 1140px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    /* Typography & Global Cards */
+    .section-title {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--provo-navy);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-top: -0.75rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      border: 1px solid var(--border-light);
+      padding: 2.25rem;
+      box-shadow: var(--shadow);
+    }
+
+    /* Hero Banner: PROVO Gradient */
+    .hero-banner {
+      background: linear-gradient(135deg, var(--provo-navy) 0%, var(--provo-blue) 55%, var(--provo-teal) 100%);
+      color: #ffffff;
+      padding: 2.75rem 2.25rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      border-left: 6px solid var(--provo-teal);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-banner::after {
+      content: "";
+      position: absolute;
+      right: -40px;
+      bottom: -60px;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-banner h1 {
+      font-size: 2.4rem;
+      line-height: 1.2;
+      margin-bottom: 0.6rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-banner p {
+      font-size: 1.2rem;
+      opacity: 0.95;
+      font-weight: 400;
+    }
+
+    .badge-level {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(6px);
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.85rem;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+    }
+
+    /* Objectives Card */
+    .objectives-card {
+      background: #ffffff;
+      border-left: 6px solid var(--provo-navy);
+    }
+
+    .objectives-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .objectives-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      background: var(--provo-ice);
+      padding: 1.1rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-light);
+      font-size: 0.98rem;
+      font-weight: 500;
+    }
+
+    .objectives-list li span.check-icon {
+      color: var(--provo-teal);
+      font-size: 1.35rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    /* Warm-Up Tabs */
+    .tab-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border-light);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .tab-btn {
+      font-family: inherit;
+      background: none;
+      border: none;
+      padding: 0.8rem 1.35rem;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tab-btn:hover {
+      background: var(--provo-teal-light);
+      color: var(--provo-navy);
+    }
+
+    .tab-btn.active {
+      background: linear-gradient(135deg, var(--provo-navy) 0%, var(--provo-blue) 100%);
+      color: #ffffff;
+      box-shadow: 0 3px 8px rgba(0, 43, 92, 0.25);
+      border-bottom: 3px solid var(--provo-teal);
+    }
+
+    .tab-panel {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    .questions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.15rem;
+    }
+
+    .question-box {
+      background: var(--provo-ice);
+      border: 1px solid var(--border-light);
+      border-left: 4px solid var(--provo-teal);
+      padding: 1.35rem;
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .question-number {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: var(--provo-blue);
+      letter-spacing: 0.06em;
+      margin-bottom: 0.4rem;
+    }
+
+    .question-text {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    /* Visual Grammar Diagrams: 4 Illustrated Cards */
+    .diagram-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .diagram-card {
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .diagram-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .diagram-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .diagram-icon-wrap {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--provo-ice);
+      border: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--provo-navy);
+      flex-shrink: 0;
+    }
+
+    .diagram-icon-wrap svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--provo-blue);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .diagram-card h4 {
+      font-size: 1.15rem;
+      color: var(--provo-navy);
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .diagram-card p.desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      min-height: 2.7rem;
+    }
+
+    /* Mini Visual Timeline */
+    .timeline-bar-wrap {
+      background: var(--provo-ice);
+      border-radius: 8px;
+      padding: 0.65rem 0.8rem;
+      border: 1px solid var(--border-light);
+    }
+
+    .timeline-label-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .timeline-track {
+      position: relative;
+      height: 8px;
+      background: #cbd5e1;
+      border-radius: 999px;
+    }
+
+    /* Timeline Markers */
+    .timeline-marker-point-now {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--provo-teal);
+      border: 3px solid #ffffff;
+      box-shadow: 0 0 0 2px var(--provo-teal);
+    }
+
+    .timeline-marker-span-now {
+      position: absolute;
+      left: 30%;
+      width: 40%;
+      top: 0;
+      height: 100%;
+      background: linear-gradient(90deg, var(--provo-blue), var(--provo-teal));
+      border-radius: 999px;
+    }
+
+    .timeline-marker-changing {
+      position: absolute;
+      left: 20%;
+      width: 60%;
+      top: 0;
+      height: 100%;
+      background: repeating-linear-gradient(45deg, var(--provo-teal), var(--provo-teal) 6px, #38bdf8 6px, #38bdf8 12px);
+      border-radius: 999px;
+    }
+
+    .timeline-marker-point-future {
+      position: absolute;
+      left: 85%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--provo-navy);
+      border: 3px solid #ffffff;
+      box-shadow: 0 0 0 2px var(--provo-navy);
+    }
+
+    .diagram-examples {
+      list-style-type: disc;
+      padding-left: 1.25rem;
+      font-size: 0.92rem;
+      color: var(--text-main);
+    }
+
+    .diagram-examples li {
+      margin-bottom: 0.3rem;
+      font-style: italic;
+    }
+
+    /* Tables */
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+      margin: 1.25rem 0 2rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+    }
+
+    table.edu-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+      background: #ffffff;
+      min-width: 600px;
+    }
+
+    table.edu-table th {
+      background-color: var(--provo-ice);
+      color: var(--provo-navy);
+      font-weight: 800;
+      padding: 1rem 1.25rem;
+      border-bottom: 2px solid var(--provo-teal);
+    }
+
+    table.edu-table td {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border-light);
+      vertical-align: middle;
+    }
+
+    table.edu-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    table.edu-table tr:hover td {
+      background-color: #f8fafc;
+    }
+
+    .formula-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      color: var(--provo-blue);
+      background: var(--provo-ice);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      border: 1px solid var(--border-light);
+      font-size: 0.9rem;
+    }
+
+    /* Short Answers Box */
+    .short-answers-box {
+      background: var(--provo-ice);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 1.25rem;
+      margin-bottom: 2rem;
+      border-left: 4px solid var(--provo-blue);
+    }
+
+    .short-answers-box h4 {
+      font-size: 1.1rem;
+      color: var(--provo-navy);
+      margin-bottom: 0.75rem;
+      font-weight: 800;
+    }
+
+    .short-answers-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .short-answer-item {
+      background: #ffffff;
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-light);
+      font-size: 0.95rem;
+    }
+
+    /* Spelling Rules: Visual Word-Building Pills */
+    .spelling-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .spelling-card {
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .spelling-card h5 {
+      color: var(--provo-navy);
+      font-size: 1.05rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    .spelling-card p.rule-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.85rem;
+    }
+
+    .pill-equation-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .pill-equation {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      font-size: 0.95rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .wb-pill {
+      background: var(--provo-ice);
+      border: 1px solid var(--border-light);
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .wb-drop {
+      background: var(--error-light);
+      border: 1px solid #fca5a5;
+      color: var(--error);
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: line-through;
+    }
+
+    .wb-add {
+      background: var(--provo-teal-light);
+      border: 1px solid var(--provo-teal);
+      color: var(--provo-navy);
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    .wb-result {
+      background: var(--provo-navy);
+      color: #ffffff;
+      padding: 0.2rem 0.65rem;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    .wb-symbol {
+      color: var(--text-muted);
+      font-weight: bold;
+      padding: 0 0.1rem;
+    }
+
+    /* Stative Verbs High-Contrast Visual Comparison */
+    .stative-visual-container {
+      margin: 2rem 0;
+      border-radius: var(--radius);
+      border: 1px solid var(--border-light);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .stative-visual-header {
+      background: var(--provo-navy);
+      color: #ffffff;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .stative-visual-header h4 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    .stative-two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .stative-col {
+      padding: 1.5rem;
+    }
+
+    .stative-col.action-side {
+      background: #f0fdf4;
+      border-right: 1px solid #bbf7d0;
+    }
+
+    .stative-col.stative-side {
+      background: #fff1f2;
+    }
+
+    .stative-col-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin-bottom: 0.6rem;
+    }
+
+    .action-side .stative-col-header {
+      color: var(--success);
+    }
+
+    .stative-side .stative-col-header {
+      color: var(--error);
+    }
+
+    .stative-chips-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin: 0.85rem 0;
+    }
+
+    .stat-chip {
+      background: #ffffff;
+      border: 1px solid #fecaca;
+      color: #991b1b;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.88rem;
+    }
+
+    .example-contrast-box {
+      background: #ffffff;
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1rem;
+      margin-top: 0.6rem;
+      border: 1px solid var(--border-light);
+      font-size: 0.95rem;
+    }
+
+    /* Vocabulary Section */
+    .vocab-pills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .vocab-pill-card {
+      background: var(--provo-ice);
+      border: 1px solid var(--border-light);
+      border-left: 3px solid var(--provo-teal);
+      padding: 1rem 1.25rem;
+      border-radius: var(--radius-sm);
+      flex: 1 1 calc(33% - 1rem);
+      min-width: 260px;
+    }
+
+    .vocab-pill-title {
+      font-weight: 700;
+      color: var(--provo-navy);
+      font-size: 1.05rem;
+      margin-bottom: 0.35rem;
+      display: block;
+    }
+
+    .vocab-pill-example {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* Live Gamified Progress Bar */
+    .progress-hud {
+      background: linear-gradient(135deg, var(--provo-navy) 0%, var(--provo-blue) 100%);
+      color: #ffffff;
+      padding: 1.25rem 1.5rem;
+      border-radius: var(--radius-sm);
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .progress-hud-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .progress-hud-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .progress-hud-counter {
+      font-size: 0.95rem;
+      font-weight: 700;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 0.2rem 0.75rem;
+      border-radius: 999px;
+    }
+
+    .progress-track-bg {
+      width: 100%;
+      height: 12px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #38bdf8 0%, #2dd4bf 100%);
+      border-radius: 999px;
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Exercises */
+    .exercise-wrapper {
+      margin-bottom: 2.5rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      box-shadow: var(--shadow);
+    }
+
+    .exercise-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      border-bottom: 1px solid var(--border-light);
+      padding-bottom: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .exercise-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--provo-navy);
+      letter-spacing: -0.01em;
+    }
+
+    .exercise-instruction {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .exercise-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.15rem;
+    }
+
+    .exercise-item {
+      background: var(--provo-ice);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 1rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .exercise-item.correct {
+      border-color: var(--success);
+      background-color: var(--success-light);
+    }
+
+    .exercise-item.incorrect {
+      border-color: var(--error);
+      background-color: var(--error-light);
+    }
+
+    .prompt-row {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+
+    .student-input {
+      font-family: inherit;
+      font-size: 1rem;
+      padding: 0.45rem 0.75rem;
+      border: 2px solid var(--border);
+      border-radius: 6px;
+      background: #ffffff;
+      color: var(--text-main);
+      min-width: 150px;
+      max-width: 100%;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .student-input.long {
+      min-width: 280px;
+      flex: 1 1 300px;
+    }
+
+    .student-input:focus {
+      border-color: var(--provo-teal);
+      box-shadow: 0 0 0 3px var(--provo-teal-glow);
+    }
+
+    .student-input.is-correct {
+      border-color: var(--success);
+      background-color: #f0fdf4;
+    }
+
+    .student-input.is-incorrect {
+      border-color: var(--error);
+      background-color: #fef2f2;
+    }
+
+    .select-choice {
+      font-family: inherit;
+      font-size: 1rem;
+      padding: 0.45rem 0.75rem;
+      border: 2px solid var(--border);
+      border-radius: 6px;
+      background: #ffffff;
+      outline: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    .select-choice:focus {
+      border-color: var(--provo-teal);
+      box-shadow: 0 0 0 3px var(--provo-teal-glow);
+    }
+
+    .feedback-msg {
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-top: 0.35rem;
+      display: none;
+    }
+
+    .exercise-item.correct .feedback-msg {
+      display: block;
+      color: var(--success);
+    }
+
+    .exercise-item.incorrect .feedback-msg {
+      display: block;
+      color: var(--error);
+    }
+
+    .action-btn-group {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      font-family: inherit;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.25rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--provo-navy) 0%, var(--provo-blue) 100%);
+      color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 43, 92, 0.2);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, var(--provo-blue) 0%, var(--provo-teal) 100%);
+      box-shadow: 0 4px 8px rgba(0, 43, 92, 0.25);
+    }
+
+    .btn-secondary {
+      background: #ffffff;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: var(--provo-ice);
+      color: var(--text-main);
+    }
+
+    .btn-outline-key {
+      background: transparent;
+      color: var(--provo-teal);
+      border: 1px dashed var(--provo-teal);
+    }
+
+    .btn-outline-key:hover {
+      background: var(--provo-teal-light);
+    }
+
+    .btn-teal {
+      background: var(--provo-teal);
+      color: #ffffff;
+    }
+
+    .btn-teal:hover {
+      background: #00738c;
+      box-shadow: 0 4px 8px rgba(0, 137, 167, 0.25);
+    }
+
+    .btn-ocean {
+      background: var(--provo-blue);
+      color: #ffffff;
+    }
+
+    .btn-ocean:hover {
+      background: var(--provo-navy);
+      box-shadow: 0 4px 8px rgba(0, 43, 92, 0.25);
+    }
+
+    .answer-key-box {
+      margin-top: 1.25rem;
+      padding: 1.25rem;
+      background: #f1f5f9;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      display: none;
+      font-size: 0.95rem;
+    }
+
+    .answer-key-box.show {
+      display: block;
+      animation: fadeIn 0.25s ease;
+    }
+
+    .answer-key-box ol {
+      padding-left: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .answer-key-box li {
+      margin-bottom: 0.35rem;
+    }
+
+    /* Student Submission & Evaluation Card */
+    .submission-card {
+      background: #ffffff;
+      border: 2px solid var(--provo-blue);
+      border-top: 6px solid var(--provo-navy);
+      border-radius: var(--radius);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-lg);
+      margin-top: 2.5rem;
+    }
+
+    .submission-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .submission-header h3 {
+      font-size: 1.5rem;
+      color: var(--provo-navy);
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .submission-header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-top: 0.25rem;
+    }
+
+    .student-name-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      max-width: 480px;
+    }
+
+    .student-name-field label {
+      font-weight: 700;
+      color: var(--provo-navy);
+      font-size: 1rem;
+    }
+
+    .student-name-field input {
+      padding: 0.65rem 0.85rem;
+      font-size: 1rem;
+      border: 2px solid var(--border);
+      border-radius: var(--radius-sm);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .student-name-field input:focus {
+      border-color: var(--provo-teal);
+      box-shadow: 0 0 0 3px var(--provo-teal-glow);
+    }
+
+    .score-summary-banner {
+      display: none;
+      background: var(--provo-ice);
+      border: 1px solid var(--border-light);
+      border-left: 6px solid var(--provo-teal);
+      border-radius: var(--radius-sm);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.5rem;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .score-summary-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--provo-navy);
+      margin-bottom: 0.25rem;
+    }
+
+    .score-summary-stats {
+      font-size: 1rem;
+      color: var(--text-muted);
+    }
+
+    .score-summary-stats strong {
+      color: var(--provo-teal);
+      font-size: 1.3rem;
+    }
+
+    .report-preview-box {
+      display: none;
+      margin-top: 1.25rem;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .report-textarea {
+      width: 100%;
+      height: 270px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.88rem;
+      line-height: 1.5;
+      padding: 1rem;
+      border: 2px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: #fafbfc;
+      color: #1e293b;
+      resize: vertical;
+      white-space: pre;
+    }
+
+    .toast-msg {
+      display: none;
+      padding: 0.65rem 1rem;
+      border-radius: var(--radius-sm);
+      background: var(--success-light);
+      border: 1px solid var(--success);
+      color: var(--success);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-top: 0.75rem;
+    }
+
+    /* Roleplay Section */
+    .roleplay-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .role-card {
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .role-card.student-a {
+      border-top: 6px solid var(--provo-blue);
+    }
+
+    .role-card.student-b {
+      border-top: 6px solid var(--provo-teal);
+    }
+
+    .role-badge {
+      display: inline-block;
+      align-self: flex-start;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .student-a .role-badge {
+      background: #dbeafe;
+      color: var(--provo-navy);
+    }
+
+    .student-b .role-badge {
+      background: var(--provo-teal-light);
+      color: #005a6e;
+    }
+
+    .role-scenario-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .role-instructions {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .role-prompt-box {
+      background: var(--provo-ice);
+      border-radius: var(--radius-sm);
+      border-left: 3px solid var(--border);
+      padding: 1rem;
+      font-size: 0.92rem;
+      font-style: italic;
+    }
+
+    /* Footer */
+    footer.site-footer {
+      background: #ffffff;
+      border-top: 2px solid var(--provo-teal);
+      padding: 2.75rem 1.5rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-top: 4rem;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        width: 100%;
+        overflow-x: auto;
+        padding-top: 0.25rem;
+      }
+      .hero-banner h1 {
+        font-size: 1.85rem;
+      }
+      .section-title {
+        font-size: 1.5rem;
+      }
+      .prompt-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .student-input {
+        width: 100%;
+      }
+      .stative-two-col {
+        grid-template-columns: 1fr;
+      }
+      .stative-col.action-side {
+        border-right: none;
+        border-bottom: 1px solid #bbf7d0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Header Navigation (PROVO Deep Navy Theme) -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="#top" class="brand">
+        <img 
+          src="https://i.postimg.cc/vBt4qH44/download.png" 
+          alt="PROVO" 
+          onerror="this.style.display='none'; document.getElementById('provoFallback').style.display='inline-block';"
+        >
+        <span id="provoFallback" class="brand-fallback">PROVO</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#objectives">Objectives</a></li>
+        <li><a href="#warm-up">Warm-up</a></li>
+        <li><a href="#grammar">Grammar</a></li>
+        <li><a href="#vocabulary">Vocabulary</a></li>
+        <li><a href="#practice">Practice</a></li>
+        <li><a href="#roleplay">Roleplay</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main id="top">
+    <!-- Hero Banner with PROVO Gradient -->
+    <div class="hero-banner">
+      <span class="badge-level">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        Level A1–A2 English &bull; PROVO
+      </span>
+      <h1>Mastering the Present Continuous</h1>
+      <p>Actions in Progress, Temporary Situations & Definite Future Plans</p>
+    </div>
+
+    <!-- Section 1: Lesson Objectives -->
+    <section id="objectives">
+      <div class="card objectives-card">
+        <h2 class="section-title">
+          <span>🎯</span> Lesson Objectives
+        </h2>
+        <p class="section-subtitle">By the end of this interactive lesson, you will be able to:</p>
+        <ul class="objectives-list">
+          <li>
+            <span class="check-icon">✓</span>
+            <span>Describe actions happening at the exact moment of speaking.</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span>Talk about temporary situations, current projects, and definite future arrangements.</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span>Form affirmative, negative, and interrogative sentences accurately using <strong>be + verb-ing</strong>.</span>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <span>Apply -ing spelling rules and avoid common mistakes with stative verbs.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 2: Warm-Up Conversation -->
+    <section id="warm-up">
+      <div class="card">
+        <h2 class="section-title">
+          <span>💬</span> Warm-Up: Conversation Questions
+        </h2>
+        <p class="section-subtitle">Click each category to explore conversation questions for partner and group practice.</p>
+
+        <!-- Tab Controls -->
+        <div class="tab-nav">
+          <button class="tab-btn active" onclick="openTab(event, 'tab-right-now')">
+            <span>⏱️</span> Right Now
+          </button>
+          <button class="tab-btn" onclick="openTab(event, 'tab-this-week')">
+            <span>📅</span> This Week & Temporary
+          </button>
+          <button class="tab-btn" onclick="openTab(event, 'tab-near-future')">
+            <span>✈️</span> Near Future Arrangements
+          </button>
+        </div>
+
+        <!-- Tab 1: Right Now -->
+        <div id="tab-right-now" class="tab-panel active">
+          <div class="questions-grid">
+            <div class="question-box">
+              <div class="question-number">Question 1</div>
+              <div class="question-text">What are you wearing today?</div>
+            </div>
+            <div class="question-box">
+              <div class="question-number">Question 2</div>
+              <div class="question-text">What are you sitting on right now, and what can you see around you?</div>
+            </div>
+            <div class="question-box">
+              <div class="question-number">Question 3</div>
+              <div class="question-text">Are you drinking or eating anything at the moment?</div>
+            </div>
+            <div class="question-box">
+              <div class="question-number">Question 4</div>
+              <div class="question-text">What sounds are you hearing in the background right now?</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: This Week & Temporary Situations -->
+        <div id="tab-this-week" class="tab-panel">
+          <div class="questions-grid">
+            <div class="question-box">
+              <div class="question-number">Question 5</div>
+              <div class="question-text">Are you reading any good books or watching any interesting TV series these days?</div>
+            </div>
+            <div class="question-box">
+              <div class="question-number">Question 6</div>
+              <div class="question-text">What project or goal are you working on this month?</div>
+            </div>
+            <div class="question-box">
+              <div class="question-number">Question 7</div>
+              <div class="question-text">Are you learning any new skills right now (cooking, a language, a sport, an instrument)?</div>
+            </div>
+            <div class="question-box">
+              <div class="question-number">Question 8</div>
+              <div class="question-text">Is anything changing in your daily routine lately?</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Near Future Arrangements -->
+        <div id="tab-near-future" class="tab-panel">
+          <div class="questions-grid">
+            <div class="question-box">
+              <div class="question-number">Question 9</div>
+              <div class="question-text">What are you doing this weekend?</div>
+            </div>
+            <div class="question-box">
+              <div class="question-number">Question 10</div>
+              <div class="question-text">Are you meeting any friends or family members in the next few days?</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Grammar Explanation (Upgraded with Visual Diagrams) -->
+    <section id="grammar">
+      <div class="card">
+        <h2 class="section-title">
+          <span>📖</span> Grammar Explanation
+        </h2>
+        <p class="section-subtitle">Visual models showing when and how to build the Present Continuous tense.</p>
+
+        <!-- Visual Component: 4 Illustrated Use Cards with Timeline Bars -->
+        <h3 style="color: var(--provo-navy); margin-bottom: 1rem; font-size: 1.35rem; font-weight: 800;">
+          When Do We Use the Present Continuous?
+        </h3>
+        <div class="diagram-grid">
+          <!-- Card 1: Right Now -->
+          <div class="diagram-card">
+            <div class="diagram-header">
+              <div class="diagram-icon-wrap">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <h4>1. Right Now</h4>
+            </div>
+            <p class="desc">Actions taking place at the exact second of speaking.</p>
+            <div class="timeline-bar-wrap">
+              <div class="timeline-label-row">
+                <span>Past</span>
+                <span style="color: var(--provo-teal);">● NOW</span>
+                <span>Future</span>
+              </div>
+              <div class="timeline-track">
+                <div class="timeline-marker-point-now"></div>
+              </div>
+            </div>
+            <ul class="diagram-examples">
+              <li>Listen! Someone is playing the guitar.</li>
+              <li>She is talking on the phone right now.</li>
+            </ul>
+          </div>
+
+          <!-- Card 2: Temporary Situations -->
+          <div class="diagram-card">
+            <div class="diagram-header">
+              <div class="diagram-icon-wrap">
+                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </div>
+              <h4>2. Temporary Situations</h4>
+            </div>
+            <p class="desc">Happening around now, for a limited time period.</p>
+            <div class="timeline-bar-wrap">
+              <div class="timeline-label-row">
+                <span>Past</span>
+                <span style="color: var(--provo-blue);">[ THIS PERIOD ]</span>
+                <span>Future</span>
+              </div>
+              <div class="timeline-track">
+                <div class="timeline-marker-span-now"></div>
+              </div>
+            </div>
+            <ul class="diagram-examples">
+              <li>I'm staying at my sister's house this week.</li>
+              <li>He is studying for his English exam this month.</li>
+            </ul>
+          </div>
+
+          <!-- Card 3: Changing Situations -->
+          <div class="diagram-card">
+            <div class="diagram-header">
+              <div class="diagram-icon-wrap">
+                <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              </div>
+              <h4>3. Changing Situations</h4>
+            </div>
+            <p class="desc">Developing trends, gradual shifts, or progress in motion.</p>
+            <div class="timeline-bar-wrap">
+              <div class="timeline-label-row">
+                <span>Start</span>
+                <span style="color: var(--provo-teal);">↗ DEVELOPING</span>
+                <span>Goal</span>
+              </div>
+              <div class="timeline-track">
+                <div class="timeline-marker-changing"></div>
+              </div>
+            </div>
+            <ul class="diagram-examples">
+              <li>The weather is getting colder.</li>
+              <li>My English is improving fast.</li>
+            </ul>
+          </div>
+
+          <!-- Card 4: Future Arrangements -->
+          <div class="diagram-card">
+            <div class="diagram-header">
+              <div class="diagram-icon-wrap">
+                <svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </div>
+              <h4>4. Future Plans</h4>
+            </div>
+            <p class="desc">Definite arrangements with a fixed date, time, or person.</p>
+            <div class="timeline-bar-wrap">
+              <div class="timeline-label-row">
+                <span>Now</span>
+                <span style="color: var(--text-muted);">Arranged</span>
+                <span style="color: var(--provo-navy);">★ FIXED DATE</span>
+              </div>
+              <div class="timeline-track">
+                <div class="timeline-marker-point-future"></div>
+              </div>
+            </div>
+            <ul class="diagram-examples">
+              <li>We are having dinner with Mark tonight at 8:00.</li>
+              <li>I'm flying to London next Friday.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Sentence Structure (Form) -->
+        <h3 style="color: var(--provo-navy); margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.35rem; font-weight: 800;">
+          Sentence Structure (Form)
+        </h3>
+        <div class="table-responsive">
+          <table class="edu-table">
+            <thead>
+              <tr>
+                <th>Form</th>
+                <th>Structure</th>
+                <th>Examples</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Affirmative (+)</strong></td>
+                <td><span class="formula-tag">Subject + am / is / are + verb-ing</span></td>
+                <td>I <strong>am working</strong>. / She <strong>is reading</strong>. / They <strong>are running</strong>.</td>
+              </tr>
+              <tr>
+                <td><strong>Negative (-)</strong></td>
+                <td><span class="formula-tag">Subject + am not / isn't / aren't + verb-ing</span></td>
+                <td>I'm not sleeping. / He <strong>isn't watching</strong> TV. / We <strong>aren't cooking</strong>.</td>
+              </tr>
+              <tr>
+                <td><strong>Question (?)</strong></td>
+                <td><span class="formula-tag">Am / Is / Are + subject + verb-ing?</span></td>
+                <td><strong>Are</strong> you <strong>listening</strong>? / <strong>Is</strong> it <strong>raining</strong>?</td>
+              </tr>
+              <tr>
+                <td><strong>Wh- Question</strong></td>
+                <td><span class="formula-tag">Wh-word + am / is / are + subject + verb-ing?</span></td>
+                <td>What <strong>are</strong> you <strong>doing</strong>? / Where <strong>is</strong> she <strong>going</strong>?</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Short Answers Box -->
+        <div class="short-answers-box">
+          <h4>Short Answers:</h4>
+          <div class="short-answers-list">
+            <div class="short-answer-item">
+              <em>Are you studying?</em> → <strong>Yes, I am.</strong> / <strong>No, I'm not.</strong>
+            </div>
+            <div class="short-answer-item">
+              <em>Is he working?</em> → <strong>Yes, he is.</strong> / <strong>No, he isn't.</strong>
+            </div>
+            <div class="short-answer-item">
+              <em>Are they coming?</em> → <strong>Yes, they are.</strong> / <strong>No, they aren't.</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Component: Spelling Rules (-ing) Word-Building Pills -->
+        <h3 style="color: var(--provo-navy); margin-top: 2rem; margin-bottom: 0.25rem; font-size: 1.35rem; font-weight: 800;">
+          Spelling Rules for -ing: Word-Building Equations
+        </h3>
+        <p class="section-subtitle">Observe the letter changes highlighted in teal and red pills:</p>
+
+        <div class="spelling-grid">
+          <!-- Rule 1 -->
+          <div class="spelling-card">
+            <h5>1. Most Verbs</h5>
+            <p class="rule-desc">Simply add <strong>-ing</strong> with no changes:</p>
+            <div class="pill-equation-list">
+              <div class="pill-equation">
+                <span class="wb-pill">work</span>
+                <span class="wb-symbol">+</span>
+                <span class="wb-add">-ing</span>
+                <span class="wb-symbol">=</span>
+                <span class="wb-result">working</span>
+              </div>
+              <div class="pill-equation">
+                <span class="wb-pill">play</span>
+                <span class="wb-symbol">+</span>
+                <span class="wb-add">-ing</span>
+                <span class="wb-symbol">=</span>
+                <span class="wb-result">playing</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rule 2 -->
+          <div class="spelling-card">
+            <h5>2. Verbs Ending in -e</h5>
+            <p class="rule-desc">Drop the silent <strong>-e</strong> before adding <strong>-ing</strong>:</p>
+            <div class="pill-equation-list">
+              <div class="pill-equation">
+                <span class="wb-pill">mak</span>
+                <span class="wb-drop">-e̶</span>
+                <span class="wb-symbol">+</span>
+                <span class="wb-add">-ing</span>
+                <span class="wb-symbol">=</span>
+                <span class="wb-result">making</span>
+              </div>
+              <div class="pill-equation">
+                <span class="wb-pill">writ</span>
+                <span class="wb-drop">-e̶</span>
+                <span class="wb-symbol">+</span>
+                <span class="wb-add">-ing</span>
+                <span class="wb-symbol">=</span>
+                <span class="wb-result">writing</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rule 3 -->
+          <div class="spelling-card">
+            <h5>3. Short CVC Verbs</h5>
+            <p class="rule-desc">Double the final consonant before <strong>-ing</strong>:</p>
+            <div class="pill-equation-list">
+              <div class="pill-equation">
+                <span class="wb-pill">run</span>
+                <span class="wb-add">+n</span>
+                <span class="wb-symbol">+</span>
+                <span class="wb-add">-ing</span>
+                <span class="wb-symbol">=</span>
+                <span class="wb-result">running</span>
+              </div>
+              <div class="pill-equation">
+                <span class="wb-pill">sit</span>
+                <span class="wb-add">+t</span>
+                <span class="wb-symbol">+</span>
+                <span class="wb-add">-ing</span>
+                <span class="wb-symbol">=</span>
+                <span class="wb-result">sitting</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rule 4 -->
+          <div class="spelling-card">
+            <h5>4. Verbs Ending in -ie</h5>
+            <p class="rule-desc">Transform <strong>-ie</strong> into <strong>-y</strong> + <strong>-ing</strong>:</p>
+            <div class="pill-equation-list">
+              <div class="pill-equation">
+                <span class="wb-pill">l</span>
+                <span class="wb-drop">-ie̶</span>
+                <span class="wb-symbol">+</span>
+                <span class="wb-add">-y</span>
+                <span class="wb-symbol">+</span>
+                <span class="wb-add">-ing</span>
+                <span class="wb-symbol">=</span>
+                <span class="wb-result">lying</span>
+              </div>
+              <div class="pill-equation">
+                <span class="wb-pill">d</span>
+                <span class="wb-drop">-ie̶</span>
+                <span class="wb-symbol">+</span>
+                <span class="wb-add">-y</span>
+                <span class="wb-symbol">+</span>
+                <span class="wb-add">-ing</span>
+                <span class="wb-symbol">=</span>
+                <span class="wb-result">dying</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Component: High-Contrast Stative Verbs Comparison -->
+        <div class="stative-visual-container">
+          <div class="stative-visual-header">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <h4>Watch Out: Action Verbs vs. Stative Verbs</h4>
+          </div>
+          <div class="stative-two-col">
+            <!-- Left Side: Green Light -->
+            <div class="stative-col action-side">
+              <div class="stative-col-header">
+                <span>🟢</span> Green Light: Physical Actions
+              </div>
+              <p style="font-size: 0.92rem; color: #166534;">
+                Physical activities and processes that can be started and stopped naturally take <strong>-ing</strong>:
+              </p>
+              <div class="example-contrast-box" style="border-left: 4px solid var(--success);">
+                ✓ <em>"I am cooking dinner right now."</em>
+              </div>
+              <div class="example-contrast-box" style="border-left: 4px solid var(--success);">
+                ✓ <em>"They are running in the stadium."</em>
+              </div>
+            </div>
+
+            <!-- Right Side: Red Light -->
+            <div class="stative-col stative-side">
+              <div class="stative-col-header">
+                <span>🔴</span> Red Light: Stative Verbs
+              </div>
+              <p style="font-size: 0.92rem; color: #991b1b;">
+                Verbs of <strong>heart, mind, senses & possession</strong> are states, NOT continuous actions:
+              </p>
+              <div class="stative-chips-cloud">
+                <span class="stat-chip">like</span>
+                <span class="stat-chip">love</span>
+                <span class="stat-chip">hate</span>
+                <span class="stat-chip">want</span>
+                <span class="stat-chip">need</span>
+                <span class="stat-chip">know</span>
+                <span class="stat-chip">understand</span>
+                <span class="stat-chip">believe</span>
+                <span class="stat-chip">remember</span>
+                <span class="stat-chip">have (possession)</span>
+              </div>
+              <div class="example-contrast-box" style="border-left: 4px solid var(--error);">
+                ✓ <strong>Correct:</strong> I want a coffee right now.<br>
+                <span style="color: var(--error); text-decoration: line-through;">✗ Incorrect: I am wanting a coffee.</span>
+              </div>
+              <div class="example-contrast-box" style="border-left: 4px solid var(--error); margin-top: 0.5rem;">
+                ✓ <strong>Correct:</strong> She knows the answer.<br>
+                <span style="color: var(--error); text-decoration: line-through;">✗ Incorrect: She is knowing the answer.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Related Vocabulary -->
+    <section id="vocabulary">
+      <div class="card">
+        <h2 class="section-title">
+          <span>📚</span> Related Vocabulary
+        </h2>
+        <p class="section-subtitle">Common signal words and useful action verbs frequently paired with the Present Continuous.</p>
+
+        <h3 style="color: var(--provo-navy); margin-bottom: 1rem; font-size: 1.35rem; font-weight: 800;">
+          Time Expressions (Signal Words)
+        </h3>
+        <div class="vocab-pills-container">
+          <div class="vocab-pill-card">
+            <span class="vocab-pill-title">Right now / At the moment</span>
+            <span class="vocab-pill-example">"I'm writing an email at the moment."</span>
+          </div>
+          <div class="vocab-pill-card">
+            <span class="vocab-pill-title">Today / Tonight</span>
+            <span class="vocab-pill-example">"We're having pasta tonight."</span>
+          </div>
+          <div class="vocab-pill-card">
+            <span class="vocab-pill-title">This week / This month / These days</span>
+            <span class="vocab-pill-example">"She's working from home this week."</span>
+          </div>
+          <div class="vocab-pill-card">
+            <span class="vocab-pill-title">Currently / Lately</span>
+            <span class="vocab-pill-example">"They're currently looking for a new flat."</span>
+          </div>
+          <div class="vocab-pill-card">
+            <span class="vocab-pill-title">Look! / Listen! / Be quiet!</span>
+            <span class="vocab-pill-example">"Look! It's snowing!"</span>
+          </div>
+        </div>
+
+        <h3 style="color: var(--provo-navy); margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.35rem; font-weight: 800;">
+          Useful Action Verbs
+        </h3>
+        <div class="table-responsive">
+          <table class="edu-table">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Verbs</th>
+                <th>Example in Context</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Home & Daily Life</strong></td>
+                <td>cook, clean, wash, tidy up, take a shower, get dressed</td>
+                <td><em>He's tidying up the kitchen right now.</em></td>
+              </tr>
+              <tr>
+                <td><strong>Work & Study</strong></td>
+                <td>write, type, prepare, take notes, attend a meeting, focus</td>
+                <td><em>We're preparing a presentation for Monday.</em></td>
+              </tr>
+              <tr>
+                <td><strong>Communication</strong></td>
+                <td>chat, text, call, explain, argue, laugh</td>
+                <td><em>Why are you laughing? Tell me the joke!</em></td>
+              </tr>
+              <tr>
+                <td><strong>Movement & Leisure</strong></td>
+                <td>walk, jog, commute, wait for, travel, browse, listen to</td>
+                <td><em>I'm waiting for the bus in the rain.</em></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Interactive Gamified Practice Exercises -->
+    <section id="practice">
+      <div class="card">
+        <h2 class="section-title">
+          <span>✍️</span> Interactive Practice Exercises
+        </h2>
+        <p class="section-subtitle">Complete all 5 exercises. Track your live progress with the status bar below!</p>
+
+        <!-- Live Gamified Progress Bar -->
+        <div class="progress-hud">
+          <div class="progress-hud-top">
+            <div class="progress-hud-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>Practice Completion Progress</span>
+            </div>
+            <div class="progress-hud-counter" id="progressHudCounter">0 / 31 items answered (0%)</div>
+          </div>
+          <div class="progress-track-bg">
+            <div class="progress-bar-fill" id="progressBarFill"></div>
+          </div>
+        </div>
+
+        <!-- Exercise 1 -->
+        <div class="exercise-wrapper" id="ex1">
+          <div class="exercise-header">
+            <div class="exercise-title">Exercise 1: Write the -ing Form</div>
+            <span style="font-weight: 700; color: var(--provo-teal);">Spelling Rules</span>
+          </div>
+          <p class="exercise-instruction">Write the correct -ing form of each base verb:</p>
+          <div class="exercise-list">
+            <div class="exercise-item" data-qlabel="Ex 1.1 (dance)" data-answer="dancing">
+              <div class="prompt-row">
+                <span>1. dance →</span>
+                <input type="text" class="student-input" oninput="updateLiveProgress()" placeholder="type -ing form...">
+              </div>
+              <div class="feedback-msg">Correct: dancing</div>
+            </div>
+            <div class="exercise-item" data-qlabel="Ex 1.2 (stop)" data-answer="stopping">
+              <div class="prompt-row">
+                <span>2. stop →</span>
+                <input type="text" class="student-input" oninput="updateLiveProgress()" placeholder="type -ing form...">
+              </div>
+              <div class="feedback-msg">Correct: stopping</div>
+            </div>
+            <div class="exercise-item" data-qlabel="Ex 1.3 (study)" data-answer="studying">
+              <div class="prompt-row">
+                <span>3. study →</span>
+                <input type="text" class="student-input" oninput="updateLiveProgress()" placeholder="type -ing form...">
+              </div>
+              <div class="feedback-msg">Correct: studying</div>
+            </div>
+            <div class="exercise-item" data-qlabel="Ex 1.4 (swim)" data-answer="swimming">
+              <div class="prompt-row">
+                <span>4. swim →</span>
+                <input type="text" class="student-input" oninput="updateLiveProgress()" placeholder="type -ing form...">
+              </div>
+              <div class="feedback-msg">Correct: swimming</div>
+            </div>
+            <div class="exercise-item" data-qlabel="Ex 1.5 (lie)" data-answer="lying">
+              <div class="prompt-row">
+                <span>5. lie →</span>
+                <input type="text" class="student-input" oninput="updateLiveProgress()" placeholder="type -ing form...">
+              </div>
+              <div class="feedback-msg">Correct: lying</div>
+            </div>
+            <div class="exercise-item" data-qlabel="Ex 1.6 (begin)" data-answer="beginning">
+              <div class="prompt-row">
+                <span>6. begin →</span>
+                <input type="text" class="student-input" oninput="updateLiveProgress()" placeholder="type -ing form...">
+              </div>
+              <div class="feedback-msg">Correct: beginning</div>
+            </div>
+            <div class="exercise-item" data-qlabel="Ex 1.7 (have)" data-answer="having">
+              <div class="prompt-row">
+                <span>7. have →</span>
+                <input type="text" class="student-input" oninput="updateLiveProgress()" placeholder="type -ing form...">
+              </div>
+              <div class="feedback-msg">Correct: having</div>
+            </div>
+            <div class="exercise-item" data-qlabel="Ex 1.8 (travel)" data-answer="travelling|traveling">
+              <div class="prompt-row">
+                <span>8. travel →</span>
+                <input type="text" class="student-input" oninput="updateLiveProgress()" placeholder="type -ing form...">
+              </div>
+              <div class="feedback-msg">Correct: travelling (UK) / traveling (US)</div>
+            </div>
+          </div>
+          <div class="action-btn-group">
+            <button class="btn btn-primary" onclick="checkSimpleExercise('ex1')">Check Answers</button>
+            <button class="btn btn-secondary" onclick="resetExercise('ex1')">Reset</button>
+            <button class="btn btn-outline-key" onclick="toggleKey('key-ex1')">Toggle Answer Key</button>
+          </div>
+          <div id="key-ex1" class="answer-key-box">
+            <strong>Exercise 1 Answer Key:</strong>
+            <ol>
+              <li>dancing</li>
+              <li>stopping</li>
+              <li>studying</li>
+              <li>swimming</li>
+              <li>lying</li>
+              <li>beginning</li>
+              <li>having</li>
+              <li>travelling (UK) / traveling (US)</li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Exercise 2 -->
+        <div class="exercise-wrapper" id="ex2">
+          <div class="exercise-header">
+            <div class="exercise-title">Exercise 2: Fill in the Blanks (Affirmative & Negative)</div>
+            <span style="font-weight: 700; color: var(--provo-teal);">Sentence Construction</span>
+          </div>
+          <p class="exercise-instruction">Complete the sentences using the Present Continuous form of the verbs in brackets:</p>
+          <div class="exercise-list">
+            <div class="exercise-item" data-qlabel="Ex 2.1 (The baby sleep)" data-answer="is sleeping|'s sleeping">
+              <div class="prompt-row">
+                <span>1. Please be quiet! The baby</span>
+                <input type="text" class="student-input" oninput="updateLiveProgress()" placeholder="verb form">
+                <span>(sleep).</span>
+              </div>
+              <div class="feedback-msg">Correct: is sleeping</div>
+            </div>
+            <div class="exercise-item" id="ex2_item_multi" data-multi="true" data-qlabel="Ex 2.2 (We not watch / cook)" data-ans1="aren't watching|are not watching|'re not watching" data-ans2="are cooking|'re cooking">
+              <div class="prompt-row">
+                <span>2. We</span>
+                <input type="text" class="student-input" id="ex2_2_a" oninput="updateLiveProgress()" placeholder="not / watch">
+                <span>the match; we</span>
+                <input type="text" class="student-input" id="ex2_2_b" oninput="updateLiveProgress()" placeholder="cook">
+                <span>dinner.</span>
+              </div>
+              <div class="feedback-msg">Correct: aren't watching (are not watching) ; are cooking ('re cooking)</div>
+            </div>
+            <div class="exercise-item" data-qlabel="Ex 2.3 (It rain)" data-answer="is raining|'s raining">
+              <div class="prompt-row">
+                <span>3. Look outside! It</span>
+                <input type="text" class="student-input" oninput="updateLiveProgress()" placeholder="verb form">
+                <span>(rain) heavily.</span>
+              </div>
+              <div class="feedback-msg">Correct: is raining</div>
+            </div>
+            <div class="exercise-item" data-qlabel="Ex 2.4 (I not wear)" data-answer="am not wearing|'m not wearing">
+              <div class="prompt-row">
+                <span>4. I</span>
+                <input type="text" class="student-input" oninput="updateLiveProgress()" placeholder="not / wear">
+                <span>a jacket today because it's warm.</span>
+              </div>
+              <div class="feedback-msg">Correct: am not wearing / 'm not wearing</div>
+            </div>
+            <div class="exercise-item" data-qlabel="Ex 2.5 (Sarah study)" data-answer="is studying|'s studying">
+              <div class="prompt-row">
+                <span>5. Sarah</span>
+                <input type="text" class="student-input" oninput="updateLiveProgress()" placeholder="verb form">
+                <span>(study) for her driving test this month.</span>
+              </div>
+              <div class="feedback-msg">Correct: is studying</div>
+            </div>
+            <div class="exercise-item" data-qlabel="Ex 2.6 (Neighbours make)" data-answer="are making|'re making">
+              <div class="prompt-row">
+                <span>6. My neighbours</span>
+                <input type="text" class="student-input" oninput="updateLiveProgress()" placeholder="verb form">
+                <span>(make) a lot of noise right now.</span>
+              </div>
+              <div class="feedback-msg">Correct: are making</div>
+            </div>
+            <div class="exercise-item" data-qlabel="Ex 2.7 (You not listen)" data-answer="aren't listening|are not listening|'re not listening">
+              <div class="prompt-row">
+                <span>7. You</span>
+                <input type="text" class="student-input" oninput="updateLiveProgress()" placeholder="not / listen">
+                <span>to me!</span>
+              </div>
+              <div class="feedback-msg">Correct: aren't listening / are not listening</div>
+            </div>
+            <div class="exercise-item" data-qlabel="Ex 2.8 (They fly)" data-answer="are flying|'re flying">
+              <div class="prompt-row">
+                <span>8. They</span>
+                <input type="text" class="student-input" oninput="updateLiveProgress()" placeholder="verb form">
+                <span>(fly) to Rome tomorrow morning.</span>
+              </div>
+              <div class="feedback-msg">Correct: are flying</div>
+            </div>
+          </div>
+          <div class="action-btn-group">
+            <button class="btn btn-primary" onclick="checkEx2()">Check Answers</button>
+            <button class="btn btn-secondary" onclick="resetExercise('ex2')">Reset</button>
+            <button class="btn btn-outline-key" onclick="toggleKey('key-ex2')">Toggle Answer Key</button>
+          </div>
+          <div id="key-ex2" class="answer-key-box">
+            <strong>Exercise 2 Answer Key:</strong>
+            <ol>
+              <li>is sleeping</li>
+              <li>aren't watching (are not watching) ; are cooking ('re cooking)</li>
+              <li>is raining</li>
+              <li>am not wearing ('m not wearing)</li>
+              <li>is studying</li>
+              <li>are making</li>
+              <li>aren't listening (are not listening)</li>
+              <li>are flying</li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Exercise 3 -->
+        <div class="exercise-wrapper" id="ex3">
+          <div class="exercise-header">
+            <div class="exercise-title">Exercise 3: Build Questions</div>
+            <span style="font-weight: 700; color: var(--provo-teal);">Word Order</span>
+          </div>
+          <p class="exercise-instruction">Put the scrambled words in the correct order to make Present Continuous questions:</p>
+          <div class="exercise-list">
+            <div class="exercise-item" data-qlabel="Ex 3.1 (What are you doing?)" data-answer="what are you doing?|what are you doing">
+              <div class="prompt-row">
+                <span>1. you / doing / what / are / ?</span>
+                <input type="text" class="student-input long" oninput="updateLiveProgress()" placeholder="Type the question here...">
+              </div>
+              <div class="feedback-msg">Correct: What are you doing?</div>
+            </div>
+            <div class="exercise-item" data-qlabel="Ex 3.2 (Is Tom working today?)" data-answer="is tom working today?|is tom working today">
+              <div class="prompt-row">
+                <span>2. working / today / is / Tom / ?</span>
+                <input type="text" class="student-input long" oninput="updateLiveProgress()" placeholder="Type the question here...">
+              </div>
+              <div class="feedback-msg">Correct: Is Tom working today?</div>
+            </div>
+            <div class="exercise-item" data-qlabel="Ex 3.3 (Where are they going?)" data-answer="where are they going?|where are they going">
+              <div class="prompt-row">
+                <span>3. are / going / where / they / ?</span>
+                <input type="text" class="student-input long" oninput="updateLiveProgress()" placeholder="Type the question here...">
+              </div>
+              <div class="feedback-msg">Correct: Where are they going?</div>
+            </div>
+            <div class="exercise-item" data-qlabel="Ex 3.4 (Is it raining outside?)" data-answer="is it raining outside?|is it raining outside">
+              <div class="prompt-row">
+                <span>4. raining / it / outside / is / ?</span>
+                <input type="text" class="student-input long" oninput="updateLiveProgress()" placeholder="Type the question here...">
+              </div>
+              <div class="feedback-msg">Correct: Is it raining outside?</div>
+            </div>
+            <div class="exercise-item" data-qlabel="Ex 3.5 (Why is she crying?)" data-answer="why is she crying?|why is she crying">
+              <div class="prompt-row">
+                <span>5. why / crying / she / is / ?</span>
+                <input type="text" class="student-input long" oninput="updateLiveProgress()" placeholder="Type the question here...">
+              </div>
+              <div class="feedback-msg">Correct: Why is she crying?</div>
+            </div>
+          </div>
+          <div class="action-btn-group">
+            <button class="btn btn-primary" onclick="checkSimpleExercise('ex3')">Check Answers</button>
+            <button class="btn btn-secondary" onclick="resetExercise('ex3')">Reset</button>
+            <button class="btn btn-outline-key" onclick="toggleKey('key-ex3')">Toggle Answer Key</button>
+          </div>
+          <div id="key-ex3" class="answer-key-box">
+            <strong>Exercise 3 Answer Key:</strong>
+            <ol>
+              <li>What are you doing?</li>
+              <li>Is Tom working today?</li>
+              <li>Where are they going?</li>
+              <li>Is it raining outside?</li>
+              <li>Why is she crying?</li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Exercise 4 -->
+        <div class="exercise-wrapper" id="ex4">
+          <div class="exercise-header">
+            <div class="exercise-title">Exercise 4: Spot and Correct the Mistake</div>
+            <span style="font-weight: 700; color: var(--provo-teal);">Error Analysis</span>
+          </div>
+          <p class="exercise-instruction">Each sentence has one mistake. Rewrite the entire sentence correctly:</p>
+          <div class="exercise-list">
+            <div class="exercise-item" data-qlabel="Ex 4.1 (She is working...)" data-answer="she is working at the office today|she's working at the office today|she is working at the office today.|she's working at the office today.">
+              <div class="prompt-row">
+                <span>1. <em>She working at the office today.</em></span>
+                <input type="text" class="student-input long" oninput="updateLiveProgress()" placeholder="Rewrite sentence correctly...">
+              </div>
+              <div class="feedback-msg">Correct: She <strong>is</strong> working at the office today.</div>
+            </div>
+            <div class="exercise-item" data-qlabel="Ex 4.2 (Do you know my brother?)" data-answer="do you know my brother?|do you know my brother">
+              <div class="prompt-row">
+                <span>2. <em>Are you knowing my brother?</em></span>
+                <input type="text" class="student-input long" oninput="updateLiveProgress()" placeholder="Rewrite sentence correctly...">
+              </div>
+              <div class="feedback-msg">Correct: <strong>Do you know</strong> my brother? (Stative verb)</div>
+            </div>
+            <div class="exercise-item" data-qlabel="Ex 4.3 (The bus is coming)" data-answer="look! the bus is coming.|look the bus is coming|look! the bus is coming|the bus is coming|the bus is coming.">
+              <div class="prompt-row">
+                <span>3. <em>Look! The bus is comeing.</em></span>
+                <input type="text" class="student-input long" oninput="updateLiveProgress()" placeholder="Rewrite sentence correctly...">
+              </div>
+              <div class="feedback-msg">Correct: Look! The bus is <strong>coming</strong>.</div>
+            </div>
+            <div class="exercise-item" data-qlabel="Ex 4.4 (I don't like this movie)" data-answer="i do not like this movie.|i don't like this movie.|i do not like this movie|i don't like this movie">
+              <div class="prompt-row">
+                <span>4. <em>I am not like this movie.</em></span>
+                <input type="text" class="student-input long" oninput="updateLiveProgress()" placeholder="Rewrite sentence correctly...">
+              </div>
+              <div class="feedback-msg">Correct: I <strong>don't like</strong> this movie. (Stative verb)</div>
+            </div>
+            <div class="exercise-item" data-qlabel="Ex 4.5 (What are you eating?)" data-answer="what are you eating?|what are you eating">
+              <div class="prompt-row">
+                <span>5. <em>What you are eating?</em></span>
+                <input type="text" class="student-input long" oninput="updateLiveProgress()" placeholder="Rewrite sentence correctly...">
+              </div>
+              <div class="feedback-msg">Correct: What <strong>are you</strong> eating?</div>
+            </div>
+            <div class="exercise-item" data-qlabel="Ex 4.6 (They are running...)" data-answer="they are running in the park.|they're running in the park.|they are running in the park|they're running in the park">
+              <div class="prompt-row">
+                <span>6. <em>They are runing in the park.</em></span>
+                <input type="text" class="student-input long" oninput="updateLiveProgress()" placeholder="Rewrite sentence correctly...">
+              </div>
+              <div class="feedback-msg">Correct: They are <strong>running</strong> in the park.</div>
+            </div>
+          </div>
+          <div class="action-btn-group">
+            <button class="btn btn-primary" onclick="checkSimpleExercise('ex4')">Check Answers</button>
+            <button class="btn btn-secondary" onclick="resetExercise('ex4')">Reset</button>
+            <button class="btn btn-outline-key" onclick="toggleKey('key-ex4')">Toggle Answer Key</button>
+          </div>
+          <div id="key-ex4" class="answer-key-box">
+            <strong>Exercise 4 Answer Key:</strong>
+            <ol>
+              <li>She <strong>is</strong> working at the office today.</li>
+              <li><strong>Do you know</strong> my brother? <em>(stative verb)</em></li>
+              <li>Look! The bus is <strong>coming</strong>.</li>
+              <li>I <strong>don't like</strong> this movie. <em>(stative verb)</em></li>
+              <li>What <strong>are you</strong> eating?</li>
+              <li>They are <strong>running</strong> in the park.</li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Exercise 5 -->
+        <div class="exercise-wrapper" id="ex5">
+          <div class="exercise-header">
+            <div class="exercise-title">Exercise 5: Present Simple vs. Present Continuous</div>
+            <span style="font-weight: 700; color: var(--provo-teal);">Context & Aspect</span>
+          </div>
+          <p class="exercise-instruction">Select the correct verb form for each sentence:</p>
+          <div class="exercise-list">
+            <div class="exercise-item" id="ex5_q1" data-qlabel="Ex 5.1 (drink / am having)">
+              <div class="prompt-row">
+                <span>1. I usually</span>
+                <select class="select-choice" id="ex5_sel1a" onchange="updateLiveProgress()" data-correct="drink">
+                  <option value="">-- choose --</option>
+                  <option value="drink">drink</option>
+                  <option value="am drinking">am drinking</option>
+                </select>
+                <span>tea, but today I</span>
+                <select class="select-choice" id="ex5_sel1b" onchange="updateLiveProgress()" data-correct="am having">
+                  <option value="">-- choose --</option>
+                  <option value="have">have</option>
+                  <option value="am having">am having</option>
+                </select>
+                <span>coffee.</span>
+              </div>
+              <div class="feedback-msg">Correct: drink / am having</div>
+            </div>
+
+            <div class="exercise-item" id="ex5_q2" data-qlabel="Ex 5.2 (is knocking)">
+              <div class="prompt-row">
+                <span>2. Listen! Someone</span>
+                <select class="select-choice" id="ex5_sel2" onchange="updateLiveProgress()" data-correct="is knocking">
+                  <option value="">-- choose --</option>
+                  <option value="knocks">knocks</option>
+                  <option value="is knocking">is knocking</option>
+                </select>
+                <span>at the door.</span>
+              </div>
+              <div class="feedback-msg">Correct: is knocking</div>
+            </div>
+
+            <div class="exercise-item" id="ex5_q3" data-qlabel="Ex 5.3 (doesn't work)">
+              <div class="prompt-row">
+                <span>3. She</span>
+                <select class="select-choice" id="ex5_sel3" onchange="updateLiveProgress()" data-correct="doesn't work">
+                  <option value="">-- choose --</option>
+                  <option value="doesn't work">doesn't work</option>
+                  <option value="isn't working">isn't working</option>
+                </select>
+                <span>on Sundays.</span>
+              </div>
+              <div class="feedback-msg">Correct: doesn't work</div>
+            </div>
+
+            <div class="exercise-item" id="ex5_q4" data-qlabel="Ex 5.4 (Are you using)">
+              <div class="prompt-row">
+                <span>4.</span>
+                <select class="select-choice" id="ex5_sel4" onchange="updateLiveProgress()" data-correct="Are you using">
+                  <option value="">-- choose --</option>
+                  <option value="Do you use">Do you use</option>
+                  <option value="Are you using">Are you using</option>
+                </select>
+                <span>this computer right now, or can I borrow it?</span>
+              </div>
+              <div class="feedback-msg">Correct: Are you using</div>
+            </div>
+
+            <div class="exercise-item" id="ex5_q5" data-qlabel="Ex 5.5 (boils)">
+              <div class="prompt-row">
+                <span>5. Water</span>
+                <select class="select-choice" id="ex5_sel5" onchange="updateLiveProgress()" data-correct="boils">
+                  <option value="">-- choose --</option>
+                  <option value="boils">boils</option>
+                  <option value="is boiling">is boiling</option>
+                </select>
+                <span>at 100 degrees Celsius.</span>
+              </div>
+              <div class="feedback-msg">Correct: boils</div>
+            </div>
+          </div>
+          <div class="action-btn-group">
+            <button class="btn btn-primary" onclick="checkEx5()">Check Answers</button>
+            <button class="btn btn-secondary" onclick="resetEx5()">Reset</button>
+            <button class="btn btn-outline-key" onclick="toggleKey('key-ex5')">Toggle Answer Key</button>
+          </div>
+          <div id="key-ex5" class="answer-key-box">
+            <strong>Exercise 5 Answer Key:</strong>
+            <ol>
+              <li>drink / am having</li>
+              <li>is knocking</li>
+              <li>doesn't work</li>
+              <li>Are you using</li>
+              <li>boils</li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Student Evaluation & Results Submission Box -->
+        <div class="submission-card" id="submission-section">
+          <div class="submission-header">
+            <h3>
+              <span>📤</span> Submit Your Work to Teacher
+            </h3>
+            <p>Enter your full name and generate your diagnostic performance report. You can review your detailed score breakdown, copy it to clipboard, or email it directly to your PROVO instructor.</p>
+          </div>
+
+          <div class="student-name-field">
+            <label for="studentFullName">Student Full Name <span style="color: var(--error);">*</span></label>
+            <input type="text" id="studentFullName" placeholder="e.g. Maria Gonzalez" required>
+          </div>
+
+          <div class="action-btn-group" style="margin-top: 0;">
+            <button class="btn btn-primary" onclick="generateStudentReport()">
+              <span>📊</span> Calculate Score & Preview Report
+            </button>
+          </div>
+
+          <!-- Score Summary Banner -->
+          <div id="scoreBanner" class="score-summary-banner">
+            <div class="score-summary-title" id="scoreBannerStudent">Student Report</div>
+            <div class="score-summary-stats" id="scoreBannerScore"></div>
+          </div>
+
+          <!-- Generated Text Report Area -->
+          <div id="reportPreviewArea" class="report-preview-box">
+            <label style="font-weight: 700; color: var(--provo-navy); display: block; margin-bottom: 0.5rem;">
+              Generated Submission Report:
+            </label>
+            <textarea id="reportText" class="report-textarea" readonly></textarea>
+            
+            <div class="action-btn-group">
+              <button class="btn btn-teal" onclick="copyReportToClipboard()">
+                <span>📋</span> Copy Report
+              </button>
+              <button class="btn btn-ocean" onclick="sendReportViaEmail()">
+                <span>✉️</span> Send via Email
+              </button>
+            </div>
+            <div id="copyToast" class="toast-msg">
+              ✓ Report successfully copied to clipboard! You can now paste it into Zoom, Google Meet, or WhatsApp.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Speaking & Roleplay Activity -->
+    <section id="roleplay">
+      <div class="card">
+        <h2 class="section-title">
+          <span>🎭</span> Speaking & Roleplay Activity
+        </h2>
+        <p class="section-subtitle"><strong>Scenario: The Busy Phone Call</strong> — Pair up and roleplay this real-life telephone exchange.</p>
+
+        <div class="roleplay-grid">
+          <!-- Student A -->
+          <div class="role-card student-a">
+            <span class="role-badge">Student A (Caller)</span>
+            <div class="role-scenario-title">The Friend Calling</div>
+            <div class="role-instructions">
+              <p>1. Call your friend and greet them.</p>
+              <p>2. Ask what they <strong>are doing right now</strong>.</p>
+              <p>3. Invite them to grab a coffee in 30 minutes.</p>
+            </div>
+            <div class="role-prompt-box">
+              <strong>Conversation Starter:</strong><br>
+              <em>"Hi! What are you doing right now? Are you free to grab a coffee in 30 minutes?"</em>
+            </div>
+          </div>
+
+          <!-- Student B -->
+          <div class="role-card student-b">
+            <span class="role-badge">Student B (Receiver)</span>
+            <div class="role-scenario-title">The Busy Friend</div>
+            <div class="role-instructions">
+              <p>1. Answer the phone and say you are very busy.</p>
+              <p>2. Invent <strong>3 things</strong> you or people around you <strong>are doing right now</strong>.</p>
+              <p>3. Explain why you can't meet now, and suggest a <strong>definite plan for tomorrow</strong> using the Present Continuous.</p>
+            </div>
+            <div class="role-prompt-box">
+              <strong>Conversation Starter:</strong><br>
+              <em>"I'd love to, but I'm really busy right now! I'm tidying up, my brother is fixing the car... What are you doing tomorrow? I'm meeting Sarah at 4:00, do you want to join us?"</em>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer with PROVO Signature -->
+  <footer class="site-footer">
+    <p><strong>PROVO</strong> &bull; Mastering the Present Continuous (A1–A2)</p>
+    <p style="font-size: 0.85rem; margin-top: 0.5rem; opacity: 0.85;">Empowering confident global communication. Instructor contact: provoenglish@proton.me</p>
+  </footer>
+
+  <!-- Interactive JavaScript Logic -->
+  <script>
+    // Tab switching logic
+    function openTab(evt, tabId) {
+      const tabPanels = document.querySelectorAll('.tab-panel');
+      tabPanels.forEach(panel => panel.classList.remove('active'));
+
+      const tabButtons = document.querySelectorAll('.tab-btn');
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+
+      const targetPanel = document.getElementById(tabId);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+      }
+      if (evt && evt.currentTarget) {
+        evt.currentTarget.classList.add('active');
+      }
+    }
+
+    // Toggle Answer Key visibility
+    function toggleKey(keyId) {
+      const keyBox = document.getElementById(keyId);
+      if (keyBox) {
+        keyBox.classList.toggle('show');
+      }
+    }
+
+    // Normalize student input strings
+    function normalizeInput(str) {
+      if (!str) return '';
+      return str
+        .toLowerCase()
+        .replace(/[\u2018\u2019]/g, "'") // curly apostrophes to straight
+        .replace(/\s+/g, ' ')           // normalize extra spaces
+        .trim();
+    }
+
+    // Compare input against pipe-delimited acceptable answers
+    function matchesAcceptable(val, acceptedStr) {
+      const cleanVal = normalizeInput(val);
+      if (!cleanVal) return false;
+      const cleanWithoutPunct = cleanVal.replace(/[.?!]$/, '');
+      const validOptions = acceptedStr.split('|').map(s => normalizeInput(s));
+
+      for (let opt of validOptions) {
+        const optWithoutPunct = opt.replace(/[.?!]$/, '');
+        if (cleanVal === opt || cleanWithoutPunct === optWithoutPunct) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    // Live Gamified Progress Tracker
+    function updateLiveProgress() {
+      let filledCount = 0;
+      const totalItems = 31; // Total questions across Ex 1 to 5
+
+      // Ex 1 (8 inputs)
+      document.querySelectorAll('#ex1 .student-input').forEach(inp => {
+        if (inp.value.trim().length > 0) filledCount++;
+      });
+
+      // Ex 2 (item 2 has 2 inputs, items 1,3-8 have 1 each => 8 questions)
+      document.querySelectorAll('#ex2 .exercise-item').forEach(item => {
+        if (item.getAttribute('data-multi') === 'true') {
+          const inp1 = document.getElementById('ex2_2_a');
+          const inp2 = document.getElementById('ex2_2_b');
+          if (inp1 && inp2 && inp1.value.trim().length > 0 && inp2.value.trim().length > 0) {
+            filledCount++;
+          }
+        } else {
+          const inp = item.querySelector('.student-input');
+          if (inp && inp.value.trim().length > 0) filledCount++;
+        }
+      });
+
+      // Ex 3 (5 inputs)
+      document.querySelectorAll('#ex3 .student-input').forEach(inp => {
+        if (inp.value.trim().length > 0) filledCount++;
+      });
+
+      // Ex 4 (6 inputs)
+      document.querySelectorAll('#ex4 .student-input').forEach(inp => {
+        if (inp.value.trim().length > 0) filledCount++;
+      });
+
+      // Ex 5 (5 questions)
+      const sel1a = document.getElementById('ex5_sel1a');
+      const sel1b = document.getElementById('ex5_sel1b');
+      if (sel1a && sel1b && sel1a.value && sel1b.value) filledCount++;
+
+      for (let i = 2; i <= 5; i++) {
+        const sel = document.getElementById('ex5_sel' + i);
+        if (sel && sel.value) filledCount++;
+      }
+
+      const percent = Math.min(100, Math.round((filledCount / totalItems) * 100));
+      const counterEl = document.getElementById('progressHudCounter');
+      const barEl = document.getElementById('progressBarFill');
+
+      if (counterEl && barEl) {
+        counterEl.textContent = `${filledCount} / ${totalItems} items answered (${percent}%)`;
+        barEl.style.width = `${percent}%`;
+      }
+    }
+
+    // Check generic single-input exercises (Ex1, Ex3, Ex4)
+    function checkSimpleExercise(containerId) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      const items = container.querySelectorAll('.exercise-item');
+
+      items.forEach(item => {
+        const expected = item.getAttribute('data-answer');
+        const input = item.querySelector('.student-input');
+        if (!input || !expected) return;
+
+        const isOk = matchesAcceptable(input.value, expected);
+        item.classList.remove('correct', 'incorrect');
+        input.classList.remove('is-correct', 'is-incorrect');
+
+        if (isOk) {
+          item.classList.add('correct');
+          input.classList.add('is-correct');
+        } else {
+          item.classList.add('incorrect');
+          input.classList.add('is-incorrect');
+        }
+      });
+      updateLiveProgress();
+    }
+
+    // Check Exercise 2 (with dual-blank support)
+    function checkEx2() {
+      const container = document.getElementById('ex2');
+      if (!container) return;
+      const items = container.querySelectorAll('.exercise-item');
+
+      items.forEach(item => {
+        item.classList.remove('correct', 'incorrect');
+        const isMulti = item.getAttribute('data-multi') === 'true';
+
+        if (isMulti) {
+          const ans1 = item.getAttribute('data-ans1');
+          const ans2 = item.getAttribute('data-ans2');
+          const inp1 = document.getElementById('ex2_2_a');
+          const inp2 = document.getElementById('ex2_2_b');
+
+          const ok1 = matchesAcceptable(inp1.value, ans1);
+          const ok2 = matchesAcceptable(inp2.value, ans2);
+
+          inp1.classList.remove('is-correct', 'is-incorrect');
+          inp2.classList.remove('is-correct', 'is-incorrect');
+          inp1.classList.add(ok1 ? 'is-correct' : 'is-incorrect');
+          inp2.classList.add(ok2 ? 'is-correct' : 'is-incorrect');
+
+          if (ok1 && ok2) {
+            item.classList.add('correct');
+          } else {
+            item.classList.add('incorrect');
+          }
+        } else {
+          const expected = item.getAttribute('data-answer');
+          const input = item.querySelector('.student-input');
+          if (input && expected) {
+            const isOk = matchesAcceptable(input.value, expected);
+            input.classList.remove('is-correct', 'is-incorrect');
+            if (isOk) {
+              item.classList.add('correct');
+              input.classList.add('is-correct');
+            } else {
+              item.classList.add('incorrect');
+              input.classList.add('is-incorrect');
+            }
+          }
+        }
+      });
+      updateLiveProgress();
+    }
+
+    // Check Exercise 5 (select dropdowns)
+    function checkEx5() {
+      // Question 1 (2 dropdowns)
+      const q1 = document.getElementById('ex5_q1');
+      const sel1a = document.getElementById('ex5_sel1a');
+      const sel1b = document.getElementById('ex5_sel1b');
+      const ok1 = (sel1a.value === sel1a.dataset.correct) && (sel1b.value === sel1b.dataset.correct);
+      q1.classList.remove('correct', 'incorrect');
+      q1.classList.add(ok1 ? 'correct' : 'incorrect');
+
+      // Questions 2-5
+      for (let i = 2; i <= 5; i++) {
+        const item = document.getElementById('ex5_q' + i);
+        const sel = document.getElementById('ex5_sel' + i);
+        if (item && sel) {
+          const isOk = (sel.value === sel.dataset.correct);
+          item.classList.remove('correct', 'incorrect');
+          item.classList.add(isOk ? 'correct' : 'incorrect');
+        }
+      }
+      updateLiveProgress();
+    }
+
+    // Reset generic exercises
+    function resetExercise(containerId) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      const items = container.querySelectorAll('.exercise-item');
+      items.forEach(item => {
+        item.classList.remove('correct', 'incorrect');
+        const inputs = item.querySelectorAll('.student-input');
+        inputs.forEach(inp => {
+          inp.value = '';
+          inp.classList.remove('is-correct', 'is-incorrect');
+        });
+      });
+      const keyBox = container.querySelector('.answer-key-box');
+      if (keyBox) keyBox.classList.remove('show');
+      updateLiveProgress();
+    }
+
+    // Reset Exercise 5
+    function resetEx5() {
+      const container = document.getElementById('ex5');
+      if (!container) return;
+      const items = container.querySelectorAll('.exercise-item');
+      items.forEach(item => {
+        item.classList.remove('correct', 'incorrect');
+        const selects = item.querySelectorAll('select');
+        selects.forEach(sel => sel.value = '');
+      });
+      const keyBox = container.querySelector('.answer-key-box');
+      if (keyBox) keyBox.classList.remove('show');
+      updateLiveProgress();
+    }
+
+    // Master Score Calculator & Report Generator
+    function generateStudentReport() {
+      const nameInput = document.getElementById('studentFullName');
+      const studentName = nameInput.value.trim();
+
+      if (!studentName) {
+        alert('Please enter your full name before generating the report.');
+        nameInput.focus();
+        return;
+      }
+
+      // Automatically trigger checks on all exercises to visually sync the page
+      checkSimpleExercise('ex1');
+      checkEx2();
+      checkSimpleExercise('ex3');
+      checkSimpleExercise('ex4');
+      checkEx5();
+
+      let totalQuestions = 0;
+      let totalScore = 0;
+      let reportLines = [];
+
+      reportLines.push("=================================================");
+      reportLines.push("       PROVO - EVALUATION REPORT         ");
+      reportLines.push("=================================================");
+      reportLines.push(`Student Name: ${studentName}`);
+      reportLines.push(`Lesson: Mastering the Present Continuous (A1–A2)`);
+      reportLines.push(`Date: ${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}`);
+      reportLines.push("-------------------------------------------------\n");
+
+      // Evaluation Helper
+      function evaluateItem(itemLabel, studentVal, acceptedListStr, canonicalKey) {
+        totalQuestions++;
+        const isCorrect = matchesAcceptable(studentVal, acceptedListStr);
+        if (isCorrect) totalScore++;
+        const mark = isCorrect ? "✅" : "❌";
+        const cleanAnswer = studentVal ? studentVal.trim() : "(no answer)";
+        reportLines.push(`${mark} ${itemLabel}`);
+        reportLines.push(`   Student: ${cleanAnswer}`);
+        if (!isCorrect) {
+          reportLines.push(`   Expected: ${canonicalKey}`);
+        }
+        reportLines.push("");
+      }
+
+      // Exercise 1 (8 items)
+      reportLines.push("--- EXERCISE 1: WRITE THE -ING FORM ---");
+      const ex1Items = document.querySelectorAll('#ex1 .exercise-item');
+      ex1Items.forEach(item => {
+        const label = item.getAttribute('data-qlabel');
+        const expected = item.getAttribute('data-answer');
+        const studentVal = item.querySelector('.student-input').value;
+        const canonical = expected.split('|');
+        evaluateItem(label, studentVal, expected, canonical);
+      });
+
+      // Exercise 2 (8 items, #2 is multi)
+      reportLines.push("--- EXERCISE 2: FILL IN THE BLANKS ---");
+      const ex2Items = document.querySelectorAll('#ex2 .exercise-item');
+      ex2Items.forEach(item => {
+        if (item.getAttribute('data-multi') === 'true') {
+          totalQuestions++;
+          const label = item.getAttribute('data-qlabel');
+          const ans1 = item.getAttribute('data-ans1');
+          const ans2 = item.getAttribute('data-ans2');
+          const val1 = document.getElementById('ex2_2_a').value;
+          const val2 = document.getElementById('ex2_2_b').value;
+          const ok1 = matchesAcceptable(val1, ans1);
+          const ok2 = matchesAcceptable(val2, ans2);
+          const isCorrect = ok1 && ok2;
+          if (isCorrect) totalScore++;
+          const mark = isCorrect ? "✅" : "❌";
+          const ansDisplay = `[Blank 1: ${val1.trim() || "(blank)"}] ; [Blank 2: ${val2.trim() || "(blank)"}]`;
+          reportLines.push(`${mark} ${label}`);
+          reportLines.push(`   Student: ${ansDisplay}`);
+          if (!isCorrect) {
+            reportLines.push(`   Expected: aren't watching ; are cooking`);
+          }
+          reportLines.push("");
+        } else {
+          const label = item.getAttribute('data-qlabel');
+          const expected = item.getAttribute('data-answer');
+          const studentVal = item.querySelector('.student-input').value;
+          const canonical = expected.split('|');
+          evaluateItem(label, studentVal, expected, canonical);
+        }
+      });
+
+      // Exercise 3 (5 items)
+      reportLines.push("--- EXERCISE 3: BUILD QUESTIONS ---");
+      const ex3Items = document.querySelectorAll('#ex3 .exercise-item');
+      ex3Items.forEach(item => {
+        const label = item.getAttribute('data-qlabel');
+        const expected = item.getAttribute('data-answer');
+        const studentVal = item.querySelector('.student-input').value;
+        const canonical = expected.split('|');
+        evaluateItem(label, studentVal, expected, canonical);
+      });
+
+      // Exercise 4 (6 items)
+      reportLines.push("--- EXERCISE 4: SPOT AND CORRECT THE MISTAKE ---");
+      const ex4Items = document.querySelectorAll('#ex4 .exercise-item');
+      ex4Items.forEach(item => {
+        const label = item.getAttribute('data-qlabel');
+        const expected = item.getAttribute('data-answer');
+        const studentVal = item.querySelector('.student-input').value;
+        const canonical = expected.split('|');
+        evaluateItem(label, studentVal, expected, canonical);
+      });
+
+      // Exercise 5 (5 items)
+      reportLines.push("--- EXERCISE 5: PRESENT SIMPLE VS. PRESENT CONTINUOUS ---");
+      // 5.1
+      const sel1a = document.getElementById('ex5_sel1a');
+      const sel1b = document.getElementById('ex5_sel1b');
+      const q1Ok = (sel1a.value === sel1a.dataset.correct) && (sel1b.value === sel1b.dataset.correct);
+      totalQuestions++;
+      if (q1Ok) totalScore++;
+      reportLines.push(`${q1Ok ? "✅" : "❌"} Ex 5.1 (drink / am having)`);
+      reportLines.push(`   Student: [${sel1a.value || "unselected"}] / [${sel1b.value || "unselected"}]`);
+      if (!q1Ok) reportLines.push(`   Expected: drink / am having`);
+      reportLines.push("");
+
+      // 5.2 to 5.5
+      const ex5Labels = [
+        "", "",
+        "Ex 5.2 (is knocking)",
+        "Ex 5.3 (doesn't work)",
+        "Ex 5.4 (Are you using)",
+        "Ex 5.5 (boils)"
+      ];
+      for (let i = 2; i <= 5; i++) {
+        totalQuestions++;
+        const sel = document.getElementById('ex5_sel' + i);
+        const correctVal = sel.dataset.correct;
+        const isOk = sel.value === correctVal;
+        if (isOk) totalScore++;
+        reportLines.push(`${isOk ? "✅" : "❌"} ${ex5Labels[i]}`);
+        reportLines.push(`   Student: ${sel.value || "unselected"}`);
+        if (!isOk) reportLines.push(`   Expected: ${correctVal}`);
+        reportLines.push("");
+      }
+
+      const percentage = Math.round((totalScore / totalQuestions) * 100);
+      reportLines.push("=================================================");
+      reportLines.push(`TOTAL SCORE: ${totalScore} / ${totalQuestions} (${percentage}%)`);
+      reportLines.push("=================================================");
+
+      const fullReportText = reportLines.join("\n");
+
+      // Render summary banner
+      const banner = document.getElementById('scoreBanner');
+      const bannerStudent = document.getElementById('scoreBannerStudent');
+      const bannerScore = document.getElementById('scoreBannerScore');
+      bannerStudent.textContent = `Diagnostic Report for: ${studentName}`;
+      bannerScore.innerHTML = `Overall Score: <strong>${totalScore} / ${totalQuestions} (${percentage}%)</strong> &bull; Status: ${percentage >= 70 ? 'Passed 🎉' : 'Needs Practice 📖'}`;
+      banner.style.display = 'block';
+
+      // Render textarea report
+      const previewArea = document.getElementById('reportPreviewArea');
+      const reportText = document.getElementById('reportText');
+      reportText.value = fullReportText;
+      previewArea.style.display = 'block';
+
+      // Update progress bar to 100%
+      updateLiveProgress();
+
+      // Smooth scroll to results
+      banner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    // Copy report text to clipboard
+    function copyReportToClipboard() {
+      const reportText = document.getElementById('reportText');
+      if (!reportText.value) return;
+
+      reportText.select();
+      reportText.setSelectionRange(0, 99999); // Mobile support
+
+      navigator.clipboard.writeText(reportText.value).then(() => {
+        const toast = document.getElementById('copyToast');
+        toast.style.display = 'block';
+        setTimeout(() => {
+          toast.style.display = 'none';
+        }, 5000);
+      }).catch(() => {
+        document.execCommand('copy');
+        const toast = document.getElementById('copyToast');
+        toast.style.display = 'block';
+        setTimeout(() => {
+          toast.style.display = 'none';
+        }, 5000);
+      });
+    }
+
+    // Send report via email (mailto)
+    function sendReportViaEmail() {
+      const studentName = document.getElementById('studentFullName').value.trim() || "Student";
+      const reportBody = document.getElementById('reportText').value;
+      if (!reportBody) {
+        alert('Please calculate the score and preview your report first.');
+        return;
+      }
+
+      const recipient = "provoenglish@proton.me";
+      const subject = encodeURIComponent(`PROVO Homework - Present Continuous - ${studentName}`);
+      const body = encodeURIComponent(reportBody);
+
+      window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+    }
+
+    // Initialize progress on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      updateLiveProgress();
+    });
+  </script>
+</body>
+</html>

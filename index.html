@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROVO English Academy | Interactive Lesson Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #002B5C;
+      --ocean: #005A8D;
+      --teal: #0089A7;
+      --ice: #F0F6FA;
+      --bg: #F7FAFC;
+      --text: #1E293B;
+      --muted: #64748B;
+      --white: #FFFFFF;
+      --border: #E2E8F0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Sticky Navbar */
+    header {
+      background-color: var(--navy);
+      padding: 0.9rem 5%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0, 43, 92, 0.18);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--white);
+      font-weight: 800;
+      font-size: 1.35rem;
+      letter-spacing: 0.5px;
+    }
+
+    .brand img {
+      height: 36px;
+      width: auto;
+      display: block;
+    }
+
+    .header-badge {
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--white);
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Hero Banner */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--ocean) 55%, var(--teal) 100%);
+      color: var(--white);
+      padding: 3.5rem 5% 4.5rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      max-width: 620px;
+      margin: 0 auto 2rem;
+      font-size: 1.05rem;
+      opacity: 0.92;
+    }
+
+    /* Search Bar */
+    .search-box {
+      max-width: 520px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 0.95rem 1.25rem 0.95rem 3rem;
+      border-radius: 14px;
+      border: none;
+      font-family: inherit;
+      font-size: 0.98rem;
+      box-shadow: 0 10px 25px rgba(0, 20, 45, 0.22);
+      outline: none;
+      color: var(--text);
+    }
+
+    .search-box svg {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      width: 20px;
+      height: 20px;
+    }
+
+    /* Main Container */
+    main {
+      max-width: 1120px;
+      width: 92%;
+      margin: -2rem auto 4rem;
+      flex: 1;
+    }
+
+    /* Category Filters */
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      justify-content: center;
+      background: var(--white);
+      padding: 0.75rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 43, 92, 0.08);
+      margin-bottom: 2.25rem;
+      border: 1px solid var(--border);
+    }
+
+    .filter-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      padding: 0.55rem 1.1rem;
+      border-radius: 10px;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover {
+      background: var(--ice);
+      color: var(--navy);
+    }
+
+    .filter-btn.active {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    /* Lesson Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      padding: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0, 43, 92, 0.11);
+      border-color: var(--teal);
+    }
+
+    .card.coming-soon {
+      opacity: 0.72;
+      background: #FAFCFF;
+    }
+
+    .card.coming-soon:hover {
+      transform: none;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+      border-color: var(--border);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .tag {
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.3rem 0.75rem;
+      border-radius: 8px;
+      background: var(--ice);
+      color: var(--ocean);
+    }
+
+    .tag.kids { background: #FEF3C7; color: #B45309; }
+    .tag.ote { background: #E0F2FE; color: #0369A1; }
+
+    .status {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--teal);
+    }
+
+    .status.soon { color: var(--muted); }
+
+    .card h2 {
+      font-size: 1.22rem;
+      color: var(--navy);
+      margin-bottom: 0.55rem;
+      font-weight: 700;
+    }
+
+    .card p {
+      font-size: 0.93rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .card-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 0.8rem 1.2rem;
+      border-radius: 11px;
+      background: linear-gradient(135deg, var(--navy), var(--ocean));
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.92rem;
+      transition: opacity 0.2s ease;
+    }
+
+    .card-btn:hover { opacity: 0.92; }
+
+    .card-btn.disabled {
+      background: #E2E8F0;
+      color: #64748B;
+      pointer-events: none;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--muted);
+      display: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.75rem 5%;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="brand">
+      <img src="https://i.postimg.cc/vBt4qH44/download.png" alt="PROVO" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+      <span style="display:none;">PROVO</span>
+    </a>
+    <span class="header-badge">Student Learning Portal</span>
+  </header>
+
+  <section class="hero">
+    <h1>Interactive English Lessons</h1>
+    <p>Select your class topic below to review grammar, practice vocabulary, and complete interactive exercises.</p>
+    <div class="search-box">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="searchInput" placeholder="Search lessons (e.g. Present Continuous, OTE, Kids)...">
+    </div>
+  </section>
+
+  <main>
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All Lessons</button>
+      <button class="filter-btn" data-filter="a1-a2">A1–A2 Grammar</button>
+      <button class="filter-btn" data-filter="kids">Primary & Kids</button>
+      <button class="filter-btn" data-filter="ote">OTE Prep (B1 / B2)</button>
+    </div>
+
+    <div class="grid" id="lessonGrid">
+
+      <!-- ACTIVE LESSON 1 -->
+      <article class="card" data-category="a1-a2">
+        <div>
+          <div class="card-top">
+            <span class="tag">A1–A2 Grammar</span>
+            <span class="status">● Available</span>
+          </div>
+          <h2>Mastering the Present Continuous</h2>
+          <p>Actions in progress, temporary situations, future arrangements, -ing spelling rules, and interactive self-check practice.</p>
+        </div>
+        <a href="present-continuous.html" class="card-btn">Start Lesson →</a>
+      </article>
+
+      <!-- PLACEHOLDER LESSON 2 (Duplicate this block to add new lessons) -->
+      <article class="card coming-soon" data-category="a1-a2">
+        <div>
+          <div class="card-top">
+            <span class="tag">A1–A2 Grammar</span>
+            <span class="status soon">Coming Soon</span>
+          </div>
+          <h2>Present Simple vs. Present Continuous</h2>
+          <p>Routines vs. actions happening now, signal words, stative verbs, and contrast exercises.</p>
+        </div>
+        <span class="card-btn disabled">In Preparation</span>
+      </article>
+
+      <!-- PLACEHOLDER LESSON 3 -->
+      <article class="card coming-soon" data-category="kids">
+        <div>
+          <div class="card-top">
+            <span class="tag kids">Primary & Kids</span>
+            <span class="status soon">Coming Soon</span>
+          </div>
+          <h2>Action Verbs & Daily Activities</h2>
+          <p>Fun visual vocabulary, games, and simple sentences for young learners.</p>
+        </div>
+        <span class="card-btn disabled">In Preparation</span>
+      </article>
+
+      <!-- PLACEHOLDER LESSON 4 -->
+      <article class="card coming-soon" data-category="ote">
+        <div>
+          <div class="card-top">
+            <span class="tag ote">OTE Prep (B1 / B2)</span>
+            <span class="status soon">Coming Soon</span>
+          </div>
+          <h2>Oxford Test of English: Speaking & Writing</h2>
+          <p>Exam structure, useful connectors, voicemail task strategies, and timed mock prompts.</p>
+        </div>
+        <span class="card-btn disabled">In Preparation</span>
+      </article>
+
+    </div>
+
+    <div class="empty-state" id="emptyState">
+      No lessons match your search. Try another keyword or click "All Lessons".
+    </div>
+  </main>
+
+  <footer>
+    <strong>PROVO English Academy</strong> • Interactive Classroom & Self-Study Hub
+  </footer>
+
+  <script>
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.card');
+    const searchInput = document.getElementById('searchInput');
+    const emptyState = document.getElementById('emptyState');
+
+    let currentFilter = 'all';
+
+    function filterLessons() {
+      const term = searchInput.value.toLowerCase().trim();
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        const text = card.innerText.toLowerCase();
+        const matchesCategory = currentFilter === 'all' || category === currentFilter;
+        const matchesSearch = text.includes(term);
+
+        if (matchesCategory && matchesSearch) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.getAttribute('data-filter');
+        filterLessons();
+      });
+    });
+
+    searchInput.addEventListener('input', filterLessons);
+  </script>
+
+</body>
+</html>

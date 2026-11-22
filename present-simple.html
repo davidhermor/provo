@@ -108,7 +108,7 @@
           </h1>
 
           <p class="text-slate-600 dark:text-zinc-300 text-base leading-relaxed">
-            Explore visual speaking prompts, clear grammar blueprints, interactive practice, and a lively speaking game to use in class.
+            Explore visual speaking prompts, clear grammar blueprints, interactive vocabulary &amp; word scrambles, and a live speaking game for class.
           </p>
 
           <div class="pt-2 flex flex-wrap items-center gap-4">
@@ -120,7 +120,7 @@
               <span>Start Lesson</span>
               <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
-            <span class="text-xs font-medium text-slate-500 dark:text-zinc-400">7 stages · Visual cards &amp; class game</span>
+            <span class="text-xs font-medium text-slate-500 dark:text-zinc-400">7 stages · Visual cards, scramble &amp; class game</span>
           </div>
         </div>
       </div>
@@ -137,12 +137,11 @@
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-        <!-- Left: Visual Question Focus Card (7 cols) -->
         <div class="lg:col-span-7 space-y-4">
           <div class="flex flex-wrap items-center justify-between gap-2 bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-2xl px-4 py-3 shadow-sm">
             <div class="flex items-center gap-2">
               <span id="qBadge" class="px-2.5 py-1 rounded-lg bg-[#002B5C] text-white text-xs font-extrabold">Q1 / 8</span>
-              <span id="qTag" class="px-2.5 py-1 rounded-lg bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300 text-xs font-bold">Morning Routine</span>
+              <span id="qTag" class="px-2.5 py-1 rounded-lg bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300 text-xs font-bold">Morning Rituals</span>
             </div>
             <div class="flex items-center gap-1.5">
               <button id="prevQ" type="button" class="p-2 rounded-xl border border-slate-200 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/5 transition" title="Previous">
@@ -159,7 +158,6 @@
           </div>
 
           <div class="bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-3xl overflow-hidden shadow-sm">
-            <!-- Large Visual Photo Header -->
             <div id="questionPhotoBox" class="h-52 sm:h-60 bg-slate-900 relative overflow-hidden"></div>
 
             <div class="p-6 sm:p-8 space-y-4">
@@ -167,7 +165,6 @@
               <h3 id="questionText" class="text-xl sm:text-2xl font-extrabold leading-snug text-[#002B5C] dark:text-white"></h3>
               <p id="questionFollow" class="text-sm text-slate-600 dark:text-zinc-300"></p>
 
-              <!-- Collapsible Sentence Starters -->
               <div class="pt-3 border-t border-slate-100 dark:border-white/10">
                 <button id="toggleStarters" type="button" class="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-[#005A8D] dark:text-cyan-300 hover:underline">
                   <i data-lucide="lightbulb" class="w-4 h-4"></i>
@@ -183,7 +180,7 @@
           <div id="questionNumberPills" class="flex flex-wrap gap-1.5"></div>
         </div>
 
-        <!-- Right: Voice Note Recorder (5 cols) -->
+        <!-- Right: Voice Note Recorder -->
         <div class="lg:col-span-5 bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 space-y-4 shadow-sm">
           <div class="flex items-center justify-between">
             <span class="text-xs font-extrabold uppercase tracking-[0.18em] text-[#0089A7]">Voice Note · Drive</span>
@@ -225,25 +222,54 @@
       </div>
     </section>
 
-    <!-- ==================== 03: VOCABULARY MATCH ==================== -->
-    <section data-stage="2" class="lesson-stage hidden stage-anim space-y-6">
+    <!-- ==================== 03: VOCABULARY SHOWCASE + MATCH + FREQUENCY SCALE ==================== -->
+    <section data-stage="2" class="lesson-stage hidden stage-anim space-y-8">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-white/10 pb-4">
         <div>
           <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 03</span>
-          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Vocabulary Match</h2>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Vocabulary &amp; Frequency</h2>
         </div>
-        <div class="flex items-center gap-3">
-          <span id="vocabMatchStatus" class="text-xs font-bold text-[#005A8D] dark:text-cyan-300">Pick a definition on the left, then tap its phrase</span>
-          <button type="button" onclick="resetVocabMatch()" class="text-xs px-3 py-1.5 rounded-lg border border-slate-300 dark:border-white/15 hover:bg-slate-100 dark:hover:bg-white/5 font-semibold">Reset</button>
-        </div>
+        <p class="text-sm text-slate-500 dark:text-zinc-400">1. Explore the expressions in context · 2. Test the frequency scale · 3. Match definitions.</p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-        <div id="vocabDefsCol" class="lg:col-span-7 space-y-2.5"></div>
-        <div class="lg:col-span-5 bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 space-y-4 shadow-sm">
-          <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-slate-500 dark:text-zinc-400">Expressions &amp; Pronunciation</h3>
-          <div id="vocabWordsCol" class="flex flex-wrap gap-2.5"></div>
-          <div id="vocabExampleBox" class="hidden pt-4 border-t border-slate-200 dark:border-white/10 text-xs text-slate-600 dark:text-zinc-300 space-y-1"></div>
+      <!-- Part A: Visual Vocabulary Cards with Pronunciation & Context -->
+      <div class="space-y-3">
+        <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#005A8D] dark:text-cyan-300">Part A · Key Expressions in Context</h3>
+        <div id="vocabShowcaseGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+      </div>
+
+      <!-- Part B: Interactive Frequency Thermometer -->
+      <div class="bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 space-y-4 shadow-sm">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Part B · Frequency Thermometer</span>
+            <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white mt-0.5">Tap an Adverb to See Where It Sits &amp; Speak</h3>
+          </div>
+          <span id="freqPercentBadge" class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold self-start sm:self-auto">100% · Always</span>
+        </div>
+
+        <div class="flex flex-wrap gap-2" id="freqButtons"></div>
+
+        <div id="freqDetailCard" class="p-4 rounded-2xl bg-slate-50 dark:bg-[#141518] border border-slate-200 dark:border-white/10 space-y-1.5"></div>
+      </div>
+
+      <!-- Part C: Vocabulary Match Challenge -->
+      <div class="space-y-4 pt-2">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#005A8D] dark:text-cyan-300">Part C · Quick Definition Match</h3>
+          <div class="flex items-center gap-3">
+            <span id="vocabMatchStatus" class="text-xs font-bold text-[#005A8D] dark:text-cyan-300">Pick a definition on the left, then tap its phrase</span>
+            <button type="button" onclick="resetVocabMatch()" class="text-xs px-3 py-1.5 rounded-lg border border-slate-300 dark:border-white/15 hover:bg-slate-100 dark:hover:bg-white/5 font-semibold">Reset</button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          <div id="vocabDefsCol" class="lg:col-span-7 space-y-2.5"></div>
+          <div class="lg:col-span-5 bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 space-y-4 shadow-sm">
+            <h4 class="text-xs font-extrabold uppercase tracking-[0.2em] text-slate-500 dark:text-zinc-400">Expressions &amp; Audio</h4>
+            <div id="vocabWordsCol" class="flex flex-wrap gap-2.5"></div>
+            <div id="vocabExampleBox" class="hidden pt-4 border-t border-slate-200 dark:border-white/10 text-xs text-slate-600 dark:text-zinc-300 space-y-1"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -258,7 +284,6 @@
         <p class="text-sm text-slate-500 dark:text-zinc-400">When we use Present Simple, how to form it, and where frequency adverbs go.</p>
       </div>
 
-      <!-- Visual Use & Timeline Banner -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
         <div class="lg:col-span-5 rounded-3xl overflow-hidden relative bg-slate-900 min-h-[240px]">
           <img
@@ -282,7 +307,7 @@
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
             <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-[#141518] border border-slate-200/70 dark:border-white/10 space-y-1">
               <div class="font-extrabold text-[#005A8D] dark:text-cyan-300">1. Habits &amp; Routines</div>
-              <p class="text-slate-600 dark:text-zinc-300"><em>I <u>walk</u> 10,000 steps every day.</em></p>
+              <p class="text-slate-600 dark:text-zinc-300"><em>I <u>walk</u> every morning.</em></p>
             </div>
             <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-[#141518] border border-slate-200/70 dark:border-white/10 space-y-1">
               <div class="font-extrabold text-[#005A8D] dark:text-cyan-300">2. Permanent Facts</div>
@@ -300,7 +325,6 @@
         </div>
       </div>
 
-      <!-- Structure, Spelling & Frequency Adverbs -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         <div class="bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 space-y-2.5 shadow-sm">
           <span class="inline-block px-2.5 py-1 rounded-lg bg-[#002B5C] text-white text-[11px] font-extrabold uppercase">Spelling · He / She / It</span>
@@ -335,7 +359,6 @@
         </div>
       </div>
 
-      <!-- Interactive Sentence Form Inspector -->
       <div class="bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 sm:p-8 space-y-5 shadow-sm">
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
@@ -387,16 +410,17 @@
       </div>
     </section>
 
-    <!-- ==================== 06: PRACTICE & ODD ONE OUT ==================== -->
+    <!-- ==================== 06: PRACTICE, SENTENCE SCRAMBLE & ODD ONE OUT ==================== -->
     <section data-stage="5" class="lesson-stage hidden stage-anim space-y-8">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-white/10 pb-4">
         <div>
           <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 06</span>
-          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Practice &amp; Odd One Out</h2>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Practice &amp; Word Order</h2>
         </div>
-        <p class="text-sm text-slate-500 dark:text-zinc-400">Choose the right Present Simple form and spot the item that doesn't fit.</p>
+        <p class="text-sm text-slate-500 dark:text-zinc-400">Choose verb forms, build sentences by tapping tiles, and spot the odd one out.</p>
       </div>
 
+      <!-- Verb Choice Grid -->
       <div class="space-y-4">
         <div id="practiceGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
         <div class="flex items-center gap-3">
@@ -407,6 +431,25 @@
         </div>
       </div>
 
+      <!-- Interactive Sentence Scramble -->
+      <div class="bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 space-y-4 shadow-sm">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Sentence Scramble</span>
+            <h3 id="scrambleTitle" class="text-lg font-extrabold text-[#002B5C] dark:text-white mt-0.5"></h3>
+          </div>
+          <div class="flex items-center gap-2">
+            <button type="button" onclick="resetScramble()" class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-white/15 text-xs font-semibold hover:bg-slate-100 dark:hover:bg-white/5">Clear</button>
+            <button type="button" onclick="nextScramble()" class="px-3.5 py-1.5 rounded-lg bg-[#005A8D] text-white text-xs font-bold hover:bg-[#0089A7] transition">Next Sentence</button>
+          </div>
+        </div>
+
+        <div id="scrambleTray" class="min-h-[54px] p-3.5 rounded-2xl bg-slate-50 dark:bg-[#141518] border border-dashed border-[#0089A7]/50 flex flex-wrap gap-2 items-center"></div>
+        <div id="scrambleBank" class="flex flex-wrap gap-2"></div>
+        <div id="scrambleFeedback" class="text-xs font-bold"></div>
+      </div>
+
+      <!-- Odd One Out -->
       <div class="space-y-4 pt-2">
         <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Odd One Out</h3>
         <div id="oddGrid" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
@@ -423,10 +466,8 @@
         <p class="text-sm text-slate-500 dark:text-zinc-400">Play live with your teacher: draw a prompt card, answer naturally, and keep the conversation going.</p>
       </div>
 
-      <!-- Mode Selector -->
       <div class="flex flex-wrap gap-2" id="gameModeTabs"></div>
 
-      <!-- Interactive Game Card Stage -->
       <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 shadow-lg">
         <div id="gamePhotoBox" class="lg:col-span-5 h-64 lg:h-auto bg-slate-900 relative overflow-hidden"></div>
 
@@ -434,7 +475,7 @@
           <div class="space-y-4">
             <div class="flex items-center justify-between gap-2">
               <span id="gameModeBadge" class="px-3 py-1 rounded-full bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300 text-xs font-extrabold uppercase tracking-wider"></span>
-              <span id="gameCardCounter" class="text-xs font-bold text-slate-400">Card 1 / 6</span>
+              <span id="gameCardCounter" class="text-xs font-bold text-slate-400">Card 1 / 2</span>
             </div>
 
             <h3 id="gamePromptTitle" class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
@@ -498,10 +539,10 @@
     const STAGES = [
       "01 · Overview",
       "02 · Visual Warm-Up",
-      "03 · Vocabulary Match",
+      "03 · Vocabulary & Frequency",
       "04 · Grammar Guide",
       "05 · Rule Summary",
-      "06 · Practice",
+      "06 · Practice & Word Order",
       "07 · Class Game"
     ];
 
@@ -556,7 +597,6 @@
       lucide.createIcons();
     });
 
-    // Helper for safe editorial images
     function mountPhoto(container, url, altText, fallbackTitle) {
       container.innerHTML = `<img src="${url}" alt="${altText}" class="w-full h-full object-cover" loading="lazy" />`;
       const img = container.querySelector('img');
@@ -571,6 +611,14 @@
           lucide.createIcons();
         }, { once: true });
       }
+    }
+
+    function speakPhrase(text) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'en-US';
+      window.speechSynthesis.speak(u);
     }
 
     // 02: Visual Question Focus Cards
@@ -665,25 +713,126 @@
       document.getElementById('startersBox').classList.toggle('hidden');
     });
 
-    // 03: Vocabulary Match
+    // 03: Vocabulary Showcase + Frequency Thermometer + Match
     const VOCAB_ITEMS = [
-      { id: 1, def: "Once every two days (e.g., Mon, Wed, Fri)", phrase: "every other day", ex: "I go running every other day." },
-      { id: 2, def: "Almost never; very rarely", phrase: "hardly ever", ex: "We hardly ever eat out on Mondays." },
-      { id: 3, def: "Repeatedly at steady, predictable intervals", phrase: "on a regular basis", ex: "She updates her notes on a regular basis." },
-      { id: 4, def: "At all times; without exception in a routine", phrase: "always", ex: "The 7:15 train always leaves on time." },
-      { id: 5, def: "Not often; only occasionally", phrase: "once in a while", ex: "I bake treats once in a while." },
-      { id: 6, def: "To be the property of someone", phrase: "belong to", ex: "This guitar belongs to my brother." }
+      {
+        id: 1,
+        phrase: "every other day",
+        note: "Once every 2 days",
+        def: "Once every two days (e.g., Mon, Wed, Fri)",
+        ex: "I go for a walk every other day.",
+        photo: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=650&q=75"
+      },
+      {
+        id: 2,
+        phrase: "hardly ever",
+        note: "Almost never (~5%)",
+        def: "Almost never; very rarely",
+        ex: "We hardly ever eat out on Mondays.",
+        photo: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=650&q=75"
+      },
+      {
+        id: 3,
+        phrase: "on a regular basis",
+        note: "Steady routine",
+        def: "Repeatedly at steady, predictable intervals",
+        ex: "She updates her notes on a regular basis.",
+        photo: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=650&q=75"
+      },
+      {
+        id: 4,
+        phrase: "once in a while",
+        note: "Occasionally",
+        def: "Not often; only occasionally",
+        ex: "I bake homemade treats once in a while.",
+        photo: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=650&q=75"
+      },
+      {
+        id: 5,
+        phrase: "belong to",
+        note: "Stative · Possession",
+        def: "To be the property of someone",
+        ex: "This guitar belongs to my brother.",
+        photo: "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=650&q=75"
+      },
+      {
+        id: 6,
+        phrase: "take for granted",
+        note: "Idiom · Overlook",
+        def: "Fail to appreciate something because it feels constant",
+        ex: "Don't take good health for granted.",
+        photo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=650&q=75"
+      }
     ];
+
+    function renderVocabShowcase() {
+      const grid = document.getElementById('vocabShowcaseGrid');
+      grid.innerHTML = VOCAB_ITEMS.map((v, i) => {
+        const safe = v.phrase.replace(/'/g, "\\'");
+        return `
+          <div class="bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-2xl overflow-hidden shadow-sm flex flex-col">
+            <div id="v-photo-${i}" class="h-32 bg-slate-900 relative overflow-hidden"></div>
+            <div class="p-4 flex-1 flex flex-col justify-between gap-3">
+              <div>
+                <div class="flex items-start justify-between gap-2">
+                  <h4 class="text-base font-extrabold text-[#002B5C] dark:text-white">${v.phrase}</h4>
+                  <button type="button" onclick="speakPhrase('${safe}')" class="p-1.5 rounded-lg bg-slate-100 dark:bg-[#141518] text-[#005A8D] dark:text-cyan-300 hover:bg-[#0089A7] hover:text-white transition" title="Pronounce">
+                    <i data-lucide="volume-2" class="w-4 h-4"></i>
+                  </button>
+                </div>
+                <span class="inline-block mt-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300">${v.note}</span>
+                <p class="text-xs text-slate-600 dark:text-zinc-300 mt-2">${v.def}</p>
+              </div>
+              <p class="text-xs italic text-[#005A8D] dark:text-cyan-300 border-t border-slate-100 dark:border-white/10 pt-2">“${v.ex}”</p>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      VOCAB_ITEMS.forEach((v, i) => {
+        mountPhoto(document.getElementById(`v-photo-${i}`), v.photo, v.phrase, v.phrase);
+      });
+      lucide.createIcons();
+    }
+
+    const FREQ_SCALE = [
+      { label: "Always", pct: "100%", ex: "She always drinks coffee at 8:00 AM.", ask: "What is something you always do on work/school days?" },
+      { label: "Usually", pct: "80%", ex: "I usually walk to the station.", ask: "How do you usually get around during the week?" },
+      { label: "Often", pct: "60%", ex: "They often meet on Saturday mornings.", ask: "What do you often do with friends or family?" },
+      { label: "Sometimes", pct: "40%", ex: "We sometimes cook pizza at home.", ask: "What do you sometimes eat for dinner?" },
+      { label: "Hardly ever", pct: "10%", ex: "He hardly ever watches TV on weekdays.", ask: "What is one thing you hardly ever do?" },
+      { label: "Never", pct: "0%", ex: "I never skip my morning routine.", ask: "What is something you never do?" }
+    ];
+    let activeFreqIdx = 0;
+
+    function renderFreqScale() {
+      document.getElementById('freqButtons').innerHTML = FREQ_SCALE.map((f, i) => `
+        <button
+          type="button"
+          onclick="selectFreq(${i})"
+          class="px-3.5 py-1.5 rounded-xl text-xs font-extrabold border transition ${
+            activeFreqIdx === i
+              ? 'bg-[#005A8D] text-white border-[#005A8D]'
+              : 'bg-slate-50 dark:bg-[#141518] border-slate-200 dark:border-white/10 hover:border-[#0089A7]'
+          }"
+        >${f.label}</button>
+      `).join('');
+
+      const item = FREQ_SCALE[activeFreqIdx];
+      document.getElementById('freqPercentBadge').textContent = `${item.pct} · ${item.label}`;
+      document.getElementById('freqDetailCard').innerHTML = `
+        <div class="text-sm font-bold text-[#002B5C] dark:text-white">Example: “${item.ex}”</div>
+        <div class="text-xs text-[#005A8D] dark:text-cyan-300 font-semibold">Class prompt: ${item.ask}</div>
+      `;
+    }
+
+    window.selectFreq = (i) => {
+      activeFreqIdx = i;
+      renderFreqScale();
+    };
+
     let activeDef = null;
     const doneMatches = new Set();
-
-    function speakPhrase(text) {
-      if (!('speechSynthesis' in window)) return;
-      window.speechSynthesis.cancel();
-      const u = new SpeechSynthesisUtterance(text);
-      u.lang = 'en-US';
-      window.speechSynthesis.speak(u);
-    }
 
     function renderVocabMatch() {
       const defs = document.getElementById('vocabDefsCol');
@@ -793,10 +942,7 @@
       `;
     }
 
-    window.setSubject = (key) => {
-      currentSubj = key;
-      renderInspector();
-    };
+    window.setSubject = (key) => { currentSubj = key; renderInspector(); };
 
     document.querySelectorAll('.form-btn').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -866,7 +1012,7 @@
       renderCloze();
     };
 
-    // 06: Practice & Odd One Out
+    // 06: Practice, Sentence Scramble & Odd One Out
     const PRACTICE_QS = [
       { q: "1. My brother ___ to work by bike every day.", opts: ["go", "goes"], ans: "goes" },
       { q: "2. They ___ meat; they follow a vegetarian diet.", opts: ["don't eat", "doesn't eat"], ans: "don't eat" },
@@ -897,6 +1043,94 @@
       let c = 0;
       PRACTICE_QS.forEach((item, i) => { if (practicePicked[i] === item.ans) c++; });
       document.getElementById('practiceResult').textContent = `Score: ${c} / ${PRACTICE_QS.length}`;
+    };
+
+    const SCRAMBLES = [
+      {
+        label: "Sentence 1 · Frequency Adverb + Verb",
+        tiles: ["always", "she", "coffee", "drinks", "at breakfast"],
+        target: "she always drinks coffee at breakfast"
+      },
+      {
+        label: "Sentence 2 · Negative with 'Doesn't'",
+        tiles: ["on Sundays", "he", "work", "doesn't", "usually"],
+        target: "he doesn't usually work on sundays"
+      },
+      {
+        label: "Sentence 3 · Question with 'Do'",
+        tiles: ["every day", "you", "do", "for a walk", "go"],
+        target: "do you go for a walk every day"
+      }
+    ];
+    let scrambleIdx = 0;
+    let placedOrder = [];
+
+    function renderScramble() {
+      const s = SCRAMBLES[scrambleIdx];
+      document.getElementById('scrambleTitle').textContent = s.label;
+      const tray = document.getElementById('scrambleTray');
+      const bank = document.getElementById('scrambleBank');
+      const fb = document.getElementById('scrambleFeedback');
+
+      tray.innerHTML = placedOrder.length
+        ? placedOrder.map((tIdx, pos) => `
+            <button type="button" onclick="removeScrambleTile(${pos})" class="px-3 py-1.5 rounded-xl bg-[#005A8D] text-white text-xs font-bold shadow-sm hover:bg-rose-600 transition">
+              ${s.tiles[tIdx]} ✕
+            </button>
+          `).join('')
+        : `<span class="text-xs text-slate-400">Tap words below to build the sentence...</span>`;
+
+      bank.innerHTML = s.tiles.map((word, tIdx) => {
+        const used = placedOrder.includes(tIdx);
+        return `
+          <button
+            type="button"
+            ${used ? 'disabled' : ''}
+            onclick="addScrambleTile(${tIdx})"
+            class="px-3.5 py-1.5 rounded-xl border text-xs font-bold transition ${
+              used
+                ? 'opacity-30 border-slate-200 dark:border-white/10'
+                : 'bg-slate-50 dark:bg-[#141518] border-slate-200 dark:border-white/15 hover:border-[#0089A7]'
+            }"
+          >${word}</button>
+        `;
+      }).join('');
+
+      if (placedOrder.length === s.tiles.length) {
+        const built = placedOrder.map(i => s.tiles[i]).join(' ').toLowerCase();
+        if (built === s.target) {
+          fb.className = 'text-xs font-bold text-emerald-600 dark:text-emerald-400';
+          fb.textContent = 'Great order! Sentence complete.';
+        } else {
+          fb.className = 'text-xs font-bold text-amber-600 dark:text-amber-300';
+          fb.textContent = `Check word order — target: “${s.target}”.`;
+        }
+      } else {
+        fb.textContent = '';
+      }
+    }
+
+    window.addScrambleTile = (tIdx) => {
+      if (!placedOrder.includes(tIdx)) {
+        placedOrder.push(tIdx);
+        renderScramble();
+      }
+    };
+
+    window.removeScrambleTile = (pos) => {
+      placedOrder.splice(pos, 1);
+      renderScramble();
+    };
+
+    window.resetScramble = () => {
+      placedOrder = [];
+      renderScramble();
+    };
+
+    window.nextScramble = () => {
+      scrambleIdx = (scrambleIdx + 1) % SCRAMBLES.length;
+      placedOrder = [];
+      renderScramble();
     };
 
     const ODD_ITEMS = [
@@ -934,7 +1168,7 @@
       }
     };
 
-    // 07: Live Class Speaking Game ("Truth, Bluff & Habits")
+    // 07: Live Class Speaking Game
     const GAME_MODES = [
       { key: "bluff", label: "2 Habits & 1 Bluff" },
       { key: "detective", label: "Routine Detective" },
@@ -1023,20 +1257,9 @@
       lucide.createIcons();
     }
 
-    window.setGameMode = (key) => {
-      activeGameMode = key;
-      gameCardIdx = 0;
-      renderGame();
-    };
-
-    window.nextGameCard = () => {
-      gameCardIdx++;
-      renderGame();
-    };
-
-    window.revealBluffVote = () => {
-      document.getElementById('gameTwistBox').classList.toggle('hidden');
-    };
+    window.setGameMode = (key) => { activeGameMode = key; gameCardIdx = 0; renderGame(); };
+    window.nextGameCard = () => { gameCardIdx++; renderGame(); };
+    window.revealBluffVote = () => { document.getElementById('gameTwistBox').classList.toggle('hidden'); };
 
     // Voice Note Recorder
     const studentNameInput = document.getElementById('studentNameInput');
@@ -1175,10 +1398,13 @@
     // Init
     goStage(0);
     renderWarmupCard(0);
+    renderVocabShowcase();
+    renderFreqScale();
     renderVocabMatch();
     renderInspector();
     renderCloze();
     renderPractice();
+    renderScramble();
     renderOdd();
     renderGame();
     lucide.createIcons();

@@ -94,13 +94,13 @@
     </div>
   </header>
 
-  <!-- Compact Hero Strip -->
+  <!-- Hero Banner -->
   <section class="bg-gradient-to-r from-[#002B5C] via-[#005A8D] to-[#0089A7] text-white py-7 px-4 sm:px-6">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4">
       <div>
         <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-white/15 text-xs font-semibold mb-2">
           <i data-lucide="sparkles" class="w-3.5 h-3.5 text-cyan-200"></i>
-          <span>PROVO • Interactive Lesson Template</span>
+          <span>PROVO • Interactive Lesson Base</span>
         </div>
         <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">
           Present Simple vs. Present Continuous
@@ -111,7 +111,7 @@
       </div>
       <div class="flex items-center gap-2 self-start md:self-auto bg-black/20 backdrop-blur-sm px-3.5 py-2 rounded-2xl border border-white/15 text-xs">
         <i data-lucide="message-circle" class="w-4 h-4 text-cyan-200"></i>
-        <span>Speaking • Grammar • Live Lab</span>
+        <span>Speaking • Grammar • Vocabulary • Live Lab</span>
       </div>
     </div>
   </section>
@@ -145,17 +145,19 @@
           </div>
 
           <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-sm">
-            <!-- Everyday Scene Illustration with safe fallback -->
-            <div id="questionScene" class="mb-5 rounded-2xl overflow-hidden border border-slate-200/80 dark:border-slate-700/80 bg-[#F0F6FA] dark:bg-slate-800/60 h-40 sm:h-44 flex items-center justify-center"></div>
+            <!-- Everyday Visual Scene -->
+            <div id="questionScene" class="mb-5 rounded-2xl overflow-hidden border border-slate-200/80 dark:border-slate-700/80 bg-[#F0F6FA] dark:bg-slate-800/60 h-44 sm:h-48 flex items-center justify-center"></div>
 
-            <p class="text-xs font-bold uppercase tracking-wider text-[#0089A7] mb-2">Speaking Prompt</p>
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+              <p class="text-xs font-bold uppercase tracking-wider text-[#0089A7]">Speaking Prompt</p>
+              <span id="qContextBadge" class="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300"></span>
+            </div>
             <h2 id="questionText" class="text-xl sm:text-2xl font-bold leading-snug text-slate-900 dark:text-white">
               Loading question...
             </h2>
-            <p id="questionHint" class="text-sm text-slate-500 dark:text-slate-400 mt-3">
-              Compare what happens regularly with what is happening right now.
-            </p>
+            <p id="questionHint" class="text-sm text-slate-500 dark:text-slate-400 mt-3"></p>
 
+            <!-- Collapsible Sentence Starters -->
             <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800">
               <button id="toggleStarters" type="button" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#005A8D] dark:text-cyan-300 hover:underline">
                 <i data-lucide="lightbulb" class="w-4 h-4"></i>
@@ -167,6 +169,7 @@
             </div>
           </div>
 
+          <!-- Quick Question Selector Pills -->
           <div class="flex flex-wrap gap-1.5" id="questionPills"></div>
         </div>
 
@@ -178,6 +181,7 @@
               <span>Google Drive Submission</span>
             </span>
             <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white mt-0.5">Record &amp; Send Voice Note</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Record your answer out loud and send it straight to your teacher's folder.</p>
           </div>
 
           <div>
@@ -341,8 +345,8 @@
       </div>
     </section>
 
-    <!-- ==================== TAB 3: ACTIVE VOCABULARY CARDS ==================== -->
-    <section id="panel-vocabulary" class="tab-panel hidden animate-fade space-y-6">
+    <!-- ==================== TAB 3: ACTIVE VOCABULARY & CONTEXT CHALLENGE ==================== -->
+    <section id="panel-vocabulary" class="tab-panel hidden animate-fade space-y-8">
       <div class="flex flex-wrap items-center justify-between gap-3">
         <div>
           <h2 class="text-xl font-extrabold text-[#002B5C] dark:text-white">Active Vocabulary &amp; Trap Alerts</h2>
@@ -351,6 +355,18 @@
         <div id="vocabFilters" class="flex flex-wrap gap-1.5"></div>
       </div>
       <div id="vocabGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+
+      <!-- Mini Context Pick Challenge -->
+      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm space-y-4">
+        <div class="flex items-center justify-between gap-2">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-[#0089A7]">Quick Recall</span>
+            <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white">Pick the Right Expression in Context</h3>
+          </div>
+          <span id="vocabQuizScore" class="text-xs font-bold px-3 py-1 rounded-full bg-[#F0F6FA] dark:bg-slate-800 text-[#005A8D] dark:text-cyan-300">0 / 4</span>
+        </div>
+        <div id="vocabQuizList" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+      </div>
     </section>
 
     <!-- ==================== TAB 4: INTERACTIVE PRACTICE ==================== -->
@@ -382,7 +398,6 @@
 
     <!-- ==================== TAB 5: LIVE LAB (SPOT THE TRAP + RAPID DECISIONS) ==================== -->
     <section id="panel-challenges" class="tab-panel hidden animate-fade space-y-8">
-      <!-- Spot the Trap -->
       <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm space-y-4">
         <div class="flex items-center justify-between gap-2">
           <div>
@@ -394,7 +409,6 @@
         <div id="trapList" class="space-y-3"></div>
       </div>
 
-      <!-- Rapid-Fire Decision Cards -->
       <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm space-y-4">
         <div>
           <span class="text-xs font-bold uppercase tracking-wider text-[#005A8D] dark:text-cyan-300">Quick Situations</span>
@@ -420,6 +434,7 @@
       {
         q: "What do you usually do on weekday mornings, and what are you doing right now?",
         tag: "Daily Habit vs. Right Now",
+        context: "Routine + Present Moment",
         hint: "Contrast a regular routine with your current moment.",
         photo: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=75",
         photoAlt: "Morning coffee cup on a table",
@@ -431,6 +446,7 @@
       {
         q: "Are you working on or learning anything temporary this month that isn't part of your normal routine?",
         tag: "Temporary Project",
+        context: "Around Now / Short-Term",
         hint: "Think of a short-term course, project, or new habit.",
         photo: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=900&q=75",
         photoAlt: "Notebook and pen on a desk",
@@ -442,6 +458,7 @@
       {
         q: "How often do you check your messages, and are you waiting for an important reply today?",
         tag: "Frequency vs. Today",
+        context: "Frequency + Today",
         hint: "Use a frequency adverb plus a 'today' example.",
         photo: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=75",
         photoAlt: "Smartphone held in hand",
@@ -453,7 +470,8 @@
       {
         q: "What kind of food do you eat most days, and what are you craving right now?",
         tag: "Diet vs. Craving",
-        hint: "Remember 'crave' or 'want' are usually stative.",
+        context: "Habit + Stative / Desire",
+        hint: "Remember 'want' or 'crave' in their state sense use Present Simple.",
         photo: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=75",
         photoAlt: "Fresh food bowl on a table",
         starters: [
@@ -464,6 +482,7 @@
       {
         q: "Does your city or neighborhood seem to be changing lately? Give an example.",
         tag: "Changing Situations",
+        context: "Ongoing Trend",
         hint: "Present Continuous describes ongoing changes.",
         photo: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=900&q=75",
         photoAlt: "City street and buildings",
@@ -475,6 +494,7 @@
       {
         q: "What do you do to relax after a busy day, and what are you planning to do this evening?",
         tag: "Routine vs. Evening Plan",
+        context: "Habit + Arrangement",
         hint: "Combine a habit with a definite arrangement.",
         photo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=75",
         photoAlt: "Calm sunset view",
@@ -486,6 +506,7 @@
       {
         q: "Which household task do you do regularly, and who is doing chores around your home today?",
         tag: "Chores & Today",
+        context: "Routine + Today's Action",
         hint: "Practice third-person singular or continuous forms.",
         photo: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=75",
         photoAlt: "Tidying and cleaning at home",
@@ -497,6 +518,7 @@
       {
         q: "Do you prefer studying or working in the morning or at night? Why?",
         tag: "Preference (Stative)",
+        context: "Stative Verb Focus",
         hint: "Use 'prefer' in the Present Simple.",
         photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=900&q=75",
         photoAlt: "Laptop and study workspace",
@@ -508,6 +530,7 @@
       {
         q: "What are people around you doing right now, and how do they usually spend their free time?",
         tag: "Others Now vs. Usually",
+        context: "Observing Around You",
         hint: "Contrast someone's current action with their usual habit.",
         photo: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=75",
         photoAlt: "Friends spending time together",
@@ -519,6 +542,7 @@
       {
         q: "What is one grammar rule in English that still confuses you, and how are you practicing it?",
         tag: "Challenge vs. Current Effort",
+        context: "Learning Process",
         hint: "Connect a persistent challenge with current practice.",
         photo: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=900&q=75",
         photoAlt: "Writing notes while studying",
@@ -528,19 +552,6 @@
         ]
       }
     ];
-
-        function renderSceneMedia(item, idx) {
-      return `
-        <img
-          src="${item.photo}"
-          alt="${item.photoAlt}"
-          class="w-full h-full object-cover"
-          loading="lazy"
-          data-prompt-num="${idx + 1}"
-        />
-      `;
-    }
-
 
     const SWITCHER_ITEMS = [
       {
@@ -581,13 +592,36 @@
       { term: "at the moment", pos: "phrase", cat: "Right Now", def: "Right now or during this current period.", ex: "She is helping a student at the moment.", trap: "Pairs naturally with Present Continuous." },
       { term: "cut down on", pos: "phrasal verb", cat: "Temporary", def: "Reduce the amount or frequency of something.", ex: "I'm cutting down on sugar this month.", trap: "Don't drop 'on' before the object." },
       { term: "take for granted", pos: "idiom", cat: "Stative", def: "Fail to appreciate something because it feels constant.", ex: "We shouldn't take good health for granted.", trap: "Keep 'granted'—not 'grand'." },
-      { term: "on a regular basis", pos: "phrase", cat: "Frequency", def: "Repeatedly at steady intervals.", ex: "We review speaking strategies on a regular basis.", trap: "Formal/natural alternative to 'regularly'." },
+      { term: "on a regular basis", pos: "phrase", cat: "Frequency", def: "Repeatedly at steady intervals.", ex: "We review speaking strategies on a regular basis.", trap: "Natural alternative to 'regularly'." },
       { term: "currently", pos: "adverb", cat: "Temporary", def: "At this exact time or period.", ex: "He is currently preparing for his exam.", trap: "Often paired with Present Continuous." },
       { term: "keep up with", pos: "phrasal verb", cat: "Temporary", def: "Stay informed or match the pace of something.", ex: "It's tough to keep up with every new app.", trap: "Keep 'with' at the end." },
       { term: "belong to", pos: "verb phrase", cat: "Stative", def: "Be the property of someone (not used in continuous).", ex: "This notebook belongs to PROVO.", trap: "Avoid 'is belonging to'." },
       { term: "hardly ever", pos: "adverb phrase", cat: "Frequency", def: "Almost never; very rarely.", ex: "I hardly ever skip my morning routine.", trap: "Already negative—do not add 'not'." },
       { term: "for the time being", pos: "phrase", cat: "Temporary", def: "For now, until something changes.", ex: "We'll use this room for the time being.", trap: "Signals a temporary arrangement." },
       { term: "figure out", pos: "phrasal verb", cat: "Temporary", def: "Find the answer or solve a problem.", ex: "I'm figuring out how to organize my schedule.", trap: "Can separate: 'figure it out'." }
+    ];
+
+    const VOCAB_QUIZ = [
+      {
+        sentence: "I'm trying to ___ my screen time this week.",
+        options: ["cut down on", "belong to", "hardly ever"],
+        answer: "cut down on"
+      },
+      {
+        sentence: "She ___ watches television on weekdays—maybe once a month.",
+        options: ["currently", "hardly ever", "for the time being"],
+        answer: "hardly ever"
+      },
+      {
+        sentence: "That tablet doesn't ___ me; it's my sister's.",
+        options: ["keep up with", "belong to", "every other day"],
+        answer: "belong to"
+      },
+      {
+        sentence: "We are meeting in the smaller room ___ while ours is painted.",
+        options: ["for the time being", "on a regular basis", "every other day"],
+        answer: "for the time being"
+      }
     ];
 
     const EXERCISES = [
@@ -690,25 +724,43 @@
     const questionScene = document.getElementById('questionScene');
     const questionText = document.getElementById('questionText');
     const questionHint = document.getElementById('questionHint');
+    const qContextBadge = document.getElementById('qContextBadge');
     const qBadge = document.getElementById('qBadge');
     const qFocusTag = document.getElementById('qFocusTag');
     const startersList = document.getElementById('startersList');
     const startersBox = document.getElementById('startersBox');
     const questionPills = document.getElementById('questionPills');
 
-     const sceneImg = questionScene.querySelector('img');
- if (sceneImg) {
-   sceneImg.addEventListener('error', () => {
-     questionScene.innerHTML = `
-       <div class="w-full h-full flex flex-col items-center justify-center bg-[#F0F6FA] dark:bg-slate-800 text-[#002B5C] dark:text-cyan-200 px-4 text-center">
-         <i data-lucide="image" class="w-7 h-7 text-[#0089A7] mb-1.5"></i>
-         <span class="text-xs font-bold uppercase tracking-wider">Prompt #${qIndex + 1} Visual Cue</span>
-       </div>
-     `;
-     lucide.createIcons();
-   }, { once: true });
- }
+    function showSceneFallback(idx) {
+      questionScene.innerHTML = `
+        <div class="w-full h-full flex flex-col items-center justify-center bg-[#F0F6FA] dark:bg-slate-800 text-[#002B5C] dark:text-cyan-200 px-4 text-center">
+          <i data-lucide="image" class="w-7 h-7 text-[#0089A7] mb-1.5"></i>
+          <span class="text-xs font-bold uppercase tracking-wider">Prompt #${idx + 1} Scene</span>
+        </div>
+      `;
+      lucide.createIcons();
+    }
 
+    function renderQuestion(idx) {
+      qIndex = (idx + QUESTIONS.length) % QUESTIONS.length;
+      const item = QUESTIONS[qIndex];
+      qBadge.textContent = `Q${qIndex + 1} / ${QUESTIONS.length}`;
+      qFocusTag.textContent = item.tag;
+      qContextBadge.textContent = item.context;
+      questionText.textContent = item.q;
+      questionHint.textContent = item.hint;
+      startersList.innerHTML = item.starters.map(s => `<li>${s}</li>`).join('');
+      startersBox.classList.add('hidden');
+
+      questionScene.innerHTML = `<img src="${item.photo}" alt="${item.photoAlt}" class="w-full h-full object-cover" loading="lazy" />`;
+      const img = questionScene.querySelector('img');
+      if (img) {
+        img.addEventListener('error', () => showSceneFallback(qIndex), { once: true });
+      }
+
+      renderPills();
+      lucide.createIcons();
+    }
 
     function renderPills() {
       questionPills.innerHTML = QUESTIONS.map((_, i) => `
@@ -922,12 +974,15 @@
       renderSwitcher();
     });
 
-    // ==================== VOCABULARY WITH RECALL TOGGLE & AUDIO ====================
+    // ==================== VOCABULARY + CONTEXT QUIZ ====================
     const vocabCategories = ['All', 'Frequency', 'Temporary', 'Right Now', 'Stative'];
     let activeVocabCat = 'All';
     const revealedTerms = new Set();
     const vocabFilters = document.getElementById('vocabFilters');
     const vocabGrid = document.getElementById('vocabGrid');
+    const vocabQuizList = document.getElementById('vocabQuizList');
+    const vocabQuizScore = document.getElementById('vocabQuizScore');
+    const vocabQuizAnswers = {};
 
     function speakWord(text) {
       if (!('speechSynthesis' in window)) return;
@@ -974,7 +1029,7 @@
               ${isOpen
                 ? `<p class="text-xs text-slate-700 dark:text-slate-200 mt-2.5">${v.def}</p>
                    <p class="text-[11px] font-semibold text-amber-700 dark:text-amber-300 mt-2 bg-amber-500/10 px-2.5 py-1.5 rounded-lg">Tip: ${v.trap}</p>`
-                : `<p class="text-xs italic text-slate-400 dark:text-slate-500 mt-2.5">Tap “Meaning” to check definition &amp; usage tip.</p>`
+                : `<p class="text-xs italic text-slate-400 dark:text-slate-500 mt-2.5">Tap “Meaning” to check definition &amp; trap alert.</p>`
               }
             </div>
             <p class="text-xs italic text-[#005A8D] dark:text-cyan-300 border-t border-slate-100 dark:border-slate-800 pt-2.5">“${v.ex}”</p>
@@ -988,6 +1043,43 @@
       activeVocabCat = cat;
       renderVocab();
     };
+
+    window.pickVocabQuiz = (qIdx, choice) => {
+      vocabQuizAnswers[qIdx] = choice;
+      renderVocabQuiz();
+    };
+
+    function renderVocabQuiz() {
+      let correctCount = 0;
+      vocabQuizList.innerHTML = VOCAB_QUIZ.map((item, i) => {
+        const picked = vocabQuizAnswers[i];
+        const isCorrect = picked === item.answer;
+        if (isCorrect) correctCount++;
+
+        return `
+          <div class="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-800/40 space-y-2.5">
+            <p class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white">${item.sentence.replace('___', '<span class="px-2 py-0.5 rounded bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300">___</span>')}</p>
+            <div class="flex flex-wrap gap-1.5">
+              ${item.options.map(opt => {
+                const selected = picked === opt;
+                return `
+                  <button type="button" onclick="pickVocabQuiz(${i}, '${opt.replace(/'/g, "\\'")}')" class="px-2.5 py-1 rounded-lg text-xs font-bold border transition ${
+                    selected
+                      ? 'bg-[#002B5C] text-white border-[#002B5C]'
+                      : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 hover:border-[#0089A7]'
+                  }">${opt}</button>
+                `;
+              }).join('')}
+            </div>
+            ${picked
+              ? `<div class="text-xs font-semibold ${isCorrect ? 'text-emerald-600 dark:text-emerald-400' : 'text-rose-600 dark:text-rose-400'}">${isCorrect ? 'Correct!' : `Best choice: ${item.answer}`}</div>`
+              : ''
+            }
+          </div>
+        `;
+      }).join('');
+      vocabQuizScore.textContent = `${correctCount} / ${VOCAB_QUIZ.length}`;
+    }
 
     // ==================== SELF-CHECK PRACTICE ====================
     const exercisesContainer = document.getElementById('exercisesContainer');
@@ -1119,6 +1211,7 @@
     renderQuestion(0);
     renderSwitcher();
     renderVocab();
+    renderVocabQuiz();
     renderExercises();
     renderTraps();
     renderRapid();

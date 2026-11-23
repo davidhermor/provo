@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KIDS · COLORS | PROVO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <style>
+    * { text-transform: uppercase; }
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.97) translateY(8px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .pop-anim { animation: popIn 0.24s ease-out forwards; }
+  </style>
+</head>
+<body class="bg-[#E3F2FD] text-[#002B5C] dark:bg-[#051221] dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200 select-none">
+
+  <!-- Top Bar with Kids Badge -->
+  <header class="sticky top-0 z-40 bg-[#002B5C] text-white border-b-4 border-amber-400 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2.5">
+        <a href="index.html" class="flex items-center shrink-0" title="PROVO">
+          <img
+            src="https://i.postimg.cc/vBt4qH44/download.png"
+            alt="PROVO"
+            class="h-8 w-auto object-contain block"
+            onerror="this.style.display='none'; document.getElementById('provoFallback').classList.remove('hidden');"
+          />
+          <span id="provoFallback" class="hidden font-extrabold tracking-widest text-lg text-white">PROVO</span>
+        </a>
+        <span class="px-2.5 py-0.5 rounded-full bg-[#0089A7] text-white text-[11px] font-extrabold tracking-wider">
+          KIDS · 6Y
+        </span>
+        <span id="stageTitleHeader" class="hidden xl:inline-block text-xs font-extrabold tracking-widest text-cyan-200">
+          01 · COLORS PARTY
+        </span>
+      </div>
+
+      <div id="kidsPills" class="flex items-center gap-1 overflow-x-auto py-1"></div>
+
+      <div class="flex items-center gap-2 shrink-0">
+        <span id="starCounterTop" class="px-3 py-1 rounded-2xl bg-amber-400 text-[#002B5C] text-xs font-extrabold shadow">
+          ★ 0
+        </span>
+        <button
+          id="themeBtn"
+          type="button"
+          class="p-2 rounded-2xl bg-white/10 hover:bg-white/20 text-white transition"
+          title="THEME"
+        >
+          <i id="themeIcon" data-lucide="sun" class="w-4 h-4"></i>
+        </button>
+        <a
+          href="index.html"
+          class="inline-flex items-center gap-1 px-3 py-1.5 rounded-2xl text-xs font-extrabold bg-white/10 hover:bg-white/20 text-white transition"
+        >
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          <span class="hidden sm:inline">HOME</span>
+        </a>
+      </div>
+    </div>
+    <div class="w-full h-1.5 bg-black/25">
+      <div id="kidsProgress" class="h-full bg-[#0089A7] transition-all duration-300" style="width: 12.5%"></div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl w-full mx-auto px-4 sm:px-6 py-7 sm:py-10 flex-1 flex flex-col justify-center">
+
+    <!-- ==================== 01: START ==================== -->
+    <section data-kstage="0" class="k-stage pop-anim">
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-[28px] overflow-hidden bg-white dark:bg-[#0B1D33] border-4 border-[#0089A7]/40 shadow-xl">
+        <div class="lg:col-span-6 p-7 sm:p-10 bg-gradient-to-br from-[#002B5C] via-[#005A8D] to-[#0089A7] flex flex-col items-center justify-center">
+          <svg viewBox="0 0 360 230" class="w-full max-w-sm h-auto drop-shadow">
+            <circle cx="72" cy="64" r="36" fill="#9333EA" />
+            <circle cx="180" cy="54" r="34" fill="#EC4899" />
+            <circle cx="288" cy="68" r="36" fill="#2563EB" />
+            <circle cx="122" cy="152" r="38" fill="#FACC15" />
+            <circle cx="238" cy="150" r="36" fill="#EF4444" />
+            <circle cx="66" cy="192" r="24" fill="#F97316" />
+            <circle cx="294" cy="190" r="26" fill="#16A34A" />
+          </svg>
+        </div>
+
+        <div class="lg:col-span-6 p-7 sm:p-11 flex flex-col justify-center space-y-5">
+          <span class="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-amber-400/25 text-[#002B5C] dark:text-amber-300 text-xs font-extrabold tracking-wider">
+            <i data-lucide="sparkles" class="w-4 h-4"></i>
+            <span>PROVO KIDS · AGE 6</span>
+          </span>
+
+          <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight leading-none text-[#002B5C] dark:text-white">
+            COLORS<br/>
+            <span class="text-[#0089A7]">KIDS CLUB</span>
+          </h1>
+
+          <p class="text-sm sm:text-base font-bold text-slate-600 dark:text-slate-300 leading-relaxed">
+            PURPLE · PINK · BLUE · YELLOW · RED · ORANGE · GREEN.<br/>
+            SOUND, CAR STORY, VIDEOS &amp; CLASS GAMES!
+          </p>
+
+          <div class="pt-2">
+            <button
+              type="button"
+              onclick="goKStage(1)"
+              class="inline-flex items-center gap-2.5 px-7 py-4 rounded-2xl bg-gradient-to-r from-[#002B5C] to-[#0089A7] hover:opacity-95 text-white text-base font-extrabold shadow-lg transition"
+            >
+              <span>START!</span>
+              <i data-lucide="play" class="w-5 h-5"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 02: FLAT COLORS + AUDIO + SAMPLE OBJECT ==================== -->
+    <section data-kstage="1" class="k-stage hidden pop-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b-2 border-[#0089A7]/30 pb-3">
+        <div>
+          <span class="text-xs font-extrabold tracking-widest text-[#0089A7]">STAGE 02</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">FLAT COLORS &amp; SOUND</h2>
+        </div>
+        <p class="text-xs sm:text-sm font-bold text-slate-500 dark:text-slate-400">TAP A COLOR TO HEAR IT AND SEE AN EXAMPLE OBJECT!</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 rounded-[28px] overflow-hidden bg-white dark:bg-[#0B1D33] border-4 border-[#0089A7]/30 shadow-lg">
+        <div id="flatColorPanel" class="md:col-span-5 min-h-[220px] flex flex-col items-center justify-center p-6 transition-colors duration-200" style="background-color: #9333EA;">
+          <div class="bg-white/95 text-[#002B5C] px-5 py-3 rounded-2xl shadow-md flex flex-col items-center gap-1">
+            <span id="flatObjectIcon" class="text-4xl">🍇</span>
+            <span id="flatObjectName" class="text-xs font-extrabold">GRAPES</span>
+          </div>
+        </div>
+
+        <div class="md:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-4">
+          <div class="space-y-2">
+            <span id="flatColorCounter" class="text-xs font-extrabold tracking-widest text-[#0089A7]">COLOR 1 / 7</span>
+            <h3 id="flatColorTitle" class="text-4xl sm:text-5xl font-extrabold text-[#002B5C] dark:text-white">PURPLE</h3>
+            <p id="flatColorSay" class="text-xl font-extrabold text-[#0089A7] dark:text-cyan-300">"IT IS PURPLE!"</p>
+          </div>
+
+          <div class="flex flex-wrap gap-2.5">
+            <button id="btnFlatSayWord" type="button" class="inline-flex items-center gap-2 px-4 py-3 rounded-2xl bg-[#002B5C] hover:bg-[#005A8D] text-white text-xs sm:text-sm font-extrabold transition">
+              <i data-lucide="volume-2" class="w-4 h-4"></i>
+              <span>HEAR WORD</span>
+            </button>
+            <button id="btnFlatSaySentence" type="button" class="inline-flex items-center gap-2 px-4 py-3 rounded-2xl bg-[#0089A7] hover:opacity-95 text-white text-xs sm:text-sm font-extrabold transition">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>HEAR "IT IS..."</span>
+            </button>
+            <button type="button" onclick="stepFlatColor(1)" class="inline-flex items-center gap-1.5 px-4 py-3 rounded-2xl border-2 border-[#002B5C]/20 dark:border-cyan-400/25 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs sm:text-sm font-extrabold transition">
+              <span>NEXT</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="flatSwatchesGrid" class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3"></div>
+    </section>
+
+    <!-- ==================== 03: GUESS THE COLOR OF THE OBJECT ==================== -->
+    <section data-kstage="2" class="k-stage hidden pop-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b-2 border-[#0089A7]/30 pb-3">
+        <div>
+          <span class="text-xs font-extrabold tracking-widest text-[#0089A7]">STAGE 03 · GUESS GAME</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">WHAT COLOR IS THIS OBJECT?</h2>
+        </div>
+        <p class="text-xs sm:text-sm font-bold text-slate-500 dark:text-slate-400">LOOK AT THE OBJECT AND GUESS ITS COLOR!</p>
+      </div>
+
+      <div class="bg-white dark:bg-[#0B1D33] border-4 border-[#0089A7]/30 rounded-[28px] p-6 sm:p-8 max-w-3xl mx-auto w-full space-y-6 shadow-lg text-center">
+        <div class="flex items-center justify-between">
+          <span id="objRoundBadge" class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">OBJECT 1 / 7</span>
+          <button type="button" onclick="speakObjectQuestion()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#0089A7] text-white text-xs font-extrabold">
+            <i data-lucide="volume-2" class="w-4 h-4"></i>
+            <span>ASK</span>
+          </button>
+        </div>
+
+        <div class="py-6 px-4 rounded-3xl bg-[#F0F6FA] dark:bg-[#061322] border-2 border-dashed border-[#0089A7]/40 flex flex-col items-center gap-2">
+          <div id="mysteryObjEmoji" class="text-6xl sm:text-7xl">🍇</div>
+          <div id="mysteryObjLabel" class="text-lg sm:text-xl font-extrabold text-[#002B5C] dark:text-white">GRAPES</div>
+          <div class="text-xs font-bold text-slate-500 dark:text-slate-400">WHAT COLOR IS IT?</div>
+        </div>
+
+        <div id="objGuessButtons" class="grid grid-cols-2 sm:grid-cols-4 gap-3"></div>
+
+        <div id="objGuessFeedback" class="hidden p-4 rounded-2xl text-sm sm:text-base font-extrabold"></div>
+
+        <div class="flex justify-center pt-1">
+          <button type="button" onclick="nextObjectRound()" class="px-6 py-3 rounded-2xl bg-[#002B5C] hover:bg-[#005A8D] text-white text-xs sm:text-sm font-extrabold transition">
+            NEXT OBJECT →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 04: CAR TRIP STORY WITH PARENTS & KIDS ==================== -->
+    <section data-kstage="3" class="k-stage hidden pop-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b-2 border-[#0089A7]/30 pb-3">
+        <div>
+          <span class="text-xs font-extrabold tracking-widest text-[#0089A7]">STAGE 04 · STORY TIME</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">COLORS FROM THE CAR WINDOW</h2>
+        </div>
+        <p class="text-xs sm:text-sm font-bold text-slate-500 dark:text-slate-400">TWO KIDS IN THE CAR WITH THEIR PARENTS SPOTTING COLORS!</p>
+      </div>
+
+      <div class="bg-white dark:bg-[#0B1D33] border-4 border-[#0089A7]/30 rounded-[28px] overflow-hidden max-w-4xl mx-auto w-full shadow-lg">
+        <div class="grid grid-cols-1 md:grid-cols-12">
+          <div id="storyScenePanel" class="md:col-span-6 p-4 bg-[#E0F2FE] dark:bg-[#061322] flex items-center justify-center min-h-[250px]"></div>
+
+          <div class="md:col-span-6 p-6 sm:p-8 flex flex-col justify-between space-y-5">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span id="storyPageBadge" class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">PART 1 / 4</span>
+                <button type="button" onclick="speakStoryScene()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#0089A7] text-white text-xs font-extrabold">
+                  <i data-lucide="volume-2" class="w-4 h-4"></i>
+                  <span>LISTEN</span>
+                </button>
+              </div>
+
+              <p id="storySceneText" class="text-lg sm:text-xl font-extrabold text-[#002B5C] dark:text-white leading-relaxed"></p>
+            </div>
+
+            <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-200 dark:border-cyan-400/15">
+              <button type="button" onclick="stepStoryScene(-1)" class="px-4 py-2.5 rounded-xl border-2 border-[#002B5C]/20 dark:border-cyan-400/25 text-xs font-extrabold hover:bg-slate-100 dark:hover:bg-[#132C4A]">
+                ← PREV
+              </button>
+              <div id="storySceneDots" class="flex gap-1.5"></div>
+              <button type="button" onclick="stepStoryScene(1)" class="px-4 py-2.5 rounded-xl bg-[#002B5C] hover:bg-[#005A8D] text-white text-xs font-extrabold">
+                NEXT →
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 05: TWO KIDS VIDEOS ==================== -->
+    <section data-kstage="4" class="k-stage hidden pop-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b-2 border-[#0089A7]/30 pb-3">
+        <div>
+          <span class="text-xs font-extrabold tracking-widest text-[#0089A7]">STAGE 05 · CAR TRIP VIDEOS</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">COLORS IN THE CAR (PART 1 &amp; PART 2)</h2>
+        </div>
+        <div class="flex gap-2">
+          <button id="btnVid1" type="button" onclick="selectVideo(0)" class="px-4 py-2 rounded-2xl text-xs font-extrabold bg-[#002B5C] text-white transition">
+            VIDEO PART 1
+          </button>
+          <button id="btnVid2" type="button" onclick="selectVideo(1)" class="px-4 py-2 rounded-2xl text-xs font-extrabold bg-white dark:bg-[#0B1D33] border-2 border-[#0089A7]/30 transition">
+            VIDEO PART 2
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-[#0B1D33] border-4 border-[#0089A7]/30 rounded-[28px] p-5 sm:p-7 max-w-4xl mx-auto w-full space-y-4 shadow-lg">
+        <div class="aspect-video w-full rounded-2xl overflow-hidden bg-black border border-slate-200 dark:border-cyan-400/15">
+          <iframe
+            id="kidsVideoFrame"
+            class="w-full h-full"
+            src="https://www.youtube.com/embed/jYAWf8Y91hA"
+            title="COLORS SONG PART 1"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2 border-t border-slate-200 dark:border-cyan-400/15 text-xs font-extrabold">
+          <span id="kidsVideoCredit" class="text-slate-600 dark:text-slate-300">
+            VIDEO CREDIT: THE SINGING WALRUS · PART 1 ON YOUTUBE
+          </span>
+          <div class="flex items-center gap-2">
+            <button type="button" onclick="awardStar(1)" class="px-3.5 py-2 rounded-xl bg-amber-400 text-[#002B5C] font-extrabold">
+              ★ WATCHED!
+            </button>
+            <a
+              id="kidsVideoWatchLink"
+              href="https://www.youtube.com/watch?v=jYAWf8Y91hA"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="px-3.5 py-2 rounded-xl bg-[#002B5C] text-white hover:bg-[#005A8D] transition"
+            >
+              WATCH ON YOUTUBE ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 06: TOUCH & SHOUT WITH ACTION ILLUSTRATIONS ==================== -->
+    <section data-kstage="5" class="k-stage hidden pop-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b-2 border-[#0089A7]/30 pb-3">
+        <div>
+          <span class="text-xs font-extrabold tracking-widest text-[#0089A7]">STAGE 06 · CLASS GAME</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">TOUCH &amp; SHOUT!</h2>
+        </div>
+        <p class="text-xs sm:text-sm font-bold text-slate-500 dark:text-slate-400">LOOK AT THE ACTION PICTURE AND DO IT WITH YOUR TEACHER!</p>
+      </div>
+
+      <div class="bg-white dark:bg-[#0B1D33] border-4 border-[#0089A7]/30 rounded-[28px] p-6 sm:p-8 max-w-4xl mx-auto w-full shadow-xl">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+          <div id="actionSvgBox" class="md:col-span-5 p-4 rounded-2xl bg-[#F0F6FA] dark:bg-[#061322] border border-slate-200 dark:border-cyan-400/15 flex items-center justify-center min-h-[200px]"></div>
+
+          <div class="md:col-span-7 space-y-4 text-center md:text-left">
+            <div class="flex items-center justify-between">
+              <span id="challengeBadge" class="px-3 py-1 rounded-full bg-[#0089A7]/20 text-[#005A8D] dark:text-cyan-300 text-xs font-extrabold">ACTION 1 / 6</span>
+              <span id="challengeDot" class="w-8 h-8 rounded-full border-2 border-slate-300 dark:border-white/30"></span>
+            </div>
+
+            <h3 id="challengeTitle" class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white"></h3>
+            <p id="challengeAction" class="text-base sm:text-lg font-extrabold text-[#0089A7] dark:text-cyan-300"></p>
+
+            <div class="flex flex-wrap justify-center md:justify-start gap-2.5 pt-2">
+              <button type="button" onclick="speakChallenge()" class="inline-flex items-center gap-2 px-4 py-3 rounded-2xl bg-[#0089A7] text-white text-xs sm:text-sm font-extrabold">
+                <i data-lucide="volume-2" class="w-4 h-4"></i>
+                <span>HEAR</span>
+              </button>
+              <button type="button" onclick="doneChallenge()" class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-amber-400 hover:bg-amber-300 text-[#002B5C] text-xs sm:text-sm font-extrabold shadow">
+                <i data-lucide="star" class="w-4 h-4"></i>
+                <span>DONE! (+1 ★)</span>
+              </button>
+              <button type="button" onclick="nextChallenge()" class="inline-flex items-center gap-1.5 px-4 py-3 rounded-2xl bg-[#002B5C] hover:bg-[#005A8D] text-white text-xs sm:text-sm font-extrabold">
+                <span>NEXT →</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 07: EXTRA GAMES ==================== -->
+    <section data-kstage="6" class="k-stage hidden pop-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b-2 border-[#0089A7]/30 pb-3">
+        <div>
+          <span class="text-xs font-extrabold tracking-widest text-[#0089A7]">STAGE 07 · EXTRA GAMES</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">MORE FUN GAMES!</h2>
+        </div>
+        <div class="flex gap-2">
+          <button id="tabExtraPair" type="button" onclick="switchExtraGame('pair')" class="px-4 py-2 rounded-2xl text-xs font-extrabold bg-[#002B5C] text-white">
+            1. COLOR MATCH
+          </button>
+          <button id="tabExtraOdd" type="button" onclick="switchExtraGame('odd')" class="px-4 py-2 rounded-2xl text-xs font-extrabold bg-white dark:bg-[#0B1D33] border-2 border-[#0089A7]/30">
+            2. ODD COLOR OUT
+          </button>
+        </div>
+      </div>
+
+      <div id="extraPanelPair" class="bg-white dark:bg-[#0B1D33] border-4 border-[#0089A7]/30 rounded-[28px] p-6 sm:p-8 max-w-4xl mx-auto w-full space-y-5 shadow-lg">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-extrabold text-[#0089A7]">TAP TWO CARDS OF THE SAME COLOR!</span>
+          <button type="button" onclick="initPairGame()" class="px-3 py-1.5 rounded-xl border-2 border-[#002B5C]/20 dark:border-cyan-400/20 text-xs font-extrabold">
+            NEW CARDS
+          </button>
+        </div>
+        <div id="pairCardsGrid" class="grid grid-cols-2 sm:grid-cols-4 gap-3"></div>
+        <div id="pairGameMsg" class="text-sm font-extrabold text-center text-[#0089A7] dark:text-cyan-300"></div>
+      </div>
+
+      <div id="extraPanelOdd" class="hidden bg-white dark:bg-[#0B1D33] border-4 border-[#0089A7]/30 rounded-[28px] p-6 sm:p-8 max-w-3xl mx-auto w-full space-y-5 shadow-lg text-center">
+        <div class="flex items-center justify-between">
+          <span id="oddRoundBadge" class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">ROUND 1 / 4</span>
+          <button type="button" onclick="speakOddQuestion()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#0089A7] text-white text-xs font-extrabold">
+            <i data-lucide="volume-2" class="w-4 h-4"></i>
+            <span>HEAR</span>
+          </button>
+        </div>
+        <h3 id="oddPromptHeading" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white"></h3>
+        <div id="oddOptionsRow" class="grid grid-cols-1 sm:grid-cols-3 gap-3"></div>
+        <div id="oddFeedbackBox" class="hidden p-4 rounded-2xl text-sm font-extrabold"></div>
+        <div class="flex justify-center">
+          <button type="button" onclick="nextOddRound()" class="px-5 py-2.5 rounded-xl bg-[#002B5C] text-white text-xs font-extrabold">
+            NEXT →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 08: FINAL CELEBRATION PAGE ==================== -->
+    <section data-kstage="7" class="k-stage hidden pop-anim">
+      <div class="bg-white dark:bg-[#0B1D33] border-4 border-amber-400 rounded-[28px] p-7 sm:p-11 max-w-3xl mx-auto w-full text-center space-y-6 shadow-2xl">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-400 text-[#002B5C] text-xs font-extrabold">
+          <i data-lucide="award" class="w-4 h-4"></i>
+          <span>MISSION COMPLETE!</span>
+        </div>
+
+        <h2 class="text-4xl sm:text-5xl font-extrabold text-[#002B5C] dark:text-white">
+          GREAT JOB!
+        </h2>
+
+        <p class="text-base sm:text-lg font-extrabold text-[#0089A7] dark:text-cyan-300">
+          YOU LEARNED ALL 7 COLORS!
+        </p>
+
+        <div id="finalStarsDisplay" class="inline-block px-6 py-3 rounded-2xl bg-[#F0F6FA] dark:bg-[#061322] border-2 border-amber-400 text-2xl font-extrabold text-[#002B5C] dark:text-amber-300">
+          TOTAL STARS: ★ 0
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-2.5 pt-1">
+          <span class="px-3 py-1.5 rounded-xl bg-purple-600 text-white text-xs font-extrabold">PURPLE</span>
+          <span class="px-3 py-1.5 rounded-xl bg-pink-500 text-white text-xs font-extrabold">PINK</span>
+          <span class="px-3 py-1.5 rounded-xl bg-blue-600 text-white text-xs font-extrabold">BLUE</span>
+          <span class="px-3 py-1.5 rounded-xl bg-yellow-400 text-[#002B5C] text-xs font-extrabold">YELLOW</span>
+          <span class="px-3 py-1.5 rounded-xl bg-red-600 text-white text-xs font-extrabold">RED</span>
+          <span class="px-3 py-1.5 rounded-xl bg-orange-500 text-white text-xs font-extrabold">ORANGE</span>
+          <span class="px-3 py-1.5 rounded-xl bg-green-600 text-white text-xs font-extrabold">GREEN</span>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-3 pt-3">
+          <button
+            type="button"
+            onclick="goKStage(0)"
+            class="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-[#002B5C] to-[#0089A7] text-white text-sm font-extrabold shadow-lg transition"
+          >
+            <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+            <span>PLAY AGAIN!</span>
+          </button>
+          <a
+            href="index.html"
+            class="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl border-2 border-[#002B5C]/25 dark:border-cyan-400/25 text-sm font-extrabold hover:bg-slate-100 dark:hover:bg-[#132C4A] transition"
+          >
+            <span>BACK TO PORTAL</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t-2 border-[#0089A7]/25 bg-white dark:bg-[#051221] py-4 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      <button id="kBtnPrev" type="button" onclick="goKStage(kStage - 1)" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl border-2 border-[#002B5C]/20 dark:border-cyan-400/25 hover:bg-slate-100 dark:hover:bg-[#132C4A] disabled:opacity-30 text-xs font-extrabold transition">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>PREV</span>
+      </button>
+
+      <span id="kStageCounter" class="text-xs font-extrabold tracking-widest text-slate-500 dark:text-slate-400">
+        01 / 08
+      </span>
+
+      <button id="kBtnNext" type="button" onclick="goKStage(kStage + 1)" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-[#002B5C] hover:bg-[#005A8D] disabled:opacity-30 text-xs font-extrabold text-white transition">
+        <span>NEXT</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    const K_STAGES = [
+      "01 · COLORS PARTY",
+      "02 · FLAT COLORS",
+      "03 · GUESS OBJECT",
+      "04 · CAR STORY",
+      "05 · CAR VIDEOS",
+      "06 · TOUCH & SHOUT",
+      "07 · EXTRA GAMES",
+      "08 · GREAT JOB!"
+    ];
+
+    const FLAT_COLORS = [
+      { name: "PURPLE", hex: "#9333EA", emoji: "🍇", obj: "GRAPES", say: "IT IS PURPLE!" },
+      { name: "PINK", hex: "#EC4899", emoji: "🐷", obj: "PIGGY", say: "IT IS PINK!" },
+      { name: "BLUE", hex: "#2563EB", emoji: "🐳", obj: "WHALE", say: "IT IS BLUE!" },
+      { name: "YELLOW", hex: "#FACC15", emoji: "🍌", obj: "BANANA", say: "IT IS YELLOW!" },
+      { name: "RED", hex: "#EF4444", emoji: "🍎", obj: "APPLE", say: "IT IS RED!" },
+      { name: "ORANGE", hex: "#F97316", emoji: "🥕", obj: "CARROT", say: "IT IS ORANGE!" },
+      { name: "GREEN", hex: "#16A34A", emoji: "🐸", obj: "FROG", say: "IT IS GREEN!" }
+    ];
+
+    let kStage = 0;
+    let stars = 0;
+    const sections = document.querySelectorAll('.k-stage');
+
+    function updateStarsUI() {
+      document.getElementById('starCounterTop').textContent = `★ ${stars}`;
+      document.getElementById('finalStarsDisplay').textContent = `TOTAL STARS: ★ ${stars}`;
+    }
+
+    function awardStar(n = 1) {
+      stars += n;
+      updateStarsUI();
+    }
+
+    function goKStage(idx) {
+      if (idx < 0 || idx >= sections.length) return;
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      kStage = idx;
+      sections.forEach((s, i) => s.classList.toggle('hidden', i !== kStage));
+      document.getElementById('stageTitleHeader').textContent = K_STAGES[kStage];
+      document.getElementById('kStageCounter').textContent = `${String(kStage + 1).padStart(2, '0')} / ${String(sections.length).padStart(2, '0')}`;
+      document.getElementById('kidsProgress').style.width = `${((kStage + 1) / sections.length) * 100}%`;
+      document.getElementById('kBtnPrev').disabled = kStage === 0;
+      document.getElementById('kBtnNext').disabled = kStage === sections.length - 1;
+      updateStarsUI();
+      renderKidsPills();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      lucide.createIcons();
+    }
+
+    function renderKidsPills() {
+      document.getElementById('kidsPills').innerHTML = K_STAGES.map((_, i) => `
+        <button type="button" onclick="goKStage(${i})" class="px-2.5 py-1 rounded-xl text-xs font-extrabold transition ${
+          i === kStage ? 'bg-amber-400 text-[#002B5C]' : 'text-white/80 hover:text-white hover:bg-white/10'
+        }">${String(i + 1).padStart(2, '0')}</button>
+      `).join('');
+    }
+
+    // Theme
+    const themeBtn = document.getElementById('themeBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    if (localStorage.getItem('provoKidsClubTheme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      themeIcon.setAttribute('data-lucide', 'moon');
+    }
+    themeBtn.addEventListener('click', () => {
+      const dark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('provoKidsClubTheme', dark ? 'dark' : 'light');
+      themeIcon.setAttribute('data-lucide', dark ? 'sun' : 'moon');
+      lucide.createIcons();
+    });
+
+    function speakKid(txt) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(txt.toLowerCase());
+      u.lang = 'en-US';
+      u.rate = 0.88;
+      u.pitch = 1.15;
+      window.speechSynthesis.speak(u);
+    }
+
+    // 02: Flat Colors
+    let flatIdx = 0;
+    function renderFlatColor(i) {
+      flatIdx = (i + FLAT_COLORS.length) % FLAT_COLORS.length;
+      const c = FLAT_COLORS[flatIdx];
+      document.getElementById('flatColorCounter').textContent = `COLOR ${flatIdx + 1} / 7`;
+      document.getElementById('flatColorTitle').textContent = c.name;
+      document.getElementById('flatColorSay').textContent = `"${c.say}"`;
+      document.getElementById('flatObjectIcon').textContent = c.emoji;
+      document.getElementById('flatObjectName').textContent = c.obj;
+      document.getElementById('flatColorPanel').style.backgroundColor = c.hex;
+
+      document.getElementById('btnFlatSayWord').onclick = () => speakKid(c.name);
+      document.getElementById('btnFlatSaySentence').onclick = () => speakKid(c.say);
+
+      document.getElementById('flatSwatchesGrid').innerHTML = FLAT_COLORS.map((item, idx) => `
+        <button type="button" onclick="renderFlatColor(${idx}); speakKid('${item.name}');" class="p-3 rounded-2xl border-2 transition flex flex-col items-center gap-2 ${
+          idx === flatIdx
+            ? 'border-[#0089A7] bg-white dark:bg-[#132C4A] scale-105 shadow-md'
+            : 'border-slate-200 dark:border-cyan-400/15 bg-white dark:bg-[#0B1D33] hover:border-[#0089A7]'
+        }">
+          <span class="w-10 h-10 rounded-xl border-2 border-white shadow" style="background-color: ${item.hex};"></span>
+          <span class="text-xs font-extrabold text-[#002B5C] dark:text-white">${item.name}</span>
+        </button>
+      `).join('');
+    }
+    window.stepFlatColor = (d) => renderFlatColor(flatIdx + d);
+
+    // 03: Guess Object Color
+    let objIdx = 0;
+    function renderObjectRound() {
+      objIdx = objIdx % FLAT_COLORS.length;
+      const target = FLAT_COLORS[objIdx];
+      document.getElementById('objRoundBadge').textContent = `OBJECT ${objIdx + 1} / 7`;
+      document.getElementById('mysteryObjEmoji').textContent = target.emoji;
+      document.getElementById('mysteryObjLabel').textContent = target.obj;
+      document.getElementById('objGuessFeedback').classList.add('hidden');
+
+      const options = [target, ...FLAT_COLORS.filter((_, idx) => idx !== objIdx).slice(0, 3)].sort(() => Math.random() - 0.5);
+      document.getElementById('objGuessButtons').innerHTML = options.map(opt => `
+        <button type="button" onclick="checkObjectGuess('${opt.name}')" class="p-4 rounded-2xl border-2 border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7] bg-[#F0F6FA] dark:bg-[#061322] flex flex-col items-center gap-2 transition">
+          <span class="w-10 h-10 rounded-full border-2 border-white shadow" style="background-color: ${opt.hex};"></span>
+          <span class="text-xs sm:text-sm font-extrabold">${opt.name}</span>
+        </button>
+      `).join('');
+    }
+    window.speakObjectQuestion = () => speakKid(`What color is the ${FLAT_COLORS[objIdx].obj}?`);
+    window.checkObjectGuess = (picked) => {
+      const t = FLAT_COLORS[objIdx];
+      const fb = document.getElementById('objGuessFeedback');
+      fb.classList.remove('hidden');
+      if (picked === t.name) {
+        awardStar(1);
+        speakKid(`Yes! ${t.say}`);
+        fb.className = 'p-4 rounded-2xl text-sm sm:text-base font-extrabold bg-emerald-500/20 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `GREAT JOB! ${t.say} (+1 ★)`;
+      } else {
+        speakKid(`Try again! Look at the ${t.obj}!`);
+        fb.className = 'p-4 rounded-2xl text-sm sm:text-base font-extrabold bg-amber-500/20 text-amber-800 dark:text-amber-200';
+        fb.textContent = `TRY AGAIN! LOOK AT THE ${t.obj}!`;
+      }
+    };
+    window.nextObjectRound = () => { objIdx++; renderObjectRound(); };
+
+    // 04: Story About Two Kids in the Car With Parents Spotting Animals & Objects
+    const STORY_SCENES = [
+      {
+        text: "MOM AND DAD DRIVE THE CAR WHILE LEO AND MIA LOOK OUT THE WINDOW. LEO SEES A RED APPLE AND A YELLOW BANANA!",
+        art: "car_red_yellow"
+      },
+      {
+        text: "DOWN THE ROAD THEY SPOT AN ORANGE CARROT AND A LITTLE GREEN FROG BY THE GRASS!",
+        art: "car_orange_green"
+      },
+      {
+        text: "OUT THE OTHER WINDOW THEY SEE BLUE WATER, A PINK PIGGY, AND PURPLE GRAPES!",
+        art: "car_blue_pink_purple"
+      },
+      {
+        text: "EVERYONE SINGS IN THE CAR! NOW WATCH THE CAR VIDEOS AND POINT TO EVERY COLOR!",
+        art: "car_sing_together"
+      }
+    ];
+    let storySceneIdx = 0;
+
+    function buildCarStoryScene(artKey) {
+      const carBase = `
+        <rect width="360" height="230" rx="18" fill="#DBEAFE" />
+        <rect y="172" width="360" height="58" fill="#94A3B8" />
+        <line x1="20" y1="201" x2="340" y2="201" stroke="#FACC15" stroke-width="4" stroke-dasharray="14 10" />
+        <!-- Car Body -->
+        <rect x="34" y="96" width="176" height="62" rx="16" fill="#002B5C" />
+        <path d="M 62 96 L 82 62 L 166 62 L 188 96 Z" fill="#0089A7" />
+        <!-- Car Windows -->
+        <rect x="86" y="70" width="36" height="24" rx="5" fill="#F0F9FF" />
+        <rect x="130" y="70" width="44" height="24" rx="5" fill="#F0F9FF" />
+        <!-- Mom & Dad / Two Kids Silhouettes Inside -->
+        <circle cx="104" cy="83" r="8" fill="#FDBA74" />
+        <circle cx="144" cy="84" r="7.5" fill="#FED7AA" />
+        <circle cx="162" cy="84" r="7.5" fill="#FDBA74" />
+        <!-- Wheels -->
+        <circle cx="78" cy="158" r="18" fill="#1E293B" />
+        <circle cx="78" cy="158" r="7" fill="#E2E8F0" />
+        <circle cx="168" cy="158" r="18" fill="#1E293B" />
+        <circle cx="168" cy="158" r="7" fill="#E2E8F0" />
+      `;
+
+      if (artKey === "car_red_yellow") {
+        return `<svg viewBox="0 0 360 230" class="w-full h-full object-cover">
+          ${carBase}
+          <!-- Red Apple & Yellow Banana Outside -->
+          <circle cx="256" cy="136" r="18" fill="#EF4444" />
+          <path d="M 256 118 Q 260 107 265 109" fill="none" stroke="#15803D" stroke-width="3.5" stroke-linecap="round" />
+          <path d="M 294 146 Q 318 154 336 124" fill="none" stroke="#FACC15" stroke-width="11" stroke-linecap="round" />
+        </svg>`;
+      }
+
+      if (artKey === "car_orange_green") {
+        return `<svg viewBox="0 0 360 230" class="w-full h-full object-cover">
+          ${carBase}
+          <!-- Orange Carrot & Green Frog Outside -->
+          <polygon points="234,142 280,130 272,152" fill="#F97316" />
+          <path d="M 280 142 L 294 134 M 280 142 L 295 144 M 280 142 L 292 151" stroke="#16A34A" stroke-width="3.5" stroke-linecap="round" />
+          <ellipse cx="322" cy="146" rx="17" ry="11" fill="#16A34A" />
+          <circle cx="313" cy="135" r="4.5" fill="#16A34A" />
+          <circle cx="325" cy="135" r="4.5" fill="#16A34A" />
+        </svg>`;
+      }
+
+      if (artKey === "car_blue_pink_purple") {
+        return `<svg viewBox="0 0 360 230" class="w-full h-full object-cover">
+          ${carBase}
+          <!-- Blue Wave, Pink Piggy & Purple Grapes -->
+          <path d="M 228 62 Q 248 48 268 62 T 308 62" fill="none" stroke="#2563EB" stroke-width="7" stroke-linecap="round" />
+          <ellipse cx="254" cy="142" rx="18" ry="13" fill="#EC4899" />
+          <circle cx="242" cy="137" r="10" fill="#EC4899" />
+          <circle cx="308" cy="124" r="8" fill="#9333EA" />
+          <circle cx="322" cy="124" r="8" fill="#9333EA" />
+          <circle cx="315" cy="136" r="8" fill="#9333EA" />
+          <circle cx="315" cy="148" r="7" fill="#9333EA" />
+        </svg>`;
+      }
+
+      return `<svg viewBox="0 0 360 230" class="w-full h-full object-cover">
+        ${carBase}
+        <!-- Musical Notes & Color Dots Outside -->
+        <circle cx="244" cy="66" r="8" fill="#EF4444" />
+        <circle cx="272" cy="54" r="8" fill="#FACC15" />
+        <circle cx="300" cy="68" r="8" fill="#16A34A" />
+        <circle cx="324" cy="52" r="8" fill="#9333EA" />
+        <path d="M 252 66 L 252 44 M 280 54 L 280 32 M 308 68 L 308 46 M 332 52 L 332 30" stroke="#002B5C" stroke-width="3.5" stroke-linecap="round" />
+      </svg>`;
+    }
+
+    function renderStoryScene() {
+      storySceneIdx = (storySceneIdx + STORY_SCENES.length) % STORY_SCENES.length;
+      const sc = STORY_SCENES[storySceneIdx];
+      document.getElementById('storyPageBadge').textContent = `PART ${storySceneIdx + 1} / ${STORY_SCENES.length}`;
+      document.getElementById('storySceneText').textContent = sc.text;
+      document.getElementById('storyScenePanel').innerHTML = buildCarStoryScene(sc.art);
+      document.getElementById('storySceneDots').innerHTML = STORY_SCENES.map((_, i) => `
+        <button type="button" onclick="storySceneIdx=${i}; renderStoryScene();" class="w-2.5 h-2.5 rounded-full ${i === storySceneIdx ? 'bg-[#0089A7]' : 'bg-slate-300 dark:bg-slate-700'}"></button>
+      `).join('');
+    }
+    window.stepStoryScene = (d) => { storySceneIdx += d; renderStoryScene(); };
+    window.speakStoryScene = () => speakKid(STORY_SCENES[storySceneIdx].text);
+
+    // 05: Two Videos Switcher
+    const KIDS_VIDEOS = [
+      {
+        embed: "https://www.youtube.com/embed/jYAWf8Y91hA",
+        watch: "https://www.youtube.com/watch?v=jYAWf8Y91hA",
+        title: "COLORS SONG PART 1",
+        credit: "VIDEO CREDIT: THE SINGING WALRUS · PART 1 ON YOUTUBE"
+      },
+      {
+        embed: "https://www.youtube.com/embed/Asb8N0nz9OI",
+        watch: "https://www.youtube.com/watch?v=Asb8N0nz9OI",
+        title: "COLORS SONG PART 2",
+        credit: "VIDEO CREDIT: COLORS SONG · PART 2 ON YOUTUBE"
+      }
+    ];
+
+    window.selectVideo = (idx) => {
+      const v = KIDS_VIDEOS[idx];
+      document.getElementById('kidsVideoFrame').src = v.embed;
+      document.getElementById('kidsVideoFrame').title = v.title;
+      document.getElementById('kidsVideoCredit').textContent = v.credit;
+      document.getElementById('kidsVideoWatchLink').href = v.watch;
+
+      document.getElementById('btnVid1').className = idx === 0
+        ? 'px-4 py-2 rounded-2xl text-xs font-extrabold bg-[#002B5C] text-white transition'
+        : 'px-4 py-2 rounded-2xl text-xs font-extrabold bg-white dark:bg-[#0B1D33] border-2 border-[#0089A7]/30 transition';
+      document.getElementById('btnVid2').className = idx === 1
+        ? 'px-4 py-2 rounded-2xl text-xs font-extrabold bg-[#002B5C] text-white transition'
+        : 'px-4 py-2 rounded-2xl text-xs font-extrabold bg-white dark:bg-[#0B1D33] border-2 border-[#0089A7]/30 transition';
+    };
+
+    // 06: Action Challenges + Flat Action SVGs
+    const ACTION_SVGS = {
+      jump: `<svg viewBox="0 0 220 150" class="w-44 h-auto">
+        <circle cx="110" cy="30" r="16" fill="#0089A7" />
+        <line x1="110" y1="46" x2="110" y2="92" stroke="#002B5C" stroke-width="8" stroke-linecap="round" />
+        <polyline points="75,68 110,56 145,68" fill="none" stroke="#002B5C" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+        <polyline points="82,124 110,92 138,124" fill="none" stroke="#EF4444" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>`,
+      wave: `<svg viewBox="0 0 220 150" class="w-44 h-auto">
+        <circle cx="110" cy="38" r="16" fill="#0089A7" />
+        <line x1="110" y1="54" x2="110" y2="104" stroke="#002B5C" stroke-width="8" stroke-linecap="round" />
+        <polyline points="80,82 110,66 150,36" fill="none" stroke="#2563EB" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+        <line x1="110" y1="104" x2="110" y2="132" stroke="#002B5C" stroke-width="8" stroke-linecap="round" />
+      </svg>`,
+      hop: `<svg viewBox="0 0 220 150" class="w-44 h-auto">
+        <circle cx="110" cy="32" r="16" fill="#16A34A" />
+        <line x1="110" y1="48" x2="110" y2="92" stroke="#002B5C" stroke-width="8" stroke-linecap="round" />
+        <polyline points="82,122 110,92 135,112" fill="none" stroke="#16A34A" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>`,
+      clap: `<svg viewBox="0 0 220 150" class="w-44 h-auto">
+        <circle cx="110" cy="30" r="15" fill="#EC4899" />
+        <polyline points="72,62 104,76 76,92" fill="none" stroke="#EC4899" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+        <polyline points="148,62 116,76 144,92" fill="none" stroke="#EC4899" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>`,
+      point: `<svg viewBox="0 0 220 150" class="w-44 h-auto">
+        <circle cx="85" cy="40" r="16" fill="#F97316" />
+        <line x1="85" y1="56" x2="85" y2="115" stroke="#002B5C" stroke-width="8" stroke-linecap="round" />
+        <line x1="85" y1="74" x2="165" y2="74" stroke="#F97316" stroke-width="8" stroke-linecap="round" />
+      </svg>`,
+      smile: `<svg viewBox="0 0 220 150" class="w-44 h-auto">
+        <circle cx="110" cy="75" r="46" fill="#FACC15" />
+        <circle cx="94" cy="64" r="5" fill="#002B5C" />
+        <circle cx="126" cy="64" r="5" fill="#002B5C" />
+        <path d="M 86 88 Q 110 110 134 88" fill="none" stroke="#002B5C" stroke-width="6" stroke-linecap="round" />
+      </svg>`
+    };
+
+    const CLASS_CHALLENGES = [
+      { colorIdx: 4, actionType: "jump", title: "RED JUMP!", action: "JUMP THREE TIMES AND SHOUT: RED!" },
+      { colorIdx: 2, actionType: "wave", title: "BLUE WAVE!", action: "WAVE YOUR HAND AND SAY: IT IS BLUE!" },
+      { colorIdx: 6, actionType: "hop", title: "GREEN HOP!", action: "HOP LIKE A FROG AND SAY: GREEN!" },
+      { colorIdx: 1, actionType: "clap", title: "PINK CLAP!", action: "CLAP TWICE AND SAY: PINK!" },
+      { colorIdx: 5, actionType: "point", title: "ORANGE POINT!", action: "POINT TO SOMETHING ORANGE AND SAY: ORANGE!" },
+      { colorIdx: 3, actionType: "smile", title: "YELLOW SMILE!", action: "GIVE A BIG SMILE AND SAY: YELLOW!" }
+    ];
+    let chalIdx = 0;
+
+    function renderChallenge() {
+      const item = CLASS_CHALLENGES[chalIdx % CLASS_CHALLENGES.length];
+      const col = FLAT_COLORS[item.colorIdx];
+      document.getElementById('challengeBadge').textContent = `ACTION ${(chalIdx % CLASS_CHALLENGES.length) + 1} / ${CLASS_CHALLENGES.length}`;
+      document.getElementById('challengeDot').style.backgroundColor = col.hex;
+      document.getElementById('challengeTitle').textContent = item.title;
+      document.getElementById('challengeAction').textContent = item.action;
+      document.getElementById('actionSvgBox').innerHTML = ACTION_SVGS[item.actionType];
+    }
+    window.speakChallenge = () => {
+      const item = CLASS_CHALLENGES[chalIdx % CLASS_CHALLENGES.length];
+      speakKid(`${item.title}. ${item.action}`);
+    };
+    window.doneChallenge = () => {
+      awardStar(1);
+      speakKid("Great job!");
+    };
+    window.nextChallenge = () => { chalIdx++; renderChallenge(); };
+
+    // 07: Extra Games
+    window.switchExtraGame = (mode) => {
+      document.getElementById('extraPanelPair').classList.toggle('hidden', mode !== 'pair');
+      document.getElementById('extraPanelOdd').classList.toggle('hidden', mode !== 'odd');
+      document.getElementById('tabExtraPair').className = mode === 'pair'
+        ? 'px-4 py-2 rounded-2xl text-xs font-extrabold bg-[#002B5C] text-white'
+        : 'px-4 py-2 rounded-2xl text-xs font-extrabold bg-white dark:bg-[#0B1D33] border-2 border-[#0089A7]/30';
+      document.getElementById('tabExtraOdd').className = mode === 'odd'
+        ? 'px-4 py-2 rounded-2xl text-xs font-extrabold bg-[#002B5C] text-white'
+        : 'px-4 py-2 rounded-2xl text-xs font-extrabold bg-white dark:bg-[#0B1D33] border-2 border-[#0089A7]/30';
+    };
+
+    let pairDeck = [];
+    let firstPick = null;
+    let matchedNames = new Set();
+
+    window.initPairGame = () => {
+      const picks = [...FLAT_COLORS].sort(() => Math.random() - 0.5).slice(0, 4);
+      pairDeck = [...picks, ...picks].sort(() => Math.random() - 0.5);
+      firstPick = null;
+      matchedNames = new Set();
+      document.getElementById('pairGameMsg').textContent = "TAP TWO CARDS OF THE SAME COLOR!";
+      renderPairGrid();
+    };
+
+    function renderPairGrid() {
+      document.getElementById('pairCardsGrid').innerHTML = pairDeck.map((c, idx) => {
+        const isDone = matchedNames.has(c.name);
+        const isSel = firstPick === idx;
+        return `
+          <button type="button" ${isDone ? 'disabled' : ''} onclick="tapPairCard(${idx})" class="p-4 rounded-2xl border-2 transition flex flex-col items-center gap-2 ${
+            isDone ? 'border-emerald-500 bg-emerald-500/15 opacity-60'
+              : isSel ? 'border-amber-400 scale-105 bg-slate-100 dark:bg-[#132C4A]'
+              : 'border-slate-200 dark:border-cyan-400/20 bg-[#F0F6FA] dark:bg-[#061322] hover:border-[#0089A7]'
+          }">
+            <span class="w-10 h-10 rounded-full border-2 border-white shadow" style="background-color: ${c.hex};"></span>
+            <span class="text-xs font-extrabold">${c.name}</span>
+          </button>
+        `;
+      }).join('');
+    }
+
+    window.tapPairCard = (idx) => {
+      const card = pairDeck[idx];
+      speakKid(card.name);
+      if (firstPick === null) {
+        firstPick = idx;
+        renderPairGrid();
+        return;
+      }
+      if (firstPick === idx) {
+        firstPick = null;
+        renderPairGrid();
+        return;
+      }
+      const prev = pairDeck[firstPick];
+      if (prev.name === card.name) {
+        matchedNames.add(card.name);
+        awardStar(1);
+        document.getElementById('pairGameMsg').textContent = `MATCH! ${card.name}! (+1 ★)`;
+      } else {
+        document.getElementById('pairGameMsg').textContent = `NOT A MATCH! TRY AGAIN!`;
+      }
+      firstPick = null;
+      renderPairGrid();
+    };
+
+    const ODD_COLOR_ROUNDS = [
+      {
+        prompt: "WHICH ONE IS NOT RED?",
+        say: "Which one is not red?",
+        oddLabel: "BANANA",
+        items: [
+          { emoji: "🍎", label: "APPLE" },
+          { emoji: "🍓", label: "STRAWBERRY" },
+          { emoji: "🍌", label: "BANANA" }
+        ]
+      },
+      {
+        prompt: "WHICH ONE IS NOT GREEN?",
+        say: "Which one is not green?",
+        oddLabel: "CARROT",
+        items: [
+          { emoji: "🐸", label: "FROG" },
+          { emoji: "🌿", label: "LEAF" },
+          { emoji: "🥕", label: "CARROT" }
+        ]
+      },
+      {
+        prompt: "WHICH ONE IS NOT BLUE?",
+        say: "Which one is not blue?",
+        oddLabel: "GRAPES",
+        items: [
+          { emoji: "🐳", label: "WHALE" },
+          { emoji: "💧", label: "DROP" },
+          { emoji: "🍇", label: "GRAPES" }
+        ]
+      },
+      {
+        prompt: "WHICH ONE IS NOT YELLOW?",
+        say: "Which one is not yellow?",
+        oddLabel: "PIGGY",
+        items: [
+          { emoji: "🍌", label: "BANANA" },
+          { emoji: "⭐", label: "STAR" },
+          { emoji: "🐷", label: "PIGGY" }
+        ]
+      }
+    ];
+    let oddKidIdx = 0;
+
+    function renderOddKidRound() {
+      const r = ODD_COLOR_ROUNDS[oddKidIdx % ODD_COLOR_ROUNDS.length];
+      document.getElementById('oddRoundBadge').textContent = `ROUND ${(oddKidIdx % ODD_COLOR_ROUNDS.length) + 1} / ${ODD_COLOR_ROUNDS.length}`;
+      document.getElementById('oddPromptHeading').textContent = r.prompt;
+      document.getElementById('oddFeedbackBox').classList.add('hidden');
+      document.getElementById('oddOptionsRow').innerHTML = r.items.map(it => `
+        <button type="button" onclick="checkOddKid('${it.label}')" class="p-5 rounded-2xl border-2 border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7] bg-[#F0F6FA] dark:bg-[#061322] flex flex-col items-center gap-2 transition">
+          <span class="text-5xl">${it.emoji}</span>
+          <span class="text-xs font-extrabold">${it.label}</span>
+        </button>
+      `).join('');
+    }
+    window.speakOddQuestion = () => speakKid(ODD_COLOR_ROUNDS[oddKidIdx % ODD_COLOR_ROUNDS.length].say);
+    window.checkOddKid = (picked) => {
+      const r = ODD_COLOR_ROUNDS[oddKidIdx % ODD_COLOR_ROUNDS.length];
+      const box = document.getElementById('oddFeedbackBox');
+      box.classList.remove('hidden');
+      if (picked === r.oddLabel) {
+        awardStar(1);
+        speakKid(`Yes! ${r.oddLabel}!`);
+        box.className = 'p-4 rounded-2xl text-sm font-extrabold bg-emerald-500/20 text-emerald-700 dark:text-emerald-300';
+        box.textContent = `YES! ${r.oddLabel} IS DIFFERENT! (+1 ★)`;
+      } else {
+        speakKid("Try another one!");
+        box.className = 'p-4 rounded-2xl text-sm font-extrabold bg-amber-500/20 text-amber-800 dark:text-amber-200';
+        box.textContent = "TRY AGAIN! WHICH ONE IS DIFFERENT?";
+      }
+    };
+    window.nextOddRound = () => { oddKidIdx++; renderOddKidRound(); };
+
+    // Init
+    goKStage(0);
+    renderFlatColor(0);
+    renderObjectRound();
+    renderStoryScene();
+    renderChallenge();
+    initPairGame();
+    renderOddKidRound();
+    lucide.createIcons();
+  </script>
+</body>
+</html>

@@ -72,7 +72,7 @@
       </div>
     </div>
     <div class="w-full h-1 bg-black/30">
-      <div id="progressLine" class="h-full bg-[#0089A7] transition-all duration-300" style="width: 14.28%"></div>
+      <div id="progressLine" class="h-full bg-[#0089A7] transition-all duration-300" style="width: 12.5%"></div>
     </div>
   </header>
 
@@ -108,7 +108,7 @@
           </h1>
 
           <p class="text-slate-600 dark:text-slate-300 text-base leading-relaxed">
-            Master the contrast between routines, permanent facts, and stative verbs versus actions in progress, temporary trends, and live shifts.
+            Contrast routines, permanent facts, and stative verbs with actions in progress, temporary trends, and live shifts.
           </p>
 
           <div class="pt-2 flex flex-wrap items-center gap-4">
@@ -120,7 +120,7 @@
               <span>Start Lesson</span>
               <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
-            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">12 visual prompts · Fullscreen mode · Homework pack</span>
+            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">8 stages · Visual cards · Arcade mode</span>
           </div>
         </div>
       </div>
@@ -137,7 +137,6 @@
       </div>
 
       <div id="warmupLayout" class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-        <!-- Question Card Column -->
         <div id="warmupCardCol" class="lg:col-span-7 space-y-4 transition-all">
           <div class="flex flex-wrap items-center justify-between gap-2 bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-2xl px-4 py-3 shadow-sm">
             <div class="flex items-center gap-2">
@@ -188,7 +187,6 @@
           <div id="questionNumberPills" class="flex flex-wrap gap-1.5"></div>
         </div>
 
-        <!-- Voice Recorder Column (hidden automatically when Fullscreen Card is active) -->
         <div id="warmupRecorderCol" class="lg:col-span-5 bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-4 shadow-sm">
           <div class="flex items-center justify-between">
             <span class="text-xs font-extrabold uppercase tracking-[0.18em] text-[#0089A7]">Voice Note · Drive</span>
@@ -230,15 +228,14 @@
       </div>
     </section>
 
-    <!-- ==================== 03: VOCABULARY (ALL GRID / ONE BY ONE + PRODUCTION LAB) ==================== -->
-    <section data-stage="2" class="lesson-stage hidden stage-anim space-y-8">
+    <!-- ==================== 03: COMPLETE VOCABULARY LAB (SHOWCASE + SINGLE + FREQUENCY + MATCH + PRODUCTION) ==================== -->
+    <section data-stage="2" class="lesson-stage hidden stage-anim space-y-10">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
         <div>
           <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 03</span>
           <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Contrast Vocabulary</h2>
         </div>
 
-        <!-- View Mode Toggle: All Together vs. One by One -->
         <div class="inline-flex rounded-xl bg-white dark:bg-[#0C1E33] p-1 border border-slate-200 dark:border-cyan-400/20 text-xs font-bold self-start sm:self-auto">
           <button id="vocabModeGridBtn" type="button" onclick="setVocabView('grid')" class="px-3.5 py-1.5 rounded-lg bg-[#002B5C] text-white transition">
             All Cards
@@ -249,10 +246,10 @@
         </div>
       </div>
 
-      <!-- Mode 1: All Cards Grid -->
+      <!-- Part A1: All Cards Grid -->
       <div id="vocabGridView" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
 
-      <!-- Mode 2: One-by-One Spotlight Card -->
+      <!-- Part A2: One-by-One Spotlight Card -->
       <div id="vocabSingleView" class="hidden max-w-2xl mx-auto w-full space-y-4">
         <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl overflow-hidden shadow-md">
           <div id="vocabSinglePhoto" class="h-56 sm:h-64 bg-[#091726] relative overflow-hidden"></div>
@@ -285,61 +282,111 @@
         </div>
       </div>
 
-      <!-- Production Lab on the Same Vocabulary Page -->
+      <!-- Part B: Frequency Scale -->
+      <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-4 shadow-sm">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Frequency &amp; Time Cues</span>
+            <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white mt-0.5">Tap an Adverb for Examples &amp; Speaking Cues</h3>
+          </div>
+          <span id="freqPercentBadge" class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold self-start sm:self-auto">100% · Always</span>
+        </div>
+        <div class="flex flex-wrap gap-2" id="freqButtons"></div>
+        <div id="freqDetailCard" class="p-4 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/15 space-y-1.5"></div>
+      </div>
+
+      <!-- Part C: Definition Match -->
+      <div class="space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#005A8D] dark:text-cyan-300">Definition Match</h3>
+          <div class="flex items-center gap-3">
+            <span id="vocabMatchStatus" class="text-xs font-bold text-[#005A8D] dark:text-cyan-300">Pick a definition on the left, then tap its phrase</span>
+            <button type="button" onclick="resetVocabMatch()" class="text-xs px-3 py-1.5 rounded-lg border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] font-semibold">Reset</button>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          <div id="vocabDefsCol" class="lg:col-span-7 space-y-2.5"></div>
+          <div class="lg:col-span-5 bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-4 shadow-sm">
+            <h4 class="text-xs font-extrabold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">Expressions &amp; Audio</h4>
+            <div id="vocabWordsCol" class="flex flex-wrap gap-2.5"></div>
+            <div id="vocabExampleBox" class="hidden pt-4 border-t border-slate-200 dark:border-cyan-400/15 text-xs text-slate-600 dark:text-slate-300 space-y-1"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Part D: Guided Production Lab -->
       <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 sm:p-8 space-y-5 shadow-sm">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div>
             <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Guided Production Lab</span>
-            <h3 class="text-xl font-extrabold text-[#002B5C] dark:text-white mt-0.5">Make It Personal With Today's Vocabulary</h3>
+            <h3 class="text-xl font-extrabold text-[#002B5C] dark:text-white mt-0.5">Write Personal Sentences With Today's Vocabulary</h3>
           </div>
           <button type="button" onclick="toggleProductionModels()" class="self-start sm:self-auto px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-bold text-[#005A8D] dark:text-cyan-300">
             Show / Hide Model Ideas
           </button>
         </div>
-
         <div id="productionPromptsList" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
       </div>
     </section>
 
-    <!-- ==================== 04: GRAMMAR GUIDE & INTERACTIVE SWITCHER ==================== -->
+    <!-- ==================== 04: VISUAL GRAMMAR & SWITCHER ==================== -->
     <section data-stage="3" class="lesson-stage hidden stage-anim space-y-8">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
         <div>
           <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 04</span>
-          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Grammar Contrast</h2>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Visual Grammar</h2>
         </div>
-        <p class="text-sm text-slate-500 dark:text-slate-400">Clear rules and live tense-flipping to compare routines, facts, and actions in progress.</p>
+        <p class="text-sm text-slate-500 dark:text-slate-400">Visual timelines first, concise rules, and live tense switching.</p>
       </div>
 
-      <!-- Side-by-Side Visual Rule Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-4 shadow-sm">
-          <div class="flex items-center justify-between">
-            <span class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold tracking-wider">PRESENT SIMPLE</span>
-            <span class="text-xs font-bold text-[#005A8D] dark:text-cyan-300">Habits · Facts · Stative</span>
+      <!-- Visual Timeline SVG + Photo -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        <div class="lg:col-span-7 bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-5 shadow-sm">
+          <!-- Present Simple Diagram -->
+          <div class="space-y-1.5">
+            <div class="flex items-center justify-between text-xs font-extrabold">
+              <span class="px-2.5 py-0.5 rounded bg-[#002B5C] text-white">PRESENT SIMPLE</span>
+              <span class="text-[#005A8D] dark:text-cyan-300">verb / verb+s · Habits, Facts, Stative</span>
+            </div>
+            <svg viewBox="0 0 500 68" class="w-full h-16 rounded-xl bg-slate-50 dark:bg-[#071627] border border-slate-200/70 dark:border-cyan-400/10">
+              <line x1="25" y1="34" x2="475" y2="34" stroke="#64748B" stroke-width="2" stroke-dasharray="4 4" />
+              <circle cx="95" cy="34" r="8" fill="#002B5C" />
+              <circle cx="200" cy="34" r="8" fill="#002B5C" />
+              <circle cx="305" cy="34" r="8" fill="#002B5C" />
+              <circle cx="410" cy="34" r="8" fill="#002B5C" />
+              <text x="95" y="56" text-anchor="middle" font-size="10" fill="#94A3B8">Mon</text>
+              <text x="200" y="56" text-anchor="middle" font-size="10" fill="#94A3B8">Wed</text>
+              <text x="305" y="56" text-anchor="middle" font-size="10" fill="#94A3B8">Fri</text>
+              <text x="410" y="56" text-anchor="middle" font-size="10" fill="#94A3B8">Sun</text>
+            </svg>
           </div>
-          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-            Base verb (<strong>+s / +es / +ies</strong> for <em>he, she, it</em>) for repeated routines, permanent facts, timetables, and stative verbs (<em>know, prefer, want, belong, believe</em>).
-          </p>
-          <div class="bg-slate-50 dark:bg-[#071627] rounded-2xl p-4 text-xs space-y-1.5 border border-slate-200/70 dark:border-cyan-400/10">
-            <div><strong class="text-[#005A8D] dark:text-cyan-300">Habit:</strong> She <u>drinks</u> coffee every morning.</div>
-            <div><strong class="text-[#005A8D] dark:text-cyan-300">Fact:</strong> Water <u>boils</u> at 100 °C.</div>
-            <div><strong class="text-[#005A8D] dark:text-cyan-300">Stative:</strong> I <u>prefer</u> quiet mornings.</div>
+
+          <!-- Present Continuous Diagram -->
+          <div class="space-y-1.5">
+            <div class="flex items-center justify-between text-xs font-extrabold">
+              <span class="px-2.5 py-0.5 rounded bg-[#0089A7] text-white">PRESENT CONTINUOUS</span>
+              <span class="text-[#0089A7] dark:text-cyan-300">am / is / are + verb-ing · Right Now / Temporary</span>
+            </div>
+            <svg viewBox="0 0 500 68" class="w-full h-16 rounded-xl bg-slate-50 dark:bg-[#071627] border border-slate-200/70 dark:border-cyan-400/10">
+              <line x1="25" y1="34" x2="475" y2="34" stroke="#64748B" stroke-width="2" />
+              <rect x="175" y="18" width="150" height="24" rx="12" fill="#0089A7" fill-opacity="0.25" stroke="#0089A7" stroke-width="2" />
+              <circle cx="250" cy="30" r="5" fill="#0089A7" />
+              <text x="250" y="56" text-anchor="middle" font-size="10" font-weight="bold" fill="#0089A7">ACTIVE / TEMPORARY WINDOW</text>
+            </svg>
           </div>
         </div>
 
-        <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-4 shadow-sm">
-          <div class="flex items-center justify-between">
-            <span class="px-3 py-1 rounded-full bg-[#0089A7] text-white text-xs font-extrabold tracking-wider">PRESENT CONTINUOUS</span>
-            <span class="text-xs font-bold text-[#0089A7] dark:text-cyan-300">Right Now · Temporary</span>
-          </div>
-          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-            <strong>am / is / are + verb-ing</strong> for actions happening at the moment of speaking, temporary projects/trends around now, or arranged plans.
-          </p>
-          <div class="bg-slate-50 dark:bg-[#071627] rounded-2xl p-4 text-xs space-y-1.5 border border-slate-200/70 dark:border-cyan-400/10">
-            <div><strong class="text-[#0089A7] dark:text-cyan-300">Right now:</strong> She <u>is recording</u> a voice note.</div>
-            <div><strong class="text-[#0089A7] dark:text-cyan-300">Temporary:</strong> We <u>are testing</u> a new routine this week.</div>
-            <div><strong class="text-[#0089A7] dark:text-cyan-300">Dynamic shift:</strong> I'<u>m thinking</u> about our trip today.</div>
+        <div class="lg:col-span-5 rounded-3xl overflow-hidden relative bg-[#091726] min-h-[220px] shadow-sm">
+          <img
+            src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=850&q=80"
+            alt="Planner and time organization"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#061322]/90 via-[#061322]/35 to-transparent"></div>
+          <div class="absolute bottom-5 left-6 right-6 text-white space-y-1">
+            <span class="text-[11px] font-extrabold uppercase tracking-[0.2em] text-cyan-300">Quick Rule of Thumb</span>
+            <p class="text-sm font-bold">Repeated/state → Simple · In progress/temporary → Continuous</p>
+            <p class="text-xs text-white/80">Stative verbs (<em>know, prefer, own, want</em>) stay in Present Simple.</p>
           </div>
         </div>
       </div>
@@ -394,7 +441,7 @@
       </div>
     </section>
 
-    <!-- ==================== 06: PRACTICE PACK (8 MCQs + 4 SCRAMBLES + 4 ODD ONE OUT + 4 REWRITES) ==================== -->
+    <!-- ==================== 06: PRACTICE PACK ==================== -->
     <section data-stage="5" class="lesson-stage hidden stage-anim space-y-10">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
         <div>
@@ -404,7 +451,6 @@
         <p class="text-sm text-slate-500 dark:text-slate-400">Four complete sets for live class practice or assigning as homework.</p>
       </div>
 
-      <!-- Set 1: 8 Multiple-Choice Contrast Questions -->
       <div class="space-y-4">
         <div class="flex items-center justify-between">
           <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#005A8D] dark:text-cyan-300">Set 1 · Choose the Right Tense (8 Items)</h3>
@@ -416,7 +462,6 @@
         </button>
       </div>
 
-      <!-- Set 2: 4 Sentence Scrambles -->
       <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-4 shadow-sm">
         <div class="flex flex-wrap items-center justify-between gap-2">
           <div>
@@ -428,19 +473,16 @@
             <button type="button" onclick="nextScramble()" class="px-3.5 py-1.5 rounded-lg bg-[#005A8D] text-white text-xs font-bold hover:bg-[#0089A7] transition">Next Sentence</button>
           </div>
         </div>
-
         <div id="scrambleTray" class="min-h-[54px] p-3.5 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-dashed border-[#0089A7]/50 flex flex-wrap gap-2 items-center"></div>
         <div id="scrambleBank" class="flex flex-wrap gap-2"></div>
         <div id="scrambleFeedback" class="text-xs font-bold"></div>
       </div>
 
-      <!-- Set 3: 4 Odd One Out Groups -->
       <div class="space-y-4">
         <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#005A8D] dark:text-cyan-300">Set 3 · Odd One Out (4 Groups)</h3>
         <div id="oddGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
       </div>
 
-      <!-- Set 4: 4 Spot & Fix / Homework Writing Prompts -->
       <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-4 shadow-sm">
         <div class="flex flex-wrap items-center justify-between gap-2">
           <div>
@@ -455,7 +497,7 @@
       </div>
     </section>
 
-    <!-- ==================== 07: SPEAKING GAME (4 CARDS PER MODE) ==================== -->
+    <!-- ==================== 07: SPEAKING GAME ==================== -->
     <section data-stage="6" class="lesson-stage hidden stage-anim space-y-6">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
         <div>
@@ -511,6 +553,42 @@
       </div>
     </section>
 
+    <!-- ==================== 08: GAMIFIED TENSE ARCADE ==================== -->
+    <section data-stage="7" class="lesson-stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 08 · Gamified Finale</span>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Tense Arcade</h2>
+        </div>
+        <div class="flex items-center gap-3 text-xs font-extrabold">
+          <span id="arcadeScoreBadge" class="px-3 py-1 rounded-full bg-[#002B5C] text-white">Score: 0</span>
+          <span id="arcadeStreakBadge" class="px-3 py-1 rounded-full bg-[#0089A7]/20 text-[#005A8D] dark:text-cyan-300">Streak: 0 🔥</span>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 sm:p-8 space-y-6 shadow-lg max-w-3xl mx-auto w-full">
+        <div class="flex items-center justify-between gap-2">
+          <span id="arcadeRoundLabel" class="text-xs font-extrabold uppercase tracking-widest text-[#0089A7]">Round 1 / 8</span>
+          <button type="button" onclick="resetArcade()" class="text-xs font-bold px-3 py-1 rounded-lg border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A]">
+            Restart Run
+          </button>
+        </div>
+
+        <h3 id="arcadeSentence" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="arcadeOptions"></div>
+
+        <div id="arcadeFeedback" class="hidden p-4 rounded-2xl text-xs sm:text-sm font-semibold"></div>
+
+        <div class="flex justify-end pt-2">
+          <button type="button" onclick="nextArcadeRound()" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#005A8D] hover:bg-[#0089A7] text-white text-xs font-bold transition">
+            <span>Next Challenge</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- Editorial Bottom Stage Bar -->
@@ -522,7 +600,7 @@
       </button>
 
       <span id="stageCounter" class="text-xs font-extrabold tracking-widest uppercase text-slate-500 dark:text-slate-400">
-        01 / 07
+        01 / 08
       </span>
 
       <button id="btnNext" type="button" onclick="goStage(currentStage + 1)" class="inline-flex items-center gap-2 px-5 py-2 rounded-xl bg-[#002B5C] hover:bg-[#005A8D] disabled:opacity-30 text-xs font-bold text-white transition">
@@ -539,10 +617,11 @@
       "01 · Overview",
       "02 · Visual Warm-Up",
       "03 · Vocabulary",
-      "04 · Grammar Contrast",
+      "04 · Visual Grammar",
       "05 · Summary",
       "06 · Practice Pack",
-      "07 · Tense Showdown"
+      "07 · Tense Showdown",
+      "08 · Tense Arcade"
     ];
 
     let currentStage = 0;
@@ -582,7 +661,7 @@
       `).join('');
     }
 
-    // Theme Toggle (Light vs. Deep Navy Dark)
+    // Theme Toggle
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
     if (localStorage.getItem('provoNavyTheme') === 'light') {
@@ -622,102 +701,18 @@
 
     // 02: 12 Visual Question Cards + Fullscreen Toggle
     const WARMUP_CARDS = [
-      {
-        tag: "Habit vs. Right Now",
-        angle: "Daily Routine + Present Moment",
-        q: "What do you usually do on weekday mornings, and what are you doing right now?",
-        follow: "Contrast a repeated morning habit with your exact activity at this moment.",
-        photo: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=950&q=80",
-        starters: ["I usually drink... before 9 AM, and right now I'm...", "Every morning I..., whereas at this moment I'm..."]
-      },
-      {
-        tag: "Temporary Detour",
-        angle: "Normal Pattern vs. This Week",
-        q: "What is something you are doing differently this week because a normal routine is interrupted?",
-        follow: "Explain what usually happens vs. what is happening temporarily.",
-        photo: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=950&q=80",
-        starters: ["Normally I take..., but this week I'm...", "I usually..., though right now I'm..."]
-      },
-      {
-        tag: "Plot Twist Scenario",
-        angle: "Imagined Contrast",
-        q: "Imagine your alarm doesn't ring tomorrow morning: what usually happens when you wake up late, and what are you doing right now instead?",
-        follow: "Mix habits with what is happening in front of you right now.",
-        photo: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=950&q=80",
-        starters: ["When I wake up late, I usually..., and right now I'm...", "Normally I rush to..., while right now I'm..."]
-      },
-      {
-        tag: "Stative vs. Dynamic",
-        angle: "Opinion vs. Active Thought",
-        q: "What do you think about learning languages online, and what are you thinking about for the rest of today?",
-        follow: "Notice how 'think' shifts from an opinion to an active process.",
-        photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=950&q=80",
-        starters: ["I think online lessons are... because..., and right now I'm thinking about..."]
-      },
-      {
-        tag: "Kitchen & Cravings",
-        angle: "Regular Diet vs. Right Now",
-        q: "What kind of food do you cook or eat most days, and what are you preparing or craving right now?",
-        follow: "Use Present Simple for habits/preferences and Continuous for actions/cravings in progress.",
-        photo: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=950&q=80",
-        starters: ["Most days I eat..., and right now I'm craving...", "I usually cook..., though today I'm making..."]
-      },
-      {
-        tag: "Someone Else's Day",
-        angle: "Third-Person Habit vs. Today",
-        q: "What does a friend or family member do every week, and what are they probably doing right now?",
-        follow: "Remember third-person -s/-es in Present Simple.",
-        photo: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=950&q=80",
-        starters: ["Every week my friend..., and right now she/he is probably..."]
-      },
-      {
-        tag: "Digital Habits",
-        angle: "Screen Routine vs. Today",
-        q: "How often do you check your messages, and are you waiting for an important reply today?",
-        follow: "Pair a frequency phrase with a current situation.",
-        photo: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=950&q=80",
-        starters: ["I check my phone..., and today I'm waiting for..."]
-      },
-      {
-        tag: "Changing Trends",
-        angle: "Ongoing Change Around You",
-        q: "What is changing in your city, workplace, or daily life lately, compared to how things normally are?",
-        follow: "Use Present Continuous to describe trends in progress.",
-        photo: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=950&q=80",
-        starters: ["Lately, more people around here are...", "Things are changing because..."]
-      },
-      {
-        tag: "Outdoors & Weather",
-        angle: "Weekend Habit vs. Live Weather",
-        q: "Where do you usually go when you want fresh air, and what is the weather doing outside right now?",
-        follow: "Contrast a regular spot with today's weather/activity.",
-        photo: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=950&q=80",
-        starters: ["I usually head to..., and outside right now it is..."]
-      },
-      {
-        tag: "Music & Focus",
-        angle: "Listening Habit vs. Today",
-        q: "Do you usually listen to music or silence when you work or study, and are you listening to anything today?",
-        follow: "Answer both parts clearly.",
-        photo: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=950&q=80",
-        starters: ["I usually prefer..., and today I'm listening to..."]
-      },
-      {
-        tag: "Books & Stories",
-        angle: "Reading Habit vs. Current Read",
-        q: "How often do you read, and what book, article, or series are you following at the moment?",
-        follow: "Use Present Continuous for what you are currently in the middle of.",
-        photo: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=950&q=80",
-        starters: ["I read..., and at the moment I'm reading/watching..."]
-      },
-      {
-        tag: "Evening Reset",
-        angle: "Night Routine vs. Tonight",
-        q: "How do you normally wind down in the evening, and what are you planning to do tonight?",
-        follow: "Contrast a typical night with tonight's plan.",
-        photo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=950&q=80",
-        starters: ["Normally in the evening I..., and tonight I'm..."]
-      }
+      { tag: "Habit vs. Right Now", angle: "Daily Routine + Present Moment", q: "What do you usually do on weekday mornings, and what are you doing right now?", follow: "Contrast a repeated morning habit with your exact activity at this moment.", photo: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=950&q=80", starters: ["I usually drink... before 9 AM, and right now I'm...", "Every morning I..., whereas at this moment I'm..."] },
+      { tag: "Temporary Detour", angle: "Normal Pattern vs. This Week", q: "What is something you are doing differently this week because a normal routine is interrupted?", follow: "Explain what usually happens vs. what is happening temporarily.", photo: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=950&q=80", starters: ["Normally I take..., but this week I'm...", "I usually..., though right now I'm..."] },
+      { tag: "Plot Twist Scenario", angle: "Imagined Contrast", q: "Imagine your alarm doesn't ring tomorrow morning: what usually happens when you wake up late, and what are you doing right now instead?", follow: "Mix habits with what is happening in front of you right now.", photo: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=950&q=80", starters: ["When I wake up late, I usually..., and right now I'm...", "Normally I rush to..., while right now I'm..."] },
+      { tag: "Stative vs. Dynamic", angle: "Opinion vs. Active Thought", q: "What do you think about learning languages online, and what are you thinking about for the rest of today?", follow: "Notice how 'think' shifts from an opinion to an active process.", photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=950&q=80", starters: ["I think online lessons are... because..., and right now I'm thinking about..."] },
+      { tag: "Kitchen & Cravings", angle: "Regular Diet vs. Right Now", q: "What kind of food do you cook or eat most days, and what are you preparing or craving right now?", follow: "Use Present Simple for habits/preferences and Continuous for actions/cravings in progress.", photo: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=950&q=80", starters: ["Most days I eat..., and right now I'm craving...", "I usually cook..., though today I'm making..."] },
+      { tag: "Someone Else's Day", angle: "Third-Person Habit vs. Today", q: "What does a friend or family member do every week, and what are they probably doing right now?", follow: "Remember third-person -s/-es in Present Simple.", photo: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=950&q=80", starters: ["Every week my friend..., and right now she/he is probably..."] },
+      { tag: "Digital Habits", angle: "Screen Routine vs. Today", q: "How often do you check your messages, and are you waiting for an important reply today?", follow: "Pair a frequency phrase with a current situation.", photo: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=950&q=80", starters: ["I check my phone..., and today I'm waiting for..."] },
+      { tag: "Changing Trends", angle: "Ongoing Change Around You", q: "What is changing in your city, workplace, or daily life lately, compared to how things normally are?", follow: "Use Present Continuous to describe trends in progress.", photo: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=950&q=80", starters: ["Lately, more people around here are...", "Things are changing because..."] },
+      { tag: "Outdoors & Weather", angle: "Weekend Habit vs. Live Weather", q: "Where do you usually go when you want fresh air, and what is the weather doing outside right now?", follow: "Contrast a regular spot with today's weather/activity.", photo: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=950&q=80", starters: ["I usually head to..., and outside right now it is..."] },
+      { tag: "Music & Focus", angle: "Listening Habit vs. Today", q: "Do you usually listen to music or silence when you work or study, and are you listening to anything today?", follow: "Answer both parts clearly.", photo: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=950&q=80", starters: ["I usually prefer..., and today I'm listening to..."] },
+      { tag: "Books & Stories", angle: "Reading Habit vs. Current Read", q: "How often do you read, and what book, article, or series are you following at the moment?", follow: "Use Present Continuous for what you are currently in the middle of.", photo: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=950&q=80", starters: ["I read..., and at the moment I'm reading/watching..."] },
+      { tag: "Evening Reset", angle: "Night Routine vs. Tonight", q: "How do you normally wind down in the evening, and what are you planning to do tonight?", follow: "Contrast a typical night with tonight's plan.", photo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=950&q=80", starters: ["Normally in the evening I..., and tonight I'm..."] }
     ];
 
     let qIdx = 0;
@@ -778,50 +773,14 @@
       document.getElementById('startersBox').classList.toggle('hidden');
     });
 
-    // 03: Vocabulary (All Grid / One by One + Production Lab)
+    // 03: Complete Vocabulary Lab
     const VOCAB_ITEMS = [
-      {
-        phrase: "on a regular basis",
-        tag: "Present Simple · Habit",
-        def: "Repeatedly at steady, predictable intervals.",
-        ex: "We review new vocabulary on a regular basis.",
-        photo: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=800&q=75"
-      },
-      {
-        phrase: "at the moment",
-        tag: "Present Continuous · Now",
-        def: "Right now or during this current period.",
-        ex: "She is helping a student at the moment.",
-        photo: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=75"
-      },
-      {
-        phrase: "cut down on",
-        tag: "Temporary · Change",
-        def: "Reduce the amount or frequency of something.",
-        ex: "I'm cutting down on screen time late at night.",
-        photo: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=75"
-      },
-      {
-        phrase: "hardly ever",
-        tag: "Present Simple · Rare",
-        def: "Almost never; very rarely.",
-        ex: "He hardly ever skips breakfast on workdays.",
-        photo: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=75"
-      },
-      {
-        phrase: "for the time being",
-        tag: "Present Continuous · Temp",
-        def: "For now, until something changes.",
-        ex: "We're holding the session online for the time being.",
-        photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=75"
-      },
-      {
-        phrase: "belong to",
-        tag: "Stative · Possession",
-        def: "Be the property of someone (not used in continuous).",
-        ex: "This notebook belongs to our class.",
-        photo: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=75"
-      }
+      { id: 1, phrase: "on a regular basis", tag: "Present Simple · Habit", def: "Repeatedly at steady, predictable intervals.", ex: "We review new vocabulary on a regular basis.", photo: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=800&q=75" },
+      { id: 2, phrase: "at the moment", tag: "Present Continuous · Now", def: "Right now or during this current period.", ex: "She is helping a student at the moment.", photo: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=75" },
+      { id: 3, phrase: "cut down on", tag: "Temporary · Change", def: "Reduce the amount or frequency of something.", ex: "I'm cutting down on screen time late at night.", photo: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=75" },
+      { id: 4, phrase: "hardly ever", tag: "Present Simple · Rare", def: "Almost never; very rarely.", ex: "He hardly ever skips breakfast on workdays.", photo: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=75" },
+      { id: 5, phrase: "for the time being", tag: "Present Continuous · Temp", def: "For now, until something changes.", ex: "We're holding the session online for the time being.", photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=75" },
+      { id: 6, phrase: "belong to", tag: "Stative · Possession", def: "Be the property of someone (not used in continuous).", ex: "This notebook belongs to our class.", photo: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=75" }
     ];
 
     let vocabViewMode = 'grid';
@@ -887,9 +846,7 @@
       document.getElementById('vocabSingleDef').textContent = v.def;
       document.getElementById('vocabSingleEx').textContent = `Example: “${v.ex}”`;
       mountPhoto(document.getElementById('vocabSinglePhoto'), v.photo, v.phrase, v.phrase);
-
-      const audioBtn = document.getElementById('vocabSingleAudioBtn');
-      audioBtn.onclick = () => speakPhrase(v.phrase);
+      document.getElementById('vocabSingleAudioBtn').onclick = () => speakPhrase(v.phrase);
 
       document.getElementById('vocabSingleDots').innerHTML = VOCAB_ITEMS.map((_, i) => `
         <button type="button" onclick="singleVocabIdx=${i}; renderSingleVocab();" class="w-2.5 h-2.5 rounded-full transition ${i === singleVocabIdx ? 'bg-[#0089A7]' : 'bg-slate-300 dark:bg-slate-700'}"></button>
@@ -902,28 +859,98 @@
       renderSingleVocab();
     };
 
-    // Production Lab inside Stage 03
-    const PRODUCTION_PROMPTS = [
-      {
-        target: "on a regular basis",
-        cue: "Write a true sentence about something you or someone you know does regularly (Present Simple).",
-        model: "Model: I go for a long walk on a regular basis."
-      },
-      {
-        target: "at the moment",
-        cue: "Write what you or a family member are doing at the moment (Present Continuous).",
-        model: "Model: My partner is working from home at the moment."
-      },
-      {
-        target: "cut down on",
-        cue: "Write something temporary you are cutting down on right now.",
-        model: "Model: I'm cutting down on sweet snacks this month."
-      },
-      {
-        target: "hardly ever",
-        cue: "Write a sentence about something you hardly ever do.",
-        model: "Model: I hardly ever watch TV in the morning."
+    const FREQ_SCALE = [
+      { label: "Always", pct: "100%", ex: "She always drinks coffee at 8:00 AM.", ask: "What is something you always do on work/school days?" },
+      { label: "Usually", pct: "80%", ex: "I usually walk to the station.", ask: "How do you usually get around during the week?" },
+      { label: "Often", pct: "60%", ex: "They often meet on Saturday mornings.", ask: "What do you often do with friends or family?" },
+      { label: "Sometimes", pct: "40%", ex: "We sometimes cook at home.", ask: "What do you sometimes eat for dinner?" },
+      { label: "Hardly ever", pct: "10%", ex: "He hardly ever watches TV on weekdays.", ask: "What is one thing you hardly ever do?" },
+      { label: "Never", pct: "0%", ex: "I never skip my morning routine.", ask: "What is something you never do?" }
+    ];
+    let activeFreqIdx = 0;
+
+    function renderFreqScale() {
+      document.getElementById('freqButtons').innerHTML = FREQ_SCALE.map((f, i) => `
+        <button type="button" onclick="selectFreq(${i})" class="px-3.5 py-1.5 rounded-xl text-xs font-extrabold border transition ${
+          activeFreqIdx === i ? 'bg-[#005A8D] text-white border-[#005A8D]' : 'bg-slate-50 dark:bg-[#071627] border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7]'
+        }">${f.label}</button>
+      `).join('');
+      const item = FREQ_SCALE[activeFreqIdx];
+      document.getElementById('freqPercentBadge').textContent = `${item.pct} · ${item.label}`;
+      document.getElementById('freqDetailCard').innerHTML = `
+        <div class="text-sm font-bold text-[#002B5C] dark:text-white">Example: “${item.ex}”</div>
+        <div class="text-xs text-[#005A8D] dark:text-cyan-300 font-semibold">Class prompt: ${item.ask}</div>
+      `;
+    }
+    window.selectFreq = (i) => { activeFreqIdx = i; renderFreqScale(); };
+
+    let activeDef = null;
+    const doneMatches = new Set();
+
+    function renderVocabMatch() {
+      const defs = document.getElementById('vocabDefsCol');
+      const words = document.getElementById('vocabWordsCol');
+
+      defs.innerHTML = VOCAB_ITEMS.map(item => {
+        const matched = doneMatches.has(item.id);
+        const sel = activeDef === item.id;
+        return `
+          <button type="button" onclick="pickDef(${item.id})" ${matched ? 'disabled' : ''} class="w-full text-left p-4 rounded-2xl border transition flex items-center justify-between gap-3 ${
+            matched ? 'bg-emerald-500/10 border-emerald-500/35 text-emerald-700 dark:text-emerald-300'
+              : sel ? 'bg-[#005A8D]/15 border-[#0089A7] text-[#002B5C] dark:text-white'
+              : 'bg-white dark:bg-[#0C1E33] border-slate-200 dark:border-cyan-400/15 hover:border-[#0089A7]/50'
+          }">
+            <span class="text-xs sm:text-sm"><strong class="text-[#0089A7] mr-2">${item.id}.</strong>${item.def}</span>
+            ${matched ? `<span class="text-xs font-extrabold px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 shrink-0">${item.phrase}</span>` : ''}
+          </button>
+        `;
+      }).join('');
+
+      const sorted = [...VOCAB_ITEMS].sort((a, b) => a.phrase.localeCompare(b.phrase));
+      words.innerHTML = sorted.map(item => {
+        const matched = doneMatches.has(item.id);
+        const safe = item.phrase.replace(/'/g, "\\'");
+        return `
+          <div class="inline-flex items-center rounded-xl border ${matched ? 'border-emerald-500/30 bg-emerald-500/10 opacity-50' : 'border-slate-200 dark:border-cyan-400/20 bg-slate-50 dark:bg-[#071627]'}">
+            <button type="button" onclick="pickPhrase(${item.id})" ${matched ? 'disabled' : ''} class="px-3.5 py-2 text-xs font-bold hover:text-[#0089A7] transition">${item.phrase}</button>
+            <button type="button" onclick="speakPhrase('${safe}')" class="pr-2.5 pl-1 py-2 text-slate-400 hover:text-[#0089A7] transition" title="Listen">
+              <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        `;
+      }).join('');
+      lucide.createIcons();
+    }
+
+    window.pickDef = (id) => { activeDef = id; document.getElementById('vocabMatchStatus').textContent = `Definition #${id} selected — tap its matching phrase`; renderVocabMatch(); };
+    window.pickPhrase = (id) => {
+      const status = document.getElementById('vocabMatchStatus');
+      const exBox = document.getElementById('vocabExampleBox');
+      if (activeDef === null) { status.textContent = "Select a numbered definition on the left first."; return; }
+      if (activeDef === id) {
+        doneMatches.add(id);
+        const item = VOCAB_ITEMS.find(x => x.id === id);
+        activeDef = null;
+        status.textContent = `Matched (${doneMatches.size} / ${VOCAB_ITEMS.length})`;
+        exBox.classList.remove('hidden');
+        exBox.innerHTML = `<span class="font-bold text-[#005A8D] dark:text-cyan-300">Example:</span> “${item.ex}”`;
+        renderVocabMatch();
+      } else {
+        status.textContent = "Not a match for that definition — try another phrase.";
       }
+    };
+    window.resetVocabMatch = () => {
+      doneMatches.clear(); activeDef = null;
+      document.getElementById('vocabMatchStatus').textContent = "Pick a definition on the left, then tap its phrase";
+      document.getElementById('vocabExampleBox').classList.add('hidden');
+      renderVocabMatch();
+    };
+
+    const PRODUCTION_PROMPTS = [
+      { target: "on a regular basis", cue: "Write a true sentence about something you or someone you know does regularly (Present Simple).", model: "Model: I go for a long walk on a regular basis." },
+      { target: "at the moment", cue: "Write what you or a family member are doing at the moment (Present Continuous).", model: "Model: My partner is working from home at the moment." },
+      { target: "cut down on", cue: "Write something temporary you are cutting down on right now.", model: "Model: I'm cutting down on sweet snacks this month." },
+      { target: "hardly ever", cue: "Write a sentence about something you hardly ever do.", model: "Model: I hardly ever watch TV in the morning." }
     ];
     let showProdModels = false;
 
@@ -935,22 +962,14 @@
             <span class="text-[11px] text-slate-400">#${i + 1}</span>
           </div>
           <p class="text-xs text-slate-600 dark:text-slate-300">${p.cue}</p>
-          <input
-            type="text"
-            placeholder="Write your sentence here..."
-            class="w-full px-3 py-2 rounded-xl bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 text-xs focus:outline-none focus:border-[#0089A7]"
-          />
+          <input type="text" placeholder="Write your sentence here..." class="w-full px-3 py-2 rounded-xl bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 text-xs focus:outline-none focus:border-[#0089A7]" />
           <p class="prod-model ${showProdModels ? '' : 'hidden'} text-xs italic text-[#0089A7] dark:text-cyan-300">${p.model}</p>
         </div>
       `).join('');
     }
+    window.toggleProductionModels = () => { showProdModels = !showProdModels; renderProductionPrompts(); };
 
-    window.toggleProductionModels = () => {
-      showProdModels = !showProdModels;
-      renderProductionPrompts();
-    };
-
-    // 04: Tense Switcher
+    // 04: Switcher
     const SWITCHER_ITEMS = [
       { simple: "She <strong>lives</strong> in Manresa.", continuous: "She <strong>is living</strong> in Barcelona this month.", sNote: "Permanent home base.", cNote: "Temporary stay for a limited time." },
       { simple: "I <strong>cook</strong> dinner at home.", continuous: "I <strong>am cooking</strong> dinner right now.", sNote: "Regular evening habit.", cNote: "Action in progress at this exact moment." },
@@ -976,7 +995,6 @@
       document.getElementById('modeContinuous').className = 'px-4 py-2 rounded-lg text-slate-600 dark:text-slate-300 transition';
       renderSwitcher();
     });
-
     document.getElementById('modeContinuous').addEventListener('click', () => {
       switcherMode = 'continuous';
       document.getElementById('modeContinuous').className = 'px-4 py-2 rounded-lg bg-[#0089A7] text-white transition';
@@ -984,7 +1002,7 @@
       renderSwitcher();
     });
 
-    // 05: Summary Cloze
+    // 05: Cloze
     const CLOZE_BANK = ["routines", "now", "temporary", "stative", "moment"];
     const CLOZE_KEY = ["routines", "moment", "temporary", "now", "stative"];
     const CLOZE_STATE = ["", "", "", "", ""];
@@ -992,11 +1010,8 @@
 
     function renderCloze() {
       document.getElementById('clozeChips').innerHTML = CLOZE_BANK.map(w => `
-        <button type="button" onclick="putCloze('${w}')" class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7] text-xs font-bold text-[#005A8D] dark:text-cyan-300 transition">
-          ${w}
-        </button>
+        <button type="button" onclick="putCloze('${w}')" class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7] text-xs font-bold text-[#005A8D] dark:text-cyan-300 transition">${w}</button>
       `).join('');
-
       const segs = [
         "We use the Present Simple for daily ",
         " and facts. In contrast, the Present Continuous highlights actions happening at the ",
@@ -1005,7 +1020,6 @@
         ". Finally, ",
         " verbs like <em>know</em>, <em>prefer</em>, and <em>belong</em> usually stay in the simple form."
       ];
-
       let out = "";
       for (let i = 0; i < segs.length; i++) {
         out += segs[i];
@@ -1021,11 +1035,7 @@
     }
 
     window.pickSlot = (i) => { activeSlot = i; renderCloze(); };
-    window.putCloze = (w) => {
-      CLOZE_STATE[activeSlot] = w;
-      if (activeSlot < 4) activeSlot++;
-      renderCloze();
-    };
+    window.putCloze = (w) => { CLOZE_STATE[activeSlot] = w; if (activeSlot < 4) activeSlot++; renderCloze(); };
     window.checkCloze = () => {
       let score = 0;
       CLOZE_KEY.forEach((k, i) => { if (CLOZE_STATE[i] === k) score++; });
@@ -1033,14 +1043,9 @@
       msg.textContent = `${score} / ${CLOZE_KEY.length} correct`;
       msg.className = score === 5 ? "text-xs font-bold text-emerald-600 dark:text-emerald-400" : "text-xs font-bold text-amber-600 dark:text-amber-300";
     };
-    window.resetCloze = () => {
-      for (let i = 0; i < CLOZE_STATE.length; i++) CLOZE_STATE[i] = "";
-      activeSlot = 0;
-      document.getElementById('clozeMsg').textContent = "";
-      renderCloze();
-    };
+    window.resetCloze = () => { for (let i = 0; i < CLOZE_STATE.length; i++) CLOZE_STATE[i] = ""; activeSlot = 0; document.getElementById('clozeMsg').textContent = ""; renderCloze(); };
 
-    // 06: Set 1 (8 MCQs), Set 2 (4 Scrambles), Set 3 (4 Odd One Out), Set 4 (4 Homework Fix & Write)
+    // 06: Practice Pack
     const PRACTICE_QS = [
       { q: "1. Right now, Liam ___ his notes before class.", opts: ["reads", "is reading"], ans: "is reading" },
       { q: "2. My sister usually ___ coffee, not tea.", opts: ["drinks", "is drinking"], ans: "drinks" },
@@ -1060,16 +1065,13 @@
           <div class="flex flex-wrap gap-2">
             ${item.opts.map(o => `
               <button type="button" onclick="choosePractice(${i}, '${o.replace(/'/g, "\\'")}')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold border transition ${
-                practicePicked[i] === o
-                  ? 'bg-[#002B5C] text-white border-[#002B5C]'
-                  : 'bg-slate-50 dark:bg-[#071627] border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7]'
+                practicePicked[i] === o ? 'bg-[#002B5C] text-white border-[#002B5C]' : 'bg-slate-50 dark:bg-[#071627] border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7]'
               }">${o}</button>
             `).join('')}
           </div>
         </div>
       `).join('');
     }
-
     window.choosePractice = (i, o) => { practicePicked[i] = o; renderPractice(); };
     window.checkPractice = () => {
       let c = 0;
@@ -1078,26 +1080,10 @@
     };
 
     const SCRAMBLES = [
-      {
-        label: "Sentence 1 / 4 · Habit + Adverb",
-        tiles: ["always", "she", "coffee", "drinks", "at breakfast"],
-        target: "she always drinks coffee at breakfast"
-      },
-      {
-        label: "Sentence 2 / 4 · Action Right Now",
-        tiles: ["is", "he", "a message", "right now", "sending"],
-        target: "he is sending a message right now"
-      },
-      {
-        label: "Sentence 3 / 4 · Temporary Week",
-        tiles: ["are", "we", "this week", "working", "from home"],
-        target: "we are working from home this week"
-      },
-      {
-        label: "Sentence 4 / 4 · Routine Question",
-        tiles: ["every day", "you", "do", "for a walk", "go"],
-        target: "do you go for a walk every day"
-      }
+      { label: "Sentence 1 / 4 · Habit + Adverb", tiles: ["always", "she", "coffee", "drinks", "at breakfast"], target: "she always drinks coffee at breakfast" },
+      { label: "Sentence 2 / 4 · Action Right Now", tiles: ["is", "he", "a message", "right now", "sending"], target: "he is sending a message right now" },
+      { label: "Sentence 3 / 4 · Temporary Week", tiles: ["are", "we", "this week", "working", "from home"], target: "we are working from home this week" },
+      { label: "Sentence 4 / 4 · Routine Question", tiles: ["every day", "you", "do", "for a walk", "go"], target: "do you go for a walk every day" }
     ];
     let scrambleIdx = 0;
     let placedOrder = [];
@@ -1110,49 +1096,23 @@
       const fb = document.getElementById('scrambleFeedback');
 
       tray.innerHTML = placedOrder.length
-        ? placedOrder.map((tIdx, pos) => `
-            <button type="button" onclick="removeScrambleTile(${pos})" class="px-3 py-1.5 rounded-xl bg-[#005A8D] text-white text-xs font-bold shadow-sm hover:bg-rose-600 transition">
-              ${s.tiles[tIdx]} ✕
-            </button>
-          `).join('')
+        ? placedOrder.map((tIdx, pos) => `<button type="button" onclick="removeScrambleTile(${pos})" class="px-3 py-1.5 rounded-xl bg-[#005A8D] text-white text-xs font-bold shadow-sm hover:bg-rose-600 transition">${s.tiles[tIdx]} ✕</button>`).join('')
         : `<span class="text-xs text-slate-400">Tap words below to build the sentence...</span>`;
 
       bank.innerHTML = s.tiles.map((word, tIdx) => {
         const used = placedOrder.includes(tIdx);
-        return `
-          <button
-            type="button"
-            ${used ? 'disabled' : ''}
-            onclick="addScrambleTile(${tIdx})"
-            class="px-3.5 py-1.5 rounded-xl border text-xs font-bold transition ${
-              used
-                ? 'opacity-30 border-slate-200 dark:border-cyan-400/10'
-                : 'bg-slate-50 dark:bg-[#071627] border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7]'
-            }"
-          >${word}</button>
-        `;
+        return `<button type="button" ${used ? 'disabled' : ''} onclick="addScrambleTile(${tIdx})" class="px-3.5 py-1.5 rounded-xl border text-xs font-bold transition ${used ? 'opacity-30 border-slate-200 dark:border-cyan-400/10' : 'bg-slate-50 dark:bg-[#071627] border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7]'}">${word}</button>`;
       }).join('');
 
       if (placedOrder.length === s.tiles.length) {
         const built = placedOrder.map(i => s.tiles[i]).join(' ').toLowerCase();
-        if (built === s.target) {
-          fb.className = 'text-xs font-bold text-emerald-600 dark:text-emerald-400';
-          fb.textContent = 'Great order! Sentence complete.';
-        } else {
-          fb.className = 'text-xs font-bold text-amber-600 dark:text-amber-300';
-          fb.textContent = `Check order — target: “${s.target}”.`;
-        }
+        fb.className = built === s.target ? 'text-xs font-bold text-emerald-600 dark:text-emerald-400' : 'text-xs font-bold text-amber-600 dark:text-amber-300';
+        fb.textContent = built === s.target ? 'Great order! Sentence complete.' : `Check order — target: “${s.target}”.`;
       } else {
         fb.textContent = '';
       }
     }
-
-    window.addScrambleTile = (tIdx) => {
-      if (!placedOrder.includes(tIdx)) {
-        placedOrder.push(tIdx);
-        renderScramble();
-      }
-    };
+    window.addScrambleTile = (tIdx) => { if (!placedOrder.includes(tIdx)) { placedOrder.push(tIdx); renderScramble(); } };
     window.removeScrambleTile = (pos) => { placedOrder.splice(pos, 1); renderScramble(); };
     window.resetScramble = () => { placedOrder = []; renderScramble(); };
     window.nextScramble = () => { scrambleIdx = (scrambleIdx + 1) % SCRAMBLES.length; placedOrder = []; renderScramble(); };
@@ -1169,28 +1129,18 @@
         <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-2xl p-5 space-y-2.5 shadow-sm">
           <div class="text-xs font-extrabold uppercase tracking-wider text-[#0089A7]">${g.label}</div>
           <div class="space-y-1.5">
-            ${g.opts.map((o, oi) => `
-              <button type="button" onclick="testOdd(${gi}, '${o.replace(/'/g, "\\'")}')" class="w-full text-left px-3 py-2 rounded-xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7] text-xs font-semibold transition">
-                <strong class="text-[#0089A7] mr-2">${String.fromCharCode(65 + oi)}.</strong>${o}
-              </button>
-            `).join('')}
+            ${g.opts.map((o, oi) => `<button type="button" onclick="testOdd(${gi}, '${o.replace(/'/g, "\\'")}')" class="w-full text-left px-3 py-2 rounded-xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7] text-xs font-semibold transition"><strong class="text-[#0089A7] mr-2">${String.fromCharCode(65 + oi)}.</strong>${o}</button>`).join('')}
           </div>
           <div id="odd-note-${gi}" class="hidden text-xs p-2.5 rounded-xl font-semibold"></div>
         </div>
       `).join('');
     }
-
     window.testOdd = (gi, chosen) => {
       const g = ODD_ITEMS[gi];
       const box = document.getElementById(`odd-note-${gi}`);
       box.classList.remove('hidden');
-      if (chosen === g.odd) {
-        box.className = 'text-xs p-2.5 rounded-xl font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
-        box.textContent = `Correct! ${g.note}`;
-      } else {
-        box.className = 'text-xs p-2.5 rounded-xl font-semibold bg-amber-500/15 text-amber-700 dark:text-amber-200';
-        box.textContent = `Odd one out is '${g.odd}'. ${g.note}`;
-      }
+      box.className = chosen === g.odd ? 'text-xs p-2.5 rounded-xl font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300' : 'text-xs p-2.5 rounded-xl font-semibold bg-amber-500/15 text-amber-700 dark:text-amber-200';
+      box.textContent = chosen === g.odd ? `Correct! ${g.note}` : `Odd one out is '${g.odd}'. ${g.note}`;
     };
 
     const FIX_HOMEWORK = [
@@ -1211,11 +1161,7 @@
         </div>
       `).join('');
     }
-
-    window.toggleFixKey = () => {
-      showFixKey = !showFixKey;
-      renderFixHomework();
-    };
+    window.toggleFixKey = () => { showFixKey = !showFixKey; renderFixHomework(); };
 
     // 07: Speaking Game (4 Cards per Mode)
     const GAME_MODES = [
@@ -1223,97 +1169,24 @@
       { key: "detective", label: "Contrast Detective" },
       { key: "debates", label: "Quick Class Debates" }
     ];
-
     const GAME_CARDS = {
       contrast: [
-        {
-          title: "Card 1 · Morning Coffee & Right Now",
-          rule: "Say what you normally drink or eat in the morning, and what you are drinking or eating (or not having) right now.",
-          follow: "Do you change your routine on weekends?",
-          photo: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=850&q=80",
-          twist: "Bonus Twist: Ask your teacher what they usually drink vs. what they have right now."
-        },
-        {
-          title: "Card 2 · Commute vs. Today's Trip",
-          rule: "Compare how you usually travel or commute with any special trip or movement you are making this week.",
-          follow: "Does traffic or weather ever change your usual route?",
-          photo: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=850&q=80",
-          twist: "Bonus Twist: Use 'on a regular basis' and 'at the moment' in your answer."
-        },
-        {
-          title: "Card 3 · Work / Study Rhythm",
-          rule: "Describe your usual study or work schedule, then say what project or skill you are focusing on right now.",
-          follow: "Are you working faster or slower than usual today?",
-          photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=850&q=80",
-          twist: "Bonus Twist: Include one negative sentence in Present Continuous."
-        },
-        {
-          title: "Card 4 · Free Time vs. Tonight",
-          rule: "Share a hobby you enjoy regularly, and contrast it with what you are planning or doing this evening.",
-          follow: "What do you hardly ever do on a weeknight?",
-          photo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=850&q=80",
-          twist: "Bonus Twist: Make one sentence true and one a playful bluff for your teacher to spot."
-        }
+        { title: "Card 1 · Morning Coffee & Right Now", rule: "Say what you normally drink or eat in the morning, and what you are drinking or eating (or not having) right now.", follow: "Do you change your routine on weekends?", photo: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Ask your teacher what they usually drink vs. what they have right now." },
+        { title: "Card 2 · Commute vs. Today's Trip", rule: "Compare how you usually travel or commute with any special trip or movement you are making this week.", follow: "Does traffic or weather ever change your usual route?", photo: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Use 'on a regular basis' and 'at the moment' in your answer." },
+        { title: "Card 3 · Work / Study Rhythm", rule: "Describe your usual study or work schedule, then say what project or skill you are focusing on right now.", follow: "Are you working faster or slower than usual today?", photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Include one negative sentence in Present Continuous." },
+        { title: "Card 4 · Free Time vs. Tonight", rule: "Share a hobby you enjoy regularly, and contrast it with what you are planning or doing this evening.", follow: "What do you hardly ever do on a weeknight?", photo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Make one sentence true and one a playful bluff for your teacher to spot." }
       ],
       detective: [
-        {
-          title: "Card 1 · Who Am I Thinking Of?",
-          rule: "Think of a real person (a friend, celebrity, or family member). Give 2 Present Simple facts and 1 Present Continuous clue for right now.",
-          follow: "Does this person live near you? What are they probably doing right now?",
-          photo: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=850&q=80",
-          twist: "Bonus Twist: Your teacher can ask up to 4 'Does he/she...?' or 'Is he/she...?' questions."
-        },
-        {
-          title: "Card 2 · What Place Is This?",
-          rule: "Describe a place people visit regularly and what people are usually doing there right now.",
-          follow: "Do you go there often? Is it busy at this moment?",
-          photo: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=850&q=80",
-          twist: "Bonus Twist: Use a stative verb like 'prefer', 'love', or 'belong'."
-        },
-        {
-          title: "Card 3 · Mystery Habit vs. Today",
-          rule: "Pick an everyday object on your desk or near you. Say how people use it and how you are using it right now.",
-          follow: "Who owns it, and how often do you touch it?",
-          photo: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=850&q=80",
-          twist: "Bonus Twist: Try not to say the object's name until your teacher guesses!"
-        },
-        {
-          title: "Card 4 · Two Truths & One Twist",
-          rule: "Give two true statements about your routines/current week and one exaggerated statement—your teacher guesses which is which.",
-          follow: "Which part is happening right now versus every week?",
-          photo: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=850&q=80",
-          twist: "Bonus Twist: Swap roles and test your teacher!"
-        }
+        { title: "Card 1 · Who Am I Thinking Of?", rule: "Think of a real person (a friend, celebrity, or family member). Give 2 Present Simple facts and 1 Present Continuous clue for right now.", follow: "Does this person live near you? What are they probably doing right now?", photo: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Your teacher can ask up to 4 'Does he/she...?' or 'Is he/she...?' questions." },
+        { title: "Card 2 · What Place Is This?", rule: "Describe a place people visit regularly and what people are usually doing there right now.", follow: "Do you go there often? Is it busy at this moment?", photo: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Use a stative verb like 'prefer', 'love', or 'belong'." },
+        { title: "Card 3 · Mystery Habit vs. Today", rule: "Pick an everyday object on your desk or near you. Say how people use it and how you are using it right now.", follow: "Who owns it, and how often do you touch it?", photo: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Try not to say the object's name until your teacher guesses!" },
+        { title: "Card 4 · Two Truths & One Twist", rule: "Give two true statements about your routines/current week and one exaggerated statement—your teacher guesses which is which.", follow: "Which part is happening right now versus every week?", photo: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Swap roles and test your teacher!" }
       ],
       debates: [
-        {
-          title: "Card 1 · “People check screens too much.”",
-          rule: "Give your opinion (Present Simple) and say what you or people around you are doing with screens today (Present Continuous).",
-          follow: "When do you put your phone away?",
-          photo: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=850&q=80",
-          twist: "Bonus Twist: Defend the opposite side for 30 seconds!"
-        },
-        {
-          title: "Card 2 · “Cooking at home is always better.”",
-          rule: "Compare cooking at home vs. eating out using habits and what you are eating or craving lately.",
-          follow: "What do you prefer cooking when you have very little time?",
-          photo: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=850&q=80",
-          twist: "Bonus Twist: Mention one dish you hardly ever make."
-        },
-        {
-          title: "Card 3 · “Online classes beat in-person classes.”",
-          rule: "Contrast online and in-person learning using Present Simple facts and how you are studying right now.",
-          follow: "Which format helps you speak more?",
-          photo: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=850&q=80",
-          twist: "Bonus Twist: Give one pro and one con in two sentences."
-        },
-        {
-          title: "Card 4 · “Early mornings are underrated.”",
-          rule: "Argue for or against early mornings using your normal sleep pattern and what you are doing right now.",
-          follow: "How do you feel when you wake up early on a rainy day?",
-          photo: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=850&q=80",
-          twist: "Bonus Twist: Compare weekday mornings with Sunday mornings."
-        }
+        { title: "Card 1 · “People check screens too much.”", rule: "Give your opinion (Present Simple) and say what you or people around you are doing with screens today (Present Continuous).", follow: "When do you put your phone away?", photo: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Defend the opposite side for 30 seconds!" },
+        { title: "Card 2 · “Cooking at home is always better.”", rule: "Compare cooking at home vs. eating out using habits and what you are eating or craving lately.", follow: "What do you prefer cooking when you have very little time?", photo: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Mention one dish you hardly ever make." },
+        { title: "Card 3 · “Online classes beat in-person classes.”", rule: "Contrast online and in-person learning using Present Simple facts and how you are studying right now.", follow: "Which format helps you speak more?", photo: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Give one pro and one con in two sentences." },
+        { title: "Card 4 · “Early mornings are underrated.”", rule: "Argue for or against early mornings using your normal sleep pattern and what you are doing right now.", follow: "How do you feel when you wake up early on a rainy day?", photo: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Compare weekday mornings with Sunday mornings." }
       ]
     };
 
@@ -1322,17 +1195,10 @@
 
     function renderGame() {
       document.getElementById('gameModeTabs').innerHTML = GAME_MODES.map(m => `
-        <button
-          type="button"
-          onclick="setGameMode('${m.key}')"
-          class="px-4 py-2 rounded-xl text-xs font-extrabold border transition ${
-            activeGameMode === m.key
-              ? 'bg-[#002B5C] text-white border-[#002B5C]'
-              : 'bg-white dark:bg-[#0C1E33] border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7]'
-          }"
-        >${m.label}</button>
+        <button type="button" onclick="setGameMode('${m.key}')" class="px-4 py-2 rounded-xl text-xs font-extrabold border transition ${
+          activeGameMode === m.key ? 'bg-[#002B5C] text-white border-[#002B5C]' : 'bg-white dark:bg-[#0C1E33] border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7]'
+        }">${m.label}</button>
       `).join('');
-
       const list = GAME_CARDS[activeGameMode];
       const card = list[gameCardIdx % list.length];
       const modeObj = GAME_MODES.find(m => m.key === activeGameMode);
@@ -1347,10 +1213,75 @@
       mountPhoto(document.getElementById('gamePhotoBox'), card.photo, card.title, modeObj.label);
       lucide.createIcons();
     }
-
     window.setGameMode = (key) => { activeGameMode = key; gameCardIdx = 0; renderGame(); };
     window.nextGameCard = () => { gameCardIdx++; renderGame(); };
     window.revealBluffVote = () => { document.getElementById('gameTwistBox').classList.toggle('hidden'); };
+
+    // 08: Gamified Tense Arcade
+    const ARCADE_ROUNDS = [
+      { sentence: "“She ___ to the gym every Monday and Wednesday.”", opts: ["goes", "is going"], ans: "goes", why: "Repeated weekly routine → Present Simple ('goes')." },
+      { sentence: "“Look! Someone ___ outside your window right now.”", opts: ["waves", "is waving"], ans: "is waving", why: "Happening right now after 'Look!' → Present Continuous." },
+      { sentence: "“I ___ what you mean—that makes total sense.”", opts: ["understand", "am understanding"], ans: "understand", why: "'Understand' is a stative verb → Present Simple." },
+      { sentence: "“We ___ in a temporary flat while ours is painted.”", opts: ["stay", "are staying"], ans: "are staying", why: "Temporary living situation around now → Present Continuous." },
+      { sentence: "“Water ___ at 0 °C.”", opts: ["freezes", "is freezing"], ans: "freezes", why: "General scientific fact → Present Simple." },
+      { sentence: "“He usually ___ tea, but today he ___ coffee.”", opts: ["drinks / is having", "is drinking / has"], ans: "drinks / is having", why: "Usual habit ('drinks') vs. today's drink ('is having')." },
+      { sentence: "“That old bicycle ___ to my cousin.”", opts: ["belongs", "is belonging"], ans: "belongs", why: "'Belong to' expresses possession (stative) → Present Simple." },
+      { sentence: "“Be quiet! The speaker ___ the final point.”", opts: ["explains", "is explaining"], ans: "is explaining", why: "Action unfolding right now → Present Continuous." }
+    ];
+
+    let arcadeIdx = 0;
+    let arcadeScore = 0;
+    let arcadeStreak = 0;
+    let arcadeAnswered = false;
+
+    function renderArcade() {
+      const r = ARCADE_ROUNDS[arcadeIdx % ARCADE_ROUNDS.length];
+      document.getElementById('arcadeRoundLabel').textContent = `Round ${(arcadeIdx % ARCADE_ROUNDS.length) + 1} / ${ARCADE_ROUNDS.length}`;
+      document.getElementById('arcadeScoreBadge').textContent = `Score: ${arcadeScore}`;
+      document.getElementById('arcadeStreakBadge').textContent = `Streak: ${arcadeStreak} 🔥`;
+      document.getElementById('arcadeSentence').textContent = r.sentence;
+      document.getElementById('arcadeFeedback').classList.add('hidden');
+      arcadeAnswered = false;
+
+      document.getElementById('arcadeOptions').innerHTML = r.opts.map(o => `
+        <button type="button" onclick="answerArcade('${o.replace(/'/g, "\\'")}')" class="p-4 rounded-2xl border border-slate-200 dark:border-cyan-400/20 bg-slate-50 dark:bg-[#071627] hover:border-[#0089A7] text-sm font-extrabold text-[#002B5C] dark:text-white transition">
+          ${o}
+        </button>
+      `).join('');
+    }
+
+    window.answerArcade = (choice) => {
+      if (arcadeAnswered) return;
+      arcadeAnswered = true;
+      const r = ARCADE_ROUNDS[arcadeIdx % ARCADE_ROUNDS.length];
+      const fb = document.getElementById('arcadeFeedback');
+      fb.classList.remove('hidden');
+
+      if (choice === r.ans) {
+        arcadeStreak++;
+        arcadeScore += 10 + (arcadeStreak > 1 ? (arcadeStreak - 1) * 5 : 0);
+        fb.className = 'p-4 rounded-2xl text-xs sm:text-sm font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30';
+        fb.textContent = `Correct! ${r.why}`;
+      } else {
+        arcadeStreak = 0;
+        fb.className = 'p-4 rounded-2xl text-xs sm:text-sm font-semibold bg-amber-500/15 text-amber-800 dark:text-amber-200 border border-amber-500/30';
+        fb.textContent = `Best answer: ${r.ans}. ${r.why}`;
+      }
+      document.getElementById('arcadeScoreBadge').textContent = `Score: ${arcadeScore}`;
+      document.getElementById('arcadeStreakBadge').textContent = `Streak: ${arcadeStreak} 🔥`;
+    };
+
+    window.nextArcadeRound = () => {
+      arcadeIdx = (arcadeIdx + 1) % ARCADE_ROUNDS.length;
+      renderArcade();
+    };
+
+    window.resetArcade = () => {
+      arcadeIdx = 0;
+      arcadeScore = 0;
+      arcadeStreak = 0;
+      renderArcade();
+    };
 
     // Voice Note Recorder
     const studentNameInput = document.getElementById('studentNameInput');
@@ -1490,6 +1421,8 @@
     goStage(0);
     renderWarmupCard(0);
     renderVocabGrid();
+    renderFreqScale();
+    renderVocabMatch();
     renderProductionPrompts();
     renderSwitcher();
     renderCloze();
@@ -1498,6 +1431,7 @@
     renderOdd();
     renderFixHomework();
     renderGame();
+    renderArcade();
     lucide.createIcons();
   </script>
 </body>

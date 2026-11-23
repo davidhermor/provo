@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TEENS · MY DAILY ROUTINE (B1FS) | PROVO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <style>
+    @keyframes stageIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .stage-anim { animation: stageIn 0.24s ease-out forwards; }
+  </style>
+</head>
+<body class="bg-[#F2F6FA] text-slate-900 dark:bg-[#061322] dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
+
+  <!-- Sticky Top Bar -->
+  <header class="sticky top-0 z-40 bg-[#002B5C] text-white border-b border-cyan-300/15 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2.5">
+        <a href="index.html" class="flex items-center shrink-0" title="PROVO">
+          <img
+            src="https://i.postimg.cc/vBt4qH44/download.png"
+            alt="PROVO"
+            class="h-8 w-auto object-contain block"
+            onerror="this.style.display='none'; document.getElementById('provoFallback').classList.remove('hidden');"
+          />
+          <span id="provoFallback" class="hidden font-extrabold tracking-widest text-lg text-white">PROVO</span>
+        </a>
+        <span class="px-2.5 py-0.5 rounded-full bg-[#10B981]/30 border border-emerald-300/40 text-emerald-100 text-[11px] font-bold tracking-wider">
+          TEENS · B1FS
+        </span>
+        <span id="stageTitleHeader" class="hidden xl:inline-block text-xs font-bold tracking-wider text-cyan-200">
+          01 · COVER &amp; ROADMAP
+        </span>
+      </div>
+
+      <div id="stagePills" class="flex items-center gap-1 overflow-x-auto py-1"></div>
+
+      <div class="flex items-center gap-2 shrink-0">
+        <button
+          id="themeBtn"
+          type="button"
+          class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition"
+          title="Toggle Theme"
+        >
+          <i id="themeIcon" data-lucide="sun" class="w-4 h-4"></i>
+        </button>
+        <a
+          href="index.html"
+          class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs font-bold bg-white/10 hover:bg-white/20 text-white transition"
+        >
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          <span class="hidden sm:inline">PORTAL</span>
+        </a>
+      </div>
+    </div>
+    <div class="w-full h-1.5 bg-black/25">
+      <div id="stageProgress" class="h-full bg-[#0089A7] transition-all duration-300" style="width: 12.5%"></div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl w-full mx-auto px-4 sm:px-6 py-7 sm:py-10 flex-1 flex flex-col justify-center">
+
+    <!-- ==================== 01: COVER & LESSON ROADMAP ==================== -->
+    <section data-stage="0" class="stage stage-anim">
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25 shadow-xl">
+        <div class="lg:col-span-5 h-64 sm:h-auto relative bg-[#091726] overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1050&q=80"
+            alt="Teen daily planner and study desk"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#061322]/90 via-[#061322]/30 to-transparent"></div>
+          <div class="absolute bottom-5 left-5 right-5 space-y-1 text-white">
+            <span class="text-xs font-bold tracking-widest text-cyan-300 uppercase">Oxford Test of English · B1 For Schools</span>
+            <p class="text-sm font-semibold text-slate-200">Complete 8-Stage Interactive Lesson Pack</p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 p-7 sm:p-10 flex flex-col justify-center space-y-5">
+          <span class="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300 text-xs font-bold tracking-wider">
+            <i data-lucide="clock" class="w-4 h-4"></i>
+            <span>PROVO STAGE LAB · TEENS</span>
+          </span>
+
+          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight text-[#002B5C] dark:text-white">
+            My Daily <span class="text-[#0089A7]">Routine</span>
+          </h1>
+
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            Everything from the full <strong>B1FS Daily Routine</strong> deck in one interactive workspace: warm-up &amp; <em>Would You Rather</em> speaking cards, the <strong>B1 Present Simple Playbook</strong>, <strong>Reading Part 4</strong> (<em>A New Morning Routine</em>), <strong>Listening Part 4</strong> (5 exam tasks + X-Ray script deconstruction), <strong>Speaking Part 1</strong> (8 timed questions), and <strong>Writing Part 2</strong> (<em>Teen Life</em> magazine article).
+          </p>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1 text-xs">
+            <button type="button" onclick="goStage(1)" class="p-3 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-emerald-500/20 dark:border-emerald-400/20 hover:border-emerald-500 text-left transition">
+              <div class="font-extrabold text-[#0089A7]">02 · SPEAK</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">14 Warm-Up Cards</div>
+            </button>
+            <button type="button" onclick="goStage(2)" class="p-3 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-emerald-500/20 dark:border-emerald-400/20 hover:border-emerald-500 text-left transition">
+              <div class="font-extrabold text-[#0089A7]">03 · PLAYBOOK</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">Dial, Rules &amp; Traps</div>
+            </button>
+            <button type="button" onclick="goStage(4)" class="p-3 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-emerald-500/20 dark:border-emerald-400/20 hover:border-emerald-500 text-left transition">
+              <div class="font-extrabold text-[#0089A7]">05 · READING</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">Part 4 (8 Mins)</div>
+            </button>
+            <button type="button" onclick="goStage(5)" class="p-3 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-emerald-500/20 dark:border-emerald-400/20 hover:border-emerald-500 text-left transition">
+              <div class="font-extrabold text-[#0089A7]">06–08 · EXAMS</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">Listen, Speak, Write</div>
+            </button>
+          </div>
+
+          <div class="pt-1">
+            <button
+              type="button"
+              onclick="goStage(1)"
+              class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-[#002B5C] to-[#0089A7] hover:opacity-95 text-white text-sm sm:text-base font-bold shadow-lg transition"
+            >
+              <span>Start Stage 02: Conversation Warm-Up</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 02: CONVERSATION WARM-UP & WOULD YOU RATHER (SLIDES 2-15) ==================== -->
+    <section data-stage="1" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-emerald-500/15 dark:border-emerald-400/15 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-[#0089A7] uppercase">Stage 02 · Speaking Warm-Up (Slides 2–15)</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Conversation Questions &amp; Would You Rather</h2>
+        </div>
+        <div class="flex gap-2">
+          <button id="tabWarmupRoutine" type="button" onclick="switchWarmupMode('routine')" class="px-4 py-2 rounded-xl text-xs font-bold bg-[#002B5C] text-white">
+            Routine Prompts (1–10)
+          </button>
+          <button id="tabWarmupWyr" type="button" onclick="switchWarmupMode('wyr')" class="px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0C1E33] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25">
+            Would You Rather (11–14)
+          </button>
+        </div>
+      </div>
+
+      <!-- Mode A: 10 Conversation Prompts with Visual Photo Card -->
+      <div id="panelWarmupRoutine" class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25 rounded-3xl overflow-hidden max-w-5xl mx-auto w-full shadow-xl">
+        <div class="grid grid-cols-1 lg:grid-cols-12">
+          <div id="wuPhotoBox" class="lg:col-span-5 h-60 sm:h-72 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+          <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-5">
+            <div class="space-y-4">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <span id="wuCounter" class="px-3.5 py-1 rounded-full bg-[#002B5C] text-white text-xs font-bold">QUESTION 1 / 10</span>
+                <span id="wuTopicBadge" class="px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 text-xs font-bold">TIME · SCHOOL DAY</span>
+                <button type="button" onclick="speakWarmupPrompt()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#0089A7] text-white text-xs font-bold">
+                  <i data-lucide="volume-2" class="w-4 h-4"></i>
+                  <span>Listen</span>
+                </button>
+              </div>
+
+              <h3 id="wuQuestionText" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+
+              <div class="space-y-2">
+                <button id="btnToggleWuStarter" type="button" onclick="toggleWuStarter()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-800 dark:text-emerald-300 text-xs font-bold transition">
+                  <i data-lucide="eye" class="w-4 h-4"></i>
+                  <span id="btnToggleWuStarterLabel">Show Help Starter</span>
+                </button>
+                <div id="wuStarterBox" class="hidden p-4 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-emerald-500/20 dark:border-emerald-400/20 space-y-1">
+                  <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-300">Useful Starter &amp; Vocabulary Cue</span>
+                  <p id="wuStarterText" class="text-sm font-semibold text-slate-700 dark:text-slate-200"></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between gap-3 pt-3 border-t border-slate-100 dark:border-emerald-400/15">
+              <button type="button" onclick="stepWarmup(-1)" class="px-4 py-2.5 rounded-xl border border-slate-300 dark:border-emerald-400/25 text-xs font-bold hover:bg-slate-100 dark:hover:bg-[#132C4A]">
+                ← Previous
+              </button>
+              <div id="wuDots" class="flex flex-wrap justify-center gap-1.5"></div>
+              <button type="button" onclick="stepWarmup(1)" class="px-4 py-2.5 rounded-xl bg-[#002B5C] hover:bg-[#005A8D] text-white text-xs font-bold">
+                Next Question →
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mode B: 4 Would You Rather Dilemmas -->
+      <div id="panelWarmupWyr" class="hidden space-y-5">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="wyrCardsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 03: B1 PRESENT SIMPLE PLAYBOOK (SLIDES 16-28) ==================== -->
+    <section data-stage="2" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-3 border-b border-emerald-500/15 dark:border-emerald-400/15 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-[#0089A7] uppercase">Stage 03 · Grammar &amp; Vocabulary Upgrade (Slides 16–28)</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">B1 Mastery: The Present Simple Playbook</h2>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <button id="pbTabDial" type="button" onclick="switchPlaybookTab('dial')" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-[#002B5C] text-white">1. Frequency Dial</button>
+          <button id="pbTabRules" type="button" onclick="switchPlaybookTab('rules')" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0C1E33] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25">2. Golden Rules 1–3</button>
+          <button id="pbTabTraps" type="button" onclick="switchPlaybookTab('traps')" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0C1E33] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25">3. Traps 1–3</button>
+          <button id="pbTabFrames" type="button" onclick="switchPlaybookTab('frames')" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0C1E33] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25">4. Cheat Codes</button>
+        </div>
+      </div>
+
+      <!-- 1. The Frequency Dial (Slide 18) -->
+      <div id="pbPanelDial" class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25 rounded-3xl p-6 sm:p-8 space-y-5 shadow-lg">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center p-4 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-emerald-500/20 dark:border-emerald-400/20">
+          <div class="lg:col-span-5 h-36 rounded-xl overflow-hidden bg-[#091726]">
+            <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800&q=80" alt="Weekly planner and schedule" class="w-full h-full object-cover" />
+          </div>
+          <div class="lg:col-span-7 space-y-1.5">
+            <span class="text-[11px] font-extrabold uppercase tracking-wider text-emerald-600 dark:text-emerald-300">Visual Scale · Basic A2 → B1 Mastery</span>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+              Think of frequency as a speedometer: move from repetitive <em>always / sometimes</em> to natural B1 expressions across four clear zones.
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <h3 class="text-xl font-extrabold text-[#002B5C] dark:text-white">The Frequency Dial: Basic A2 → B1 Mastery</h3>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">Upgrade beyond basic <em>always</em> and <em>sometimes</em>. Click any example to hear it.</p>
+          </div>
+          <span class="px-3 py-1 rounded-full bg-amber-400/20 text-amber-800 dark:text-amber-300 text-xs font-bold">4 FREQUENCY ZONES</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-5 rounded-2xl bg-pink-500/10 border border-pink-400/30 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-pink-700 dark:text-pink-300">High Frequency</span>
+              <button type="button" onclick="speakText('I generally wake up at 7:00 AM on school days.')" class="text-xs font-bold text-[#0089A7] inline-flex items-center gap-1"><i data-lucide="volume-2" class="w-3.5 h-3.5"></i> Hear</button>
+            </div>
+            <div class="text-base font-extrabold text-[#002B5C] dark:text-white">normally · generally · most days</div>
+            <p class="text-sm text-slate-700 dark:text-slate-300">"I <strong>generally</strong> wake up at 7:00 AM on school days."</p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-orange-500/10 border border-orange-400/30 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-orange-700 dark:text-orange-300">Mid Frequency</span>
+              <button type="button" onclick="speakText('From time to time, I take a one-hour nap in the afternoon to recharge.')" class="text-xs font-bold text-[#0089A7] inline-flex items-center gap-1"><i data-lucide="volume-2" class="w-3.5 h-3.5"></i> Hear</button>
+            </div>
+            <div class="text-base font-extrabold text-[#002B5C] dark:text-white">occasionally · from time to time</div>
+            <p class="text-sm text-slate-700 dark:text-slate-300">"<strong>From time to time</strong>, I take a one-hour nap in the afternoon to recharge."</p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-sky-500/10 border border-sky-400/30 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-sky-700 dark:text-sky-300">Low Frequency</span>
+              <button type="button" onclick="speakText('She hardly ever eats meat because she follows a vegetarian diet.')" class="text-xs font-bold text-[#0089A7] inline-flex items-center gap-1"><i data-lucide="volume-2" class="w-3.5 h-3.5"></i> Hear</button>
+            </div>
+            <div class="text-base font-extrabold text-[#002B5C] dark:text-white">hardly ever · rarely · seldom</div>
+            <p class="text-sm text-slate-700 dark:text-slate-300">"She <strong>hardly ever</strong> eats meat because she follows a vegetarian diet."</p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-emerald-500/10 border border-emerald-400/30 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-emerald-700 dark:text-emerald-300">Specific Intervals</span>
+              <button type="button" onclick="speakText('We have physical education every other day.')" class="text-xs font-bold text-[#0089A7] inline-flex items-center gap-1"><i data-lucide="volume-2" class="w-3.5 h-3.5"></i> Hear</button>
+            </div>
+            <div class="text-base font-extrabold text-[#002B5C] dark:text-white">every other day · twice a week</div>
+            <p class="text-sm text-slate-700 dark:text-slate-300">"We have physical education <strong>every other day</strong>."</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Golden Rules #1, #2, #3 (Slides 20-22) -->
+      <div id="pbPanelRules" class="hidden grid grid-cols-1 lg:grid-cols-3 gap-5">
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25 rounded-3xl p-6 space-y-3 shadow-lg">
+          <span class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-bold">GOLDEN RULE #1</span>
+          <div class="h-28 rounded-2xl overflow-hidden bg-[#091726]"><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=700&q=80" alt="Student studying" class="w-full h-full object-cover" /></div>
+          <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white">The Main Action</h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+            <strong>[Subject] + [ONE-WORD ADVERB] + [Main Verb]</strong>. One-word adverbs always step in front of the main action.
+          </p>
+          <div class="p-3 rounded-xl bg-emerald-500/15 text-emerald-800 dark:text-emerald-300 text-xs font-bold">
+            ✓ Perfect: "I <strong>usually</strong> finish my homework before dinner."
+          </div>
+          <div class="p-3 rounded-xl bg-rose-500/15 text-rose-800 dark:text-rose-300 text-xs font-bold">
+            ✗ Incorrect: "I finish usually my homework before dinner."
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25 rounded-3xl p-6 space-y-3 shadow-lg">
+          <span class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-bold">GOLDEN RULE #2</span>
+          <div class="h-28 rounded-2xl overflow-hidden bg-[#091726]"><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80" alt="School corridor" class="w-full h-full object-cover" /></div>
+          <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white">The ‘To Be’ Wall</h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+            <strong>[Subject] + [Am/Is/Are] + [ONE-WORD ADVERB]</strong>. One-word adverbs must go after the verb <em>to be</em>.
+          </p>
+          <div class="p-3 rounded-xl bg-emerald-500/15 text-emerald-800 dark:text-emerald-300 text-xs font-bold">
+            ✓ Perfect: "I am <strong>rarely</strong> late for my first class."
+          </div>
+          <div class="p-3 rounded-xl bg-rose-500/15 text-rose-800 dark:text-rose-300 text-xs font-bold">
+            ✗ Incorrect: "I rarely am late for my first class."
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25 rounded-3xl p-6 space-y-3 shadow-lg">
+          <span class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-bold">GOLDEN RULE #3</span>
+          <div class="h-28 rounded-2xl overflow-hidden bg-[#091726]"><img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=700&q=80" alt="Music practice" class="w-full h-full object-cover" /></div>
+          <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white">The Heavy Phrases</h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+            Longer phrases (two or more words) belong at the <strong>end</strong>, or at the very <strong>beginning</strong> for emphasis.
+          </p>
+          <div class="p-3 rounded-xl bg-[#F0F6FA] dark:bg-[#071627] text-xs font-bold text-[#002B5C] dark:text-cyan-200">
+            • End: "I play the ukulele <strong>twice a week</strong>."<br/>
+            • Beginning: "<strong>Every other day</strong>, I walk to school with my friends."
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Traps 1, 2, 3 (Slides 24-25) -->
+      <div id="pbPanelTraps" class="hidden grid grid-cols-1 lg:grid-cols-3 gap-5">
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25 rounded-3xl p-6 space-y-3 shadow-lg">
+          <span class="px-3 py-1 rounded-full bg-amber-400 text-[#002B5C] text-xs font-extrabold">TRAP 1</span>
+          <div class="h-28 rounded-2xl overflow-hidden bg-[#091726]"><img src="https://images.unsplash.com/photo-1508962914676-134849a727f0?auto=format&fit=crop&w=700&q=80" alt="Alarm clock morning" class="w-full h-full object-cover" /></div>
+          <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white">The Continuous Illusion</h3>
+          <p class="text-xs font-bold text-rose-600 dark:text-rose-400">✗ Error: "I am waking up at 6:30 every morning."</p>
+          <p class="text-xs text-slate-600 dark:text-slate-300">Present Continuous is only for right now. Routines and permanent situations demand the <strong>Present Simple</strong>.</p>
+          <p class="text-xs font-bold text-emerald-700 dark:text-emerald-300">✓ Fix: "I wake up at 6:30 every morning."</p>
+        </div>
+
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25 rounded-3xl p-6 space-y-3 shadow-lg">
+          <span class="px-3 py-1 rounded-full bg-amber-400 text-[#002B5C] text-xs font-extrabold">TRAP 2</span>
+          <div class="h-28 rounded-2xl overflow-hidden bg-[#091726]"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80" alt="Sneakers" class="w-full h-full object-cover" /></div>
+          <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white">The Dropped ‘S’</h3>
+          <p class="text-xs font-bold text-rose-600 dark:text-rose-400">✗ Error: "My brother always leave his shoes..."</p>
+          <p class="text-xs text-slate-600 dark:text-slate-300">Under pressure, students drop the <strong>-s</strong>. <em>He / She / It</em> demands third-person conjugation.</p>
+          <p class="text-xs font-bold text-emerald-700 dark:text-emerald-300">✓ Fix: "My brother always <strong>leaves</strong>..."</p>
+        </div>
+
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25 rounded-3xl p-6 space-y-3 shadow-lg">
+          <span class="px-3 py-1 rounded-full bg-amber-400 text-[#002B5C] text-xs font-extrabold">TRAP 3</span>
+          <div class="h-28 rounded-2xl overflow-hidden bg-[#091726]"><img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?auto=format&fit=crop&w=700&q=80" alt="Watching TV" class="w-full h-full object-cover" /></div>
+          <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white">Double Negatives</h3>
+          <p class="text-xs font-bold text-rose-600 dark:text-rose-400">✗ Error: "I don't hardly ever watch TV."</p>
+          <p class="text-xs text-slate-600 dark:text-slate-300">Words like <em>hardly ever, rarely,</em> and <em>seldom</em> are already negative. Never add <em>don't</em>!</p>
+          <p class="text-xs font-bold text-emerald-700 dark:text-emerald-300">✓ Fix: "I <strong>hardly ever</strong> watch TV."</p>
+        </div>
+      </div>
+
+      <!-- 4. Cheat Codes: Plug-and-Play Frames & Contrast Formula (Slides 27-28) -->
+      <div id="pbPanelFrames" class="hidden grid grid-cols-1 lg:grid-cols-3 gap-5">
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25 rounded-3xl p-6 space-y-3 shadow-lg">
+          <span class="px-3 py-1 rounded-full bg-rose-600 text-white text-xs font-bold">FRAME 1 · SOLID HABIT</span>
+          <div class="h-28 rounded-2xl overflow-hidden bg-[#091726]"><img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=700&q=80" alt="School backpack" class="w-full h-full object-cover" /></div>
+          <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white">“As a rule, I generally [ACTION].”</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300">Example: "As a rule, I generally pack my school bag the night before."</p>
+          <button type="button" onclick="speakText('As a rule, I generally pack my school bag the night before.')" class="text-xs font-bold text-[#0089A7] inline-flex items-center gap-1"><i data-lucide="volume-2" class="w-4 h-4"></i> Listen</button>
+        </div>
+
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25 rounded-3xl p-6 space-y-3 shadow-lg">
+          <span class="px-3 py-1 rounded-full bg-blue-600 text-white text-xs font-bold">FRAME 2 · RARE EVENT</span>
+          <div class="h-28 rounded-2xl overflow-hidden bg-[#091726]"><img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=700&q=80" alt="Pancakes" class="w-full h-full object-cover" /></div>
+          <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white">“I hardly ever have time to [ACTION], but from time to time I manage to...”</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300">Example: "I hardly ever have time to cook, but from time to time I manage to make pancakes."</p>
+          <button type="button" onclick="speakText('I hardly ever have time to cook, but from time to time I manage to make pancakes.')" class="text-xs font-bold text-[#0089A7] inline-flex items-center gap-1"><i data-lucide="volume-2" class="w-4 h-4"></i> Listen</button>
+        </div>
+
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25 rounded-3xl p-6 space-y-3 shadow-lg">
+          <span class="px-3 py-1 rounded-full bg-pink-600 text-white text-xs font-bold">FRAME 3 · CONTRAST FORMULA</span>
+          <div class="h-28 rounded-2xl overflow-hidden bg-[#091726]"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=700&q=80" alt="Weekend relaxation" class="w-full h-full object-cover" /></div>
+          <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white">“During the week I normally [A], but on weekends I occasionally [B].”</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300">Show the examiner complex contrast between school days and weekends.</p>
+          <button type="button" onclick="speakText('During the week I normally wake up at seven, but on weekends I occasionally sleep until ten.')" class="text-xs font-bold text-[#0089A7] inline-flex items-center gap-1"><i data-lucide="volume-2" class="w-4 h-4"></i> Listen</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 04: PRACTICE ROOM MISSIONS 1–4 (SLIDES 19, 23, 26, 29) ==================== -->
+    <section data-stage="3" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-emerald-500/15 dark:border-emerald-400/15 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-[#0089A7] uppercase">Stage 04 · Practice Room (Slides 19, 23, 26, 29)</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">4 Practice Room Missions</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Interactive Grammar Detective + creative B1 production tasks.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Interactive Mission 3: Grammar Detective (Slide 26) -->
+        <div class="lg:col-span-7 bg-white dark:bg-[#0C1E33] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25 rounded-3xl p-6 space-y-4 shadow-lg">
+          <div class="flex items-center justify-between">
+            <span class="px-3 py-1 rounded-full bg-rose-600 text-white text-xs font-bold">MISSION 3 · THE GRAMMAR DETECTIVE</span>
+            <span class="text-xs font-bold text-[#0089A7]">FIX THE SABOTAGED RULES</span>
+          </div>
+          <div class="h-32 rounded-2xl overflow-hidden bg-[#091726]">
+            <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80" alt="Grammar detective notebook and pen" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+            Your arch-nemesis sabotaged the school rulebook! Fix the continuous tense, the missing <strong>-s</strong>, and the double negatives, then reveal the model correction.
+          </p>
+
+          <div id="detectiveList" class="space-y-3"></div>
+        </div>
+
+        <!-- Missions 1, 2 & 4 Cards -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25 rounded-3xl p-5 space-y-2 shadow-md">
+            <div class="h-24 rounded-xl overflow-hidden bg-[#091726]"><img src="https://images.unsplash.com/photo-1554672408-730436b60dde?auto=format&fit=crop&w=700&q=80" alt="Luxury lifestyle" class="w-full h-full object-cover" loading="lazy" /></div>
+            <span class="text-xs font-extrabold text-emerald-600 dark:text-emerald-300">MISSION 1 · THE ECCENTRIC BILLIONAIRE</span>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+              Write or say 4 strange habits using one phrase from each category: <strong>High</strong>, <strong>Mid</strong>, <strong>Low</strong>, and <strong>Specific Interval</strong> (e.g., feeding a pet shark).
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25 rounded-3xl p-5 space-y-2 shadow-md">
+            <div class="h-24 rounded-xl overflow-hidden bg-[#091726]"><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=700&q=80" alt="Observation from space" class="w-full h-full object-cover" loading="lazy" /></div>
+            <span class="text-xs font-extrabold text-emerald-600 dark:text-emerald-300">MISSION 2 · THE ALIEN OBSERVER</span>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+              Report 3 human habits using: (1) an adverb before a main verb, (2) an adverb after <em>To Be</em>, and (3) a <strong>heavy phrase</strong> at the start.
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25 rounded-3xl p-5 space-y-2 shadow-md">
+            <div class="h-24 rounded-xl overflow-hidden bg-[#091726]"><img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?auto=format&fit=crop&w=700&q=80" alt="Studio microphone interview" class="w-full h-full object-cover" loading="lazy" /></div>
+            <span class="text-xs font-extrabold text-emerald-600 dark:text-emerald-300">MISSION 4 · THE TALK SHOW GUEST</span>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+              The host asks: <em>"How do you balance your crazy life?"</em> Give a 3-sentence speech using <strong>Solid Habit</strong>, <strong>Rare Event</strong>, and <strong>Contrast Formula</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 05: READING PART 4 · "A NEW MORNING ROUTINE" (SLIDES 31-36) ==================== -->
+    <section data-stage="4" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-emerald-500/15 dark:border-emerald-400/15 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-[#0089A7] uppercase">Stage 05 · Reading Part 4 (Slides 31–36)</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">A New Morning Routine · Exam Practice</h2>
+        </div>
+
+        <!-- 8-Minute Real Exam Timer -->
+        <div class="flex items-center gap-2 bg-white dark:bg-[#0C1E33] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25 px-3.5 py-2 rounded-2xl shadow-sm">
+          <i data-lucide="timer" class="w-4 h-4 text-[#0089A7]"></i>
+          <span class="text-xs font-bold text-slate-500 dark:text-slate-400">REAL EXAM:</span>
+          <span id="examTimerDisplay" class="font-mono text-sm font-extrabold text-[#002B5C] dark:text-cyan-300">08:00</span>
+          <button type="button" onclick="toggleExamTimer()" id="btnExamTimerToggle" class="px-2.5 py-1 rounded-lg bg-[#002B5C] text-white text-xs font-bold">Start</button>
+          <button type="button" onclick="resetExamTimer()" class="px-2.5 py-1 rounded-lg border border-slate-300 dark:border-cyan-400/25 text-xs font-bold">Reset</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <!-- Exact Text from Slide 32 -->
+        <article class="lg:col-span-6 bg-white dark:bg-[#0C1E33] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25 rounded-3xl p-6 sm:p-7 space-y-3.5 shadow-lg">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold uppercase tracking-wider text-[#0089A7]">Oxford Test of English Practice · The Late Start Study</span>
+            <button type="button" onclick="speakReadingText()" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300 text-xs font-bold">
+              <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+              <span>Listen</span>
+            </button>
+          </div>
+
+          <h3 class="text-xl font-extrabold text-[#002B5C] dark:text-white">A New Morning Routine</h3>
+
+          <div id="readingArticleBody" class="space-y-3 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+            <p>
+              Most teenagers normally wake up very early for school, often feeling exhausted before they even leave the house. Recently, scientists have suggested that a teenager’s natural body clock is completely different from an adult’s. Because of this, some secondary schools are experimenting with changing their daily routines. Instead of starting classes at 8:00 a.m., they are allowing students to sleep in and arrive at 9:30 a.m.
+            </p>
+            <p>
+              One school introduced this new timetable last September. The headteacher expected that students would simply go to bed later, but the results show something different. Students generally still go to sleep at their usual time, meaning they get an extra hour of rest. Teachers report that teenagers are hardly ever late now, and they seem much more awake during the first lesson of the day.
+            </p>
+            <p>
+              Mark, a 15-year-old student, usually plays basketball after school. He admits he was worried about the new routine at first. “Because we start later, we also finish later,” he explains. “I thought I wouldn’t have enough time for sports practice in the afternoon. But actually, I have so much more energy now that I run faster and play better. I definitely don’t want to go back to the old schedule.”
+            </p>
+            <p>
+              Sarah, another student, loves the change for a different reason. Before the new timetable, her family was always in a rush in the mornings. “We hardly ever had time to sit down together,” she says. “Now, we occasionally have breakfast as a family before I leave for school. It’s a much calmer way to start the day, and I don’t feel stressed when I walk into the classroom.”
+            </p>
+          </div>
+        </article>
+
+        <!-- Exact 4 Questions & Evidence Mapping from Slides 32-36 -->
+        <div id="part4QuestionsBox" class="lg:col-span-6 space-y-4"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 06: B1 LISTENING PART 4 MOCK TEST & X-RAY (SLIDES 37-51) ==================== -->
+    <section data-stage="5" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-emerald-500/15 dark:border-emerald-400/15 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-[#0089A7] uppercase">Stage 06 · B1 Listening Part 4 (Slides 37–51)</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Mock Test &amp; Script X-Ray Deconstruction</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Play the simulated audio dialogue, choose A/B/C, then reveal the Script X-Ray.</p>
+      </div>
+
+      <div id="listeningQuestionsGrid" class="space-y-4"></div>
+    </section>
+
+    <!-- ==================== 07: SPEAKING PART 1 INTERVIEW · 8 TIMED QUESTIONS (SLIDES 52-62) ==================== -->
+    <section data-stage="6" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-emerald-500/15 dark:border-emerald-400/15 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-[#0089A7] uppercase">Stage 07 · Speaking Part 1 Interview (Slides 52–62)</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Ace the Interview in 8 Questions</h2>
+        </div>
+
+        <!-- Live 10s / 20s Speaking Countdown -->
+        <div class="flex items-center gap-2 bg-white dark:bg-[#0C1E33] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25 px-3.5 py-2 rounded-2xl shadow-sm">
+          <i data-lucide="mic" class="w-4 h-4 text-rose-500"></i>
+          <span id="spClockLabel" class="text-xs font-bold text-slate-500 dark:text-slate-400">10S WARM-UP:</span>
+          <span id="spTimerDisplay" class="font-mono text-sm font-extrabold text-[#002B5C] dark:text-emerald-300">00:10</span>
+          <button type="button" onclick="startSpeakingClock()" class="px-3 py-1 rounded-lg bg-[#0089A7] text-white text-xs font-bold">Start Clock</button>
+          <button type="button" onclick="resetSpeakingClock()" class="px-2.5 py-1 rounded-lg border border-slate-300 dark:border-cyan-400/25 text-xs font-bold">Reset</button>
+        </div>
+      </div>
+
+      <!-- Anatomy of a 20-Second Answer Banner (Slide 54) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+        <div class="p-3.5 rounded-2xl bg-amber-400/15 border border-amber-400/30">
+          <strong class="text-[#002B5C] dark:text-amber-300">1. Adverb + Fact:</strong> “I generally watch TV...”
+        </div>
+        <div class="p-3.5 rounded-2xl bg-pink-500/15 border border-pink-400/30">
+          <strong class="text-pink-700 dark:text-pink-300">2. The Bridge:</strong> “...because it helps me relax...”
+        </div>
+        <div class="p-3.5 rounded-2xl bg-emerald-500/15 border border-emerald-400/30">
+          <strong class="text-emerald-700 dark:text-emerald-300">3. The Result:</strong> “...so I am ready for bed.”
+        </div>
+      </div>
+
+      <!-- Active Speaking Question Card -->
+      <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25 rounded-3xl p-6 sm:p-8 max-w-4xl mx-auto w-full space-y-5 shadow-xl">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div class="flex items-center gap-2">
+            <span id="spQBadge" class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-bold">QUESTION 1 / 8</span>
+            <span id="spPhaseBadge" class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 text-xs font-bold">THE WARM-UP · 10 SECONDS</span>
+          </div>
+          <button type="button" onclick="speakInterviewQ()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#0089A7] text-white text-xs font-bold">
+            <i data-lucide="volume-2" class="w-4 h-4"></i>
+            <span>Examiner Voice</span>
+          </button>
+        </div>
+
+        <p id="spLeadIn" class="text-xs italic text-slate-500 dark:text-slate-400"></p>
+        <h3 id="spMainQ" class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+
+        <div class="space-y-2.5">
+          <button id="btnToggleSpTip" type="button" onclick="toggleSpTip()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#0089A7]/15 hover:bg-[#0089A7]/25 text-[#005A8D] dark:text-cyan-300 text-xs font-bold transition">
+            <i data-lucide="eye" class="w-4 h-4"></i>
+            <span id="btnToggleSpTipLabel">Show Strategy &amp; Help Tip</span>
+          </button>
+          <div id="spStrategyBox" class="hidden p-4 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-emerald-500/20 dark:border-emerald-400/20 space-y-1.5">
+            <div id="spStrategyTitle" class="text-xs font-extrabold uppercase tracking-wider text-[#0089A7]"></div>
+            <p id="spStrategyBody" class="text-sm font-medium text-slate-700 dark:text-slate-200"></p>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between gap-3 pt-2 border-t border-slate-100 dark:border-cyan-400/15">
+          <button type="button" onclick="stepSpeakingQ(-1)" class="px-4 py-2.5 rounded-xl border border-slate-300 dark:border-cyan-400/25 text-xs font-bold">← Prev</button>
+          <div id="spQPills" class="flex flex-wrap justify-center gap-1.5"></div>
+          <button type="button" onclick="stepSpeakingQ(1)" class="px-4 py-2.5 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 08: WRITING PART 2 · TEEN LIFE MAGAZINE ARTICLE (SLIDES 63-64) ==================== -->
+    <section data-stage="7" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-emerald-500/15 dark:border-emerald-400/15 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-[#0089A7] uppercase">Stage 08 · Oxford Test of English Writing Part 2 (Slides 63–64)</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Article: Write for Teen Life Online Magazine</h2>
+        </div>
+        <span class="px-3.5 py-1.5 rounded-xl bg-[#002B5C] text-white text-xs font-bold">TARGET: 100–160 WORDS</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <!-- Exam Task Prompt (Slide 64) -->
+        <div class="lg:col-span-5 bg-white dark:bg-[#0C1E33] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25 rounded-3xl p-6 space-y-4 shadow-lg">
+          <span class="px-3 py-1 rounded-full bg-pink-500/15 text-pink-700 dark:text-pink-300 text-xs font-extrabold">
+            WRITE FOR TEEN LIFE ONLINE MAGAZINE
+          </span>
+          <h3 class="text-2xl font-extrabold text-[#002B5C] dark:text-white">My Daily Routine</h3>
+          <ul class="space-y-2.5 text-sm font-semibold text-slate-700 dark:text-slate-200">
+            <li class="p-3 rounded-xl bg-[#F0F6FA] dark:bg-[#071627]">1. What is your typical morning routine before school?</li>
+            <li class="p-3 rounded-xl bg-[#F0F6FA] dark:bg-[#071627]">2. What do you usually do to relax when you get home?</li>
+            <li class="p-3 rounded-xl bg-[#F0F6FA] dark:bg-[#071627]">3. Do you think having a strict daily routine is a good idea?</li>
+          </ul>
+          <p class="text-xs font-bold text-rose-600 dark:text-rose-400">
+            “We will publish the best articles in the next issue of Teen Life!”
+          </p>
+
+          <div class="p-4 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-emerald-500/20 dark:border-emerald-400/20 space-y-1.5 text-xs">
+            <div class="font-extrabold text-[#0089A7]">B1 CHECKLIST</div>
+            <div>✓ Catchy title + 3 clear paragraphs</div>
+            <div>✓ Use B1 frequency adverbs (<em>generally, hardly ever, from time to time</em>)</div>
+            <div>✓ Connectors (<em>because, so, however, as a rule</em>)</div>
+          </div>
+        </div>
+
+        <!-- Live Word Counter & Article Editor -->
+        <div class="lg:col-span-7 bg-white dark:bg-[#0C1E33] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25 rounded-3xl p-6 space-y-4 shadow-lg">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-extrabold uppercase tracking-wider text-[#0089A7]">Your Article Draft</span>
+            <span id="articleWordCount" class="px-3 py-1 rounded-xl bg-amber-400/20 text-amber-800 dark:text-amber-300 text-xs font-extrabold">
+              0 / 100–160 WORDS
+            </span>
+          </div>
+
+          <textarea
+            id="teenArticleInput"
+            rows="11"
+            oninput="updateArticleWordCount()"
+            placeholder="Write your Teen Life magazine article here (100–160 words)..."
+            class="w-full p-4 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25 text-sm leading-relaxed outline-none focus:border-[#0089A7]"
+          ></textarea>
+
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <button type="button" onclick="loadSampleArticle()" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-cyan-400/25 text-xs font-bold hover:bg-slate-100 dark:hover:bg-[#132C4A]">
+              Load B1 Model Answer
+            </button>
+            <button type="button" onclick="copyArticleDraft()" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">
+              Copy Text
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Navigation -->
+  <footer class="border-t border-emerald-500/15 dark:border-emerald-400/15 bg-white dark:bg-[#061322] py-4 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      <button id="btnPrev" type="button" onclick="goStage(currentStage - 1)" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-300 dark:border-cyan-400/25 hover:bg-slate-100 dark:hover:bg-[#132C4A] disabled:opacity-30 text-xs font-bold transition">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Previous</span>
+      </button>
+
+      <span id="stageCounter" class="text-xs font-bold tracking-widest text-slate-500 dark:text-slate-400">
+        01 / 08
+      </span>
+
+      <button id="btnNext" type="button" onclick="goStage(currentStage + 1)" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#002B5C] hover:bg-[#005A8D] disabled:opacity-30 text-xs font-bold text-white transition">
+        <span>Next</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    const STAGES = [
+      "01 · COVER & ROADMAP",
+      "02 · CONVERSATION WARM-UP",
+      "03 · B1 PLAYBOOK",
+      "04 · PRACTICE ROOM",
+      "05 · READING PART 4",
+      "06 · LISTENING PART 4",
+      "07 · SPEAKING PART 1",
+      "08 · WRITING PART 2"
+    ];
+
+    let currentStage = 0;
+    const stageSections = document.querySelectorAll('.stage');
+
+    function goStage(idx) {
+      if (idx < 0 || idx >= stageSections.length) return;
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      currentStage = idx;
+      stageSections.forEach((s, i) => s.classList.toggle('hidden', i !== currentStage));
+      document.getElementById('stageTitleHeader').textContent = STAGES[currentStage];
+      document.getElementById('stageCounter').textContent = `${String(currentStage + 1).padStart(2, '0')} / ${String(stageSections.length).padStart(2, '0')}`;
+      document.getElementById('stageProgress').style.width = `${((currentStage + 1) / stageSections.length) * 100}%`;
+      document.getElementById('btnPrev').disabled = currentStage === 0;
+      document.getElementById('btnNext').disabled = currentStage === stageSections.length - 1;
+      renderStagePills();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      lucide.createIcons();
+    }
+
+    function renderStagePills() {
+      document.getElementById('stagePills').innerHTML = STAGES.map((_, i) => `
+        <button type="button" onclick="goStage(${i})" class="px-2.5 py-1 rounded-lg text-xs font-bold transition ${
+          i === currentStage ? 'bg-[#0089A7] text-white' : 'text-white/75 hover:text-white hover:bg-white/10'
+        }">${String(i + 1).padStart(2, '0')}</button>
+      `).join('');
+    }
+
+    // Theme Toggle
+    const themeBtn = document.getElementById('themeBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    if (localStorage.getItem('provoTeensTheme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      themeIcon.setAttribute('data-lucide', 'moon');
+    }
+    themeBtn.addEventListener('click', () => {
+      const dark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('provoTeensTheme', dark ? 'dark' : 'light');
+      themeIcon.setAttribute('data-lucide', dark ? 'sun' : 'moon');
+      lucide.createIcons();
+    });
+
+    function speakText(text) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'en-GB';
+      u.rate = 0.95;
+      window.speechSynthesis.speak(u);
+    }
+
+    // ==================== STAGE 02: SLIDES 2-15 ====================
+    const WARMUP_QUESTIONS = [
+      {
+        topic: "TIME · SCHOOL DAY",
+        q: "Looking at the alarm clock, what time does your alarm usually go off on a school day?",
+        starter: "On a normal school day, my alarm usually goes off at... and I...",
+        photo: "https://images.unsplash.com/photo-1508962914676-134849a727f0?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        topic: "MORNING PERSON",
+        q: "Are you a 'morning person,' or do you find it difficult to get out of bed early?",
+        starter: "To be honest, I'm definitely not a morning person because... / I'm a morning person, so...",
+        photo: "https://images.unsplash.com/photo-1515894203077-9cd36032142f?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        topic: "ROUTINE VS RUSH",
+        q: "Do you have a fixed morning routine, or is every morning a rush to get out of the house?",
+        starter: "Most mornings I follow a fixed routine: first I..., then I... / Every morning is a rush because...",
+        photo: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        topic: "AFTER SCHOOL",
+        q: "What is your typical routine as soon as you get home from school?",
+        starter: "As soon as I get home from school, the first thing I do is...",
+        photo: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        topic: "RECHARGING · NAP",
+        q: "Some people like to take a one-hour nap in the afternoon to recharge. Do you ever sleep during the day, or do you wait until nighttime?",
+        starter: "From time to time, I take a short nap when..., otherwise I wait until nighttime.",
+        photo: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        topic: "HOMEWORK VS BREAK",
+        q: "Do you prefer doing your homework immediately after school, or do you need a long break first?",
+        starter: "I generally prefer taking a break first because..., and then I start my homework around...",
+        photo: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        topic: "BEDTIME & SLEEP",
+        q: "What time do you usually go to bed, and do you think you get enough sleep for a teenager?",
+        starter: "During the week I normally go to bed at..., so I think I get / don't get enough sleep because...",
+        photo: "https://images.unsplash.com/photo-1511295742362-92c96b1cf484?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        topic: "WEEKENDS",
+        q: "How does your daily routine change on Saturdays and Sundays compared to Monday through Friday?",
+        starter: "During the week I normally..., whereas on Saturdays and Sundays I occasionally...",
+        photo: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        topic: "WEEKEND CHORES",
+        q: "Do you have any specific chores (like cleaning your room or walking the dog) that you must do every weekend?",
+        starter: "Every weekend I have to tidy my bedroom and..., although my brother/sister usually...",
+        photo: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        topic: "SUNDAY EVENING",
+        q: "Is there one activity you always do on a Sunday evening to prepare for the new school week?",
+        starter: "On Sunday evenings, as a rule, I always check my timetable and pack my bag so...",
+        photo: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=900&q=80"
+      }
+    ];
+    let wuIdx = 0;
+
+    function renderWarmup() {
+      wuIdx = (wuIdx + WARMUP_QUESTIONS.length) % WARMUP_QUESTIONS.length;
+      const item = WARMUP_QUESTIONS[wuIdx];
+      document.getElementById('wuCounter').textContent = `QUESTION ${wuIdx + 1} / ${WARMUP_QUESTIONS.length}`;
+      document.getElementById('wuTopicBadge').textContent = item.topic;
+      document.getElementById('wuQuestionText').textContent = item.q;
+      document.getElementById('wuStarterText').textContent = item.starter;
+      document.getElementById('wuStarterBox').classList.add('hidden');
+      document.getElementById('btnToggleWuStarterLabel').textContent = 'Show Help Starter';
+      const pBox = document.getElementById('wuPhotoBox');
+      pBox.innerHTML = `<img src="${item.photo}" alt="${item.topic}" class="w-full h-full object-cover" loading="lazy" />`;
+      document.getElementById('wuDots').innerHTML = WARMUP_QUESTIONS.map((_, i) => `
+        <button type="button" onclick="wuIdx=${i}; renderWarmup();" class="w-7 h-7 rounded-lg text-xs font-bold ${
+          i === wuIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#071627]'
+        }">${i + 1}</button>
+      `).join('');
+    }
+    window.stepWarmup = (d) => { wuIdx += d; renderWarmup(); };
+    window.toggleWuStarter = () => {
+      const box = document.getElementById('wuStarterBox');
+      const hidden = box.classList.toggle('hidden');
+      document.getElementById('btnToggleWuStarterLabel').textContent = hidden ? 'Show Help Starter' : 'Hide Help Starter';
+    };
+    window.speakWarmupPrompt = () => speakText(WARMUP_QUESTIONS[wuIdx].q);
+
+    const WYR_CARDS = [
+      {
+        num: "11 · SLEEP SCHEDULE",
+        q: "Would you rather wake up at 5:00 AM every day OR go to bed at 2:00 AM every day?",
+        a: "5:00 AM Early Bird",
+        b: "2:00 AM Night Owl",
+        photo: "https://images.unsplash.com/photo-1508962914676-134849a727f0?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        num: "12 · STRUCTURE",
+        q: "Would you rather have a strict routine where you know what happens every hour OR have a completely different, unpredictable schedule every day?",
+        a: "Strict Hourly Routine",
+        b: "Unpredictable Schedule",
+        photo: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        num: "13 · BREAKFAST",
+        q: "Would you rather eat the exact same breakfast every morning OR never be allowed to eat the same breakfast twice?",
+        a: "Same Breakfast Daily",
+        b: "Different Every Day",
+        photo: "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        num: "14 · COMMUTE",
+        q: "Would you rather travel to school for an hour on a comfortable bus OR walk to school for twenty minutes in the rain?",
+        a: "1h Comfortable Bus",
+        b: "20m Walk in the Rain",
+        photo: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80"
+      }
+    ];
+
+    function renderWyrCards() {
+      document.getElementById('wyrCardsGrid').innerHTML = WYR_CARDS.map((card) => `
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25 rounded-3xl overflow-hidden shadow-lg flex flex-col">
+          <div class="h-36 bg-[#091726] overflow-hidden">
+            <img src="${card.photo}" alt="${card.num}" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-800 dark:text-emerald-300 text-xs font-extrabold">${card.num}</span>
+                <button type="button" onclick="speakText('${card.q.replace(/'/g, "\'")}')" class="text-xs font-bold text-[#0089A7] inline-flex items-center gap-1">
+                  <i data-lucide="volume-2" class="w-4 h-4"></i> Hear
+                </button>
+              </div>
+              <p class="text-base font-extrabold text-[#002B5C] dark:text-white leading-snug">${card.q}</p>
+            </div>
+            <div class="space-y-2.5">
+              <div class="grid grid-cols-2 gap-2.5 text-xs font-bold">
+                <button type="button" onclick="this.parentElement.nextElementSibling.textContent='You chose: ${card.a} — Explain why using because / so!'" class="p-3 rounded-xl bg-[#F0F6FA] dark:bg-[#071627] hover:border-emerald-500 border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25">
+                  ${card.a}
+                </button>
+                <button type="button" onclick="this.parentElement.nextElementSibling.textContent='You chose: ${card.b} — Explain why using because / so!'" class="p-3 rounded-xl bg-[#F0F6FA] dark:bg-[#071627] hover:border-emerald-500 border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25">
+                  ${card.b}
+                </button>
+              </div>
+              <div class="text-xs font-semibold text-emerald-700 dark:text-emerald-300">Pick one and justify your choice in 20 seconds!</div>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    window.switchWarmupMode = (mode) => {
+      document.getElementById('panelWarmupRoutine').classList.toggle('hidden', mode !== 'routine');
+      document.getElementById('panelWarmupWyr').classList.toggle('hidden', mode !== 'wyr');
+      document.getElementById('tabWarmupRoutine').className = mode === 'routine'
+        ? 'px-4 py-2 rounded-xl text-xs font-bold bg-[#002B5C] text-white'
+        : 'px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0C1E33] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25';
+      document.getElementById('tabWarmupWyr').className = mode === 'wyr'
+        ? 'px-4 py-2 rounded-xl text-xs font-bold bg-[#002B5C] text-white'
+        : 'px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0C1E33] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25';
+      lucide.createIcons();
+    };
+
+    // ==================== STAGE 03: PLAYBOOK TABS ====================
+    window.switchPlaybookTab = (tab) => {
+      const map = { dial: 'Dial', rules: 'Rules', traps: 'Traps', frames: 'Frames' };
+      Object.keys(map).forEach(k => {
+        document.getElementById('pbPanel' + map[k]).classList.toggle('hidden', k !== tab);
+        document.getElementById('pbTab' + map[k]).className = k === tab
+          ? 'px-3.5 py-2 rounded-xl text-xs font-bold bg-[#002B5C] text-white'
+          : 'px-3.5 py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0C1E33] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25';
+      });
+      lucide.createIcons();
+    };
+
+    // ==================== STAGE 04: GRAMMAR DETECTIVE (SLIDE 26) ====================
+    const DETECTIVE_RULES = [
+      {
+        bad: '1. “The principal isn’t rarely wearing a clown suit.”',
+        fix: '✓ “The principal rarely wears a clown suit.” (Present Simple for habits + no double negative with isn’t + rarely).'
+      },
+      {
+        bad: '2. “The cafeteria chef is always serve invisible pizza on Fridays.”',
+        fix: '✓ “The cafeteria chef always serves invisible pizza on Fridays.” (Present Simple 3rd person -s, not "is serve").'
+      },
+      {
+        bad: '3. “The school ghost don’t hardly ever haunts the gym.”',
+        fix: '✓ “The school ghost hardly ever haunts the gym.” (Remove "don’t" because "hardly ever" is already negative).'
+      }
+    ];
+
+    function renderDetective() {
+      document.getElementById('detectiveList').innerHTML = DETECTIVE_RULES.map((r, i) => `
+        <div class="p-4 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-emerald-500/20 dark:border-emerald-400/20 space-y-2">
+          <p class="text-sm font-bold text-rose-600 dark:text-rose-400">${r.bad}</p>
+          <button type="button" onclick="this.nextElementSibling.classList.toggle('hidden')" class="px-3 py-1 rounded-lg bg-[#002B5C] text-white text-xs font-bold">
+            Reveal Solution
+          </button>
+          <p class="hidden text-xs sm:text-sm font-bold text-emerald-700 dark:text-emerald-300 pt-1">${r.fix}</p>
+        </div>
+      `).join('');
+    }
+
+    // ==================== STAGE 05: READING PART 4 (SLIDES 31-36) ====================
+    let examSeconds = 480;
+    let examTimerId = null;
+
+    function updateExamTimerUI() {
+      const m = String(Math.floor(examSeconds / 60)).padStart(2, '0');
+      const s = String(examSeconds % 60).padStart(2, '0');
+      document.getElementById('examTimerDisplay').textContent = `${m}:${s}`;
+    }
+
+    window.toggleExamTimer = () => {
+      const btn = document.getElementById('btnExamTimerToggle');
+      if (examTimerId) {
+        clearInterval(examTimerId);
+        examTimerId = null;
+        btn.textContent = 'Start';
+        return;
+      }
+      btn.textContent = 'Pause';
+      examTimerId = setInterval(() => {
+        if (examSeconds > 0) {
+          examSeconds--;
+          updateExamTimerUI();
+        } else {
+          clearInterval(examTimerId);
+          examTimerId = null;
+          btn.textContent = 'Start';
+        }
+      }, 1000);
+    };
+
+    window.resetExamTimer = () => {
+      if (examTimerId) { clearInterval(examTimerId); examTimerId = null; }
+      examSeconds = 480;
+      document.getElementById('btnExamTimerToggle').textContent = 'Start';
+      updateExamTimerUI();
+    };
+
+    window.speakReadingText = () => {
+      const txt = [...document.querySelectorAll('#readingArticleBody p')].map(p => p.textContent.trim()).join(' ');
+      speakText(txt);
+    };
+
+    const READING_PART4_QS = [
+      {
+        q: "1. In the second paragraph, what surprised the headteacher about the new timetable?",
+        opts: [
+          "A. Students arrive on time more often.",
+          "B. Students have not changed their bedtimes.",
+          "C. Students participate more in the first lesson."
+        ],
+        ans: "B",
+        mapping: "Evidence Mapping: 'The headteacher expected that students would simply go to bed later, but... Students generally still go to sleep at their usual time, meaning they get an extra hour of rest.' (A & C are positive results, not the surprise)."
+      },
+      {
+        q: "2. According to Mark, the new daily routine...",
+        opts: [
+          "A. gives him more free time in the evening.",
+          "B. forced him to stop playing basketball.",
+          "C. has improved his athletic performance."
+        ],
+        ans: "C",
+        mapping: "Evidence Mapping: 'I have so much more energy now that I run faster and play better.' (A is false: finishing later means less evening free time; B is false: he still plays basketball)."
+      },
+      {
+        q: "3. Why does Sarah enjoy the later start?",
+        opts: [
+          "A. Her mornings are more relaxed than before.",
+          "B. She has time to cook breakfast for her family.",
+          "C. She doesn't have to walk to school anymore."
+        ],
+        ans: "A",
+        mapping: "Evidence Mapping: 'It’s a much calmer way to start the day, and I don’t feel stressed when I walk into the classroom.' (Calmer = more relaxed)."
+      },
+      {
+        q: "4. What would be the best title for this text?",
+        opts: [
+          "A. Teenagers demand less homework",
+          "B. The benefits of a later school day",
+          "C. How to sleep better at night"
+        ],
+        ans: "B",
+        mapping: "Pattern Map: 'an extra hour of rest' + 'much more awake' + 'run faster and play better' + 'much calmer way to start the day' → all show the benefits of a later school schedule."
+      }
+    ];
+
+    function renderReadingPart4() {
+      document.getElementById('part4QuestionsBox').innerHTML = READING_PART4_QS.map((item, qIdx) => `
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25 rounded-2xl p-5 space-y-2.5 shadow-sm">
+          <p class="text-sm font-bold text-[#002B5C] dark:text-white">${item.q}</p>
+          <div class="space-y-1.5">
+            ${item.opts.map(op => {
+              const letter = op[0];
+              return `<button type="button" onclick="checkReadingPart4(${qIdx}, '${letter}')" class="w-full text-left px-3.5 py-2 rounded-xl bg-[#F0F6FA] dark:bg-[#071627] hover:border-emerald-500 border-[1.5px] border-emerald-500/20 dark:border-emerald-400/20 text-xs sm:text-sm font-medium transition">${op}</button>`;
+            }).join('')}
+          </div>
+          <div id="rp4Fb${qIdx}" class="hidden p-3 rounded-xl text-xs font-semibold"></div>
+        </div>
+      `).join('');
+    }
+
+    window.checkReadingPart4 = (qIdx, picked) => {
+      const item = READING_PART4_QS[qIdx];
+      const box = document.getElementById(`rp4Fb${qIdx}`);
+      box.classList.remove('hidden');
+      if (picked === item.ans) {
+        box.className = 'p-3 rounded-xl text-xs font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        box.textContent = `✓ Correct (${item.ans})! ${item.mapping}`;
+      } else {
+        box.className = 'p-3 rounded-xl text-xs font-semibold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        box.textContent = `✗ Try again. ${item.mapping}`;
+      }
+    };
+
+    // ==================== STAGE 06: B1 LISTENING PART 4 (SLIDES 38-51) ====================
+    const LISTENING_QS = [
+      {
+        num: "Question 1",
+        prompt: "Two classmates are talking about breakfast. What does the boy usually eat in the morning?",
+        opts: ["A) cereal", "B) fruit", "C) eggs"],
+        ans: "B",
+        audioText: "Are you still eating cereal? No, I hardly ever eat cereal now. Oh, do you eat eggs instead? Actually, I never eat meat or eggs anymore. So, I generally just have an apple and a banana.",
+        script: "F: Are you still eating cereal...? | M: No, I [hardly ever] eat cereal now... | F: Oh, do you eat eggs instead? | M: Actually, I [never] eat meat or eggs anymore... So, I [generally] just have an apple and a banana.",
+        xray: "X-Ray Strategy: Watch out for negative adverbs! 'Hardly ever' and 'never' eliminate A and C. 'Generally' confirms his actual routine (apple & banana = fruit)."
+      },
+      {
+        num: "Question 2",
+        prompt: "A girl is talking to her friend about a new hobby. When does she practice her instrument?",
+        opts: ["A) every day", "B) twice a week", "C) at the weekend"],
+        ans: "C",
+        audioText: "I wanted to practice every day after school, but we have so much homework. So, do you only play it twice a week? Not even that. I completely leave it in its case from Monday to Friday, and I only manage to play it on Saturdays and Sundays.",
+        script: "F: I wanted to practice every day after school, but we have so much homework... | M: So, do you only play it twice a week...? | F: Not even that. I completely leave it in its case from Monday to Friday, and I only manage to play it on Saturdays and Sundays.",
+        xray: "Synonym Trap! The audio never says 'the weekend'. You must connect 'Saturdays and Sundays' to option C."
+      },
+      {
+        num: "Question 3",
+        prompt: "Two friends are talking about their sleep routines. Why is the boy awake so late at night?",
+        opts: ["A) He has too much homework.", "B) He takes an afternoon nap.", "C) He watches television in bed."],
+        ans: "B",
+        audioText: "Did you stay up late doing our maths homework? No, I finished all my homework before dinner. I usually sleep for an hour right after lunch. And we don't even have a television in my bedroom.",
+        script: "F: Did you stay up late doing our maths homework? | M: No, I finished all my homework before dinner. [...] I usually sleep for an hour right after lunch. | M: [...] We don't even have a television in my bedroom.",
+        xray: "Question 3 X-Ray: Direct denial eliminates A ('finished before dinner') and C ('don't even have a TV'). Vocabulary link: 'Sleep for an hour' = a nap."
+      },
+      {
+        num: "Question 4",
+        prompt: "A girl is leaving a voicemail message for her friend. What chore does she have to do this morning?",
+        opts: ["A) walk the dog", "B) clean her bedroom", "C) wash the family car"],
+        ans: "B",
+        audioText: "I usually walk the dog, but luckily my brother is doing that today. However, my parents just told me that I have to tidy my bedroom. At least I don't have to wash the car this week.",
+        script: "F: I [usually] walk the dog... but [luckily] my brother is doing that today. | F: [However], my parents just told me that I have to tidy my bedroom. | F: At least I don't have to wash the car this week.",
+        xray: "Pivot Words! 'Luckily' removes walking the dog, 'However' introduces the real obligation, and 'tidy' = clean."
+      },
+      {
+        num: "Question 5",
+        prompt: "Two classmates are talking about their football routine. When is the team practicing this week?",
+        opts: ["A) Tuesday", "B) Wednesday", "C) Thursday"],
+        ans: "A",
+        audioText: "Practice on Wednesday afternoon as usual? No, not this week. Is the training moved to Thursday instead? He said the pitch is busy. We have to do it a day earlier than normal, so it's on Tuesday.",
+        script: "M: ...practice on Wednesday afternoon as usual? | F: No, not this week. | M: ...is the training moved to Thursday instead? | F: He said the pitch is busy... We have to do it a day earlier than normal, so it's on Tuesday.",
+        xray: "Test Strategy: Wed (Usual) → Thu (Busy) → Tue (Target). They often mention ALL options—wait for the final confirmation!"
+      }
+    ];
+
+    function renderListeningPart4() {
+      document.getElementById('listeningQuestionsGrid').innerHTML = LISTENING_QS.map((item, idx) => `
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25 rounded-3xl p-5 sm:p-6 space-y-3 shadow-md">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <span class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-bold">${item.num.toUpperCase()}</span>
+            <div class="flex gap-2">
+              <button type="button" onclick="speakText('${item.audioText.replace(/'/g, "\'")}')" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#0089A7] text-white text-xs font-bold">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                <span>Play Audio</span>
+              </button>
+              <button type="button" onclick="document.getElementById('lxray${idx}').classList.toggle('hidden')" class="px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-cyan-400/25 text-xs font-bold">
+                Script X-Ray
+              </button>
+            </div>
+          </div>
+
+          <p class="text-sm sm:text-base font-bold text-[#002B5C] dark:text-white">${item.prompt}</p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+            ${item.opts.map(op => {
+              const letter = op[0];
+              return `<button type="button" onclick="checkListeningQ(${idx}, '${letter}')" class="text-left px-4 py-2.5 rounded-xl bg-[#F0F6FA] dark:bg-[#071627] hover:border-emerald-500 border-[1.5px] border-emerald-500/20 dark:border-emerald-400/20 text-xs sm:text-sm font-bold transition">${op}</button>`;
+            }).join('')}
+          </div>
+
+          <div id="lfb${idx}" class="hidden p-3 rounded-xl text-xs font-bold"></div>
+
+          <div id="lxray${idx}" class="hidden p-4 rounded-2xl bg-amber-400/10 border border-amber-400/30 space-y-1.5 text-xs">
+            <div class="font-mono text-slate-800 dark:text-slate-200">${item.script}</div>
+            <div class="font-bold text-rose-700 dark:text-rose-300">${item.xray}</div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    window.checkListeningQ = (idx, picked) => {
+      const item = LISTENING_QS[idx];
+      const fb = document.getElementById(`lfb${idx}`);
+      fb.classList.remove('hidden');
+      if (picked === item.ans) {
+        fb.className = 'p-3 rounded-xl text-xs font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Correct (${item.ans})! Click "Script X-Ray" to review the clues.`;
+      } else {
+        fb.className = 'p-3 rounded-xl text-xs font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `✗ Listen again or open "Script X-Ray" to see the distractor trap.`;
+      }
+    };
+
+    // ==================== STAGE 07: SPEAKING PART 1 (SLIDES 52-62) ====================
+    const SPEAKING_QS = [
+      {
+        num: 1,
+        secs: 10,
+        phase: "THE WARM-UP · 10 SECONDS",
+        lead: "Examiner Warm-Up",
+        q: "What’s your name?",
+        strategy: "10-Second Rule",
+        tip: "Keep it simple and clear. Speak confidently. You don't need to stretch this!"
+      },
+      {
+        num: 2,
+        secs: 10,
+        phase: "THE WARM-UP · 10 SECONDS",
+        lead: "Examiner Warm-Up",
+        q: "Which country do you come from?",
+        strategy: "Full Sentence Rule",
+        tip: "A full sentence is great here. Say 'I come from Spain,' rather than just 'Spain.'"
+      },
+      {
+        num: 3,
+        secs: 20,
+        phase: "THE DEEP DIVE · 20 SECONDS",
+        lead: "I'm going to ask you some questions about mornings.",
+        q: "What time do you usually get up on a school day?",
+        strategy: "B1 Strategy: Adverb Placement",
+        tip: "[ I ] + [ usually / normally ] + [ get up... ] — Place frequency adverbs right before the main verb!"
+      },
+      {
+        num: 4,
+        secs: 20,
+        phase: "THE DEEP DIVE · 20 SECONDS",
+        lead: "Morning Habits",
+        q: "Tell me about what you usually eat for breakfast.",
+        strategy: "Alert: Signposting the Past",
+        tip: "Listen closely! Sometimes the examiner asks: 'What did you eat YESTERDAY?' Don't accidentally answer a past-tense question using present-tense routine vocabulary!"
+      },
+      {
+        num: 5,
+        secs: 20,
+        phase: "THE DEEP DIVE · 20 SECONDS",
+        lead: "School Commute",
+        q: "How do you usually travel to school in the morning?",
+        strategy: "Expansion Checklist (Fill 20 Seconds)",
+        tip: "If you just say 'By bus,' you have 17 seconds of silence! Add: (1) Who you travel with, and (2) How long it takes."
+      },
+      {
+        num: 6,
+        secs: 20,
+        phase: "THE DEEP DIVE · 20 SECONDS",
+        lead: "I'm going to ask you some questions about your afternoons and evenings.",
+        q: "What do you usually do after you finish your homework?",
+        strategy: "B1 Strategy: The Because / So Extension",
+        tip: "Stretch a short 5-second fact into a fluent 20-second answer by putting BECAUSE and SO right in the middle."
+      },
+      {
+        num: 7,
+        secs: 20,
+        phase: "THE DEEP DIVE · 20 SECONDS",
+        lead: "Evening Bedtime",
+        q: "What time do you usually go to bed during the week?",
+        strategy: "Put It Into Practice!",
+        tip: "Combine an Adverb (usually) AND a connector (so): 'I usually go to bed at 10 PM, so I can wake up early...'"
+      },
+      {
+        num: 8,
+        secs: 20,
+        phase: "FINAL CHALLENGE · 20 SECONDS",
+        lead: "Weekend Routine",
+        q: "Tell me about something you always do on Sundays.",
+        strategy: "Final Challenge: Use the Full Clock",
+        tip: "Build a mini-story about your Sunday routine using your adverbs, your connectors, and descriptive details!"
+      }
+    ];
+    let spIdx = 0;
+    let spSeconds = 10;
+    let spTimerId = null;
+
+    function updateSpClockUI() {
+      document.getElementById('spTimerDisplay').textContent = `00:${String(spSeconds).padStart(2, '0')}`;
+    }
+
+    function renderSpeakingQ() {
+      spIdx = (spIdx + SPEAKING_QS.length) % SPEAKING_QS.length;
+      const item = SPEAKING_QS[spIdx];
+      if (spTimerId) { clearInterval(spTimerId); spTimerId = null; }
+      spSeconds = item.secs;
+      document.getElementById('spClockLabel').textContent = `${item.secs}S CLOCK:`;
+      updateSpClockUI();
+
+      document.getElementById('spQBadge').textContent = `QUESTION ${item.num} / 8`;
+      document.getElementById('spPhaseBadge').textContent = item.phase;
+      document.getElementById('spLeadIn').textContent = item.lead;
+      document.getElementById('spMainQ').textContent = item.q;
+      document.getElementById('spStrategyTitle').textContent = item.strategy;
+      document.getElementById('spStrategyBody').textContent = item.tip;
+      document.getElementById('spStrategyBox').classList.add('hidden');
+      document.getElementById('btnToggleSpTipLabel').textContent = 'Show Strategy & Help Tip';
+
+      document.getElementById('spQPills').innerHTML = SPEAKING_QS.map((qItem, i) => `
+        <button type="button" onclick="spIdx=${i}; renderSpeakingQ();" class="w-8 h-8 rounded-lg text-xs font-bold ${
+          i === spIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#071627]'
+        }">${qItem.num}</button>
+      `).join('');
+    }
+    window.stepSpeakingQ = (d) => { spIdx += d; renderSpeakingQ(); };
+    window.toggleSpTip = () => {
+      const box = document.getElementById('spStrategyBox');
+      const hidden = box.classList.toggle('hidden');
+      document.getElementById('btnToggleSpTipLabel').textContent = hidden ? 'Show Strategy & Help Tip' : 'Hide Strategy & Help Tip';
+    };
+    window.speakInterviewQ = () => speakText(SPEAKING_QS[spIdx].q);
+    window.startSpeakingClock = () => {
+      if (spTimerId) return;
+      spTimerId = setInterval(() => {
+        if (spSeconds > 0) {
+          spSeconds--;
+          updateSpClockUI();
+        } else {
+          clearInterval(spTimerId);
+          spTimerId = null;
+        }
+      }, 1000);
+    };
+    window.resetSpeakingClock = () => {
+      if (spTimerId) { clearInterval(spTimerId); spTimerId = null; }
+      spSeconds = SPEAKING_QS[spIdx].secs;
+      updateSpClockUI();
+    };
+
+    // ==================== STAGE 08: WRITING PART 2 (SLIDES 63-64) ====================
+    window.updateArticleWordCount = () => {
+      const text = document.getElementById('teenArticleInput').value.trim();
+      const count = text ? text.split(/\s+/).length : 0;
+      const badge = document.getElementById('articleWordCount');
+      badge.textContent = `${count} / 100–160 WORDS`;
+      if (count >= 100 && count <= 160) {
+        badge.className = 'px-3 py-1 rounded-xl bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 text-xs font-extrabold';
+      } else {
+        badge.className = 'px-3 py-1 rounded-xl bg-amber-400/20 text-amber-800 dark:text-amber-300 text-xs font-extrabold';
+      }
+    };
+
+    window.loadSampleArticle = () => {
+      document.getElementById('teenArticleInput').value =
+`Finding Balance in a Busy School Week
+
+As a rule, I generally wake up at 7:15 a.m. on school days. After having a quick bowl of fruit and toast, I pack my bag and catch the bus with my friends so we arrive ten minutes before our first lesson.
+
+When I get home in the afternoon, I hardly ever start studying immediately. Instead, I usually listen to music or play basketball for forty minutes because it helps me clear my head before doing homework.
+
+In my opinion, having a strict routine is helpful during the week because you finish tasks on time and get enough sleep. However, from time to time we also need flexible weekends to relax and recharge.`;
+      updateArticleWordCount();
+    };
+
+    window.copyArticleDraft = () => {
+      const box = document.getElementById('teenArticleInput');
+      box.select();
+      navigator.clipboard?.writeText(box.value);
+    };
+
+    // Init all stages
+    goStage(0);
+    renderWarmup();
+    renderWyrCards();
+    renderDetective();
+    renderReadingPart4();
+    renderListeningPart4();
+    renderSpeakingQ();
+    lucide.createIcons();
+  </script>
+</body>
+</html>

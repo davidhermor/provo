@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,57 +20,36 @@
     };
   </script>
   <style>
-    @keyframes fadeSlide {
-      from { opacity: 0; transform: translateY(8px); }
+    @keyframes stageIn {
+      from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    .animate-fade { animation: fadeSlide 0.24s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+    .stage-anim { animation: stageIn 0.28s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
+<body class="bg-[#F2F6FA] text-slate-900 dark:bg-[#061322] dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200 selection:bg-[#0089A7] selection:text-white">
 
-  <!-- Sticky Deep Navy Navbar (#002B5C in both Light & Dark modes) -->
-  <header class="sticky top-0 z-40 bg-[#002B5C] text-white border-b border-white/10 shadow-sm">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2">
-      <div class="flex items-center gap-3">
-        <a href="index.html" class="flex items-center shrink-0 focus:outline-none" title="PROVO">
+  <!-- Sticky Deep Navy Navbar (#002B5C in both modes) -->
+  <header class="sticky top-0 z-40 bg-[#002B5C] text-white border-b border-cyan-300/15 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-3.5">
+        <a href="index.html" class="flex items-center shrink-0" title="PROVO">
           <img
             src="https://i.postimg.cc/vBt4qH44/download.png"
             alt="PROVO"
             class="h-8 w-auto object-contain block"
             onerror="this.style.display='none'; document.getElementById('provoFallback').classList.remove('hidden');"
           />
-          <span id="provoFallback" class="hidden font-extrabold tracking-wider text-lg text-white">PROVO</span>
+          <span id="provoFallback" class="hidden font-extrabold tracking-widest text-lg text-white">PROVO</span>
         </a>
-        <span class="hidden lg:inline-block h-5 w-px bg-white/20"></span>
-        <span class="hidden lg:inline-block text-xs font-semibold uppercase tracking-wider text-cyan-200">
-          A2–B1 Grammar Lab
+        <span class="hidden md:inline-block h-4 w-px bg-white/20"></span>
+        <span id="headerStageLabel" class="hidden md:inline-block text-xs font-bold uppercase tracking-[0.18em] text-cyan-200">
+          01 · Overview
         </span>
       </div>
 
-      <!-- Main Navigation Tabs -->
-      <nav class="flex items-center gap-1 bg-white/10 p-1 rounded-xl overflow-x-auto max-w-full" aria-label="Lesson sections">
-        <button data-tab="warmup" class="nav-tab px-2.5 sm:px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 whitespace-nowrap bg-white text-[#002B5C]">
-          <i data-lucide="mic" class="w-4 h-4"></i>
-          <span>Warm-Up</span>
-        </button>
-        <button data-tab="grammar" class="nav-tab px-2.5 sm:px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 whitespace-nowrap text-white/85 hover:text-white hover:bg-white/10">
-          <i data-lucide="layers" class="w-4 h-4"></i>
-          <span>Grammar</span>
-        </button>
-        <button data-tab="vocabulary" class="nav-tab px-2.5 sm:px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 whitespace-nowrap text-white/85 hover:text-white hover:bg-white/10">
-          <i data-lucide="book-open" class="w-4 h-4"></i>
-          <span>Vocabulary</span>
-        </button>
-        <button data-tab="practice" class="nav-tab px-2.5 sm:px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 whitespace-nowrap text-white/85 hover:text-white hover:bg-white/10">
-          <i data-lucide="check-circle-2" class="w-4 h-4"></i>
-          <span>Practice</span>
-        </button>
-        <button data-tab="challenges" class="nav-tab px-2.5 sm:px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 whitespace-nowrap text-white/85 hover:text-white hover:bg-white/10">
-          <i data-lucide="zap" class="w-4 h-4"></i>
-          <span>Live Lab</span>
-        </button>
-      </nav>
+      <!-- Stage Switcher Pills -->
+      <div id="stagePills" class="flex items-center gap-1 overflow-x-auto py-1"></div>
 
       <!-- Right Controls -->
       <div class="flex items-center gap-2 shrink-0">
@@ -78,712 +57,1302 @@
           id="themeToggle"
           type="button"
           class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition"
-          title="Toggle Light/Dark Mode"
-          aria-label="Toggle Light/Dark Mode"
+          title="Toggle Light / Navy Dark Mode"
+          aria-label="Toggle Light / Navy Dark Mode"
         >
-          <i id="themeIcon" data-lucide="moon" class="w-4 h-4"></i>
+          <i id="themeIcon" data-lucide="sun" class="w-4 h-4"></i>
         </button>
         <a
           href="index.html"
-          class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-[#0089A7]/25 hover:bg-[#0089A7]/40 text-cyan-100 border border-cyan-300/25 transition"
+          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-white/10 hover:bg-white/20 text-white transition"
         >
           <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
-          <span>All Lessons</span>
+          <span class="hidden sm:inline">All Lessons</span>
         </a>
       </div>
     </div>
+    <div class="w-full h-1 bg-black/30">
+      <div id="progressLine" class="h-full bg-[#0089A7] transition-all duration-300" style="width: 14.28%"></div>
+    </div>
   </header>
 
-  <!-- Hero Banner -->
-  <section class="bg-gradient-to-r from-[#002B5C] via-[#005A8D] to-[#0089A7] text-white py-7 px-4 sm:px-6">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-      <div>
-        <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-white/15 text-xs font-semibold mb-2">
-          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-cyan-200"></i>
-          <span>PROVO • Interactive Lesson Base</span>
-        </div>
-        <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">
-          Present Simple vs. Present Continuous
-        </h1>
-        <p class="text-sm sm:text-base text-white/85 mt-1 max-w-2xl">
-          Contrast habits and permanent facts with actions in progress, temporary trends, and dynamic vs. stative meanings.
-        </p>
-      </div>
-      <div class="flex items-center gap-2 self-start md:self-auto bg-black/20 backdrop-blur-sm px-3.5 py-2 rounded-2xl border border-white/15 text-xs">
-        <i data-lucide="message-circle" class="w-4 h-4 text-cyan-200"></i>
-        <span>Speaking • Grammar • Vocabulary • Live Lab</span>
-      </div>
-    </div>
-  </section>
+  <!-- Main Stage Container -->
+  <main class="max-w-6xl w-full mx-auto px-4 sm:px-6 py-8 sm:py-12 flex-1 flex flex-col justify-center">
 
-  <!-- Main Content -->
-  <main class="max-w-6xl w-full mx-auto px-4 sm:px-6 py-8 flex-1">
-
-    <!-- ==================== TAB 1: WARM-UP & VOICE RECORDER ==================== -->
-    <section id="panel-warmup" class="tab-panel animate-fade space-y-6">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-
-        <!-- Left / Main Stage (7 cols) -->
-        <div class="lg:col-span-7 space-y-4">
-          <div class="flex flex-wrap items-center justify-between gap-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl px-4 py-3 shadow-sm">
-            <div class="flex items-center gap-2 text-sm font-semibold">
-              <span id="qBadge" class="px-2.5 py-1 rounded-lg bg-[#002B5C] text-white text-xs font-bold">Q1 / 10</span>
-              <span id="qFocusTag" class="px-2.5 py-1 rounded-lg bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300 text-xs font-semibold">Routines vs. Right Now</span>
-            </div>
-            <div class="flex items-center gap-1.5">
-              <button id="prevQ" type="button" class="p-2 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition" title="Previous question">
-                <i data-lucide="chevron-left" class="w-4 h-4"></i>
-              </button>
-              <button id="nextQ" type="button" class="p-2 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition" title="Next question">
-                <i data-lucide="chevron-right" class="w-4 h-4"></i>
-              </button>
-              <button id="shuffleQ" type="button" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-xs font-semibold transition">
-                <i data-lucide="shuffle" class="w-3.5 h-3.5 text-[#0089A7]"></i>
-                <span>Random</span>
-              </button>
-            </div>
+    <!-- ==================== 01: EDITORIAL COVER ==================== -->
+    <section data-stage="0" class="lesson-stage stage-anim">
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 shadow-2xl">
+        <div class="lg:col-span-6 h-80 sm:h-[470px] relative bg-[#091726] overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1050&q=80"
+            alt="People collaborating and discussing ideas"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#061322]/85 via-black/15 to-transparent"></div>
+          <div class="absolute bottom-5 left-6 right-6 flex items-center justify-between text-xs text-cyan-100/90 font-semibold tracking-wider uppercase">
+            <span>PROVO · A2–B1 Contrast</span>
+            <span>Habits vs. Right Now</span>
           </div>
-
-          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-sm">
-            <!-- Everyday Visual Scene -->
-            <div id="questionScene" class="mb-5 rounded-2xl overflow-hidden border border-slate-200/80 dark:border-slate-700/80 bg-[#F0F6FA] dark:bg-slate-800/60 h-44 sm:h-48 flex items-center justify-center"></div>
-
-            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-              <p class="text-xs font-bold uppercase tracking-wider text-[#0089A7]">Speaking Prompt</p>
-              <span id="qContextBadge" class="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300"></span>
-            </div>
-            <h2 id="questionText" class="text-xl sm:text-2xl font-bold leading-snug text-slate-900 dark:text-white">
-              Loading question...
-            </h2>
-            <p id="questionHint" class="text-sm text-slate-500 dark:text-slate-400 mt-3"></p>
-
-            <!-- Collapsible Sentence Starters -->
-            <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800">
-              <button id="toggleStarters" type="button" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#005A8D] dark:text-cyan-300 hover:underline">
-                <i data-lucide="lightbulb" class="w-4 h-4"></i>
-                <span>Useful Sentence Starters</span>
-              </button>
-              <div id="startersBox" class="hidden mt-3 bg-[#F0F6FA] dark:bg-slate-800/70 border border-[#0089A7]/20 rounded-2xl p-4 space-y-2 text-sm">
-                <ul id="startersList" class="list-disc list-inside space-y-1 text-slate-700 dark:text-slate-200"></ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Quick Question Selector Pills -->
-          <div class="flex flex-wrap gap-1.5" id="questionPills"></div>
         </div>
 
-        <!-- Right / Voice Note Recorder to Drive (5 cols) -->
-        <div class="lg:col-span-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm space-y-5">
-          <div>
-            <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#0089A7]">
-              <i data-lucide="upload-cloud" class="w-4 h-4"></i>
-              <span>Google Drive Submission</span>
-            </span>
-            <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white mt-0.5">Record &amp; Send Voice Note</h3>
-            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Record your answer out loud and send it straight to your teacher's folder.</p>
+        <div class="lg:col-span-6 p-8 sm:p-12 flex flex-col justify-center space-y-6">
+          <div class="inline-flex items-center gap-2 self-start px-3 py-1 rounded-full bg-[#0089A7]/15 border border-[#0089A7]/35 text-[#005A8D] dark:text-cyan-300 text-xs font-extrabold uppercase tracking-[0.18em]">
+            <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+            <span>PROVO Stage Lab · Navy Edition</span>
           </div>
 
-          <div>
-            <label for="studentNameInput" class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5">
-              Student Name
-            </label>
-            <input
-              id="studentNameInput"
-              type="text"
-              placeholder="e.g. Sofía Gómez"
-              class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#0089A7]"
-            />
-          </div>
+          <h1 class="text-4xl sm:text-5xl font-extrabold uppercase tracking-tight leading-[1.06] text-[#002B5C] dark:text-white">
+            Present Simple<br/>
+            <span class="text-[#0089A7]">vs.</span> Present<br/>
+            Continuous
+          </h1>
 
-          <div class="bg-[#F0F6FA] dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700 rounded-2xl p-4 space-y-4">
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-2">
-                <span id="recDot" class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
-                <span id="recStatusText" class="text-xs font-bold text-slate-600 dark:text-slate-300">Ready to record</span>
-              </div>
-              <span id="recTimer" class="font-mono text-xs font-bold text-slate-500 dark:text-slate-400">00:00</span>
-            </div>
+          <p class="text-slate-600 dark:text-slate-300 text-base leading-relaxed">
+            Master the contrast between routines, permanent facts, and stative verbs versus actions in progress, temporary trends, and live shifts.
+          </p>
 
-            <div class="flex flex-wrap items-center gap-2">
-              <button id="btnRecord" type="button" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold transition">
-                <i data-lucide="mic" class="w-4 h-4"></i>
-                <span>Record</span>
-              </button>
-              <button id="btnStop" type="button" disabled class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-900 disabled:opacity-40 text-white text-xs font-bold transition">
-                <i data-lucide="square" class="w-4 h-4"></i>
-                <span>Stop</span>
-              </button>
-              <button id="btnClearAudio" type="button" disabled class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 disabled:opacity-40 hover:bg-slate-100 dark:hover:bg-slate-800 transition" title="Discard recording">
-                <i data-lucide="trash-2" class="w-4 h-4 text-slate-600 dark:text-slate-300"></i>
-              </button>
-            </div>
-
-            <audio id="audioPreview" controls class="w-full hidden rounded-xl"></audio>
-          </div>
-
-          <div class="space-y-2.5">
+          <div class="pt-2 flex flex-wrap items-center gap-4">
             <button
-              id="btnSendDrive"
               type="button"
-              disabled
-              class="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-[#002B5C] to-[#005A8D] hover:opacity-95 disabled:opacity-40 text-white text-sm font-bold shadow-sm transition"
+              onclick="goStage(1)"
+              class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-[#002B5C] to-[#005A8D] hover:from-[#005A8D] hover:to-[#0089A7] text-white text-sm font-bold shadow-lg shadow-[#002B5C]/25 transition"
             >
-              <i id="sendIcon" data-lucide="send" class="w-4 h-4"></i>
-              <span id="sendLabel">Send to Teacher (Drive)</span>
+              <span>Start Lesson</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
-
-            <button
-              id="btnDownloadAudio"
-              type="button"
-              disabled
-              class="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-40 text-xs font-semibold text-slate-700 dark:text-slate-200 transition"
-            >
-              <i data-lucide="download" class="w-3.5 h-3.5"></i>
-              <span>Download Local Backup</span>
-            </button>
+            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">12 visual prompts · Fullscreen mode · Homework pack</span>
           </div>
-
-          <div id="uploadFeedback" class="hidden text-xs font-semibold px-3.5 py-2.5 rounded-xl"></div>
         </div>
       </div>
     </section>
 
-    <!-- ==================== TAB 2: GRAMMAR & INTERACTIVE SWITCHER ==================== -->
-    <section id="panel-grammar" class="tab-panel hidden animate-fade space-y-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm">
-          <div class="flex items-center justify-between mb-3">
-            <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-[#002B5C] text-white">PRESENT SIMPLE</span>
-            <span class="text-xs font-semibold text-[#005A8D] dark:text-cyan-300">Habits, Facts &amp; Routines</span>
+    <!-- ==================== 02: 12 VISUAL QUESTION CARDS + FULLSCREEN + RECORDER ==================== -->
+    <section data-stage="1" class="lesson-stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 02</span>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Visual Warm-Up</h2>
+        </div>
+        <p class="text-sm text-slate-500 dark:text-slate-400">12 original contrast prompts. Switch to Fullscreen Card when projecting or sharing screen.</p>
+      </div>
+
+      <div id="warmupLayout" class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <!-- Question Card Column -->
+        <div id="warmupCardCol" class="lg:col-span-7 space-y-4 transition-all">
+          <div class="flex flex-wrap items-center justify-between gap-2 bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-2xl px-4 py-3 shadow-sm">
+            <div class="flex items-center gap-2">
+              <span id="qBadge" class="px-2.5 py-1 rounded-lg bg-[#002B5C] text-white text-xs font-extrabold">Q1 / 12</span>
+              <span id="qTag" class="px-2.5 py-1 rounded-lg bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300 text-xs font-bold">Habit vs. Right Now</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <button id="prevQ" type="button" class="p-2 rounded-xl border border-slate-200 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] transition" title="Previous">
+                <i data-lucide="chevron-left" class="w-4 h-4"></i>
+              </button>
+              <button id="nextQ" type="button" class="p-2 rounded-xl border border-slate-200 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] transition" title="Next">
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </button>
+              <button id="shuffleQ" type="button" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 dark:bg-[#071627] hover:bg-slate-200 dark:hover:bg-[#132C4A] text-xs font-bold transition">
+                <i data-lucide="shuffle" class="w-3.5 h-3.5 text-[#0089A7]"></i>
+                <span>Random</span>
+              </button>
+              <button id="toggleFullscreenCard" type="button" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#005A8D]/15 dark:bg-[#0089A7]/20 text-[#005A8D] dark:text-cyan-200 hover:bg-[#0089A7]/30 text-xs font-bold transition" title="Toggle Fullscreen Card">
+                <i id="fullscreenIcon" data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+                <span id="fullscreenLabel">Fullscreen Card</span>
+              </button>
+            </div>
           </div>
-          <p class="text-sm text-slate-600 dark:text-slate-300 mb-4">
-            Use the base verb (<strong>+s / +es</strong> for <em>he, she, it</em>) for repeated actions, permanent truths, schedules, and stative verbs.
-          </p>
-          <svg viewBox="0 0 400 70" class="w-full h-16 mb-4">
-            <line x1="20" y1="38" x2="380" y2="38" stroke="#94A3B8" stroke-width="2" stroke-dasharray="4 4" />
-            <circle cx="70" cy="38" r="8" fill="#002B5C" />
-            <circle cx="150" cy="38" r="8" fill="#002B5C" />
-            <circle cx="230" cy="38" r="8" fill="#002B5C" />
-            <circle cx="310" cy="38" r="8" fill="#002B5C" />
-            <text x="70" y="60" text-anchor="middle" font-size="10" fill="#64748B">Mon</text>
-            <text x="150" y="60" text-anchor="middle" font-size="10" fill="#64748B">Wed</text>
-            <text x="230" y="60" text-anchor="middle" font-size="10" fill="#64748B">Fri</text>
-            <text x="310" y="60" text-anchor="middle" font-size="10" fill="#64748B">Sun</text>
-          </svg>
-          <div class="bg-[#F0F6FA] dark:bg-slate-800 rounded-2xl p-3.5 text-xs space-y-1">
-            <div><strong class="text-[#002B5C] dark:text-cyan-300">+</strong> She <u>drinks</u> coffee every morning.</div>
-            <div><strong class="text-[#002B5C] dark:text-cyan-300">−</strong> They <u>don't work</u> on Sundays.</div>
-            <div><strong class="text-[#002B5C] dark:text-cyan-300">?</strong> <u>Does</u> he <u>speak</u> English?</div>
+
+          <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl overflow-hidden shadow-sm">
+            <div id="questionPhotoBox" class="h-52 sm:h-64 bg-[#091726] relative overflow-hidden"></div>
+
+            <div class="p-6 sm:p-8 space-y-4">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-[#0089A7]">Speaking Prompt</p>
+                <span id="qAngleBadge" class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-[#071627] text-slate-600 dark:text-cyan-200"></span>
+              </div>
+              <h3 id="questionText" class="text-xl sm:text-2xl font-extrabold leading-snug text-[#002B5C] dark:text-white"></h3>
+              <p id="questionFollow" class="text-sm text-slate-600 dark:text-slate-300"></p>
+
+              <div class="pt-3 border-t border-slate-100 dark:border-cyan-400/15">
+                <button id="toggleStarters" type="button" class="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-[#005A8D] dark:text-cyan-300 hover:underline">
+                  <i data-lucide="lightbulb" class="w-4 h-4"></i>
+                  <span>Sentence Starters</span>
+                </button>
+                <div id="startersBox" class="hidden mt-3 bg-slate-50 dark:bg-[#071627] border border-[#0089A7]/25 rounded-2xl p-4 text-xs sm:text-sm">
+                  <ul id="startersList" class="list-disc list-inside space-y-1.5 text-slate-700 dark:text-slate-200"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="questionNumberPills" class="flex flex-wrap gap-1.5"></div>
+        </div>
+
+        <!-- Voice Recorder Column (hidden automatically when Fullscreen Card is active) -->
+        <div id="warmupRecorderCol" class="lg:col-span-5 bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-4 shadow-sm">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-extrabold uppercase tracking-[0.18em] text-[#0089A7]">Voice Note · Drive</span>
+            <span id="recTimer" class="font-mono text-xs font-bold text-slate-500 dark:text-slate-400">00:00</span>
+          </div>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Record your answer out loud and send it straight to your teacher's folder.</p>
+          <input
+            id="studentNameInput"
+            type="text"
+            placeholder="Your name (e.g. Sofía Gómez)"
+            class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/20 text-sm focus:outline-none focus:ring-2 focus:ring-[#0089A7]"
+          />
+          <div class="flex items-center gap-2">
+            <button id="btnRecord" type="button" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold transition">
+              <i data-lucide="mic" class="w-4 h-4"></i>
+              <span>Record</span>
+            </button>
+            <button id="btnStop" type="button" disabled class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-900 disabled:opacity-40 text-white text-xs font-bold transition">
+              <i data-lucide="square" class="w-4 h-4"></i>
+              <span>Stop</span>
+            </button>
+            <button id="btnClearAudio" type="button" disabled class="p-2.5 rounded-xl border border-slate-200 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] disabled:opacity-40 transition" title="Discard">
+              <i data-lucide="trash-2" class="w-4 h-4"></i>
+            </button>
+          </div>
+          <audio id="audioPreview" controls class="w-full hidden rounded-xl"></audio>
+          <div class="flex flex-col sm:flex-row gap-2">
+            <button id="btnSendDrive" type="button" disabled class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#002B5C] hover:bg-[#005A8D] disabled:opacity-40 text-white text-xs font-bold transition">
+              <i data-lucide="send" class="w-3.5 h-3.5"></i>
+              <span id="sendLabel">Send to Teacher</span>
+            </button>
+            <button id="btnDownloadAudio" type="button" disabled class="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl border border-slate-200 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] disabled:opacity-40 text-xs font-semibold transition">
+              <i data-lucide="download" class="w-3.5 h-3.5"></i>
+              <span>Backup</span>
+            </button>
+          </div>
+          <div id="uploadFeedback" class="hidden text-xs font-semibold px-3 py-2 rounded-xl"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 03: VOCABULARY (ALL GRID / ONE BY ONE + PRODUCTION LAB) ==================== -->
+    <section data-stage="2" class="lesson-stage hidden stage-anim space-y-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 03</span>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Contrast Vocabulary</h2>
+        </div>
+
+        <!-- View Mode Toggle: All Together vs. One by One -->
+        <div class="inline-flex rounded-xl bg-white dark:bg-[#0C1E33] p-1 border border-slate-200 dark:border-cyan-400/20 text-xs font-bold self-start sm:self-auto">
+          <button id="vocabModeGridBtn" type="button" onclick="setVocabView('grid')" class="px-3.5 py-1.5 rounded-lg bg-[#002B5C] text-white transition">
+            All Cards
+          </button>
+          <button id="vocabModeSingleBtn" type="button" onclick="setVocabView('single')" class="px-3.5 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 transition">
+            One by One
+          </button>
+        </div>
+      </div>
+
+      <!-- Mode 1: All Cards Grid -->
+      <div id="vocabGridView" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+
+      <!-- Mode 2: One-by-One Spotlight Card -->
+      <div id="vocabSingleView" class="hidden max-w-2xl mx-auto w-full space-y-4">
+        <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl overflow-hidden shadow-md">
+          <div id="vocabSinglePhoto" class="h-56 sm:h-64 bg-[#091726] relative overflow-hidden"></div>
+          <div class="p-6 sm:p-8 space-y-4">
+            <div class="flex items-center justify-between gap-2">
+              <span id="vocabSingleCounter" class="text-xs font-extrabold uppercase tracking-widest text-[#0089A7]">Expression 1 / 6</span>
+              <span id="vocabSingleTag" class="px-2.5 py-1 rounded-lg bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300 text-xs font-bold"></span>
+            </div>
+            <div class="flex items-center justify-between gap-3">
+              <h3 id="vocabSinglePhrase" class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white"></h3>
+              <button id="vocabSingleAudioBtn" type="button" class="p-2.5 rounded-xl bg-slate-100 dark:bg-[#071627] text-[#005A8D] dark:text-cyan-300 hover:bg-[#0089A7] hover:text-white transition" title="Listen">
+                <i data-lucide="volume-2" class="w-5 h-5"></i>
+              </button>
+            </div>
+            <p id="vocabSingleDef" class="text-sm sm:text-base text-slate-700 dark:text-slate-200"></p>
+            <p id="vocabSingleEx" class="text-sm italic text-[#005A8D] dark:text-cyan-300 bg-slate-50 dark:bg-[#071627] p-3.5 rounded-2xl border border-slate-200/70 dark:border-cyan-400/15"></p>
           </div>
         </div>
 
-        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm">
-          <div class="flex items-center justify-between mb-3">
-            <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-[#0089A7] text-white">PRESENT CONTINUOUS</span>
-            <span class="text-xs font-semibold text-[#0089A7] dark:text-cyan-300">Right Now &amp; Temporary</span>
+        <div class="flex items-center justify-between gap-3">
+          <button type="button" onclick="stepSingleVocab(-1)" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-bold">
+            <i data-lucide="chevron-left" class="w-4 h-4"></i>
+            <span>Previous Word</span>
+          </button>
+          <div id="vocabSingleDots" class="flex gap-1.5"></div>
+          <button type="button" onclick="stepSingleVocab(1)" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#005A8D] hover:bg-[#0089A7] text-white text-xs font-bold">
+            <span>Next Word</span>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Production Lab on the Same Vocabulary Page -->
+      <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 sm:p-8 space-y-5 shadow-sm">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Guided Production Lab</span>
+            <h3 class="text-xl font-extrabold text-[#002B5C] dark:text-white mt-0.5">Make It Personal With Today's Vocabulary</h3>
           </div>
-          <p class="text-sm text-slate-600 dark:text-slate-300 mb-4">
-            Use <strong>am / is / are + verb-ing</strong> for actions happening at the moment of speaking, temporary situations, or fixed arrangements.
+          <button type="button" onclick="toggleProductionModels()" class="self-start sm:self-auto px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-bold text-[#005A8D] dark:text-cyan-300">
+            Show / Hide Model Ideas
+          </button>
+        </div>
+
+        <div id="productionPromptsList" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 04: GRAMMAR GUIDE & INTERACTIVE SWITCHER ==================== -->
+    <section data-stage="3" class="lesson-stage hidden stage-anim space-y-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 04</span>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Grammar Contrast</h2>
+        </div>
+        <p class="text-sm text-slate-500 dark:text-slate-400">Clear rules and live tense-flipping to compare routines, facts, and actions in progress.</p>
+      </div>
+
+      <!-- Side-by-Side Visual Rule Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-4 shadow-sm">
+          <div class="flex items-center justify-between">
+            <span class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold tracking-wider">PRESENT SIMPLE</span>
+            <span class="text-xs font-bold text-[#005A8D] dark:text-cyan-300">Habits · Facts · Stative</span>
+          </div>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            Base verb (<strong>+s / +es / +ies</strong> for <em>he, she, it</em>) for repeated routines, permanent facts, timetables, and stative verbs (<em>know, prefer, want, belong, believe</em>).
           </p>
-          <svg viewBox="0 0 400 70" class="w-full h-16 mb-4">
-            <line x1="20" y1="38" x2="380" y2="38" stroke="#94A3B8" stroke-width="2" />
-            <rect x="135" y="25" width="130" height="26" rx="13" fill="#0089A7" fill-opacity="0.2" stroke="#0089A7" stroke-width="2" />
-            <circle cx="200" cy="38" r="6" fill="#0089A7" />
-            <text x="200" y="62" text-anchor="middle" font-size="10" font-weight="bold" fill="#0089A7">IN PROGRESS / NOW</text>
-          </svg>
-          <div class="bg-[#F0F6FA] dark:bg-slate-800 rounded-2xl p-3.5 text-xs space-y-1">
-            <div><strong class="text-[#0089A7] dark:text-cyan-300">+</strong> She <u>is recording</u> a voice note right now.</div>
-            <div><strong class="text-[#0089A7] dark:text-cyan-300">−</strong> They <u>aren't watching</u> TV this week.</div>
-            <div><strong class="text-[#0089A7] dark:text-cyan-300">?</strong> <u>Are</u> you <u>meeting</u> Tom at 6?</div>
+          <div class="bg-slate-50 dark:bg-[#071627] rounded-2xl p-4 text-xs space-y-1.5 border border-slate-200/70 dark:border-cyan-400/10">
+            <div><strong class="text-[#005A8D] dark:text-cyan-300">Habit:</strong> She <u>drinks</u> coffee every morning.</div>
+            <div><strong class="text-[#005A8D] dark:text-cyan-300">Fact:</strong> Water <u>boils</u> at 100 °C.</div>
+            <div><strong class="text-[#005A8D] dark:text-cyan-300">Stative:</strong> I <u>prefer</u> quiet mornings.</div>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-4 shadow-sm">
+          <div class="flex items-center justify-between">
+            <span class="px-3 py-1 rounded-full bg-[#0089A7] text-white text-xs font-extrabold tracking-wider">PRESENT CONTINUOUS</span>
+            <span class="text-xs font-bold text-[#0089A7] dark:text-cyan-300">Right Now · Temporary</span>
+          </div>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            <strong>am / is / are + verb-ing</strong> for actions happening at the moment of speaking, temporary projects/trends around now, or arranged plans.
+          </p>
+          <div class="bg-slate-50 dark:bg-[#071627] rounded-2xl p-4 text-xs space-y-1.5 border border-slate-200/70 dark:border-cyan-400/10">
+            <div><strong class="text-[#0089A7] dark:text-cyan-300">Right now:</strong> She <u>is recording</u> a voice note.</div>
+            <div><strong class="text-[#0089A7] dark:text-cyan-300">Temporary:</strong> We <u>are testing</u> a new routine this week.</div>
+            <div><strong class="text-[#0089A7] dark:text-cyan-300">Dynamic shift:</strong> I'<u>m thinking</u> about our trip today.</div>
           </div>
         </div>
       </div>
 
       <!-- Interactive Tense Switcher -->
-      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5">
+      <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 sm:p-8 space-y-5 shadow-sm">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-[#0089A7]">Interactive Contrast Lab</span>
-            <h3 class="text-xl font-extrabold text-[#002B5C] dark:text-white">Tense Switcher</h3>
+            <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Interactive Contrast Switcher</span>
+            <h3 class="text-xl font-extrabold text-[#002B5C] dark:text-white mt-0.5">Flip Between Tenses</h3>
           </div>
-          <div class="inline-flex rounded-xl bg-slate-100 dark:bg-slate-800 p-1 text-xs font-bold">
-            <button id="modeSimple" type="button" class="px-3.5 py-1.5 rounded-lg bg-[#002B5C] text-white transition">Present Simple</button>
-            <button id="modeContinuous" type="button" class="px-3.5 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 transition">Present Continuous</button>
+          <div class="inline-flex rounded-xl bg-slate-100 dark:bg-[#071627] p-1 border border-slate-200 dark:border-cyan-400/15 text-xs font-bold">
+            <button id="modeSimple" type="button" class="px-4 py-2 rounded-lg bg-[#002B5C] text-white transition">Present Simple</button>
+            <button id="modeContinuous" type="button" class="px-4 py-2 rounded-lg text-slate-600 dark:text-slate-300 transition">Present Continuous</button>
           </div>
         </div>
         <div id="switcherRows" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
       </div>
-
-      <!-- Action vs. Stative Verbs -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-white dark:bg-slate-900 border border-emerald-500/30 rounded-3xl p-6 shadow-sm">
-          <h4 class="font-extrabold text-emerald-700 dark:text-emerald-400 flex items-center gap-2 mb-2">
-            <i data-lucide="activity" class="w-4 h-4"></i>
-            <span>Dynamic / Action Verbs (Both Tenses)</span>
-          </h4>
-          <p class="text-xs text-slate-600 dark:text-slate-300 mb-3">
-            Physical or mental actions that can be repeated or paused: <em>run, cook, walk, study, travel, work</em>.
-          </p>
-          <p class="text-xs bg-emerald-500/10 text-emerald-800 dark:text-emerald-200 p-3 rounded-xl">
-            <strong>Meaning shift:</strong> <em>I <u>think</u> about grammar</em> (opinion) vs. <em>I'<u>m thinking</u> about our trip</em> (mental process right now).
-          </p>
-        </div>
-
-        <div class="bg-white dark:bg-slate-900 border border-amber-500/30 rounded-3xl p-6 shadow-sm">
-          <h4 class="font-extrabold text-amber-700 dark:text-amber-400 flex items-center gap-2 mb-2">
-            <i data-lucide="pause-circle" class="w-4 h-4"></i>
-            <span>Stative Verbs (Usually Present Simple)</span>
-          </h4>
-          <p class="text-xs text-slate-600 dark:text-slate-300 mb-3">
-            States, emotions, possession, and senses: <em>know, believe, want, need, love, hate, prefer, own, belong, seem</em>.
-          </p>
-          <p class="text-xs bg-amber-500/10 text-amber-800 dark:text-amber-200 p-3 rounded-xl">
-            <strong>Avoid:</strong> <span class="line-through">I am knowing</span> / <span class="line-through">She is wanting</span> → Use <strong>I know</strong> / <strong>She wants</strong>.
-          </p>
-        </div>
-      </div>
     </section>
 
-    <!-- ==================== TAB 3: ACTIVE VOCABULARY & CONTEXT CHALLENGE ==================== -->
-    <section id="panel-vocabulary" class="tab-panel hidden animate-fade space-y-8">
-      <div class="flex flex-wrap items-center justify-between gap-3">
+    <!-- ==================== 05: SUMMARY CLOZE ==================== -->
+    <section data-stage="4" class="lesson-stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
         <div>
-          <h2 class="text-xl font-extrabold text-[#002B5C] dark:text-white">Active Vocabulary &amp; Trap Alerts</h2>
-          <p class="text-sm text-slate-500 dark:text-slate-400">Test recall before revealing definitions, listen to pronunciation, and spot common traps.</p>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 05</span>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Contrast Summary</h2>
         </div>
-        <div id="vocabFilters" class="flex flex-wrap gap-1.5"></div>
+        <p class="text-sm text-slate-500 dark:text-slate-400">Tap a blank slot, pick a word from the bank, and check your summary.</p>
       </div>
-      <div id="vocabGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
 
-      <!-- Mini Context Pick Challenge -->
-      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm space-y-4">
-        <div class="flex items-center justify-between gap-2">
-          <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-[#0089A7]">Quick Recall</span>
-            <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white">Pick the Right Expression in Context</h3>
-          </div>
-          <span id="vocabQuizScore" class="text-xs font-bold px-3 py-1 rounded-full bg-[#F0F6FA] dark:bg-slate-800 text-[#005A8D] dark:text-cyan-300">0 / 4</span>
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 shadow-sm">
+        <div class="lg:col-span-4 h-64 lg:h-auto bg-[#091726]">
+          <img
+            src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=850&q=80"
+            alt="Study notes and notebook"
+            class="w-full h-full object-cover"
+          />
         </div>
-        <div id="vocabQuizList" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+        <div class="lg:col-span-8 p-6 sm:p-8 space-y-6">
+          <div class="flex flex-wrap gap-2" id="clozeChips"></div>
+          <p class="text-slate-700 dark:text-slate-200 text-sm sm:text-base leading-loose" id="clozeText"></p>
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <button type="button" onclick="checkCloze()" class="px-5 py-2.5 rounded-xl bg-[#002B5C] hover:bg-[#005A8D] text-white text-xs font-bold transition">
+              Check Summary
+            </button>
+            <button type="button" onclick="resetCloze()" class="px-4 py-2.5 rounded-xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-semibold transition">
+              Clear
+            </button>
+            <span id="clozeMsg" class="text-xs font-bold"></span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- ==================== TAB 4: INTERACTIVE PRACTICE ==================== -->
-    <section id="panel-practice" class="tab-panel hidden animate-fade space-y-6">
-      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div class="flex-1">
-          <div class="flex justify-between text-xs font-bold mb-1.5">
-            <span class="text-[#002B5C] dark:text-cyan-300">Completion Progress</span>
-            <span id="progressLabel">0 / 10 answered</span>
-          </div>
-          <div class="w-full h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
-            <div id="progressBar" class="h-full bg-gradient-to-r from-[#005A8D] to-[#0089A7] w-0 transition-all duration-300"></div>
-          </div>
-        </div>
-        <div class="flex items-center gap-2">
-          <button id="btnCheckAll" type="button" class="px-4 py-2 rounded-xl bg-[#002B5C] hover:bg-[#005A8D] text-white text-xs font-bold transition">
-            Check Answers
-          </button>
-          <button id="btnToggleKey" type="button" class="px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-xs font-semibold transition">
-            Answer Key
-          </button>
-        </div>
-      </div>
-
-      <div id="scoreBanner" class="hidden rounded-2xl p-4 font-bold text-sm border"></div>
-      <div id="exercisesContainer" class="space-y-4"></div>
-      <div id="answerKeyBox" class="hidden bg-[#F0F6FA] dark:bg-slate-900 border border-[#0089A7]/30 rounded-2xl p-5 text-xs space-y-1.5"></div>
-    </section>
-
-    <!-- ==================== TAB 5: LIVE LAB (SPOT THE TRAP + RAPID DECISIONS) ==================== -->
-    <section id="panel-challenges" class="tab-panel hidden animate-fade space-y-8">
-      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm space-y-4">
-        <div class="flex items-center justify-between gap-2">
-          <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-[#0089A7]">Error Hunting</span>
-            <h2 class="text-xl font-extrabold text-[#002B5C] dark:text-white">Spot the Trap</h2>
-          </div>
-          <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">Tap a sentence to inspect the fix</span>
-        </div>
-        <div id="trapList" class="space-y-3"></div>
-      </div>
-
-      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm space-y-4">
+    <!-- ==================== 06: PRACTICE PACK (8 MCQs + 4 SCRAMBLES + 4 ODD ONE OUT + 4 REWRITES) ==================== -->
+    <section data-stage="5" class="lesson-stage hidden stage-anim space-y-10">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
         <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-[#005A8D] dark:text-cyan-300">Quick Situations</span>
-          <h2 class="text-xl font-extrabold text-[#002B5C] dark:text-white">Rapid-Fire Decisions</h2>
-          <p class="text-xs text-slate-500 dark:text-slate-400">Pick the natural tense for each situation and explain it out loud or in a voice note.</p>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 06 · Class &amp; Homework Pack</span>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Practice</h2>
         </div>
-        <div id="rapidList" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+        <p class="text-sm text-slate-500 dark:text-slate-400">Four complete sets for live class practice or assigning as homework.</p>
+      </div>
+
+      <!-- Set 1: 8 Multiple-Choice Contrast Questions -->
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#005A8D] dark:text-cyan-300">Set 1 · Choose the Right Tense (8 Items)</h3>
+          <span id="practiceResult" class="text-xs sm:text-sm font-extrabold text-[#005A8D] dark:text-cyan-300"></span>
+        </div>
+        <div id="practiceGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+        <button type="button" onclick="checkPractice()" class="px-5 py-2.5 rounded-xl bg-[#002B5C] hover:bg-[#005A8D] text-white text-xs font-bold transition">
+          Check Set 1
+        </button>
+      </div>
+
+      <!-- Set 2: 4 Sentence Scrambles -->
+      <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-4 shadow-sm">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Set 2 · Word Order Scramble (4 Sentences)</span>
+            <h3 id="scrambleTitle" class="text-lg font-extrabold text-[#002B5C] dark:text-white mt-0.5"></h3>
+          </div>
+          <div class="flex items-center gap-2">
+            <button type="button" onclick="resetScramble()" class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-cyan-400/20 text-xs font-semibold hover:bg-slate-100 dark:hover:bg-[#132C4A]">Clear</button>
+            <button type="button" onclick="nextScramble()" class="px-3.5 py-1.5 rounded-lg bg-[#005A8D] text-white text-xs font-bold hover:bg-[#0089A7] transition">Next Sentence</button>
+          </div>
+        </div>
+
+        <div id="scrambleTray" class="min-h-[54px] p-3.5 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-dashed border-[#0089A7]/50 flex flex-wrap gap-2 items-center"></div>
+        <div id="scrambleBank" class="flex flex-wrap gap-2"></div>
+        <div id="scrambleFeedback" class="text-xs font-bold"></div>
+      </div>
+
+      <!-- Set 3: 4 Odd One Out Groups -->
+      <div class="space-y-4">
+        <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#005A8D] dark:text-cyan-300">Set 3 · Odd One Out (4 Groups)</h3>
+        <div id="oddGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+      </div>
+
+      <!-- Set 4: 4 Spot & Fix / Homework Writing Prompts -->
+      <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-4 shadow-sm">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Set 4 · Fix the Trap &amp; Write (Homework Ready)</span>
+            <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white mt-0.5">Correct Each Sentence &amp; Add Your Own Example</h3>
+          </div>
+          <button type="button" onclick="toggleFixKey()" class="px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-bold text-[#005A8D] dark:text-cyan-300">
+            Show / Hide Corrections
+          </button>
+        </div>
+        <div id="fixHomeworkList" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 07: SPEAKING GAME (4 CARDS PER MODE) ==================== -->
+    <section data-stage="6" class="lesson-stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 07 · Live Class Game</span>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Tense Showdown</h2>
+        </div>
+        <p class="text-sm text-slate-500 dark:text-slate-400">4 cards per mode for lively speaking rounds with your teacher.</p>
+      </div>
+
+      <div class="flex flex-wrap gap-2" id="gameModeTabs"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 shadow-lg">
+        <div id="gamePhotoBox" class="lg:col-span-5 h-64 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+
+        <div class="lg:col-span-7 p-6 sm:p-10 flex flex-col justify-between space-y-6">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between gap-2">
+              <span id="gameModeBadge" class="px-3 py-1 rounded-full bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300 text-xs font-extrabold uppercase tracking-wider"></span>
+              <span id="gameCardCounter" class="text-xs font-bold text-slate-400">Card 1 / 4</span>
+            </div>
+
+            <h3 id="gamePromptTitle" class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+            <p id="gameRuleText" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+
+            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/15 space-y-1.5">
+              <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#0089A7]">Teacher Follow-Up Prompt</span>
+              <p id="gameFollowUp" class="text-sm font-semibold text-slate-800 dark:text-slate-100"></p>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-100 dark:border-cyan-400/15">
+            <button
+              type="button"
+              onclick="nextGameCard()"
+              class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-gradient-to-r from-[#002B5C] to-[#005A8D] hover:from-[#005A8D] hover:to-[#0089A7] text-white text-xs sm:text-sm font-bold transition"
+            >
+              <i data-lucide="dices" class="w-4 h-4"></i>
+              <span>Draw Next Card</span>
+            </button>
+
+            <button
+              type="button"
+              onclick="revealBluffVote()"
+              class="inline-flex items-center gap-2 px-4 py-3 rounded-2xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-bold transition"
+            >
+              <i data-lucide="sparkles" class="w-4 h-4 text-[#0089A7]"></i>
+              <span>Bonus Twist</span>
+            </button>
+          </div>
+
+          <div id="gameTwistBox" class="hidden text-xs font-semibold px-4 py-3 rounded-xl bg-amber-500/15 text-amber-800 dark:text-amber-200 border border-amber-500/30"></div>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-5 px-4 text-center text-xs text-slate-500 dark:text-slate-400">
-    <strong>PROVO</strong> • Present Simple vs. Present Continuous
+  <!-- Editorial Bottom Stage Bar -->
+  <footer class="border-t border-slate-200 dark:border-cyan-400/15 bg-white dark:bg-[#061322] py-4 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      <button id="btnPrev" type="button" onclick="goStage(currentStage - 1)" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] disabled:opacity-30 text-xs font-bold transition">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Previous</span>
+      </button>
+
+      <span id="stageCounter" class="text-xs font-extrabold tracking-widest uppercase text-slate-500 dark:text-slate-400">
+        01 / 07
+      </span>
+
+      <button id="btnNext" type="button" onclick="goStage(currentStage + 1)" class="inline-flex items-center gap-2 px-5 py-2 rounded-xl bg-[#002B5C] hover:bg-[#005A8D] disabled:opacity-30 text-xs font-bold text-white transition">
+        <span>Next Stage</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+    </div>
   </footer>
 
   <script>
-    // Google Apps Script endpoint for saving student voice notes to Google Drive
     const DRIVE_UPLOAD_URL = "https://script.google.com/macros/s/AKfycbwBcX7Z4aABKplkUkpYvM2wEnsBHhWCZzi7dFGDkeUarkXwv-RRI0JXAPDakjkrCrBc/exec";
 
-    // ==================== LESSON DATA ====================
-    const QUESTIONS = [
-      {
-        q: "What do you usually do on weekday mornings, and what are you doing right now?",
-        tag: "Daily Habit vs. Right Now",
-        context: "Routine + Present Moment",
-        hint: "Contrast a regular routine with your current moment.",
-        photo: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=75",
-        photoAlt: "Morning coffee cup on a table",
-        starters: [
-          "On weekday mornings I usually..., whereas right now I'm...",
-          "Every morning I..., and at this exact moment I'm..."
-        ]
-      },
-      {
-        q: "Are you working on or learning anything temporary this month that isn't part of your normal routine?",
-        tag: "Temporary Project",
-        context: "Around Now / Short-Term",
-        hint: "Think of a short-term course, project, or new habit.",
-        photo: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=900&q=75",
-        photoAlt: "Notebook and pen on a desk",
-        starters: [
-          "This month I'm focusing on..., even though normally I...",
-          "At the moment I'm trying to..., which is new for me."
-        ]
-      },
-      {
-        q: "How often do you check your messages, and are you waiting for an important reply today?",
-        tag: "Frequency vs. Today",
-        context: "Frequency + Today",
-        hint: "Use a frequency adverb plus a 'today' example.",
-        photo: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=75",
-        photoAlt: "Smartphone held in hand",
-        starters: [
-          "I normally check my messages..., and today I'm...",
-          "I hardly ever..., but today I'm expecting..."
-        ]
-      },
-      {
-        q: "What kind of food do you eat most days, and what are you craving right now?",
-        tag: "Diet vs. Craving",
-        context: "Habit + Stative / Desire",
-        hint: "Remember 'want' or 'crave' in their state sense use Present Simple.",
-        photo: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=75",
-        photoAlt: "Fresh food bowl on a table",
-        starters: [
-          "Most days I eat..., and right now I really want...",
-          "I tend to have..., though at the moment I feel like..."
-        ]
-      },
-      {
-        q: "Does your city or neighborhood seem to be changing lately? Give an example.",
-        tag: "Changing Situations",
-        context: "Ongoing Trend",
-        hint: "Present Continuous describes ongoing changes.",
-        photo: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=900&q=75",
-        photoAlt: "City street and buildings",
-        starters: [
-          "In my area, more people are... lately.",
-          "Things are changing around here because..."
-        ]
-      },
-      {
-        q: "What do you do to relax after a busy day, and what are you planning to do this evening?",
-        tag: "Routine vs. Evening Plan",
-        context: "Habit + Arrangement",
-        hint: "Combine a habit with a definite arrangement.",
-        photo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=75",
-        photoAlt: "Calm sunset view",
-        starters: [
-          "To unwind, I usually..., and tonight I'm...",
-          "After a long day I often..., and this evening I'm meeting..."
-        ]
-      },
-      {
-        q: "Which household task do you do regularly, and who is doing chores around your home today?",
-        tag: "Chores & Today",
-        context: "Routine + Today's Action",
-        hint: "Practice third-person singular or continuous forms.",
-        photo: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=75",
-        photoAlt: "Tidying and cleaning at home",
-        starters: [
-          "I regularly... around the house, and today...",
-          "Nobody usually..., except today when..."
-        ]
-      },
-      {
-        q: "Do you prefer studying or working in the morning or at night? Why?",
-        tag: "Preference (Stative)",
-        context: "Stative Verb Focus",
-        hint: "Use 'prefer' in the Present Simple.",
-        photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=900&q=75",
-        photoAlt: "Laptop and study workspace",
-        starters: [
-          "I definitely prefer... because I concentrate better when...",
-          "I'm not a morning person, so I prefer..."
-        ]
-      },
-      {
-        q: "What are people around you doing right now, and how do they usually spend their free time?",
-        tag: "Others Now vs. Usually",
-        context: "Observing Around You",
-        hint: "Contrast someone's current action with their usual habit.",
-        photo: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=75",
-        photoAlt: "Friends spending time together",
-        starters: [
-          "Right now, ... is/are ..., while usually they...",
-          "At this moment, my family/colleagues are..."
-        ]
-      },
-      {
-        q: "What is one grammar rule in English that still confuses you, and how are you practicing it?",
-        tag: "Challenge vs. Current Effort",
-        context: "Learning Process",
-        hint: "Connect a persistent challenge with current practice.",
-        photo: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=900&q=75",
-        photoAlt: "Writing notes while studying",
-        starters: [
-          "I sometimes confuse... with..., so right now I'm...",
-          "It still trips me up when..., which is why I'm..."
-        ]
-      }
+    const STAGES = [
+      "01 · Overview",
+      "02 · Visual Warm-Up",
+      "03 · Vocabulary",
+      "04 · Grammar Contrast",
+      "05 · Summary",
+      "06 · Practice Pack",
+      "07 · Tense Showdown"
     ];
 
-    const SWITCHER_ITEMS = [
-      {
-        simple: "She <strong>lives</strong> in Manresa.",
-        continuous: "She <strong>is living</strong> in Barcelona this month.",
-        simpleNote: "Permanent or long-term home base.",
-        contNote: "Temporary stay for a limited period."
-      },
-      {
-        simple: "I <strong>cook</strong> dinner at home.",
-        continuous: "I <strong>am cooking</strong> dinner right now.",
-        simpleNote: "General habit / usual activity.",
-        contNote: "Action in progress at this moment."
-      },
-      {
-        simple: "They <strong>travel</strong> abroad twice a year.",
-        continuous: "They <strong>are traveling</strong> to Italy next week.",
-        simpleNote: "Repeated yearly pattern.",
-        contNote: "Arranged near-future plan."
-      },
-      {
-        simple: "He <strong>thinks</strong> this course is practical.",
-        continuous: "He <strong>is thinking</strong> about joining the evening group.",
-        simpleNote: "Stative verb: personal opinion.",
-        contNote: "Dynamic verb: actively considering."
-      },
-      {
-        simple: "We <strong>have</strong> a small garden.",
-        continuous: "We <strong>are having</strong> lunch on the terrace.",
-        simpleNote: "Stative meaning: possession.",
-        contNote: "Dynamic meaning: experiencing a meal."
-      }
-    ];
+    let currentStage = 0;
+    const stageSections = document.querySelectorAll('.lesson-stage');
+    const stagePills = document.getElementById('stagePills');
+    const progressLine = document.getElementById('progressLine');
+    const headerStageLabel = document.getElementById('headerStageLabel');
+    const stageCounter = document.getElementById('stageCounter');
+    const btnPrev = document.getElementById('btnPrev');
+    const btnNext = document.getElementById('btnNext');
 
-    const VOCABULARY = [
-      { term: "every other day", pos: "time phrase", cat: "Frequency", def: "Once every two days (e.g., Monday, Wednesday, Friday).", ex: "I go for a long walk every other day.", trap: "Not 'each two days'." },
-      { term: "nowadays", pos: "adverb", cat: "Temporary", def: "At the present time, in contrast to the past.", ex: "More people work remotely nowadays.", trap: "False friend alert: 'actually' = en realidad, not 'actualmente'." },
-      { term: "at the moment", pos: "phrase", cat: "Right Now", def: "Right now or during this current period.", ex: "She is helping a student at the moment.", trap: "Pairs naturally with Present Continuous." },
-      { term: "cut down on", pos: "phrasal verb", cat: "Temporary", def: "Reduce the amount or frequency of something.", ex: "I'm cutting down on sugar this month.", trap: "Don't drop 'on' before the object." },
-      { term: "take for granted", pos: "idiom", cat: "Stative", def: "Fail to appreciate something because it feels constant.", ex: "We shouldn't take good health for granted.", trap: "Keep 'granted'—not 'grand'." },
-      { term: "on a regular basis", pos: "phrase", cat: "Frequency", def: "Repeatedly at steady intervals.", ex: "We review speaking strategies on a regular basis.", trap: "Natural alternative to 'regularly'." },
-      { term: "currently", pos: "adverb", cat: "Temporary", def: "At this exact time or period.", ex: "He is currently preparing for his exam.", trap: "Often paired with Present Continuous." },
-      { term: "keep up with", pos: "phrasal verb", cat: "Temporary", def: "Stay informed or match the pace of something.", ex: "It's tough to keep up with every new app.", trap: "Keep 'with' at the end." },
-      { term: "belong to", pos: "verb phrase", cat: "Stative", def: "Be the property of someone (not used in continuous).", ex: "This notebook belongs to PROVO.", trap: "Avoid 'is belonging to'." },
-      { term: "hardly ever", pos: "adverb phrase", cat: "Frequency", def: "Almost never; very rarely.", ex: "I hardly ever skip my morning routine.", trap: "Already negative—do not add 'not'." },
-      { term: "for the time being", pos: "phrase", cat: "Temporary", def: "For now, until something changes.", ex: "We'll use this room for the time being.", trap: "Signals a temporary arrangement." },
-      { term: "figure out", pos: "phrasal verb", cat: "Temporary", def: "Find the answer or solve a problem.", ex: "I'm figuring out how to organize my schedule.", trap: "Can separate: 'figure it out'." }
-    ];
+    function goStage(idx) {
+      if (idx < 0 || idx >= stageSections.length) return;
+      currentStage = idx;
+      stageSections.forEach((sec, i) => sec.classList.toggle('hidden', i !== currentStage));
+      headerStageLabel.textContent = STAGES[currentStage];
+      stageCounter.textContent = `${String(currentStage + 1).padStart(2, '0')} / ${String(stageSections.length).padStart(2, '0')}`;
+      progressLine.style.width = `${((currentStage + 1) / stageSections.length) * 100}%`;
+      btnPrev.disabled = currentStage === 0;
+      btnNext.disabled = currentStage === stageSections.length - 1;
+      renderStagePills();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      lucide.createIcons();
+    }
 
-    const VOCAB_QUIZ = [
-      {
-        sentence: "I'm trying to ___ my screen time this week.",
-        options: ["cut down on", "belong to", "hardly ever"],
-        answer: "cut down on"
-      },
-      {
-        sentence: "She ___ watches television on weekdays—maybe once a month.",
-        options: ["currently", "hardly ever", "for the time being"],
-        answer: "hardly ever"
-      },
-      {
-        sentence: "That tablet doesn't ___ me; it's my sister's.",
-        options: ["keep up with", "belong to", "every other day"],
-        answer: "belong to"
-      },
-      {
-        sentence: "We are meeting in the smaller room ___ while ours is painted.",
-        options: ["for the time being", "on a regular basis", "every other day"],
-        answer: "for the time being"
-      }
-    ];
+    function renderStagePills() {
+      stagePills.innerHTML = STAGES.map((_, i) => `
+        <button
+          type="button"
+          onclick="goStage(${i})"
+          class="px-2.5 py-1 rounded-lg text-[11px] font-bold transition ${
+            i === currentStage
+              ? 'bg-white text-[#002B5C]'
+              : 'text-white/75 hover:text-white hover:bg-white/10'
+          }"
+        >${String(i + 1).padStart(2, '0')}</button>
+      `).join('');
+    }
 
-    const EXERCISES = [
-      { id: 1, prompt: "1. Right now, Liam ___ (read) his notes before class.", ans: ["is reading", "'s reading"], hint: "Action happening at the moment of speaking." },
-      { id: 2, prompt: "2. My sister usually ___ (drink) coffee, not tea.", ans: ["drinks"], hint: "Repeated habit with third-person singular." },
-      { id: 3, prompt: "3. Look! The train ___ (arrive) at platform 2.", ans: ["is arriving", "'s arriving"], hint: "Use 'Look!' as a clue for right now." },
-      { id: 4, prompt: "4. I ___ (not / understand) what you mean by that.", ans: ["don't understand", "do not understand"], hint: "'Understand' is a stative verb." },
-      { id: 5, prompt: "5. This week we ___ (test) a new speaking activity.", ans: ["are testing", "'re testing"], hint: "Temporary situation around now." },
-      { id: 6, prompt: "6. ___ your brother ___ (play) an instrument?", ans: ["does play"], hint: "Question in Present Simple (write: does play).", checkCustom: v => /^does\s+.*\bplay\b/i.test(v.trim()) || v.trim().toLowerCase() === "does play" },
-      { id: 7, prompt: "7. We ___ (meet) our tutor tomorrow afternoon.", ans: ["are meeting", "'re meeting"], hint: "Definite arrangement." },
-      { id: 8, prompt: "8. She ___ (own) a small acoustic guitar.", ans: ["owns"], hint: "'Own' expresses possession (stative)." },
-      { id: 9, prompt: "9. Why ___ you ___ (wear) a coat indoors?", ans: ["are wearing"], hint: "Write: are wearing", checkCustom: v => /^are\b.*\bwearing\b/i.test(v.trim()) },
-      { id: 10, prompt: "10. They ___ (go) to the mountains every weekend.", ans: ["go"], hint: "Regular habit with 'they'." }
-    ];
-
-    const TRAPS = [
-      {
-        wrong: "She is having two brothers.",
-        fix: "She <strong>has</strong> two brothers.",
-        why: "'Have' meaning possession is stative—use Present Simple."
-      },
-      {
-        wrong: "I am knowing the answer to that question.",
-        fix: "I <strong>know</strong> the answer to that question.",
-        why: "'Know' describes a mental state, not an action in progress."
-      },
-      {
-        wrong: "Every Tuesday I am going to my English class.",
-        fix: "Every Tuesday I <strong>go</strong> to my English class.",
-        why: "Regular weekly routines take Present Simple."
-      },
-      {
-        wrong: "Be quiet! The baby sleeps right now.",
-        fix: "Be quiet! The baby <strong>is sleeping</strong> right now.",
-        why: "'Right now' after an alert signals an action in progress."
-      }
-    ];
-
-    const RAPID_CARDS = [
-      {
-        situation: "Your phone rings while you are cooking pasta.",
-        options: ["Present Continuous", "Present Simple"],
-        best: "Present Continuous",
-        note: "Explain what you are doing at that exact moment."
-      },
-      {
-        situation: "You talk about how often you go for a walk on weekends.",
-        options: ["Present Simple", "Present Continuous"],
-        best: "Present Simple",
-        note: "Describe a repeated weekend habit."
-      },
-      {
-        situation: "You are staying at a friend's place for three days while your flat is painted.",
-        options: ["Present Continuous", "Present Simple"],
-        best: "Present Continuous",
-        note: "Highlight the temporary situation around now."
-      },
-      {
-        situation: "You state what you like or dislike about mornings.",
-        options: ["Present Simple", "Present Continuous"],
-        best: "Present Simple",
-        note: "'Like' and 'prefer' are stative verbs."
-      }
-    ];
-
-    // ==================== THEME & TABS ====================
+    // Theme Toggle (Light vs. Deep Navy Dark)
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
-    if (localStorage.getItem('provoTheme') === 'dark') {
-      document.documentElement.classList.add('dark');
-      themeIcon.setAttribute('data-lucide', 'sun');
+    if (localStorage.getItem('provoNavyTheme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      themeIcon.setAttribute('data-lucide', 'moon');
     }
     themeToggle.addEventListener('click', () => {
       const isDark = document.documentElement.classList.toggle('dark');
-      localStorage.setItem('provoTheme', isDark ? 'dark' : 'light');
+      localStorage.setItem('provoNavyTheme', isDark ? 'dark' : 'light');
       themeIcon.setAttribute('data-lucide', isDark ? 'sun' : 'moon');
       lucide.createIcons();
     });
 
-    const navTabs = document.querySelectorAll('.nav-tab');
-    const panels = document.querySelectorAll('.tab-panel');
-    navTabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const target = tab.dataset.tab;
-        navTabs.forEach(t => {
-          t.classList.remove('bg-white', 'text-[#002B5C]');
-          t.classList.add('text-white/85', 'hover:text-white', 'hover:bg-white/10');
-        });
-        tab.classList.add('bg-white', 'text-[#002B5C]');
-        tab.classList.remove('text-white/85', 'hover:text-white', 'hover:bg-white/10');
-
-        panels.forEach(p => p.classList.add('hidden'));
-        document.getElementById(`panel-${target}`).classList.remove('hidden');
-        lucide.createIcons();
-      });
-    });
-
-    // ==================== WARM-UP STAGE ====================
-    let qIndex = 0;
-    const questionScene = document.getElementById('questionScene');
-    const questionText = document.getElementById('questionText');
-    const questionHint = document.getElementById('questionHint');
-    const qContextBadge = document.getElementById('qContextBadge');
-    const qBadge = document.getElementById('qBadge');
-    const qFocusTag = document.getElementById('qFocusTag');
-    const startersList = document.getElementById('startersList');
-    const startersBox = document.getElementById('startersBox');
-    const questionPills = document.getElementById('questionPills');
-
-    function showSceneFallback(idx) {
-      questionScene.innerHTML = `
-        <div class="w-full h-full flex flex-col items-center justify-center bg-[#F0F6FA] dark:bg-slate-800 text-[#002B5C] dark:text-cyan-200 px-4 text-center">
-          <i data-lucide="image" class="w-7 h-7 text-[#0089A7] mb-1.5"></i>
-          <span class="text-xs font-bold uppercase tracking-wider">Prompt #${idx + 1} Scene</span>
-        </div>
-      `;
-      lucide.createIcons();
-    }
-
-    function renderQuestion(idx) {
-      qIndex = (idx + QUESTIONS.length) % QUESTIONS.length;
-      const item = QUESTIONS[qIndex];
-      qBadge.textContent = `Q${qIndex + 1} / ${QUESTIONS.length}`;
-      qFocusTag.textContent = item.tag;
-      qContextBadge.textContent = item.context;
-      questionText.textContent = item.q;
-      questionHint.textContent = item.hint;
-      startersList.innerHTML = item.starters.map(s => `<li>${s}</li>`).join('');
-      startersBox.classList.add('hidden');
-
-      questionScene.innerHTML = `<img src="${item.photo}" alt="${item.photoAlt}" class="w-full h-full object-cover" loading="lazy" />`;
-      const img = questionScene.querySelector('img');
+    function mountPhoto(container, url, altText, fallbackTitle) {
+      container.innerHTML = `<img src="${url}" alt="${altText}" class="w-full h-full object-cover" loading="lazy" />`;
+      const img = container.querySelector('img');
       if (img) {
-        img.addEventListener('error', () => showSceneFallback(qIndex), { once: true });
+        img.addEventListener('error', () => {
+          container.innerHTML = `
+            <div class="w-full h-full flex flex-col items-center justify-center bg-[#002B5C] text-white p-6 text-center">
+              <i data-lucide="image" class="w-8 h-8 text-cyan-300 mb-2"></i>
+              <span class="text-xs font-extrabold uppercase tracking-widest">${fallbackTitle}</span>
+            </div>
+          `;
+          lucide.createIcons();
+        }, { once: true });
       }
-
-      renderPills();
-      lucide.createIcons();
     }
 
-    function renderPills() {
-      questionPills.innerHTML = QUESTIONS.map((_, i) => `
-        <button type="button" onclick="renderQuestion(${i})" class="w-8 h-8 rounded-lg text-xs font-bold transition ${
-          i === qIndex
+    function speakPhrase(text) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'en-US';
+      window.speechSynthesis.speak(u);
+    }
+
+    // 02: 12 Visual Question Cards + Fullscreen Toggle
+    const WARMUP_CARDS = [
+      {
+        tag: "Habit vs. Right Now",
+        angle: "Daily Routine + Present Moment",
+        q: "What do you usually do on weekday mornings, and what are you doing right now?",
+        follow: "Contrast a repeated morning habit with your exact activity at this moment.",
+        photo: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=950&q=80",
+        starters: ["I usually drink... before 9 AM, and right now I'm...", "Every morning I..., whereas at this moment I'm..."]
+      },
+      {
+        tag: "Temporary Detour",
+        angle: "Normal Pattern vs. This Week",
+        q: "What is something you are doing differently this week because a normal routine is interrupted?",
+        follow: "Explain what usually happens vs. what is happening temporarily.",
+        photo: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=950&q=80",
+        starters: ["Normally I take..., but this week I'm...", "I usually..., though right now I'm..."]
+      },
+      {
+        tag: "Plot Twist Scenario",
+        angle: "Imagined Contrast",
+        q: "Imagine your alarm doesn't ring tomorrow morning: what usually happens when you wake up late, and what are you doing right now instead?",
+        follow: "Mix habits with what is happening in front of you right now.",
+        photo: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=950&q=80",
+        starters: ["When I wake up late, I usually..., and right now I'm...", "Normally I rush to..., while right now I'm..."]
+      },
+      {
+        tag: "Stative vs. Dynamic",
+        angle: "Opinion vs. Active Thought",
+        q: "What do you think about learning languages online, and what are you thinking about for the rest of today?",
+        follow: "Notice how 'think' shifts from an opinion to an active process.",
+        photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=950&q=80",
+        starters: ["I think online lessons are... because..., and right now I'm thinking about..."]
+      },
+      {
+        tag: "Kitchen & Cravings",
+        angle: "Regular Diet vs. Right Now",
+        q: "What kind of food do you cook or eat most days, and what are you preparing or craving right now?",
+        follow: "Use Present Simple for habits/preferences and Continuous for actions/cravings in progress.",
+        photo: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=950&q=80",
+        starters: ["Most days I eat..., and right now I'm craving...", "I usually cook..., though today I'm making..."]
+      },
+      {
+        tag: "Someone Else's Day",
+        angle: "Third-Person Habit vs. Today",
+        q: "What does a friend or family member do every week, and what are they probably doing right now?",
+        follow: "Remember third-person -s/-es in Present Simple.",
+        photo: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=950&q=80",
+        starters: ["Every week my friend..., and right now she/he is probably..."]
+      },
+      {
+        tag: "Digital Habits",
+        angle: "Screen Routine vs. Today",
+        q: "How often do you check your messages, and are you waiting for an important reply today?",
+        follow: "Pair a frequency phrase with a current situation.",
+        photo: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=950&q=80",
+        starters: ["I check my phone..., and today I'm waiting for..."]
+      },
+      {
+        tag: "Changing Trends",
+        angle: "Ongoing Change Around You",
+        q: "What is changing in your city, workplace, or daily life lately, compared to how things normally are?",
+        follow: "Use Present Continuous to describe trends in progress.",
+        photo: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=950&q=80",
+        starters: ["Lately, more people around here are...", "Things are changing because..."]
+      },
+      {
+        tag: "Outdoors & Weather",
+        angle: "Weekend Habit vs. Live Weather",
+        q: "Where do you usually go when you want fresh air, and what is the weather doing outside right now?",
+        follow: "Contrast a regular spot with today's weather/activity.",
+        photo: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=950&q=80",
+        starters: ["I usually head to..., and outside right now it is..."]
+      },
+      {
+        tag: "Music & Focus",
+        angle: "Listening Habit vs. Today",
+        q: "Do you usually listen to music or silence when you work or study, and are you listening to anything today?",
+        follow: "Answer both parts clearly.",
+        photo: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=950&q=80",
+        starters: ["I usually prefer..., and today I'm listening to..."]
+      },
+      {
+        tag: "Books & Stories",
+        angle: "Reading Habit vs. Current Read",
+        q: "How often do you read, and what book, article, or series are you following at the moment?",
+        follow: "Use Present Continuous for what you are currently in the middle of.",
+        photo: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=950&q=80",
+        starters: ["I read..., and at the moment I'm reading/watching..."]
+      },
+      {
+        tag: "Evening Reset",
+        angle: "Night Routine vs. Tonight",
+        q: "How do you normally wind down in the evening, and what are you planning to do tonight?",
+        follow: "Contrast a typical night with tonight's plan.",
+        photo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=950&q=80",
+        starters: ["Normally in the evening I..., and tonight I'm..."]
+      }
+    ];
+
+    let qIdx = 0;
+    let isFullscreenCard = false;
+
+    function renderWarmupCard(idx) {
+      qIdx = (idx + WARMUP_CARDS.length) % WARMUP_CARDS.length;
+      const card = WARMUP_CARDS[qIdx];
+      document.getElementById('qBadge').textContent = `Q${qIdx + 1} / ${WARMUP_CARDS.length}`;
+      document.getElementById('qTag').textContent = card.tag;
+      document.getElementById('qAngleBadge').textContent = card.angle;
+      document.getElementById('questionText').textContent = card.q;
+      document.getElementById('questionFollow').textContent = card.follow;
+      document.getElementById('startersList').innerHTML = card.starters.map(s => `<li>${s}</li>`).join('');
+      document.getElementById('startersBox').classList.add('hidden');
+      mountPhoto(document.getElementById('questionPhotoBox'), card.photo, card.tag, card.tag);
+
+      document.getElementById('questionNumberPills').innerHTML = WARMUP_CARDS.map((_, i) => `
+        <button type="button" onclick="renderWarmupCard(${i})" class="w-8 h-8 rounded-lg text-xs font-extrabold transition ${
+          i === qIdx
             ? 'bg-[#002B5C] text-white'
-            : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:border-[#0089A7]'
+            : 'bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/15 text-slate-600 dark:text-slate-300 hover:border-[#0089A7]'
         }">${i + 1}</button>
       `).join('');
     }
 
-    document.getElementById('prevQ').addEventListener('click', () => renderQuestion(qIndex - 1));
-    document.getElementById('nextQ').addEventListener('click', () => renderQuestion(qIndex + 1));
-    document.getElementById('shuffleQ').addEventListener('click', () => {
-      let next = Math.floor(Math.random() * QUESTIONS.length);
-      if (next === qIndex && QUESTIONS.length > 1) next = (next + 1) % QUESTIONS.length;
-      renderQuestion(next);
-    });
-    document.getElementById('toggleStarters').addEventListener('click', () => {
-      startersBox.classList.toggle('hidden');
+    document.getElementById('toggleFullscreenCard').addEventListener('click', () => {
+      isFullscreenCard = !isFullscreenCard;
+      const cardCol = document.getElementById('warmupCardCol');
+      const recCol = document.getElementById('warmupRecorderCol');
+      const label = document.getElementById('fullscreenLabel');
+      const icon = document.getElementById('fullscreenIcon');
+
+      if (isFullscreenCard) {
+        cardCol.classList.remove('lg:col-span-7');
+        cardCol.classList.add('lg:col-span-12');
+        recCol.classList.add('hidden');
+        label.textContent = 'Exit Fullscreen';
+        icon.setAttribute('data-lucide', 'minimize-2');
+      } else {
+        cardCol.classList.remove('lg:col-span-12');
+        cardCol.classList.add('lg:col-span-7');
+        recCol.classList.remove('hidden');
+        label.textContent = 'Fullscreen Card';
+        icon.setAttribute('data-lucide', 'maximize-2');
+      }
+      lucide.createIcons();
     });
 
-    // ==================== VOICE RECORDER & DRIVE UPLOAD ====================
+    document.getElementById('prevQ').addEventListener('click', () => renderWarmupCard(qIdx - 1));
+    document.getElementById('nextQ').addEventListener('click', () => renderWarmupCard(qIdx + 1));
+    document.getElementById('shuffleQ').addEventListener('click', () => {
+      let next = Math.floor(Math.random() * WARMUP_CARDS.length);
+      if (next === qIdx && WARMUP_CARDS.length > 1) next = (next + 1) % WARMUP_CARDS.length;
+      renderWarmupCard(next);
+    });
+    document.getElementById('toggleStarters').addEventListener('click', () => {
+      document.getElementById('startersBox').classList.toggle('hidden');
+    });
+
+    // 03: Vocabulary (All Grid / One by One + Production Lab)
+    const VOCAB_ITEMS = [
+      {
+        phrase: "on a regular basis",
+        tag: "Present Simple · Habit",
+        def: "Repeatedly at steady, predictable intervals.",
+        ex: "We review new vocabulary on a regular basis.",
+        photo: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=800&q=75"
+      },
+      {
+        phrase: "at the moment",
+        tag: "Present Continuous · Now",
+        def: "Right now or during this current period.",
+        ex: "She is helping a student at the moment.",
+        photo: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=75"
+      },
+      {
+        phrase: "cut down on",
+        tag: "Temporary · Change",
+        def: "Reduce the amount or frequency of something.",
+        ex: "I'm cutting down on screen time late at night.",
+        photo: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=75"
+      },
+      {
+        phrase: "hardly ever",
+        tag: "Present Simple · Rare",
+        def: "Almost never; very rarely.",
+        ex: "He hardly ever skips breakfast on workdays.",
+        photo: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=75"
+      },
+      {
+        phrase: "for the time being",
+        tag: "Present Continuous · Temp",
+        def: "For now, until something changes.",
+        ex: "We're holding the session online for the time being.",
+        photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=75"
+      },
+      {
+        phrase: "belong to",
+        tag: "Stative · Possession",
+        def: "Be the property of someone (not used in continuous).",
+        ex: "This notebook belongs to our class.",
+        photo: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=75"
+      }
+    ];
+
+    let vocabViewMode = 'grid';
+    let singleVocabIdx = 0;
+
+    function setVocabView(mode) {
+      vocabViewMode = mode;
+      const gridBtn = document.getElementById('vocabModeGridBtn');
+      const singleBtn = document.getElementById('vocabModeSingleBtn');
+      const gridView = document.getElementById('vocabGridView');
+      const singleView = document.getElementById('vocabSingleView');
+
+      if (mode === 'grid') {
+        gridBtn.className = 'px-3.5 py-1.5 rounded-lg bg-[#002B5C] text-white transition';
+        singleBtn.className = 'px-3.5 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 transition';
+        gridView.classList.remove('hidden');
+        singleView.classList.add('hidden');
+      } else {
+        singleBtn.className = 'px-3.5 py-1.5 rounded-lg bg-[#002B5C] text-white transition';
+        gridBtn.className = 'px-3.5 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 transition';
+        gridView.classList.add('hidden');
+        singleView.classList.remove('hidden');
+        renderSingleVocab();
+      }
+      lucide.createIcons();
+    }
+
+    function renderVocabGrid() {
+      const grid = document.getElementById('vocabGridView');
+      grid.innerHTML = VOCAB_ITEMS.map((v, i) => {
+        const safe = v.phrase.replace(/'/g, "\\'");
+        return `
+          <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-2xl overflow-hidden shadow-sm flex flex-col">
+            <div id="vg-photo-${i}" class="h-32 bg-[#091726] relative overflow-hidden"></div>
+            <div class="p-4 flex-1 flex flex-col justify-between gap-3">
+              <div>
+                <div class="flex items-start justify-between gap-2">
+                  <h4 class="text-base font-extrabold text-[#002B5C] dark:text-white">${v.phrase}</h4>
+                  <button type="button" onclick="speakPhrase('${safe}')" class="p-1.5 rounded-lg bg-slate-100 dark:bg-[#071627] text-[#005A8D] dark:text-cyan-300 hover:bg-[#0089A7] hover:text-white transition" title="Listen">
+                    <i data-lucide="volume-2" class="w-4 h-4"></i>
+                  </button>
+                </div>
+                <span class="inline-block mt-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300">${v.tag}</span>
+                <p class="text-xs text-slate-600 dark:text-slate-300 mt-2">${v.def}</p>
+              </div>
+              <p class="text-xs italic text-[#005A8D] dark:text-cyan-300 border-t border-slate-100 dark:border-cyan-400/10 pt-2">“${v.ex}”</p>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      VOCAB_ITEMS.forEach((v, i) => {
+        mountPhoto(document.getElementById(`vg-photo-${i}`), v.photo, v.phrase, v.phrase);
+      });
+      lucide.createIcons();
+    }
+
+    function renderSingleVocab() {
+      const v = VOCAB_ITEMS[singleVocabIdx];
+      document.getElementById('vocabSingleCounter').textContent = `Expression ${singleVocabIdx + 1} / ${VOCAB_ITEMS.length}`;
+      document.getElementById('vocabSingleTag').textContent = v.tag;
+      document.getElementById('vocabSinglePhrase').textContent = v.phrase;
+      document.getElementById('vocabSingleDef').textContent = v.def;
+      document.getElementById('vocabSingleEx').textContent = `Example: “${v.ex}”`;
+      mountPhoto(document.getElementById('vocabSinglePhoto'), v.photo, v.phrase, v.phrase);
+
+      const audioBtn = document.getElementById('vocabSingleAudioBtn');
+      audioBtn.onclick = () => speakPhrase(v.phrase);
+
+      document.getElementById('vocabSingleDots').innerHTML = VOCAB_ITEMS.map((_, i) => `
+        <button type="button" onclick="singleVocabIdx=${i}; renderSingleVocab();" class="w-2.5 h-2.5 rounded-full transition ${i === singleVocabIdx ? 'bg-[#0089A7]' : 'bg-slate-300 dark:bg-slate-700'}"></button>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    window.stepSingleVocab = (delta) => {
+      singleVocabIdx = (singleVocabIdx + delta + VOCAB_ITEMS.length) % VOCAB_ITEMS.length;
+      renderSingleVocab();
+    };
+
+    // Production Lab inside Stage 03
+    const PRODUCTION_PROMPTS = [
+      {
+        target: "on a regular basis",
+        cue: "Write a true sentence about something you or someone you know does regularly (Present Simple).",
+        model: "Model: I go for a long walk on a regular basis."
+      },
+      {
+        target: "at the moment",
+        cue: "Write what you or a family member are doing at the moment (Present Continuous).",
+        model: "Model: My partner is working from home at the moment."
+      },
+      {
+        target: "cut down on",
+        cue: "Write something temporary you are cutting down on right now.",
+        model: "Model: I'm cutting down on sweet snacks this month."
+      },
+      {
+        target: "hardly ever",
+        cue: "Write a sentence about something you hardly ever do.",
+        model: "Model: I hardly ever watch TV in the morning."
+      }
+    ];
+    let showProdModels = false;
+
+    function renderProductionPrompts() {
+      document.getElementById('productionPromptsList').innerHTML = PRODUCTION_PROMPTS.map((p, i) => `
+        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/15 space-y-2.5">
+          <div class="flex items-center justify-between gap-2">
+            <span class="text-xs font-extrabold uppercase tracking-wider text-[#005A8D] dark:text-cyan-300">Use: “${p.target}”</span>
+            <span class="text-[11px] text-slate-400">#${i + 1}</span>
+          </div>
+          <p class="text-xs text-slate-600 dark:text-slate-300">${p.cue}</p>
+          <input
+            type="text"
+            placeholder="Write your sentence here..."
+            class="w-full px-3 py-2 rounded-xl bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 text-xs focus:outline-none focus:border-[#0089A7]"
+          />
+          <p class="prod-model ${showProdModels ? '' : 'hidden'} text-xs italic text-[#0089A7] dark:text-cyan-300">${p.model}</p>
+        </div>
+      `).join('');
+    }
+
+    window.toggleProductionModels = () => {
+      showProdModels = !showProdModels;
+      renderProductionPrompts();
+    };
+
+    // 04: Tense Switcher
+    const SWITCHER_ITEMS = [
+      { simple: "She <strong>lives</strong> in Manresa.", continuous: "She <strong>is living</strong> in Barcelona this month.", sNote: "Permanent home base.", cNote: "Temporary stay for a limited time." },
+      { simple: "I <strong>cook</strong> dinner at home.", continuous: "I <strong>am cooking</strong> dinner right now.", sNote: "Regular evening habit.", cNote: "Action in progress at this exact moment." },
+      { simple: "They <strong>travel</strong> twice a year.", continuous: "They <strong>are traveling</strong> to Italy next week.", sNote: "Repeated annual habit.", cNote: "Arranged plan." },
+      { simple: "He <strong>thinks</strong> this lesson works well.", continuous: "He <strong>is thinking</strong> about joining the group.", sNote: "Stative verb: opinion.", cNote: "Dynamic verb: considering right now." },
+      { simple: "We <strong>have</strong> a small terrace.", continuous: "We <strong>are having</strong> lunch outside.", sNote: "Stative meaning: possession.", cNote: "Dynamic meaning: experiencing a meal." },
+      { simple: "The train <strong>usually arrives</strong> on time.", continuous: "Look! The train <strong>is arriving</strong> now.", sNote: "Usual pattern.", cNote: "Happening right at this second." }
+    ];
+    let switcherMode = 'simple';
+
+    function renderSwitcher() {
+      document.getElementById('switcherRows').innerHTML = SWITCHER_ITEMS.map(item => `
+        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#071627] border ${switcherMode === 'simple' ? 'border-[#002B5C]/30 dark:border-cyan-400/25' : 'border-[#0089A7]/50'} space-y-1.5">
+          <div class="text-base font-bold text-[#002B5C] dark:text-white">${switcherMode === 'simple' ? item.simple : item.continuous}</div>
+          <div class="text-xs text-slate-600 dark:text-slate-300">${switcherMode === 'simple' ? item.sNote : item.cNote}</div>
+        </div>
+      `).join('');
+    }
+
+    document.getElementById('modeSimple').addEventListener('click', () => {
+      switcherMode = 'simple';
+      document.getElementById('modeSimple').className = 'px-4 py-2 rounded-lg bg-[#002B5C] text-white transition';
+      document.getElementById('modeContinuous').className = 'px-4 py-2 rounded-lg text-slate-600 dark:text-slate-300 transition';
+      renderSwitcher();
+    });
+
+    document.getElementById('modeContinuous').addEventListener('click', () => {
+      switcherMode = 'continuous';
+      document.getElementById('modeContinuous').className = 'px-4 py-2 rounded-lg bg-[#0089A7] text-white transition';
+      document.getElementById('modeSimple').className = 'px-4 py-2 rounded-lg text-slate-600 dark:text-slate-300 transition';
+      renderSwitcher();
+    });
+
+    // 05: Summary Cloze
+    const CLOZE_BANK = ["routines", "now", "temporary", "stative", "moment"];
+    const CLOZE_KEY = ["routines", "moment", "temporary", "now", "stative"];
+    const CLOZE_STATE = ["", "", "", "", ""];
+    let activeSlot = 0;
+
+    function renderCloze() {
+      document.getElementById('clozeChips').innerHTML = CLOZE_BANK.map(w => `
+        <button type="button" onclick="putCloze('${w}')" class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7] text-xs font-bold text-[#005A8D] dark:text-cyan-300 transition">
+          ${w}
+        </button>
+      `).join('');
+
+      const segs = [
+        "We use the Present Simple for daily ",
+        " and facts. In contrast, the Present Continuous highlights actions happening at the ",
+        " of speaking or ",
+        " projects around ",
+        ". Finally, ",
+        " verbs like <em>know</em>, <em>prefer</em>, and <em>belong</em> usually stay in the simple form."
+      ];
+
+      let out = "";
+      for (let i = 0; i < segs.length; i++) {
+        out += segs[i];
+        if (i < 5) {
+          const val = CLOZE_STATE[i];
+          const sel = activeSlot === i;
+          out += `<button type="button" onclick="pickSlot(${i})" class="mx-1 px-3 py-0.5 rounded-lg border-b-2 font-bold text-xs sm:text-sm transition ${
+            sel ? 'border-[#0089A7] bg-[#0089A7]/15 text-[#002B5C] dark:text-white' : 'border-slate-400 bg-slate-100 dark:bg-[#071627] text-[#005A8D] dark:text-cyan-300'
+          }">${val || `(${i + 1})`}</button>`;
+        }
+      }
+      document.getElementById('clozeText').innerHTML = out;
+    }
+
+    window.pickSlot = (i) => { activeSlot = i; renderCloze(); };
+    window.putCloze = (w) => {
+      CLOZE_STATE[activeSlot] = w;
+      if (activeSlot < 4) activeSlot++;
+      renderCloze();
+    };
+    window.checkCloze = () => {
+      let score = 0;
+      CLOZE_KEY.forEach((k, i) => { if (CLOZE_STATE[i] === k) score++; });
+      const msg = document.getElementById('clozeMsg');
+      msg.textContent = `${score} / ${CLOZE_KEY.length} correct`;
+      msg.className = score === 5 ? "text-xs font-bold text-emerald-600 dark:text-emerald-400" : "text-xs font-bold text-amber-600 dark:text-amber-300";
+    };
+    window.resetCloze = () => {
+      for (let i = 0; i < CLOZE_STATE.length; i++) CLOZE_STATE[i] = "";
+      activeSlot = 0;
+      document.getElementById('clozeMsg').textContent = "";
+      renderCloze();
+    };
+
+    // 06: Set 1 (8 MCQs), Set 2 (4 Scrambles), Set 3 (4 Odd One Out), Set 4 (4 Homework Fix & Write)
+    const PRACTICE_QS = [
+      { q: "1. Right now, Liam ___ his notes before class.", opts: ["reads", "is reading"], ans: "is reading" },
+      { q: "2. My sister usually ___ coffee, not tea.", opts: ["drinks", "is drinking"], ans: "drinks" },
+      { q: "3. I ___ what you mean by that.", opts: ["don't understand", "am not understanding"], ans: "don't understand" },
+      { q: "4. This week we ___ a new speaking activity.", opts: ["test", "are testing"], ans: "are testing" },
+      { q: "5. She ___ a small acoustic guitar.", opts: ["owns", "is owning"], ans: "owns" },
+      { q: "6. Look! The train ___ at platform 2.", opts: ["arrives", "is arriving"], ans: "is arriving" },
+      { q: "7. They ___ to the mountains every weekend.", opts: ["go", "are going"], ans: "go" },
+      { q: "8. Why ___ you ___ a jacket indoors today?", opts: ["do / wear", "are / wearing"], ans: "are / wearing" }
+    ];
+    const practicePicked = {};
+
+    function renderPractice() {
+      document.getElementById('practiceGrid').innerHTML = PRACTICE_QS.map((item, i) => `
+        <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-2xl p-5 space-y-3 shadow-sm">
+          <p class="text-sm font-bold">${item.q}</p>
+          <div class="flex flex-wrap gap-2">
+            ${item.opts.map(o => `
+              <button type="button" onclick="choosePractice(${i}, '${o.replace(/'/g, "\\'")}')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold border transition ${
+                practicePicked[i] === o
+                  ? 'bg-[#002B5C] text-white border-[#002B5C]'
+                  : 'bg-slate-50 dark:bg-[#071627] border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7]'
+              }">${o}</button>
+            `).join('')}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    window.choosePractice = (i, o) => { practicePicked[i] = o; renderPractice(); };
+    window.checkPractice = () => {
+      let c = 0;
+      PRACTICE_QS.forEach((item, i) => { if (practicePicked[i] === item.ans) c++; });
+      document.getElementById('practiceResult').textContent = `Score: ${c} / ${PRACTICE_QS.length}`;
+    };
+
+    const SCRAMBLES = [
+      {
+        label: "Sentence 1 / 4 · Habit + Adverb",
+        tiles: ["always", "she", "coffee", "drinks", "at breakfast"],
+        target: "she always drinks coffee at breakfast"
+      },
+      {
+        label: "Sentence 2 / 4 · Action Right Now",
+        tiles: ["is", "he", "a message", "right now", "sending"],
+        target: "he is sending a message right now"
+      },
+      {
+        label: "Sentence 3 / 4 · Temporary Week",
+        tiles: ["are", "we", "this week", "working", "from home"],
+        target: "we are working from home this week"
+      },
+      {
+        label: "Sentence 4 / 4 · Routine Question",
+        tiles: ["every day", "you", "do", "for a walk", "go"],
+        target: "do you go for a walk every day"
+      }
+    ];
+    let scrambleIdx = 0;
+    let placedOrder = [];
+
+    function renderScramble() {
+      const s = SCRAMBLES[scrambleIdx];
+      document.getElementById('scrambleTitle').textContent = s.label;
+      const tray = document.getElementById('scrambleTray');
+      const bank = document.getElementById('scrambleBank');
+      const fb = document.getElementById('scrambleFeedback');
+
+      tray.innerHTML = placedOrder.length
+        ? placedOrder.map((tIdx, pos) => `
+            <button type="button" onclick="removeScrambleTile(${pos})" class="px-3 py-1.5 rounded-xl bg-[#005A8D] text-white text-xs font-bold shadow-sm hover:bg-rose-600 transition">
+              ${s.tiles[tIdx]} ✕
+            </button>
+          `).join('')
+        : `<span class="text-xs text-slate-400">Tap words below to build the sentence...</span>`;
+
+      bank.innerHTML = s.tiles.map((word, tIdx) => {
+        const used = placedOrder.includes(tIdx);
+        return `
+          <button
+            type="button"
+            ${used ? 'disabled' : ''}
+            onclick="addScrambleTile(${tIdx})"
+            class="px-3.5 py-1.5 rounded-xl border text-xs font-bold transition ${
+              used
+                ? 'opacity-30 border-slate-200 dark:border-cyan-400/10'
+                : 'bg-slate-50 dark:bg-[#071627] border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7]'
+            }"
+          >${word}</button>
+        `;
+      }).join('');
+
+      if (placedOrder.length === s.tiles.length) {
+        const built = placedOrder.map(i => s.tiles[i]).join(' ').toLowerCase();
+        if (built === s.target) {
+          fb.className = 'text-xs font-bold text-emerald-600 dark:text-emerald-400';
+          fb.textContent = 'Great order! Sentence complete.';
+        } else {
+          fb.className = 'text-xs font-bold text-amber-600 dark:text-amber-300';
+          fb.textContent = `Check order — target: “${s.target}”.`;
+        }
+      } else {
+        fb.textContent = '';
+      }
+    }
+
+    window.addScrambleTile = (tIdx) => {
+      if (!placedOrder.includes(tIdx)) {
+        placedOrder.push(tIdx);
+        renderScramble();
+      }
+    };
+    window.removeScrambleTile = (pos) => { placedOrder.splice(pos, 1); renderScramble(); };
+    window.resetScramble = () => { placedOrder = []; renderScramble(); };
+    window.nextScramble = () => { scrambleIdx = (scrambleIdx + 1) % SCRAMBLES.length; placedOrder = []; renderScramble(); };
+
+    const ODD_ITEMS = [
+      { label: "Group 1 · Time Markers", opts: ["every day", "usually", "right now", "hardly ever"], odd: "right now", note: "'Right now' signals Present Continuous; the others fit routines." },
+      { label: "Group 2 · Stative Verbs", opts: ["know", "belong", "prefer", "cook"], odd: "cook", note: "'Cook' is a dynamic action verb; the others are stative." },
+      { label: "Group 3 · Temporary Phrases", opts: ["this month", "currently", "for the time being", "always"], odd: "always", note: "'Always' expresses a permanent/general pattern rather than a temporary period." },
+      { label: "Group 4 · Contrast Forms", opts: ["She works here.", "He is studying.", "They own a flat.", "I am knowing him."], odd: "I am knowing him.", note: "'Know' is stative—use 'I know him.'" }
+    ];
+
+    function renderOdd() {
+      document.getElementById('oddGrid').innerHTML = ODD_ITEMS.map((g, gi) => `
+        <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-2xl p-5 space-y-2.5 shadow-sm">
+          <div class="text-xs font-extrabold uppercase tracking-wider text-[#0089A7]">${g.label}</div>
+          <div class="space-y-1.5">
+            ${g.opts.map((o, oi) => `
+              <button type="button" onclick="testOdd(${gi}, '${o.replace(/'/g, "\\'")}')" class="w-full text-left px-3 py-2 rounded-xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7] text-xs font-semibold transition">
+                <strong class="text-[#0089A7] mr-2">${String.fromCharCode(65 + oi)}.</strong>${o}
+              </button>
+            `).join('')}
+          </div>
+          <div id="odd-note-${gi}" class="hidden text-xs p-2.5 rounded-xl font-semibold"></div>
+        </div>
+      `).join('');
+    }
+
+    window.testOdd = (gi, chosen) => {
+      const g = ODD_ITEMS[gi];
+      const box = document.getElementById(`odd-note-${gi}`);
+      box.classList.remove('hidden');
+      if (chosen === g.odd) {
+        box.className = 'text-xs p-2.5 rounded-xl font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        box.textContent = `Correct! ${g.note}`;
+      } else {
+        box.className = 'text-xs p-2.5 rounded-xl font-semibold bg-amber-500/15 text-amber-700 dark:text-amber-200';
+        box.textContent = `Odd one out is '${g.odd}'. ${g.note}`;
+      }
+    };
+
+    const FIX_HOMEWORK = [
+      { wrong: "She is having two brothers.", fix: "She has two brothers.", extra: "Homework: Write 1 sentence about something you own or have." },
+      { wrong: "Every Tuesday I am going to my English class.", fix: "Every Tuesday I go to my English class.", extra: "Homework: Write 1 sentence about a weekly class or habit." },
+      { wrong: "Be quiet! The baby sleeps right now.", fix: "Be quiet! The baby is sleeping right now.", extra: "Homework: Write 1 sentence about something happening right now." },
+      { wrong: "I am not wanting coffee right now.", fix: "I don't want coffee right now.", extra: "Homework: Write 1 sentence with 'want', 'prefer', or 'like'." }
+    ];
+    let showFixKey = false;
+
+    function renderFixHomework() {
+      document.getElementById('fixHomeworkList').innerHTML = FIX_HOMEWORK.map(item => `
+        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/15 space-y-2.5">
+          <div class="text-xs font-bold text-rose-600 dark:text-rose-400 line-through">${item.wrong}</div>
+          <input type="text" placeholder="Write the corrected sentence..." class="w-full px-3 py-2 rounded-xl bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 text-xs focus:outline-none focus:border-[#0089A7]" />
+          <div class="fix-key ${showFixKey ? '' : 'hidden'} text-xs font-bold text-emerald-600 dark:text-emerald-400">Fix: ${item.fix}</div>
+          <div class="text-[11px] text-slate-500 dark:text-slate-400">${item.extra}</div>
+        </div>
+      `).join('');
+    }
+
+    window.toggleFixKey = () => {
+      showFixKey = !showFixKey;
+      renderFixHomework();
+    };
+
+    // 07: Speaking Game (4 Cards per Mode)
+    const GAME_MODES = [
+      { key: "contrast", label: "Routine vs. Right Now" },
+      { key: "detective", label: "Contrast Detective" },
+      { key: "debates", label: "Quick Class Debates" }
+    ];
+
+    const GAME_CARDS = {
+      contrast: [
+        {
+          title: "Card 1 · Morning Coffee & Right Now",
+          rule: "Say what you normally drink or eat in the morning, and what you are drinking or eating (or not having) right now.",
+          follow: "Do you change your routine on weekends?",
+          photo: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=850&q=80",
+          twist: "Bonus Twist: Ask your teacher what they usually drink vs. what they have right now."
+        },
+        {
+          title: "Card 2 · Commute vs. Today's Trip",
+          rule: "Compare how you usually travel or commute with any special trip or movement you are making this week.",
+          follow: "Does traffic or weather ever change your usual route?",
+          photo: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=850&q=80",
+          twist: "Bonus Twist: Use 'on a regular basis' and 'at the moment' in your answer."
+        },
+        {
+          title: "Card 3 · Work / Study Rhythm",
+          rule: "Describe your usual study or work schedule, then say what project or skill you are focusing on right now.",
+          follow: "Are you working faster or slower than usual today?",
+          photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=850&q=80",
+          twist: "Bonus Twist: Include one negative sentence in Present Continuous."
+        },
+        {
+          title: "Card 4 · Free Time vs. Tonight",
+          rule: "Share a hobby you enjoy regularly, and contrast it with what you are planning or doing this evening.",
+          follow: "What do you hardly ever do on a weeknight?",
+          photo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=850&q=80",
+          twist: "Bonus Twist: Make one sentence true and one a playful bluff for your teacher to spot."
+        }
+      ],
+      detective: [
+        {
+          title: "Card 1 · Who Am I Thinking Of?",
+          rule: "Think of a real person (a friend, celebrity, or family member). Give 2 Present Simple facts and 1 Present Continuous clue for right now.",
+          follow: "Does this person live near you? What are they probably doing right now?",
+          photo: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=850&q=80",
+          twist: "Bonus Twist: Your teacher can ask up to 4 'Does he/she...?' or 'Is he/she...?' questions."
+        },
+        {
+          title: "Card 2 · What Place Is This?",
+          rule: "Describe a place people visit regularly and what people are usually doing there right now.",
+          follow: "Do you go there often? Is it busy at this moment?",
+          photo: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=850&q=80",
+          twist: "Bonus Twist: Use a stative verb like 'prefer', 'love', or 'belong'."
+        },
+        {
+          title: "Card 3 · Mystery Habit vs. Today",
+          rule: "Pick an everyday object on your desk or near you. Say how people use it and how you are using it right now.",
+          follow: "Who owns it, and how often do you touch it?",
+          photo: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=850&q=80",
+          twist: "Bonus Twist: Try not to say the object's name until your teacher guesses!"
+        },
+        {
+          title: "Card 4 · Two Truths & One Twist",
+          rule: "Give two true statements about your routines/current week and one exaggerated statement—your teacher guesses which is which.",
+          follow: "Which part is happening right now versus every week?",
+          photo: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=850&q=80",
+          twist: "Bonus Twist: Swap roles and test your teacher!"
+        }
+      ],
+      debates: [
+        {
+          title: "Card 1 · “People check screens too much.”",
+          rule: "Give your opinion (Present Simple) and say what you or people around you are doing with screens today (Present Continuous).",
+          follow: "When do you put your phone away?",
+          photo: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=850&q=80",
+          twist: "Bonus Twist: Defend the opposite side for 30 seconds!"
+        },
+        {
+          title: "Card 2 · “Cooking at home is always better.”",
+          rule: "Compare cooking at home vs. eating out using habits and what you are eating or craving lately.",
+          follow: "What do you prefer cooking when you have very little time?",
+          photo: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=850&q=80",
+          twist: "Bonus Twist: Mention one dish you hardly ever make."
+        },
+        {
+          title: "Card 3 · “Online classes beat in-person classes.”",
+          rule: "Contrast online and in-person learning using Present Simple facts and how you are studying right now.",
+          follow: "Which format helps you speak more?",
+          photo: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=850&q=80",
+          twist: "Bonus Twist: Give one pro and one con in two sentences."
+        },
+        {
+          title: "Card 4 · “Early mornings are underrated.”",
+          rule: "Argue for or against early mornings using your normal sleep pattern and what you are doing right now.",
+          follow: "How do you feel when you wake up early on a rainy day?",
+          photo: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=850&q=80",
+          twist: "Bonus Twist: Compare weekday mornings with Sunday mornings."
+        }
+      ]
+    };
+
+    let activeGameMode = "contrast";
+    let gameCardIdx = 0;
+
+    function renderGame() {
+      document.getElementById('gameModeTabs').innerHTML = GAME_MODES.map(m => `
+        <button
+          type="button"
+          onclick="setGameMode('${m.key}')"
+          class="px-4 py-2 rounded-xl text-xs font-extrabold border transition ${
+            activeGameMode === m.key
+              ? 'bg-[#002B5C] text-white border-[#002B5C]'
+              : 'bg-white dark:bg-[#0C1E33] border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7]'
+          }"
+        >${m.label}</button>
+      `).join('');
+
+      const list = GAME_CARDS[activeGameMode];
+      const card = list[gameCardIdx % list.length];
+      const modeObj = GAME_MODES.find(m => m.key === activeGameMode);
+
+      document.getElementById('gameModeBadge').textContent = modeObj.label;
+      document.getElementById('gameCardCounter').textContent = `Card ${(gameCardIdx % list.length) + 1} / ${list.length}`;
+      document.getElementById('gamePromptTitle').textContent = card.title;
+      document.getElementById('gameRuleText').textContent = card.rule;
+      document.getElementById('gameFollowUp').textContent = card.follow;
+      document.getElementById('gameTwistBox').textContent = card.twist;
+      document.getElementById('gameTwistBox').classList.add('hidden');
+      mountPhoto(document.getElementById('gamePhotoBox'), card.photo, card.title, modeObj.label);
+      lucide.createIcons();
+    }
+
+    window.setGameMode = (key) => { activeGameMode = key; gameCardIdx = 0; renderGame(); };
+    window.nextGameCard = () => { gameCardIdx++; renderGame(); };
+    window.revealBluffVote = () => { document.getElementById('gameTwistBox').classList.toggle('hidden'); };
+
+    // Voice Note Recorder
     const studentNameInput = document.getElementById('studentNameInput');
     studentNameInput.value = localStorage.getItem('provoStudentName') || '';
     studentNameInput.addEventListener('input', () => {
@@ -794,8 +1363,8 @@
     let audioChunks = [];
     let audioBlob = null;
     let selectedMime = 'audio/webm';
-    let recSeconds = 0;
-    let recInterval = null;
+    let recSec = 0;
+    let recTimerId = null;
 
     const btnRecord = document.getElementById('btnRecord');
     const btnStop = document.getElementById('btnStop');
@@ -803,16 +1372,14 @@
     const btnSendDrive = document.getElementById('btnSendDrive');
     const btnDownloadAudio = document.getElementById('btnDownloadAudio');
     const audioPreview = document.getElementById('audioPreview');
-    const recDot = document.getElementById('recDot');
-    const recStatusText = document.getElementById('recStatusText');
     const recTimer = document.getElementById('recTimer');
     const uploadFeedback = document.getElementById('uploadFeedback');
 
-    function showFeedback(msg, type = 'info') {
-      uploadFeedback.classList.remove('hidden', 'bg-emerald-500/15', 'text-emerald-700', 'dark:text-emerald-300', 'bg-rose-500/15', 'text-rose-700', 'dark:text-rose-300', 'bg-sky-500/15', 'text-sky-700', 'dark:text-sky-300');
-      if (type === 'success') uploadFeedback.classList.add('bg-emerald-500/15', 'text-emerald-700', 'dark:text-emerald-300');
-      else if (type === 'error') uploadFeedback.classList.add('bg-rose-500/15', 'text-rose-700', 'dark:text-rose-300');
-      else uploadFeedback.classList.add('bg-sky-500/15', 'text-sky-700', 'dark:text-sky-300');
+    function showRecMsg(msg, ok = true) {
+      uploadFeedback.classList.remove('hidden');
+      uploadFeedback.className = ok
+        ? 'text-xs font-semibold px-3 py-2 rounded-xl bg-emerald-500/15 text-emerald-700 dark:text-emerald-300'
+        : 'text-xs font-semibold px-3 py-2 rounded-xl bg-rose-500/15 text-rose-700 dark:text-rose-300';
       uploadFeedback.textContent = msg;
     }
 
@@ -826,90 +1393,70 @@
 
         audioChunks = [];
         mediaRecorder = selectedMime ? new MediaRecorder(stream, { mimeType: selectedMime }) : new MediaRecorder(stream);
-
-        mediaRecorder.ondataavailable = e => {
-          if (e.data && e.data.size > 0) audioChunks.push(e.data);
-        };
-
+        mediaRecorder.ondataavailable = e => { if (e.data && e.data.size > 0) audioChunks.push(e.data); };
         mediaRecorder.onstop = () => {
           stream.getTracks().forEach(t => t.stop());
-          const finalType = mediaRecorder.mimeType || selectedMime || 'audio/webm';
-          audioBlob = new Blob(audioChunks, { type: finalType });
+          audioBlob = new Blob(audioChunks, { type: mediaRecorder.mimeType || selectedMime || 'audio/webm' });
           audioPreview.src = URL.createObjectURL(audioBlob);
           audioPreview.classList.remove('hidden');
           btnSendDrive.disabled = false;
           btnDownloadAudio.disabled = false;
           btnClearAudio.disabled = false;
-          recDot.className = 'w-2.5 h-2.5 rounded-full bg-emerald-500';
-          recStatusText.textContent = 'Recording ready';
         };
 
         mediaRecorder.start();
-        recSeconds = 0;
+        recSec = 0;
         recTimer.textContent = '00:00';
-        recInterval = setInterval(() => {
-          recSeconds++;
-          const m = String(Math.floor(recSeconds / 60)).padStart(2, '0');
-          const s = String(recSeconds % 60).padStart(2, '0');
-          recTimer.textContent = `${m}:${s}`;
+        recTimerId = setInterval(() => {
+          recSec++;
+          recTimer.textContent = `${String(Math.floor(recSec / 60)).padStart(2, '0')}:${String(recSec % 60).padStart(2, '0')}`;
         }, 1000);
 
         btnRecord.disabled = true;
         btnStop.disabled = false;
         btnClearAudio.disabled = true;
         btnSendDrive.disabled = true;
-        recDot.className = 'w-2.5 h-2.5 rounded-full bg-rose-500 animate-ping';
-        recStatusText.textContent = 'Recording...';
       } catch (err) {
-        showFeedback('Microphone access blocked or unavailable. Open via HTTPS and allow mic permissions.', 'error');
+        showRecMsg('Microphone unavailable. Open via HTTPS and allow mic permissions.', false);
       }
     });
 
     btnStop.addEventListener('click', () => {
-      clearInterval(recInterval);
-      if (mediaRecorder && mediaRecorder.state !== 'inactive') {
-        mediaRecorder.stop();
-      }
+      clearInterval(recTimerId);
+      if (mediaRecorder && mediaRecorder.state !== 'inactive') mediaRecorder.stop();
       btnRecord.disabled = false;
       btnStop.disabled = true;
     });
 
     btnClearAudio.addEventListener('click', () => {
       audioBlob = null;
-      audioChunks = [];
       audioPreview.classList.add('hidden');
-      audioPreview.removeAttribute('src');
       btnSendDrive.disabled = true;
       btnDownloadAudio.disabled = true;
       btnClearAudio.disabled = true;
       recTimer.textContent = '00:00';
-      recDot.className = 'w-2.5 h-2.5 rounded-full bg-slate-400';
-      recStatusText.textContent = 'Ready to record';
       uploadFeedback.classList.add('hidden');
     });
 
     btnDownloadAudio.addEventListener('click', () => {
       if (!audioBlob) return;
       const name = (studentNameInput.value.trim() || 'Student').replace(/\s+/g, '_');
-      const ext = audioBlob.type.includes('mp4') ? 'm4a' : 'webm';
       const a = document.createElement('a');
       a.href = URL.createObjectURL(audioBlob);
-      a.download = `PROVO-PS-vs-PC-Q${qIndex + 1}-${name}.${ext}`;
+      a.download = `PROVO-PS-vs-PC-Q${qIdx + 1}-${name}.webm`;
       a.click();
     });
 
     btnSendDrive.addEventListener('click', () => {
       const studentName = studentNameInput.value.trim();
       if (!studentName) {
-        showFeedback('Please enter your name before sending.', 'error');
+        showRecMsg('Enter your name before sending.', false);
         studentNameInput.focus();
         return;
       }
       if (!audioBlob) return;
-
       btnSendDrive.disabled = true;
       document.getElementById('sendLabel').textContent = 'Uploading...';
-      showFeedback('Uploading voice note to Google Drive...', 'info');
 
       const reader = new FileReader();
       reader.onloadend = async () => {
@@ -921,300 +1468,36 @@
             body: JSON.stringify({
               studentName,
               lessonTitle: 'PS-vs-PC',
-              questionNumber: qIndex + 1,
+              questionNumber: qIdx + 1,
               mimeType: audioBlob.type || 'audio/webm',
               audioBase64: base64Audio
             })
           });
           const data = await res.json();
-          if (data.status === 'ok') {
-            showFeedback(`Sent to teacher! Saved as ${data.fileName}`, 'success');
-          } else {
-            throw new Error(data.message || 'Upload failed');
-          }
+          if (data.status === 'ok') showRecMsg(`Sent to Drive as ${data.fileName}`, true);
+          else throw new Error(data.message || 'Upload error');
         } catch (err) {
-          showFeedback('Could not upload automatically. Use "Download Local Backup" and send it manually.', 'error');
+          showRecMsg('Could not upload automatically. Use Backup to download the audio.', false);
         } finally {
           btnSendDrive.disabled = false;
-          document.getElementById('sendLabel').textContent = 'Send to Teacher (Drive)';
+          document.getElementById('sendLabel').textContent = 'Send to Teacher';
         }
       };
       reader.readAsDataURL(audioBlob);
     });
 
-    // ==================== GRAMMAR SWITCHER ====================
-    let switcherMode = 'simple';
-    const switcherRows = document.getElementById('switcherRows');
-    const modeSimple = document.getElementById('modeSimple');
-    const modeContinuous = document.getElementById('modeContinuous');
-
-    function renderSwitcher() {
-      switcherRows.innerHTML = SWITCHER_ITEMS.map(item => {
-        const isSim = switcherMode === 'simple';
-        return `
-          <div class="p-4 rounded-2xl border ${isSim ? 'border-[#002B5C]/25 bg-[#F0F6FA]/60 dark:bg-slate-800/50' : 'border-[#0089A7]/35 bg-[#0089A7]/5 dark:bg-slate-800/70'} space-y-1.5">
-            <div class="text-base font-bold text-slate-900 dark:text-white">${isSim ? item.simple : item.continuous}</div>
-            <div class="text-xs text-slate-600 dark:text-slate-300">${isSim ? item.simpleNote : item.contNote}</div>
-          </div>
-        `;
-      }).join('');
-    }
-
-    modeSimple.addEventListener('click', () => {
-      switcherMode = 'simple';
-      modeSimple.className = 'px-3.5 py-1.5 rounded-lg bg-[#002B5C] text-white transition';
-      modeContinuous.className = 'px-3.5 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 transition';
-      renderSwitcher();
-    });
-
-    modeContinuous.addEventListener('click', () => {
-      switcherMode = 'continuous';
-      modeContinuous.className = 'px-3.5 py-1.5 rounded-lg bg-[#0089A7] text-white transition';
-      modeSimple.className = 'px-3.5 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 transition';
-      renderSwitcher();
-    });
-
-    // ==================== VOCABULARY + CONTEXT QUIZ ====================
-    const vocabCategories = ['All', 'Frequency', 'Temporary', 'Right Now', 'Stative'];
-    let activeVocabCat = 'All';
-    const revealedTerms = new Set();
-    const vocabFilters = document.getElementById('vocabFilters');
-    const vocabGrid = document.getElementById('vocabGrid');
-    const vocabQuizList = document.getElementById('vocabQuizList');
-    const vocabQuizScore = document.getElementById('vocabQuizScore');
-    const vocabQuizAnswers = {};
-
-    function speakWord(text) {
-      if (!('speechSynthesis' in window)) return;
-      window.speechSynthesis.cancel();
-      const utter = new SpeechSynthesisUtterance(text);
-      utter.lang = 'en-US';
-      window.speechSynthesis.speak(utter);
-    }
-
-    window.toggleVocabMeaning = (term) => {
-      if (revealedTerms.has(term)) revealedTerms.delete(term);
-      else revealedTerms.add(term);
-      renderVocab();
-    };
-
-    function renderVocab() {
-      vocabFilters.innerHTML = vocabCategories.map(cat => `
-        <button type="button" onclick="setVocabCat('${cat}')" class="px-3 py-1.5 rounded-xl text-xs font-bold transition ${
-          activeVocabCat === cat
-            ? 'bg-[#002B5C] text-white'
-            : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:border-[#0089A7]'
-        }">${cat}</button>
-      `).join('');
-
-      const list = activeVocabCat === 'All' ? VOCABULARY : VOCABULARY.filter(v => v.cat === activeVocabCat);
-      vocabGrid.innerHTML = list.map(v => {
-        const isOpen = revealedTerms.has(v.term);
-        const safeTerm = v.term.replace(/'/g, "\\'");
-        return `
-          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-sm flex flex-col justify-between gap-3">
-            <div>
-              <div class="flex items-start justify-between gap-2">
-                <h3 class="text-base font-extrabold text-[#002B5C] dark:text-white">${v.term}</h3>
-                <div class="flex items-center gap-1">
-                  <button type="button" onclick="toggleVocabMeaning('${safeTerm}')" class="px-2 py-1 rounded-lg text-[11px] font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-[#0089A7]/15 transition">
-                    ${isOpen ? 'Hide' : 'Meaning'}
-                  </button>
-                  <button type="button" onclick="speakWord('${safeTerm}')" class="p-1.5 rounded-lg bg-[#F0F6FA] dark:bg-slate-800 text-[#005A8D] dark:text-cyan-300 hover:bg-[#0089A7] hover:text-white transition" title="Listen">
-                    <i data-lucide="volume-2" class="w-4 h-4"></i>
-                  </button>
-                </div>
-              </div>
-              <span class="inline-block mt-1.5 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">${v.pos} • ${v.cat}</span>
-              ${isOpen
-                ? `<p class="text-xs text-slate-700 dark:text-slate-200 mt-2.5">${v.def}</p>
-                   <p class="text-[11px] font-semibold text-amber-700 dark:text-amber-300 mt-2 bg-amber-500/10 px-2.5 py-1.5 rounded-lg">Tip: ${v.trap}</p>`
-                : `<p class="text-xs italic text-slate-400 dark:text-slate-500 mt-2.5">Tap “Meaning” to check definition &amp; trap alert.</p>`
-              }
-            </div>
-            <p class="text-xs italic text-[#005A8D] dark:text-cyan-300 border-t border-slate-100 dark:border-slate-800 pt-2.5">“${v.ex}”</p>
-          </div>
-        `;
-      }).join('');
-      lucide.createIcons();
-    }
-
-    window.setVocabCat = (cat) => {
-      activeVocabCat = cat;
-      renderVocab();
-    };
-
-    window.pickVocabQuiz = (qIdx, choice) => {
-      vocabQuizAnswers[qIdx] = choice;
-      renderVocabQuiz();
-    };
-
-    function renderVocabQuiz() {
-      let correctCount = 0;
-      vocabQuizList.innerHTML = VOCAB_QUIZ.map((item, i) => {
-        const picked = vocabQuizAnswers[i];
-        const isCorrect = picked === item.answer;
-        if (isCorrect) correctCount++;
-
-        return `
-          <div class="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-800/40 space-y-2.5">
-            <p class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white">${item.sentence.replace('___', '<span class="px-2 py-0.5 rounded bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300">___</span>')}</p>
-            <div class="flex flex-wrap gap-1.5">
-              ${item.options.map(opt => {
-                const selected = picked === opt;
-                return `
-                  <button type="button" onclick="pickVocabQuiz(${i}, '${opt.replace(/'/g, "\\'")}')" class="px-2.5 py-1 rounded-lg text-xs font-bold border transition ${
-                    selected
-                      ? 'bg-[#002B5C] text-white border-[#002B5C]'
-                      : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 hover:border-[#0089A7]'
-                  }">${opt}</button>
-                `;
-              }).join('')}
-            </div>
-            ${picked
-              ? `<div class="text-xs font-semibold ${isCorrect ? 'text-emerald-600 dark:text-emerald-400' : 'text-rose-600 dark:text-rose-400'}">${isCorrect ? 'Correct!' : `Best choice: ${item.answer}`}</div>`
-              : ''
-            }
-          </div>
-        `;
-      }).join('');
-      vocabQuizScore.textContent = `${correctCount} / ${VOCAB_QUIZ.length}`;
-    }
-
-    // ==================== SELF-CHECK PRACTICE ====================
-    const exercisesContainer = document.getElementById('exercisesContainer');
-    const progressBar = document.getElementById('progressBar');
-    const progressLabel = document.getElementById('progressLabel');
-
-    function renderExercises() {
-      exercisesContainer.innerHTML = EXERCISES.map(ex => `
-        <div id="ex-card-${ex.id}" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-sm space-y-2.5">
-          <div class="text-sm font-bold text-slate-900 dark:text-white">${ex.prompt}</div>
-          <input
-            type="text"
-            data-ex-id="${ex.id}"
-            placeholder="Type your answer..."
-            class="ex-input w-full sm:w-80 px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#0089A7]"
-          />
-          <div id="ex-msg-${ex.id}" class="text-xs font-semibold hidden"></div>
-        </div>
-      `).join('');
-
-      document.querySelectorAll('.ex-input').forEach(inp => {
-        inp.addEventListener('input', updateProgress);
-      });
-    }
-
-    function updateProgress() {
-      const inputs = document.querySelectorAll('.ex-input');
-      const filled = Array.from(inputs).filter(i => i.value.trim().length > 0).length;
-      progressLabel.textContent = `${filled} / ${inputs.length} answered`;
-      progressBar.style.width = `${(filled / inputs.length) * 100}%`;
-    }
-
-    document.getElementById('btnCheckAll').addEventListener('click', () => {
-      let score = 0;
-      EXERCISES.forEach(ex => {
-        const inp = document.querySelector(`.ex-input[data-ex-id="${ex.id}"]`);
-        const msg = document.getElementById(`ex-msg-${ex.id}`);
-        const card = document.getElementById(`ex-card-${ex.id}`);
-        const val = inp.value.trim().toLowerCase().replace(/\s+/g, ' ');
-
-        const isCorrect = ex.checkCustom
-          ? ex.checkCustom(val)
-          : ex.ans.some(a => a.toLowerCase() === val);
-
-        msg.classList.remove('hidden', 'text-emerald-600', 'dark:text-emerald-400', 'text-rose-600', 'dark:text-rose-400');
-        if (isCorrect) {
-          score++;
-          msg.textContent = 'Correct!';
-          msg.classList.add('text-emerald-600', 'dark:text-emerald-400');
-          card.classList.add('border-emerald-500/40');
-        } else {
-          msg.textContent = `Check: ${ex.ans[0]} (${ex.hint})`;
-          msg.classList.add('text-rose-600', 'dark:text-rose-400');
-          card.classList.remove('border-emerald-500/40');
-        }
-      });
-
-      const banner = document.getElementById('scoreBanner');
-      banner.classList.remove('hidden');
-      banner.className = 'rounded-2xl p-4 font-bold text-sm border bg-[#F0F6FA] dark:bg-slate-900 border-[#0089A7]/40 text-[#002B5C] dark:text-cyan-300';
-      banner.textContent = `Score: ${score} / ${EXERCISES.length}`;
-    });
-
-    document.getElementById('btnToggleKey').addEventListener('click', () => {
-      const keyBox = document.getElementById('answerKeyBox');
-      if (keyBox.innerHTML.trim() === '') {
-        keyBox.innerHTML = `<div class="font-extrabold text-[#002B5C] dark:text-cyan-300 mb-1">Answer Key</div>` +
-          EXERCISES.map(e => `<div><strong>${e.id}.</strong> ${e.ans.join(' / ')}</div>`).join('');
-      }
-      keyBox.classList.toggle('hidden');
-    });
-
-    // ==================== LIVE LAB: SPOT THE TRAP + RAPID DECISIONS ====================
-    const trapList = document.getElementById('trapList');
-    const rapidList = document.getElementById('rapidList');
-
-    window.toggleTrap = (idx) => {
-      const el = document.getElementById(`trap-detail-${idx}`);
-      el.classList.toggle('hidden');
-    };
-
-    function renderTraps() {
-      trapList.innerHTML = TRAPS.map((t, i) => `
-        <button type="button" onclick="toggleTrap(${i})" class="w-full text-left p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-[#0089A7] bg-slate-50/70 dark:bg-slate-800/40 transition">
-          <div class="flex items-center justify-between gap-2">
-            <span class="text-sm font-bold text-slate-900 dark:text-white">${t.wrong}</span>
-            <span class="text-[11px] font-bold uppercase tracking-wider text-[#0089A7]">Inspect</span>
-          </div>
-          <div id="trap-detail-${i}" class="hidden mt-3 pt-3 border-t border-slate-200 dark:border-slate-700 text-xs space-y-1">
-            <div class="text-emerald-700 dark:text-emerald-300 font-bold">Fix: ${t.fix}</div>
-            <div class="text-slate-600 dark:text-slate-300">${t.why}</div>
-          </div>
-        </button>
-      `).join('');
-    }
-
-    window.pickRapid = (cardIdx, choice) => {
-      const card = RAPID_CARDS[cardIdx];
-      const fb = document.getElementById(`rapid-fb-${cardIdx}`);
-      fb.classList.remove('hidden');
-      if (choice === card.best) {
-        fb.className = 'mt-3 text-xs font-semibold text-emerald-700 dark:text-emerald-300 bg-emerald-500/10 p-2.5 rounded-xl';
-        fb.textContent = `Spot on (${card.best}): ${card.note}`;
-      } else {
-        fb.className = 'mt-3 text-xs font-semibold text-amber-700 dark:text-amber-300 bg-amber-500/10 p-2.5 rounded-xl';
-        fb.textContent = `Try ${card.best}: ${card.note}`;
-      }
-    };
-
-    function renderRapid() {
-      rapidList.innerHTML = RAPID_CARDS.map((r, i) => `
-        <div class="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-800/40 flex flex-col justify-between gap-3">
-          <p class="text-sm font-bold text-slate-900 dark:text-white">${r.situation}</p>
-          <div>
-            <div class="flex flex-wrap gap-2">
-              ${r.options.map(opt => `
-                <button type="button" onclick="pickRapid(${i}, '${opt}')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-[#0089A7] transition">
-                  ${opt}
-                </button>
-              `).join('')}
-            </div>
-            <div id="rapid-fb-${i}" class="hidden"></div>
-          </div>
-        </div>
-      `).join('');
-    }
-
     // Init
-    renderQuestion(0);
+    goStage(0);
+    renderWarmupCard(0);
+    renderVocabGrid();
+    renderProductionPrompts();
     renderSwitcher();
-    renderVocab();
-    renderVocabQuiz();
-    renderExercises();
-    renderTraps();
-    renderRapid();
+    renderCloze();
+    renderPractice();
+    renderScramble();
+    renderOdd();
+    renderFixHomework();
+    renderGame();
     lucide.createIcons();
   </script>
 </body>

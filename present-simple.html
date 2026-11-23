@@ -27,10 +27,10 @@
     .stage-anim { animation: stageIn 0.28s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
   </style>
 </head>
-<body class="bg-[#F4F6F9] text-slate-900 dark:bg-[#141518] dark:text-zinc-100 min-h-screen flex flex-col transition-colors duration-200 selection:bg-[#0089A7] selection:text-white">
+<body class="bg-[#F2F6FA] text-slate-900 dark:bg-[#061322] dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200 selection:bg-[#0089A7] selection:text-white">
 
   <!-- Sticky Deep Navy Navbar (#002B5C in both modes) -->
-  <header class="sticky top-0 z-40 bg-[#002B5C] text-white border-b border-white/10 shadow-md">
+  <header class="sticky top-0 z-40 bg-[#002B5C] text-white border-b border-cyan-300/15 shadow-md">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
       <div class="flex items-center gap-3.5">
         <a href="index.html" class="flex items-center shrink-0" title="PROVO">
@@ -48,7 +48,7 @@
         </span>
       </div>
 
-      <!-- Stage Switcher Pills -->
+      <!-- Stage Switcher Pills (7 Stages) -->
       <div id="stagePills" class="flex items-center gap-1 overflow-x-auto py-1"></div>
 
       <!-- Right Controls -->
@@ -57,8 +57,8 @@
           id="themeToggle"
           type="button"
           class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition"
-          title="Toggle Light / Dark Mode"
-          aria-label="Toggle Light / Dark Mode"
+          title="Toggle Light / Navy Dark Mode"
+          aria-label="Toggle Light / Navy Dark Mode"
         >
           <i id="themeIcon" data-lucide="sun" class="w-4 h-4"></i>
         </button>
@@ -71,7 +71,7 @@
         </a>
       </div>
     </div>
-    <div class="w-full h-1 bg-black/25">
+    <div class="w-full h-1 bg-black/30">
       <div id="progressLine" class="h-full bg-[#0089A7] transition-all duration-300" style="width: 14.28%"></div>
     </div>
   </header>
@@ -81,24 +81,24 @@
 
     <!-- ==================== 01: EDITORIAL COVER ==================== -->
     <section data-stage="0" class="lesson-stage stage-anim">
-      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 shadow-xl">
-        <div class="lg:col-span-6 h-80 sm:h-[470px] relative bg-slate-900 overflow-hidden">
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 shadow-2xl">
+        <div class="lg:col-span-6 h-80 sm:h-[470px] relative bg-[#091726] overflow-hidden">
           <img
             src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1050&q=80"
-            alt="Morning coffee routine on a minimalist table"
+            alt="Morning coffee on a clean table"
             class="w-full h-full object-cover"
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent"></div>
-          <div class="absolute bottom-5 left-6 right-6 flex items-center justify-between text-xs text-white/80 font-semibold tracking-wider uppercase">
-            <span>PROVO · Core Grammar</span>
+          <div class="absolute inset-0 bg-gradient-to-t from-[#061322]/85 via-black/15 to-transparent"></div>
+          <div class="absolute bottom-5 left-6 right-6 flex items-center justify-between text-xs text-cyan-100/90 font-semibold tracking-wider uppercase">
+            <span>PROVO · A1–A2 Grammar</span>
             <span>Routines &amp; Facts</span>
           </div>
         </div>
 
         <div class="lg:col-span-6 p-8 sm:p-12 flex flex-col justify-center space-y-6">
-          <div class="inline-flex items-center gap-2 self-start px-3 py-1 rounded-full bg-[#0089A7]/15 border border-[#0089A7]/30 text-[#005A8D] dark:text-cyan-300 text-xs font-extrabold uppercase tracking-[0.18em]">
+          <div class="inline-flex items-center gap-2 self-start px-3 py-1 rounded-full bg-[#0089A7]/15 border border-[#0089A7]/35 text-[#005A8D] dark:text-cyan-300 text-xs font-extrabold uppercase tracking-[0.18em]">
             <i data-lucide="repeat" class="w-3.5 h-3.5"></i>
-            <span>Interactive Lesson</span>
+            <span>PROVO Stage Lab · Navy Edition</span>
           </div>
 
           <h1 class="text-4xl sm:text-5xl font-extrabold uppercase tracking-tight leading-[1.06] text-[#002B5C] dark:text-white">
@@ -107,71 +107,78 @@
             <span class="text-[#0089A7]">Mastery</span>
           </h1>
 
-          <p class="text-slate-600 dark:text-zinc-300 text-base leading-relaxed">
-            Explore visual speaking prompts, clear grammar blueprints, interactive vocabulary &amp; word scrambles, and a live speaking game for class.
+          <p class="text-slate-600 dark:text-slate-300 text-base leading-relaxed">
+            Build accuracy with habits, schedules, permanent facts, third-person endings, and frequency expressions across guided interactive stages.
           </p>
 
           <div class="pt-2 flex flex-wrap items-center gap-4">
             <button
               type="button"
               onclick="goStage(1)"
-              class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-[#002B5C] to-[#005A8D] hover:from-[#005A8D] hover:to-[#0089A7] text-white text-sm font-bold shadow-lg shadow-[#002B5C]/20 transition"
+              class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-[#002B5C] to-[#005A8D] hover:from-[#005A8D] hover:to-[#0089A7] text-white text-sm font-bold shadow-lg shadow-[#002B5C]/25 transition"
             >
               <span>Start Lesson</span>
               <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
-            <span class="text-xs font-medium text-slate-500 dark:text-zinc-400">7 stages · Visual cards, scramble &amp; class game</span>
+            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">12 visual prompts · Fullscreen mode · Multi-game arcade</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ==================== 02: VISUAL QUESTION CARDS & VOICE RECORDER ==================== -->
+    <!-- ==================== 02: 12 VISUAL QUESTION CARDS + FULLSCREEN + RECORDER ==================== -->
     <section data-stage="1" class="lesson-stage hidden stage-anim space-y-6">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-white/10 pb-4">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
         <div>
           <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 02</span>
           <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Visual Warm-Up</h2>
         </div>
-        <p class="text-sm text-slate-500 dark:text-zinc-400">Browse the photo prompt cards, discuss in class, or send a voice note.</p>
+        <p class="text-sm text-slate-500 dark:text-slate-400">12 routine &amp; habit prompts. Switch to Fullscreen Card when projecting or sharing screen.</p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-        <div class="lg:col-span-7 space-y-4">
-          <div class="flex flex-wrap items-center justify-between gap-2 bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-2xl px-4 py-3 shadow-sm">
+      <div id="warmupLayout" class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div id="warmupCardCol" class="lg:col-span-7 space-y-4 transition-all">
+          <div class="flex flex-wrap items-center justify-between gap-2 bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-2xl px-4 py-3 shadow-sm">
             <div class="flex items-center gap-2">
-              <span id="qBadge" class="px-2.5 py-1 rounded-lg bg-[#002B5C] text-white text-xs font-extrabold">Q1 / 8</span>
+              <span id="qBadge" class="px-2.5 py-1 rounded-lg bg-[#002B5C] text-white text-xs font-extrabold">Q1 / 12</span>
               <span id="qTag" class="px-2.5 py-1 rounded-lg bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300 text-xs font-bold">Morning Rituals</span>
             </div>
             <div class="flex items-center gap-1.5">
-              <button id="prevQ" type="button" class="p-2 rounded-xl border border-slate-200 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/5 transition" title="Previous">
+              <button id="prevQ" type="button" class="p-2 rounded-xl border border-slate-200 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] transition" title="Previous">
                 <i data-lucide="chevron-left" class="w-4 h-4"></i>
               </button>
-              <button id="nextQ" type="button" class="p-2 rounded-xl border border-slate-200 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/5 transition" title="Next">
+              <button id="nextQ" type="button" class="p-2 rounded-xl border border-slate-200 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] transition" title="Next">
                 <i data-lucide="chevron-right" class="w-4 h-4"></i>
               </button>
-              <button id="shuffleQ" type="button" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 dark:bg-[#141518] hover:bg-slate-200 dark:hover:bg-white/10 text-xs font-bold transition">
+              <button id="shuffleQ" type="button" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 dark:bg-[#071627] hover:bg-slate-200 dark:hover:bg-[#132C4A] text-xs font-bold transition">
                 <i data-lucide="shuffle" class="w-3.5 h-3.5 text-[#0089A7]"></i>
                 <span>Random</span>
+              </button>
+              <button id="toggleFullscreenCard" type="button" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#005A8D]/15 dark:bg-[#0089A7]/20 text-[#005A8D] dark:text-cyan-200 hover:bg-[#0089A7]/30 text-xs font-bold transition" title="Toggle Fullscreen Card">
+                <i id="fullscreenIcon" data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+                <span id="fullscreenLabel">Fullscreen Card</span>
               </button>
             </div>
           </div>
 
-          <div class="bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-3xl overflow-hidden shadow-sm">
-            <div id="questionPhotoBox" class="h-52 sm:h-60 bg-slate-900 relative overflow-hidden"></div>
+          <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl overflow-hidden shadow-sm">
+            <div id="questionPhotoBox" class="h-52 sm:h-64 bg-[#091726] relative overflow-hidden"></div>
 
             <div class="p-6 sm:p-8 space-y-4">
-              <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-[#0089A7]">Speaking Prompt</p>
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-[#0089A7]">Speaking Prompt</p>
+                <span id="qAngleBadge" class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-[#071627] text-slate-600 dark:text-cyan-200"></span>
+              </div>
               <h3 id="questionText" class="text-xl sm:text-2xl font-extrabold leading-snug text-[#002B5C] dark:text-white"></h3>
-              <p id="questionFollow" class="text-sm text-slate-600 dark:text-zinc-300"></p>
+              <p id="questionFollow" class="text-sm text-slate-600 dark:text-slate-300"></p>
 
-              <div class="pt-3 border-t border-slate-100 dark:border-white/10">
+              <div class="pt-3 border-t border-slate-100 dark:border-cyan-400/15">
                 <button id="toggleStarters" type="button" class="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-[#005A8D] dark:text-cyan-300 hover:underline">
                   <i data-lucide="lightbulb" class="w-4 h-4"></i>
                   <span>Sentence Starters</span>
                 </button>
-                <div id="startersBox" class="hidden mt-3 bg-slate-50 dark:bg-[#141518] border border-[#0089A7]/25 rounded-2xl p-4 text-xs sm:text-sm">
-                  <ul id="startersList" class="list-disc list-inside space-y-1.5 text-slate-700 dark:text-zinc-200"></ul>
+                <div id="startersBox" class="hidden mt-3 bg-slate-50 dark:bg-[#071627] border border-[#0089A7]/25 rounded-2xl p-4 text-xs sm:text-sm">
+                  <ul id="startersList" class="list-disc list-inside space-y-1.5 text-slate-700 dark:text-slate-200"></ul>
                 </div>
               </div>
             </div>
@@ -180,18 +187,17 @@
           <div id="questionNumberPills" class="flex flex-wrap gap-1.5"></div>
         </div>
 
-        <!-- Right: Voice Note Recorder -->
-        <div class="lg:col-span-5 bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 space-y-4 shadow-sm">
+        <div id="warmupRecorderCol" class="lg:col-span-5 bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-4 shadow-sm">
           <div class="flex items-center justify-between">
             <span class="text-xs font-extrabold uppercase tracking-[0.18em] text-[#0089A7]">Voice Note · Drive</span>
-            <span id="recTimer" class="font-mono text-xs font-bold text-slate-500 dark:text-zinc-400">00:00</span>
+            <span id="recTimer" class="font-mono text-xs font-bold text-slate-500 dark:text-slate-400">00:00</span>
           </div>
-          <p class="text-xs text-slate-500 dark:text-zinc-400">Record your response to the active card and send it directly to your teacher.</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Record your answer out loud and send it straight to your teacher's folder.</p>
           <input
             id="studentNameInput"
             type="text"
             placeholder="Your name (e.g. Sofía Gómez)"
-            class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-[#141518] border border-slate-200 dark:border-white/10 text-sm focus:outline-none focus:ring-2 focus:ring-[#0089A7]"
+            class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/20 text-sm focus:outline-none focus:ring-2 focus:ring-[#0089A7]"
           />
           <div class="flex items-center gap-2">
             <button id="btnRecord" type="button" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold transition">
@@ -202,7 +208,7 @@
               <i data-lucide="square" class="w-4 h-4"></i>
               <span>Stop</span>
             </button>
-            <button id="btnClearAudio" type="button" disabled class="p-2.5 rounded-xl border border-slate-200 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/5 disabled:opacity-40 transition" title="Discard">
+            <button id="btnClearAudio" type="button" disabled class="p-2.5 rounded-xl border border-slate-200 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] disabled:opacity-40 transition" title="Discard">
               <i data-lucide="trash-2" class="w-4 h-4"></i>
             </button>
           </div>
@@ -212,7 +218,7 @@
               <i data-lucide="send" class="w-3.5 h-3.5"></i>
               <span id="sendLabel">Send to Teacher</span>
             </button>
-            <button id="btnDownloadAudio" type="button" disabled class="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl border border-slate-200 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/5 disabled:opacity-40 text-xs font-semibold transition">
+            <button id="btnDownloadAudio" type="button" disabled class="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl border border-slate-200 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] disabled:opacity-40 text-xs font-semibold transition">
               <i data-lucide="download" class="w-3.5 h-3.5"></i>
               <span>Backup</span>
             </button>
@@ -222,272 +228,323 @@
       </div>
     </section>
 
-    <!-- ==================== 03: VOCABULARY SHOWCASE + MATCH + FREQUENCY SCALE ==================== -->
-    <section data-stage="2" class="lesson-stage hidden stage-anim space-y-8">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-white/10 pb-4">
+    <!-- ==================== 03: COMPLETE VOCABULARY LAB ==================== -->
+    <section data-stage="2" class="lesson-stage hidden stage-anim space-y-10">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
         <div>
           <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 03</span>
-          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Vocabulary &amp; Frequency</h2>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Routine &amp; Frequency Vocabulary</h2>
         </div>
-        <p class="text-sm text-slate-500 dark:text-zinc-400">1. Explore the expressions in context · 2. Test the frequency scale · 3. Match definitions.</p>
+
+        <div class="inline-flex rounded-xl bg-white dark:bg-[#0C1E33] p-1 border border-slate-200 dark:border-cyan-400/20 text-xs font-bold self-start sm:self-auto">
+          <button id="vocabModeGridBtn" type="button" onclick="setVocabView('grid')" class="px-3.5 py-1.5 rounded-lg bg-[#002B5C] text-white transition">
+            All Cards
+          </button>
+          <button id="vocabModeSingleBtn" type="button" onclick="setVocabView('single')" class="px-3.5 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 transition">
+            One by One
+          </button>
+        </div>
       </div>
 
-      <!-- Part A: Visual Vocabulary Cards with Pronunciation & Context -->
-      <div class="space-y-3">
-        <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#005A8D] dark:text-cyan-300">Part A · Key Expressions in Context</h3>
-        <div id="vocabShowcaseGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+      <div id="vocabGridView" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+
+      <div id="vocabSingleView" class="hidden max-w-2xl mx-auto w-full space-y-4">
+        <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl overflow-hidden shadow-md">
+          <div id="vocabSinglePhoto" class="h-56 sm:h-64 bg-[#091726] relative overflow-hidden"></div>
+          <div class="p-6 sm:p-8 space-y-4">
+            <div class="flex items-center justify-between gap-2">
+              <span id="vocabSingleCounter" class="text-xs font-extrabold uppercase tracking-widest text-[#0089A7]">Expression 1 / 6</span>
+              <span id="vocabSingleTag" class="px-2.5 py-1 rounded-lg bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300 text-xs font-bold"></span>
+            </div>
+            <div class="flex items-center justify-between gap-3">
+              <h3 id="vocabSinglePhrase" class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white"></h3>
+              <button id="vocabSingleAudioBtn" type="button" class="p-2.5 rounded-xl bg-slate-100 dark:bg-[#071627] text-[#005A8D] dark:text-cyan-300 hover:bg-[#0089A7] hover:text-white transition" title="Listen">
+                <i data-lucide="volume-2" class="w-5 h-5"></i>
+              </button>
+            </div>
+            <p id="vocabSingleDef" class="text-sm sm:text-base text-slate-700 dark:text-slate-200"></p>
+            <p id="vocabSingleEx" class="text-sm italic text-[#005A8D] dark:text-cyan-300 bg-slate-50 dark:bg-[#071627] p-3.5 rounded-2xl border border-slate-200/70 dark:border-cyan-400/15"></p>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between gap-3">
+          <button type="button" onclick="stepSingleVocab(-1)" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-bold">
+            <i data-lucide="chevron-left" class="w-4 h-4"></i>
+            <span>Previous Word</span>
+          </button>
+          <div id="vocabSingleDots" class="flex gap-1.5"></div>
+          <button type="button" onclick="stepSingleVocab(1)" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#005A8D] hover:bg-[#0089A7] text-white text-xs font-bold">
+            <span>Next Word</span>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+        </div>
       </div>
 
-      <!-- Part B: Interactive Frequency Thermometer -->
-      <div class="bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 space-y-4 shadow-sm">
+      <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-4 shadow-sm">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div>
-            <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Part B · Frequency Thermometer</span>
-            <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white mt-0.5">Tap an Adverb to See Where It Sits &amp; Speak</h3>
+            <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Frequency Thermometer</span>
+            <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white mt-0.5">Tap an Adverb for Examples &amp; Speaking Cues</h3>
           </div>
           <span id="freqPercentBadge" class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold self-start sm:self-auto">100% · Always</span>
         </div>
-
         <div class="flex flex-wrap gap-2" id="freqButtons"></div>
-
-        <div id="freqDetailCard" class="p-4 rounded-2xl bg-slate-50 dark:bg-[#141518] border border-slate-200 dark:border-white/10 space-y-1.5"></div>
+        <div id="freqDetailCard" class="p-4 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/15 space-y-1.5"></div>
       </div>
 
-      <!-- Part C: Vocabulary Match Challenge -->
-      <div class="space-y-4 pt-2">
+      <div class="space-y-4">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-          <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#005A8D] dark:text-cyan-300">Part C · Quick Definition Match</h3>
+          <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#005A8D] dark:text-cyan-300">Definition Match</h3>
           <div class="flex items-center gap-3">
             <span id="vocabMatchStatus" class="text-xs font-bold text-[#005A8D] dark:text-cyan-300">Pick a definition on the left, then tap its phrase</span>
-            <button type="button" onclick="resetVocabMatch()" class="text-xs px-3 py-1.5 rounded-lg border border-slate-300 dark:border-white/15 hover:bg-slate-100 dark:hover:bg-white/5 font-semibold">Reset</button>
+            <button type="button" onclick="resetVocabMatch()" class="text-xs px-3 py-1.5 rounded-lg border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] font-semibold">Reset</button>
           </div>
         </div>
-
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           <div id="vocabDefsCol" class="lg:col-span-7 space-y-2.5"></div>
-          <div class="lg:col-span-5 bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 space-y-4 shadow-sm">
-            <h4 class="text-xs font-extrabold uppercase tracking-[0.2em] text-slate-500 dark:text-zinc-400">Expressions &amp; Audio</h4>
+          <div class="lg:col-span-5 bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-4 shadow-sm">
+            <h4 class="text-xs font-extrabold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">Expressions &amp; Audio</h4>
             <div id="vocabWordsCol" class="flex flex-wrap gap-2.5"></div>
-            <div id="vocabExampleBox" class="hidden pt-4 border-t border-slate-200 dark:border-white/10 text-xs text-slate-600 dark:text-zinc-300 space-y-1"></div>
+            <div id="vocabExampleBox" class="hidden pt-4 border-t border-slate-200 dark:border-cyan-400/15 text-xs text-slate-600 dark:text-slate-300 space-y-1"></div>
           </div>
         </div>
+      </div>
+
+      <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 sm:p-8 space-y-5 shadow-sm">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Guided Production Lab</span>
+            <h3 class="text-xl font-extrabold text-[#002B5C] dark:text-white mt-0.5">Write True Sentences About Your Routine</h3>
+          </div>
+          <button type="button" onclick="toggleProductionModels()" class="self-start sm:self-auto px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-bold text-[#005A8D] dark:text-cyan-300">
+            Show / Hide Model Ideas
+          </button>
+        </div>
+        <div id="productionPromptsList" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
       </div>
     </section>
 
-    <!-- ==================== 04: GRAMMAR GUIDE & INTERACTIVE STUDIO ==================== -->
+    <!-- ==================== 04: VISUAL GRAMMAR + INSPECTOR + INTEGRATED CLOZE ==================== -->
     <section data-stage="3" class="lesson-stage hidden stage-anim space-y-8">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-white/10 pb-4">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
         <div>
           <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 04</span>
-          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Grammar Guide</h2>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Grammar Guide &amp; Check</h2>
         </div>
-        <p class="text-sm text-slate-500 dark:text-zinc-400">When we use Present Simple, how to form it, and where frequency adverbs go.</p>
+        <p class="text-sm text-slate-500 dark:text-slate-400">Visual diagrams, clear rules for Present Simple, live form inspector, and summary check.</p>
       </div>
 
+      <!-- Visual Diagram + Photo -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-        <div class="lg:col-span-5 rounded-3xl overflow-hidden relative bg-slate-900 min-h-[240px]">
+        <div class="lg:col-span-7 bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-4 shadow-sm flex flex-col justify-center">
+          <div class="flex items-center justify-between text-xs font-extrabold">
+            <span class="px-2.5 py-0.5 rounded bg-[#002B5C] text-white">REPEATED PATTERN</span>
+            <span class="text-[#005A8D] dark:text-cyan-300">Habits · Facts · Timetables · Stative</span>
+          </div>
+          <svg viewBox="0 0 500 78" class="w-full h-20 rounded-xl bg-slate-50 dark:bg-[#071627] border border-slate-200/70 dark:border-cyan-400/10">
+            <line x1="25" y1="36" x2="475" y2="36" stroke="#64748B" stroke-width="2" stroke-dasharray="4 4" />
+            <circle cx="85" cy="36" r="8" fill="#002B5C" />
+            <circle cx="190" cy="36" r="8" fill="#005A8D" />
+            <circle cx="295" cy="36" r="8" fill="#0089A7" />
+            <circle cx="400" cy="36" r="8" fill="#002B5C" />
+            <text x="85" y="60" text-anchor="middle" font-size="10" fill="#94A3B8">Mon</text>
+            <text x="190" y="60" text-anchor="middle" font-size="10" fill="#94A3B8">Wed</text>
+            <text x="295" y="60" text-anchor="middle" font-size="10" fill="#94A3B8">Fri</text>
+            <text x="400" y="60" text-anchor="middle" font-size="10" fill="#94A3B8">Sun</text>
+          </svg>
+          <p class="text-xs text-slate-600 dark:text-slate-300">
+            Present Simple anchors regular habits, general truths, fixed schedules, and stative verbs (<em>know, prefer, want, need, love, belong</em>).
+          </p>
+        </div>
+
+        <div class="lg:col-span-5 rounded-3xl overflow-hidden relative bg-[#091726] min-h-[220px] shadow-sm">
           <img
             src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=850&q=80"
-            alt="Calendar and weekly schedule"
+            alt="Weekly planner and schedule"
             class="w-full h-full object-cover"
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-[#002B5C]/90 via-[#002B5C]/40 to-transparent"></div>
-          <div class="absolute bottom-5 left-6 right-6 text-white space-y-1.5">
-            <span class="text-[11px] font-extrabold uppercase tracking-[0.2em] text-cyan-200">Core Timeline</span>
-            <p class="text-sm font-bold leading-snug">Past ← ● ——— ● ——— ● ——— ● → Future</p>
-            <p class="text-xs text-white/85">Repeated habits, permanent truths, and fixed timetables.</p>
-          </div>
-        </div>
-
-        <div class="lg:col-span-7 bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 sm:p-7 space-y-4 shadow-sm">
-          <h3 class="text-base font-extrabold text-[#002B5C] dark:text-white flex items-center gap-2">
-            <i data-lucide="compass" class="w-4 h-4 text-[#0089A7]"></i>
-            <span>4 Main Uses of Present Simple</span>
-          </h3>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-            <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-[#141518] border border-slate-200/70 dark:border-white/10 space-y-1">
-              <div class="font-extrabold text-[#005A8D] dark:text-cyan-300">1. Habits &amp; Routines</div>
-              <p class="text-slate-600 dark:text-zinc-300"><em>I <u>walk</u> every morning.</em></p>
-            </div>
-            <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-[#141518] border border-slate-200/70 dark:border-white/10 space-y-1">
-              <div class="font-extrabold text-[#005A8D] dark:text-cyan-300">2. Permanent Facts</div>
-              <p class="text-slate-600 dark:text-zinc-300"><em>Water <u>boils</u> at 100 °C. / She <u>lives</u> in Spain.</em></p>
-            </div>
-            <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-[#141518] border border-slate-200/70 dark:border-white/10 space-y-1">
-              <div class="font-extrabold text-[#005A8D] dark:text-cyan-300">3. Fixed Timetables</div>
-              <p class="text-slate-600 dark:text-zinc-300"><em>The train <u>leaves</u> at 8:15 AM.</em></p>
-            </div>
-            <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-[#141518] border border-slate-200/70 dark:border-white/10 space-y-1">
-              <div class="font-extrabold text-[#005A8D] dark:text-cyan-300">4. Stative Verbs</div>
-              <p class="text-slate-600 dark:text-zinc-300"><em>We <u>prefer</u> tea. / He <u>knows</u> the answer.</em></p>
-            </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-[#061322]/90 via-[#061322]/35 to-transparent"></div>
+          <div class="absolute bottom-5 left-6 right-6 text-white space-y-1">
+            <span class="text-[11px] font-extrabold uppercase tracking-[0.2em] text-cyan-300">Key Spelling Rule</span>
+            <p class="text-sm font-bold">He / She / It → -s / -es / -ies</p>
+            <p class="text-xs text-white/80">In negatives and questions with <em>doesn't / does</em>, return to the base verb.</p>
           </div>
         </div>
       </div>
 
+      <!-- Detailed Grammar Rules -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        <div class="bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 space-y-2.5 shadow-sm">
-          <span class="inline-block px-2.5 py-1 rounded-lg bg-[#002B5C] text-white text-[11px] font-extrabold uppercase">Spelling · He / She / It</span>
+        <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-2.5 shadow-sm">
+          <span class="inline-block px-2.5 py-1 rounded-lg bg-[#002B5C] text-white text-[11px] font-extrabold uppercase">01 · Spelling · He / She / It</span>
           <h3 class="text-base font-extrabold text-[#002B5C] dark:text-white">Third-Person Endings</h3>
-          <ul class="text-xs text-slate-600 dark:text-zinc-300 space-y-1.5 list-disc list-inside">
-            <li>General: <strong>+s</strong> (<em>works, plays, reads</em>)</li>
-            <li>-ch, -sh, -ss, -x, -o: <strong>+es</strong> (<em>watches, goes</em>)</li>
-            <li>Consonant + y: <strong>-ies</strong> (<em>study → studies</em>)</li>
-            <li>Irregular: <em>have → <strong>has</strong></em></li>
+          <ul class="text-xs text-slate-600 dark:text-slate-300 space-y-1.5 list-disc list-inside leading-relaxed">
+            <li>General verbs: <strong>+s</strong> (<em>works, plays, reads</em>).</li>
+            <li>Ending in <em>-ch, -sh, -ss, -x, -o</em>: <strong>+es</strong> (<em>watches, goes</em>).</li>
+            <li>Consonant + <em>y</em>: <strong>-ies</strong> (<em>study → studies</em>).</li>
+            <li>Irregular: <em>have → <strong>has</strong></em>.</li>
           </ul>
         </div>
 
-        <div class="bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 space-y-2.5 shadow-sm">
-          <span class="inline-block px-2.5 py-1 rounded-lg bg-[#005A8D] text-white text-[11px] font-extrabold uppercase">Do / Does</span>
+        <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-2.5 shadow-sm">
+          <span class="inline-block px-2.5 py-1 rounded-lg bg-[#005A8D] text-white text-[11px] font-extrabold uppercase">02 · Do / Does</span>
           <h3 class="text-base font-extrabold text-[#002B5C] dark:text-white">Negatives &amp; Questions</h3>
-          <ul class="text-xs text-slate-600 dark:text-zinc-300 space-y-1.5 list-disc list-inside">
-            <li>I / You / We / They: <strong>don't + base</strong></li>
-            <li>He / She / It: <strong>doesn't + base</strong></li>
-            <li>Questions: <strong>Do / Does + subject + base?</strong></li>
-            <li>Golden rule: never add <em>-s</em> after <em>does/doesn't</em>.</li>
+          <ul class="text-xs text-slate-600 dark:text-slate-300 space-y-1.5 list-disc list-inside leading-relaxed">
+            <li><em>I / you / we / they</em>: <strong>don't + base verb</strong>.</li>
+            <li><em>He / she / it</em>: <strong>doesn't + base verb</strong>.</li>
+            <li>Questions: <strong>Do / Does + subject + base verb?</strong></li>
+            <li>Never add <em>-s</em> to the main verb after <em>does</em> or <em>doesn't</em>.</li>
           </ul>
         </div>
 
-        <div class="bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 space-y-2.5 shadow-sm">
-          <span class="inline-block px-2.5 py-1 rounded-lg bg-[#0089A7] text-white text-[11px] font-extrabold uppercase">Word Order</span>
-          <h3 class="text-base font-extrabold text-[#002B5C] dark:text-white">Frequency Adverbs</h3>
-          <ul class="text-xs text-slate-600 dark:text-zinc-300 space-y-1.5 list-disc list-inside">
+        <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-2.5 shadow-sm">
+          <span class="inline-block px-2.5 py-1 rounded-lg bg-[#0089A7] text-white text-[11px] font-extrabold uppercase">03 · Adverbs &amp; States</span>
+          <h3 class="text-base font-extrabold text-[#002B5C] dark:text-white">Position &amp; Stative Verbs</h3>
+          <ul class="text-xs text-slate-600 dark:text-slate-300 space-y-1.5 list-disc list-inside leading-relaxed">
             <li><strong>Before</strong> main verbs: <em>She <u>always drinks</u> tea.</em></li>
-            <li><strong>After</strong> verb <em>to be</em>: <em>He <u>is always</u> punctual.</em></li>
-            <li>Scale: <em>always → usually → often → sometimes → hardly ever → never</em>.</li>
+            <li><strong>After</strong> verb <em>to be</em>: <em>He <u>is always</u> on time.</em></li>
+            <li>Stative verbs (<em>know, prefer, want, belong</em>) describe states rather than actions in progress.</li>
           </ul>
         </div>
       </div>
 
-      <div class="bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 sm:p-8 space-y-5 shadow-sm">
+      <!-- Interactive Form Inspector -->
+      <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 sm:p-8 space-y-5 shadow-sm">
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Interactive Form Inspector</span>
-            <h3 class="text-xl font-extrabold text-[#002B5C] dark:text-white mt-0.5">Test Subject + Sentence Form</h3>
+            <h3 class="text-xl font-extrabold text-[#002B5C] dark:text-white mt-0.5">Switch Subject &amp; Sentence Type</h3>
           </div>
-          <div class="flex flex-wrap gap-1.5 bg-slate-100 dark:bg-[#141518] p-1 rounded-xl border border-slate-200 dark:border-white/10 text-xs font-bold">
+          <div class="flex flex-wrap gap-1.5 bg-slate-100 dark:bg-[#071627] p-1 rounded-xl border border-slate-200 dark:border-cyan-400/15 text-xs font-bold">
             <button type="button" data-form="aff" class="form-btn px-3.5 py-1.5 rounded-lg bg-[#002B5C] text-white transition">Affirmative (+)</button>
-            <button type="button" data-form="neg" class="form-btn px-3.5 py-1.5 rounded-lg text-slate-600 dark:text-zinc-300 transition">Negative (−)</button>
-            <button type="button" data-form="q" class="form-btn px-3.5 py-1.5 rounded-lg text-slate-600 dark:text-zinc-300 transition">Question (?)</button>
+            <button type="button" data-form="neg" class="form-btn px-3.5 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 transition">Negative (−)</button>
+            <button type="button" data-form="q" class="form-btn px-3.5 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 transition">Question (?)</button>
           </div>
         </div>
         <div class="flex flex-wrap gap-2" id="subjectSelector"></div>
-        <div id="inspectorPreview" class="p-6 rounded-2xl bg-[#F4F6F9] dark:bg-[#141518] border border-[#0089A7]/25 space-y-2"></div>
+        <div id="inspectorPreview" class="p-6 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-[#0089A7]/25 space-y-2"></div>
       </div>
-    </section>
 
-    <!-- ==================== 05: SUMMARY CLOZE ==================== -->
-    <section data-stage="4" class="lesson-stage hidden stage-anim space-y-6">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-white/10 pb-4">
+      <!-- Integrated Summary Cloze Exercise -->
+      <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 sm:p-8 space-y-5 shadow-sm">
         <div>
-          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 05</span>
-          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Rule Summary</h2>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Grammar Check · Fill the Summary</span>
+          <h3 class="text-xl font-extrabold text-[#002B5C] dark:text-white mt-0.5">Complete the Present Simple Summary</h3>
         </div>
-        <p class="text-sm text-slate-500 dark:text-zinc-400">Select a slot, click a word from the bank, and check your summary.</p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 shadow-sm">
-        <div class="lg:col-span-4 h-64 lg:h-auto bg-slate-900">
-          <img
-            src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=850&q=80"
-            alt="Notebook and pen on a clean desk"
-            class="w-full h-full object-cover"
-          />
-        </div>
-        <div class="lg:col-span-8 p-6 sm:p-8 space-y-6">
-          <div class="flex flex-wrap gap-2" id="clozeChips"></div>
-          <p class="text-slate-700 dark:text-zinc-200 text-sm sm:text-base leading-loose" id="clozeText"></p>
-          <div class="flex flex-wrap items-center gap-3 pt-2">
-            <button type="button" onclick="checkCloze()" class="px-5 py-2.5 rounded-xl bg-[#002B5C] hover:bg-[#005A8D] text-white text-xs font-bold transition">
-              Check Summary
-            </button>
-            <button type="button" onclick="resetCloze()" class="px-4 py-2.5 rounded-xl border border-slate-300 dark:border-white/15 hover:bg-slate-100 dark:hover:bg-white/5 text-xs font-semibold transition">
-              Clear
-            </button>
-            <span id="clozeMsg" class="text-xs font-bold"></span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== 06: PRACTICE, SENTENCE SCRAMBLE & ODD ONE OUT ==================== -->
-    <section data-stage="5" class="lesson-stage hidden stage-anim space-y-8">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-white/10 pb-4">
-        <div>
-          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 06</span>
-          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Practice &amp; Word Order</h2>
-        </div>
-        <p class="text-sm text-slate-500 dark:text-zinc-400">Choose verb forms, build sentences by tapping tiles, and spot the odd one out.</p>
-      </div>
-
-      <!-- Verb Choice Grid -->
-      <div class="space-y-4">
-        <div id="practiceGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
-        <div class="flex items-center gap-3">
-          <button type="button" onclick="checkPractice()" class="px-5 py-2.5 rounded-xl bg-[#002B5C] hover:bg-[#005A8D] text-white text-xs font-bold transition">
-            Check Verb Choices
+        <div class="flex flex-wrap gap-2" id="clozeChips"></div>
+        <p class="text-slate-700 dark:text-slate-200 text-sm sm:text-base leading-loose" id="clozeText"></p>
+        <div class="flex flex-wrap items-center gap-3 pt-1">
+          <button type="button" onclick="checkCloze()" class="px-5 py-2.5 rounded-xl bg-[#002B5C] hover:bg-[#005A8D] text-white text-xs font-bold transition">
+            Check Summary
           </button>
-          <span id="practiceResult" class="text-sm font-bold text-[#005A8D] dark:text-cyan-300"></span>
+          <button type="button" onclick="resetCloze()" class="px-4 py-2.5 rounded-xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-semibold transition">
+            Clear
+          </button>
+          <span id="clozeMsg" class="text-xs font-bold"></span>
         </div>
       </div>
+    </section>
 
-      <!-- Interactive Sentence Scramble -->
-      <div class="bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 space-y-4 shadow-sm">
+    <!-- ==================== 05: PRACTICE PACK + MINI-CHAT LIVE ==================== -->
+    <section data-stage="4" class="lesson-stage hidden stage-anim space-y-10">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 05 · Class &amp; Homework Pack</span>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Practice &amp; Mini-Chat</h2>
+        </div>
+        <p class="text-sm text-slate-500 dark:text-slate-400">Multiple choice, word order, odd one out, live chat replies, and homework rewrites.</p>
+      </div>
+
+      <!-- Set 1: 8 MCQs -->
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#005A8D] dark:text-cyan-300">Set 1 · Choose the Right Form (8 Items)</h3>
+          <span id="practiceResult" class="text-xs sm:text-sm font-extrabold text-[#005A8D] dark:text-cyan-300"></span>
+        </div>
+        <div id="practiceGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+        <button type="button" onclick="checkPractice()" class="px-5 py-2.5 rounded-xl bg-[#002B5C] hover:bg-[#005A8D] text-white text-xs font-bold transition">
+          Check Set 1
+        </button>
+      </div>
+
+      <!-- Set 2: 4 Sentence Scrambles -->
+      <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-4 shadow-sm">
         <div class="flex flex-wrap items-center justify-between gap-2">
           <div>
-            <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Sentence Scramble</span>
+            <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Set 2 · Word Order Scramble (4 Sentences)</span>
             <h3 id="scrambleTitle" class="text-lg font-extrabold text-[#002B5C] dark:text-white mt-0.5"></h3>
           </div>
           <div class="flex items-center gap-2">
-            <button type="button" onclick="resetScramble()" class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-white/15 text-xs font-semibold hover:bg-slate-100 dark:hover:bg-white/5">Clear</button>
+            <button type="button" onclick="resetScramble()" class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-cyan-400/20 text-xs font-semibold hover:bg-slate-100 dark:hover:bg-[#132C4A]">Clear</button>
             <button type="button" onclick="nextScramble()" class="px-3.5 py-1.5 rounded-lg bg-[#005A8D] text-white text-xs font-bold hover:bg-[#0089A7] transition">Next Sentence</button>
           </div>
         </div>
-
-        <div id="scrambleTray" class="min-h-[54px] p-3.5 rounded-2xl bg-slate-50 dark:bg-[#141518] border border-dashed border-[#0089A7]/50 flex flex-wrap gap-2 items-center"></div>
+        <div id="scrambleTray" class="min-h-[54px] p-3.5 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-dashed border-[#0089A7]/50 flex flex-wrap gap-2 items-center"></div>
         <div id="scrambleBank" class="flex flex-wrap gap-2"></div>
         <div id="scrambleFeedback" class="text-xs font-bold"></div>
       </div>
 
-      <!-- Odd One Out -->
-      <div class="space-y-4 pt-2">
-        <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Odd One Out</h3>
-        <div id="oddGrid" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
+      <!-- Set 3: 4 Odd One Out Groups -->
+      <div class="space-y-4">
+        <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#005A8D] dark:text-cyan-300">Set 3 · Odd One Out (4 Groups)</h3>
+        <div id="oddGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+      </div>
+
+      <!-- Set 4: Mini-Chat Live Replies -->
+      <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-4 shadow-sm">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Set 4 · Mini-Chat Context</span>
+          <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white mt-0.5">Pick the Most Natural Chat Reply</h3>
+        </div>
+        <div id="miniChatList" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+      </div>
+
+      <!-- Set 5: 4 Homework Fix & Write -->
+      <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-4 shadow-sm">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Set 5 · Fix the Trap &amp; Write (Homework Ready)</span>
+            <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white mt-0.5">Correct Each Sentence &amp; Add Your Own Example</h3>
+          </div>
+          <button type="button" onclick="toggleFixKey()" class="px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-bold text-[#005A8D] dark:text-cyan-300">
+            Show / Hide Corrections
+          </button>
+        </div>
+        <div id="fixHomeworkList" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
       </div>
     </section>
 
-    <!-- ==================== 07: SPEAKING GAME FOR CLASS ==================== -->
-    <section data-stage="6" class="lesson-stage hidden stage-anim space-y-6">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-white/10 pb-4">
+    <!-- ==================== 06: SPEAKING GAME (4 CARDS PER MODE) ==================== -->
+    <section data-stage="5" class="lesson-stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
         <div>
-          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 07 · Live Class Game</span>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 06 · Live Class Game</span>
           <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Truth, Bluff &amp; Habits</h2>
         </div>
-        <p class="text-sm text-slate-500 dark:text-zinc-400">Play live with your teacher: draw a prompt card, answer naturally, and keep the conversation going.</p>
+        <p class="text-sm text-slate-500 dark:text-slate-400">4 cards per mode for lively speaking rounds with your teacher.</p>
       </div>
 
       <div class="flex flex-wrap gap-2" id="gameModeTabs"></div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 shadow-lg">
-        <div id="gamePhotoBox" class="lg:col-span-5 h-64 lg:h-auto bg-slate-900 relative overflow-hidden"></div>
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 shadow-lg">
+        <div id="gamePhotoBox" class="lg:col-span-5 h-64 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
 
         <div class="lg:col-span-7 p-6 sm:p-10 flex flex-col justify-between space-y-6">
           <div class="space-y-4">
             <div class="flex items-center justify-between gap-2">
               <span id="gameModeBadge" class="px-3 py-1 rounded-full bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300 text-xs font-extrabold uppercase tracking-wider"></span>
-              <span id="gameCardCounter" class="text-xs font-bold text-slate-400">Card 1 / 2</span>
+              <span id="gameCardCounter" class="text-xs font-bold text-slate-400">Card 1 / 4</span>
             </div>
 
             <h3 id="gamePromptTitle" class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
-            <p id="gameRuleText" class="text-sm text-slate-600 dark:text-zinc-300 leading-relaxed"></p>
+            <p id="gameRuleText" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed"></p>
 
-            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#141518] border border-slate-200 dark:border-white/10 space-y-1.5">
-              <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#0089A7]">Teacher Follow-Up Question</span>
-              <p id="gameFollowUp" class="text-sm font-semibold text-slate-800 dark:text-zinc-100"></p>
+            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/15 space-y-1.5">
+              <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#0089A7]">Teacher Follow-Up Prompt</span>
+              <p id="gameFollowUp" class="text-sm font-semibold text-slate-800 dark:text-slate-100"></p>
             </div>
           </div>
 
-          <div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-100 dark:border-white/10">
+          <div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-100 dark:border-cyan-400/15">
             <button
               type="button"
               onclick="nextGameCard()"
@@ -500,7 +557,7 @@
             <button
               type="button"
               onclick="revealBluffVote()"
-              class="inline-flex items-center gap-2 px-4 py-3 rounded-2xl border border-slate-300 dark:border-white/15 hover:bg-slate-100 dark:hover:bg-white/5 text-xs font-bold transition"
+              class="inline-flex items-center gap-2 px-4 py-3 rounded-2xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-bold transition"
             >
               <i data-lucide="sparkles" class="w-4 h-4 text-[#0089A7]"></i>
               <span>Bonus Twist</span>
@@ -512,17 +569,111 @@
       </div>
     </section>
 
+    <!-- ==================== 07: MULTI-MODE GAMIFIED ARCADE ==================== -->
+    <section data-stage="6" class="lesson-stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 07 · Gamified Finale</span>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Routine Arcade</h2>
+        </div>
+        <div class="flex items-center gap-3 text-xs font-extrabold">
+          <span id="arcadeScoreBadge" class="px-3 py-1 rounded-full bg-[#002B5C] text-white">Score: 0</span>
+          <span id="arcadeStreakBadge" class="px-3 py-1 rounded-full bg-[#0089A7]/20 text-[#005A8D] dark:text-cyan-300">Streak: 0 🔥</span>
+        </div>
+      </div>
+
+      <!-- Arcade Game Switcher -->
+      <div class="flex flex-wrap gap-2">
+        <button id="arcTabRounds" type="button" onclick="switchArcadeGame('rounds')" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-[#002B5C] text-white transition">
+          1. Form &amp; Spelling Duel
+        </button>
+        <button id="arcTabCues" type="button" onclick="switchArcadeGame('cues')" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7] transition">
+          2. Frequency Sorter
+        </button>
+        <button id="arcTabStative" type="button" onclick="switchArcadeGame('stative')" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7] transition">
+          3. Stative Trap Breaker
+        </button>
+      </div>
+
+      <!-- Game 1: Form & Spelling Duel -->
+      <div id="arcadePanelRounds" class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 sm:p-8 space-y-6 shadow-lg max-w-3xl mx-auto w-full">
+        <div class="flex items-center justify-between gap-2">
+          <span id="arcadeRoundLabel" class="text-xs font-extrabold uppercase tracking-widest text-[#0089A7]">Round 1 / 8</span>
+          <button type="button" onclick="resetArcade()" class="text-xs font-bold px-3 py-1 rounded-lg border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A]">
+            Reset Score
+          </button>
+        </div>
+
+        <h3 id="arcadeSentence" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="arcadeOptions"></div>
+        <div id="arcadeFeedback" class="hidden p-4 rounded-2xl text-xs sm:text-sm font-semibold"></div>
+
+        <div class="flex justify-end pt-2">
+          <button type="button" onclick="nextArcadeRound()" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#005A8D] hover:bg-[#0089A7] text-white text-xs font-bold transition">
+            <span>Next Round</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Game 2: Frequency Sorter -->
+      <div id="arcadePanelCues" class="hidden bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 sm:p-8 space-y-5 shadow-lg max-w-3xl mx-auto w-full">
+        <div class="flex items-center justify-between gap-2">
+          <span id="cueCounter" class="text-xs font-extrabold uppercase tracking-widest text-[#0089A7]">Expression 1 / 6</span>
+          <span class="text-xs text-slate-400">Does this fit regular routines or states?</span>
+        </div>
+        <div id="cuePhraseBox" class="text-2xl sm:text-3xl font-extrabold text-center py-6 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/15 text-[#002B5C] dark:text-white"></div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <button type="button" onclick="answerCue('Routine / Frequency')" class="p-4 rounded-2xl bg-[#002B5C] hover:bg-[#005A8D] text-white text-sm font-extrabold transition">
+            Routine / Frequency
+          </button>
+          <button type="button" onclick="answerCue('Stative / State')" class="p-4 rounded-2xl bg-[#0089A7] hover:opacity-95 text-white text-sm font-extrabold transition">
+            Stative / State
+          </button>
+        </div>
+        <div id="cueFeedback" class="hidden p-4 rounded-2xl text-xs sm:text-sm font-semibold"></div>
+        <div class="flex justify-end">
+          <button type="button" onclick="nextCue()" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-cyan-400/20 text-xs font-bold hover:bg-slate-100 dark:hover:bg-[#132C4A]">
+            Next Expression →
+          </button>
+        </div>
+      </div>
+
+      <!-- Game 3: Stative Trap Breaker -->
+      <div id="arcadePanelStative" class="hidden bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 sm:p-8 space-y-5 shadow-lg max-w-3xl mx-auto w-full">
+        <div class="flex items-center justify-between gap-2">
+          <span id="statCounter" class="text-xs font-extrabold uppercase tracking-widest text-[#0089A7]">Trap 1 / 6</span>
+          <span class="text-xs text-slate-400">Is this Present Simple sentence natural or a trap?</span>
+        </div>
+        <div id="statSentenceBox" class="text-xl sm:text-2xl font-extrabold text-center py-6 px-4 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/15 text-[#002B5C] dark:text-white"></div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <button type="button" onclick="answerStative(true)" class="p-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-extrabold transition">
+            Natural / Valid
+          </button>
+          <button type="button" onclick="answerStative(false)" class="p-4 rounded-2xl bg-rose-600 hover:bg-rose-700 text-white text-sm font-extrabold transition">
+            Trap / Unnatural
+          </button>
+        </div>
+        <div id="statFeedback" class="hidden p-4 rounded-2xl text-xs sm:text-sm font-semibold"></div>
+        <div class="flex justify-end">
+          <button type="button" onclick="nextStative()" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-cyan-400/20 text-xs font-bold hover:bg-slate-100 dark:hover:bg-[#132C4A]">
+            Next Sentence →
+          </button>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <!-- Editorial Bottom Stage Bar -->
-  <footer class="border-t border-slate-200 dark:border-white/10 bg-white dark:bg-[#141518] py-4 px-4 sm:px-6">
+  <!-- Editorial Bottom Stage Bar (7 Stages) -->
+  <footer class="border-t border-slate-200 dark:border-cyan-400/15 bg-white dark:bg-[#061322] py-4 px-4 sm:px-6">
     <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
-      <button id="btnPrev" type="button" onclick="goStage(currentStage - 1)" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-300 dark:border-white/15 hover:bg-slate-100 dark:hover:bg-white/5 disabled:opacity-30 text-xs font-bold transition">
+      <button id="btnPrev" type="button" onclick="goStage(currentStage - 1)" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] disabled:opacity-30 text-xs font-bold transition">
         <i data-lucide="arrow-left" class="w-4 h-4"></i>
         <span>Previous</span>
       </button>
 
-      <span id="stageCounter" class="text-xs font-extrabold tracking-widest uppercase text-slate-500 dark:text-zinc-400">
+      <span id="stageCounter" class="text-xs font-extrabold tracking-widest uppercase text-slate-500 dark:text-slate-400">
         01 / 07
       </span>
 
@@ -539,11 +690,11 @@
     const STAGES = [
       "01 · Overview",
       "02 · Visual Warm-Up",
-      "03 · Vocabulary & Frequency",
-      "04 · Grammar Guide",
-      "05 · Rule Summary",
-      "06 · Practice & Word Order",
-      "07 · Class Game"
+      "03 · Vocabulary",
+      "04 · Grammar & Check",
+      "05 · Practice & Chat",
+      "06 · Truth & Bluff",
+      "07 · Routine Arcade"
     ];
 
     let currentStage = 0;
@@ -586,13 +737,13 @@
     // Theme Toggle
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
-    if (localStorage.getItem('provoSimpleTheme') === 'light') {
+    if (localStorage.getItem('provoSimpleNavyTheme') === 'light') {
       document.documentElement.classList.remove('dark');
       themeIcon.setAttribute('data-lucide', 'moon');
     }
     themeToggle.addEventListener('click', () => {
       const isDark = document.documentElement.classList.toggle('dark');
-      localStorage.setItem('provoSimpleTheme', isDark ? 'dark' : 'light');
+      localStorage.setItem('provoSimpleNavyTheme', isDark ? 'dark' : 'light');
       themeIcon.setAttribute('data-lucide', isDark ? 'sun' : 'moon');
       lucide.createIcons();
     });
@@ -621,72 +772,31 @@
       window.speechSynthesis.speak(u);
     }
 
-    // 02: Visual Question Focus Cards
+    // 02: 12 Visual Question Cards + Fullscreen Toggle
     const WARMUP_CARDS = [
-      {
-        tag: "Morning Rituals",
-        q: "What does your weekday morning routine look like from the moment you wake up?",
-        follow: "Mention at least two things you always do and one thing you never do before breakfast.",
-        photo: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=950&q=80",
-        starters: ["I usually wake up at... and immediately...", "I never check... until I finish my coffee."]
-      },
-      {
-        tag: "Someone Close to You",
-        q: "What is one daily habit that your partner, friend, or family member repeats every single day?",
-        follow: "Practice third-person endings (-s / -es / -ies) when describing their routine.",
-        photo: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=950&q=80",
-        starters: ["Every evening, my partner/friend watches...", "She/He always takes... before leaving home."]
-      },
-      {
-        tag: "Food & Cooking",
-        q: "What kind of meals do you cook or eat on a regular basis during the week?",
-        follow: "Explain what you prefer to eat on busy days versus relaxed weekends.",
-        photo: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=950&q=80",
-        starters: ["On weekdays I normally prepare...", "I prefer simple dishes like... because..."]
-      },
-      {
-        tag: "Movement & Outdoors",
-        q: "How often do you go for a walk, exercise, or spend time outdoors?",
-        follow: "Use frequency adverbs such as usually, every other day, or on weekends.",
-        photo: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=950&q=80",
-        starters: ["I go for a long walk almost every...", "On weekends we often visit..."]
-      },
-      {
-        tag: "Work & Study Rhythm",
-        q: "At what time of day do you concentrate best, and how do you organize your tasks?",
-        follow: "Contrast what works well for you with habits that distract you.",
-        photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=950&q=80",
-        starters: ["I focus best in the morning when...", "I keep a list so I don't forget..."]
-      },
-      {
-        tag: "City & Commute",
-        q: "How do you usually get around your town or city, and what does your neighborhood feel like?",
-        follow: "Describe permanent facts about where you live and your typical commute.",
-        photo: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=950&q=80",
-        starters: ["I usually walk / drive / take the train to...", "My neighborhood has... and feels very..."]
-      },
-      {
-        tag: "Books, Music & Screens",
-        q: "What kind of music, series, or books do you enjoy in your free time?",
-        follow: "Use stative verbs like enjoy, love, prefer, or hardly ever watch.",
-        photo: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=950&q=80",
-        starters: ["I love listening to... when I...", "I hardly ever watch..., I prefer..."]
-      },
-      {
-        tag: "Evening Wind-Down",
-        q: "How do you unwind at night so you sleep well?",
-        follow: "Share the last thing you do before turning off the lights.",
-        photo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=950&q=80",
-        starters: ["Before bed I usually drink... and read...", "I try not to look at my phone after..."]
-      }
+      { tag: "Morning Rituals", angle: "Daily Routine", q: "What does your weekday morning routine look like from the moment you wake up?", follow: "Mention two things you always do and one thing you never do before breakfast.", photo: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=950&q=80", starters: ["I usually wake up at... and immediately...", "I never check... until I finish my coffee."] },
+      { tag: "Someone Close to You", angle: "Third-Person -s / -es", q: "What is one daily habit that your partner, friend, or family member repeats every single day?", follow: "Practice third-person endings (-s / -es / -ies) when describing their routine.", photo: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=950&q=80", starters: ["Every evening, my partner/friend watches...", "She/He always takes... before leaving home."] },
+      { tag: "Food & Cooking", angle: "Regular Meals", q: "What kind of meals do you cook or eat on a regular basis during the week?", follow: "Explain what you prefer to eat on busy days versus relaxed weekends.", photo: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=950&q=80", starters: ["On weekdays I normally prepare...", "I prefer simple dishes like... because..."] },
+      { tag: "Movement & Outdoors", angle: "Frequency Adverbs", q: "How often do you go for a walk, exercise, or spend time outdoors?", follow: "Use frequency adverbs such as usually, every other day, or on weekends.", photo: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=950&q=80", starters: ["I go for a long walk almost every...", "On weekends we often visit..."] },
+      { tag: "Work & Study Rhythm", angle: "Schedules & Focus", q: "At what time of day do you concentrate best, and how do you organize your tasks?", follow: "Contrast what works well for you with habits that distract you.", photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=950&q=80", starters: ["I focus best in the morning when...", "I keep a list so I don't forget..."] },
+      { tag: "City & Commute", angle: "Facts & Routines", q: "How do you usually get around your town or city, and what does your neighborhood feel like?", follow: "Describe permanent facts about where you live and your typical commute.", photo: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=950&q=80", starters: ["I usually walk / drive / take the train to...", "My neighborhood has... and feels very..."] },
+      { tag: "Books, Music & Screens", angle: "Stative Preferences", q: "What kind of music, series, or books do you enjoy in your free time?", follow: "Use stative verbs like enjoy, love, prefer, or hardly ever watch.", photo: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=950&q=80", starters: ["I love listening to... when I...", "I hardly ever watch..., I prefer..."] },
+      { tag: "Evening Wind-Down", angle: "Night Routine", q: "How do you unwind at night so you sleep well?", follow: "Share the last thing you do before turning off the lights.", photo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=950&q=80", starters: ["Before bed I usually drink... and read...", "I try not to look at my phone after..."] },
+      { tag: "Household Tasks", angle: "Negatives & Questions", q: "Which household task do you do regularly, and what does nobody do often at home?", follow: "Practice negative sentences like 'don't / doesn't + base verb'.", photo: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=950&q=80", starters: ["I regularly... around the house, and I don't mind...", "We usually... on Saturdays."] },
+      { tag: "Weekend Reset", angle: "Every Other Weekend", q: "What is a simple weekend tradition you look forward to?", follow: "Say how often it happens and why you like it.", photo: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=950&q=80", starters: ["Every other weekend I...", "On Sundays I always... because..."] },
+      { tag: "Quick Questions", angle: "Do / Does Questions", q: "What are three good Present Simple questions you like asking a new friend?", follow: "Include at least one 'Does she/he...?' question.", photo: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=950&q=80", starters: ["Do you usually...?", "Does your family often...?"] },
+      { tag: "Unpopular Routine", angle: "Opinion & Habit", q: "What is an unpopular daily habit that actually works well for you?", follow: "Explain why it helps you.", photo: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=950&q=80", starters: ["I always... even though many people...", "It works for me because..."] }
     ];
 
     let qIdx = 0;
+    let isFullscreenCard = false;
+
     function renderWarmupCard(idx) {
       qIdx = (idx + WARMUP_CARDS.length) % WARMUP_CARDS.length;
       const card = WARMUP_CARDS[qIdx];
       document.getElementById('qBadge').textContent = `Q${qIdx + 1} / ${WARMUP_CARDS.length}`;
       document.getElementById('qTag').textContent = card.tag;
+      document.getElementById('qAngleBadge').textContent = card.angle;
       document.getElementById('questionText').textContent = card.q;
       document.getElementById('questionFollow').textContent = card.follow;
       document.getElementById('startersList').innerHTML = card.starters.map(s => `<li>${s}</li>`).join('');
@@ -697,10 +807,33 @@
         <button type="button" onclick="renderWarmupCard(${i})" class="w-8 h-8 rounded-lg text-xs font-extrabold transition ${
           i === qIdx
             ? 'bg-[#002B5C] text-white'
-            : 'bg-white dark:bg-[#1C1E24] border border-slate-200 dark:border-white/10 text-slate-600 dark:text-zinc-300 hover:border-[#0089A7]'
+            : 'bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/15 text-slate-600 dark:text-slate-300 hover:border-[#0089A7]'
         }">${i + 1}</button>
       `).join('');
     }
+
+    document.getElementById('toggleFullscreenCard').addEventListener('click', () => {
+      isFullscreenCard = !isFullscreenCard;
+      const cardCol = document.getElementById('warmupCardCol');
+      const recCol = document.getElementById('warmupRecorderCol');
+      const label = document.getElementById('fullscreenLabel');
+      const icon = document.getElementById('fullscreenIcon');
+
+      if (isFullscreenCard) {
+        cardCol.classList.remove('lg:col-span-7');
+        cardCol.classList.add('lg:col-span-12');
+        recCol.classList.add('hidden');
+        label.textContent = 'Exit Fullscreen';
+        icon.setAttribute('data-lucide', 'minimize-2');
+      } else {
+        cardCol.classList.remove('lg:col-span-12');
+        cardCol.classList.add('lg:col-span-7');
+        recCol.classList.remove('hidden');
+        label.textContent = 'Fullscreen Card';
+        icon.setAttribute('data-lucide', 'maximize-2');
+      }
+      lucide.createIcons();
+    });
 
     document.getElementById('prevQ').addEventListener('click', () => renderWarmupCard(qIdx - 1));
     document.getElementById('nextQ').addEventListener('click', () => renderWarmupCard(qIdx + 1));
@@ -713,93 +846,97 @@
       document.getElementById('startersBox').classList.toggle('hidden');
     });
 
-    // 03: Vocabulary Showcase + Frequency Thermometer + Match
+    // 03: Complete Vocabulary Lab
     const VOCAB_ITEMS = [
-      {
-        id: 1,
-        phrase: "every other day",
-        note: "Once every 2 days",
-        def: "Once every two days (e.g., Mon, Wed, Fri)",
-        ex: "I go for a walk every other day.",
-        photo: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=650&q=75"
-      },
-      {
-        id: 2,
-        phrase: "hardly ever",
-        note: "Almost never (~5%)",
-        def: "Almost never; very rarely",
-        ex: "We hardly ever eat out on Mondays.",
-        photo: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=650&q=75"
-      },
-      {
-        id: 3,
-        phrase: "on a regular basis",
-        note: "Steady routine",
-        def: "Repeatedly at steady, predictable intervals",
-        ex: "She updates her notes on a regular basis.",
-        photo: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=650&q=75"
-      },
-      {
-        id: 4,
-        phrase: "once in a while",
-        note: "Occasionally",
-        def: "Not often; only occasionally",
-        ex: "I bake homemade treats once in a while.",
-        photo: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=650&q=75"
-      },
-      {
-        id: 5,
-        phrase: "belong to",
-        note: "Stative · Possession",
-        def: "To be the property of someone",
-        ex: "This guitar belongs to my brother.",
-        photo: "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=650&q=75"
-      },
-      {
-        id: 6,
-        phrase: "take for granted",
-        note: "Idiom · Overlook",
-        def: "Fail to appreciate something because it feels constant",
-        ex: "Don't take good health for granted.",
-        photo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=650&q=75"
-      }
+      { id: 1, phrase: "every other day", tag: "Frequency · Every 2 Days", def: "Once every two days (e.g., Mon, Wed, Fri).", ex: "I go running every other day.", photo: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=800&q=75" },
+      { id: 2, phrase: "hardly ever", tag: "Frequency · Rare (~10%)", def: "Almost never; very rarely.", ex: "We hardly ever eat out on Mondays.", photo: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=75" },
+      { id: 3, phrase: "on a regular basis", tag: "Routine · Steady", def: "Repeatedly at steady, predictable intervals.", ex: "She updates her notes on a regular basis.", photo: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=800&q=75" },
+      { id: 4, phrase: "once in a while", tag: "Frequency · Occasional", def: "Not often; only occasionally.", ex: "I bake homemade treats once in a while.", photo: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=75" },
+      { id: 5, phrase: "belong to", tag: "Stative · Possession", def: "To be the property of someone.", ex: "This guitar belongs to my brother.", photo: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=75" },
+      { id: 6, phrase: "take for granted", tag: "Idiom · Overlook", def: "Fail to appreciate something because it feels constant.", ex: "Don't take good health for granted.", photo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=75" }
     ];
 
-    function renderVocabShowcase() {
-      const grid = document.getElementById('vocabShowcaseGrid');
+    let vocabViewMode = 'grid';
+    let singleVocabIdx = 0;
+
+    function setVocabView(mode) {
+      vocabViewMode = mode;
+      const gridBtn = document.getElementById('vocabModeGridBtn');
+      const singleBtn = document.getElementById('vocabModeSingleBtn');
+      const gridView = document.getElementById('vocabGridView');
+      const singleView = document.getElementById('vocabSingleView');
+
+      if (mode === 'grid') {
+        gridBtn.className = 'px-3.5 py-1.5 rounded-lg bg-[#002B5C] text-white transition';
+        singleBtn.className = 'px-3.5 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 transition';
+        gridView.classList.remove('hidden');
+        singleView.classList.add('hidden');
+      } else {
+        singleBtn.className = 'px-3.5 py-1.5 rounded-lg bg-[#002B5C] text-white transition';
+        gridBtn.className = 'px-3.5 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 transition';
+        gridView.classList.add('hidden');
+        singleView.classList.remove('hidden');
+        renderSingleVocab();
+      }
+      lucide.createIcons();
+    }
+
+    function renderVocabGrid() {
+      const grid = document.getElementById('vocabGridView');
       grid.innerHTML = VOCAB_ITEMS.map((v, i) => {
         const safe = v.phrase.replace(/'/g, "\\'");
         return `
-          <div class="bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-2xl overflow-hidden shadow-sm flex flex-col">
-            <div id="v-photo-${i}" class="h-32 bg-slate-900 relative overflow-hidden"></div>
+          <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-2xl overflow-hidden shadow-sm flex flex-col">
+            <div id="vg-photo-${i}" class="h-32 bg-[#091726] relative overflow-hidden"></div>
             <div class="p-4 flex-1 flex flex-col justify-between gap-3">
               <div>
                 <div class="flex items-start justify-between gap-2">
                   <h4 class="text-base font-extrabold text-[#002B5C] dark:text-white">${v.phrase}</h4>
-                  <button type="button" onclick="speakPhrase('${safe}')" class="p-1.5 rounded-lg bg-slate-100 dark:bg-[#141518] text-[#005A8D] dark:text-cyan-300 hover:bg-[#0089A7] hover:text-white transition" title="Pronounce">
+                  <button type="button" onclick="speakPhrase('${safe}')" class="p-1.5 rounded-lg bg-slate-100 dark:bg-[#071627] text-[#005A8D] dark:text-cyan-300 hover:bg-[#0089A7] hover:text-white transition" title="Listen">
                     <i data-lucide="volume-2" class="w-4 h-4"></i>
                   </button>
                 </div>
-                <span class="inline-block mt-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300">${v.note}</span>
-                <p class="text-xs text-slate-600 dark:text-zinc-300 mt-2">${v.def}</p>
+                <span class="inline-block mt-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300">${v.tag}</span>
+                <p class="text-xs text-slate-600 dark:text-slate-300 mt-2">${v.def}</p>
               </div>
-              <p class="text-xs italic text-[#005A8D] dark:text-cyan-300 border-t border-slate-100 dark:border-white/10 pt-2">“${v.ex}”</p>
+              <p class="text-xs italic text-[#005A8D] dark:text-cyan-300 border-t border-slate-100 dark:border-cyan-400/10 pt-2">“${v.ex}”</p>
             </div>
           </div>
         `;
       }).join('');
 
       VOCAB_ITEMS.forEach((v, i) => {
-        mountPhoto(document.getElementById(`v-photo-${i}`), v.photo, v.phrase, v.phrase);
+        mountPhoto(document.getElementById(`vg-photo-${i}`), v.photo, v.phrase, v.phrase);
       });
       lucide.createIcons();
     }
+
+    function renderSingleVocab() {
+      const v = VOCAB_ITEMS[singleVocabIdx];
+      document.getElementById('vocabSingleCounter').textContent = `Expression ${singleVocabIdx + 1} / ${VOCAB_ITEMS.length}`;
+      document.getElementById('vocabSingleTag').textContent = v.tag;
+      document.getElementById('vocabSinglePhrase').textContent = v.phrase;
+      document.getElementById('vocabSingleDef').textContent = v.def;
+      document.getElementById('vocabSingleEx').textContent = `Example: “${v.ex}”`;
+      mountPhoto(document.getElementById('vocabSinglePhoto'), v.photo, v.phrase, v.phrase);
+      document.getElementById('vocabSingleAudioBtn').onclick = () => speakPhrase(v.phrase);
+
+      document.getElementById('vocabSingleDots').innerHTML = VOCAB_ITEMS.map((_, i) => `
+        <button type="button" onclick="singleVocabIdx=${i}; renderSingleVocab();" class="w-2.5 h-2.5 rounded-full transition ${i === singleVocabIdx ? 'bg-[#0089A7]' : 'bg-slate-300 dark:bg-slate-700'}"></button>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    window.stepSingleVocab = (delta) => {
+      singleVocabIdx = (singleVocabIdx + delta + VOCAB_ITEMS.length) % VOCAB_ITEMS.length;
+      renderSingleVocab();
+    };
 
     const FREQ_SCALE = [
       { label: "Always", pct: "100%", ex: "She always drinks coffee at 8:00 AM.", ask: "What is something you always do on work/school days?" },
       { label: "Usually", pct: "80%", ex: "I usually walk to the station.", ask: "How do you usually get around during the week?" },
       { label: "Often", pct: "60%", ex: "They often meet on Saturday mornings.", ask: "What do you often do with friends or family?" },
-      { label: "Sometimes", pct: "40%", ex: "We sometimes cook pizza at home.", ask: "What do you sometimes eat for dinner?" },
+      { label: "Sometimes", pct: "40%", ex: "We sometimes cook at home.", ask: "What do you sometimes eat for dinner?" },
       { label: "Hardly ever", pct: "10%", ex: "He hardly ever watches TV on weekdays.", ask: "What is one thing you hardly ever do?" },
       { label: "Never", pct: "0%", ex: "I never skip my morning routine.", ask: "What is something you never do?" }
     ];
@@ -807,17 +944,10 @@
 
     function renderFreqScale() {
       document.getElementById('freqButtons').innerHTML = FREQ_SCALE.map((f, i) => `
-        <button
-          type="button"
-          onclick="selectFreq(${i})"
-          class="px-3.5 py-1.5 rounded-xl text-xs font-extrabold border transition ${
-            activeFreqIdx === i
-              ? 'bg-[#005A8D] text-white border-[#005A8D]'
-              : 'bg-slate-50 dark:bg-[#141518] border-slate-200 dark:border-white/10 hover:border-[#0089A7]'
-          }"
-        >${f.label}</button>
+        <button type="button" onclick="selectFreq(${i})" class="px-3.5 py-1.5 rounded-xl text-xs font-extrabold border transition ${
+          activeFreqIdx === i ? 'bg-[#005A8D] text-white border-[#005A8D]' : 'bg-slate-50 dark:bg-[#071627] border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7]'
+        }">${f.label}</button>
       `).join('');
-
       const item = FREQ_SCALE[activeFreqIdx];
       document.getElementById('freqPercentBadge').textContent = `${item.pct} · ${item.label}`;
       document.getElementById('freqDetailCard').innerHTML = `
@@ -825,11 +955,7 @@
         <div class="text-xs text-[#005A8D] dark:text-cyan-300 font-semibold">Class prompt: ${item.ask}</div>
       `;
     }
-
-    window.selectFreq = (i) => {
-      activeFreqIdx = i;
-      renderFreqScale();
-    };
+    window.selectFreq = (i) => { activeFreqIdx = i; renderFreqScale(); };
 
     let activeDef = null;
     const doneMatches = new Set();
@@ -842,18 +968,11 @@
         const matched = doneMatches.has(item.id);
         const sel = activeDef === item.id;
         return `
-          <button
-            type="button"
-            onclick="pickDef(${item.id})"
-            ${matched ? 'disabled' : ''}
-            class="w-full text-left p-4 rounded-2xl border transition flex items-center justify-between gap-3 ${
-              matched
-                ? 'bg-emerald-500/10 border-emerald-500/35 text-emerald-700 dark:text-emerald-300'
-                : sel
-                  ? 'bg-[#005A8D]/15 border-[#0089A7] text-[#002B5C] dark:text-white'
-                  : 'bg-white dark:bg-[#1C1E24] border-slate-200 dark:border-white/10 hover:border-[#0089A7]/50'
-            }"
-          >
+          <button type="button" onclick="pickDef(${item.id})" ${matched ? 'disabled' : ''} class="w-full text-left p-4 rounded-2xl border transition flex items-center justify-between gap-3 ${
+            matched ? 'bg-emerald-500/10 border-emerald-500/35 text-emerald-700 dark:text-emerald-300'
+              : sel ? 'bg-[#005A8D]/15 border-[#0089A7] text-[#002B5C] dark:text-white'
+              : 'bg-white dark:bg-[#0C1E33] border-slate-200 dark:border-cyan-400/15 hover:border-[#0089A7]/50'
+          }">
             <span class="text-xs sm:text-sm"><strong class="text-[#0089A7] mr-2">${item.id}.</strong>${item.def}</span>
             ${matched ? `<span class="text-xs font-extrabold px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 shrink-0">${item.phrase}</span>` : ''}
           </button>
@@ -865,10 +984,8 @@
         const matched = doneMatches.has(item.id);
         const safe = item.phrase.replace(/'/g, "\\'");
         return `
-          <div class="inline-flex items-center rounded-xl border ${matched ? 'border-emerald-500/30 bg-emerald-500/10 opacity-50' : 'border-slate-200 dark:border-white/15 bg-slate-50 dark:bg-[#141518]'}">
-            <button type="button" onclick="pickPhrase(${item.id})" ${matched ? 'disabled' : ''} class="px-3.5 py-2 text-xs font-bold hover:text-[#0089A7] transition">
-              ${item.phrase}
-            </button>
+          <div class="inline-flex items-center rounded-xl border ${matched ? 'border-emerald-500/30 bg-emerald-500/10 opacity-50' : 'border-slate-200 dark:border-cyan-400/20 bg-slate-50 dark:bg-[#071627]'}">
+            <button type="button" onclick="pickPhrase(${item.id})" ${matched ? 'disabled' : ''} class="px-3.5 py-2 text-xs font-bold hover:text-[#0089A7] transition">${item.phrase}</button>
             <button type="button" onclick="speakPhrase('${safe}')" class="pr-2.5 pl-1 py-2 text-slate-400 hover:text-[#0089A7] transition" title="Listen">
               <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
             </button>
@@ -878,19 +995,11 @@
       lucide.createIcons();
     }
 
-    window.pickDef = (id) => {
-      activeDef = id;
-      document.getElementById('vocabMatchStatus').textContent = `Definition #${id} selected — tap its matching phrase`;
-      renderVocabMatch();
-    };
-
+    window.pickDef = (id) => { activeDef = id; document.getElementById('vocabMatchStatus').textContent = `Definition #${id} selected — tap its matching phrase`; renderVocabMatch(); };
     window.pickPhrase = (id) => {
       const status = document.getElementById('vocabMatchStatus');
       const exBox = document.getElementById('vocabExampleBox');
-      if (activeDef === null) {
-        status.textContent = "Select a numbered definition on the left first.";
-        return;
-      }
+      if (activeDef === null) { status.textContent = "Select a numbered definition on the left first."; return; }
       if (activeDef === id) {
         doneMatches.add(id);
         const item = VOCAB_ITEMS.find(x => x.id === id);
@@ -903,16 +1012,37 @@
         status.textContent = "Not a match for that definition — try another phrase.";
       }
     };
-
     window.resetVocabMatch = () => {
-      doneMatches.clear();
-      activeDef = null;
-      document.getElementById('vocabMatchStatus').textContent = "Pick a definition on the left, then tap its matching phrase";
+      doneMatches.clear(); activeDef = null;
+      document.getElementById('vocabMatchStatus').textContent = "Pick a definition on the left, then tap its phrase";
       document.getElementById('vocabExampleBox').classList.add('hidden');
       renderVocabMatch();
     };
 
-    // 04: Grammar Form Inspector
+    const PRODUCTION_PROMPTS = [
+      { target: "every other day", cue: "Write a sentence about something you do every other day.", model: "Model: I go for a walk every other day." },
+      { target: "hardly ever", cue: "Write a sentence about something you hardly ever do.", model: "Model: I hardly ever drink soda." },
+      { target: "on a regular basis", cue: "Write a sentence about a regular habit or class.", model: "Model: We practice speaking on a regular basis." },
+      { target: "once in a while", cue: "Write a sentence about an occasional treat or activity.", model: "Model: I bake homemade treats once in a while." }
+    ];
+    let showProdModels = false;
+
+    function renderProductionPrompts() {
+      document.getElementById('productionPromptsList').innerHTML = PRODUCTION_PROMPTS.map((p, i) => `
+        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/15 space-y-2.5">
+          <div class="flex items-center justify-between gap-2">
+            <span class="text-xs font-extrabold uppercase tracking-wider text-[#005A8D] dark:text-cyan-300">Use: “${p.target}”</span>
+            <span class="text-[11px] text-slate-400">#${i + 1}</span>
+          </div>
+          <p class="text-xs text-slate-600 dark:text-slate-300">${p.cue}</p>
+          <input type="text" placeholder="Write your sentence here..." class="w-full px-3 py-2 rounded-xl bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 text-xs focus:outline-none focus:border-[#0089A7]" />
+          <p class="prod-model ${showProdModels ? '' : 'hidden'} text-xs italic text-[#0089A7] dark:text-cyan-300">${p.model}</p>
+        </div>
+      `).join('');
+    }
+    window.toggleProductionModels = () => { showProdModels = !showProdModels; renderProductionPrompts(); };
+
+    // 04: Grammar Form Inspector + Integrated Cloze
     const SUBJECTS = [
       { key: "i", label: "I", aff: "I <strong>drink</strong> black coffee every morning.", neg: "I <strong>don't drink</strong> coffee late at night.", q: "<strong>Do</strong> I need to bring a notebook?", rule: "Base verb with 'I'; auxiliary 'do / don't'." },
       { key: "she", label: "She", aff: "She <strong>studies</strong> English twice a week.", neg: "She <strong>doesn't study</strong> on Sundays.", q: "<strong>Does</strong> she <strong>study</strong> in the morning?", rule: "Consonant + y → -ies in affirmative; base verb 'study' after doesn't / Does." },
@@ -924,24 +1054,16 @@
 
     function renderInspector() {
       document.getElementById('subjectSelector').innerHTML = SUBJECTS.map(s => `
-        <button
-          type="button"
-          onclick="setSubject('${s.key}')"
-          class="px-4 py-1.5 rounded-xl text-xs font-extrabold border transition ${
-            currentSubj === s.key
-              ? 'bg-[#005A8D] text-white border-[#005A8D]'
-              : 'bg-slate-50 dark:bg-[#141518] border-slate-200 dark:border-white/10 hover:border-[#0089A7]'
-          }"
-        >${s.label}</button>
+        <button type="button" onclick="setSubject('${s.key}')" class="px-4 py-1.5 rounded-xl text-xs font-extrabold border transition ${
+          currentSubj === s.key ? 'bg-[#005A8D] text-white border-[#005A8D]' : 'bg-slate-50 dark:bg-[#071627] border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7]'
+        }">${s.label}</button>
       `).join('');
-
       const subjObj = SUBJECTS.find(s => s.key === currentSubj);
       document.getElementById('inspectorPreview').innerHTML = `
         <div class="text-lg sm:text-xl font-bold text-[#002B5C] dark:text-white">${subjObj[currentForm]}</div>
-        <div class="text-xs text-slate-600 dark:text-zinc-300">${subjObj.rule}</div>
+        <div class="text-xs text-slate-600 dark:text-slate-300">${subjObj.rule}</div>
       `;
     }
-
     window.setSubject = (key) => { currentSubj = key; renderInspector(); };
 
     document.querySelectorAll('.form-btn').forEach(btn => {
@@ -950,13 +1072,12 @@
         document.querySelectorAll('.form-btn').forEach(b => {
           b.className = b.dataset.form === currentForm
             ? 'form-btn px-3.5 py-1.5 rounded-lg bg-[#002B5C] text-white transition'
-            : 'form-btn px-3.5 py-1.5 rounded-lg text-slate-600 dark:text-zinc-300 transition';
+            : 'form-btn px-3.5 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 transition';
         });
         renderInspector();
       });
     });
 
-    // 05: Rule Summary Cloze
     const CLOZE_BANK = ["habits", "base", "does", "stative", "schedules"];
     const CLOZE_KEY = ["habits", "schedules", "base", "does", "stative"];
     const CLOZE_STATE = ["", "", "", "", ""];
@@ -964,11 +1085,8 @@
 
     function renderCloze() {
       document.getElementById('clozeChips').innerHTML = CLOZE_BANK.map(w => `
-        <button type="button" onclick="putCloze('${w}')" class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-[#141518] border border-slate-200 dark:border-white/15 hover:border-[#0089A7] text-xs font-bold text-[#005A8D] dark:text-cyan-300 transition">
-          ${w}
-        </button>
+        <button type="button" onclick="putCloze('${w}')" class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7] text-xs font-bold text-[#005A8D] dark:text-cyan-300 transition">${w}</button>
       `).join('');
-
       const segs = [
         "We use the Present Simple for regular ",
         " and fixed ",
@@ -977,7 +1095,6 @@
         " or <em>doesn't</em> is used. We also use it with ",
         " verbs like <em>prefer</em> and <em>know</em>."
       ];
-
       let out = "";
       for (let i = 0; i < segs.length; i++) {
         out += segs[i];
@@ -985,7 +1102,7 @@
           const val = CLOZE_STATE[i];
           const sel = activeSlot === i;
           out += `<button type="button" onclick="pickSlot(${i})" class="mx-1 px-3 py-0.5 rounded-lg border-b-2 font-bold text-xs sm:text-sm transition ${
-            sel ? 'border-[#0089A7] bg-[#0089A7]/15 text-[#002B5C] dark:text-white' : 'border-slate-400 bg-slate-100 dark:bg-[#141518] text-[#005A8D] dark:text-cyan-300'
+            sel ? 'border-[#0089A7] bg-[#0089A7]/15 text-[#002B5C] dark:text-white' : 'border-slate-400 bg-slate-100 dark:bg-[#071627] text-[#005A8D] dark:text-cyan-300'
           }">${val || `(${i + 1})`}</button>`;
         }
       }
@@ -993,11 +1110,7 @@
     }
 
     window.pickSlot = (i) => { activeSlot = i; renderCloze(); };
-    window.putCloze = (w) => {
-      CLOZE_STATE[activeSlot] = w;
-      if (activeSlot < 4) activeSlot++;
-      renderCloze();
-    };
+    window.putCloze = (w) => { CLOZE_STATE[activeSlot] = w; if (activeSlot < 4) activeSlot++; renderCloze(); };
     window.checkCloze = () => {
       let score = 0;
       CLOZE_KEY.forEach((k, i) => { if (CLOZE_STATE[i] === k) score++; });
@@ -1005,39 +1118,35 @@
       msg.textContent = `${score} / ${CLOZE_KEY.length} correct`;
       msg.className = score === 5 ? "text-xs font-bold text-emerald-600 dark:text-emerald-400" : "text-xs font-bold text-amber-600 dark:text-amber-300";
     };
-    window.resetCloze = () => {
-      for (let i = 0; i < CLOZE_STATE.length; i++) CLOZE_STATE[i] = "";
-      activeSlot = 0;
-      document.getElementById('clozeMsg').textContent = "";
-      renderCloze();
-    };
+    window.resetCloze = () => { for (let i = 0; i < CLOZE_STATE.length; i++) CLOZE_STATE[i] = ""; activeSlot = 0; document.getElementById('clozeMsg').textContent = ""; renderCloze(); };
 
-    // 06: Practice, Sentence Scramble & Odd One Out
+    // 05: Practice Pack + Mini-Chat Live
     const PRACTICE_QS = [
       { q: "1. My brother ___ to work by bike every day.", opts: ["go", "goes"], ans: "goes" },
       { q: "2. They ___ meat; they follow a vegetarian diet.", opts: ["don't eat", "doesn't eat"], ans: "don't eat" },
       { q: "3. ___ your sister speak Portuguese?", opts: ["Do", "Does"], ans: "Does" },
-      { q: "4. I really ___ quiet mornings with a cup of tea.", opts: ["prefer", "prefers"], ans: "prefer" }
+      { q: "4. I really ___ quiet mornings with a cup of tea.", opts: ["prefer", "prefers"], ans: "prefer" },
+      { q: "5. She ___ her emails before checking social media.", opts: ["check", "checks"], ans: "checks" },
+      { q: "6. He ___ TV on weekday mornings.", opts: ["don't watch", "doesn't watch"], ans: "doesn't watch" },
+      { q: "7. ___ they live near the train station?", opts: ["Do", "Does"], ans: "Do" },
+      { q: "8. This notebook ___ to the English group.", opts: ["belong", "belongs"], ans: "belongs" }
     ];
     const practicePicked = {};
 
     function renderPractice() {
       document.getElementById('practiceGrid').innerHTML = PRACTICE_QS.map((item, i) => `
-        <div class="bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-2xl p-5 space-y-3 shadow-sm">
+        <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-2xl p-5 space-y-3 shadow-sm">
           <p class="text-sm font-bold">${item.q}</p>
           <div class="flex flex-wrap gap-2">
             ${item.opts.map(o => `
               <button type="button" onclick="choosePractice(${i}, '${o.replace(/'/g, "\\'")}')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold border transition ${
-                practicePicked[i] === o
-                  ? 'bg-[#002B5C] text-white border-[#002B5C]'
-                  : 'bg-slate-50 dark:bg-[#141518] border-slate-200 dark:border-white/10 hover:border-[#0089A7]'
+                practicePicked[i] === o ? 'bg-[#002B5C] text-white border-[#002B5C]' : 'bg-slate-50 dark:bg-[#071627] border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7]'
               }">${o}</button>
             `).join('')}
           </div>
         </div>
       `).join('');
     }
-
     window.choosePractice = (i, o) => { practicePicked[i] = o; renderPractice(); };
     window.checkPractice = () => {
       let c = 0;
@@ -1046,21 +1155,10 @@
     };
 
     const SCRAMBLES = [
-      {
-        label: "Sentence 1 · Frequency Adverb + Verb",
-        tiles: ["always", "she", "coffee", "drinks", "at breakfast"],
-        target: "she always drinks coffee at breakfast"
-      },
-      {
-        label: "Sentence 2 · Negative with 'Doesn't'",
-        tiles: ["on Sundays", "he", "work", "doesn't", "usually"],
-        target: "he doesn't usually work on sundays"
-      },
-      {
-        label: "Sentence 3 · Question with 'Do'",
-        tiles: ["every day", "you", "do", "for a walk", "go"],
-        target: "do you go for a walk every day"
-      }
+      { label: "Sentence 1 / 4 · Habit + Adverb", tiles: ["always", "she", "coffee", "drinks", "at breakfast"], target: "she always drinks coffee at breakfast" },
+      { label: "Sentence 2 / 4 · Negative Routine", tiles: ["on Sundays", "he", "work", "doesn't", "usually"], target: "he doesn't usually work on sundays" },
+      { label: "Sentence 3 / 4 · Routine Question", tiles: ["every day", "you", "do", "for a walk", "go"], target: "do you go for a walk every day" },
+      { label: "Sentence 4 / 4 · Frequency Phrase", tiles: ["hardly ever", "they", "late", "arrive", "to class"], target: "they hardly ever arrive late to class" }
     ];
     let scrambleIdx = 0;
     let placedOrder = [];
@@ -1073,156 +1171,129 @@
       const fb = document.getElementById('scrambleFeedback');
 
       tray.innerHTML = placedOrder.length
-        ? placedOrder.map((tIdx, pos) => `
-            <button type="button" onclick="removeScrambleTile(${pos})" class="px-3 py-1.5 rounded-xl bg-[#005A8D] text-white text-xs font-bold shadow-sm hover:bg-rose-600 transition">
-              ${s.tiles[tIdx]} ✕
-            </button>
-          `).join('')
+        ? placedOrder.map((tIdx, pos) => `<button type="button" onclick="removeScrambleTile(${pos})" class="px-3 py-1.5 rounded-xl bg-[#005A8D] text-white text-xs font-bold shadow-sm hover:bg-rose-600 transition">${s.tiles[tIdx]} ✕</button>`).join('')
         : `<span class="text-xs text-slate-400">Tap words below to build the sentence...</span>`;
 
       bank.innerHTML = s.tiles.map((word, tIdx) => {
         const used = placedOrder.includes(tIdx);
-        return `
-          <button
-            type="button"
-            ${used ? 'disabled' : ''}
-            onclick="addScrambleTile(${tIdx})"
-            class="px-3.5 py-1.5 rounded-xl border text-xs font-bold transition ${
-              used
-                ? 'opacity-30 border-slate-200 dark:border-white/10'
-                : 'bg-slate-50 dark:bg-[#141518] border-slate-200 dark:border-white/15 hover:border-[#0089A7]'
-            }"
-          >${word}</button>
-        `;
+        return `<button type="button" ${used ? 'disabled' : ''} onclick="addScrambleTile(${tIdx})" class="px-3.5 py-1.5 rounded-xl border text-xs font-bold transition ${used ? 'opacity-30 border-slate-200 dark:border-cyan-400/10' : 'bg-slate-50 dark:bg-[#071627] border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7]'}">${word}</button>`;
       }).join('');
 
       if (placedOrder.length === s.tiles.length) {
         const built = placedOrder.map(i => s.tiles[i]).join(' ').toLowerCase();
-        if (built === s.target) {
-          fb.className = 'text-xs font-bold text-emerald-600 dark:text-emerald-400';
-          fb.textContent = 'Great order! Sentence complete.';
-        } else {
-          fb.className = 'text-xs font-bold text-amber-600 dark:text-amber-300';
-          fb.textContent = `Check word order — target: “${s.target}”.`;
-        }
+        fb.className = built === s.target ? 'text-xs font-bold text-emerald-600 dark:text-emerald-400' : 'text-xs font-bold text-amber-600 dark:text-amber-300';
+        fb.textContent = built === s.target ? 'Great order! Sentence complete.' : `Check order — target: “${s.target}”.`;
       } else {
         fb.textContent = '';
       }
     }
-
-    window.addScrambleTile = (tIdx) => {
-      if (!placedOrder.includes(tIdx)) {
-        placedOrder.push(tIdx);
-        renderScramble();
-      }
-    };
-
-    window.removeScrambleTile = (pos) => {
-      placedOrder.splice(pos, 1);
-      renderScramble();
-    };
-
-    window.resetScramble = () => {
-      placedOrder = [];
-      renderScramble();
-    };
-
-    window.nextScramble = () => {
-      scrambleIdx = (scrambleIdx + 1) % SCRAMBLES.length;
-      placedOrder = [];
-      renderScramble();
-    };
+    window.addScrambleTile = (tIdx) => { if (!placedOrder.includes(tIdx)) { placedOrder.push(tIdx); renderScramble(); } };
+    window.removeScrambleTile = (pos) => { placedOrder.splice(pos, 1); renderScramble(); };
+    window.resetScramble = () => { placedOrder = []; renderScramble(); };
+    window.nextScramble = () => { scrambleIdx = (scrambleIdx + 1) % SCRAMBLES.length; placedOrder = []; renderScramble(); };
 
     const ODD_ITEMS = [
       { label: "Group 1 · Frequency", opts: ["usually", "every morning", "hardly ever", "yesterday"], odd: "yesterday", note: "'Yesterday' refers to past time, not Present Simple frequency." },
       { label: "Group 2 · 3rd Person -s", opts: ["she walks", "he studies", "it flies", "she don't run"], odd: "she don't run", note: "Use 'she doesn't run' with third-person singular." },
-      { label: "Group 3 · Stative Verbs", opts: ["know", "prefer", "belong", "cook"], odd: "cook", note: "'Cook' is a dynamic action verb; the others express states." }
+      { label: "Group 3 · Stative Verbs", opts: ["know", "prefer", "belong", "cook"], odd: "cook", note: "'Cook' is a dynamic action verb; the others express states." },
+      { label: "Group 4 · Questions", opts: ["Do you work?", "Does he study?", "Where they live?", "When does it start?"], odd: "Where they live?", note: "Questions need 'do / does': 'Where do they live?'." }
     ];
 
     function renderOdd() {
       document.getElementById('oddGrid').innerHTML = ODD_ITEMS.map((g, gi) => `
-        <div class="bg-white dark:bg-[#1C1E24] border border-slate-200/90 dark:border-white/10 rounded-2xl p-5 space-y-2.5 shadow-sm">
+        <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-2xl p-5 space-y-2.5 shadow-sm">
           <div class="text-xs font-extrabold uppercase tracking-wider text-[#0089A7]">${g.label}</div>
           <div class="space-y-1.5">
-            ${g.opts.map((o, oi) => `
-              <button type="button" onclick="testOdd(${gi}, '${o.replace(/'/g, "\\'")}')" class="w-full text-left px-3 py-2 rounded-xl bg-slate-50 dark:bg-[#141518] border border-slate-200 dark:border-white/10 hover:border-[#0089A7] text-xs font-semibold transition">
-                <strong class="text-[#0089A7] mr-2">${String.fromCharCode(65 + oi)}.</strong>${o}
-              </button>
-            `).join('')}
+            ${g.opts.map((o, oi) => `<button type="button" onclick="testOdd(${gi}, '${o.replace(/'/g, "\\'")}')" class="w-full text-left px-3 py-2 rounded-xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7] text-xs font-semibold transition"><strong class="text-[#0089A7] mr-2">${String.fromCharCode(65 + oi)}.</strong>${o}</button>`).join('')}
           </div>
           <div id="odd-note-${gi}" class="hidden text-xs p-2.5 rounded-xl font-semibold"></div>
         </div>
       `).join('');
     }
-
     window.testOdd = (gi, chosen) => {
       const g = ODD_ITEMS[gi];
       const box = document.getElementById(`odd-note-${gi}`);
       box.classList.remove('hidden');
-      if (chosen === g.odd) {
-        box.className = 'text-xs p-2.5 rounded-xl font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
-        box.textContent = `Correct! ${g.note}`;
+      box.className = chosen === g.odd ? 'text-xs p-2.5 rounded-xl font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300' : 'text-xs p-2.5 rounded-xl font-semibold bg-amber-500/15 text-amber-700 dark:text-amber-200';
+      box.textContent = chosen === g.odd ? `Correct! ${g.note}` : `Odd one out is '${g.odd}'. ${g.note}`;
+    };
+
+    const MINI_CHATS = [
+      { incoming: "“Do you walk to work every day?”", replies: ["Yes, I usually walk unless it rains.", "Yes, I walk every day on a regular basis."], best: "Yes, I usually walk unless it rains." },
+      { incoming: "“Does your brother play an instrument?”", replies: ["Yes, he plays the guitar on weekends.", "Yes, he play the guitar on weekends."], best: "Yes, he plays the guitar on weekends." }
+    ];
+
+    function renderMiniChat() {
+      document.getElementById('miniChatList').innerHTML = MINI_CHATS.map((c, ci) => `
+        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/15 space-y-3">
+          <div class="px-3.5 py-2 rounded-2xl bg-[#002B5C] text-white text-xs sm:text-sm font-bold inline-block">${c.incoming}</div>
+          <div class="space-y-1.5">
+            ${c.replies.map(r => `
+              <button type="button" onclick="checkChat(${ci}, '${r.replace(/'/g, "\\'")}')" class="w-full text-left px-3.5 py-2 rounded-xl bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7] text-xs font-semibold transition">${r}</button>
+            `).join('')}
+          </div>
+          <div id="chat-fb-${ci}" class="hidden text-xs font-bold"></div>
+        </div>
+      `).join('');
+    }
+
+    window.checkChat = (ci, chosen) => {
+      const c = MINI_CHATS[ci];
+      const fb = document.getElementById(`chat-fb-${ci}`);
+      fb.classList.remove('hidden');
+      if (chosen === c.best) {
+        fb.className = 'text-xs font-bold text-emerald-600 dark:text-emerald-400';
+        fb.textContent = 'Great routine answer!';
       } else {
-        box.className = 'text-xs p-2.5 rounded-xl font-semibold bg-amber-500/15 text-amber-700 dark:text-amber-200';
-        box.textContent = `Odd one out is '${g.odd}'. ${g.note}`;
+        fb.className = 'text-xs font-bold text-amber-600 dark:text-amber-300';
+        fb.textContent = `Check 3rd-person -s: ${c.best}`;
       }
     };
 
-    // 07: Live Class Speaking Game
+    const FIX_HOMEWORK = [
+      { wrong: "She don't like coffee in the morning.", fix: "She doesn't like coffee in the morning.", extra: "Homework: Write 1 negative sentence about a friend or family member." },
+      { wrong: "My brother study English on Tuesdays.", fix: "My brother studies English on Tuesdays.", extra: "Homework: Write 1 positive sentence with a consonant + -y verb." },
+      { wrong: "Does he speaks French?", fix: "Does he speak French?", extra: "Homework: Write 1 'Does...?' question about someone's routine." },
+      { wrong: "He always is tired on Mondays.", fix: "He is always tired on Mondays.", extra: "Homework: Write 1 sentence with 'always' or 'usually' + verb 'to be'." }
+    ];
+    let showFixKey = false;
+
+    function renderFixHomework() {
+      document.getElementById('fixHomeworkList').innerHTML = FIX_HOMEWORK.map(item => `
+        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/15 space-y-2.5">
+          <div class="text-xs font-bold text-rose-600 dark:text-rose-400 line-through">${item.wrong}</div>
+          <input type="text" placeholder="Write the corrected sentence..." class="w-full px-3 py-2 rounded-xl bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 text-xs focus:outline-none focus:border-[#0089A7]" />
+          <div class="fix-key ${showFixKey ? '' : 'hidden'} text-xs font-bold text-emerald-600 dark:text-emerald-400">Fix: ${item.fix}</div>
+          <div class="text-[11px] text-slate-500 dark:text-slate-400">${item.extra}</div>
+        </div>
+      `).join('');
+    }
+    window.toggleFixKey = () => { showFixKey = !showFixKey; renderFixHomework(); };
+
+    // 06: Speaking Game (4 Cards per Mode)
     const GAME_MODES = [
       { key: "bluff", label: "2 Habits & 1 Bluff" },
       { key: "detective", label: "Routine Detective" },
       { key: "debate", label: "Unpopular Routine Opinion" }
     ];
-
     const GAME_CARDS = {
       bluff: [
-        {
-          title: "Morning & Breakfast Habits",
-          rule: "Say 3 sentences in Present Simple about your mornings—2 true and 1 total lie. Your teacher asks 2 questions to catch the bluff!",
-          follow: "What time do you actually eat, and who prepares breakfast in your house?",
-          photo: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=850&q=80",
-          twist: "Bonus Twist: Include one sentence about what your partner or a family member does in the morning!"
-        },
-        {
-          title: "Weekend Escapes & Free Time",
-          rule: "Tell your teacher 3 things you regularly do on weekends—hide one fake hobby among two real ones.",
-          follow: "How often do you really go there, and what do you bring with you?",
-          photo: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=850&q=80",
-          twist: "Bonus Twist: Use 'hardly ever' or 'every other weekend' in one of your clues."
-        }
+        { title: "Card 1 · Morning & Breakfast Habits", rule: "Say 3 sentences in Present Simple about your mornings—2 true and 1 lie. Your teacher asks 2 questions to catch the bluff!", follow: "What time do you actually eat, and who prepares breakfast in your house?", photo: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Include one sentence about what your partner or a family member does in the morning!" },
+        { title: "Card 2 · Weekend Escapes & Free Time", rule: "Tell your teacher 3 things you regularly do on weekends—hide one fake hobby among two real ones.", follow: "How often do you really go there, and what do you bring with you?", photo: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Use 'hardly ever' or 'every other weekend' in one of your clues." },
+        { title: "Card 3 · Work & Study Habits", rule: "Share 3 sentences about how you study or work—2 real habits and 1 bluff.", follow: "Do you prefer quiet places or music when you focus?", photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Add a negative sentence with 'don't' or 'doesn't'." },
+        { title: "Card 4 · Night & Sleep Routine", rule: "Say 3 things you usually do before bed—let your teacher guess which one is invented.", follow: "What happens when you stay up later than usual?", photo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Use 'once in a while' in one of your sentences." }
       ],
       detective: [
-        {
-          title: "Guess the Mystery Profession",
-          rule: "Think of a job without naming it. Describe what this person does every day using Present Simple until your teacher guesses it.",
-          follow: "Does this person work indoors or outdoors? Do they wear a uniform?",
-          photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=850&q=80",
-          twist: "Bonus Twist: Swap roles! Ask your teacher 4 Yes/No questions starting with 'Does he/she...?'"
-        },
-        {
-          title: "Guess the Daily Object",
-          rule: "Pick an everyday object on your desk or in your bag. Explain how people use it and who owns one, without saying its name.",
-          follow: "Do you use it every day, and where do you keep it at home?",
-          photo: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=850&q=80",
-          twist: "Bonus Twist: Use at least two stative verbs (e.g., 'It belongs to...', 'People need it when...')."
-        }
+        { title: "Card 1 · Guess the Mystery Profession", rule: "Think of a job without naming it. Describe what this person does every day using Present Simple until your teacher guesses it.", follow: "Does this person work indoors or outdoors? Do they wear a uniform?", photo: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Swap roles! Ask your teacher 4 Yes/No questions starting with 'Does he/she...?'" },
+        { title: "Card 2 · Guess the Daily Object", rule: "Pick an everyday object on your desk or in your bag. Explain how people use it and who owns one, without saying its name.", follow: "Do you use it every day, and where do you keep it at home?", photo: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Use at least two stative verbs (e.g., 'It belongs to...', 'People need it when...')." },
+        { title: "Card 3 · Mystery Friend or Relative", rule: "Describe someone's weekly habits and preferences without saying who they are.", follow: "Does this person live near you? What do they love doing?", photo: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Your teacher can ask up to 4 'Does...?' questions." },
+        { title: "Card 4 · Mystery Place", rule: "Describe a place people visit regularly and what happens there every week.", follow: "How often do you go there, and who goes with you?", photo: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Include one negative sentence with 'doesn't' or 'don't'." }
       ],
       debate: [
-        {
-          title: "“People check their phones way too often.”",
-          rule: "React to this statement using Present Simple to describe your own digital habits and what people around you usually do.",
-          follow: "When do you put your phone on silent, and which apps do you open first?",
-          photo: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=850&q=80",
-          twist: "Bonus Twist: Give one rule that everyone in your house follows during dinner."
-        },
-        {
-          title: "“Waking up at 6 AM makes life better.”",
-          rule: "Agree or disagree! Explain what early birds vs. night owls do and which schedule suits you best.",
-          follow: "What happens when you wake up late on a weekday?",
-          photo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=850&q=80",
-          twist: "Bonus Twist: Contrast your weekday wake-up time with your Sunday routine."
-        }
+        { title: "Card 1 · “People check their phones way too often.”", rule: "React to this statement using Present Simple to describe your own digital habits and what people around you usually do.", follow: "When do you put your phone on silent, and which apps do you open first?", photo: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Give one rule that everyone in your house follows during dinner." },
+        { title: "Card 2 · “Waking up at 6 AM makes life better.”", rule: "Agree or disagree! Explain what early birds vs. night owls do and which schedule suits you best.", follow: "What happens when you wake up late on a weekday?", photo: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Contrast your weekday wake-up time with your Sunday routine." },
+        { title: "Card 3 · “Cooking from scratch is worth the time.”", rule: "Share your view on cooking habits and how often you cook at home.", follow: "What dish do you prefer when you want something quick?", photo: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Mention one food you hardly ever eat." },
+        { title: "Card 4 · “Reading paper books beats digital screens.”", rule: "Compare reading habits and state your preference using Present Simple.", follow: "When do you usually read?", photo: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Defend the opposite opinion for 30 seconds!" }
       ]
     };
 
@@ -1231,17 +1302,10 @@
 
     function renderGame() {
       document.getElementById('gameModeTabs').innerHTML = GAME_MODES.map(m => `
-        <button
-          type="button"
-          onclick="setGameMode('${m.key}')"
-          class="px-4 py-2 rounded-xl text-xs font-extrabold border transition ${
-            activeGameMode === m.key
-              ? 'bg-[#002B5C] text-white border-[#002B5C]'
-              : 'bg-white dark:bg-[#1C1E24] border-slate-200 dark:border-white/10 hover:border-[#0089A7]'
-          }"
-        >${m.label}</button>
+        <button type="button" onclick="setGameMode('${m.key}')" class="px-4 py-2 rounded-xl text-xs font-extrabold border transition ${
+          activeGameMode === m.key ? 'bg-[#002B5C] text-white border-[#002B5C]' : 'bg-white dark:bg-[#0C1E33] border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7]'
+        }">${m.label}</button>
       `).join('');
-
       const list = GAME_CARDS[activeGameMode];
       const card = list[gameCardIdx % list.length];
       const modeObj = GAME_MODES.find(m => m.key === activeGameMode);
@@ -1256,10 +1320,158 @@
       mountPhoto(document.getElementById('gamePhotoBox'), card.photo, card.title, modeObj.label);
       lucide.createIcons();
     }
-
     window.setGameMode = (key) => { activeGameMode = key; gameCardIdx = 0; renderGame(); };
     window.nextGameCard = () => { gameCardIdx++; renderGame(); };
     window.revealBluffVote = () => { document.getElementById('gameTwistBox').classList.toggle('hidden'); };
+
+    // 07: Multi-Mode Gamified Arcade
+    let arcadeScore = 0;
+    let arcadeStreak = 0;
+
+    function updateArcadeHeader() {
+      document.getElementById('arcadeScoreBadge').textContent = `Score: ${arcadeScore}`;
+      document.getElementById('arcadeStreakBadge').textContent = `Streak: ${arcadeStreak} 🔥`;
+    }
+
+    function rewardPoints(isRight) {
+      if (isRight) {
+        arcadeStreak++;
+        arcadeScore += 10 + (arcadeStreak > 1 ? (arcadeStreak - 1) * 5 : 0);
+      } else {
+        arcadeStreak = 0;
+      }
+      updateArcadeHeader();
+    }
+
+    window.switchArcadeGame = (tab) => {
+      const panels = {
+        rounds: document.getElementById('arcadePanelRounds'),
+        cues: document.getElementById('arcadePanelCues'),
+        stative: document.getElementById('arcadePanelStative')
+      };
+      const tabs = {
+        rounds: document.getElementById('arcTabRounds'),
+        cues: document.getElementById('arcTabCues'),
+        stative: document.getElementById('arcTabStative')
+      };
+
+      Object.keys(panels).forEach(k => {
+        panels[k].classList.toggle('hidden', k !== tab);
+        tabs[k].className = k === tab
+          ? 'px-4 py-2 rounded-xl text-xs font-extrabold bg-[#002B5C] text-white transition'
+          : 'px-4 py-2 rounded-xl text-xs font-extrabold bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7] transition';
+      });
+    };
+
+    const ARCADE_ROUNDS = [
+      { sentence: "“She ___ her teeth before bed every night.”", opts: ["brush", "brushes"], ans: "brushes", why: "Verbs ending in -sh take -es with 'she'." },
+      { sentence: "“___ your brother drive to work?”", opts: ["Do", "Does"], ans: "Does", why: "Use 'Does' with third-person singular 'your brother'." },
+      { sentence: "“They ___ coffee in the afternoon.”", opts: ["don't drink", "doesn't drink"], ans: "don't drink", why: "Plural subject 'they' uses 'don't + base verb'." },
+      { sentence: "“My friend ___ languages very quickly.”", opts: ["studys", "studies"], ans: "studies", why: "Consonant + y ('study') changes to -ies ('studies')." },
+      { sentence: "“He ___ to the gym on Mondays.”", opts: ["go", "goes"], ans: "goes", why: "Verbs ending in -o ('go') add -es for 'he'." },
+      { sentence: "“I ___ want a cold drink right now.”", opts: ["don't", "doesn't"], ans: "don't", why: "Use 'don't' with 'I'." },
+      { sentence: "“She ___ a small acoustic guitar.”", opts: ["have", "has"], ans: "has", why: "Third-person singular of 'have' is 'has'." },
+      { sentence: "“What time ___ the train leave?”", opts: ["do", "does"], ans: "does", why: "'The train' is singular (it) → 'does'." }
+    ];
+    let arcadeIdx = 0;
+    let arcadeAnswered = false;
+
+    function renderArcade() {
+      const r = ARCADE_ROUNDS[arcadeIdx % ARCADE_ROUNDS.length];
+      document.getElementById('arcadeRoundLabel').textContent = `Round ${(arcadeIdx % ARCADE_ROUNDS.length) + 1} / ${ARCADE_ROUNDS.length}`;
+      document.getElementById('arcadeSentence').textContent = r.sentence;
+      document.getElementById('arcadeFeedback').classList.add('hidden');
+      arcadeAnswered = false;
+
+      document.getElementById('arcadeOptions').innerHTML = r.opts.map(o => `
+        <button type="button" onclick="answerArcade('${o.replace(/'/g, "\\'")}')" class="p-4 rounded-2xl border border-slate-200 dark:border-cyan-400/20 bg-slate-50 dark:bg-[#071627] hover:border-[#0089A7] text-sm font-extrabold text-[#002B5C] dark:text-white transition">${o}</button>
+      `).join('');
+    }
+
+    window.answerArcade = (choice) => {
+      if (arcadeAnswered) return;
+      arcadeAnswered = true;
+      const r = ARCADE_ROUNDS[arcadeIdx % ARCADE_ROUNDS.length];
+      const fb = document.getElementById('arcadeFeedback');
+      fb.classList.remove('hidden');
+      const ok = choice === r.ans;
+      rewardPoints(ok);
+      fb.className = ok
+        ? 'p-4 rounded-2xl text-xs sm:text-sm font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30'
+        : 'p-4 rounded-2xl text-xs sm:text-sm font-semibold bg-amber-500/15 text-amber-800 dark:text-amber-200 border border-amber-500/30';
+      fb.textContent = ok ? `Correct! ${r.why}` : `Best answer: ${r.ans}. ${r.why}`;
+    };
+
+    window.nextArcadeRound = () => { arcadeIdx = (arcadeIdx + 1) % ARCADE_ROUNDS.length; renderArcade(); };
+    window.resetArcade = () => { arcadeIdx = 0; arcadeScore = 0; arcadeStreak = 0; updateArcadeHeader(); renderArcade(); renderCue(); renderStative(); };
+
+    const FREQ_CUES = [
+      { cue: "every other day", kind: "Routine / Frequency", note: "Once every two days—classic Present Simple routine." },
+      { cue: "belong to", kind: "Stative / State", note: "Expresses possession/state rather than a dynamic action." },
+      { cue: "hardly ever", kind: "Routine / Frequency", note: "Frequency adverb meaning almost never." },
+      { cue: "prefer", kind: "Stative / State", note: "Stative verb expressing preference." },
+      { cue: "on a regular basis", kind: "Routine / Frequency", note: "Steady repetition over time." },
+      { cue: "know", kind: "Stative / State", note: "Mental state verb—normally used in Present Simple." }
+    ];
+    let cueIdx = 0;
+    let cueAnswered = false;
+
+    function renderCue() {
+      const c = FREQ_CUES[cueIdx % FREQ_CUES.length];
+      document.getElementById('cueCounter').textContent = `Expression ${(cueIdx % FREQ_CUES.length) + 1} / ${FREQ_CUES.length}`;
+      document.getElementById('cuePhraseBox').textContent = `“${c.cue}”`;
+      document.getElementById('cueFeedback').classList.add('hidden');
+      cueAnswered = false;
+    }
+
+    window.answerCue = (pickedKind) => {
+      if (cueAnswered) return;
+      cueAnswered = true;
+      const c = FREQ_CUES[cueIdx % FREQ_CUES.length];
+      const ok = pickedKind === c.kind;
+      rewardPoints(ok);
+      const fb = document.getElementById('cueFeedback');
+      fb.classList.remove('hidden');
+      fb.className = ok
+        ? 'p-4 rounded-2xl text-xs sm:text-sm font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30'
+        : 'p-4 rounded-2xl text-xs sm:text-sm font-semibold bg-amber-500/15 text-amber-800 dark:text-amber-200 border border-amber-500/30';
+      fb.textContent = ok ? `Spot on! ${c.note}` : `Category: ${c.kind}. ${c.note}`;
+    };
+    window.nextCue = () => { cueIdx = (cueIdx + 1) % FREQ_CUES.length; renderCue(); };
+
+    const STATIVE_ITEMS = [
+      { s: "“I prefer tea in the morning.”", valid: true, why: "Natural! 'Prefer' is a stative verb in Present Simple." },
+      { s: "“She don't like noisy cafés.”", valid: false, why: "Trap! Use 'She doesn't like noisy cafés'." },
+      { s: "“They live near the station.”", valid: true, why: "Natural! Present Simple fits a regular/permanent residence." },
+      { s: "“He watch football on Sundays.”", valid: false, why: "Trap! Add -es for 'he': 'He watches football on Sundays'." },
+      { s: "“We hardly ever eat fast food.”", valid: true, why: "Natural! 'Hardly ever' goes before the main verb." },
+      { s: "“Does she plays the piano?”", valid: false, why: "Trap! Use the base verb after 'Does': 'Does she play the piano?'." }
+    ];
+    let statIdx = 0;
+    let statAnswered = false;
+
+    function renderStative() {
+      const item = STATIVE_ITEMS[statIdx % STATIVE_ITEMS.length];
+      document.getElementById('statCounter').textContent = `Trap ${(statIdx % STATIVE_ITEMS.length) + 1} / ${STATIVE_ITEMS.length}`;
+      document.getElementById('statSentenceBox').textContent = item.s;
+      document.getElementById('statFeedback').classList.add('hidden');
+      statAnswered = false;
+    }
+
+    window.answerStative = (userSaysValid) => {
+      if (statAnswered) return;
+      statAnswered = true;
+      const item = STATIVE_ITEMS[statIdx % STATIVE_ITEMS.length];
+      const ok = userSaysValid === item.valid;
+      rewardPoints(ok);
+      const fb = document.getElementById('statFeedback');
+      fb.classList.remove('hidden');
+      fb.className = ok
+        ? 'p-4 rounded-2xl text-xs sm:text-sm font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30'
+        : 'p-4 rounded-2xl text-xs sm:text-sm font-semibold bg-amber-500/15 text-amber-800 dark:text-amber-200 border border-amber-500/30';
+      fb.textContent = ok ? `Nice catch! ${item.why}` : item.why;
+    };
+    window.nextStative = () => { statIdx = (statIdx + 1) % STATIVE_ITEMS.length; renderStative(); };
 
     // Voice Note Recorder
     const studentNameInput = document.getElementById('studentNameInput');
@@ -1398,15 +1610,21 @@
     // Init
     goStage(0);
     renderWarmupCard(0);
-    renderVocabShowcase();
+    renderVocabGrid();
     renderFreqScale();
     renderVocabMatch();
+    renderProductionPrompts();
     renderInspector();
     renderCloze();
     renderPractice();
     renderScramble();
     renderOdd();
+    renderMiniChat();
+    renderFixHomework();
     renderGame();
+    renderArcade();
+    renderCue();
+    renderStative();
     lucide.createIcons();
   </script>
 </body>

@@ -48,7 +48,7 @@
         </span>
       </div>
 
-      <!-- Stage Switcher Pills -->
+      <!-- Stage Switcher Pills (7 Stages) -->
       <div id="stagePills" class="flex items-center gap-1 overflow-x-auto py-1"></div>
 
       <!-- Right Controls -->
@@ -72,7 +72,7 @@
       </div>
     </div>
     <div class="w-full h-1 bg-black/30">
-      <div id="progressLine" class="h-full bg-[#0089A7] transition-all duration-300" style="width: 12.5%"></div>
+      <div id="progressLine" class="h-full bg-[#0089A7] transition-all duration-300" style="width: 14.28%"></div>
     </div>
   </header>
 
@@ -120,7 +120,7 @@
               <span>Start Lesson</span>
               <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
-            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">8 stages · Visual cards · Arcade mode</span>
+            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">12 visual prompts · Fullscreen mode · Multi-game arcade</span>
           </div>
         </div>
       </div>
@@ -228,7 +228,7 @@
       </div>
     </section>
 
-    <!-- ==================== 03: COMPLETE VOCABULARY LAB (SHOWCASE + SINGLE + FREQUENCY + MATCH + PRODUCTION) ==================== -->
+    <!-- ==================== 03: COMPLETE VOCABULARY LAB ==================== -->
     <section data-stage="2" class="lesson-stage hidden stage-anim space-y-10">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
         <div>
@@ -246,10 +246,8 @@
         </div>
       </div>
 
-      <!-- Part A1: All Cards Grid -->
       <div id="vocabGridView" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
 
-      <!-- Part A2: One-by-One Spotlight Card -->
       <div id="vocabSingleView" class="hidden max-w-2xl mx-auto w-full space-y-4">
         <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl overflow-hidden shadow-md">
           <div id="vocabSinglePhoto" class="h-56 sm:h-64 bg-[#091726] relative overflow-hidden"></div>
@@ -282,7 +280,6 @@
         </div>
       </div>
 
-      <!-- Part B: Frequency Scale -->
       <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-4 shadow-sm">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div>
@@ -295,7 +292,6 @@
         <div id="freqDetailCard" class="p-4 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/15 space-y-1.5"></div>
       </div>
 
-      <!-- Part C: Definition Match -->
       <div class="space-y-4">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#005A8D] dark:text-cyan-300">Definition Match</h3>
@@ -314,7 +310,6 @@
         </div>
       </div>
 
-      <!-- Part D: Guided Production Lab -->
       <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 sm:p-8 space-y-5 shadow-sm">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div>
@@ -329,24 +324,23 @@
       </div>
     </section>
 
-    <!-- ==================== 04: VISUAL GRAMMAR & SWITCHER ==================== -->
+    <!-- ==================== 04: FULL VISUAL GRAMMAR + SWITCHER + INTEGRATED CLOZE ==================== -->
     <section data-stage="3" class="lesson-stage hidden stage-anim space-y-8">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
         <div>
           <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 04</span>
-          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Visual Grammar</h2>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Grammar Guide &amp; Check</h2>
         </div>
-        <p class="text-sm text-slate-500 dark:text-slate-400">Visual timelines first, concise rules, and live tense switching.</p>
+        <p class="text-sm text-slate-500 dark:text-slate-400">Visual timelines, detailed explanations, live contrast switcher, and summary check.</p>
       </div>
 
-      <!-- Visual Timeline SVG + Photo -->
+      <!-- Visual Diagrams + Photo -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
         <div class="lg:col-span-7 bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-5 shadow-sm">
-          <!-- Present Simple Diagram -->
           <div class="space-y-1.5">
             <div class="flex items-center justify-between text-xs font-extrabold">
               <span class="px-2.5 py-0.5 rounded bg-[#002B5C] text-white">PRESENT SIMPLE</span>
-              <span class="text-[#005A8D] dark:text-cyan-300">verb / verb+s · Habits, Facts, Stative</span>
+              <span class="text-[#005A8D] dark:text-cyan-300">verb / verb+s · Habits, Facts, Schedules, Stative</span>
             </div>
             <svg viewBox="0 0 500 68" class="w-full h-16 rounded-xl bg-slate-50 dark:bg-[#071627] border border-slate-200/70 dark:border-cyan-400/10">
               <line x1="25" y1="34" x2="475" y2="34" stroke="#64748B" stroke-width="2" stroke-dasharray="4 4" />
@@ -361,11 +355,10 @@
             </svg>
           </div>
 
-          <!-- Present Continuous Diagram -->
           <div class="space-y-1.5">
             <div class="flex items-center justify-between text-xs font-extrabold">
               <span class="px-2.5 py-0.5 rounded bg-[#0089A7] text-white">PRESENT CONTINUOUS</span>
-              <span class="text-[#0089A7] dark:text-cyan-300">am / is / are + verb-ing · Right Now / Temporary</span>
+              <span class="text-[#0089A7] dark:text-cyan-300">am / is / are + verb-ing · Right Now, Temporary, Trends</span>
             </div>
             <svg viewBox="0 0 500 68" class="w-full h-16 rounded-xl bg-slate-50 dark:bg-[#071627] border border-slate-200/70 dark:border-cyan-400/10">
               <line x1="25" y1="34" x2="475" y2="34" stroke="#64748B" stroke-width="2" />
@@ -384,10 +377,43 @@
           />
           <div class="absolute inset-0 bg-gradient-to-t from-[#061322]/90 via-[#061322]/35 to-transparent"></div>
           <div class="absolute bottom-5 left-6 right-6 text-white space-y-1">
-            <span class="text-[11px] font-extrabold uppercase tracking-[0.2em] text-cyan-300">Quick Rule of Thumb</span>
-            <p class="text-sm font-bold">Repeated/state → Simple · In progress/temporary → Continuous</p>
-            <p class="text-xs text-white/80">Stative verbs (<em>know, prefer, own, want</em>) stay in Present Simple.</p>
+            <span class="text-[11px] font-extrabold uppercase tracking-[0.2em] text-cyan-300">Core Contrast</span>
+            <p class="text-sm font-bold">Stability &amp; Habits vs. Live Action &amp; Change</p>
+            <p class="text-xs text-white/80">Choose the tense by meaning and time context, not by single-word guessing alone.</p>
           </div>
+        </div>
+      </div>
+
+      <!-- Detailed Explanation Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-2.5 shadow-sm">
+          <span class="inline-block px-2.5 py-1 rounded-lg bg-[#002B5C] text-white text-[11px] font-extrabold uppercase">Present Simple · Form &amp; Use</span>
+          <h3 class="text-base font-extrabold text-[#002B5C] dark:text-white">Routines, Facts &amp; Timetables</h3>
+          <ul class="text-xs text-slate-600 dark:text-slate-300 space-y-1.5 list-disc list-inside leading-relaxed">
+            <li><strong>+</strong> I/we/you/they <u>work</u> · he/she/it <u>works / watches / studies</u>.</li>
+            <li><strong>−</strong> <u>don't / doesn't + base verb</u> (no <em>-s</em> after <em>doesn't</em>).</li>
+            <li><strong>?</strong> <u>Do / Does + subject + base verb?</u></li>
+            <li>Used for habits, general truths, and schedules.</li>
+          </ul>
+        </div>
+
+        <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-2.5 shadow-sm">
+          <span class="inline-block px-2.5 py-1 rounded-lg bg-[#0089A7] text-white text-[11px] font-extrabold uppercase">Present Continuous · Form &amp; Use</span>
+          <h3 class="text-base font-extrabold text-[#002B5C] dark:text-white">In Progress &amp; Temporary</h3>
+          <ul class="text-xs text-slate-600 dark:text-slate-300 space-y-1.5 list-disc list-inside leading-relaxed">
+            <li><strong>+ / − / ?</strong> <u>am / is / are (+ not) + verb-ing</u>.</li>
+            <li><strong>Spelling:</strong> drop silent <em>-e</em> (<em>make → making</em>); double CVC consonant when stressed (<em>run → running</em>).</li>
+            <li>Used for actions right now, temporary periods around now, and changing trends.</li>
+          </ul>
+        </div>
+
+        <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-2.5 shadow-sm">
+          <span class="inline-block px-2.5 py-1 rounded-lg bg-[#005A8D] text-white text-[11px] font-extrabold uppercase">Stative vs. Dynamic Shift</span>
+          <h3 class="text-base font-extrabold text-[#002B5C] dark:text-white">Verbs That Change Meaning</h3>
+          <ul class="text-xs text-slate-600 dark:text-slate-300 space-y-1.5 list-disc list-inside leading-relaxed">
+            <li><strong>Stative (Simple):</strong> <em>I <u>think</u> she's right</em> (opinion); <em>We <u>have</u> two cats</em> (possession).</li>
+            <li><strong>Dynamic (Continuous):</strong> <em>I'<u>m thinking</u> about the trip</em> (active thought); <em>We'<u>re having</u> dinner</em> (experiencing).</li>
+          </ul>
         </div>
       </div>
 
@@ -405,52 +431,38 @@
         </div>
         <div id="switcherRows" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
       </div>
-    </section>
 
-    <!-- ==================== 05: SUMMARY CLOZE ==================== -->
-    <section data-stage="4" class="lesson-stage hidden stage-anim space-y-6">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
+      <!-- Integrated Summary Cloze Exercise (replaces former Stage 05) -->
+      <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 sm:p-8 space-y-5 shadow-sm">
         <div>
-          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 05</span>
-          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Contrast Summary</h2>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Grammar Check · Fill the Summary</span>
+          <h3 class="text-xl font-extrabold text-[#002B5C] dark:text-white mt-0.5">Complete the Rule Summary</h3>
         </div>
-        <p class="text-sm text-slate-500 dark:text-slate-400">Tap a blank slot, pick a word from the bank, and check your summary.</p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 shadow-sm">
-        <div class="lg:col-span-4 h-64 lg:h-auto bg-[#091726]">
-          <img
-            src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=850&q=80"
-            alt="Study notes and notebook"
-            class="w-full h-full object-cover"
-          />
-        </div>
-        <div class="lg:col-span-8 p-6 sm:p-8 space-y-6">
-          <div class="flex flex-wrap gap-2" id="clozeChips"></div>
-          <p class="text-slate-700 dark:text-slate-200 text-sm sm:text-base leading-loose" id="clozeText"></p>
-          <div class="flex flex-wrap items-center gap-3 pt-2">
-            <button type="button" onclick="checkCloze()" class="px-5 py-2.5 rounded-xl bg-[#002B5C] hover:bg-[#005A8D] text-white text-xs font-bold transition">
-              Check Summary
-            </button>
-            <button type="button" onclick="resetCloze()" class="px-4 py-2.5 rounded-xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-semibold transition">
-              Clear
-            </button>
-            <span id="clozeMsg" class="text-xs font-bold"></span>
-          </div>
+        <div class="flex flex-wrap gap-2" id="clozeChips"></div>
+        <p class="text-slate-700 dark:text-slate-200 text-sm sm:text-base leading-loose" id="clozeText"></p>
+        <div class="flex flex-wrap items-center gap-3 pt-1">
+          <button type="button" onclick="checkCloze()" class="px-5 py-2.5 rounded-xl bg-[#002B5C] hover:bg-[#005A8D] text-white text-xs font-bold transition">
+            Check Summary
+          </button>
+          <button type="button" onclick="resetCloze()" class="px-4 py-2.5 rounded-xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-semibold transition">
+            Clear
+          </button>
+          <span id="clozeMsg" class="text-xs font-bold"></span>
         </div>
       </div>
     </section>
 
-    <!-- ==================== 06: PRACTICE PACK ==================== -->
-    <section data-stage="5" class="lesson-stage hidden stage-anim space-y-10">
+    <!-- ==================== 05: PRACTICE PACK + MINI-CHAT LIVE ==================== -->
+    <section data-stage="4" class="lesson-stage hidden stage-anim space-y-10">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
         <div>
-          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 06 · Class &amp; Homework Pack</span>
-          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Practice</h2>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 05 · Class &amp; Homework Pack</span>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Practice &amp; Mini-Chat</h2>
         </div>
-        <p class="text-sm text-slate-500 dark:text-slate-400">Four complete sets for live class practice or assigning as homework.</p>
+        <p class="text-sm text-slate-500 dark:text-slate-400">Multiple choice, word order, odd one out, live chat replies, and homework rewrites.</p>
       </div>
 
+      <!-- Set 1: 8 MCQs -->
       <div class="space-y-4">
         <div class="flex items-center justify-between">
           <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#005A8D] dark:text-cyan-300">Set 1 · Choose the Right Tense (8 Items)</h3>
@@ -462,6 +474,7 @@
         </button>
       </div>
 
+      <!-- Set 2: 4 Sentence Scrambles -->
       <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-4 shadow-sm">
         <div class="flex flex-wrap items-center justify-between gap-2">
           <div>
@@ -478,15 +491,26 @@
         <div id="scrambleFeedback" class="text-xs font-bold"></div>
       </div>
 
+      <!-- Set 3: 4 Odd One Out Groups -->
       <div class="space-y-4">
         <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#005A8D] dark:text-cyan-300">Set 3 · Odd One Out (4 Groups)</h3>
         <div id="oddGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
       </div>
 
+      <!-- Set 4: Mini-Chat Live Replies -->
+      <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-4 shadow-sm">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Set 4 · Mini-Chat Context</span>
+          <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white mt-0.5">Pick the Most Natural Chat Reply</h3>
+        </div>
+        <div id="miniChatList" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+      </div>
+
+      <!-- Set 5: 4 Homework Fix & Write -->
       <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-4 shadow-sm">
         <div class="flex flex-wrap items-center justify-between gap-2">
           <div>
-            <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Set 4 · Fix the Trap &amp; Write (Homework Ready)</span>
+            <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Set 5 · Fix the Trap &amp; Write (Homework Ready)</span>
             <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white mt-0.5">Correct Each Sentence &amp; Add Your Own Example</h3>
           </div>
           <button type="button" onclick="toggleFixKey()" class="px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-bold text-[#005A8D] dark:text-cyan-300">
@@ -497,11 +521,11 @@
       </div>
     </section>
 
-    <!-- ==================== 07: SPEAKING GAME ==================== -->
-    <section data-stage="6" class="lesson-stage hidden stage-anim space-y-6">
+    <!-- ==================== 06: SPEAKING GAME (4 CARDS PER MODE) ==================== -->
+    <section data-stage="5" class="lesson-stage hidden stage-anim space-y-6">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
         <div>
-          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 07 · Live Class Game</span>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 06 · Live Class Game</span>
           <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Tense Showdown</h2>
         </div>
         <p class="text-sm text-slate-500 dark:text-slate-400">4 cards per mode for lively speaking rounds with your teacher.</p>
@@ -553,12 +577,12 @@
       </div>
     </section>
 
-    <!-- ==================== 08: GAMIFIED TENSE ARCADE ==================== -->
-    <section data-stage="7" class="lesson-stage hidden stage-anim space-y-6">
+    <!-- ==================== 07: MULTI-MODE GAMIFIED ARCADE ==================== -->
+    <section data-stage="6" class="lesson-stage hidden stage-anim space-y-6">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
         <div>
-          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 08 · Gamified Finale</span>
-          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Tense Arcade</h2>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 07 · Gamified Finale</span>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Grammar Arcade</h2>
         </div>
         <div class="flex items-center gap-3 text-xs font-extrabold">
           <span id="arcadeScoreBadge" class="px-3 py-1 rounded-full bg-[#002B5C] text-white">Score: 0</span>
@@ -566,24 +590,82 @@
         </div>
       </div>
 
-      <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 sm:p-8 space-y-6 shadow-lg max-w-3xl mx-auto w-full">
+      <!-- Arcade Game Switcher -->
+      <div class="flex flex-wrap gap-2">
+        <button id="arcTabRounds" type="button" onclick="switchArcadeGame('rounds')" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-[#002B5C] text-white transition">
+          1. Tense Duel
+        </button>
+        <button id="arcTabCues" type="button" onclick="switchArcadeGame('cues')" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7] transition">
+          2. Time-Cue Sorter
+        </button>
+        <button id="arcTabStative" type="button" onclick="switchArcadeGame('stative')" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7] transition">
+          3. Stative Trap Breaker
+        </button>
+      </div>
+
+      <!-- Game 1: Tense Duel -->
+      <div id="arcadePanelRounds" class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 sm:p-8 space-y-6 shadow-lg max-w-3xl mx-auto w-full">
         <div class="flex items-center justify-between gap-2">
           <span id="arcadeRoundLabel" class="text-xs font-extrabold uppercase tracking-widest text-[#0089A7]">Round 1 / 8</span>
           <button type="button" onclick="resetArcade()" class="text-xs font-bold px-3 py-1 rounded-lg border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A]">
-            Restart Run
+            Reset Score
           </button>
         </div>
 
         <h3 id="arcadeSentence" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
-
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="arcadeOptions"></div>
-
         <div id="arcadeFeedback" class="hidden p-4 rounded-2xl text-xs sm:text-sm font-semibold"></div>
 
         <div class="flex justify-end pt-2">
           <button type="button" onclick="nextArcadeRound()" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#005A8D] hover:bg-[#0089A7] text-white text-xs font-bold transition">
-            <span>Next Challenge</span>
+            <span>Next Round</span>
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Game 2: Time-Cue Sorter -->
+      <div id="arcadePanelCues" class="hidden bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 sm:p-8 space-y-5 shadow-lg max-w-3xl mx-auto w-full">
+        <div class="flex items-center justify-between gap-2">
+          <span id="cueCounter" class="text-xs font-extrabold uppercase tracking-widest text-[#0089A7]">Cue 1 / 8</span>
+          <span class="text-xs text-slate-400">Which tense does this cue usually fit?</span>
+        </div>
+        <div id="cuePhraseBox" class="text-2xl sm:text-3xl font-extrabold text-center py-6 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/15 text-[#002B5C] dark:text-white"></div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <button type="button" onclick="answerCue('Present Simple')" class="p-4 rounded-2xl bg-[#002B5C] hover:bg-[#005A8D] text-white text-sm font-extrabold transition">
+            Present Simple (Habits / Facts)
+          </button>
+          <button type="button" onclick="answerCue('Present Continuous')" class="p-4 rounded-2xl bg-[#0089A7] hover:opacity-95 text-white text-sm font-extrabold transition">
+            Present Continuous (Now / Temporary)
+          </button>
+        </div>
+        <div id="cueFeedback" class="hidden p-4 rounded-2xl text-xs sm:text-sm font-semibold"></div>
+        <div class="flex justify-end">
+          <button type="button" onclick="nextCue()" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-cyan-400/20 text-xs font-bold hover:bg-slate-100 dark:hover:bg-[#132C4A]">
+            Next Cue →
+          </button>
+        </div>
+      </div>
+
+      <!-- Game 3: Stative Trap Breaker -->
+      <div id="arcadePanelStative" class="hidden bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 sm:p-8 space-y-5 shadow-lg max-w-3xl mx-auto w-full">
+        <div class="flex items-center justify-between gap-2">
+          <span id="statCounter" class="text-xs font-extrabold uppercase tracking-widest text-[#0089A7]">Trap 1 / 6</span>
+          <span class="text-xs text-slate-400">Is this sentence natural or a grammar trap?</span>
+        </div>
+        <div id="statSentenceBox" class="text-xl sm:text-2xl font-extrabold text-center py-6 px-4 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/15 text-[#002B5C] dark:text-white"></div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <button type="button" onclick="answerStative(true)" class="p-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-extrabold transition">
+            Natural / Valid
+          </button>
+          <button type="button" onclick="answerStative(false)" class="p-4 rounded-2xl bg-rose-600 hover:bg-rose-700 text-white text-sm font-extrabold transition">
+            Trap / Unnatural
+          </button>
+        </div>
+        <div id="statFeedback" class="hidden p-4 rounded-2xl text-xs sm:text-sm font-semibold"></div>
+        <div class="flex justify-end">
+          <button type="button" onclick="nextStative()" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-cyan-400/20 text-xs font-bold hover:bg-slate-100 dark:hover:bg-[#132C4A]">
+            Next Sentence →
           </button>
         </div>
       </div>
@@ -591,7 +673,7 @@
 
   </main>
 
-  <!-- Editorial Bottom Stage Bar -->
+  <!-- Editorial Bottom Stage Bar (7 Stages) -->
   <footer class="border-t border-slate-200 dark:border-cyan-400/15 bg-white dark:bg-[#061322] py-4 px-4 sm:px-6">
     <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
       <button id="btnPrev" type="button" onclick="goStage(currentStage - 1)" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] disabled:opacity-30 text-xs font-bold transition">
@@ -600,7 +682,7 @@
       </button>
 
       <span id="stageCounter" class="text-xs font-extrabold tracking-widest uppercase text-slate-500 dark:text-slate-400">
-        01 / 08
+        01 / 07
       </span>
 
       <button id="btnNext" type="button" onclick="goStage(currentStage + 1)" class="inline-flex items-center gap-2 px-5 py-2 rounded-xl bg-[#002B5C] hover:bg-[#005A8D] disabled:opacity-30 text-xs font-bold text-white transition">
@@ -617,11 +699,10 @@
       "01 · Overview",
       "02 · Visual Warm-Up",
       "03 · Vocabulary",
-      "04 · Visual Grammar",
-      "05 · Summary",
-      "06 · Practice Pack",
-      "07 · Tense Showdown",
-      "08 · Tense Arcade"
+      "04 · Grammar & Check",
+      "05 · Practice & Chat",
+      "06 · Tense Showdown",
+      "07 · Grammar Arcade"
     ];
 
     let currentStage = 0;
@@ -969,7 +1050,7 @@
     }
     window.toggleProductionModels = () => { showProdModels = !showProdModels; renderProductionPrompts(); };
 
-    // 04: Switcher
+    // 04: Switcher + Integrated Cloze
     const SWITCHER_ITEMS = [
       { simple: "She <strong>lives</strong> in Manresa.", continuous: "She <strong>is living</strong> in Barcelona this month.", sNote: "Permanent home base.", cNote: "Temporary stay for a limited time." },
       { simple: "I <strong>cook</strong> dinner at home.", continuous: "I <strong>am cooking</strong> dinner right now.", sNote: "Regular evening habit.", cNote: "Action in progress at this exact moment." },
@@ -1002,7 +1083,6 @@
       renderSwitcher();
     });
 
-    // 05: Cloze
     const CLOZE_BANK = ["routines", "now", "temporary", "stative", "moment"];
     const CLOZE_KEY = ["routines", "moment", "temporary", "now", "stative"];
     const CLOZE_STATE = ["", "", "", "", ""];
@@ -1045,7 +1125,7 @@
     };
     window.resetCloze = () => { for (let i = 0; i < CLOZE_STATE.length; i++) CLOZE_STATE[i] = ""; activeSlot = 0; document.getElementById('clozeMsg').textContent = ""; renderCloze(); };
 
-    // 06: Practice Pack
+    // 05: Practice Pack + Mini-Chat Live
     const PRACTICE_QS = [
       { q: "1. Right now, Liam ___ his notes before class.", opts: ["reads", "is reading"], ans: "is reading" },
       { q: "2. My sister usually ___ coffee, not tea.", opts: ["drinks", "is drinking"], ans: "drinks" },
@@ -1143,6 +1223,38 @@
       box.textContent = chosen === g.odd ? `Correct! ${g.note}` : `Odd one out is '${g.odd}'. ${g.note}`;
     };
 
+    const MINI_CHATS = [
+      { incoming: "“Hey! Can you talk right now?”", replies: ["Sorry, I'm making dinner at the moment.", "Sorry, I make dinner every evening."], best: "Sorry, I'm making dinner at the moment." },
+      { incoming: "“Do you take the bus every morning?”", replies: ["Yes, I usually take the 8:15 bus.", "Yes, I'm usually taking the 8:15 bus."], best: "Yes, I usually take the 8:15 bus." }
+    ];
+
+    function renderMiniChat() {
+      document.getElementById('miniChatList').innerHTML = MINI_CHATS.map((c, ci) => `
+        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/15 space-y-3">
+          <div class="px-3.5 py-2 rounded-2xl bg-[#002B5C] text-white text-xs sm:text-sm font-bold inline-block">${c.incoming}</div>
+          <div class="space-y-1.5">
+            ${c.replies.map(r => `
+              <button type="button" onclick="checkChat(${ci}, '${r.replace(/'/g, "\\'")}')" class="w-full text-left px-3.5 py-2 rounded-xl bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7] text-xs font-semibold transition">${r}</button>
+            `).join('')}
+          </div>
+          <div id="chat-fb-${ci}" class="hidden text-xs font-bold"></div>
+        </div>
+      `).join('');
+    }
+
+    window.checkChat = (ci, chosen) => {
+      const c = MINI_CHATS[ci];
+      const fb = document.getElementById(`chat-fb-${ci}`);
+      fb.classList.remove('hidden');
+      if (chosen === c.best) {
+        fb.className = 'text-xs font-bold text-emerald-600 dark:text-emerald-400';
+        fb.textContent = 'Natural chat response!';
+      } else {
+        fb.className = 'text-xs font-bold text-amber-600 dark:text-amber-300';
+        fb.textContent = `Better fit: ${c.best}`;
+      }
+    };
+
     const FIX_HOMEWORK = [
       { wrong: "She is having two brothers.", fix: "She has two brothers.", extra: "Homework: Write 1 sentence about something you own or have." },
       { wrong: "Every Tuesday I am going to my English class.", fix: "Every Tuesday I go to my English class.", extra: "Homework: Write 1 sentence about a weekly class or habit." },
@@ -1163,7 +1275,7 @@
     }
     window.toggleFixKey = () => { showFixKey = !showFixKey; renderFixHomework(); };
 
-    // 07: Speaking Game (4 Cards per Mode)
+    // 06: Speaking Game (4 Cards per Mode)
     const GAME_MODES = [
       { key: "contrast", label: "Routine vs. Right Now" },
       { key: "detective", label: "Contrast Detective" },
@@ -1217,7 +1329,47 @@
     window.nextGameCard = () => { gameCardIdx++; renderGame(); };
     window.revealBluffVote = () => { document.getElementById('gameTwistBox').classList.toggle('hidden'); };
 
-    // 08: Gamified Tense Arcade
+    // 07: Multi-Mode Gamified Arcade
+    let arcadeScore = 0;
+    let arcadeStreak = 0;
+
+    function updateArcadeHeader() {
+      document.getElementById('arcadeScoreBadge').textContent = `Score: ${arcadeScore}`;
+      document.getElementById('arcadeStreakBadge').textContent = `Streak: ${arcadeStreak} 🔥`;
+    }
+
+    function rewardPoints(isRight, explanation) {
+      if (isRight) {
+        arcadeStreak++;
+        arcadeScore += 10 + (arcadeStreak > 1 ? (arcadeStreak - 1) * 5 : 0);
+      } else {
+        arcadeStreak = 0;
+      }
+      updateArcadeHeader();
+      return explanation;
+    }
+
+    window.switchArcadeGame = (tab) => {
+      const panels = {
+        rounds: document.getElementById('arcadePanelRounds'),
+        cues: document.getElementById('arcadePanelCues'),
+        stative: document.getElementById('arcadePanelStative')
+      };
+      const tabs = {
+        rounds: document.getElementById('arcTabRounds'),
+        cues: document.getElementById('arcTabCues'),
+        stative: document.getElementById('arcTabStative')
+      };
+
+      Object.keys(panels).forEach(k => {
+        panels[k].classList.toggle('hidden', k !== tab);
+        tabs[k].className = k === tab
+          ? 'px-4 py-2 rounded-xl text-xs font-extrabold bg-[#002B5C] text-white transition'
+          : 'px-4 py-2 rounded-xl text-xs font-extrabold bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7] transition';
+      });
+    };
+
+    // Arcade Game 1: Tense Duel
     const ARCADE_ROUNDS = [
       { sentence: "“She ___ to the gym every Monday and Wednesday.”", opts: ["goes", "is going"], ans: "goes", why: "Repeated weekly routine → Present Simple ('goes')." },
       { sentence: "“Look! Someone ___ outside your window right now.”", opts: ["waves", "is waving"], ans: "is waving", why: "Happening right now after 'Look!' → Present Continuous." },
@@ -1228,25 +1380,18 @@
       { sentence: "“That old bicycle ___ to my cousin.”", opts: ["belongs", "is belonging"], ans: "belongs", why: "'Belong to' expresses possession (stative) → Present Simple." },
       { sentence: "“Be quiet! The speaker ___ the final point.”", opts: ["explains", "is explaining"], ans: "is explaining", why: "Action unfolding right now → Present Continuous." }
     ];
-
     let arcadeIdx = 0;
-    let arcadeScore = 0;
-    let arcadeStreak = 0;
     let arcadeAnswered = false;
 
     function renderArcade() {
       const r = ARCADE_ROUNDS[arcadeIdx % ARCADE_ROUNDS.length];
       document.getElementById('arcadeRoundLabel').textContent = `Round ${(arcadeIdx % ARCADE_ROUNDS.length) + 1} / ${ARCADE_ROUNDS.length}`;
-      document.getElementById('arcadeScoreBadge').textContent = `Score: ${arcadeScore}`;
-      document.getElementById('arcadeStreakBadge').textContent = `Streak: ${arcadeStreak} 🔥`;
       document.getElementById('arcadeSentence').textContent = r.sentence;
       document.getElementById('arcadeFeedback').classList.add('hidden');
       arcadeAnswered = false;
 
       document.getElementById('arcadeOptions').innerHTML = r.opts.map(o => `
-        <button type="button" onclick="answerArcade('${o.replace(/'/g, "\\'")}')" class="p-4 rounded-2xl border border-slate-200 dark:border-cyan-400/20 bg-slate-50 dark:bg-[#071627] hover:border-[#0089A7] text-sm font-extrabold text-[#002B5C] dark:text-white transition">
-          ${o}
-        </button>
+        <button type="button" onclick="answerArcade('${o.replace(/'/g, "\\'")}')" class="p-4 rounded-2xl border border-slate-200 dark:border-cyan-400/20 bg-slate-50 dark:bg-[#071627] hover:border-[#0089A7] text-sm font-extrabold text-[#002B5C] dark:text-white transition">${o}</button>
       `).join('');
     }
 
@@ -1256,32 +1401,88 @@
       const r = ARCADE_ROUNDS[arcadeIdx % ARCADE_ROUNDS.length];
       const fb = document.getElementById('arcadeFeedback');
       fb.classList.remove('hidden');
-
-      if (choice === r.ans) {
-        arcadeStreak++;
-        arcadeScore += 10 + (arcadeStreak > 1 ? (arcadeStreak - 1) * 5 : 0);
-        fb.className = 'p-4 rounded-2xl text-xs sm:text-sm font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30';
-        fb.textContent = `Correct! ${r.why}`;
-      } else {
-        arcadeStreak = 0;
-        fb.className = 'p-4 rounded-2xl text-xs sm:text-sm font-semibold bg-amber-500/15 text-amber-800 dark:text-amber-200 border border-amber-500/30';
-        fb.textContent = `Best answer: ${r.ans}. ${r.why}`;
-      }
-      document.getElementById('arcadeScoreBadge').textContent = `Score: ${arcadeScore}`;
-      document.getElementById('arcadeStreakBadge').textContent = `Streak: ${arcadeStreak} 🔥`;
+      const ok = choice === r.ans;
+      rewardPoints(ok, r.why);
+      fb.className = ok
+        ? 'p-4 rounded-2xl text-xs sm:text-sm font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30'
+        : 'p-4 rounded-2xl text-xs sm:text-sm font-semibold bg-amber-500/15 text-amber-800 dark:text-amber-200 border border-amber-500/30';
+      fb.textContent = ok ? `Correct! ${r.why}` : `Best answer: ${r.ans}. ${r.why}`;
     };
 
-    window.nextArcadeRound = () => {
-      arcadeIdx = (arcadeIdx + 1) % ARCADE_ROUNDS.length;
-      renderArcade();
-    };
+    window.nextArcadeRound = () => { arcadeIdx = (arcadeIdx + 1) % ARCADE_ROUNDS.length; renderArcade(); };
+    window.resetArcade = () => { arcadeIdx = 0; arcadeScore = 0; arcadeStreak = 0; updateArcadeHeader(); renderArcade(); renderCue(); renderStative(); };
 
-    window.resetArcade = () => {
-      arcadeIdx = 0;
-      arcadeScore = 0;
-      arcadeStreak = 0;
-      renderArcade();
+    // Arcade Game 2: Time-Cue Sorter
+    const TIME_CUES = [
+      { cue: "at this exact moment", tense: "Present Continuous", note: "Points straight to the present moment." },
+      { cue: "every other weekend", tense: "Present Simple", note: "Indicates a repeated schedule every two weekends." },
+      { cue: "this week (temporary)", tense: "Present Continuous", note: "Signals a short-term period around now." },
+      { cue: "hardly ever", tense: "Present Simple", note: "Frequency adverb for rare habits." },
+      { cue: "for the time being", tense: "Present Continuous", note: "Means 'for now until something changes'." },
+      { cue: "on a regular basis", tense: "Present Simple", note: "Describes steady, repeated routines." },
+      { cue: "Look! / Listen!", tense: "Present Continuous", note: "Draws attention to live action happening now." },
+      { cue: "once a year", tense: "Present Simple", note: "Annual repetition → Present Simple." }
+    ];
+    let cueIdx = 0;
+    let cueAnswered = false;
+
+    function renderCue() {
+      const c = TIME_CUES[cueIdx % TIME_CUES.length];
+      document.getElementById('cueCounter').textContent = `Cue ${(cueIdx % TIME_CUES.length) + 1} / ${TIME_CUES.length}`;
+      document.getElementById('cuePhraseBox').textContent = `“${c.cue}”`;
+      document.getElementById('cueFeedback').classList.add('hidden');
+      cueAnswered = false;
+    }
+
+    window.answerCue = (pickedTense) => {
+      if (cueAnswered) return;
+      cueAnswered = true;
+      const c = TIME_CUES[cueIdx % TIME_CUES.length];
+      const ok = pickedTense === c.tense;
+      rewardPoints(ok, c.note);
+      const fb = document.getElementById('cueFeedback');
+      fb.classList.remove('hidden');
+      fb.className = ok
+        ? 'p-4 rounded-2xl text-xs sm:text-sm font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30'
+        : 'p-4 rounded-2xl text-xs sm:text-sm font-semibold bg-amber-500/15 text-amber-800 dark:text-amber-200 border border-amber-500/30';
+      fb.textContent = ok ? `Spot on! ${c.note}` : `Usually ${c.tense}: ${c.note}`;
     };
+    window.nextCue = () => { cueIdx = (cueIdx + 1) % TIME_CUES.length; renderCue(); };
+
+    // Arcade Game 3: Stative Trap Breaker
+    const STATIVE_ITEMS = [
+      { s: "“I'm thinking about joining the evening conversation group.”", valid: true, why: "Valid! 'Think about' here is an active mental process (dynamic)." },
+      { s: "“She is preferring coffee over tea in the morning.”", valid: false, why: "Trap! 'Prefer' is a stative verb—use 'She prefers coffee'." },
+      { s: "“We are having lunch on the balcony right now.”", valid: true, why: "Valid! 'Have lunch' means experiencing a meal (dynamic)." },
+      { s: "“This bag is belonging to my friend.”", valid: false, why: "Trap! 'Belong to' is stative—use 'This bag belongs to...'." },
+      { s: "“I don't believe that story.”", valid: true, why: "Valid! 'Believe' in this sense is stative → Present Simple." },
+      { s: "“He is knowing everyone in the building.”", valid: false, why: "Trap! 'Know' expresses a state—use 'He knows everyone'." }
+    ];
+    let statIdx = 0;
+    let statAnswered = false;
+
+    function renderStative() {
+      const item = STATIVE_ITEMS[statIdx % STATIVE_ITEMS.length];
+      document.getElementById('statCounter').textContent = `Trap ${(statIdx % STATIVE_ITEMS.length) + 1} / ${STATIVE_ITEMS.length}`;
+      document.getElementById('statSentenceBox').textContent = item.s;
+      document.getElementById('statFeedback').classList.add('hidden');
+      statAnswered = false;
+    }
+
+    window.answerStative = (userSaysValid) => {
+      if (statAnswered) return;
+      statAnswered = true;
+      const item = STATIVE_ITEMS[statIdx % STATIVE_ITEMS.length];
+      const ok = userSaysValid === item.valid;
+      rewardPoints(ok, item.why);
+      const fb = document.getElementById('statFeedback');
+      fb.classList.remove('hidden');
+      fb.className = ok
+        ? 'p-4 rounded-2xl text-xs sm:text-sm font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30'
+        : 'p-4 rounded-2xl text-xs sm:text-sm font-semibold bg-amber-500/15 text-amber-800 dark:text-amber-200 border border-amber-500/30';
+      fb.textContent = ok ? `Nice catch! ${item.why}` : item.why;
+    };
+    window.nextStative = () => { statIdx = (statIdx + 1) % STATIVE_ITEMS.length; renderStative(); };
 
     // Voice Note Recorder
     const studentNameInput = document.getElementById('studentNameInput');
@@ -1429,9 +1630,12 @@
     renderPractice();
     renderScramble();
     renderOdd();
+    renderMiniChat();
     renderFixHomework();
     renderGame();
     renderArcade();
+    renderCue();
+    renderStative();
     lucide.createIcons();
   </script>
 </body>

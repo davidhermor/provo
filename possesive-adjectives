@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Possessive Adjectives | PROVO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <style>
+    @keyframes stageIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .stage-anim { animation: stageIn 0.28s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+  </style>
+</head>
+<body class="bg-[#F2F6FA] text-slate-900 dark:bg-[#061322] dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200 selection:bg-[#0089A7] selection:text-white">
+
+  <!-- Sticky Deep Navy Navbar (#002B5C in both modes) -->
+  <header class="sticky top-0 z-40 bg-[#002B5C] text-white border-b border-cyan-300/15 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-3.5">
+        <a href="index.html" class="flex items-center shrink-0" title="PROVO">
+          <img
+            src="https://i.postimg.cc/vBt4qH44/download.png"
+            alt="PROVO"
+            class="h-8 w-auto object-contain block"
+            onerror="this.style.display='none'; document.getElementById('provoFallback').classList.remove('hidden');"
+          />
+          <span id="provoFallback" class="hidden font-extrabold tracking-widest text-lg text-white">PROVO</span>
+        </a>
+        <span class="hidden md:inline-block h-4 w-px bg-white/20"></span>
+        <span id="headerStageLabel" class="hidden md:inline-block text-xs font-bold uppercase tracking-[0.18em] text-cyan-200">
+          01 · Overview
+        </span>
+      </div>
+
+      <!-- Stage Switcher Pills (7 Stages) -->
+      <div id="stagePills" class="flex items-center gap-1 overflow-x-auto py-1"></div>
+
+      <!-- Right Controls -->
+      <div class="flex items-center gap-2 shrink-0">
+        <button
+          id="themeToggle"
+          type="button"
+          class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition"
+          title="Toggle Light / Navy Dark Mode"
+          aria-label="Toggle Light / Navy Dark Mode"
+        >
+          <i id="themeIcon" data-lucide="sun" class="w-4 h-4"></i>
+        </button>
+        <a
+          href="index.html"
+          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-white/10 hover:bg-white/20 text-white transition"
+        >
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          <span class="hidden sm:inline">All Lessons</span>
+        </a>
+      </div>
+    </div>
+    <div class="w-full h-1 bg-black/30">
+      <div id="progressLine" class="h-full bg-[#0089A7] transition-all duration-300" style="width: 14.28%"></div>
+    </div>
+  </header>
+
+  <!-- Main Stage Container -->
+  <main class="max-w-6xl w-full mx-auto px-4 sm:px-6 py-8 sm:py-12 flex-1 flex flex-col justify-center">
+
+    <!-- ==================== 01: EDITORIAL COVER ==================== -->
+    <section data-stage="0" class="lesson-stage stage-anim">
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 shadow-2xl">
+        <div class="lg:col-span-6 h-80 sm:h-[470px] relative bg-[#091726] overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1050&q=80"
+            alt="Friends and teammates working together with notebooks and laptops"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#061322]/85 via-black/15 to-transparent"></div>
+          <div class="absolute bottom-5 left-6 right-6 flex items-center justify-between text-xs text-cyan-100/90 font-semibold tracking-wider uppercase">
+            <span>PROVO · A1–A2 Grammar</span>
+            <span>My · Your · His · Her · Its · Our · Their</span>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 p-8 sm:p-12 flex flex-col justify-center space-y-6">
+          <div class="inline-flex items-center gap-2 self-start px-3 py-1 rounded-full bg-[#0089A7]/15 border border-[#0089A7]/35 text-[#005A8D] dark:text-cyan-300 text-xs font-extrabold uppercase tracking-[0.18em]">
+            <i data-lucide="user-check" class="w-3.5 h-3.5"></i>
+            <span>PROVO Stage Lab · Navy Edition</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl font-extrabold uppercase tracking-tight leading-[1.06] text-[#002B5C] dark:text-white">
+            Possessive<br/>
+            Adjectives<br/>
+            <span class="text-[#0089A7]">Mastery</span>
+          </h1>
+
+          <p class="text-slate-600 dark:text-slate-300 text-base leading-relaxed">
+            Use <em>my, your, his, her, its, our,</em> and <em>their</em> naturally before nouns, avoid common contraction traps like <em>its/it's</em> or <em>your/you're</em>, and play live speaking games.
+          </p>
+
+          <div class="pt-2 flex flex-wrap items-center gap-4">
+            <button
+              type="button"
+              onclick="goStage(1)"
+              class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-[#002B5C] to-[#005A8D] hover:from-[#005A8D] hover:to-[#0089A7] text-white text-sm font-bold shadow-lg shadow-[#002B5C]/25 transition"
+            >
+              <span>Start Lesson</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">12 visual prompts · Fullscreen mode · Multi-game arcade</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 02: 12 VISUAL QUESTION CARDS + FULLSCREEN + RECORDER ==================== -->
+    <section data-stage="1" class="lesson-stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 02</span>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Visual Warm-Up</h2>
+        </div>
+        <p class="text-sm text-slate-500 dark:text-slate-400">12 prompts about belongings, routines, family, and work. Toggle Fullscreen Card when projecting.</p>
+      </div>
+
+      <div id="warmupLayout" class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div id="warmupCardCol" class="lg:col-span-7 space-y-4 transition-all">
+          <div class="flex flex-wrap items-center justify-between gap-2 bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-2xl px-4 py-3 shadow-sm">
+            <div class="flex items-center gap-2">
+              <span id="qBadge" class="px-2.5 py-1 rounded-lg bg-[#002B5C] text-white text-xs font-extrabold">Q1 / 12</span>
+              <span id="qTag" class="px-2.5 py-1 rounded-lg bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300 text-xs font-bold">My &amp; Your</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <button id="prevQ" type="button" class="p-2 rounded-xl border border-slate-200 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] transition" title="Previous">
+                <i data-lucide="chevron-left" class="w-4 h-4"></i>
+              </button>
+              <button id="nextQ" type="button" class="p-2 rounded-xl border border-slate-200 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] transition" title="Next">
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </button>
+              <button id="shuffleQ" type="button" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 dark:bg-[#071627] hover:bg-slate-200 dark:hover:bg-[#132C4A] text-xs font-bold transition">
+                <i data-lucide="shuffle" class="w-3.5 h-3.5 text-[#0089A7]"></i>
+                <span>Random</span>
+              </button>
+              <button id="toggleFullscreenCard" type="button" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#005A8D]/15 dark:bg-[#0089A7]/20 text-[#005A8D] dark:text-cyan-200 hover:bg-[#0089A7]/30 text-xs font-bold transition" title="Toggle Fullscreen Card">
+                <i id="fullscreenIcon" data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+                <span id="fullscreenLabel">Fullscreen Card</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl overflow-hidden shadow-sm">
+            <div id="questionPhotoBox" class="h-52 sm:h-64 bg-[#091726] relative overflow-hidden"></div>
+
+            <div class="p-6 sm:p-8 space-y-4">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-[#0089A7]">Speaking Prompt</p>
+                <span id="qAngleBadge" class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-[#071627] text-slate-600 dark:text-cyan-200"></span>
+              </div>
+              <h3 id="questionText" class="text-xl sm:text-2xl font-extrabold leading-snug text-[#002B5C] dark:text-white"></h3>
+              <p id="questionFollow" class="text-sm text-slate-600 dark:text-slate-300"></p>
+
+              <div class="pt-3 border-t border-slate-100 dark:border-cyan-400/15">
+                <button id="toggleStarters" type="button" class="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-[#005A8D] dark:text-cyan-300 hover:underline">
+                  <i data-lucide="lightbulb" class="w-4 h-4"></i>
+                  <span>Sentence Starters</span>
+                </button>
+                <div id="startersBox" class="hidden mt-3 bg-slate-50 dark:bg-[#071627] border border-[#0089A7]/25 rounded-2xl p-4 text-xs sm:text-sm">
+                  <ul id="startersList" class="list-disc list-inside space-y-1.5 text-slate-700 dark:text-slate-200"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="questionNumberPills" class="flex flex-wrap gap-1.5"></div>
+        </div>
+
+        <div id="warmupRecorderCol" class="lg:col-span-5 bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-4 shadow-sm">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-extrabold uppercase tracking-[0.18em] text-[#0089A7]">Voice Note · Drive</span>
+            <span id="recTimer" class="font-mono text-xs font-bold text-slate-500 dark:text-slate-400">00:00</span>
+          </div>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Record your answer out loud and send it straight to your teacher's folder.</p>
+          <input
+            id="studentNameInput"
+            type="text"
+            placeholder="Your name (e.g. Sofía Gómez)"
+            class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/20 text-sm focus:outline-none focus:ring-2 focus:ring-[#0089A7]"
+          />
+          <div class="flex items-center gap-2">
+            <button id="btnRecord" type="button" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold transition">
+              <i data-lucide="mic" class="w-4 h-4"></i>
+              <span>Record</span>
+            </button>
+            <button id="btnStop" type="button" disabled class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-900 disabled:opacity-40 text-white text-xs font-bold transition">
+              <i data-lucide="square" class="w-4 h-4"></i>
+              <span>Stop</span>
+            </button>
+            <button id="btnClearAudio" type="button" disabled class="p-2.5 rounded-xl border border-slate-200 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] disabled:opacity-40 transition" title="Discard">
+              <i data-lucide="trash-2" class="w-4 h-4"></i>
+            </button>
+          </div>
+          <audio id="audioPreview" controls class="w-full hidden rounded-xl"></audio>
+          <div class="flex flex-col sm:flex-row gap-2">
+            <button id="btnSendDrive" type="button" disabled class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#002B5C] hover:bg-[#005A8D] disabled:opacity-40 text-white text-xs font-bold transition">
+              <i data-lucide="send" class="w-3.5 h-3.5"></i>
+              <span id="sendLabel">Send to Teacher</span>
+            </button>
+            <button id="btnDownloadAudio" type="button" disabled class="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl border border-slate-200 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] disabled:opacity-40 text-xs font-semibold transition">
+              <i data-lucide="download" class="w-3.5 h-3.5"></i>
+              <span>Backup</span>
+            </button>
+          </div>
+          <div id="uploadFeedback" class="hidden text-xs font-semibold px-3 py-2 rounded-xl"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 03: COMPLETE VOCABULARY LAB ==================== -->
+    <section data-stage="2" class="lesson-stage hidden stage-anim space-y-10">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 03</span>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Belongings &amp; Ownership Vocabulary</h2>
+        </div>
+
+        <div class="inline-flex rounded-xl bg-white dark:bg-[#0C1E33] p-1 border border-slate-200 dark:border-cyan-400/20 text-xs font-bold self-start sm:self-auto">
+          <button id="vocabModeGridBtn" type="button" onclick="setVocabView('grid')" class="px-3.5 py-1.5 rounded-lg bg-[#002B5C] text-white transition">
+            All Cards
+          </button>
+          <button id="vocabModeSingleBtn" type="button" onclick="setVocabView('single')" class="px-3.5 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 transition">
+            One by One
+          </button>
+        </div>
+      </div>
+
+      <div id="vocabGridView" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+
+      <div id="vocabSingleView" class="hidden max-w-2xl mx-auto w-full space-y-4">
+        <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl overflow-hidden shadow-md">
+          <div id="vocabSinglePhoto" class="h-56 sm:h-64 bg-[#091726] relative overflow-hidden"></div>
+          <div class="p-6 sm:p-8 space-y-4">
+            <div class="flex items-center justify-between gap-2">
+              <span id="vocabSingleCounter" class="text-xs font-extrabold uppercase tracking-widest text-[#0089A7]">Expression 1 / 6</span>
+              <span id="vocabSingleTag" class="px-2.5 py-1 rounded-lg bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300 text-xs font-bold"></span>
+            </div>
+            <div class="flex items-center justify-between gap-3">
+              <h3 id="vocabSinglePhrase" class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white"></h3>
+              <button id="vocabSingleAudioBtn" type="button" class="p-2.5 rounded-xl bg-slate-100 dark:bg-[#071627] text-[#005A8D] dark:text-cyan-300 hover:bg-[#0089A7] hover:text-white transition" title="Listen">
+                <i data-lucide="volume-2" class="w-5 h-5"></i>
+              </button>
+            </div>
+            <p id="vocabSingleDef" class="text-sm sm:text-base text-slate-700 dark:text-slate-200"></p>
+            <p id="vocabSingleEx" class="text-sm italic text-[#005A8D] dark:text-cyan-300 bg-slate-50 dark:bg-[#071627] p-3.5 rounded-2xl border border-slate-200/70 dark:border-cyan-400/15"></p>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between gap-3">
+          <button type="button" onclick="stepSingleVocab(-1)" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-bold">
+            <i data-lucide="chevron-left" class="w-4 h-4"></i>
+            <span>Previous Word</span>
+          </button>
+          <div id="vocabSingleDots" class="flex gap-1.5"></div>
+          <button type="button" onclick="stepSingleVocab(1)" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#005A8D] hover:bg-[#0089A7] text-white text-xs font-bold">
+            <span>Next Word</span>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Owner Matcher Explorer -->
+      <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-4 shadow-sm">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Possessor Reference Explorer</span>
+            <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white mt-0.5">Tap a Possessor to See Its Adjective &amp; Example</h3>
+          </div>
+          <span id="freqPercentBadge" class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold self-start sm:self-auto">I → my</span>
+        </div>
+        <div class="flex flex-wrap gap-2" id="freqButtons"></div>
+        <div id="freqDetailCard" class="p-4 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/15 space-y-1.5"></div>
+      </div>
+
+      <!-- Definition Match -->
+      <div class="space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#005A8D] dark:text-cyan-300">Definition Match</h3>
+          <div class="flex items-center gap-3">
+            <span id="vocabMatchStatus" class="text-xs font-bold text-[#005A8D] dark:text-cyan-300">Pick a definition on the left, then tap its phrase</span>
+            <button type="button" onclick="resetVocabMatch()" class="text-xs px-3 py-1.5 rounded-lg border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] font-semibold">Reset</button>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          <div id="vocabDefsCol" class="lg:col-span-7 space-y-2.5"></div>
+          <div class="lg:col-span-5 bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-4 shadow-sm">
+            <h4 class="text-xs font-extrabold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">Expressions &amp; Audio</h4>
+            <div id="vocabWordsCol" class="flex flex-wrap gap-2.5"></div>
+            <div id="vocabExampleBox" class="hidden pt-4 border-t border-slate-200 dark:border-cyan-400/15 text-xs text-slate-600 dark:text-slate-300 space-y-1"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Guided Production Lab -->
+      <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 sm:p-8 space-y-5 shadow-sm">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Guided Production Lab</span>
+            <h3 class="text-xl font-extrabold text-[#002B5C] dark:text-white mt-0.5">Write Personal Sentences Using Today's Vocabulary</h3>
+          </div>
+          <button type="button" onclick="toggleProductionModels()" class="self-start sm:self-auto px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-bold text-[#005A8D] dark:text-cyan-300">
+            Show / Hide Model Ideas
+          </button>
+        </div>
+        <div id="productionPromptsList" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 04: VISUAL GRAMMAR + INSPECTOR + INTEGRATED CLOZE ==================== -->
+    <section data-stage="3" class="lesson-stage hidden stage-anim space-y-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 04</span>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Grammar Guide &amp; Check</h2>
+        </div>
+        <p class="text-sm text-slate-500 dark:text-slate-400">Visual mapping, clear rules, contraction traps, live inspector, and summary check.</p>
+      </div>
+
+      <!-- Visual Diagram + Photo -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        <div class="lg:col-span-7 bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-4 shadow-sm flex flex-col justify-center">
+          <div class="flex items-center justify-between text-xs font-extrabold">
+            <span class="px-2.5 py-0.5 rounded bg-[#002B5C] text-white">POSSESSIVE + NOUN</span>
+            <span class="text-[#0089A7] dark:text-cyan-300">Always followed by a noun</span>
+          </div>
+          <svg viewBox="0 0 500 84" class="w-full h-22 rounded-xl bg-slate-50 dark:bg-[#071627] border border-slate-200/70 dark:border-cyan-400/10">
+            <rect x="24" y="18" width="142" height="36" rx="10" fill="#002B5C" />
+            <text x="95" y="41" text-anchor="middle" font-size="11" font-weight="bold" fill="#FFFFFF">POSSESSOR (he/she)</text>
+            <line x1="172" y1="36" x2="210" y2="36" stroke="#0089A7" stroke-width="2.5" />
+            <polygon points="210,31 220,36 210,41" fill="#0089A7" />
+            <rect x="224" y="18" width="116" height="36" rx="10" fill="#0089A7" />
+            <text x="282" y="41" text-anchor="middle" font-size="11" font-weight="bold" fill="#FFFFFF">his / her / its</text>
+            <line x1="346" y1="36" x2="378" y2="36" stroke="#0089A7" stroke-width="2.5" />
+            <polygon points="378,31 388,36 378,41" fill="#0089A7" />
+            <rect x="392" y="18" width="84" height="36" rx="10" fill="#005A8D" />
+            <text x="434" y="41" text-anchor="middle" font-size="11" font-weight="bold" fill="#FFFFFF">+ NOUN</text>
+            <text x="250" y="72" text-anchor="middle" font-size="10" fill="#94A3B8">No plural form (-s) on possessive adjectives: "their books" (never *"theirs books").</text>
+          </svg>
+        </div>
+
+        <div class="lg:col-span-5 rounded-3xl overflow-hidden relative bg-[#091726] min-h-[220px] shadow-sm">
+          <img
+            src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=850&q=80"
+            alt="Notebook and study tools on desk"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#061322]/90 via-[#061322]/35 to-transparent"></div>
+          <div class="absolute bottom-5 left-6 right-6 text-white space-y-1">
+            <span class="text-[11px] font-extrabold uppercase tracking-[0.2em] text-cyan-300">Golden Rule</span>
+            <p class="text-sm font-bold">Match the owner, not the noun</p>
+            <p class="text-xs text-white/80">A man's car = <strong>his</strong> car · A woman's car = <strong>her</strong> car.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detailed Grammar Rules -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-2.5 shadow-sm">
+          <span class="inline-block px-2.5 py-1 rounded-lg bg-[#002B5C] text-white text-[11px] font-extrabold uppercase">01 · Full Table</span>
+          <h3 class="text-base font-extrabold text-[#002B5C] dark:text-white">All 7 Forms</h3>
+          <ul class="text-xs text-slate-600 dark:text-slate-300 space-y-1.5 list-disc list-inside leading-relaxed">
+            <li><em>I → <strong>my</strong></em> · <em>you → <strong>your</strong></em></li>
+            <li><em>he → <strong>his</strong></em> · <em>she → <strong>her</strong></em> · <em>it → <strong>its</strong></em></li>
+            <li><em>we → <strong>our</strong></em> · <em>they → <strong>their</strong></em></li>
+          </ul>
+        </div>
+
+        <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-2.5 shadow-sm">
+          <span class="inline-block px-2.5 py-1 rounded-lg bg-[#0089A7] text-white text-[11px] font-extrabold uppercase">02 · Contraction Traps</span>
+          <h3 class="text-base font-extrabold text-[#002B5C] dark:text-white">No Apostrophe for Possession</h3>
+          <ul class="text-xs text-slate-600 dark:text-slate-300 space-y-1.5 list-disc list-inside leading-relaxed">
+            <li><strong>its</strong> (possessive) vs. <strong>it's</strong> (<em>it is / it has</em>).</li>
+            <li><strong>your</strong> (possessive) vs. <strong>you're</strong> (<em>you are</em>).</li>
+            <li><strong>their</strong> (possessive) vs. <strong>they're</strong> (<em>they are</em>) / <strong>there</strong> (place).</li>
+          </ul>
+        </div>
+
+        <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-2.5 shadow-sm">
+          <span class="inline-block px-2.5 py-1 rounded-lg bg-[#005A8D] text-white text-[11px] font-extrabold uppercase">03 · Adjectives vs. Pronouns</span>
+          <h3 class="text-base font-extrabold text-[#002B5C] dark:text-white">Before Noun vs. Alone</h3>
+          <ul class="text-xs text-slate-600 dark:text-slate-300 space-y-1.5 list-disc list-inside leading-relaxed">
+            <li>Possessive adjective + noun: <em>This is <strong>my</strong> bag.</em></li>
+            <li>Possessive pronoun (standalone): <em>This bag is <strong>mine</strong>.</em> (<em>hers, ours, theirs</em>).</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Interactive Form Inspector -->
+      <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 sm:p-8 space-y-5 shadow-sm">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Interactive Possessor Inspector</span>
+            <h3 class="text-xl font-extrabold text-[#002B5C] dark:text-white mt-0.5">Test Every Possessor</h3>
+          </div>
+          <span class="text-xs font-bold text-[#005A8D] dark:text-cyan-300">Click any possessor below</span>
+        </div>
+        <div class="flex flex-wrap gap-2" id="subjectSelector"></div>
+        <div id="inspectorPreview" class="p-6 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-[#0089A7]/25 space-y-2"></div>
+      </div>
+
+      <!-- Integrated Summary Cloze Exercise -->
+      <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 sm:p-8 space-y-5 shadow-sm">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Grammar Check · Fill the Summary</span>
+          <h3 class="text-xl font-extrabold text-[#002B5C] dark:text-white mt-0.5">Complete the Possessive Adjectives Summary</h3>
+        </div>
+        <div class="flex flex-wrap gap-2" id="clozeChips"></div>
+        <p class="text-slate-700 dark:text-slate-200 text-sm sm:text-base leading-loose" id="clozeText"></p>
+        <div class="flex flex-wrap items-center gap-3 pt-1">
+          <button type="button" onclick="checkCloze()" class="px-5 py-2.5 rounded-xl bg-[#002B5C] hover:bg-[#005A8D] text-white text-xs font-bold transition">
+            Check Summary
+          </button>
+          <button type="button" onclick="resetCloze()" class="px-4 py-2.5 rounded-xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-semibold transition">
+            Clear
+          </button>
+          <span id="clozeMsg" class="text-xs font-bold"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 05: PRACTICE PACK + MINI-CHAT LIVE ==================== -->
+    <section data-stage="4" class="lesson-stage hidden stage-anim space-y-10">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 05 · Class &amp; Homework Pack</span>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Practice &amp; Mini-Chat</h2>
+        </div>
+        <p class="text-sm text-slate-500 dark:text-slate-400">Multiple choice, word order, odd one out, live chat replies, and homework rewrites.</p>
+      </div>
+
+      <!-- Set 1: 8 MCQs -->
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#005A8D] dark:text-cyan-300">Set 1 · Choose the Right Possessive (8 Items)</h3>
+          <span id="practiceResult" class="text-xs sm:text-sm font-extrabold text-[#005A8D] dark:text-cyan-300"></span>
+        </div>
+        <div id="practiceGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+        <button type="button" onclick="checkPractice()" class="px-5 py-2.5 rounded-xl bg-[#002B5C] hover:bg-[#005A8D] text-white text-xs font-bold transition">
+          Check Set 1
+        </button>
+      </div>
+
+      <!-- Set 2: 4 Sentence Scrambles -->
+      <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-4 shadow-sm">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Set 2 · Word Order Scramble (4 Sentences)</span>
+            <h3 id="scrambleTitle" class="text-lg font-extrabold text-[#002B5C] dark:text-white mt-0.5"></h3>
+          </div>
+          <div class="flex items-center gap-2">
+            <button type="button" onclick="resetScramble()" class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-cyan-400/20 text-xs font-semibold hover:bg-slate-100 dark:hover:bg-[#132C4A]">Clear</button>
+            <button type="button" onclick="nextScramble()" class="px-3.5 py-1.5 rounded-lg bg-[#005A8D] text-white text-xs font-bold hover:bg-[#0089A7] transition">Next Sentence</button>
+          </div>
+        </div>
+        <div id="scrambleTray" class="min-h-[54px] p-3.5 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-dashed border-[#0089A7]/50 flex flex-wrap gap-2 items-center"></div>
+        <div id="scrambleBank" class="flex flex-wrap gap-2"></div>
+        <div id="scrambleFeedback" class="text-xs font-bold"></div>
+      </div>
+
+      <!-- Set 3: 4 Odd One Out Groups -->
+      <div class="space-y-4">
+        <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#005A8D] dark:text-cyan-300">Set 3 · Odd One Out (4 Groups)</h3>
+        <div id="oddGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+      </div>
+
+      <!-- Set 4: Mini-Chat Live Replies -->
+      <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-4 shadow-sm">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Set 4 · Mini-Chat Context</span>
+          <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white mt-0.5">Pick the Most Natural Chat Reply</h3>
+        </div>
+        <div id="miniChatList" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+      </div>
+
+      <!-- Set 5: 4 Homework Fix & Write -->
+      <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-4 shadow-sm">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Set 5 · Fix the Trap &amp; Write (Homework Ready)</span>
+            <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white mt-0.5">Correct Each Sentence &amp; Add Your Own Example</h3>
+          </div>
+          <button type="button" onclick="toggleFixKey()" class="px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-bold text-[#005A8D] dark:text-cyan-300">
+            Show / Hide Corrections
+          </button>
+        </div>
+        <div id="fixHomeworkList" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 06: SPEAKING GAME (4 CARDS PER MODE) ==================== -->
+    <section data-stage="5" class="lesson-stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 06 · Live Class Game</span>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Whose Is It?</h2>
+        </div>
+        <p class="text-sm text-slate-500 dark:text-slate-400">4 cards per mode for lively speaking rounds with your teacher.</p>
+      </div>
+
+      <div class="flex flex-wrap gap-2" id="gameModeTabs"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 shadow-lg">
+        <div id="gamePhotoBox" class="lg:col-span-5 h-64 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+
+        <div class="lg:col-span-7 p-6 sm:p-10 flex flex-col justify-between space-y-6">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between gap-2">
+              <span id="gameModeBadge" class="px-3 py-1 rounded-full bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300 text-xs font-extrabold uppercase tracking-wider"></span>
+              <span id="gameCardCounter" class="text-xs font-bold text-slate-400">Card 1 / 4</span>
+            </div>
+
+            <h3 id="gamePromptTitle" class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+            <p id="gameRuleText" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+
+            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/15 space-y-1.5">
+              <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#0089A7]">Teacher Follow-Up Prompt</span>
+              <p id="gameFollowUp" class="text-sm font-semibold text-slate-800 dark:text-slate-100"></p>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-100 dark:border-cyan-400/15">
+            <button
+              type="button"
+              onclick="nextGameCard()"
+              class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-gradient-to-r from-[#002B5C] to-[#005A8D] hover:from-[#005A8D] hover:to-[#0089A7] text-white text-xs sm:text-sm font-bold transition"
+            >
+              <i data-lucide="dices" class="w-4 h-4"></i>
+              <span>Draw Next Card</span>
+            </button>
+
+            <button
+              type="button"
+              onclick="revealBluffVote()"
+              class="inline-flex items-center gap-2 px-4 py-3 rounded-2xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-bold transition"
+            >
+              <i data-lucide="sparkles" class="w-4 h-4 text-[#0089A7]"></i>
+              <span>Bonus Twist</span>
+            </button>
+          </div>
+
+          <div id="gameTwistBox" class="hidden text-xs font-semibold px-4 py-3 rounded-xl bg-amber-500/15 text-amber-800 dark:text-amber-200 border border-amber-500/30"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 07: MULTI-MODE GAMIFIED ARCADE ==================== -->
+    <section data-stage="6" class="lesson-stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 07 · Gamified Finale</span>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Possessive Arcade</h2>
+        </div>
+        <div class="flex items-center gap-3 text-xs font-extrabold">
+          <span id="arcadeScoreBadge" class="px-3 py-1 rounded-full bg-[#002B5C] text-white">Score: 0</span>
+          <span id="arcadeStreakBadge" class="px-3 py-1 rounded-full bg-[#0089A7]/20 text-[#005A8D] dark:text-cyan-300">Streak: 0 🔥</span>
+        </div>
+      </div>
+
+      <!-- Arcade Game Switcher -->
+      <div class="flex flex-wrap gap-2">
+        <button id="arcTabRounds" type="button" onclick="switchArcadeGame('rounds')" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-[#002B5C] text-white transition">
+          1. Possessor Duel
+        </button>
+        <button id="arcTabCues" type="button" onclick="switchArcadeGame('cues')" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7] transition">
+          2. Contraction vs. Possessive
+        </button>
+        <button id="arcTabStative" type="button" onclick="switchArcadeGame('stative')" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7] transition">
+          3. Trap Breaker
+        </button>
+      </div>
+
+      <!-- Game 1: Possessor Duel -->
+      <div id="arcadePanelRounds" class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 sm:p-8 space-y-6 shadow-lg max-w-3xl mx-auto w-full">
+        <div class="flex items-center justify-between gap-2">
+          <span id="arcadeRoundLabel" class="text-xs font-extrabold uppercase tracking-widest text-[#0089A7]">Round 1 / 8</span>
+          <button type="button" onclick="resetArcade()" class="text-xs font-bold px-3 py-1 rounded-lg border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A]">
+            Reset Score
+          </button>
+        </div>
+
+        <h3 id="arcadeSentence" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="arcadeOptions"></div>
+        <div id="arcadeFeedback" class="hidden p-4 rounded-2xl text-xs sm:text-sm font-semibold"></div>
+
+        <div class="flex justify-end pt-2">
+          <button type="button" onclick="nextArcadeRound()" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#005A8D] hover:bg-[#0089A7] text-white text-xs font-bold transition">
+            <span>Next Round</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Game 2: Contraction vs. Possessive -->
+      <div id="arcadePanelCues" class="hidden bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 sm:p-8 space-y-5 shadow-lg max-w-3xl mx-auto w-full">
+        <div class="flex items-center justify-between gap-2">
+          <span id="cueCounter" class="text-xs font-extrabold uppercase tracking-widest text-[#0089A7]">Pair 1 / 6</span>
+          <span class="text-xs text-slate-400">Which word completes this phrase accurately?</span>
+        </div>
+        <div id="cuePhraseBox" class="text-2xl sm:text-3xl font-extrabold text-center py-6 px-4 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/15 text-[#002B5C] dark:text-white"></div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="cueOptions"></div>
+        <div id="cueFeedback" class="hidden p-4 rounded-2xl text-xs sm:text-sm font-semibold"></div>
+        <div class="flex justify-end">
+          <button type="button" onclick="nextCue()" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-cyan-400/20 text-xs font-bold hover:bg-slate-100 dark:hover:bg-[#132C4A]">
+            Next Pair →
+          </button>
+        </div>
+      </div>
+
+      <!-- Game 3: Trap Breaker -->
+      <div id="arcadePanelStative" class="hidden bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 sm:p-8 space-y-5 shadow-lg max-w-3xl mx-auto w-full">
+        <div class="flex items-center justify-between gap-2">
+          <span id="statCounter" class="text-xs font-extrabold uppercase tracking-widest text-[#0089A7]">Trap 1 / 6</span>
+          <span class="text-xs text-slate-400">Is this sentence natural or a grammar trap?</span>
+        </div>
+        <div id="statSentenceBox" class="text-xl sm:text-2xl font-extrabold text-center py-6 px-4 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/15 text-[#002B5C] dark:text-white"></div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <button type="button" onclick="answerStative(true)" class="p-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-extrabold transition">
+            Natural / Valid
+          </button>
+          <button type="button" onclick="answerStative(false)" class="p-4 rounded-2xl bg-rose-600 hover:bg-rose-700 text-white text-sm font-extrabold transition">
+            Trap / Unnatural
+          </button>
+        </div>
+        <div id="statFeedback" class="hidden p-4 rounded-2xl text-xs sm:text-sm font-semibold"></div>
+        <div class="flex justify-end">
+          <button type="button" onclick="nextStative()" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-cyan-400/20 text-xs font-bold hover:bg-slate-100 dark:hover:bg-[#132C4A]">
+            Next Sentence →
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Editorial Bottom Stage Bar (7 Stages) -->
+  <footer class="border-t border-slate-200 dark:border-cyan-400/15 bg-white dark:bg-[#061322] py-4 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      <button id="btnPrev" type="button" onclick="goStage(currentStage - 1)" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] disabled:opacity-30 text-xs font-bold transition">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Previous</span>
+      </button>
+
+      <span id="stageCounter" class="text-xs font-extrabold tracking-widest uppercase text-slate-500 dark:text-slate-400">
+        01 / 07
+      </span>
+
+      <button id="btnNext" type="button" onclick="goStage(currentStage + 1)" class="inline-flex items-center gap-2 px-5 py-2 rounded-xl bg-[#002B5C] hover:bg-[#005A8D] disabled:opacity-30 text-xs font-bold text-white transition">
+        <span>Next Stage</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    const DRIVE_UPLOAD_URL = "https://script.google.com/macros/s/AKfycbwBcX7Z4aABKplkUkpYvM2wEnsBHhWCZzi7dFGDkeUarkXwv-RRI0JXAPDakjkrCrBc/exec";
+
+    const STAGES = [
+      "01 · Overview",
+      "02 · Visual Warm-Up",
+      "03 · Vocabulary",
+      "04 · Grammar & Check",
+      "05 · Practice & Chat",
+      "06 · Whose Is It?",
+      "07 · Possessive Arcade"
+    ];
+
+    let currentStage = 0;
+    const stageSections = document.querySelectorAll('.lesson-stage');
+    const stagePills = document.getElementById('stagePills');
+    const progressLine = document.getElementById('progressLine');
+    const headerStageLabel = document.getElementById('headerStageLabel');
+    const stageCounter = document.getElementById('stageCounter');
+    const btnPrev = document.getElementById('btnPrev');
+    const btnNext = document.getElementById('btnNext');
+
+    function goStage(idx) {
+      if (idx < 0 || idx >= stageSections.length) return;
+      currentStage = idx;
+      stageSections.forEach((sec, i) => sec.classList.toggle('hidden', i !== currentStage));
+      headerStageLabel.textContent = STAGES[currentStage];
+      stageCounter.textContent = `${String(currentStage + 1).padStart(2, '0')} / ${String(stageSections.length).padStart(2, '0')}`;
+      progressLine.style.width = `${((currentStage + 1) / stageSections.length) * 100}%`;
+      btnPrev.disabled = currentStage === 0;
+      btnNext.disabled = currentStage === stageSections.length - 1;
+      renderStagePills();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      lucide.createIcons();
+    }
+
+    function renderStagePills() {
+      stagePills.innerHTML = STAGES.map((_, i) => `
+        <button
+          type="button"
+          onclick="goStage(${i})"
+          class="px-2.5 py-1 rounded-lg text-[11px] font-bold transition ${
+            i === currentStage
+              ? 'bg-white text-[#002B5C]'
+              : 'text-white/75 hover:text-white hover:bg-white/10'
+          }"
+        >${String(i + 1).padStart(2, '0')}</button>
+      `).join('');
+    }
+
+    // Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    if (localStorage.getItem('provoPossNavyTheme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      themeIcon.setAttribute('data-lucide', 'moon');
+    }
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('provoPossNavyTheme', isDark ? 'dark' : 'light');
+      themeIcon.setAttribute('data-lucide', isDark ? 'sun' : 'moon');
+      lucide.createIcons();
+    });
+
+    function mountPhoto(container, url, altText, fallbackTitle) {
+      container.innerHTML = `<img src="${url}" alt="${altText}" class="w-full h-full object-cover" loading="lazy" />`;
+      const img = container.querySelector('img');
+      if (img) {
+        img.addEventListener('error', () => {
+          container.innerHTML = `
+            <div class="w-full h-full flex flex-col items-center justify-center bg-[#002B5C] text-white p-6 text-center">
+              <i data-lucide="image" class="w-8 h-8 text-cyan-300 mb-2"></i>
+              <span class="text-xs font-extrabold uppercase tracking-widest">${fallbackTitle}</span>
+            </div>
+          `;
+          lucide.createIcons();
+        }, { once: true });
+      }
+    }
+
+    function speakPhrase(text) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'en-US';
+      window.speechSynthesis.speak(u);
+    }
+
+    // 02: 12 Visual Question Cards + Fullscreen Toggle
+    const WARMUP_CARDS = [
+      { tag: "My & Your", angle: "Personal Desk & Bag", q: "What are three things in your bag or on your desk right now, and what is in your teacher's or friend's bag?", follow: "Use 'my' and 'your' or 'his/her'.", photo: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=950&q=80", starters: ["In my bag right now I have my..., my..., and...", "On your desk, I can see your..."] },
+      { tag: "His & Her", angle: "Friends & Family", q: "What is one favorite hobby or food of a male friend/relative (his) and one of a female friend/relative (her)?", follow: "Make sure 'his' and 'her' match each person.", photo: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=950&q=80", starters: ["My brother/friend loves his..., because...", "My sister/friend enjoys her..., especially..."] },
+      { tag: "Our & Their", angle: "Shared Spaces & Groups", q: "What is something you love about your home or neighborhood (our), and what do neighbors or classmates do in theirs (their)?", follow: "Practice 'our' and 'their' clearly.", photo: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=950&q=80", starters: ["In our neighborhood, we have...", "Many people spend their weekends..."] },
+      { tag: "Its vs. It's", angle: "Places, Objects & Pets", q: "Describe a town, park, or device you know well: what is its best feature, and what is it like to visit or use?", follow: "Watch the difference between 'its' (possessive) and 'it's' (it is).", photo: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=950&q=80", starters: ["Its best feature is...", "It's very convenient because..."] },
+      { tag: "Morning Routine", angle: "My Morning", q: "How does your morning start: what is your first drink or snack, and what is your usual pace?", follow: "Use 'my' before everyday routine nouns.", photo: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=950&q=80", starters: ["My morning always starts with my...", "My usual routine is..."] },
+      { tag: "Kitchen & Recipes", angle: "Cooking Together", q: "What is your favorite dish to cook, and what are your family's favorite meals?", follow: "Combine 'my' and 'our / their'.", photo: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=950&q=80", starters: ["My favorite thing to cook is...", "Our family loves... on weekends."] },
+      { tag: "Outdoors & Gear", angle: "Trails & Walks", q: "When you go for a walk or hike, what is essential in your backpack or shoes?", follow: "Use possessive adjectives with gear and clothing.", photo: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=950&q=80", starters: ["I always bring my... and wear my...", "Good shoes protect your..."] },
+      { tag: "Phone & Apps", angle: "Digital Habits", q: "Which two apps do you use most on your phone, and why do you like their design or features?", follow: "Use 'your' and 'their'.", photo: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=950&q=80", starters: ["On my phone, I use... because its...", "People check their phones when..."] },
+      { tag: "Music & Taste", angle: "Playlists & Artists", q: "Who is a musician or band you enjoy, and what do you like about their music?", follow: "Use 'their' or 'his/her'.", photo: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=950&q=80", starters: ["I really like... because their songs...", "My favorite track of theirs / their album is..."] },
+      { tag: "Reading & Stories", angle: "Books & Notes", q: "What book or story do you recommend, and what is its main message or mood?", follow: "Practice 'its' and 'my'.", photo: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=950&q=80", starters: ["Its main idea is...", "In my opinion, its mood is..."] },
+      { tag: "Weekend Plans", angle: "Our & Their Plans", q: "What are your plans for the weekend, and what do your friends or family usually do on theirs?", follow: "Contrast 'my / our' with 'their'.", photo: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=950&q=80", starters: ["On my weekends, I...", "My friends usually spend their weekends..."] },
+      { tag: "Evening Unwind", angle: "Rest & Relaxation", q: "How do you relax at the end of the day in your home?", follow: "Use 'my' and 'our'.", photo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=950&q=80", starters: ["At home, my favorite way to unwind is...", "Our evenings are usually..."] }
+    ];
+
+    let qIdx = 0;
+    let isFullscreenCard = false;
+
+    function renderWarmupCard(idx) {
+      qIdx = (idx + WARMUP_CARDS.length) % WARMUP_CARDS.length;
+      const card = WARMUP_CARDS[qIdx];
+      document.getElementById('qBadge').textContent = `Q${qIdx + 1} / ${WARMUP_CARDS.length}`;
+      document.getElementById('qTag').textContent = card.tag;
+      document.getElementById('qAngleBadge').textContent = card.angle;
+      document.getElementById('questionText').textContent = card.q;
+      document.getElementById('questionFollow').textContent = card.follow;
+      document.getElementById('startersList').innerHTML = card.starters.map(s => `<li>${s}</li>`).join('');
+      document.getElementById('startersBox').classList.add('hidden');
+      mountPhoto(document.getElementById('questionPhotoBox'), card.photo, card.tag, card.tag);
+
+      document.getElementById('questionNumberPills').innerHTML = WARMUP_CARDS.map((_, i) => `
+        <button type="button" onclick="renderWarmupCard(${i})" class="w-8 h-8 rounded-lg text-xs font-extrabold transition ${
+          i === qIdx
+            ? 'bg-[#002B5C] text-white'
+            : 'bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/15 text-slate-600 dark:text-slate-300 hover:border-[#0089A7]'
+        }">${i + 1}</button>
+      `).join('');
+    }
+
+    document.getElementById('toggleFullscreenCard').addEventListener('click', () => {
+      isFullscreenCard = !isFullscreenCard;
+      const cardCol = document.getElementById('warmupCardCol');
+      const recCol = document.getElementById('warmupRecorderCol');
+      const label = document.getElementById('fullscreenLabel');
+      const icon = document.getElementById('fullscreenIcon');
+
+      if (isFullscreenCard) {
+        cardCol.classList.remove('lg:col-span-7');
+        cardCol.classList.add('lg:col-span-12');
+        recCol.classList.add('hidden');
+        label.textContent = 'Exit Fullscreen';
+        icon.setAttribute('data-lucide', 'minimize-2');
+      } else {
+        cardCol.classList.remove('lg:col-span-12');
+        cardCol.classList.add('lg:col-span-7');
+        recCol.classList.remove('hidden');
+        label.textContent = 'Fullscreen Card';
+        icon.setAttribute('data-lucide', 'maximize-2');
+      }
+      lucide.createIcons();
+    });
+
+    document.getElementById('prevQ').addEventListener('click', () => renderWarmupCard(qIdx - 1));
+    document.getElementById('nextQ').addEventListener('click', () => renderWarmupCard(qIdx + 1));
+    document.getElementById('shuffleQ').addEventListener('click', () => {
+      let next = Math.floor(Math.random() * WARMUP_CARDS.length);
+      if (next === qIdx && WARMUP_CARDS.length > 1) next = (next + 1) % WARMUP_CARDS.length;
+      renderWarmupCard(next);
+    });
+    document.getElementById('toggleStarters').addEventListener('click', () => {
+      document.getElementById('startersBox').classList.toggle('hidden');
+    });
+
+    // 03: Complete Vocabulary Lab
+    const VOCAB_ITEMS = [
+      { id: 1, phrase: "belong to", tag: "Ownership · Verb", def: "Be the property or possession of someone.", ex: "That notebook belongs to our teacher.", photo: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=800&q=75" },
+      { id: 2, phrase: "on a daily basis", tag: "Routine · Habit", def: "Every single day as part of a normal routine.", ex: "She checks her messages on a daily basis.", photo: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=75" },
+      { id: 3, phrase: "personal space", tag: "Everyday · Noun Phrase", def: "An area or room belonging to or used by one person.", ex: "He keeps his books in his personal study space.", photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=75" },
+      { id: 4, phrase: "shared routine", tag: "Together · Noun Phrase", def: "A habit or schedule done together with others.", ex: "We have a shared morning routine with our family.", photo: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=75" },
+      { id: 5, phrase: "favorite item", tag: "Preference · Noun Phrase", def: "The object or thing someone likes most.", ex: "Her favorite item in her bag is her notebook.", photo: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=75" },
+      { id: 6, phrase: "get mixed up", tag: "Confuse · Phrasal Verb", def: "Confuse two similar things by mistake.", ex: "Learners sometimes get 'its' and 'it's' mixed up.", photo: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800&q=75" }
+    ];
+
+    let vocabViewMode = 'grid';
+    let singleVocabIdx = 0;
+
+    function setVocabView(mode) {
+      vocabViewMode = mode;
+      const gridBtn = document.getElementById('vocabModeGridBtn');
+      const singleBtn = document.getElementById('vocabModeSingleBtn');
+      const gridView = document.getElementById('vocabGridView');
+      const singleView = document.getElementById('vocabSingleView');
+
+      if (mode === 'grid') {
+        gridBtn.className = 'px-3.5 py-1.5 rounded-lg bg-[#002B5C] text-white transition';
+        singleBtn.className = 'px-3.5 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 transition';
+        gridView.classList.remove('hidden');
+        singleView.classList.add('hidden');
+      } else {
+        singleBtn.className = 'px-3.5 py-1.5 rounded-lg bg-[#002B5C] text-white transition';
+        gridBtn.className = 'px-3.5 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 transition';
+        gridView.classList.add('hidden');
+        singleView.classList.remove('hidden');
+        renderSingleVocab();
+      }
+      lucide.createIcons();
+    }
+
+    function renderVocabGrid() {
+      const grid = document.getElementById('vocabGridView');
+      grid.innerHTML = VOCAB_ITEMS.map((v, i) => {
+        const safe = v.phrase.replace(/'/g, "\\'");
+        return `
+          <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-2xl overflow-hidden shadow-sm flex flex-col">
+            <div id="vg-photo-${i}" class="h-32 bg-[#091726] relative overflow-hidden"></div>
+            <div class="p-4 flex-1 flex flex-col justify-between gap-3">
+              <div>
+                <div class="flex items-start justify-between gap-2">
+                  <h4 class="text-base font-extrabold text-[#002B5C] dark:text-white">${v.phrase}</h4>
+                  <button type="button" onclick="speakPhrase('${safe}')" class="p-1.5 rounded-lg bg-slate-100 dark:bg-[#071627] text-[#005A8D] dark:text-cyan-300 hover:bg-[#0089A7] hover:text-white transition" title="Listen">
+                    <i data-lucide="volume-2" class="w-4 h-4"></i>
+                  </button>
+                </div>
+                <span class="inline-block mt-1 px-2 py-0.5 rounded-md text-[11px] font-bold bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300">${v.tag}</span>
+                <p class="text-xs text-slate-600 dark:text-slate-300 mt-2">${v.def}</p>
+              </div>
+              <p class="text-xs italic text-[#005A8D] dark:text-cyan-300 border-t border-slate-100 dark:border-cyan-400/10 pt-2">“${v.ex}”</p>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      VOCAB_ITEMS.forEach((v, i) => {
+        mountPhoto(document.getElementById(`vg-photo-${i}`), v.photo, v.phrase, v.phrase);
+      });
+      lucide.createIcons();
+    }
+
+    function renderSingleVocab() {
+      const v = VOCAB_ITEMS[singleVocabIdx];
+      document.getElementById('vocabSingleCounter').textContent = `Expression ${singleVocabIdx + 1} / ${VOCAB_ITEMS.length}`;
+      document.getElementById('vocabSingleTag').textContent = v.tag;
+      document.getElementById('vocabSinglePhrase').textContent = v.phrase;
+      document.getElementById('vocabSingleDef').textContent = v.def;
+      document.getElementById('vocabSingleEx').textContent = `Example: “${v.ex}”`;
+      mountPhoto(document.getElementById('vocabSinglePhoto'), v.photo, v.phrase, v.phrase);
+      document.getElementById('vocabSingleAudioBtn').onclick = () => speakPhrase(v.phrase);
+
+      document.getElementById('vocabSingleDots').innerHTML = VOCAB_ITEMS.map((_, i) => `
+        <button type="button" onclick="singleVocabIdx=${i}; renderSingleVocab();" class="w-2.5 h-2.5 rounded-full transition ${i === singleVocabIdx ? 'bg-[#0089A7]' : 'bg-slate-300 dark:bg-slate-700'}"></button>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    window.stepSingleVocab = (delta) => {
+      singleVocabIdx = (singleVocabIdx + delta + VOCAB_ITEMS.length) % VOCAB_ITEMS.length;
+      renderSingleVocab();
+    };
+
+    const OWNER_MAP = [
+      { label: "I", adj: "my", ex: "I always keep my keys in my jacket pocket.", ask: "What is always in your bag?" },
+      { label: "You", adj: "your", ex: "Is that your coffee mug on the table?", ask: "What is on your desk today?" },
+      { label: "He", adj: "his", ex: "Leo rides his bike on weekends.", ask: "What is your male friend's favorite hobby?" },
+      { label: "She", adj: "her", ex: "Sofia brings her laptop to every session.", ask: "What is your female friend's favorite drink?" },
+      { label: "It", adj: "its", ex: "The city is famous for its old streets.", ask: "What is a place you know and its best feature?" },
+      { label: "We", adj: "our", ex: "We enjoy our quiet mornings together.", ask: "What is something you share with your family?" },
+      { label: "They", adj: "their", ex: "They finish their homework before dinner.", ask: "What do people in your town do on Sundays?" }
+    ];
+    let activeOwnerIdx = 0;
+
+    function renderFreqScale() {
+      document.getElementById('freqButtons').innerHTML = OWNER_MAP.map((o, i) => `
+        <button type="button" onclick="selectFreq(${i})" class="px-3.5 py-1.5 rounded-xl text-xs font-extrabold border transition ${
+          activeOwnerIdx === i ? 'bg-[#005A8D] text-white border-[#005A8D]' : 'bg-slate-50 dark:bg-[#071627] border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7]'
+        }">${o.label} → ${o.adj}</button>
+      `).join('');
+      const item = OWNER_MAP[activeOwnerIdx];
+      document.getElementById('freqPercentBadge').textContent = `${item.label} → ${item.adj}`;
+      document.getElementById('freqDetailCard').innerHTML = `
+        <div class="text-sm font-bold text-[#002B5C] dark:text-white">Example: “${item.ex}”</div>
+        <div class="text-xs text-[#005A8D] dark:text-cyan-300 font-semibold">Class prompt: ${item.ask}</div>
+      `;
+    }
+    window.selectFreq = (i) => { activeOwnerIdx = i; renderFreqScale(); };
+
+    let activeDef = null;
+    const doneMatches = new Set();
+
+    function renderVocabMatch() {
+      const defs = document.getElementById('vocabDefsCol');
+      const words = document.getElementById('vocabWordsCol');
+
+      defs.innerHTML = VOCAB_ITEMS.map(item => {
+        const matched = doneMatches.has(item.id);
+        const sel = activeDef === item.id;
+        return `
+          <button type="button" onclick="pickDef(${item.id})" ${matched ? 'disabled' : ''} class="w-full text-left p-4 rounded-2xl border transition flex items-center justify-between gap-3 ${
+            matched ? 'bg-emerald-500/10 border-emerald-500/35 text-emerald-700 dark:text-emerald-300'
+              : sel ? 'bg-[#005A8D]/15 border-[#0089A7] text-[#002B5C] dark:text-white'
+              : 'bg-white dark:bg-[#0C1E33] border-slate-200 dark:border-cyan-400/15 hover:border-[#0089A7]/50'
+          }">
+            <span class="text-xs sm:text-sm"><strong class="text-[#0089A7] mr-2">${item.id}.</strong>${item.def}</span>
+            ${matched ? `<span class="text-xs font-extrabold px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 shrink-0">${item.phrase}</span>` : ''}
+          </button>
+        `;
+      }).join('');
+
+      const sorted = [...VOCAB_ITEMS].sort((a, b) => a.phrase.localeCompare(b.phrase));
+      words.innerHTML = sorted.map(item => {
+        const matched = doneMatches.has(item.id);
+        const safe = item.phrase.replace(/'/g, "\\'");
+        return `
+          <div class="inline-flex items-center rounded-xl border ${matched ? 'border-emerald-500/30 bg-emerald-500/10 opacity-50' : 'border-slate-200 dark:border-cyan-400/20 bg-slate-50 dark:bg-[#071627]'}">
+            <button type="button" onclick="pickPhrase(${item.id})" ${matched ? 'disabled' : ''} class="px-3.5 py-2 text-xs font-bold hover:text-[#0089A7] transition">${item.phrase}</button>
+            <button type="button" onclick="speakPhrase('${safe}')" class="pr-2.5 pl-1 py-2 text-slate-400 hover:text-[#0089A7] transition" title="Listen">
+              <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        `;
+      }).join('');
+      lucide.createIcons();
+    }
+
+    window.pickDef = (id) => { activeDef = id; document.getElementById('vocabMatchStatus').textContent = `Definition #${id} selected — tap its matching phrase`; renderVocabMatch(); };
+    window.pickPhrase = (id) => {
+      const status = document.getElementById('vocabMatchStatus');
+      const exBox = document.getElementById('vocabExampleBox');
+      if (activeDef === null) { status.textContent = "Select a numbered definition on the left first."; return; }
+      if (activeDef === id) {
+        doneMatches.add(id);
+        const item = VOCAB_ITEMS.find(x => x.id === id);
+        activeDef = null;
+        status.textContent = `Matched (${doneMatches.size} / ${VOCAB_ITEMS.length})`;
+        exBox.classList.remove('hidden');
+        exBox.innerHTML = `<span class="font-bold text-[#005A8D] dark:text-cyan-300">Example:</span> “${item.ex}”`;
+        renderVocabMatch();
+      } else {
+        status.textContent = "Not a match for that definition — try another phrase.";
+      }
+    };
+    window.resetVocabMatch = () => {
+      doneMatches.clear(); activeDef = null;
+      document.getElementById('vocabMatchStatus').textContent = "Pick a definition on the left, then tap its phrase";
+      document.getElementById('vocabExampleBox').classList.add('hidden');
+      renderVocabMatch();
+    };
+
+    const PRODUCTION_PROMPTS = [
+      { target: "personal space", cue: "Write a sentence using 'my', 'his', or 'her' + 'personal space' or workspace.", model: "Model: I keep my notes neat in my study space." },
+      { target: "shared routine", cue: "Write a sentence using 'our' or 'their' + a routine.", model: "Model: We have a shared morning routine at home." },
+      { target: "favorite item", cue: "Write a sentence about your or a friend's favorite item.", model: "Model: Her favorite item in her bag is her water bottle." },
+      { target: "belong to", cue: "Write a sentence with 'belong to' and follow it with a possessive adjective.", model: "Model: That book belongs to Leo; it's his book." }
+    ];
+    let showProdModels = false;
+
+    function renderProductionPrompts() {
+      document.getElementById('productionPromptsList').innerHTML = PRODUCTION_PROMPTS.map((p, i) => `
+        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/15 space-y-2.5">
+          <div class="flex items-center justify-between gap-2">
+            <span class="text-xs font-extrabold uppercase tracking-wider text-[#005A8D] dark:text-cyan-300">Use: “${p.target}”</span>
+            <span class="text-[11px] text-slate-400">#${i + 1}</span>
+          </div>
+          <p class="text-xs text-slate-600 dark:text-slate-300">${p.cue}</p>
+          <input type="text" placeholder="Write your sentence here..." class="w-full px-3 py-2 rounded-xl bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 text-xs focus:outline-none focus:border-[#0089A7]" />
+          <p class="prod-model ${showProdModels ? '' : 'hidden'} text-xs italic text-[#0089A7] dark:text-cyan-300">${p.model}</p>
+        </div>
+      `).join('');
+    }
+    window.toggleProductionModels = () => { showProdModels = !showProdModels; renderProductionPrompts(); };
+
+    // 04: Inspector + Integrated Cloze
+    const SUBJECTS = [
+      { key: "i", label: "I → my", sample: "This is <strong>my</strong> notebook and <strong>my</strong> pen.", note: "Use 'my' before any singular or plural noun (my book / my books)." },
+      { key: "you", label: "You → your", sample: "Is that <strong>your</strong> water bottle?", note: "Possessive 'your' (no apostrophe)—do not confuse with 'you're' (you are)." },
+      { key: "he", label: "He → his", sample: "Mark always brings <strong>his</strong> guitar to practice.", note: "Use 'his' for a male owner, regardless of whether the noun is singular or plural." },
+      { key: "she", label: "She → her", sample: "Elena checks <strong>her</strong> schedule every morning.", note: "Use 'her' before a noun (her bag); use 'hers' when there is no noun after it." },
+      { key: "it", label: "It → its", sample: "The town is proud of <strong>its</strong> old bridge.", note: "Possessive 'its' has NO apostrophe; 'it's' means 'it is' or 'it has'." },
+      { key: "we", label: "We → our", sample: "We walk together along <strong>our</strong> favorite trail.", note: "Use 'our' when the speaker is included in the group owning/using the noun." },
+      { key: "they", label: "They → their", sample: "The students open <strong>their</strong> books at the start of class.", note: "Possessive 'their' + noun—never add '-s' (*theirs books) and don't confuse with 'they're'." }
+    ];
+    let currentSubj = "he";
+
+    function renderInspector() {
+      document.getElementById('subjectSelector').innerHTML = SUBJECTS.map(s => `
+        <button type="button" onclick="setSubject('${s.key}')" class="px-3.5 py-1.5 rounded-xl text-xs font-extrabold border transition ${
+          currentSubj === s.key ? 'bg-[#005A8D] text-white border-[#005A8D]' : 'bg-slate-50 dark:bg-[#071627] border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7]'
+        }">${s.label}</button>
+      `).join('');
+      const item = SUBJECTS.find(s => s.key === currentSubj);
+      document.getElementById('inspectorPreview').innerHTML = `
+        <div class="text-lg sm:text-xl font-bold text-[#002B5C] dark:text-white">${item.sample}</div>
+        <div class="text-xs text-slate-600 dark:text-slate-300">${item.note}</div>
+      `;
+    }
+    window.setSubject = (key) => { currentSubj = key; renderInspector(); };
+
+    const CLOZE_BANK = ["noun", "its", "her", "their", "apostrophe"];
+    const CLOZE_KEY = ["noun", "her", "its", "their", "apostrophe"];
+    const CLOZE_STATE = ["", "", "", "", ""];
+    let activeSlot = 0;
+
+    function renderCloze() {
+      document.getElementById('clozeChips').innerHTML = CLOZE_BANK.map(w => `
+        <button type="button" onclick="putCloze('${w}')" class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7] text-xs font-bold text-[#005A8D] dark:text-cyan-300 transition">${w}</button>
+      `).join('');
+      const segs = [
+        "Possessive adjectives always come directly before a ",
+        ". For a woman or girl, we use ",
+        "; for a thing, place, or animal without gender, we use ",
+        "; and for a plural group, we use ",
+        ". Unlike contractions, possessive adjectives do not take an ",
+        "."
+      ];
+      let out = "";
+      for (let i = 0; i < segs.length; i++) {
+        out += segs[i];
+        if (i < 5) {
+          const val = CLOZE_STATE[i];
+          const sel = activeSlot === i;
+          out += `<button type="button" onclick="pickSlot(${i})" class="mx-1 px-3 py-0.5 rounded-lg border-b-2 font-bold text-xs sm:text-sm transition ${
+            sel ? 'border-[#0089A7] bg-[#0089A7]/15 text-[#002B5C] dark:text-white' : 'border-slate-400 bg-slate-100 dark:bg-[#071627] text-[#005A8D] dark:text-cyan-300'
+          }">${val || `(${i + 1})`}</button>`;
+        }
+      }
+      document.getElementById('clozeText').innerHTML = out;
+    }
+
+    window.pickSlot = (i) => { activeSlot = i; renderCloze(); };
+    window.putCloze = (w) => { CLOZE_STATE[activeSlot] = w; if (activeSlot < 4) activeSlot++; renderCloze(); };
+    window.checkCloze = () => {
+      let score = 0;
+      CLOZE_KEY.forEach((k, i) => { if (CLOZE_STATE[i] === k) score++; });
+      const msg = document.getElementById('clozeMsg');
+      msg.textContent = `${score} / ${CLOZE_KEY.length} correct`;
+      msg.className = score === 5 ? "text-xs font-bold text-emerald-600 dark:text-emerald-400" : "text-xs font-bold text-amber-600 dark:text-amber-300";
+    };
+    window.resetCloze = () => { for (let i = 0; i < CLOZE_STATE.length; i++) CLOZE_STATE[i] = ""; activeSlot = 0; document.getElementById('clozeMsg').textContent = ""; renderCloze(); };
+
+    // 05: Practice Pack + Mini-Chat Live
+    const PRACTICE_QS = [
+      { q: "1. Clara is looking for ___ glasses on the table.", opts: ["his", "her"], ans: "her" },
+      { q: "2. We always walk ___ dog in the morning.", opts: ["our", "us"], ans: "our" },
+      { q: "3. Look at that café! ___ coffee is famous here.", opts: ["Its", "It's"], ans: "Its" },
+      { q: "4. The students forgot ___ notebooks at home.", opts: ["their", "they're"], ans: "their" },
+      { q: "5. David is wearing ___ favorite jacket today.", opts: ["his", "her"], ans: "his" },
+      { q: "6. Can you pass me ___ charger, please?", opts: ["your", "you're"], ans: "your" },
+      { q: "7. I usually drink tea with ___ breakfast.", opts: ["my", "me"], ans: "my" },
+      { q: "8. My parents visit ___ friends every Sunday.", opts: ["their", "them"], ans: "their" }
+    ];
+    const practicePicked = {};
+
+    function renderPractice() {
+      document.getElementById('practiceGrid').innerHTML = PRACTICE_QS.map((item, i) => `
+        <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-2xl p-5 space-y-3 shadow-sm">
+          <p class="text-sm font-bold">${item.q}</p>
+          <div class="flex flex-wrap gap-2">
+            ${item.opts.map(o => `
+              <button type="button" onclick="choosePractice(${i}, '${o.replace(/'/g, "\\'")}')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold border transition ${
+                practicePicked[i] === o ? 'bg-[#002B5C] text-white border-[#002B5C]' : 'bg-slate-50 dark:bg-[#071627] border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7]'
+              }">${o}</button>
+            `).join('')}
+          </div>
+        </div>
+      `).join('');
+    }
+    window.choosePractice = (i, o) => { practicePicked[i] = o; renderPractice(); };
+    window.checkPractice = () => {
+      let c = 0;
+      PRACTICE_QS.forEach((item, i) => { if (practicePicked[i] === item.ans) c++; });
+      document.getElementById('practiceResult').textContent = `Score: ${c} / ${PRACTICE_QS.length}`;
+    };
+
+    const SCRAMBLES = [
+      { label: "Sentence 1 / 4 · My + Noun", tiles: ["always", "I", "bag", "my", "pack"], target: "i always pack my bag" },
+      { label: "Sentence 2 / 4 · Her + Noun", tiles: ["her", "she", "with", "drinks", "coffee"], target: "she drinks her coffee with" },
+      { label: "Sentence 3 / 4 · Our + Noun", tiles: ["love", "we", "neighborhood", "our", "quiet"], target: "we love our quiet neighborhood" },
+      { label: "Sentence 4 / 4 · Their + Noun", tiles: ["keys", "they", "their", "forget", "rarely"], target: "they rarely forget their keys" }
+    ];
+    let scrambleIdx = 0;
+    let placedOrder = [];
+
+    function renderScramble() {
+      const s = SCRAMBLES[scrambleIdx];
+      document.getElementById('scrambleTitle').textContent = s.label;
+      const tray = document.getElementById('scrambleTray');
+      const bank = document.getElementById('scrambleBank');
+      const fb = document.getElementById('scrambleFeedback');
+
+      tray.innerHTML = placedOrder.length
+        ? placedOrder.map((tIdx, pos) => `<button type="button" onclick="removeScrambleTile(${pos})" class="px-3 py-1.5 rounded-xl bg-[#005A8D] text-white text-xs font-bold shadow-sm hover:bg-rose-600 transition">${s.tiles[tIdx]} ✕</button>`).join('')
+        : `<span class="text-xs text-slate-400">Tap words below to build the sentence...</span>`;
+
+      bank.innerHTML = s.tiles.map((word, tIdx) => {
+        const used = placedOrder.includes(tIdx);
+        return `<button type="button" ${used ? 'disabled' : ''} onclick="addScrambleTile(${tIdx})" class="px-3.5 py-1.5 rounded-xl border text-xs font-bold transition ${used ? 'opacity-30 border-slate-200 dark:border-cyan-400/10' : 'bg-slate-50 dark:bg-[#071627] border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7]'}">${word}</button>`;
+      }).join('');
+
+      if (placedOrder.length === s.tiles.length) {
+        const built = placedOrder.map(i => s.tiles[i]).join(' ').toLowerCase();
+        fb.className = built === s.target ? 'text-xs font-bold text-emerald-600 dark:text-emerald-400' : 'text-xs font-bold text-amber-600 dark:text-amber-300';
+        fb.textContent = built === s.target ? 'Great order! Sentence complete.' : `Check order — target: “${s.target}”.`;
+      } else {
+        fb.textContent = '';
+      }
+    }
+    window.addScrambleTile = (tIdx) => { if (!placedOrder.includes(tIdx)) { placedOrder.push(tIdx); renderScramble(); } };
+    window.removeScrambleTile = (pos) => { placedOrder.splice(pos, 1); renderScramble(); };
+    window.resetScramble = () => { placedOrder = []; renderScramble(); };
+    window.nextScramble = () => { scrambleIdx = (scrambleIdx + 1) % SCRAMBLES.length; placedOrder = []; renderScramble(); };
+
+    const ODD_ITEMS = [
+      { label: "Group 1 · Possessive Adjectives", opts: ["my", "your", "their", "they"], odd: "they", note: "'They' is a subject pronoun; 'my, your, their' are possessive adjectives." },
+      { label: "Group 2 · Singular Owners", opts: ["his", "her", "its", "our"], odd: "our", note: "'Our' is plural (we); 'his, her, its' are singular." },
+      { label: "Group 3 · No Apostrophe", opts: ["its", "your", "their", "it's"], odd: "it's", note: "'It's' is a contraction ('it is / it has'), not a possessive adjective." },
+      { label: "Group 4 · Before a Noun", opts: ["my book", "her bag", "their house", "mine book"], odd: "mine book", note: "Use possessive adjective 'my' before a noun: 'my book'." }
+    ];
+
+    function renderOdd() {
+      document.getElementById('oddGrid').innerHTML = ODD_ITEMS.map((g, gi) => `
+        <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-2xl p-5 space-y-2.5 shadow-sm">
+          <div class="text-xs font-extrabold uppercase tracking-wider text-[#0089A7]">${g.label}</div>
+          <div class="space-y-1.5">
+            ${g.opts.map((o, oi) => `<button type="button" onclick="testOdd(${gi}, '${o.replace(/'/g, "\\'")}')" class="w-full text-left px-3 py-2 rounded-xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7] text-xs font-semibold transition"><strong class="text-[#0089A7] mr-2">${String.fromCharCode(65 + oi)}.</strong>${o}</button>`).join('')}
+          </div>
+          <div id="odd-note-${gi}" class="hidden text-xs p-2.5 rounded-xl font-semibold"></div>
+        </div>
+      `).join('');
+    }
+    window.testOdd = (gi, chosen) => {
+      const g = ODD_ITEMS[gi];
+      const box = document.getElementById(`odd-note-${gi}`);
+      box.classList.remove('hidden');
+      box.className = chosen === g.odd ? 'text-xs p-2.5 rounded-xl font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300' : 'text-xs p-2.5 rounded-xl font-semibold bg-amber-500/15 text-amber-700 dark:text-amber-200';
+      box.textContent = chosen === g.odd ? `Correct! ${g.note}` : `Odd one out is '${g.odd}'. ${g.note}`;
+    };
+
+    const MINI_CHATS = [
+      { incoming: "“Is that Maria's notebook on the desk?”", replies: ["Yes, that's her notebook.", "Yes, that's his notebook."], best: "Yes, that's her notebook." },
+      { incoming: "“Where are the kids' backpacks?”", replies: ["They're in their room.", "They're in theirs room."], best: "They're in their room." }
+    ];
+
+    function renderMiniChat() {
+      document.getElementById('miniChatList').innerHTML = MINI_CHATS.map((c, ci) => `
+        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/15 space-y-3">
+          <div class="px-3.5 py-2 rounded-2xl bg-[#002B5C] text-white text-xs sm:text-sm font-bold inline-block">${c.incoming}</div>
+          <div class="space-y-1.5">
+            ${c.replies.map(r => `
+              <button type="button" onclick="checkChat(${ci}, '${r.replace(/'/g, "\\'")}')" class="w-full text-left px-3.5 py-2 rounded-xl bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7] text-xs font-semibold transition">${r}</button>
+            `).join('')}
+          </div>
+          <div id="chat-fb-${ci}" class="hidden text-xs font-bold"></div>
+        </div>
+      `).join('');
+    }
+
+    window.checkChat = (ci, chosen) => {
+      const c = MINI_CHATS[ci];
+      const fb = document.getElementById(`chat-fb-${ci}`);
+      fb.classList.remove('hidden');
+      if (chosen === c.best) {
+        fb.className = 'text-xs font-bold text-emerald-600 dark:text-emerald-400';
+        fb.textContent = 'Natural reply!';
+      } else {
+        fb.className = 'text-xs font-bold text-amber-600 dark:text-amber-300';
+        fb.textContent = `Better fit: ${c.best}`;
+      }
+    };
+
+    const FIX_HOMEWORK = [
+      { wrong: "This is her's coat.", fix: "This is her coat.", extra: "Homework: Write 1 sentence using 'her' + a noun." },
+      { wrong: "The dog is wagging it's tail.", fix: "The dog is wagging its tail.", extra: "Homework: Write 1 sentence using possessive 'its' + a noun." },
+      { wrong: "They always forget theirs keys.", fix: "They always forget their keys.", extra: "Homework: Write 1 sentence using 'their' + a plural noun." },
+      { wrong: "Your right—that is my bag.", fix: "You're right—that is my bag.", extra: "Homework: Write 1 sentence contrasting 'your' and 'you're'." }
+    ];
+    let showFixKey = false;
+
+    function renderFixHomework() {
+      document.getElementById('fixHomeworkList').innerHTML = FIX_HOMEWORK.map(item => `
+        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/15 space-y-2.5">
+          <div class="text-xs font-bold text-rose-600 dark:text-rose-400 line-through">${item.wrong}</div>
+          <input type="text" placeholder="Write the corrected sentence..." class="w-full px-3 py-2 rounded-xl bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 text-xs focus:outline-none focus:border-[#0089A7]" />
+          <div class="fix-key ${showFixKey ? '' : 'hidden'} text-xs font-bold text-emerald-600 dark:text-emerald-400">Fix: ${item.fix}</div>
+          <div class="text-[11px] text-slate-500 dark:text-slate-400">${item.extra}</div>
+        </div>
+      `).join('');
+    }
+    window.toggleFixKey = () => { showFixKey = !showFixKey; renderFixHomework(); };
+
+    // 06: Speaking Game (4 Cards per Mode)
+    const GAME_MODES = [
+      { key: "whose", label: "Whose Is It?" },
+      { key: "profile", label: "Swap & Describe" },
+      { key: "spotter", label: "Trap Spotter Live" }
+    ];
+    const GAME_CARDS = {
+      whose: [
+        { title: "Card 1 · Desk & Bag Items", rule: "Name 3 everyday objects near you or in a room and say whose they are using 'my, your, his, her, our, their'.", follow: "Where do you usually keep your most important item?", photo: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Make 1 true statement and 1 playful guess for your teacher to confirm." },
+        { title: "Card 2 · Family & Friends' Favorites", rule: "Describe 3 things that belong to or are loved by people in your circle (e.g., his bike, her playlist, their car).", follow: "What is your favorite shared thing at home?", photo: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Use 'his', 'her', and 'their' in separate sentences." },
+        { title: "Card 3 · Places & Their Details", rule: "Pick a place you know well and talk about its atmosphere, its best spot, and what people do there.", follow: "Why do you like its vibe?", photo: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Use 'its' accurately without saying 'it's'." },
+        { title: "Card 4 · Weekend Gear", rule: "Talk about what you pack for a weekend trip or walk using possessive adjectives.", follow: "What is in your bag right now?", photo: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Ask your teacher what is in their bag!" }
+      ],
+      profile: [
+        { title: "Card 1 · Describe Your Teacher's Setup", rule: "Say 3 sentences about your teacher's workspace, routine, or tools using 'your' (or 'his/her').", follow: "What do you notice in this class or workspace?", photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Let your teacher correct or confirm each guess!" },
+        { title: "Card 2 · A Day in Their Shoes", rule: "Imagine a friend or family member's day and describe their morning, their lunch, and their evening routine.", follow: "How is their routine different from yours?", photo: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Use 'their' at least three times." },
+        { title: "Card 3 · Music & Media Taste", rule: "Talk about a favorite artist or show and describe their style or characters.", follow: "What is your favorite song or episode?", photo: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Compare your taste with a friend's taste." },
+        { title: "Card 4 · Evening Wind-Down", rule: "Describe how you and your family spend your evenings at home.", follow: "What is your favorite part of the evening?", photo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Use 'my' and 'our' together." }
+      ],
+      spotter: [
+        { title: "Card 1 · Spot the 'Its / It's' Mistake", rule: "Your teacher reads 2 quick sentences—one with 'its' and one with 'it's'. Explain which is possessive and which is a contraction.", follow: "What does 'it's' stand for in full?", photo: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Invent your own sentence using 'its' + noun." },
+        { title: "Card 2 · Spot the 'Your / You're' Mistake", rule: "Explain the difference between 'your book' and 'you're ready' and give one example of each.", follow: "Which one comes before a noun?", photo: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Quiz your teacher with a fast example!" },
+        { title: "Card 3 · Spot the 'Their / They're' Mistake", rule: "Contrast 'their house' with 'they're at home' in two clear sentences.", follow: "Why is 'theirs books' incorrect?", photo: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Give one example with 'our' as well." },
+        { title: "Card 4 · Rapid Possessive Round", rule: "Answer 4 quick 'Whose...?' prompts from your teacher using full sentences with a possessive adjective.", follow: "Can you answer without pausing?", photo: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Ask your teacher 2 'Whose...?' questions back!" }
+      ]
+    };
+
+    let activeGameMode = "whose";
+    let gameCardIdx = 0;
+
+    function renderGame() {
+      document.getElementById('gameModeTabs').innerHTML = GAME_MODES.map(m => `
+        <button type="button" onclick="setGameMode('${m.key}')" class="px-4 py-2 rounded-xl text-xs font-extrabold border transition ${
+          activeGameMode === m.key ? 'bg-[#002B5C] text-white border-[#002B5C]' : 'bg-white dark:bg-[#0C1E33] border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7]'
+        }">${m.label}</button>
+      `).join('');
+      const list = GAME_CARDS[activeGameMode];
+      const card = list[gameCardIdx % list.length];
+      const modeObj = GAME_MODES.find(m => m.key === activeGameMode);
+
+      document.getElementById('gameModeBadge').textContent = modeObj.label;
+      document.getElementById('gameCardCounter').textContent = `Card ${(gameCardIdx % list.length) + 1} / ${list.length}`;
+      document.getElementById('gamePromptTitle').textContent = card.title;
+      document.getElementById('gameRuleText').textContent = card.rule;
+      document.getElementById('gameFollowUp').textContent = card.follow;
+      document.getElementById('gameTwistBox').textContent = card.twist;
+      document.getElementById('gameTwistBox').classList.add('hidden');
+      mountPhoto(document.getElementById('gamePhotoBox'), card.photo, card.title, modeObj.label);
+      lucide.createIcons();
+    }
+    window.setGameMode = (key) => { activeGameMode = key; gameCardIdx = 0; renderGame(); };
+    window.nextGameCard = () => { gameCardIdx++; renderGame(); };
+    window.revealBluffVote = () => { document.getElementById('gameTwistBox').classList.toggle('hidden'); };
+
+    // 07: Multi-Mode Gamified Arcade
+    let arcadeScore = 0;
+    let arcadeStreak = 0;
+
+    function updateArcadeHeader() {
+      document.getElementById('arcadeScoreBadge').textContent = `Score: ${arcadeScore}`;
+      document.getElementById('arcadeStreakBadge').textContent = `Streak: ${arcadeStreak} 🔥`;
+    }
+
+    function rewardPoints(isRight) {
+      if (isRight) {
+        arcadeStreak++;
+        arcadeScore += 10 + (arcadeStreak > 1 ? (arcadeStreak - 1) * 5 : 0);
+      } else {
+        arcadeStreak = 0;
+      }
+      updateArcadeHeader();
+    }
+
+    window.switchArcadeGame = (tab) => {
+      const panels = {
+        rounds: document.getElementById('arcadePanelRounds'),
+        cues: document.getElementById('arcadePanelCues'),
+        stative: document.getElementById('arcadePanelStative')
+      };
+      const tabs = {
+        rounds: document.getElementById('arcTabRounds'),
+        cues: document.getElementById('arcTabCues'),
+        stative: document.getElementById('arcTabStative')
+      };
+
+      Object.keys(panels).forEach(k => {
+        panels[k].classList.toggle('hidden', k !== tab);
+        tabs[k].className = k === tab
+          ? 'px-4 py-2 rounded-xl text-xs font-extrabold bg-[#002B5C] text-white transition'
+          : 'px-4 py-2 rounded-xl text-xs font-extrabold bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7] transition';
+      });
+    };
+
+    const ARCADE_ROUNDS = [
+      { sentence: "“Sofia always finishes ___ coffee before 9 AM.”", opts: ["his", "her"], ans: "her", why: "'Sofia' is a female name → 'her coffee'." },
+      { sentence: "“Mateo usually rides ___ bike to the park.”", opts: ["his", "her"], ans: "his", why: "'Mateo' is a male name → 'his bike'." },
+      { sentence: "“We share ___ notes after every lesson.”", opts: ["our", "their"], ans: "our", why: "Subject is 'We' → possessive adjective 'our'." },
+      { sentence: "“The students open ___ laptops at the start of class.”", opts: ["their", "its"], ans: "their", why: "Plural 'The students' → 'their laptops'." },
+      { sentence: "“I keep ___ phone on silent during sessions.”", opts: ["my", "your"], ans: "my", why: "Subject is 'I' → 'my phone'." },
+      { sentence: "“Is that ___ umbrella by the door?”", opts: ["your", "our"], ans: "your", why: "Asking the listener directly → 'your umbrella'." },
+      { sentence: "“This town is famous for ___ old castle.”", opts: ["its", "his"], ans: "its", why: "A town is a place/thing → 'its old castle'." },
+      { sentence: "“My parents visit ___ cousins in summer.”", opts: ["their", "her"], ans: "their", why: "Plural 'My parents' → 'their cousins'." }
+    ];
+    let arcadeIdx = 0;
+    let arcadeAnswered = false;
+
+    function renderArcade() {
+      const r = ARCADE_ROUNDS[arcadeIdx % ARCADE_ROUNDS.length];
+      document.getElementById('arcadeRoundLabel').textContent = `Round ${(arcadeIdx % ARCADE_ROUNDS.length) + 1} / ${ARCADE_ROUNDS.length}`;
+      document.getElementById('arcadeSentence').textContent = r.sentence;
+      document.getElementById('arcadeFeedback').classList.add('hidden');
+      arcadeAnswered = false;
+
+      document.getElementById('arcadeOptions').innerHTML = r.opts.map(o => `
+        <button type="button" onclick="answerArcade('${o.replace(/'/g, "\\'")}')" class="p-4 rounded-2xl border border-slate-200 dark:border-cyan-400/20 bg-slate-50 dark:bg-[#071627] hover:border-[#0089A7] text-sm font-extrabold text-[#002B5C] dark:text-white transition">${o}</button>
+      `).join('');
+    }
+
+    window.answerArcade = (choice) => {
+      if (arcadeAnswered) return;
+      arcadeAnswered = true;
+      const r = ARCADE_ROUNDS[arcadeIdx % ARCADE_ROUNDS.length];
+      const fb = document.getElementById('arcadeFeedback');
+      fb.classList.remove('hidden');
+      const ok = choice === r.ans;
+      rewardPoints(ok);
+      fb.className = ok
+        ? 'p-4 rounded-2xl text-xs sm:text-sm font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30'
+        : 'p-4 rounded-2xl text-xs sm:text-sm font-semibold bg-amber-500/15 text-amber-800 dark:text-amber-200 border border-amber-500/30';
+      fb.textContent = ok ? `Correct! ${r.why}` : `Best answer: ${r.ans}. ${r.why}`;
+    };
+
+    window.nextArcadeRound = () => { arcadeIdx = (arcadeIdx + 1) % ARCADE_ROUNDS.length; renderArcade(); };
+    window.resetArcade = () => { arcadeIdx = 0; arcadeScore = 0; arcadeStreak = 0; updateArcadeHeader(); renderArcade(); renderCue(); renderStative(); };
+
+    const PAIR_CHALLENGES = [
+      { prompt: "“___ raining outside right now.”", opts: ["Its", "It's"], ans: "It's", note: "'It's' = 'It is' (contraction for weather/action)." },
+      { prompt: "“The cat is licking ___ paw.”", opts: ["its", "it's"], ans: "its", note: "'Its' = possessive adjective before 'paw'." },
+      { prompt: "“___ ready for the speaking game!”", opts: ["Your", "You're"], ans: "You're", note: "'You're' = 'You are'." },
+      { prompt: "“Please write ___ name at the top.”", opts: ["your", "you're"], ans: "your", note: "'Your' = possessive adjective before 'name'." },
+      { prompt: "“___ walking to the station together.”", opts: ["Their", "They're"], ans: "They're", note: "'They're' = 'They are'." },
+      { prompt: "“___ bags are next to the door.”", opts: ["Their", "They're"], ans: "Their", note: "'Their' = possessive adjective before 'bags'." }
+    ];
+    let cueIdx = 0;
+    let cueAnswered = false;
+
+    function renderCue() {
+      const c = PAIR_CHALLENGES[cueIdx % PAIR_CHALLENGES.length];
+      document.getElementById('cueCounter').textContent = `Pair ${(cueIdx % PAIR_CHALLENGES.length) + 1} / ${PAIR_CHALLENGES.length}`;
+      document.getElementById('cuePhraseBox').textContent = c.prompt;
+      document.getElementById('cueFeedback').classList.add('hidden');
+      cueAnswered = false;
+
+      document.getElementById('cueOptions').innerHTML = c.opts.map(o => `
+        <button type="button" onclick="answerCue('${o.replace(/'/g, "\\'")}')" class="p-4 rounded-2xl bg-[#002B5C] hover:bg-[#005A8D] text-white text-sm font-extrabold transition">${o}</button>
+      `).join('');
+    }
+
+    window.answerCue = (picked) => {
+      if (cueAnswered) return;
+      cueAnswered = true;
+      const c = PAIR_CHALLENGES[cueIdx % PAIR_CHALLENGES.length];
+      const ok = picked === c.ans;
+      rewardPoints(ok);
+      const fb = document.getElementById('cueFeedback');
+      fb.classList.remove('hidden');
+      fb.className = ok
+        ? 'p-4 rounded-2xl text-xs sm:text-sm font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30'
+        : 'p-4 rounded-2xl text-xs sm:text-sm font-semibold bg-amber-500/15 text-amber-800 dark:text-amber-200 border border-amber-500/30';
+      fb.textContent = ok ? `Spot on! ${c.note}` : `Answer: ${c.ans}. ${c.note}`;
+    };
+    window.nextCue = () => { cueIdx = (cueIdx + 1) % PAIR_CHALLENGES.length; renderCue(); };
+
+    const STATIVE_ITEMS = [
+      { s: "“She always brings her notebook to class.”", valid: true, why: "Natural! 'her' matches 'She' and comes before 'notebook'." },
+      { s: "“They live in theirs house near the park.”", valid: false, why: "Trap! Use possessive adjective 'their': 'their house'." },
+      { s: "“We love our quiet mornings.”", valid: true, why: "Natural! 'our' + 'quiet mornings' is accurate." },
+      { s: "“The book lost it's cover.”", valid: false, why: "Trap! Possessive is 'its' (no apostrophe): 'its cover'." },
+      { s: "“He is helping his friend right now.”", valid: true, why: "Natural! 'his' matches 'he'." },
+      { s: "“My brother likes her new bike.”", valid: true, why: "Natural! 'her' shows a female owner owns the bike." }
+    ];
+    let statIdx = 0;
+    let statAnswered = false;
+
+    function renderStative() {
+      const item = STATIVE_ITEMS[statIdx % STATIVE_ITEMS.length];
+      document.getElementById('statCounter').textContent = `Trap ${(statIdx % STATIVE_ITEMS.length) + 1} / ${STATIVE_ITEMS.length}`;
+      document.getElementById('statSentenceBox').textContent = item.s;
+      document.getElementById('statFeedback').classList.add('hidden');
+      statAnswered = false;
+    }
+
+    window.answerStative = (userSaysValid) => {
+      if (statAnswered) return;
+      statAnswered = true;
+      const item = STATIVE_ITEMS[statIdx % STATIVE_ITEMS.length];
+      const ok = userSaysValid === item.valid;
+      rewardPoints(ok);
+      const fb = document.getElementById('statFeedback');
+      fb.classList.remove('hidden');
+      fb.className = ok
+        ? 'p-4 rounded-2xl text-xs sm:text-sm font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30'
+        : 'p-4 rounded-2xl text-xs sm:text-sm font-semibold bg-amber-500/15 text-amber-800 dark:text-amber-200 border border-amber-500/30';
+      fb.textContent = ok ? `Nice catch! ${item.why}` : item.why;
+    };
+    window.nextStative = () => { statIdx = (statIdx + 1) % STATIVE_ITEMS.length; renderStative(); };
+
+    // Voice Note Recorder
+    const studentNameInput = document.getElementById('studentNameInput');
+    studentNameInput.value = localStorage.getItem('provoStudentName') || '';
+    studentNameInput.addEventListener('input', () => {
+      localStorage.setItem('provoStudentName', studentNameInput.value.trim());
+    });
+
+    let mediaRecorder = null;
+    let audioChunks = [];
+    let audioBlob = null;
+    let selectedMime = 'audio/webm';
+    let recSec = 0;
+    let recTimerId = null;
+
+    const btnRecord = document.getElementById('btnRecord');
+    const btnStop = document.getElementById('btnStop');
+    const btnClearAudio = document.getElementById('btnClearAudio');
+    const btnSendDrive = document.getElementById('btnSendDrive');
+    const btnDownloadAudio = document.getElementById('btnDownloadAudio');
+    const audioPreview = document.getElementById('audioPreview');
+    const recTimer = document.getElementById('recTimer');
+    const uploadFeedback = document.getElementById('uploadFeedback');
+
+    function showRecMsg(msg, ok = true) {
+      uploadFeedback.classList.remove('hidden');
+      uploadFeedback.className = ok
+        ? 'text-xs font-semibold px-3 py-2 rounded-xl bg-emerald-500/15 text-emerald-700 dark:text-emerald-300'
+        : 'text-xs font-semibold px-3 py-2 rounded-xl bg-rose-500/15 text-rose-700 dark:text-rose-300';
+      uploadFeedback.textContent = msg;
+    }
+
+    btnRecord.addEventListener('click', async () => {
+      uploadFeedback.classList.add('hidden');
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        if (MediaRecorder.isTypeSupported('audio/webm')) selectedMime = 'audio/webm';
+        else if (MediaRecorder.isTypeSupported('audio/mp4')) selectedMime = 'audio/mp4';
+        else selectedMime = '';
+
+        audioChunks = [];
+        mediaRecorder = selectedMime ? new MediaRecorder(stream, { mimeType: selectedMime }) : new MediaRecorder(stream);
+        mediaRecorder.ondataavailable = e => { if (e.data && e.data.size > 0) audioChunks.push(e.data); };
+        mediaRecorder.onstop = () => {
+          stream.getTracks().forEach(t => t.stop());
+          audioBlob = new Blob(audioChunks, { type: mediaRecorder.mimeType || selectedMime || 'audio/webm' });
+          audioPreview.src = URL.createObjectURL(audioBlob);
+          audioPreview.classList.remove('hidden');
+          btnSendDrive.disabled = false;
+          btnDownloadAudio.disabled = false;
+          btnClearAudio.disabled = false;
+        };
+
+        mediaRecorder.start();
+        recSec = 0;
+        recTimer.textContent = '00:00';
+        recTimerId = setInterval(() => {
+          recSec++;
+          recTimer.textContent = `${String(Math.floor(recSec / 60)).padStart(2, '0')}:${String(recSec % 60).padStart(2, '0')}`;
+        }, 1000);
+
+        btnRecord.disabled = true;
+        btnStop.disabled = false;
+        btnClearAudio.disabled = true;
+        btnSendDrive.disabled = true;
+      } catch (err) {
+        showRecMsg('Microphone unavailable. Open via HTTPS and allow mic permissions.', false);
+      }
+    });
+
+    btnStop.addEventListener('click', () => {
+      clearInterval(recTimerId);
+      if (mediaRecorder && mediaRecorder.state !== 'inactive') mediaRecorder.stop();
+      btnRecord.disabled = false;
+      btnStop.disabled = true;
+    });
+
+    btnClearAudio.addEventListener('click', () => {
+      audioBlob = null;
+      audioPreview.classList.add('hidden');
+      btnSendDrive.disabled = true;
+      btnDownloadAudio.disabled = true;
+      btnClearAudio.disabled = true;
+      recTimer.textContent = '00:00';
+      uploadFeedback.classList.add('hidden');
+    });
+
+    btnDownloadAudio.addEventListener('click', () => {
+      if (!audioBlob) return;
+      const name = (studentNameInput.value.trim() || 'Student').replace(/\s+/g, '_');
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(audioBlob);
+      a.download = `PROVO-Possessive-Adjectives-Q${qIdx + 1}-${name}.webm`;
+      a.click();
+    });
+
+    btnSendDrive.addEventListener('click', () => {
+      const studentName = studentNameInput.value.trim();
+      if (!studentName) {
+        showRecMsg('Enter your name before sending.', false);
+        studentNameInput.focus();
+        return;
+      }
+      if (!audioBlob) return;
+      btnSendDrive.disabled = true;
+      document.getElementById('sendLabel').textContent = 'Uploading...';
+
+      const reader = new FileReader();
+      reader.onloadend = async () => {
+        try {
+          const base64Audio = String(reader.result).split(',')[1];
+          const res = await fetch(DRIVE_UPLOAD_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify({
+              studentName,
+              lessonTitle: 'Possessive-Adjectives',
+              questionNumber: qIdx + 1,
+              mimeType: audioBlob.type || 'audio/webm',
+              audioBase64: base64Audio
+            })
+          });
+          const data = await res.json();
+          if (data.status === 'ok') showRecMsg(`Sent to Drive as ${data.fileName}`, true);
+          else throw new Error(data.message || 'Upload error');
+        } catch (err) {
+          showRecMsg('Could not upload automatically. Use Backup to download the audio.', false);
+        } finally {
+          btnSendDrive.disabled = false;
+          document.getElementById('sendLabel').textContent = 'Send to Teacher';
+        }
+      };
+      reader.readAsDataURL(audioBlob);
+    });
+
+    // Init
+    goStage(0);
+    renderWarmupCard(0);
+    renderVocabGrid();
+    renderFreqScale();
+    renderVocabMatch();
+    renderProductionPrompts();
+    renderInspector();
+    renderCloze();
+    renderPractice();
+    renderScramble();
+    renderOdd();
+    renderMiniChat();
+    renderFixHomework();
+    renderGame();
+    renderArcade();
+    renderCue();
+    renderStative();
+    lucide.createIcons();
+  </script>
+</body>
+</html>

@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BUSINESS ENGLISH · MAKING &amp; RECEIVING CALLS | PROVO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <style>
+    @keyframes stageIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .stage-anim { animation: stageIn 0.24s ease-out forwards; }
+  </style>
+</head>
+<body class="bg-[#F4F5FA] text-slate-900 dark:bg-[#060E1E] dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
+
+  <!-- Sticky Top Bar (Executive Indigo/Violet Accent distinct from Kids Amber & Teens Emerald) -->
+  <header class="sticky top-0 z-40 bg-[#002B5C] text-white border-b border-indigo-400/35 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2.5">
+        <a href="index.html" class="flex items-center shrink-0" title="PROVO">
+          <img
+            src="https://i.postimg.cc/vBt4qH44/download.png"
+            alt="PROVO"
+            class="h-8 w-auto object-contain block"
+            onerror="this.style.display='none'; document.getElementById('provoFallback').classList.remove('hidden');"
+          />
+          <span id="provoFallback" class="hidden font-extrabold tracking-widest text-lg text-white">PROVO</span>
+        </a>
+        <span class="px-2.5 py-0.5 rounded-full bg-indigo-500/30 border border-indigo-300/45 text-indigo-100 text-[11px] font-bold tracking-wider">
+          BUSINESS · CALLS
+        </span>
+        <span id="stageTitleHeader" class="hidden xl:inline-block text-xs font-bold tracking-wider text-indigo-200">
+          01 · BRIEFING &amp; WARM-UP
+        </span>
+      </div>
+
+      <div id="stagePills" class="flex items-center gap-1 overflow-x-auto py-1"></div>
+
+      <div class="flex items-center gap-2 shrink-0">
+        <button
+          id="themeBtn"
+          type="button"
+          class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition"
+          title="Toggle Theme"
+        >
+          <i id="themeIcon" data-lucide="sun" class="w-4 h-4"></i>
+        </button>
+        <a
+          href="index.html"
+          class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs font-bold bg-white/10 hover:bg-white/20 text-white transition"
+        >
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          <span class="hidden sm:inline">PORTAL</span>
+        </a>
+      </div>
+    </div>
+    <div class="w-full h-1.5 bg-black/25">
+      <div id="stageProgress" class="h-full bg-indigo-400 transition-all duration-300" style="width: 16.66%"></div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl w-full mx-auto px-4 sm:px-6 py-7 sm:py-10 flex-1 flex flex-col justify-center">
+
+    <!-- ==================== 01: BRIEFING & WARM-UP ==================== -->
+    <section data-stage="0" class="stage stage-anim">
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0B172E] border-[1.5px] border-indigo-500/25 dark:border-indigo-400/25 shadow-xl">
+        <div class="lg:col-span-5 h-64 sm:h-auto relative bg-[#091726] overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1050&q=80"
+            alt="Business phone call and desk workspace"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#060E1E]/90 via-[#060E1E]/25 to-transparent"></div>
+          <div class="absolute bottom-5 left-5 right-5 space-y-1 text-white">
+            <span class="text-xs font-bold tracking-widest text-indigo-300 uppercase">Business English · Workplace Skills</span>
+            <p class="text-sm font-semibold text-slate-200">Outgoing Calls, Incoming Calls, Transfers &amp; Messages</p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 p-7 sm:p-10 flex flex-col justify-center space-y-5">
+          <span class="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-indigo-500/15 border border-indigo-400/35 text-indigo-700 dark:text-indigo-300 text-xs font-bold tracking-wider">
+            <i data-lucide="phone-call" class="w-4 h-4"></i>
+            <span>PROVO STAGE LAB · BUSINESS ENGLISH</span>
+          </span>
+
+          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight text-[#002B5C] dark:text-white">
+            Making &amp; Receiving <span class="text-indigo-600 dark:text-indigo-400">Business Calls</span>
+          </h1>
+
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            Practical phone communication for real meetings, client support, suppliers, and reception desks. Graded from clear everyday phrases to executive register, with pure listening drills, 10 interactive call roleplays, and a live classroom game.
+          </p>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1 text-xs">
+            <button type="button" onclick="goStage(1)" class="p-3 rounded-2xl bg-[#F4F5FA] dark:bg-[#071224] border-[1.5px] border-indigo-500/20 dark:border-indigo-400/20 hover:border-indigo-400 text-left transition">
+              <div class="font-extrabold text-indigo-600 dark:text-indigo-400">02 · PHRASES</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">Simple &amp; Advanced</div>
+            </button>
+            <button type="button" onclick="goStage(2)" class="p-3 rounded-2xl bg-[#F4F5FA] dark:bg-[#071224] border-[1.5px] border-indigo-500/20 dark:border-indigo-400/20 hover:border-indigo-400 text-left transition">
+              <div class="font-extrabold text-indigo-600 dark:text-indigo-400">03 · CLARITY</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">Numbers &amp; Spelling</div>
+            </button>
+            <button type="button" onclick="goStage(3)" class="p-3 rounded-2xl bg-[#F4F5FA] dark:bg-[#071224] border-[1.5px] border-indigo-500/20 dark:border-indigo-400/20 hover:border-indigo-400 text-left transition">
+              <div class="font-extrabold text-indigo-600 dark:text-indigo-400">04 · LISTENING</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">10 Pure Audio Calls</div>
+            </button>
+            <button type="button" onclick="goStage(5)" class="p-3 rounded-2xl bg-[#F4F5FA] dark:bg-[#071224] border-[1.5px] border-indigo-500/20 dark:border-indigo-400/20 hover:border-indigo-400 text-left transition">
+              <div class="font-extrabold text-indigo-600 dark:text-indigo-400">06 · ARENA</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">Call Rush Game</div>
+            </button>
+          </div>
+
+          <div class="pt-1">
+            <button
+              type="button"
+              onclick="goStage(1)"
+              class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-[#002B5C] via-indigo-700 to-[#0089A7] hover:opacity-95 text-white text-sm sm:text-base font-bold shadow-lg transition"
+            >
+              <span>Start Stage 02: Graded Call Toolkit</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 02: EXPANDED & GRADED PHRASE BANK (SIMPLE / STANDARD / EXECUTIVE) ==================== -->
+    <section data-stage="1" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-3 border-b border-indigo-500/20 dark:border-indigo-400/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase">Stage 02 · Graded Vocabulary &amp; Register</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Making &amp; Receiving Calls Toolkit</h2>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5">Each function includes a <strong>Simpler / Direct</strong> option and a <strong>More Formal / Executive</strong> alternative.</p>
+        </div>
+        <div class="flex flex-wrap items-center gap-2">
+          <div class="inline-flex rounded-xl p-1 bg-white dark:bg-[#0B172E] border-[1.5px] border-indigo-500/25 dark:border-indigo-400/25">
+            <button id="btnBankViewSingle" type="button" onclick="setBankViewMode('single')" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-indigo-600 text-white transition">1 by 1 Focus</button>
+            <button id="btnBankViewGrid" type="button" onclick="setBankViewMode('grid')" class="px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition">All Cards</button>
+          </div>
+          <button id="tabBankMaking" type="button" onclick="switchPhraseBank('making')" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-[#002B5C] text-white">1. Making a Call (6)</button>
+          <button id="tabBankReceiving" type="button" onclick="switchPhraseBank('receiving')" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0B172E] border-[1.5px] border-indigo-500/25 dark:border-indigo-400/25">2. Receiving &amp; Transferring (6)</button>
+          <button id="tabBankTrouble" type="button" onclick="switchPhraseBank('trouble')" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0B172E] border-[1.5px] border-indigo-500/25 dark:border-indigo-400/25">3. Messages, Problems &amp; Closing (6)</button>
+        </div>
+      </div>
+
+      <div id="phraseBankSingleBox" class="max-w-4xl mx-auto w-full"></div>
+      <div id="phraseBankGrid" class="hidden grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+    </section>
+
+    <!-- ==================== 03: NUMBERS, SPELLING & CONFIRMATION LAB ==================== -->
+    <section data-stage="2" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-indigo-500/20 dark:border-indigo-400/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase">Stage 03 · Accuracy Under Pressure</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Reading Extensions, Codes &amp; Emails</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Practice natural business grouping and verify your transcription.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div class="lg:col-span-5 bg-white dark:bg-[#0B172E] border-[1.5px] border-indigo-500/25 dark:border-indigo-400/25 rounded-3xl overflow-hidden shadow-lg">
+          <div class="h-40 bg-[#091726] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80" alt="Taking notes during a business call" class="w-full h-full object-cover" />
+          </div>
+          <div class="p-6 space-y-3 text-sm">
+            <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white">Phone Clarity Habits</h3>
+            <p class="text-slate-600 dark:text-slate-300">
+              • In British/international calls, <strong>0</strong> is often read as <strong>"oh"</strong> in phone numbers, and repeated digits use <strong>"double"</strong> or <strong>"triple"</strong>.
+            </p>
+            <p class="text-slate-600 dark:text-slate-300">
+              • For emails and reference codes, say <strong>"at"</strong> (<code>@</code>), <strong>"dot"</strong> (<code>.</code>), <strong>"underscore"</strong> (<code>_</code>), or <strong>"hyphen"</strong> (<code>-</code>).
+            </p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 bg-white dark:bg-[#0B172E] border-[1.5px] border-indigo-500/25 dark:border-indigo-400/25 rounded-3xl p-6 sm:p-7 space-y-5 shadow-lg">
+          <div class="flex items-center justify-between">
+            <span id="dictationBadge" class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-bold">DRILL 1 / 5</span>
+            <button type="button" onclick="speakDictation()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-extrabold transition">
+              <i data-lucide="volume-2" class="w-4 h-4"></i>
+              <span>Play Caller Audio</span>
+            </button>
+          </div>
+
+          <p id="dictationContext" class="text-sm font-semibold text-slate-600 dark:text-slate-300"></p>
+
+          <input
+            id="dictationInput"
+            type="text"
+            placeholder="Type the phone number, code, or email you hear..."
+            class="w-full px-4 py-3 rounded-2xl bg-[#F4F5FA] dark:bg-[#071224] border-[1.5px] border-indigo-500/25 dark:border-indigo-400/25 text-sm font-bold outline-none focus:border-indigo-400"
+          />
+
+          <div id="dictationFeedback" class="hidden p-3.5 rounded-2xl text-xs sm:text-sm font-bold"></div>
+
+          <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+            <button type="button" onclick="checkDictation()" class="px-5 py-2.5 rounded-xl bg-[#0089A7] hover:opacity-95 text-white text-xs font-bold">
+              Check Answer
+            </button>
+            <div class="flex items-center gap-2">
+              <button type="button" onclick="stepDictation(-1)" class="px-3.5 py-2 rounded-xl border border-slate-300 dark:border-indigo-400/25 text-xs font-bold">← Prev</button>
+              <div id="dictationDots" class="flex gap-1.5"></div>
+              <button type="button" onclick="stepDictation(1)" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 04: PURE LISTENING CALL SCENARIOS (TRANSCRIPT & MODEL HIDDEN BY DEFAULT) ==================== -->
+    <section data-stage="3" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-indigo-500/20 dark:border-indigo-400/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase">Stage 04 · Pure Listening &amp; Roleplay (10 Situations)</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Live Workplace Call Simulator</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Listen without reading first, respond aloud, then reveal transcript or model reply if needed.</p>
+      </div>
+
+      <div class="bg-white dark:bg-[#0B172E] border-[1.5px] border-indigo-500/25 dark:border-indigo-400/25 rounded-3xl overflow-hidden max-w-4xl mx-auto w-full shadow-xl">
+        <div class="grid grid-cols-1 md:grid-cols-12">
+          <div id="simPhotoBox" class="md:col-span-5 h-56 md:h-auto bg-[#091726] overflow-hidden"></div>
+
+          <div class="md:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-5">
+            <div class="space-y-4">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <span id="simBadge" class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-bold">SCENARIO 1 / 10</span>
+                <span id="simRoleTag" class="px-3 py-1 rounded-full bg-indigo-500/15 text-indigo-700 dark:text-indigo-300 text-xs font-extrabold"></span>
+              </div>
+
+              <!-- Pure Listening Audio Bar -->
+              <div class="p-4 rounded-2xl bg-[#F4F5FA] dark:bg-[#071224] border-[1.5px] border-indigo-500/25 dark:border-indigo-400/25 flex flex-wrap items-center justify-between gap-3">
+                <div class="flex items-center gap-2.5">
+                  <span class="w-9 h-9 rounded-xl bg-indigo-600 text-white flex items-center justify-center shrink-0">
+                    <i data-lucide="headphones" class="w-4 h-4"></i>
+                  </span>
+                  <div>
+                    <div class="text-xs font-extrabold text-[#002B5C] dark:text-white">INCOMING / OUTGOING AUDIO</div>
+                    <div class="text-[11px] text-slate-500 dark:text-slate-400">Listen carefully before viewing the script</div>
+                  </div>
+                </div>
+                <button type="button" onclick="speakSimCaller()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold transition">
+                  <i data-lucide="volume-2" class="w-4 h-4"></i>
+                  <span>Play Call</span>
+                </button>
+              </div>
+
+              <p id="simTaskBrief" class="text-sm font-bold text-[#002B5C] dark:text-slate-100 leading-relaxed"></p>
+
+              <!-- Both Caller Transcript AND Model Response Hidden by Default -->
+              <div class="flex flex-wrap gap-2 pt-1">
+                <button id="btnToggleSimTranscript" type="button" onclick="toggleSimTranscript()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-200/80 dark:bg-white/10 hover:bg-slate-300/70 dark:hover:bg-white/15 text-slate-800 dark:text-slate-200 text-xs font-bold transition">
+                  <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+                  <span id="btnToggleSimTranscriptLabel">Show Caller Transcript</span>
+                </button>
+                <button id="btnToggleSimHelp" type="button" onclick="toggleSimHelp()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-indigo-500/15 hover:bg-indigo-500/25 text-indigo-800 dark:text-indigo-300 text-xs font-bold transition">
+                  <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+                  <span id="btnToggleSimHelpLabel">Show Model Response</span>
+                </button>
+              </div>
+
+              <div id="simTranscriptBox" class="hidden p-4 rounded-2xl bg-slate-100 dark:bg-[#071224] border-[1.5px] border-slate-300/60 dark:border-indigo-400/20">
+                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Caller Audio Transcript</span>
+                <p id="simCallerLine" class="text-sm font-bold text-[#002B5C] dark:text-white mt-1"></p>
+              </div>
+
+              <div id="simHelpBox" class="hidden p-4 rounded-2xl bg-indigo-500/10 border-[1.5px] border-indigo-500/25 dark:border-indigo-400/25">
+                <span class="text-[11px] font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-300">Model Response (Simple &amp; Formal)</span>
+                <p id="simModelReply" class="text-sm font-semibold text-[#002B5C] dark:text-white mt-1"></p>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between gap-3 pt-3 border-t border-slate-100 dark:border-indigo-400/15">
+              <button type="button" onclick="stepSim(-1)" class="px-4 py-2.5 rounded-xl border border-slate-300 dark:border-indigo-400/25 text-xs font-bold">← Prev</button>
+              <div id="simDots" class="flex flex-wrap justify-center gap-1.5"></div>
+              <button type="button" onclick="stepSim(1)" class="px-4 py-2.5 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 05: EXPANDED ETIQUETTE, REGISTER & GAP-FILL PRACTICE ==================== -->
+    <section data-stage="4" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-indigo-500/20 dark:border-indigo-400/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase">Stage 05 · Practice Lab (8 Exercises)</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Register, Prepositions &amp; Call Etiquette</h2>
+        </div>
+        <div class="flex gap-2">
+          <button id="tabExChoice" type="button" onclick="switchStage5Tab('choice')" class="px-4 py-2 rounded-xl text-xs font-bold bg-[#002B5C] text-white">1. Best Response (6)</button>
+          <button id="tabExUpgrade" type="button" onclick="switchStage5Tab('upgrade')" class="px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0B172E] border-[1.5px] border-indigo-500/25 dark:border-indigo-400/25">2. Fix &amp; Upgrade the Call (4)</button>
+        </div>
+      </div>
+
+      <div id="panelExChoice" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+      <div id="panelExUpgrade" class="hidden grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+    </section>
+
+    <!-- ==================== 06: GAMIFIED CLASSROOM CHALLENGE — "CALL DESK RUSH" ==================== -->
+    <section data-stage="5" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-indigo-500/20 dark:border-indigo-400/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase">Stage 06 · Live Classroom Game</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Switchboard Rush: Beat the Clock!</h2>
+        </div>
+
+        <!-- Scoreboard & Timer -->
+        <div class="flex flex-wrap items-center gap-2">
+          <span id="gameScoreBadge" class="px-3.5 py-2 rounded-2xl bg-indigo-600 text-white text-xs font-extrabold shadow">
+            SCORE: 0 / 10
+          </span>
+          <span id="gameStreakBadge" class="px-3.5 py-2 rounded-2xl bg-white dark:bg-[#0B172E] border-[1.5px] border-indigo-500/25 dark:border-indigo-400/25 text-xs font-extrabold">
+            STREAK: 0 🔥
+          </span>
+          <div class="flex items-center gap-1.5 bg-white dark:bg-[#0B172E] border-[1.5px] border-indigo-500/25 dark:border-indigo-400/25 px-3 py-1.5 rounded-2xl">
+            <i data-lucide="timer" class="w-4 h-4 text-indigo-500"></i>
+            <span id="gameClockDisplay" class="font-mono text-xs font-extrabold">15s</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-[#0B172E] border-[1.5px] border-indigo-500/25 dark:border-indigo-400/25 rounded-3xl p-6 sm:p-8 max-w-4xl mx-auto w-full space-y-6 shadow-xl">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <span id="gameRoundBadge" class="px-3.5 py-1 rounded-full bg-[#002B5C] text-white text-xs font-bold">INCOMING CALL 1 / 10</span>
+          <div class="flex gap-2">
+            <button type="button" onclick="speakGameCall()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#0089A7] text-white text-xs font-bold">
+              <i data-lucide="volume-2" class="w-4 h-4"></i>
+              <span>Hear Caller</span>
+            </button>
+            <button type="button" onclick="restartSwitchboardGame()" class="px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-indigo-400/25 text-xs font-bold">
+              Restart Game
+            </button>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-[#F4F5FA] dark:bg-[#071224] border-[1.5px] border-indigo-500/20 dark:border-indigo-400/20 space-y-1.5">
+          <span class="text-[11px] font-extrabold uppercase tracking-wider text-indigo-600 dark:text-indigo-300">LIVE CALLER ON THE LINE</span>
+          <p id="gameCallerPrompt" class="text-lg sm:text-xl font-extrabold text-[#002B5C] dark:text-white"></p>
+        </div>
+
+        <div id="gameOptionsGrid" class="grid grid-cols-1 gap-3"></div>
+
+        <div id="gameFeedbackBox" class="hidden p-4 rounded-2xl text-sm font-bold"></div>
+
+        <div class="flex justify-end">
+          <button type="button" onclick="nextGameRound()" class="px-6 py-3 rounded-2xl bg-[#002B5C] hover:bg-[#005A8D] text-white text-xs sm:text-sm font-bold">
+            Next Incoming Call →
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Navigation -->
+  <footer class="border-t border-indigo-500/20 dark:border-indigo-400/20 bg-white dark:bg-[#060E1E] py-4 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      <button id="btnPrev" type="button" onclick="goStage(currentStage - 1)" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-300 dark:border-indigo-400/25 hover:bg-slate-100 dark:hover:bg-[#132C4A] disabled:opacity-30 text-xs font-bold transition">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Previous</span>
+      </button>
+
+      <span id="stageCounter" class="text-xs font-bold tracking-widest text-slate-500 dark:text-slate-400">
+        01 / 06
+      </span>
+
+      <button id="btnNext" type="button" onclick="goStage(currentStage + 1)" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#002B5C] hover:bg-[#005A8D] disabled:opacity-30 text-xs font-bold text-white transition">
+        <span>Next</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    const STAGES = [
+      "01 · BRIEFING & WARM-UP",
+      "02 · GRADED PHRASES",
+      "03 · NUMBERS & SPELLING",
+      "04 · PURE LISTENING CALLS",
+      "05 · PRACTICE LAB",
+      "06 · SWITCHBOARD RUSH"
+    ];
+
+    let currentStage = 0;
+    const stageSections = document.querySelectorAll('.stage');
+
+    function goStage(idx) {
+      if (idx < 0 || idx >= stageSections.length) return;
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      currentStage = idx;
+      stageSections.forEach((s, i) => s.classList.toggle('hidden', i !== currentStage));
+      document.getElementById('stageTitleHeader').textContent = STAGES[currentStage];
+      document.getElementById('stageCounter').textContent = `${String(currentStage + 1).padStart(2, '0')} / ${String(stageSections.length).padStart(2, '0')}`;
+      document.getElementById('stageProgress').style.width = `${((currentStage + 1) / stageSections.length) * 100}%`;
+      document.getElementById('btnPrev').disabled = currentStage === 0;
+      document.getElementById('btnNext').disabled = currentStage === stageSections.length - 1;
+      renderStagePills();
+      if (currentStage === 5) startRoundClock();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      lucide.createIcons();
+    }
+
+    function renderStagePills() {
+      document.getElementById('stagePills').innerHTML = STAGES.map((_, i) => `
+        <button type="button" onclick="goStage(${i})" class="px-2.5 py-1 rounded-lg text-xs font-bold transition ${
+          i === currentStage ? 'bg-indigo-500 text-white' : 'text-white/75 hover:text-white hover:bg-white/10'
+        }">${String(i + 1).padStart(2, '0')}</button>
+      `).join('');
+    }
+
+    const themeBtn = document.getElementById('themeBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    if (localStorage.getItem('provoBusinessTheme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      themeIcon.setAttribute('data-lucide', 'moon');
+    }
+    themeBtn.addEventListener('click', () => {
+      const dark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('provoBusinessTheme', dark ? 'dark' : 'light');
+      themeIcon.setAttribute('data-lucide', dark ? 'sun' : 'moon');
+      lucide.createIcons();
+    });
+
+    function speakText(text) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'en-GB';
+      u.rate = 0.95;
+      window.speechSynthesis.speak(u);
+    }
+
+    // ==================== 02: GRADED PHRASE BANK (SIMPLE + STANDARD + FORMAL) ====================
+    const PHRASE_BANKS = {
+      making: [
+        {
+          fn: "INTRODUCING YOURSELF",
+          simple: "Hi, it's David from Provo.",
+          standard: "Hello, this is David speaking from Provo.",
+          formal: "Good morning, my name is David and I'm calling on behalf of Provo.",
+          note: "Use 'this is...' on the phone instead of 'I am...'. Notice 'Provo' alone without 'Academy'."
+        },
+        {
+          fn: "ASKING FOR SOMEONE",
+          simple: "Can I speak to Marta, please?",
+          standard: "Could I speak to Marta Soler in Operations, please?",
+          formal: "Would it be possible to speak with Ms. Soler regarding our project?",
+          note: "Adding the department or surname avoids confusion in larger offices."
+        },
+        {
+          fn: "STATING YOUR REASON",
+          simple: "I'm calling about tomorrow's meeting.",
+          standard: "I'm calling regarding our training session next Tuesday.",
+          formal: "The reason for my call is to follow up on the proposal we sent on Monday.",
+          note: "'About' is great for everyday calls; 'regarding' or 'The reason for my call is...' sounds more executive."
+        },
+        {
+          fn: "CHECKING AVAILABILITY",
+          simple: "Do you have two minutes to talk?",
+          standard: "Is this a good time to talk for a couple of minutes?",
+          formal: "Have I caught you at a convenient time, or would you prefer I called back later?",
+          note: "A quick availability check prevents rushing through important details."
+        },
+        {
+          fn: "ASKING FOR AN EXTENSION",
+          simple: "Extension 402, please.",
+          standard: "Could you put me through to extension 402, please?",
+          formal: "Could you connect me with the Finance desk on extension 402, please?",
+          note: "'Put me through to' and 'connect me with' are interchangeable."
+        },
+        {
+          fn: "RETURNING A MISSED CALL",
+          simple: "Hi, I'm calling you back.",
+          standard: "Hello, I'm returning a call from Marta Soler.",
+          formal: "Good afternoon, I'm returning a missed call from your office earlier today.",
+          note: "State who called you first so reception knows where to route you."
+        }
+      ],
+      receiving: [
+        {
+          fn: "ANSWERING THE PHONE",
+          simple: "Hello, Provo, David speaking.",
+          standard: "Good morning, Provo, David speaking. How can I help you?",
+          formal: "Good afternoon, thank you for calling Provo. This is David speaking; how may I assist you?",
+          note: "Company name + your name + short offer to help is the golden 3-part opening."
+        },
+        {
+          fn: "ASKING WHO IS CALLING",
+          simple: "Who's calling, please?",
+          standard: "May I ask who's calling, please?",
+          formal: "Could I take your name and company before I check if she's available?",
+          note: "Always soften with 'please' so you don't sound like an interrogation."
+        },
+        {
+          fn: "PUTTING ON HOLD",
+          simple: "One moment, please.",
+          standard: "Just a moment, please. I'll check the schedule for you.",
+          formal: "Would you mind holding for just a moment while I look into that for you?",
+          note: "Tell the caller why they are waiting so they don't think the line went dead."
+        },
+        {
+          fn: "TRANSFERRING A CALL",
+          simple: "I'll transfer you now.",
+          standard: "I'll put you through to our billing team right away.",
+          formal: "Please hold the line while I connect you with our account manager.",
+          note: "'Hold the line' = stay on the phone."
+        },
+        {
+          fn: "WHEN SOMEONE IS BUSY",
+          simple: "Sorry, she's in a meeting right now.",
+          standard: "I'm afraid she's in a meeting at the moment. Can I take a message?",
+          formal: "Unfortunately, she is unavailable until 3:00 p.m. Would you like to leave a message or have her return your call?",
+          note: "'I'm afraid...' is the standard polite way to deliver bad news in English."
+        },
+        {
+          fn: "OFFERING ALTERNATIVE HELP",
+          simple: "Can I help you instead?",
+          standard: "She's out of the office today, but I can help you with that.",
+          formal: "As he is away from his desk, perhaps I could assist you with your inquiry?",
+          note: "Useful when you share access to calendars, orders, or client files."
+        }
+      ],
+      trouble: [
+        {
+          fn: "TAKING CONTACT DETAILS",
+          simple: "What's your phone number and email?",
+          standard: "Could I take your number and email address so she can reach you?",
+          formal: "May I confirm the best direct number and email address for our follow-up?",
+          note: "Read back numbers in groups of two or three digits."
+        },
+        {
+          fn: "BAD CONNECTION",
+          simple: "Sorry, I can't hear you well.",
+          standard: "Sorry, you're breaking up a bit. Could you repeat that?",
+          formal: "I apologize, the line is quite faint and you're cutting out. Could you say that again, please?",
+          note: "'Breaking up' / 'cutting out' = audio dropping due to weak signal."
+        },
+        {
+          fn: "ASKING TO SLOW DOWN / SPELL",
+          simple: "Can you spell your name, please?",
+          standard: "Could you spell your surname for me, please?",
+          formal: "Could you possibly spell that out for me so I record it accurately?",
+          note: "Never guess the spelling of a client's surname or street."
+        },
+        {
+          fn: "CONFIRMING INFORMATION",
+          simple: "So, Friday at 10:00, right?",
+          standard: "Just to confirm, we're meeting on Friday at 10:00 a.m.",
+          formal: "Let me summarize what we've agreed to make sure we're on the same page.",
+          note: "A 10-second recap prevents costly misunderstandings."
+        },
+        {
+          fn: "PROMISING FOLLOW-UP",
+          simple: "I'll send you an email today.",
+          standard: "I'll send you a quick confirmation email right after this call.",
+          formal: "I will follow up in writing this afternoon with all the details discussed.",
+          note: "Sets a clear timeline for your next action."
+        },
+        {
+          fn: "CLOSING PROFESSIONALLY",
+          simple: "Thanks for calling. Bye!",
+          standard: "Thanks for your time today. Speak soon!",
+          formal: "Thank you very much for calling Provo. Have a productive rest of your day.",
+          note: "Warm, concise, and natural."
+        }
+      ]
+    };
+
+    let currentBankKey = 'making';
+    let currentBankCardIdx = 0;
+    let bankViewMode = 'single';
+
+    window.speakBankItem = (key, idx, level) => {
+      speakText(PHRASE_BANKS[key][idx][level]);
+    };
+
+    window.setBankViewMode = (mode) => {
+      bankViewMode = mode;
+      document.getElementById('phraseBankSingleBox').classList.toggle('hidden', mode !== 'single');
+      document.getElementById('phraseBankGrid').classList.toggle('hidden', mode !== 'grid');
+      document.getElementById('btnBankViewSingle').className = mode === 'single'
+        ? 'px-3 py-1.5 rounded-lg text-xs font-bold bg-indigo-600 text-white transition'
+        : 'px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition';
+      document.getElementById('btnBankViewGrid').className = mode === 'grid'
+        ? 'px-3 py-1.5 rounded-lg text-xs font-bold bg-indigo-600 text-white transition'
+        : 'px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition';
+      renderPhraseBank();
+    };
+
+    window.stepBankCard = (delta) => {
+      const list = PHRASE_BANKS[currentBankKey];
+      currentBankCardIdx = (currentBankCardIdx + delta + list.length) % list.length;
+      renderPhraseBank();
+    };
+
+    window.jumpBankCard = (idx) => {
+      currentBankCardIdx = idx;
+      renderPhraseBank();
+    };
+
+    function renderPhraseBank() {
+      const list = PHRASE_BANKS[currentBankKey];
+      const item = list[currentBankCardIdx % list.length];
+
+      // 1. Large 1-by-1 Focus Card
+      document.getElementById('phraseBankSingleBox').innerHTML = `
+        <div class="bg-white dark:bg-[#0B172E] border-[1.5px] border-indigo-500/25 dark:border-indigo-400/25 rounded-3xl p-6 sm:p-9 space-y-5 shadow-xl">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="px-3.5 py-1 rounded-full bg-[#002B5C] text-white text-xs font-bold">CARD ${(currentBankCardIdx % list.length) + 1} / ${list.length}</span>
+              <span class="px-3.5 py-1 rounded-full bg-indigo-500/15 text-indigo-700 dark:text-indigo-300 text-xs font-extrabold">${item.fn}</span>
+            </div>
+            <button type="button" onclick="speakBankItem('${currentBankKey}', ${currentBankCardIdx}, 'standard')" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#0089A7] text-white text-xs font-bold">
+              <i data-lucide="volume-2" class="w-4 h-4"></i> Hear Standard
+            </button>
+          </div>
+
+          <div class="space-y-3 text-sm sm:text-base">
+            <div class="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-between gap-3">
+              <div>
+                <span class="text-[11px] font-extrabold uppercase tracking-wider text-emerald-700 dark:text-emerald-300 block mb-0.5">Simpler / Direct</span>
+                <strong class="text-base sm:text-lg text-[#002B5C] dark:text-white">"${item.simple}"</strong>
+              </div>
+              <button type="button" onclick="speakBankItem('${currentBankKey}', ${currentBankCardIdx}, 'simple')" class="p-2.5 rounded-xl bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 shrink-0"><i data-lucide="volume-2" class="w-5 h-5"></i></button>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-[#F4F5FA] dark:bg-[#071224] border border-indigo-500/25 flex items-center justify-between gap-3">
+              <div>
+                <span class="text-[11px] font-extrabold uppercase tracking-wider text-indigo-600 dark:text-indigo-300 block mb-0.5">Standard Workplace</span>
+                <strong class="text-base sm:text-lg text-[#002B5C] dark:text-white">"${item.standard}"</strong>
+              </div>
+              <button type="button" onclick="speakBankItem('${currentBankKey}', ${currentBankCardIdx}, 'standard')" class="p-2.5 rounded-xl bg-indigo-500/15 text-indigo-600 dark:text-indigo-300 shrink-0"><i data-lucide="volume-2" class="w-5 h-5"></i></button>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-purple-500/10 border border-purple-500/25 flex items-center justify-between gap-3">
+              <div>
+                <span class="text-[11px] font-extrabold uppercase tracking-wider text-purple-700 dark:text-purple-300 block mb-0.5">Executive / Formal</span>
+                <strong class="text-base sm:text-lg text-[#002B5C] dark:text-white">"${item.formal}"</strong>
+              </div>
+              <button type="button" onclick="speakBankItem('${currentBankKey}', ${currentBankCardIdx}, 'formal')" class="p-2.5 rounded-xl bg-purple-500/15 text-purple-700 dark:text-purple-300 shrink-0"><i data-lucide="volume-2" class="w-5 h-5"></i></button>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-2xl bg-slate-100/80 dark:bg-white/5 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+            <strong>Tip:</strong> ${item.note}
+          </div>
+
+          <div class="flex items-center justify-between gap-3 pt-2 border-t border-slate-100 dark:border-indigo-400/15">
+            <button type="button" onclick="stepBankCard(-1)" class="px-4 py-2.5 rounded-xl border border-slate-300 dark:border-indigo-400/25 text-xs font-bold">← Prev Card</button>
+            <div class="flex gap-1.5">
+              ${list.map((_, i) => `<button type="button" onclick="jumpBankCard(${i})" class="w-7 h-7 rounded-lg text-xs font-bold ${i === currentBankCardIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#071224]'}">${i + 1}</button>`).join('')}
+            </div>
+            <button type="button" onclick="stepBankCard(1)" class="px-4 py-2.5 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next Card →</button>
+          </div>
+        </div>
+      `;
+
+      // 2. All Cards Grid View
+      document.getElementById('phraseBankGrid').innerHTML = list.map((cardItem, idx) => `
+        <div class="bg-white dark:bg-[#0B172E] border-[1.5px] border-indigo-500/25 dark:border-indigo-400/25 rounded-3xl p-5 space-y-3 shadow-md">
+          <div class="flex items-center justify-between gap-2">
+            <span class="px-3 py-1 rounded-full bg-indigo-500/15 text-indigo-700 dark:text-indigo-300 text-xs font-extrabold">${cardItem.fn}</span>
+            <button type="button" onclick="speakBankItem('${currentBankKey}', ${idx}, 'standard')" class="inline-flex items-center gap-1 text-xs font-bold text-[#0089A7]">
+              <i data-lucide="volume-2" class="w-4 h-4"></i> Hear Standard
+            </button>
+          </div>
+
+          <div class="space-y-2 text-xs sm:text-sm">
+            <div class="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-between gap-2">
+              <div><span class="text-[10px] font-extrabold uppercase text-emerald-700 dark:text-emerald-300 block">Simpler</span><strong>"${cardItem.simple}"</strong></div>
+              <button type="button" onclick="speakBankItem('${currentBankKey}', ${idx}, 'simple')" class="text-emerald-700 dark:text-emerald-300 shrink-0"><i data-lucide="volume-2" class="w-4 h-4"></i></button>
+            </div>
+
+            <div class="p-2.5 rounded-xl bg-[#F4F5FA] dark:bg-[#071224] border border-indigo-500/20 flex items-center justify-between gap-2">
+              <div><span class="text-[10px] font-extrabold uppercase text-indigo-600 dark:text-indigo-300 block">Standard</span><strong>"${cardItem.standard}"</strong></div>
+              <button type="button" onclick="speakBankItem('${currentBankKey}', ${idx}, 'standard')" class="text-indigo-600 dark:text-indigo-300 shrink-0"><i data-lucide="volume-2" class="w-4 h-4"></i></button>
+            </div>
+
+            <div class="p-2.5 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-between gap-2">
+              <div><span class="text-[10px] font-extrabold uppercase text-purple-700 dark:text-purple-300 block">Executive / Formal</span><strong>"${cardItem.formal}"</strong></div>
+              <button type="button" onclick="speakBankItem('${currentBankKey}', ${idx}, 'formal')" class="text-purple-700 dark:text-purple-300 shrink-0"><i data-lucide="volume-2" class="w-4 h-4"></i></button>
+            </div>
+          </div>
+
+          <p class="text-xs text-slate-600 dark:text-slate-300">${cardItem.note}</p>
+        </div>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    window.switchPhraseBank = (key) => {
+      currentBankKey = key;
+      currentBankCardIdx = 0;
+      ['making', 'receiving', 'trouble'].forEach(k => {
+        const id = 'tabBank' + k[0].toUpperCase() + k.slice(1);
+        document.getElementById(id).className = k === key
+          ? 'px-3.5 py-2 rounded-xl text-xs font-bold bg-[#002B5C] text-white'
+          : 'px-3.5 py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0B172E] border-[1.5px] border-indigo-500/25 dark:border-indigo-400/25';
+      });
+      renderPhraseBank();
+    };
+
+    // ==================== 03: DICTATION DRILLS ====================
+    const DICTATION_DRILLS = [
+      {
+        context: "Extension & direct line: listen carefully to the digits.",
+        spoken: "Extension four oh eight, double two.",
+        answer: "40822",
+        displayAnswer: "40822 (ext. 408, 22)"
+      },
+      {
+        context: "Support email address at Provo: write it in standard email format.",
+        spoken: "info at provo dot com.",
+        answer: "info@provo.com",
+        displayAnswer: "info@provo.com"
+      },
+      {
+        context: "Booking reference code: letters and numbers.",
+        spoken: "Reference B nine, double four, K.",
+        answer: "B944K",
+        displayAnswer: "B944K"
+      },
+      {
+        context: "Mobile callback number: listen and type the digits.",
+        spoken: "Six double five, oh nine, eight one, three.",
+        answer: "65509813",
+        displayAnswer: "65509813"
+      },
+      {
+        context: "Client email with hyphen and underscore: listen carefully.",
+        spoken: "m underscore vega at nordik hyphen logistics dot eu.",
+        answer: "m_vega@nordik-logistics.eu",
+        displayAnswer: "m_vega@nordik-logistics.eu"
+      }
+    ];
+    let dictIdx = 0;
+
+    function renderDictation() {
+      dictIdx = (dictIdx + DICTATION_DRILLS.length) % DICTATION_DRILLS.length;
+      const d = DICTATION_DRILLS[dictIdx];
+      document.getElementById('dictationBadge').textContent = `DRILL ${dictIdx + 1} / ${DICTATION_DRILLS.length}`;
+      document.getElementById('dictationContext').textContent = d.context;
+      document.getElementById('dictationInput').value = '';
+      document.getElementById('dictationFeedback').classList.add('hidden');
+      document.getElementById('dictationDots').innerHTML = DICTATION_DRILLS.map((_, i) => `
+        <button type="button" onclick="dictIdx=${i}; renderDictation();" class="w-7 h-7 rounded-lg text-xs font-bold ${
+          i === dictIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#071224]'
+        }">${i + 1}</button>
+      `).join('');
+    }
+    window.speakDictation = () => speakText(DICTATION_DRILLS[dictIdx].spoken);
+    window.checkDictation = () => {
+      const d = DICTATION_DRILLS[dictIdx];
+      const val = document.getElementById('dictationInput').value.trim().toLowerCase().replace(/\s+/g, '');
+      const expected = d.answer.toLowerCase().replace(/\s+/g, '');
+      const fb = document.getElementById('dictationFeedback');
+      fb.classList.remove('hidden');
+      if (val === expected) {
+        fb.className = 'p-3.5 rounded-2xl text-xs sm:text-sm font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Exact match: ${d.displayAnswer}`;
+      } else {
+        fb.className = 'p-3.5 rounded-2xl text-xs sm:text-sm font-bold bg-indigo-500/15 text-indigo-800 dark:text-indigo-200';
+        fb.textContent = `Expected: ${d.displayAnswer} — Listen again and check each digit or symbol.`;
+      }
+    };
+    window.stepDictation = (delta) => { dictIdx += delta; renderDictation(); };
+
+    // ==================== 04: PURE LISTENING CALL SIMULATOR (10 SCENARIOS) ====================
+    const SIM_SCENARIOS = [
+      {
+        role: "01 · INCOMING CALL",
+        caller: "Good morning. Is Mr. Reid available? My name is Elena Ruiz from Apex Print.",
+        brief: "Task: Listen to the caller. Mr. Reid is on another call until 11:30. Explain politely and offer to take a message.",
+        model: "Simple: 'Sorry, he's on another call until 11:30. Can I take a message?' | Formal: 'I'm afraid Mr. Reid is unavailable until 11:30. Would you like to leave a message or have him call you back?'",
+        photo: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        role: "02 · OUTGOING CALL",
+        caller: "Hello, Provo, David speaking. How can I help you?",
+        brief: "Task: You are calling Provo to speak to Laura Chen and confirm Friday's workshop.",
+        model: "Simple: 'Hi David, it's [Name]. Can I speak to Laura Chen about Friday's workshop?' | Formal: 'Good morning, David. This is [Name] calling from [Company]. Could you put me through to Laura Chen regarding Friday's workshop?'",
+        photo: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        role: "03 · WRONG DEPARTMENT",
+        caller: "Sorry, I think you have the wrong extension—this is the warehouse.",
+        brief: "Task: Apologize politely and ask to be transferred to Customer Service.",
+        model: "Simple: 'Oh, sorry! Can you transfer me to Customer Service, please?' | Formal: 'I apologize for the mistake. Could you possibly put me through to Customer Service, please?'",
+        photo: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        role: "04 · BAD CONNECTION",
+        caller: "The shipment will arrive at gate four at... [static] ...tomorrow morning.",
+        brief: "Task: Tell the caller the audio is breaking up and ask them to repeat the time.",
+        model: "Simple: 'Sorry, I couldn't hear the time. Can you repeat that?' | Formal: 'I'm sorry, you're breaking up a bit. Could you repeat the arrival time, please?'",
+        photo: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        role: "05 · CONFIRMING EMAIL",
+        caller: "Sure, my email is k underscore alvarez at brightleaf hyphen media dot co dot uk.",
+        brief: "Task: Read the email address back to confirm every symbol and word.",
+        model: "Response: 'Let me read that back: k underscore alvarez at brightleaf hyphen media dot co dot uk. Is that right?'",
+        photo: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        role: "06 · RESCHEDULING A CALL",
+        caller: "Hi, I'm calling about our 3:00 p.m. call today. Something urgent just came up.",
+        brief: "Task: React calmly and propose moving the call to tomorrow at 10:30 a.m.",
+        model: "Simple: 'No problem at all. Does tomorrow at 10:30 work for you?' | Formal: 'I completely understand. Would tomorrow morning at 10:30 be convenient instead?'",
+        photo: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        role: "07 · INVOICE INQUIRY",
+        caller: "Hello, we received invoice 409, but the VAT amount looks different from our quote.",
+        brief: "Task: Put the caller on hold for a moment while you open the file.",
+        model: "Simple: 'One moment, please. Let me check invoice 409 for you.' | Formal: 'Would you mind holding for just a moment while I pull up invoice 409 on my screen?'",
+        photo: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        role: "08 · LEAVING A VOICEMAIL",
+        caller: "You've reached Sara Vidal at Provo. I can't take your call right now. Please leave a message after the tone.",
+        brief: "Task: Leave a concise 15-second voicemail with your name, reason for calling, and callback number.",
+        model: "Voicemail: 'Hi Sara, this is [Name] calling about Thursday's schedule. Could you call me back on 655 09 81 30 when you have a moment? Thanks!'",
+        photo: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        role: "09 · SPELLING A SURNAME",
+        caller: "My surname is Szczepanski, and I'm calling to confirm my hotel booking.",
+        brief: "Task: Politely ask the caller to spell their surname slowly.",
+        model: "Simple: 'Could you spell your surname for me, please?' | Formal: 'Could you possibly spell that out slowly so I make sure I spell it correctly?'",
+        photo: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        role: "10 · CLOSING THE CALL",
+        caller: "Perfect, that's everything I needed today. Thank you very much!",
+        brief: "Task: Close the call warmly and mention you will send a short summary email.",
+        model: "Simple: 'You're welcome! I'll send you an email right now. Bye!' | Formal: 'My pleasure. I'll send a written confirmation shortly—have a great rest of your day.'",
+        photo: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+      }
+    ];
+    let simIdx = 0;
+
+    function renderSim() {
+      simIdx = (simIdx + SIM_SCENARIOS.length) % SIM_SCENARIOS.length;
+      const s = SIM_SCENARIOS[simIdx];
+      document.getElementById('simBadge').textContent = `SCENARIO ${simIdx + 1} / ${SIM_SCENARIOS.length}`;
+      document.getElementById('simRoleTag').textContent = s.role;
+      document.getElementById('simCallerLine').textContent = `"${s.caller}"`;
+      document.getElementById('simTaskBrief').textContent = s.brief;
+      document.getElementById('simModelReply').textContent = s.model;
+      document.getElementById('simPhotoBox').innerHTML = `<img src="${s.photo}" alt="${s.role}" class="w-full h-full object-cover" loading="lazy" />`;
+
+      // Hide both transcript and model response by default on every scenario
+      document.getElementById('simTranscriptBox').classList.add('hidden');
+      document.getElementById('btnToggleSimTranscriptLabel').textContent = 'Show Caller Transcript';
+      document.getElementById('simHelpBox').classList.add('hidden');
+      document.getElementById('btnToggleSimHelpLabel').textContent = 'Show Model Response';
+
+      document.getElementById('simDots').innerHTML = SIM_SCENARIOS.map((_, i) => `
+        <button type="button" onclick="simIdx=${i}; renderSim();" class="w-6 h-6 rounded-lg text-[11px] font-bold ${
+          i === simIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#071224]'
+        }">${i + 1}</button>
+      `).join('');
+    }
+    window.stepSim = (d) => { simIdx += d; renderSim(); };
+    window.speakSimCaller = () => speakText(SIM_SCENARIOS[simIdx].caller);
+    window.toggleSimTranscript = () => {
+      const box = document.getElementById('simTranscriptBox');
+      const hidden = box.classList.toggle('hidden');
+      document.getElementById('btnToggleSimTranscriptLabel').textContent = hidden ? 'Show Caller Transcript' : 'Hide Caller Transcript';
+    };
+    window.toggleSimHelp = () => {
+      const box = document.getElementById('simHelpBox');
+      const hidden = box.classList.toggle('hidden');
+      document.getElementById('btnToggleSimHelpLabel').textContent = hidden ? 'Show Model Response' : 'Hide Model Response';
+    };
+
+    // ==================== 05: EXPANDED PRACTICE LAB ====================
+    window.switchStage5Tab = (tab) => {
+      document.getElementById('panelExChoice').classList.toggle('hidden', tab !== 'choice');
+      document.getElementById('panelExUpgrade').classList.toggle('hidden', tab !== 'upgrade');
+      document.getElementById('tabExChoice').className = tab === 'choice'
+        ? 'px-4 py-2 rounded-xl text-xs font-bold bg-[#002B5C] text-white'
+        : 'px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0B172E] border-[1.5px] border-indigo-500/25 dark:border-indigo-400/25';
+      document.getElementById('tabExUpgrade').className = tab === 'upgrade'
+        ? 'px-4 py-2 rounded-xl text-xs font-bold bg-[#002B5C] text-white'
+        : 'px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0B172E] border-[1.5px] border-indigo-500/25 dark:border-indigo-400/25';
+    };
+
+    const CALL_QUIZZES = [
+      {
+        q: "1. You answer an external call and the person doesn't give their name.",
+        opts: ["A) Who are you?", "B) May I ask who's calling, please?", "C) Tell me your name."],
+        ans: "B",
+        why: "'May I ask who's calling, please?' is polite and standard in professional calls."
+      },
+      {
+        q: "2. You want to connect a caller to your colleague in Sales.",
+        opts: ["A) I'll put you through to Sales.", "B) I'll put you across Sales.", "C) I'll pass you over Sales."],
+        ans: "A",
+        why: "'Put someone through (to someone/a department)' is the natural phrasal verb for transferring calls."
+      },
+      {
+        q: "3. The caller's voice is cutting in and out on a weak mobile signal.",
+        opts: ["A) You are breaking down.", "B) You're breaking up a bit.", "C) You are breaking out."],
+        ans: "B",
+        why: "'Breaking up' is used when a phone or audio connection drops in and out."
+      },
+      {
+        q: "4. You need to call a client to follow up on a quote you sent yesterday.",
+        opts: ["A) I'm calling for the quote.", "B) I'm calling regarding the quote I sent yesterday.", "C) I call you for quote."],
+        ans: "B",
+        why: "'I'm calling regarding...' states the topic clearly and professionally."
+      },
+      {
+        q: "5. You answer the phone at Provo and introduce yourself.",
+        opts: ["A) Hello, Provo, I am David.", "B) Hello, Provo, David speaking.", "C) Hello, Provo, here is David."],
+        ans: "B",
+        why: "On the phone in English, use '[Name] speaking' or 'This is [Name]' rather than 'I am...'."
+      },
+      {
+        q: "6. You missed a client's call earlier and phone them back.",
+        opts: ["A) I'm returning your call from earlier today.", "B) I give you back your call.", "C) I repeat your call now."],
+        ans: "A",
+        why: "'Return someone's call' or 'call someone back' are the natural collocations."
+      }
+    ];
+
+    function renderCallQuiz() {
+      document.getElementById('panelExChoice').innerHTML = CALL_QUIZZES.map((item, idx) => `
+        <div class="bg-white dark:bg-[#0B172E] border-[1.5px] border-indigo-500/25 dark:border-indigo-400/25 rounded-3xl p-5 space-y-3 shadow-md">
+          <p class="text-sm font-bold text-[#002B5C] dark:text-white">${item.q}</p>
+          <div class="space-y-1.5">
+            ${item.opts.map(op => {
+              const letter = op[0];
+              return `<button type="button" onclick="checkCallQuiz(${idx}, '${letter}')" class="w-full text-left px-3.5 py-2 rounded-xl bg-[#F4F5FA] dark:bg-[#071224] hover:border-indigo-400 border-[1.5px] border-indigo-500/20 dark:border-indigo-400/20 text-xs sm:text-sm font-medium transition">${op}</button>`;
+            }).join('')}
+          </div>
+          <div id="cqFb${idx}" class="hidden p-3 rounded-xl text-xs font-semibold"></div>
+        </div>
+      `).join('');
+    }
+    window.checkCallQuiz = (idx, picked) => {
+      const item = CALL_QUIZZES[idx];
+      const fb = document.getElementById(`cqFb${idx}`);
+      fb.classList.remove('hidden');
+      if (picked === item.ans) {
+        fb.className = 'p-3 rounded-xl text-xs font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Correct (${item.ans}). ${item.why}`;
+      } else {
+        fb.className = 'p-3 rounded-xl text-xs font-semibold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `✗ Try again. ${item.why}`;
+      }
+    };
+
+    const UPGRADE_EXERCISES = [
+      {
+        blunt: 'Too blunt: "Wait. I check."',
+        prompt: "Upgrade this into a polite hold phrase:",
+        model: `✓ "Just a moment, please. I'll check that for you right away."`
+      },
+      {
+        blunt: 'Too blunt: "She is not here. Call later."',
+        prompt: "Upgrade this when a colleague is in a meeting:",
+        model: `✓ "I'm afraid she's in a meeting at the moment. Can I take a message or have her call you back?"`
+      },
+      {
+        blunt: 'Grammar slip: "I am calling for confirm the meeting."',
+        prompt: "Fix the preposition / verb form:",
+        model: `✓ "I'm calling to confirm tomorrow's meeting." (Use to + infinitive for purpose, or regarding + noun).`
+      },
+      {
+        blunt: 'Too blunt: "Write me your email."',
+        prompt: "Ask for an email address and read it back politely:",
+        model: `✓ "Could I take your email address, please? Let me read that back to make sure I have it right."`
+      }
+    ];
+
+    function renderUpgradeExercises() {
+      document.getElementById('panelExUpgrade').innerHTML = UPGRADE_EXERCISES.map((ex) => `
+        <div class="bg-white dark:bg-[#0B172E] border-[1.5px] border-indigo-500/25 dark:border-indigo-400/25 rounded-3xl p-5 space-y-3 shadow-md">
+          <div class="text-xs font-extrabold text-rose-600 dark:text-rose-400">${ex.blunt}</div>
+          <p class="text-sm font-bold text-[#002B5C] dark:text-white">${ex.prompt}</p>
+          <button type="button" onclick="this.nextElementSibling.classList.toggle('hidden')" class="px-3.5 py-1.5 rounded-xl bg-[#002B5C] text-white text-xs font-bold">
+            Reveal Upgrade
+          </button>
+          <div class="hidden p-3 rounded-xl bg-emerald-500/15 text-emerald-800 dark:text-emerald-300 text-xs sm:text-sm font-bold">
+            ${ex.model}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // ==================== 06: GAMIFIED SWITCHBOARD RUSH ====================
+    const GAME_ROUNDS = [
+      {
+        caller: "“Good morning, Provo! Can I speak to Alex in Design, please?”",
+        opts: [
+          "Sure, one moment please—I'll put you through to Alex right away.",
+          "Wait here, I go to find Alex now.",
+          "You hold the phone, Alex comes maybe."
+        ],
+        ans: 0,
+        explain: "'One moment please—I'll put you through...' is smooth, polite, and natural."
+      },
+      {
+        caller: "“Hi, this is Marc from Solis Tech. Is Clara available?” (Clara is in a meeting)",
+        opts: [
+          "No, she is busy. Bye!",
+          "I'm afraid Clara is in a meeting at the moment. Can I take a message?",
+          "Clara doesn't want to talk right now."
+        ],
+        ans: 1,
+        explain: "'I'm afraid... Can I take a message?' softens the unavailability and offers a next step."
+      },
+      {
+        caller: "“Sorry, my signal is terrible here... did you say Thursday at... [static]?”",
+        opts: [
+          "Your phone is broken.",
+          "Sorry, you're breaking up a bit. I said Thursday at 11:00 a.m.",
+          "Speak louder, I don't understand nothing."
+        ],
+        ans: 1,
+        explain: "'You're breaking up a bit' is the exact idiomatic phrase for a bad phone signal."
+      },
+      {
+        caller: "“Hello, I'm calling to check if you received our signed contract.”",
+        opts: [
+          "Hold on a second while I check our inbox for you.",
+          "I don't know, call tomorrow.",
+          "Why are you calling me for that?"
+        ],
+        ans: 0,
+        explain: "Telling the caller what you are checking keeps the call calm and helpful."
+      },
+      {
+        caller: "“Could you take down my email? It's p.roca@nordik-group.com.”",
+        opts: [
+          "Okay, written.",
+          "Let me read that back to confirm: p dot roca at nordik hyphen group dot com.",
+          "Send it by WhatsApp, I don't write emails."
+        ],
+        ans: 1,
+        explain: "Reading an email back using 'dot', 'at', and 'hyphen' prevents typos."
+      },
+      {
+        caller: "“Oh, apologies—I think I dialed the wrong extension!”",
+        opts: [
+          "Yes, look at the number next time.",
+          "No problem at all! Which department were you trying to reach?",
+          "Wrong number, goodbye."
+        ],
+        ans: 1,
+        explain: "Offering to redirect a misdialed caller is great customer etiquette."
+      },
+      {
+        caller: "“Hi, I missed a call from this number ten minutes ago.”",
+        opts: [
+          "Hello! Yes, this is David from Provo—I was calling regarding tomorrow's class.",
+          "Who called you? I don't know.",
+          "Maybe someone called by mistake."
+        ],
+        ans: 0,
+        explain: "Identify yourself, the company ('Provo'), and the reason for the earlier call."
+      },
+      {
+        caller: "“Would 4:30 p.m. today work for a quick 10-minute call?”",
+        opts: [
+          "4:30 is impossible for me always.",
+          "I'm in a meeting at 4:30, so could we do 5:15 p.m. instead?",
+          "No, 4:30 no."
+        ],
+        ans: 1,
+        explain: "Give a brief reason and immediately propose an alternative time."
+      },
+      {
+        caller: "“My surname is Wojcik—let me know if you need the spelling.”",
+        opts: [
+          "Yes please, could you spell it out for me?",
+          "No, I write whatever.",
+          "Too difficult, skip it."
+        ],
+        ans: 0,
+        explain: "'Could you spell it out for me?' is polite and saves follow-up errors."
+      },
+      {
+        caller: "“Thanks so much for sorting that out so quickly!”",
+        opts: [
+          "Ok.",
+          "You're very welcome! I'll send a quick confirmation email—have a great day.",
+          "Yes, I am very fast."
+        ],
+        ans: 1,
+        explain: "Close warmly and confirm the written follow-up."
+      }
+    ];
+
+    let gRound = 0;
+    let gScore = 0;
+    let gStreak = 0;
+    let gAnswered = false;
+    let gClock = 15;
+    let gClockId = null;
+
+    function startRoundClock() {
+      if (gClockId) clearInterval(gClockId);
+      gClock = 15;
+      document.getElementById('gameClockDisplay').textContent = `${gClock}s`;
+      gClockId = setInterval(() => {
+        if (gClock > 0) {
+          gClock--;
+          document.getElementById('gameClockDisplay').textContent = `${gClock}s`;
+        } else {
+          clearInterval(gClockId);
+          gClockId = null;
+        }
+      }, 1000);
+    }
+
+    function renderGameRound() {
+      const idx = gRound % GAME_ROUNDS.length;
+      const r = GAME_ROUNDS[idx];
+      gAnswered = false;
+      document.getElementById('gameRoundBadge').textContent = `INCOMING CALL ${idx + 1} / ${GAME_ROUNDS.length}`;
+      document.getElementById('gameCallerPrompt').textContent = r.caller;
+      document.getElementById('gameFeedbackBox').classList.add('hidden');
+      document.getElementById('gameOptionsGrid').innerHTML = r.opts.map((opt, i) => `
+        <button type="button" onclick="pickGameOption(${i})" class="text-left p-4 rounded-2xl bg-[#F4F5FA] dark:bg-[#071224] hover:border-indigo-400 border-[1.5px] border-indigo-500/20 dark:border-indigo-400/20 text-sm font-bold transition">
+          ${String.fromCharCode(65 + i)}) ${opt}
+        </button>
+      `).join('');
+      if (currentStage === 5) startRoundClock();
+    }
+
+    window.speakGameCall = () => speakText(GAME_ROUNDS[gRound % GAME_ROUNDS.length].caller);
+
+    window.pickGameOption = (pickedIdx) => {
+      if (gAnswered) return;
+      gAnswered = true;
+      if (gClockId) { clearInterval(gClockId); gClockId = null; }
+      const r = GAME_ROUNDS[gRound % GAME_ROUNDS.length];
+      const fb = document.getElementById('gameFeedbackBox');
+      fb.classList.remove('hidden');
+      if (pickedIdx === r.ans) {
+        gScore++;
+        gStreak++;
+        fb.className = 'p-4 rounded-2xl text-sm font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Great call handling! (+1 pt) — ${r.explain}`;
+      } else {
+        gStreak = 0;
+        fb.className = 'p-4 rounded-2xl text-sm font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `✗ Best choice was ${String.fromCharCode(65 + r.ans)}. ${r.explain}`;
+      }
+      document.getElementById('gameScoreBadge').textContent = `SCORE: ${gScore} / ${GAME_ROUNDS.length}`;
+      document.getElementById('gameStreakBadge').textContent = `STREAK: ${gStreak} 🔥`;
+    };
+
+    window.nextGameRound = () => {
+      gRound++;
+      renderGameRound();
+    };
+
+    window.restartSwitchboardGame = () => {
+      gRound = 0;
+      gScore = 0;
+      gStreak = 0;
+      document.getElementById('gameScoreBadge').textContent = `SCORE: 0 / ${GAME_ROUNDS.length}`;
+      document.getElementById('gameStreakBadge').textContent = `STREAK: 0 🔥`;
+      renderGameRound();
+    };
+
+    // Init
+    goStage(0);
+    switchPhraseBank('making');
+    renderDictation();
+    renderSim();
+    renderCallQuiz();
+    renderUpgradeExercises();
+    renderGameRound();
+    lucide.createIcons();
+  </script>
+</body>
+</html>

@@ -19,6 +19,46 @@
       --white: #FFFFFF;
       --border: #E2E8F0;
     }
+    html.dark {
+      --bg: #061322;
+      --text: #F1F5F9;
+      --muted: #94A3B8;
+      --white: #0C1E33;
+      --border: rgba(56, 189, 248, 0.2);
+    }
+
+    html.dark .card {
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    }
+
+    html.dark .filter-btn {
+      background: #0C1E33;
+      color: #E2E8F0;
+      border-color: rgba(56, 189, 248, 0.25);
+    }
+
+    html.dark .filter-btn.active {
+      background: var(--teal);
+      color: #FFFFFF;
+      border-color: var(--teal);
+    }
+
+    .theme-toggle {
+      background: rgba(255, 255, 255, 0.12);
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 999px;
+      padding: 0.4rem 0.85rem;
+      font-family: inherit;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .theme-toggle:hover {
+      background: rgba(255, 255, 255, 0.22);
+    }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -290,11 +330,10 @@
 <body>
 
   <header>
-    <a href="index.html" class="brand">
-      <img src="https://i.postimg.cc/vBt4qH44/download.png" alt="PROVO" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
-      <span style="display:none;">PROVO</span>
-    </a>
-    <span class="header-badge">Student Learning Portal</span>
+  <div style="display: flex; align-items: center; gap: 0.6rem;">
+        <button id="portalThemeBtn" type="button" class="theme-toggle" title="Toggle Dark Mode">🌙 Dark</button>
+        <span class="badge">Student Learning Portal</span>
+      </div>
   </header>
 
   <section class="hero">
@@ -474,8 +513,24 @@
     });
 
     searchInput.addEventListener('input', filterLessons);
-  </script>
+ <script>
+    (function () {
+      const btn = document.getElementById('portalThemeBtn');
+      const root = document.documentElement;
+      const saved = localStorage.getItem('provoPortalTheme');
 
+      if (saved === 'dark') {
+        root.classList.add('dark');
+        btn.textContent = '☀️ Light';
+      }
+
+      btn.addEventListener('click', () => {
+        const isDark = root.classList.toggle('dark');
+        localStorage.setItem('provoPortalTheme', isDark ? 'dark' : 'light');
+        btn.textContent = isDark ? '☀️ Light' : '🌙 Dark';
+      });
+    })();
+  </script>
 </body>
 </html>
 

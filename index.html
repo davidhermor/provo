@@ -19,6 +19,7 @@
       --white: #FFFFFF;
       --border: #E2E8F0;
     }
+
     html.dark {
       --bg: #061322;
       --text: #F1F5F9;
@@ -31,10 +32,25 @@
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
     }
 
+    html.dark .card h2 {
+      color: #F8FAFC;
+    }
+
+    html.dark .search-box input {
+      background: #0C1E33;
+      color: #F8FAFC;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+    }
+
     html.dark .filter-btn {
       background: #0C1E33;
       color: #E2E8F0;
       border-color: rgba(56, 189, 248, 0.25);
+    }
+
+    html.dark .filter-btn:hover {
+      background: #132C4A;
+      color: #FFFFFF;
     }
 
     html.dark .filter-btn.active {
@@ -70,6 +86,7 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      transition: background-color 0.2s ease, color 0.2s ease;
     }
 
     /* Sticky Navbar */
@@ -83,13 +100,14 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 1rem;
     }
 
     .brand {
       display: flex;
       align-items: center;
       text-decoration: none;
-      color: var(--white);
+      color: #FFFFFF;
       font-weight: 800;
       font-size: 1.35rem;
       letter-spacing: 0.5px;
@@ -101,9 +119,15 @@
       display: block;
     }
 
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
     .header-badge {
       background: rgba(255, 255, 255, 0.12);
-      color: var(--white);
+      color: #FFFFFF;
       padding: 0.35rem 0.85rem;
       border-radius: 999px;
       font-size: 0.82rem;
@@ -114,7 +138,7 @@
     /* Hero Banner */
     .hero {
       background: linear-gradient(135deg, var(--navy) 0%, var(--ocean) 55%, var(--teal) 100%);
-      color: var(--white);
+      color: #FFFFFF;
       padding: 3.5rem 5% 4.5rem;
       text-align: center;
     }
@@ -149,6 +173,7 @@
       font-size: 0.98rem;
       box-shadow: 0 10px 25px rgba(0, 20, 45, 0.22);
       outline: none;
+      background: #FFFFFF;
       color: var(--text);
     }
 
@@ -204,7 +229,7 @@
 
     .filter-btn.active {
       background: var(--navy);
-      color: var(--white);
+      color: #FFFFFF;
     }
 
     /* Lesson Grid */
@@ -230,17 +255,6 @@
       transform: translateY(-4px);
       box-shadow: 0 12px 28px rgba(0, 43, 92, 0.11);
       border-color: var(--teal);
-    }
-
-    .card.coming-soon {
-      opacity: 0.72;
-      background: #FAFCFF;
-    }
-
-    .card.coming-soon:hover {
-      transform: none;
-      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
-      border-color: var(--border);
     }
 
     .card-top {
@@ -271,8 +285,6 @@
       color: var(--teal);
     }
 
-    .status.soon { color: var(--muted); }
-
     .card h2 {
       font-size: 1.22rem;
       color: var(--navy);
@@ -295,7 +307,7 @@
       padding: 0.8rem 1.2rem;
       border-radius: 11px;
       background: linear-gradient(135deg, var(--navy), var(--ocean));
-      color: var(--white);
+      color: #FFFFFF;
       text-decoration: none;
       font-weight: 700;
       font-size: 0.92rem;
@@ -303,12 +315,6 @@
     }
 
     .card-btn:hover { opacity: 0.92; }
-
-    .card-btn.disabled {
-      background: #E2E8F0;
-      color: #64748B;
-      pointer-events: none;
-    }
 
     .empty-state {
       text-align: center;
@@ -330,10 +336,19 @@
 <body>
 
   <header>
-  <div style="display: flex; align-items: center; gap: 0.6rem;">
-        <button id="portalThemeBtn" type="button" class="theme-toggle" title="Toggle Dark Mode">🌙 Dark</button>
-        <span class="badge">Student Learning Portal</span>
-      </div>
+    <a href="index.html" class="brand" title="PROVO">
+      <img
+        src="https://i.postimg.cc/vBt4qH44/download.png"
+        alt="PROVO"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"
+      >
+      <span style="display: none;">PROVO</span>
+    </a>
+
+    <div class="header-actions">
+      <button id="portalThemeBtn" type="button" class="theme-toggle" title="Toggle Dark Mode">🌙 Dark</button>
+      <span class="header-badge">Student Learning Portal</span>
+    </div>
   </header>
 
   <section class="hero">
@@ -341,7 +356,7 @@
     <p>Select your class topic below to review grammar, practice vocabulary, and complete interactive exercises.</p>
     <div class="search-box">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <input type="text" id="searchInput" placeholder="Search lessons (e.g. Present Continuous, OTE, Kids)...">
+      <input type="text" id="searchInput" placeholder="Search lessons (e.g. Present Continuous, OTE, Kids, Teens)...">
     </div>
   </section>
 
@@ -376,14 +391,13 @@
             <span class="tag ote">OTE Prep (B1 / B2)</span>
             <span class="status">● Available</span>
           </div>
-          <h2>Speaking Warm-Ups & Time Fillers</h2>
+          <h2>Speaking Warm-Ups &amp; Time Fillers</h2>
           <p>Interactive conversation cards, 20s/30s speaking timer, key vocabulary with audio pronunciation, and direct voice note submission.</p>
         </div>
         <a href="time-fillers.html" class="card-btn">Start Lesson →</a>
       </article>
 
-      <!-- PLACEHOLDER LESSON 2 (Duplicate this block to add new lessons) -->
-            <!-- ACTIVE LESSON 3 -->
+      <!-- ACTIVE LESSON 3 -->
       <article class="card" data-category="a1-a2">
         <div>
           <div class="card-top">
@@ -396,34 +410,33 @@
         <a href="present-simple-vs-continuous.html" class="card-btn">Start Lesson →</a>
       </article>
 
-      <!-- PLACEHOLDER LESSON 3 -->
-      <!-- Lesson Card: Present Simple -->
-<article class="card" data-category="a1-a2">
-  <div>
-    <div class="card-top">
-      <span class="tag">A1–A2 Grammar</span>
-      <span class="status">● Available</span>
-    </div>
-    <h2>Present Simple</h2>
-    <p>Habits, routines, third-person endings, interactive form inspector, vocabulary match, and voice notes.</p>
-  </div>
-  <a href="present-simple.html" class="card-btn">Start Lesson →</a>
-</article>
-
-      <!-- PLACEHOLDER LESSON 4 -->
+      <!-- ACTIVE LESSON 4 -->
       <article class="card" data-category="a1-a2">
-  <div>
-    <div class="card-top">
-      <span class="tag">A1–A2 Grammar</span>
-      <span class="status">● Available</span>
-    </div>
-    <h2>Possessive Adjectives</h2>
-    <p>My, your, his, her, its, our, and their before nouns, contraction traps, visual warm-up, practice pack, and arcade.</p>
-  </div>
-  <a href="possessive-adjectives.html" class="card-btn">Start Lesson →</a>
-</article>
+        <div>
+          <div class="card-top">
+            <span class="tag">A1–A2 Grammar</span>
+            <span class="status">● Available</span>
+          </div>
+          <h2>Present Simple</h2>
+          <p>Habits, routines, third-person endings, interactive form inspector, vocabulary match, and voice notes.</p>
+        </div>
+        <a href="present-simple.html" class="card-btn">Start Lesson →</a>
+      </article>
 
-  <!-- ACTIVE LESSON: KIDS COLORS -->
+      <!-- ACTIVE LESSON 5 -->
+      <article class="card" data-category="a1-a2">
+        <div>
+          <div class="card-top">
+            <span class="tag">A1–A2 Grammar</span>
+            <span class="status">● Available</span>
+          </div>
+          <h2>Possessive Adjectives</h2>
+          <p>My, your, his, her, its, our, and their before nouns, contraction traps, visual warm-up, practice pack, and arcade.</p>
+        </div>
+        <a href="possessive-adjectives.html" class="card-btn">Start Lesson →</a>
+      </article>
+
+      <!-- ACTIVE LESSON: KIDS COLORS -->
       <article class="card" data-category="kids">
         <div>
           <div class="card-top">
@@ -436,7 +449,7 @@
         <a href="kids-colors.html" class="card-btn">Start Lesson →</a>
       </article>
 
-    <!-- ACTIVE LESSON: TEENS DAILY ROUTINE -->
+      <!-- ACTIVE LESSON: TEENS DAILY ROUTINE -->
       <article class="card" data-category="teens">
         <div>
           <div class="card-top">
@@ -448,20 +461,6 @@
         </div>
         <a href="teens-daily-routine.html" class="card-btn">Start Lesson →</a>
       </article>
-      </article>
-
-      <!-- PLACEHOLDER LESSON (Duplicate this block to add new lessons) -->
-      <article class="card coming-soon" data-category="kids">
-        <div>
-          <div class="card-top">
-            <span class="tag kids">Kids · Age 6</span>
-            <span class="status soon">○ Coming Soon</span>
-          </div>
-          <h2>Next Kids Topic</h2>
-          <p>Upcoming interactive lesson with audio, story, and classroom activities.</p>
-        </div>
-        <a href="#" class="card-btn disabled">Coming Soon</a>
-      </article>
 
     </div>
 
@@ -471,7 +470,7 @@
   </main>
 
   <footer>
-    <strong>PROVO</strong> • Interactive Classroom & Self-Study Hub
+    <strong>PROVO</strong> • Interactive Classroom &amp; Self-Study Hub
   </footer>
 
   <script>
@@ -513,7 +512,9 @@
     });
 
     searchInput.addEventListener('input', filterLessons);
- <script>
+  </script>
+
+  <script>
     (function () {
       const btn = document.getElementById('portalThemeBtn');
       const root = document.documentElement;
@@ -533,6 +534,3 @@
   </script>
 </body>
 </html>
-
-
-

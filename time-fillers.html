@@ -228,10 +228,13 @@
           <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">20s / 30s Filler &amp; Extension Lab</h2>
         </div>
 
-        <div class="flex items-center gap-2 bg-white dark:bg-[#0C1E33] border-[1.5px] border-sky-500/25 dark:border-sky-400/25 px-3.5 py-2 rounded-2xl shadow-sm">
+        <div class="flex flex-wrap items-center gap-2 bg-white dark:bg-[#0C1E33] border-[1.5px] border-sky-500/25 dark:border-sky-400/25 px-3.5 py-2 rounded-2xl shadow-sm">
+          <div class="inline-flex rounded-xl p-0.5 bg-[#F0F6FA] dark:bg-[#071627] border border-sky-500/20">
+            <button type="button" id="btnPreset20" onclick="setOtePreset(20)" class="px-2.5 py-1 rounded-lg text-xs font-extrabold bg-sky-600 text-white transition">20s</button>
+            <button type="button" id="btnPreset30" onclick="setOtePreset(30)" class="px-2.5 py-1 rounded-lg text-xs font-extrabold text-slate-600 dark:text-slate-300 transition">30s</button>
+          </div>
           <i data-lucide="timer" class="w-4 h-4 text-sky-500"></i>
           <span id="oteTimerDisplay" class="font-mono text-sm font-extrabold text-[#002B5C] dark:text-sky-300">00:20</span>
-           <span id="oteTimerDisplay" class="font-mono text-sm font-extrabold text-[#002B5C] dark:text-sky-300">00:30</span>
           <button type="button" onclick="toggleOteTimer()" id="btnOteTimerToggle" class="px-2.5 py-1 rounded-lg bg-[#002B5C] text-white text-xs font-bold">Start</button>
           <button type="button" onclick="resetOteTimer()" class="px-2.5 py-1 rounded-lg border border-slate-300 dark:border-sky-400/25 text-xs font-bold">Reset</button>
         </div>
@@ -766,23 +769,44 @@
         sample: "Let me think how to phrase that... I like to list the pros and cons and sleep on it before deciding. So basically, taking a little extra time avoids rushed choices."
       }
     ];
-    let oteIdx = 0;
-    let oteSec = 25;
+let oteIdx = 0;
+    let otePresetSec = 20;
+    let oteSec = 20;
     let oteTimerId = null;
 
     function updateOteTimerUI() {
       document.getElementById('oteTimerDisplay').textContent = `00:${String(oteSec).padStart(2, '0')}`;
+      const b20 = document.getElementById('btnPreset20');
+      const b30 = document.getElementById('btnPreset30');
+      if (b20 && b30) {
+        b20.className = otePresetSec === 20
+          ? 'px-2.5 py-1 rounded-lg text-xs font-extrabold bg-sky-600 text-white transition'
+          : 'px-2.5 py-1 rounded-lg text-xs font-extrabold text-slate-600 dark:text-slate-300 transition';
+        b30.className = otePresetSec === 30
+          ? 'px-2.5 py-1 rounded-lg text-xs font-extrabold bg-sky-600 text-white transition'
+          : 'px-2.5 py-1 rounded-lg text-xs font-extrabold text-slate-600 dark:text-slate-300 transition';
+      }
     }
+
+    window.setOtePreset = (secs) => {
+      if (oteTimerId) { clearInterval(oteTimerId); oteTimerId = null; }
+      otePresetSec = secs;
+      oteSec = secs;
+      document.getElementById('btnOteTimerToggle').textContent = 'Start';
+      document.getElementById('otePromptBadge').textContent = `PROMPT ${oteIdx + 1} / ${OTE_PROMPTS.length} · ${otePresetSec}s`;
+      updateOteTimerUI();
+    };
 
     function renderOtePrompt() {
       oteIdx = (oteIdx + OTE_PROMPTS.length) % OTE_PROMPTS.length;
       const item = OTE_PROMPTS[oteIdx];
       if (oteTimerId) { clearInterval(oteTimerId); oteTimerId = null; }
-      oteSec = item.secs;
+      otePresetSec = item.secs === 30 ? 30 : 20;
+      oteSec = otePresetSec;
       document.getElementById('btnOteTimerToggle').textContent = 'Start';
       updateOteTimerUI();
 
-      document.getElementById('otePromptBadge').textContent = `PROMPT ${oteIdx + 1} / ${OTE_PROMPTS.length} · ${item.secs}s`;
+      document.getElementById('otePromptBadge').textContent = `PROMPT ${oteIdx + 1} / ${OTE_PROMPTS.length} · ${otePresetSec}s`;
       document.getElementById('oteQuestionHeading').textContent = item.q;
       document.getElementById('oteChallengeRule').textContent = item.rule;
       document.getElementById('oteSampleText').textContent = item.sample;
@@ -825,7 +849,7 @@
     };
     window.resetOteTimer = () => {
       if (oteTimerId) { clearInterval(oteTimerId); oteTimerId = null; }
-      oteSec = OTE_PROMPTS[oteIdx].secs;
+      oteSec = otePresetSec;
       document.getElementById('btnOteTimerToggle').textContent = 'Start';
       updateOteTimerUI();
     };

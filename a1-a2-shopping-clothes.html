@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A1–A2 · SHOPPING &amp; CLOTHES | PROVO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <style>
+    @keyframes stageIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .stage-anim { animation: stageIn 0.24s ease-out forwards; }
+  </style>
+</head>
+<body class="bg-[#F2F6FA] text-slate-900 dark:bg-[#061322] dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
+
+  <!-- Sticky Top Bar (A1-A2 Ocean / Teal PROVO Stage Lab Palette) -->
+  <header class="sticky top-0 z-40 bg-[#002B5C] text-white border-b border-cyan-300/20 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2.5">
+        <a href="index.html" class="flex items-center shrink-0" title="PROVO">
+          <img
+            src="https://i.postimg.cc/vBt4qH44/download.png"
+            alt="PROVO"
+            class="h-8 w-auto object-contain block"
+            onerror="this.style.display='none'; document.getElementById('provoFallback').classList.remove('hidden');"
+          />
+          <span id="provoFallback" class="hidden font-extrabold tracking-widest text-lg text-white">PROVO</span>
+        </a>
+        <span class="px-2.5 py-0.5 rounded-full bg-[#0089A7]/30 border border-cyan-300/35 text-cyan-100 text-[11px] font-bold tracking-wider">
+          A1–A2 · SHOPPING &amp; CLOTHES
+        </span>
+        <span id="stageTitleHeader" class="hidden xl:inline-block text-xs font-bold tracking-wider text-cyan-200">
+          01 · COVER &amp; ROADMAP
+        </span>
+      </div>
+
+      <div id="stagePills" class="flex items-center gap-1 overflow-x-auto py-1"></div>
+
+      <div class="flex items-center gap-2 shrink-0">
+        <button
+          id="themeBtn"
+          type="button"
+          class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition"
+          title="Toggle Theme"
+        >
+          <i id="themeIcon" data-lucide="sun" class="w-4 h-4"></i>
+        </button>
+        <a
+          href="index.html"
+          class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs font-bold bg-white/10 hover:bg-white/20 text-white transition"
+        >
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          <span class="hidden sm:inline">PORTAL</span>
+        </a>
+      </div>
+    </div>
+    <div class="w-full h-1.5 bg-black/25">
+      <div id="stageProgress" class="h-full bg-[#0089A7] transition-all duration-300" style="width: 11.11%"></div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl w-full mx-auto px-4 sm:px-6 py-7 sm:py-10 flex-1 flex flex-col justify-center">
+
+    <!-- ==================== 01: COVER & ROADMAP ==================== -->
+    <section data-stage="0" class="stage stage-anim">
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-[#0089A7]/25 dark:border-cyan-400/25 shadow-xl">
+        <div class="lg:col-span-5 h-64 sm:h-auto relative bg-[#091726] overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1050&q=80"
+            alt="Clothing store racks and shopping"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#061322]/90 via-[#061322]/25 to-transparent"></div>
+          <div class="absolute bottom-5 left-5 right-5 space-y-1 text-white">
+            <span class="text-xs font-bold tracking-widest text-cyan-300 uppercase">A1–A2 Vocabulary &amp; Speaking</span>
+            <p class="text-sm font-semibold text-slate-200">Stores, Style Opposites &amp; Shopping Habits Around the World</p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 p-7 sm:p-10 flex flex-col justify-center space-y-5">
+          <span class="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-[#0089A7]/15 border border-[#0089A7]/30 text-[#005A8D] dark:text-cyan-300 text-xs font-bold tracking-wider">
+            <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+            <span>PROVO STAGE LAB · A1–A2</span>
+          </span>
+
+          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight text-[#002B5C] dark:text-white">
+            Shopping &amp; <span class="text-[#0089A7]">Clothes</span>
+          </h1>
+
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            Talk about your shopping habits, test your store vocabulary in the <strong>Shopping Quiz</strong>, match <strong>8 pairs of style &amp; price opposites</strong>, guess famous markets and shopping districts, read four personal style stories, and present your favorite outfit.
+          </p>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1 text-xs">
+            <button type="button" onclick="goStage(1)" class="p-3 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-[#0089A7]/20 dark:border-cyan-400/20 hover:border-[#0089A7] text-left transition">
+              <div class="font-extrabold text-[#0089A7]">02 · LEAD-IN</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">12 Speaking Cards</div>
+            </button>
+            <button type="button" onclick="goStage(2)" class="p-3 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-[#0089A7]/20 dark:border-cyan-400/20 hover:border-[#0089A7] text-left transition">
+              <div class="font-extrabold text-[#0089A7]">03 · SHOP QUIZ</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">5 Questions</div>
+            </button>
+            <button type="button" onclick="goStage(3)" class="p-3 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-[#0089A7]/20 dark:border-cyan-400/20 hover:border-[#0089A7] text-left transition">
+              <div class="font-extrabold text-[#0089A7]">04 · OPPOSITES</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">16 Style Words</div>
+            </button>
+            <button type="button" onclick="goStage(8)" class="p-3 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-[#0089A7]/20 dark:border-cyan-400/20 hover:border-[#0089A7] text-left transition">
+              <div class="font-extrabold text-[#0089A7]">09 · GAME ARENA</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">Checkout Rush</div>
+            </button>
+          </div>
+
+          <div class="pt-1">
+            <button
+              type="button"
+              onclick="goStage(1)"
+              class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-[#002B5C] to-[#0089A7] hover:opacity-95 text-white text-sm sm:text-base font-bold shadow-lg transition"
+            >
+              <span>Start Stage 02: Lead-In Discussion</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 02: LEAD-IN CONVERSATION CARDS (12 CARDS, HIDDEN STARTERS) ==================== -->
+    <section data-stage="1" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-[#0089A7]/20 dark:border-cyan-400/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-[#0089A7] uppercase">Stage 02 · Lead-In</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Warm-Up Speaking Questions</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Discuss each question freely first; reveal the help starter only if you need a boost.</p>
+      </div>
+
+      <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-[#0089A7]/25 dark:border-cyan-400/25 rounded-3xl overflow-hidden max-w-5xl mx-auto w-full shadow-xl">
+        <div class="grid grid-cols-1 lg:grid-cols-12">
+          <div id="leadPhotoBox" class="lg:col-span-5 h-60 sm:h-72 lg:h-auto bg-[#091726] overflow-hidden"></div>
+          <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-5">
+            <div class="space-y-4">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <span id="leadBadge" class="px-3.5 py-1 rounded-full bg-[#002B5C] text-white text-xs font-bold">QUESTION 1 / 12</span>
+                <button type="button" onclick="speakLeadQ()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#0089A7] text-white text-xs font-bold">
+                  <i data-lucide="volume-2" class="w-4 h-4"></i>
+                  <span>Listen</span>
+                </button>
+              </div>
+
+              <h3 id="leadQuestionText" class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+
+              <div class="space-y-2">
+                <button id="btnToggleLeadHelp" type="button" onclick="toggleLeadHelp()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#0089A7]/15 hover:bg-[#0089A7]/25 text-[#005A8D] dark:text-cyan-300 text-xs font-bold transition">
+                  <i data-lucide="eye" class="w-4 h-4"></i>
+                  <span id="btnToggleLeadHelpLabel">Show Help Starter</span>
+                </button>
+                <div id="leadHelpBox" class="hidden p-4 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-[#0089A7]/20 dark:border-cyan-400/20">
+                  <span class="text-[11px] font-bold uppercase tracking-wider text-[#0089A7]">Speaking Starter</span>
+                  <p id="leadStarterText" class="text-sm font-semibold text-slate-700 dark:text-slate-200 mt-1"></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between gap-3 pt-3 border-t border-slate-100 dark:border-cyan-400/15">
+              <button type="button" onclick="stepLead(-1)" class="px-4 py-2.5 rounded-xl border border-slate-300 dark:border-cyan-400/25 text-xs font-bold">← Previous</button>
+              <div id="leadDots" class="flex flex-wrap justify-center gap-1.5"></div>
+              <button type="button" onclick="stepLead(1)" class="px-4 py-2.5 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 03: SHOPPING QUIZ (1 BY 1 INTERACTIVE WITH PHOTOS) ==================== -->
+    <section data-stage="2" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-[#0089A7]/20 dark:border-cyan-400/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-[#0089A7] uppercase">Stage 03 · Shopping Quiz</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Stores &amp; Clothes Quiz</h2>
+        </div>
+        <span id="sqScoreBadge" class="px-3.5 py-1.5 rounded-xl bg-[#002B5C] text-white text-xs font-extrabold">SCORE: 0 / 5</span>
+      </div>
+
+      <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-[#0089A7]/25 dark:border-cyan-400/25 rounded-3xl overflow-hidden max-w-4xl mx-auto w-full shadow-xl">
+        <div class="grid grid-cols-1 md:grid-cols-12">
+          <div id="sqPhotoBox" class="md:col-span-5 h-56 md:h-auto bg-[#091726] overflow-hidden"></div>
+          <div class="md:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-5">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span id="sqBadge" class="px-3 py-1 rounded-full bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300 text-xs font-extrabold">QUESTION 1 / 5</span>
+                <button type="button" onclick="speakShopQuiz()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#0089A7] text-white text-xs font-bold">
+                  <i data-lucide="volume-2" class="w-4 h-4"></i>
+                  <span>Listen</span>
+                </button>
+              </div>
+
+              <h3 id="sqQuestionText" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+
+              <div id="sqOptionsBox" class="space-y-2.5"></div>
+
+              <div id="sqFeedbackBox" class="hidden p-3.5 rounded-2xl text-xs sm:text-sm font-bold"></div>
+            </div>
+
+            <div class="flex items-center justify-between gap-3 pt-3 border-t border-slate-100 dark:border-cyan-400/15">
+              <button type="button" onclick="stepShopQuiz(-1)" class="px-4 py-2.5 rounded-xl border border-slate-300 dark:border-cyan-400/25 text-xs font-bold">← Prev</button>
+              <div id="sqDots" class="flex gap-1.5"></div>
+              <button type="button" onclick="stepShopQuiz(1)" class="px-4 py-2.5 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 04: VOCABULARY — MATCH THE OPPOSITES ==================== -->
+    <section data-stage="3" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-3 border-b border-[#0089A7]/20 dark:border-cyan-400/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-[#0089A7] uppercase">Stage 04 · Vocabulary Opposites</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Match the Opposite Shopping &amp; Style Words</h2>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5">Tap a word on the left, then tap its opposite on the right to lock in the pair.</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <span id="oppScoreBadge" class="px-3.5 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-extrabold">MATCHED: 0 / 8</span>
+          <button type="button" onclick="initOppositesGame()" class="px-3.5 py-2 rounded-xl border-[1.5px] border-[#0089A7]/25 dark:border-cyan-400/25 text-xs font-bold">
+            Reset Pairs
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div class="lg:col-span-4 bg-white dark:bg-[#0C1E33] border-[1.5px] border-[#0089A7]/25 dark:border-cyan-400/25 rounded-3xl overflow-hidden shadow-lg">
+          <div class="h-40 bg-[#091726] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=800&q=80" alt="Clothes and fabrics" class="w-full h-full object-cover" />
+          </div>
+          <div class="p-5 space-y-2.5">
+            <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#0089A7]">Word Inspector</span>
+            <h3 id="oppInspectorTitle" class="text-xl font-extrabold text-[#002B5C] dark:text-white">Tap any word</h3>
+            <p id="oppInspectorDef" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+              Select a shopping or clothes adjective to hear its pronunciation and see an example sentence.
+            </p>
+            <button id="btnSpeakOppWord" type="button" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#0089A7] text-white text-xs font-bold">
+              <i data-lucide="volume-2" class="w-4 h-4"></i>
+              <span>Hear Example</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="lg:col-span-8 bg-white dark:bg-[#0C1E33] border-[1.5px] border-[#0089A7]/25 dark:border-cyan-400/25 rounded-3xl p-5 sm:p-7 space-y-4 shadow-lg">
+          <div class="grid grid-cols-2 gap-3 sm:gap-5">
+            <div class="space-y-2">
+              <div class="text-xs font-extrabold uppercase tracking-wider text-[#0089A7] text-center">Column A</div>
+              <div id="oppLeftCol" class="space-y-2"></div>
+            </div>
+            <div class="space-y-2">
+              <div class="text-xs font-extrabold uppercase tracking-wider text-[#0089A7] text-center">Column B (Opposites)</div>
+              <div id="oppRightCol" class="space-y-2"></div>
+            </div>
+          </div>
+          <div id="oppFeedbackMsg" class="text-center text-xs sm:text-sm font-bold text-[#0089A7] dark:text-cyan-300 min-h-[1.25rem]"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 05: DISCUSSION & SHOPAHOLIC TALK ==================== -->
+    <section data-stage="4" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-[#0089A7]/20 dark:border-cyan-400/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-[#0089A7] uppercase">Stage 05 · Speaking &amp; Vocabulary</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Are You a Window Shopper or a Bargain Hunter?</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Use the style &amp; price adjectives from Stage 04 in your answers!</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-[#0089A7]/25 dark:border-cyan-400/25 shadow-xl max-w-5xl mx-auto w-full">
+        <div class="lg:col-span-5 h-60 sm:h-auto bg-[#091726] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80" alt="Friends carrying shopping bags" class="w-full h-full object-cover" />
+        </div>
+
+        <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-4">
+          <div class="p-4 rounded-2xl bg-[#0089A7]/15 border-[1.5px] border-[#0089A7]/30 space-y-1">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-[#005A8D] dark:text-cyan-300">Key Expression · Window Shopping</span>
+              <button type="button" onclick="speakText('Window shopping. Window shopping means looking at things in shop windows without buying anything.')" class="text-xs font-bold text-[#0089A7] inline-flex items-center gap-1">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i> Listen
+              </button>
+            </div>
+            <p class="text-xs sm:text-sm font-semibold text-[#002B5C] dark:text-white">
+              <strong>Window shopping</strong> — looking at clothes and products in store windows for fun without buying anything.
+            </p>
+          </div>
+
+          <div class="space-y-2.5">
+            <div class="p-3.5 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-[#0089A7]/20 dark:border-cyan-400/20 flex items-center justify-between gap-2">
+              <span class="text-sm font-extrabold text-[#002B5C] dark:text-white">1. Do you enjoy window shopping, or do you only go into stores when you need something?</span>
+              <button type="button" onclick="speakText('Do you enjoy window shopping, or do you only go into stores when you need something?')" class="text-[#0089A7] shrink-0"><i data-lucide="volume-2" class="w-4 h-4"></i></button>
+            </div>
+            <div class="p-3.5 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-[#0089A7]/20 dark:border-cyan-400/20 flex items-center justify-between gap-2">
+              <span class="text-sm font-extrabold text-[#002B5C] dark:text-white">2. What is the best bargain you have ever found in the sales?</span>
+              <button type="button" onclick="speakText('What is the best bargain you have ever found in the sales?')" class="text-[#0089A7] shrink-0"><i data-lucide="volume-2" class="w-4 h-4"></i></button>
+            </div>
+            <div class="p-3.5 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-[#0089A7]/20 dark:border-cyan-400/20 flex items-center justify-between gap-2">
+              <span class="text-sm font-extrabold text-[#002B5C] dark:text-white">3. Do you prefer buying brand-new clothes or second-hand / vintage items?</span>
+              <button type="button" onclick="speakText('Do you prefer buying brand-new clothes or second-hand vintage items?')" class="text-[#0089A7] shrink-0"><i data-lucide="volume-2" class="w-4 h-4"></i></button>
+            </div>
+            <div class="p-3.5 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-[#0089A7]/20 dark:border-cyan-400/20 flex items-center justify-between gap-2">
+              <span class="text-sm font-extrabold text-[#002B5C] dark:text-white">4. Have you ever bought something online that didn't fit when it arrived?</span>
+              <button type="button" onclick="speakText('Have you ever bought something online that did not fit when it arrived?')" class="text-[#0089A7] shrink-0"><i data-lucide="volume-2" class="w-4 h-4"></i></button>
+            </div>
+            <div class="p-3.5 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-[#0089A7]/20 dark:border-cyan-400/20 flex items-center justify-between gap-2">
+              <span class="text-sm font-extrabold text-[#002B5C] dark:text-white">5. What is more important when you buy shoes: comfort, price, or style?</span>
+              <button type="button" onclick="speakText('What is more important when you buy shoes: comfort, price, or style?')" class="text-[#0089A7] shrink-0"><i data-lucide="volume-2" class="w-4 h-4"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 06: PICTURES — NAME THE 3 ITEMS / PLACES ==================== -->
+    <section data-stage="5" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-[#0089A7]/20 dark:border-cyan-400/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-[#0089A7] uppercase">Stage 06 · Shopping Places &amp; Items</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Can You Name These 3 Shopping Places?</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Look at each picture: What kind of place is it? What can you buy there?</p>
+      </div>
+
+      <div id="shopPicsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-5"></div>
+    </section>
+
+    <!-- ==================== 07: READING — 4 SHOPPING STORIES + 5 COMPREHENSION QUESTIONS ==================== -->
+    <section data-stage="6" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-3 border-b border-[#0089A7]/20 dark:border-cyan-400/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-[#0089A7] uppercase">Stage 07 · Reading &amp; Comprehension</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Four Shopping Stories Around the World</h2>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <button id="tabStory0" type="button" onclick="selectShopStory(0)" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-[#002B5C] text-white">1. Sneakers (UK)</button>
+          <button id="tabStory1" type="button" onclick="selectShopStory(1)" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0C1E33] border-[1.5px] border-[#0089A7]/25 dark:border-cyan-400/25">2. Night Market (Thailand)</button>
+          <button id="tabStory2" type="button" onclick="selectShopStory(2)" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0C1E33] border-[1.5px] border-[#0089A7]/25 dark:border-cyan-400/25">3. Vintage Shop (France)</button>
+          <button id="tabStory3" type="button" onclick="selectShopStory(3)" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0C1E33] border-[1.5px] border-[#0089A7]/25 dark:border-cyan-400/25">4. Online Sales (Spain)</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <article class="lg:col-span-6 bg-white dark:bg-[#0C1E33] border-[1.5px] border-[#0089A7]/25 dark:border-cyan-400/25 rounded-3xl overflow-hidden shadow-lg">
+          <div id="storyPhotoBox" class="h-52 bg-[#091726] overflow-hidden"></div>
+          <div class="p-6 space-y-3.5">
+            <div class="flex items-center justify-between gap-2">
+              <span id="storyAuthorBadge" class="px-3 py-1 rounded-full bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300 text-xs font-extrabold"></span>
+              <button type="button" onclick="speakShopStory()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#0089A7] text-white text-xs font-bold">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                <span>Listen</span>
+              </button>
+            </div>
+            <h3 id="storyHeading" class="text-2xl font-extrabold text-[#002B5C] dark:text-white"></h3>
+            <p id="storyParagraph" class="text-sm leading-relaxed text-slate-700 dark:text-slate-300"></p>
+            <div class="p-3.5 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-[#0089A7]/20 dark:border-cyan-400/20">
+              <span class="text-[10px] font-extrabold uppercase tracking-wider text-[#0089A7]">Follow-Up Discussion</span>
+              <p id="storyFollowUpQ" class="text-xs sm:text-sm font-bold text-[#002B5C] dark:text-white mt-0.5"></p>
+            </div>
+          </div>
+        </article>
+
+        <div class="lg:col-span-6 space-y-3" id="compQuestionsList"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 08: SPEAKING TASK — FAVORITE OUTFIT OR ITEM ==================== -->
+    <section data-stage="7" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-[#0089A7]/20 dark:border-cyan-400/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-[#0089A7] uppercase">Stage 08 · Final Speaking Task</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">My Favorite Outfit or Purchase</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Tell your classmates about an item of clothing or outfit you love wearing.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div class="lg:col-span-6 bg-white dark:bg-[#0C1E33] border-[1.5px] border-[#0089A7]/25 dark:border-cyan-400/25 rounded-3xl overflow-hidden shadow-lg">
+          <div class="h-44 bg-[#091726] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=900&q=80" alt="Folded casual clothes" class="w-full h-full object-cover" />
+          </div>
+          <div class="p-6 space-y-3">
+            <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white">Use These 6 Points to Help You:</h3>
+            <ul class="space-y-2 text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200">
+              <li class="p-2.5 rounded-xl bg-[#F0F6FA] dark:bg-[#071627]">1. What is the item or outfit? (jacket, trainers, dress, etc.)</li>
+              <li class="p-2.5 rounded-xl bg-[#F0F6FA] dark:bg-[#071627]">2. Where and when did you buy it? (online, mall, market, in the sales)</li>
+              <li class="p-2.5 rounded-xl bg-[#F0F6FA] dark:bg-[#071627]">3. What color, size, and material is it? (cotton, denim, leather, etc.)</li>
+              <li class="p-2.5 rounded-xl bg-[#F0F6FA] dark:bg-[#071627]">4. Was it expensive or a good bargain?</li>
+              <li class="p-2.5 rounded-xl bg-[#F0F6FA] dark:bg-[#071627]">5. When do you usually wear it? (every day, weekends, special events)</li>
+              <li class="p-2.5 rounded-xl bg-[#F0F6FA] dark:bg-[#071627]">6. Why is it so comfortable or special to you?</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 bg-white dark:bg-[#0C1E33] border-[1.5px] border-[#0089A7]/25 dark:border-cyan-400/25 rounded-3xl p-6 space-y-4 shadow-lg">
+          <span class="px-3 py-1 rounded-full bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300 text-xs font-extrabold">
+            QUICK SPEECH ORGANIZER
+          </span>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">1. Item / Outfit</label>
+              <input id="soItem" type="text" placeholder="e.g. my dark blue denim jacket" class="w-full px-3.5 py-2 rounded-xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-[#0089A7]/20 dark:border-cyan-400/20 text-sm outline-none" />
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">2. Where &amp; When</label>
+              <input id="soWhere" type="text" placeholder="e.g. at a small vintage shop last autumn" class="w-full px-3.5 py-2 rounded-xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-[#0089A7]/20 dark:border-cyan-400/20 text-sm outline-none" />
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">3. Style &amp; Fit</label>
+              <input id="soStyle" type="text" placeholder="e.g. casual, loose, and soft cotton" class="w-full px-3.5 py-2 rounded-xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-[#0089A7]/20 dark:border-cyan-400/20 text-sm outline-none" />
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">4. Price / Bargain</label>
+              <input id="soPrice" type="text" placeholder="e.g. very cheap because it was half price" class="w-full px-3.5 py-2 rounded-xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-[#0089A7]/20 dark:border-cyan-400/20 text-sm outline-none" />
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">5. When You Wear It</label>
+              <input id="soWhen" type="text" placeholder="e.g. almost every weekend when I meet friends" class="w-full px-3.5 py-2 rounded-xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-[#0089A7]/20 dark:border-cyan-400/20 text-sm outline-none" />
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-slate-500 dark:text-slate-400 mb-1">6. Why You Love It</label>
+              <input id="soWhy" type="text" placeholder="e.g. it matches everything and feels super light" class="w-full px-3.5 py-2 rounded-xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-[#0089A7]/20 dark:border-cyan-400/20 text-sm outline-none" />
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-2">
+            <button type="button" onclick="buildOutfitTalk()" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#002B5C] to-[#0089A7] text-white text-xs font-bold shadow">
+              Build My Presentation
+            </button>
+            <button type="button" onclick="speakOutfitTalk()" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#002B5C] text-white text-xs font-bold">
+              <i data-lucide="volume-2" class="w-4 h-4"></i>
+              <span>Listen</span>
+            </button>
+          </div>
+
+          <div id="soOutputBox" class="p-4 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-[#0089A7]/20 dark:border-cyan-400/20 text-sm font-medium text-[#002B5C] dark:text-white leading-relaxed">
+            Fill in your notes above and click "Build My Presentation" to practice your 30-second talk!
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 09: GAMIFIED STAGE — CHECKOUT RUSH ==================== -->
+    <section data-stage="8" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-[#0089A7]/20 dark:border-cyan-400/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-[#0089A7] uppercase">Stage 09 · Classroom Game Arena</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Checkout Rush: Beat the Clock!</h2>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2">
+          <span id="shGameScore" class="px-3.5 py-2 rounded-2xl bg-[#002B5C] text-white text-xs font-extrabold shadow">
+            SCORE: 0 / 10
+          </span>
+          <span id="shGameStreak" class="px-3.5 py-2 rounded-2xl bg-white dark:bg-[#0C1E33] border-[1.5px] border-[#0089A7]/25 dark:border-cyan-400/25 text-xs font-extrabold">
+            STREAK: 0 🔥
+          </span>
+          <div class="flex items-center gap-1.5 bg-white dark:bg-[#0C1E33] border-[1.5px] border-[#0089A7]/25 dark:border-cyan-400/25 px-3 py-1.5 rounded-2xl">
+            <i data-lucide="timer" class="w-4 h-4 text-[#0089A7]"></i>
+            <span id="shGameClock" class="font-mono text-xs font-extrabold">15s</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-[#0089A7]/25 dark:border-cyan-400/25 rounded-3xl p-6 sm:p-8 max-w-4xl mx-auto w-full space-y-6 shadow-xl">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <span id="shRoundBadge" class="px-3.5 py-1 rounded-full bg-[#0089A7] text-white text-xs font-bold">ROUND 1 / 10</span>
+          <div class="flex gap-2">
+            <button type="button" onclick="speakShGame()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#002B5C] text-white text-xs font-bold">
+              <i data-lucide="volume-2" class="w-4 h-4"></i>
+              <span>Listen</span>
+            </button>
+            <button type="button" onclick="restartShGame()" class="px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-cyan-400/25 text-xs font-bold">
+              Restart
+            </button>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-[#0089A7]/20 dark:border-cyan-400/20 space-y-1.5">
+          <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#0089A7]">STORE &amp; FITTING ROOM CHALLENGE</span>
+          <p id="shGamePrompt" class="text-lg sm:text-xl font-extrabold text-[#002B5C] dark:text-white"></p>
+        </div>
+
+        <div id="shGameOptions" class="grid grid-cols-1 gap-3"></div>
+
+        <div id="shGameFeedback" class="hidden p-4 rounded-2xl text-sm font-bold"></div>
+
+        <div class="flex justify-end">
+          <button type="button" onclick="nextShGameRound()" class="px-6 py-3 rounded-2xl bg-[#002B5C] hover:bg-[#005A8D] text-white text-xs sm:text-sm font-bold">
+            Next Round →
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Navigation -->
+  <footer class="border-t border-[#0089A7]/20 dark:border-cyan-400/20 bg-white dark:bg-[#061322] py-4 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      <button id="btnPrev" type="button" onclick="goStage(currentStage - 1)" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-300 dark:border-cyan-400/25 hover:bg-slate-100 dark:hover:bg-[#132C4A] disabled:opacity-30 text-xs font-bold transition">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Previous</span>
+      </button>
+
+      <span id="stageCounter" class="text-xs font-bold tracking-widest text-slate-500 dark:text-slate-400">
+        01 / 09
+      </span>
+
+      <button id="btnNext" type="button" onclick="goStage(currentStage + 1)" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#002B5C] hover:bg-[#005A8D] disabled:opacity-30 text-xs font-bold text-white transition">
+        <span>Next</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    const STAGES = [
+      "01 · COVER & ROADMAP",
+      "02 · LEAD-IN",
+      "03 · SHOPPING QUIZ",
+      "04 · OPPOSITES",
+      "05 · DISCUSSION",
+      "06 · WORLD MARKETS",
+      "07 · READING & QUIZ",
+      "08 · FAVORITE OUTFIT",
+      "09 · CHECKOUT RUSH"
+    ];
+
+    let currentStage = 0;
+    const stageSections = document.querySelectorAll('.stage');
+
+    function goStage(idx) {
+      if (idx < 0 || idx >= stageSections.length) return;
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      currentStage = idx;
+      stageSections.forEach((s, i) => s.classList.toggle('hidden', i !== currentStage));
+      document.getElementById('stageTitleHeader').textContent = STAGES[currentStage];
+      document.getElementById('stageCounter').textContent = `${String(currentStage + 1).padStart(2, '0')} / ${String(stageSections.length).padStart(2, '0')}`;
+      document.getElementById('stageProgress').style.width = `${((currentStage + 1) / stageSections.length) * 100}%`;
+      document.getElementById('btnPrev').disabled = currentStage === 0;
+      document.getElementById('btnNext').disabled = currentStage === stageSections.length - 1;
+      renderStagePills();
+      if (currentStage === 8) startShGameClock();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      lucide.createIcons();
+    }
+
+    function renderStagePills() {
+      document.getElementById('stagePills').innerHTML = STAGES.map((_, i) => `
+        <button type="button" onclick="goStage(${i})" class="px-2.5 py-1 rounded-lg text-xs font-bold transition ${
+          i === currentStage ? 'bg-[#0089A7] text-white' : 'text-white/75 hover:text-white hover:bg-white/10'
+        }">${String(i + 1).padStart(2, '0')}</button>
+      `).join('');
+    }
+
+    const themeBtn = document.getElementById('themeBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    if (localStorage.getItem('provoShoppingTheme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      themeIcon.setAttribute('data-lucide', 'moon');
+    }
+    themeBtn.addEventListener('click', () => {
+      const dark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('provoShoppingTheme', dark ? 'dark' : 'light');
+      themeIcon.setAttribute('data-lucide', dark ? 'sun' : 'moon');
+      lucide.createIcons();
+    });
+
+    function speakText(text) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'en-US';
+      u.rate = 0.95;
+      window.speechSynthesis.speak(u);
+    }
+
+    // ==================== 02: 12 LEAD-IN QUESTIONS ====================
+    const LEAD_QUESTIONS = [
+      {
+        q: "1. Do you prefer shopping alone or with friends / family?",
+        starter: "I usually prefer shopping alone because I can look quickly, or with friends when I want an honest opinion...",
+        photo: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        q: "2. What is your favorite clothing store or shopping center?",
+        starter: "My favorite store is... because their clothes are comfortable and the prices are reasonable.",
+        photo: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        q: "3. Do you prefer shopping in physical stores or buying online?",
+        starter: "For shoes and jeans, I prefer physical stores so I can try them on, whereas online is great for...",
+        photo: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        q: "4. How often do you buy new clothes or shoes?",
+        starter: "I don't buy clothes very often—usually once a season or when I need something specific like trainers.",
+        photo: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        q: "5. Do you usually pay by card, with your phone, or in cash?",
+        starter: "Almost always with my phone or debit card because it's faster, though I keep some cash for small markets.",
+        photo: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        q: "6. Do you like waiting for the sales, or do you buy things whenever you see them?",
+        starter: "If it's an expensive jacket or coat, I definitely wait for the winter or summer sales!",
+        photo: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        q: "7. What colors do you wear most often?",
+        starter: "My wardrobe is full of dark blue, black, and grey, though in summer I wear brighter colors like...",
+        photo: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        q: "8. Do you prefer casual clothes (like hoodies and jeans) or smart clothes?",
+        starter: "On normal days I always choose casual, comfortable clothes, and I only dress smartly for...",
+        photo: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        q: "9. Have you ever bought something and never worn it?",
+        starter: "Yes! Once I bought a shirt that looked great in the store, but at home I realized it didn't match anything...",
+        photo: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        q: "10. Do you like visiting street markets or flea markets when you travel?",
+        starter: "Yes, street markets are fun because you can find local crafts, vintage items, and tasty street snacks.",
+        photo: "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        q: "11. Do you always keep your receipt after buying clothes?",
+        starter: "Yes, I always keep the receipt for a few weeks just in case I need to exchange the size or get a refund.",
+        photo: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        q: "12. What is the oldest item of clothing in your wardrobe that you still wear?",
+        starter: "I still wear an old sweatshirt / jacket from five years ago because it's super soft and comfortable!",
+        photo: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=900&q=80"
+      }
+    ];
+    let leadIdx = 0;
+
+    function renderLead() {
+      leadIdx = (leadIdx + LEAD_QUESTIONS.length) % LEAD_QUESTIONS.length;
+      const item = LEAD_QUESTIONS[leadIdx];
+      document.getElementById('leadBadge').textContent = `QUESTION ${leadIdx + 1} / ${LEAD_QUESTIONS.length}`;
+      document.getElementById('leadQuestionText').textContent = item.q;
+      document.getElementById('leadStarterText').textContent = item.starter;
+      document.getElementById('leadPhotoBox').innerHTML = `<img src="${item.photo}" alt="Shopping conversation" class="w-full h-full object-cover" loading="lazy" />`;
+      document.getElementById('leadHelpBox').classList.add('hidden');
+      document.getElementById('btnToggleLeadHelpLabel').textContent = 'Show Help Starter';
+      document.getElementById('leadDots').innerHTML = LEAD_QUESTIONS.map((_, i) => `
+        <button type="button" onclick="leadIdx=${i}; renderLead();" class="w-7 h-7 rounded-lg text-xs font-bold ${
+          i === leadIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#071627]'
+        }">${i + 1}</button>
+      `).join('');
+    }
+    window.stepLead = (d) => { leadIdx += d; renderLead(); };
+    window.speakLeadQ = () => speakText(LEAD_QUESTIONS[leadIdx].q);
+    window.toggleLeadHelp = () => {
+      const box = document.getElementById('leadHelpBox');
+      const hidden = box.classList.toggle('hidden');
+      document.getElementById('btnToggleLeadHelpLabel').textContent = hidden ? 'Show Help Starter' : 'Hide Help Starter';
+    };
+
+    // ==================== 03: SHOPPING QUIZ (5 QUESTIONS) ====================
+    const SHOP_QUIZ_ITEMS = [
+      {
+        q: "1. What do we call the small room in a clothing store where you put clothes on to check the size?",
+        opts: ["A. waiting room", "B. fitting room", "C. dressing table"],
+        ans: "B",
+        why: "In a shop, you try clothes on inside the 'fitting room' (or 'changing room').",
+        photo: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        q: "2. What is the piece of paper that proves you paid for an item in a store?",
+        opts: ["A. recipe", "B. ticket", "C. receipt"],
+        ans: "C",
+        why: "Careful! A 'recipe' is for cooking food; a 'receipt' (silent 'p') is proof of purchase.",
+        photo: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        q: "3. If a jacket costs half its normal price, we say it is a great...",
+        opts: ["A. bargain", "B. bill", "C. budget"],
+        ans: "A",
+        why: "A 'bargain' is something you buy for a much lower price than usual.",
+        photo: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        q: "4. When you return a broken item to a shop and they give your money back, you get a...",
+        opts: ["A. discount", "B. refund", "C. tip"],
+        ans: "B",
+        why: "A 'refund' is the money returned to you when you take an item back.",
+        photo: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        q: "5. What do we call the person who works in a shop and helps customers?",
+        opts: ["A. shop assistant", "B. customer", "C. cashier manager"],
+        ans: "A",
+        why: "A 'shop assistant' (or 'sales assistant') helps customers find sizes and items.",
+        photo: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&fit=crop&w=800&q=80"
+      }
+    ];
+    let sqIdx = 0;
+    const sqSolved = new Set();
+
+    function renderShopQuiz() {
+      sqIdx = (sqIdx + SHOP_QUIZ_ITEMS.length) % SHOP_QUIZ_ITEMS.length;
+      const item = SHOP_QUIZ_ITEMS[sqIdx];
+      document.getElementById('sqBadge').textContent = `QUESTION ${sqIdx + 1} / ${SHOP_QUIZ_ITEMS.length}`;
+      document.getElementById('sqQuestionText').textContent = item.q;
+      document.getElementById('sqPhotoBox').innerHTML = `<img src="${item.photo}" alt="Shopping quiz visual" class="w-full h-full object-cover" loading="lazy" />`;
+      document.getElementById('sqFeedbackBox').classList.add('hidden');
+
+      document.getElementById('sqOptionsBox').innerHTML = item.opts.map(op => {
+        const letter = op[0];
+        return `<button type="button" onclick="answerShopQuiz('${letter}')" class="w-full text-left px-4 py-3 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] hover:border-[#0089A7] border-[1.5px] border-[#0089A7]/20 dark:border-cyan-400/20 text-sm font-bold transition">${op}</button>`;
+      }).join('');
+
+      document.getElementById('sqDots').innerHTML = SHOP_QUIZ_ITEMS.map((_, i) => `
+        <button type="button" onclick="sqIdx=${i}; renderShopQuiz();" class="w-7 h-7 rounded-lg text-xs font-bold ${
+          i === sqIdx ? 'bg-[#002B5C] text-white' : sqSolved.has(i) ? 'bg-emerald-500/20 text-emerald-700 dark:text-emerald-300' : 'bg-slate-100 dark:bg-[#071627]'
+        }">${i + 1}</button>
+      `).join('');
+    }
+    window.speakShopQuiz = () => speakText(SHOP_QUIZ_ITEMS[sqIdx].q);
+    window.stepShopQuiz = (d) => { sqIdx += d; renderShopQuiz(); };
+    window.answerShopQuiz = (letter) => {
+      const item = SHOP_QUIZ_ITEMS[sqIdx];
+      const fb = document.getElementById('sqFeedbackBox');
+      fb.classList.remove('hidden');
+      if (letter === item.ans) {
+        sqSolved.add(sqIdx);
+        document.getElementById('sqScoreBadge').textContent = `SCORE: ${sqSolved.size} / ${SHOP_QUIZ_ITEMS.length}`;
+        fb.className = 'p-3.5 rounded-2xl text-xs sm:text-sm font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Correct (${item.ans})! ${item.why}`;
+      } else {
+        fb.className = 'p-3.5 rounded-2xl text-xs sm:text-sm font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `✗ Not quite. ${item.why}`;
+      }
+    };
+
+    // ==================== 04: VOCABULARY OPPOSITES (8 PAIRS) ====================
+    const OPPOSITE_PAIRS = [
+      { a: "cheap", b: "expensive", exA: "These cotton T-shirts are very cheap.", exB: "Designer leather coats are expensive." },
+      { a: "tight", b: "loose", exA: "These jeans are too tight around my waist.", exB: "I prefer loose, comfortable hoodies." },
+      { a: "casual", b: "smart / formal", exA: "Trainers and jeans are casual clothes.", exB: "He wears a smart suit to job interviews." },
+      { a: "brand-new", b: "second-hand", exA: "She bought a brand-new backpack for school.", exB: "I found a great second-hand jacket at the market." },
+      { a: "plain", b: "patterned", exA: "I usually wear a plain white shirt.", exB: "She loves colorful, patterned dresses." },
+      { a: "light", b: "heavy", exA: "Pack a light jacket for spring evenings.", exB: "This wool winter coat is very heavy." },
+      { a: "long", b: "short", exA: "The sleeves on this sweater are too long.", exB: "In summer, everyone wears short sleeves." },
+      { a: "in stock", b: "sold out", exA: "Good news—your size is still in stock!", exB: "Sorry, those popular boots are completely sold out." }
+    ];
+
+    let selectedLeft = null;
+    let matchedPairs = new Set();
+    let shuffledRight = [];
+
+    window.initOppositesGame = () => {
+      selectedLeft = null;
+      matchedPairs = new Set();
+      shuffledRight = OPPOSITE_PAIRS.map((p, idx) => ({ word: p.b, pairIdx: idx, ex: p.exB })).sort(() => Math.random() - 0.5);
+      document.getElementById('oppScoreBadge').textContent = `MATCHED: 0 / ${OPPOSITE_PAIRS.length}`;
+      document.getElementById('oppFeedbackMsg').textContent = "Select a word in Column A, then match its opposite in Column B.";
+      renderOppositesColumns();
+    };
+
+    function inspectOppWord(word, example) {
+      document.getElementById('oppInspectorTitle').textContent = word;
+      document.getElementById('oppInspectorDef').textContent = example;
+      document.getElementById('btnSpeakOppWord').onclick = () => speakText(`${word}. ${example}`);
+      speakText(word);
+    }
+
+    function renderOppositesColumns() {
+      document.getElementById('oppLeftCol').innerHTML = OPPOSITE_PAIRS.map((p, idx) => {
+        const done = matchedPairs.has(idx);
+        const active = selectedLeft === idx;
+        return `
+          <button type="button" ${done ? 'disabled' : ''} onclick="pickLeftOpp(${idx})" class="w-full px-3.5 py-2.5 rounded-xl border-[1.5px] text-xs sm:text-sm font-bold transition ${
+            done ? 'border-emerald-500 bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 opacity-70'
+              : active ? 'border-[#0089A7] bg-[#0089A7] text-white'
+              : 'border-[#0089A7]/20 dark:border-cyan-400/20 bg-[#F0F6FA] dark:bg-[#071627] hover:border-[#0089A7]'
+          }">${p.a}</button>
+        `;
+      }).join('');
+
+      document.getElementById('oppRightCol').innerHTML = shuffledRight.map((item, rIdx) => {
+        const done = matchedPairs.has(item.pairIdx);
+        return `
+          <button type="button" ${done ? 'disabled' : ''} onclick="pickRightOpp(${rIdx})" class="w-full px-3.5 py-2.5 rounded-xl border-[1.5px] text-xs sm:text-sm font-bold transition ${
+            done ? 'border-emerald-500 bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 opacity-70'
+              : 'border-[#0089A7]/20 dark:border-cyan-400/20 bg-[#F0F6FA] dark:bg-[#071627] hover:border-[#0089A7]'
+          }">${item.word}</button>
+        `;
+      }).join('');
+    }
+
+    window.pickLeftOpp = (idx) => {
+      selectedLeft = idx;
+      const p = OPPOSITE_PAIRS[idx];
+      inspectOppWord(p.a, p.exA);
+      renderOppositesColumns();
+    };
+
+    window.pickRightOpp = (rIdx) => {
+      const rightItem = shuffledRight[rIdx];
+      inspectOppWord(rightItem.word, rightItem.ex);
+      if (selectedLeft === null) {
+        document.getElementById('oppFeedbackMsg').textContent = "First tap a word in Column A, then tap its opposite here!";
+        return;
+      }
+      if (selectedLeft === rightItem.pairIdx) {
+        matchedPairs.add(selectedLeft);
+        document.getElementById('oppScoreBadge').textContent = `MATCHED: ${matchedPairs.size} / ${OPPOSITE_PAIRS.length}`;
+        document.getElementById('oppFeedbackMsg').textContent = `✓ Match: "${OPPOSITE_PAIRS[selectedLeft].a}" ↔ "${rightItem.word}"`;
+        selectedLeft = null;
+      } else {
+        document.getElementById('oppFeedbackMsg').textContent = `✗ "${OPPOSITE_PAIRS[selectedLeft].a}" and "${rightItem.word}" are not opposites. Try again!`;
+      }
+      renderOppositesColumns();
+    };
+
+    // ==================== 06: 3 SHOPPING PLACES PICTURES ====================
+    const SHOP_PICS = [
+      {
+        num: "PICTURE 1",
+        name: "Street Market / Open-Air Market",
+        desc: "Outdoor stalls selling fresh fruit, local food, handmade bags, and souvenirs.",
+        tip: "Great for finding unique gifts and chatting with local sellers.",
+        photo: "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        num: "PICTURE 2",
+        name: "Shopping Mall / Department Store",
+        desc: "A large indoor building with dozens of clothing stores, shoe shops, and cafés.",
+        tip: "Convenient on rainy days because everything is under one roof.",
+        photo: "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        num: "PICTURE 3",
+        name: "Vintage / Second-Hand Boutique",
+        desc: "A smaller shop selling pre-loved clothes, retro denim jackets, and classic accessories.",
+        tip: "Ideal for sustainable shopping and finding one-of-a-kind pieces.",
+        photo: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=800&q=80"
+      }
+    ];
+
+    function renderShopPics() {
+      document.getElementById('shopPicsGrid').innerHTML = SHOP_PICS.map((d) => `
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-[#0089A7]/25 dark:border-cyan-400/25 rounded-3xl overflow-hidden shadow-lg flex flex-col">
+          <div class="h-52 bg-[#091726] overflow-hidden">
+            <img src="${d.photo}" alt="${d.num}" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-5 space-y-3 flex-1 flex flex-col justify-between">
+            <div class="space-y-2">
+              <span class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-bold">${d.num}</span>
+              <p class="text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-300">
+                Name the shopping place and say what you can buy there!
+              </p>
+            </div>
+            <div class="space-y-2">
+              <button type="button" onclick="this.nextElementSibling.classList.toggle('hidden')" class="w-full py-2 rounded-xl bg-[#0089A7]/15 hover:bg-[#0089A7]/25 text-[#005A8D] dark:text-cyan-300 text-xs font-bold">
+                Reveal Place &amp; Vocabulary
+              </button>
+              <div class="hidden p-3 rounded-xl bg-[#F0F6FA] dark:bg-[#071627] text-xs space-y-1">
+                <div class="font-extrabold text-[#002B5C] dark:text-white">${d.name}</div>
+                <div class="text-slate-600 dark:text-slate-300">${d.desc}</div>
+                <div class="font-bold text-[#0089A7]">Note: ${d.tip}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // ==================== 07: 4 SHOPPING STORIES + 5 COMPREHENSION QUESTIONS ====================
+    const SHOP_STORIES = [
+      {
+        title: "SNEAKERS IN LONDON",
+        author: "Liam, 25, UK",
+        text: "I collect casual trainers, and London is an amazing city for shoe lovers. Last Saturday, I went to a famous sports store near Oxford Street. I wanted a pair of white and green sneakers, but my size was sold out on the shelf. Luckily, a friendly shop assistant checked the computer and found one last pair in the stockroom! They were comfortable and even had a 20% student discount. I wore them all the way home.",
+        followUp: "Do you own a pair of shoes or trainers that you wear almost every day?",
+        photo: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        title: "NIGHT MARKET IN BANGKOK",
+        author: "Nadia, 23, Thailand",
+        text: "In Bangkok, night markets are the best places to shop when the weather gets cooler. Every Friday evening, my friends and I walk past hundreds of small stalls with colorful lights. You can find light cotton shirts, handmade bags, and sunglasses at very cheap prices. If you buy two or three items from the same stall, the seller often gives you a special discount. After shopping, we always stop for fresh mango and sticky rice!",
+        followUp: "Do you like bargaining for a better price at markets, or do you prefer fixed prices?",
+        photo: "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        title: "VINTAGE TREASURES IN LYON",
+        author: "Camille, 29, France",
+        text: "Three years ago, I stopped buying fast fashion and started shopping in second-hand boutiques. In my neighborhood in Lyon, there is a small vintage shop with clothes from the 1980s and 1990s. Every jacket and sweater is unique, and the quality of the fabric is often much better than modern cheap clothes. Last month, I found a heavy wool coat for only twenty-five euros. It looked brand-new!",
+        followUp: "What do you think are the best reasons to buy second-hand clothes?",
+        photo: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        title: "ONLINE SALES IN MADRID",
+        author: "Hugo, 26, Spain",
+        text: "I hate crowded shopping malls on weekends, so I buy almost everything online. Before the winter sales start, I save the items I like in my online wishlist. When the prices drop at midnight, I order quickly before my size sells out. Last January, I ordered two shirts and a pair of trousers. One shirt was a little too tight around the shoulders, so I printed the return label and exchanged it for a larger size the next day.",
+        followUp: "What is the best or worst experience you have had buying clothes online?",
+        photo: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80"
+      }
+    ];
+    let currentStoryIdx = 0;
+
+    window.selectShopStory = (idx) => {
+      currentStoryIdx = idx;
+      [0, 1, 2, 3].forEach(i => {
+        document.getElementById('tabStory' + i).className = i === idx
+          ? 'px-3.5 py-2 rounded-xl text-xs font-bold bg-[#002B5C] text-white'
+          : 'px-3.5 py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0C1E33] border-[1.5px] border-[#0089A7]/25 dark:border-cyan-400/25';
+      });
+      const st = SHOP_STORIES[idx];
+      document.getElementById('storyPhotoBox').innerHTML = `<img src="${st.photo}" alt="${st.title}" class="w-full h-full object-cover" />`;
+      document.getElementById('storyAuthorBadge').textContent = st.author;
+      document.getElementById('storyHeading').textContent = st.title;
+      document.getElementById('storyParagraph').textContent = st.text;
+      document.getElementById('storyFollowUpQ').textContent = st.followUp;
+    };
+    window.speakShopStory = () => speakText(SHOP_STORIES[currentStoryIdx].text);
+
+    const COMP_QUESTIONS = [
+      {
+        q: "1. Where did the shop assistant find Liam's sneaker size in London?",
+        ans: "In the stockroom (after checking the computer)."
+      },
+      {
+        q: "2. When do Nadia and her friends visit the night market in Bangkok?",
+        ans: "Every Friday evening (when the weather gets cooler)."
+      },
+      {
+        q: "3. How much did Camille pay for her heavy wool coat in Lyon?",
+        ans: "Only twenty-five euros (€25)."
+      },
+      {
+        q: "4. Why did Hugo exchange one of the shirts he ordered online?",
+        ans: "Because it was a little too tight around the shoulders."
+      },
+      {
+        q: "5. What discount did Liam get on his white and green sneakers?",
+        ans: "A 20% student discount."
+      }
+    ];
+
+    function renderCompQuestions() {
+      document.getElementById('compQuestionsList').innerHTML = COMP_QUESTIONS.map((item) => `
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-[#0089A7]/25 dark:border-cyan-400/25 rounded-2xl p-4 space-y-2 shadow-sm">
+          <p class="text-xs sm:text-sm font-bold text-[#002B5C] dark:text-white">${item.q}</p>
+          <button type="button" onclick="this.nextElementSibling.classList.toggle('hidden')" class="px-3 py-1 rounded-lg bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300 text-xs font-bold">
+            Show Answer
+          </button>
+          <p class="hidden text-xs sm:text-sm font-bold text-emerald-700 dark:text-emerald-300">${item.ans}</p>
+        </div>
+      `).join('') + `
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-[#0089A7]/25 dark:border-cyan-400/25 rounded-2xl p-4 space-y-2 shadow-sm">
+          <p class="text-xs sm:text-sm font-extrabold text-[#0089A7]">6. Your Question (Ask a classmate!)</p>
+          <input type="text" placeholder="Write your own comprehension question about Liam, Nadia, Camille, or Hugo..." class="w-full px-3.5 py-2 rounded-xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-[#0089A7]/20 dark:border-cyan-400/20 text-xs sm:text-sm outline-none" />
+        </div>
+      `;
+    }
+
+    // ==================== 08: FAVORITE OUTFIT SPEECH BUILDER ====================
+    window.buildOutfitTalk = () => {
+      const item = document.getElementById('soItem').value.trim() || "my dark blue denim jacket";
+      const where = document.getElementById('soWhere').value.trim() || "at a small second-hand shop last autumn";
+      const style = document.getElementById('soStyle').value.trim() || "casual, loose, and soft cotton";
+      const price = document.getElementById('soPrice').value.trim() || "a great bargain because it was half price";
+      const when = document.getElementById('soWhen').value.trim() || "almost every weekend when I go out with friends";
+      const why = document.getElementById('soWhy').value.trim() || "it goes with everything and is super comfortable";
+
+      document.getElementById('soOutputBox').textContent =
+        `One of my favorite items to wear is ${item}. I bought it ${where}. It is ${style}, and it was ${price}. I usually wear it ${when}, and I love it because ${why}.`;
+    };
+    window.speakOutfitTalk = () => speakText(document.getElementById('soOutputBox').textContent);
+
+    // ==================== 09: CHECKOUT RUSH GAME ====================
+    const SH_GAME_ROUNDS = [
+      {
+        prompt: "Customer: 'Excuse me, where can I put this jacket on to check the size?' — Where should they go?",
+        opts: ["To the fitting room.", "To the waiting room.", "To the stockroom."],
+        ans: 0,
+        explain: "The 'fitting room' is where customers try clothes on in a store."
+      },
+      {
+        prompt: "You want to return a sweater that doesn't fit. What piece of paper do you need to show the cashier?",
+        opts: ["The recipe.", "The receipt.", "The menu."],
+        ans: 1,
+        explain: "A 'receipt' is the proof of purchase from a store."
+      },
+      {
+        prompt: "These jeans feel uncomfortable because they are too small around the legs. They are too...",
+        opts: ["loose", "tight", "plain"],
+        ans: 1,
+        explain: "The opposite of 'loose' is 'tight'."
+      },
+      {
+        prompt: "Shop Assistant: 'Sorry, we don't have any medium T-shirts left today.' — They are...",
+        opts: ["in stock", "sold out", "second-hand"],
+        ans: 1,
+        explain: "When zero items remain in the store, they are 'sold out'."
+      },
+      {
+        prompt: "A winter coat usually costs €120, but today it is €50! That price is a fantastic...",
+        opts: ["bargain", "refund", "receipt"],
+        ans: 0,
+        explain: "A 'bargain' is something bought at a much lower price than normal."
+      },
+      {
+        prompt: "In Camille's story, where does she like buying clothes in Lyon?",
+        opts: ["At a large airport duty-free shop.", "In a small vintage / second-hand boutique.", "Only in supermarkets."],
+        ans: 1,
+        explain: "Camille shops in a small vintage shop with 1980s and 1990s clothes."
+      },
+      {
+        prompt: "What does 'window shopping' mean?",
+        opts: ["Buying new windows for your house.", "Looking at items in shop windows without buying anything.", "Shopping online late at night."],
+        ans: 1,
+        explain: "'Window shopping' means browsing displays just for fun without buying."
+      },
+      {
+        prompt: "A T-shirt with one single color and no stripes, flowers, or drawings is...",
+        opts: ["patterned", "plain", "heavy"],
+        ans: 1,
+        explain: "'Plain' (one solid color) is the opposite of 'patterned'."
+      },
+      {
+        prompt: "In Hugo's story, how does he prepare before the online winter sales begin?",
+        opts: ["He saves the items he likes in his online wishlist.", "He sleeps until noon the next day.", "He calls the warehouse."],
+        ans: 0,
+        explain: "Hugo saves his favorite items in his wishlist so he can order fast at midnight."
+      },
+      {
+        prompt: "You bring back a broken pair of headphones and ask for your money back. You ask for a...",
+        opts: ["discount", "refund", "bargain"],
+        ans: 1,
+        explain: "Getting your money back when returning a product is called a 'refund'."
+      }
+    ];
+
+    let shRound = 0;
+    let shScore = 0;
+    let shStreak = 0;
+    let shAnswered = false;
+    let shClock = 15;
+    let shClockId = null;
+
+    function startShGameClock() {
+      if (shClockId) clearInterval(shClockId);
+      shClock = 15;
+      document.getElementById('shGameClock').textContent = `${shClock}s`;
+      shClockId = setInterval(() => {
+        if (shClock > 0) {
+          shClock--;
+          document.getElementById('shGameClock').textContent = `${shClock}s`;
+        } else {
+          clearInterval(shClockId);
+          shClockId = null;
+        }
+      }, 1000);
+    }
+
+    function renderShGame() {
+      const idx = shRound % SH_GAME_ROUNDS.length;
+      const r = SH_GAME_ROUNDS[idx];
+      shAnswered = false;
+      document.getElementById('shRoundBadge').textContent = `ROUND ${idx + 1} / ${SH_GAME_ROUNDS.length}`;
+      document.getElementById('shGamePrompt').textContent = r.prompt;
+      document.getElementById('shGameFeedback').classList.add('hidden');
+      document.getElementById('shGameOptions').innerHTML = r.opts.map((opt, i) => `
+        <button type="button" onclick="pickShGameOption(${i})" class="text-left p-4 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] hover:border-[#0089A7] border-[1.5px] border-[#0089A7]/20 dark:border-cyan-400/20 text-sm font-bold transition">
+          ${String.fromCharCode(65 + i)}) ${opt}
+        </button>
+      `).join('');
+      if (currentStage === 8) startShGameClock();
+    }
+
+    window.speakShGame = () => speakText(SH_GAME_ROUNDS[shRound % SH_GAME_ROUNDS.length].prompt);
+
+    window.pickShGameOption = (picked) => {
+      if (shAnswered) return;
+      shAnswered = true;
+      if (shClockId) { clearInterval(shClockId); shClockId = null; }
+      const r = SH_GAME_ROUNDS[shRound % SH_GAME_ROUNDS.length];
+      const fb = document.getElementById('shGameFeedback');
+      fb.classList.remove('hidden');
+      if (picked === r.ans) {
+        shScore++;
+        shStreak++;
+        fb.className = 'p-4 rounded-2xl text-sm font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Great style! (+1 pt) — ${r.explain}`;
+      } else {
+        shStreak = 0;
+        fb.className = 'p-4 rounded-2xl text-sm font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `✗ Best answer: ${String.fromCharCode(65 + r.ans)}. ${r.explain}`;
+      }
+      document.getElementById('shGameScore').textContent = `SCORE: ${shScore} / ${SH_GAME_ROUNDS.length}`;
+      document.getElementById('shGameStreak').textContent = `STREAK: ${shStreak} 🔥`;
+    };
+
+    window.nextShGameRound = () => { shRound++; renderShGame(); };
+    window.restartShGame = () => {
+      shRound = 0;
+      shScore = 0;
+      shStreak = 0;
+      document.getElementById('shGameScore').textContent = `SCORE: 0 / ${SH_GAME_ROUNDS.length}`;
+      document.getElementById('shGameStreak').textContent = `STREAK: 0 🔥`;
+      renderShGame();
+    };
+
+    // Init all stages
+    renderShGame();
+    goStage(0);
+    renderLead();
+    renderShopQuiz();
+    initOppositesGame();
+    renderShopPics();
+    selectShopStory(0);
+    renderCompQuestions();
+    lucide.createIcons();
+  </script>
+</body>
+</html>

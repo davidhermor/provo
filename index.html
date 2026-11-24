@@ -89,6 +89,132 @@
       transition: background-color 0.2s ease, color 0.2s ease;
     }
 
+    /* Password Gate Overlay */
+    #authGate {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: linear-gradient(135deg, #001B3A 0%, var(--navy) 50%, var(--ocean) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+    }
+
+    #authGate.hidden {
+      display: none;
+    }
+
+    .auth-card {
+      background: var(--white);
+      color: var(--text);
+      width: 100%;
+      max-width: 420px;
+      border-radius: 24px;
+      padding: 2.2rem 2rem;
+      box-shadow: 0 24px 60px rgba(0, 12, 30, 0.45);
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    html.dark .auth-card h2 {
+      color: #F8FAFC;
+    }
+
+    .auth-logo {
+      height: 40px;
+      margin: 0 auto 1rem;
+      display: block;
+    }
+
+    .auth-badge {
+      display: inline-block;
+      background: rgba(0, 137, 167, 0.15);
+      color: var(--teal);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      margin-bottom: 0.85rem;
+    }
+
+    .auth-card h2 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 0.45rem;
+    }
+
+    .auth-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+
+    .auth-input-wrap {
+      position: relative;
+      margin-bottom: 0.85rem;
+    }
+
+    .auth-input {
+      width: 100%;
+      padding: 0.9rem 3rem 0.9rem 1rem;
+      border-radius: 12px;
+      border: 1.5px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 600;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .auth-input:focus {
+      border-color: var(--teal);
+    }
+
+    .auth-eye {
+      position: absolute;
+      right: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .auth-btn {
+      width: 100%;
+      padding: 0.9rem 1.2rem;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--navy), var(--teal));
+      color: #FFFFFF;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+    }
+
+    .auth-btn:hover {
+      opacity: 0.93;
+    }
+
+    .auth-error {
+      color: #E11D48;
+      font-size: 0.83rem;
+      font-weight: 700;
+      margin-top: 0.75rem;
+      min-height: 1.2rem;
+    }
+
     /* Sticky Navbar */
     header {
       background-color: var(--navy);
@@ -331,9 +457,49 @@
       font-size: 0.88rem;
       color: var(--muted);
     }
+
+    @media (max-width: 520px) {
+      .header-badge { display: none; }
+    }
   </style>
 </head>
 <body>
+
+  <!-- Student Password Gate -->
+  <div id="authGate">
+    <div class="auth-card">
+      <div style="background: #002B5C; padding: 0.75rem 1.25rem; border-radius: 14px; display: inline-block; margin-bottom: 1rem;">
+        <img
+          src="https://i.postimg.cc/vBt4qH44/download.png"
+          alt="PROVO"
+          class="auth-logo"
+          style="margin: 0;"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"
+        >
+        <span style="display: none; color: #FFFFFF; font-weight: 800; font-size: 1.3rem;">PROVO</span>
+      </div>
+      <br>
+      <span class="auth-badge">Students Only</span>
+      <h2>Student Portal Access</h2>
+      <p>Enter your classroom password to unlock all interactive lessons and exam activities.</p>
+
+      <form id="authForm">
+        <div class="auth-input-wrap">
+          <input
+            type="password"
+            id="portalPassInput"
+            class="auth-input"
+            placeholder="Enter password..."
+            autocomplete="off"
+            required
+          >
+          <button type="button" id="togglePassEye" class="auth-eye">Show</button>
+        </div>
+        <button type="submit" class="auth-btn">Enter Portal →</button>
+      </form>
+      <div id="authError" class="auth-error"></div>
+    </div>
+  </div>
 
   <header>
     <a href="index.html" class="brand" title="PROVO">
@@ -347,6 +513,7 @@
 
     <div class="header-actions">
       <button id="portalThemeBtn" type="button" class="theme-toggle" title="Toggle Dark Mode">🌙 Dark</button>
+      <button id="portalLockBtn" type="button" class="theme-toggle" title="Lock Portal">🔒 Lock</button>
       <span class="header-badge">Student Learning Portal</span>
     </div>
   </header>
@@ -474,6 +641,52 @@
   </footer>
 
   <script>
+    // Password Gate Logic
+    (function () {
+      const PASS = 'IMAPROVOSTUDENT';
+      const STORAGE_KEY = 'provoStudentUnlocked';
+      const gate = document.getElementById('authGate');
+      const form = document.getElementById('authForm');
+      const input = document.getElementById('portalPassInput');
+      const errorBox = document.getElementById('authError');
+      const eyeBtn = document.getElementById('togglePassEye');
+      const lockBtn = document.getElementById('portalLockBtn');
+
+      if (localStorage.getItem(STORAGE_KEY) === 'true') {
+        gate.classList.add('hidden');
+      }
+
+      eyeBtn.addEventListener('click', () => {
+        const isPass = input.type === 'password';
+        input.type = isPass ? 'text' : 'password';
+        eyeBtn.textContent = isPass ? 'Hide' : 'Show';
+      });
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const typed = input.value.trim().toUpperCase();
+        if (typed === PASS) {
+          localStorage.setItem(STORAGE_KEY, 'true');
+          gate.classList.add('hidden');
+          errorBox.textContent = '';
+          input.value = '';
+        } else {
+          errorBox.textContent = 'Incorrect password. Please try again.';
+          input.focus();
+        }
+      });
+
+      lockBtn.addEventListener('click', () => {
+        localStorage.removeItem(STORAGE_KEY);
+        gate.classList.remove('hidden');
+        input.value = '';
+        errorBox.textContent = '';
+      });
+    })();
+  </script>
+
+  <script>
+    // Filters & Search
     const filterBtns = document.querySelectorAll('.filter-btn');
     const cards = document.querySelectorAll('.card');
     const searchInput = document.getElementById('searchInput');
@@ -515,6 +728,7 @@
   </script>
 
   <script>
+    // Dark / Light Theme
     (function () {
       const btn = document.getElementById('portalThemeBtn');
       const root = document.documentElement;

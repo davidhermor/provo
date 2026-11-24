@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OTE PREP · READING STRATEGY &amp; EXECUTION | PROVO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <style>
+    @keyframes stageIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .stage-anim { animation: stageIn 0.24s ease-out forwards; }
+  </style>
+</head>
+<body class="bg-[#F0F6FA] text-slate-900 dark:bg-[#061322] dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
+
+  <!-- Sticky Top Bar (OTE Prep Sky/Ocean Accent on Provo Stage Lab) -->
+  <header class="sticky top-0 z-40 bg-[#002B5C] text-white border-b border-sky-400/30 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2.5">
+        <a href="index.html" class="flex items-center shrink-0" title="PROVO">
+          <img
+            src="https://i.postimg.cc/vBt4qH44/download.png"
+            alt="PROVO"
+            class="h-8 w-auto object-contain block"
+            onerror="this.style.display='none'; document.getElementById('provoFallback').classList.remove('hidden');"
+          />
+          <span id="provoFallback" class="hidden font-extrabold tracking-widest text-lg text-white">PROVO</span>
+        </a>
+        <span class="px-2.5 py-0.5 rounded-full bg-sky-500/25 border border-sky-300/40 text-sky-100 text-[11px] font-bold tracking-wider">
+          OTE PREP · READING LAB
+        </span>
+        <span id="stageTitleHeader" class="hidden xl:inline-block text-xs font-bold tracking-wider text-sky-200">
+          01 · BRIEFING &amp; ROADMAP
+        </span>
+      </div>
+
+      <div id="stagePills" class="flex items-center gap-1 overflow-x-auto py-1"></div>
+
+      <div class="flex items-center gap-2 shrink-0">
+        <button
+          id="themeBtn"
+          type="button"
+          class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition"
+          title="Toggle Theme"
+        >
+          <i id="themeIcon" data-lucide="sun" class="w-4 h-4"></i>
+        </button>
+        <a
+          href="index.html"
+          class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs font-bold bg-white/10 hover:bg-white/20 text-white transition"
+        >
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          <span class="hidden sm:inline">PORTAL</span>
+        </a>
+      </div>
+    </div>
+    <div class="w-full h-1.5 bg-black/25">
+      <div id="stageProgress" class="h-full bg-sky-400 transition-all duration-300" style="width: 12.5%"></div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl w-full mx-auto px-4 sm:px-6 py-7 sm:py-10 flex-1 flex flex-col justify-center">
+
+    <!-- ==================== 01: BRIEFING & ROADMAP ==================== -->
+    <section data-stage="0" class="stage stage-anim">
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-sky-500/25 dark:border-sky-400/25 shadow-xl">
+        <div class="lg:col-span-5 h-64 sm:h-auto relative bg-[#091726] overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1050&q=80"
+            alt="Reading comprehension notebook and coffee"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#061322]/90 via-[#061322]/25 to-transparent"></div>
+          <div class="absolute bottom-5 left-5 right-5 space-y-1 text-white">
+            <span class="text-xs font-bold tracking-widest text-sky-300 uppercase">Oxford Test of English · Reading</span>
+            <p class="text-sm font-semibold text-slate-200">Speaking About Reading, Key Vocabulary, Traps &amp; Execution</p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 p-7 sm:p-10 flex flex-col justify-center space-y-5">
+          <span class="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-sky-500/15 border border-sky-400/35 text-sky-700 dark:text-sky-300 text-xs font-bold tracking-wider">
+            <i data-lucide="book-open-check" class="w-4 h-4"></i>
+            <span>PROVO STAGE LAB · OTE READING (B1 / B2)</span>
+          </span>
+
+          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight text-[#002B5C] dark:text-white">
+            Reading Strategy &amp; <span class="text-sky-600 dark:text-sky-400">Exam Execution</span>
+          </h1>
+
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            Build confidence and speed in the <strong>Oxford Test of English Reading</strong> module. Talk about what you enjoy or find difficult when reading, learn high-frequency exam vocabulary and contrast markers, practice paraphrases and extra exercises, spot distractor traps, and compete in a timed sprint.
+          </p>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1 text-xs">
+            <button type="button" onclick="goStage(1)" class="p-3 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-sky-500/20 dark:border-sky-400/20 hover:border-sky-400 text-left transition">
+              <div class="font-extrabold text-sky-600 dark:text-sky-400">02 · CONVO TALK</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">8 Reading Prompts</div>
+            </button>
+            <button type="button" onclick="goStage(2)" class="p-3 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-sky-500/20 dark:border-sky-400/20 hover:border-sky-400 text-left transition">
+              <div class="font-extrabold text-sky-600 dark:text-sky-400">03 · VOCAB BANK</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">12 Exam Words</div>
+            </button>
+            <button type="button" onclick="goStage(3)" class="p-3 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-sky-500/20 dark:border-sky-400/20 hover:border-sky-400 text-left transition">
+              <div class="font-extrabold text-sky-600 dark:text-sky-400">04 · WORKFLOW</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">4-Step Execution</div>
+            </button>
+            <button type="button" onclick="goStage(7)" class="p-3 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-sky-500/20 dark:border-sky-400/20 hover:border-sky-400 text-left transition">
+              <div class="font-extrabold text-sky-600 dark:text-sky-400">08 · GAME ARENA</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">Reading Sprint</div>
+            </button>
+          </div>
+
+          <div class="pt-1">
+            <button
+              type="button"
+              onclick="goStage(1)"
+              class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-[#002B5C] via-[#005A8D] to-[#0089A7] hover:opacity-95 text-white text-sm sm:text-base font-bold shadow-lg transition"
+            >
+              <span>Start Stage 02: Reading Conversation</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 02: CONVERSATION ABOUT READING (LIKES, DIFFICULTIES, HABITS) ==================== -->
+    <section data-stage="1" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-sky-500/20 dark:border-sky-400/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-sky-600 dark:text-sky-400 uppercase">Stage 02 · Reading Conversation</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">How Do You Feel About Reading &amp; Exam Texts?</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Talk about what you like, what is tough for you, and how you read; model starters stay hidden first.</p>
+      </div>
+
+      <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-sky-500/25 dark:border-sky-400/25 rounded-3xl p-6 sm:p-8 max-w-4xl mx-auto w-full space-y-5 shadow-xl">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <span id="rcBadge" class="px-3.5 py-1 rounded-full bg-[#002B5C] text-white text-xs font-bold">PROMPT 1 / 8</span>
+          <button type="button" onclick="speakRcPrompt()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#0089A7] text-white text-xs font-bold">
+            <i data-lucide="volume-2" class="w-4 h-4"></i>
+            <span>Listen</span>
+          </button>
+        </div>
+
+        <h3 id="rcQuestionText" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+
+        <!-- Hidden speaking starter by default -->
+        <div class="space-y-2">
+          <button id="btnToggleRcHelp" type="button" onclick="toggleRcHelp()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-sky-500/15 hover:bg-sky-500/25 text-sky-800 dark:text-sky-300 text-xs font-bold transition">
+            <i data-lucide="eye" class="w-4 h-4"></i>
+            <span id="btnToggleRcHelpLabel">Show Idea &amp; Starter</span>
+          </button>
+          <div id="rcHelpBox" class="hidden p-4 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-sky-500/20 dark:border-sky-400/20">
+            <span class="text-[11px] font-extrabold uppercase tracking-wider text-sky-600 dark:text-sky-300">Sample Speaking Starter</span>
+            <p id="rcStarterText" class="text-sm font-semibold text-slate-700 dark:text-slate-200 mt-1"></p>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between gap-3 pt-3 border-t border-slate-100 dark:border-sky-400/15">
+          <button type="button" onclick="stepRc(-1)" class="px-4 py-2.5 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">← Prev</button>
+          <div id="rcDots" class="flex flex-wrap justify-center gap-1.5"></div>
+          <button type="button" onclick="stepRc(1)" class="px-4 py-2.5 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 03: VOCABULARY THAT APPEARS IN READING & EXAMS ==================== -->
+    <section data-stage="2" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-3 border-b border-sky-500/20 dark:border-sky-400/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-sky-600 dark:text-sky-400 uppercase">Stage 03 · High-Frequency Reading Vocabulary</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Words &amp; Connectors You See in Texts</h2>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5">Switch between <strong>1 by 1 Focus</strong> and <strong>All Cards</strong> across three useful groups.</p>
+        </div>
+        <div class="flex flex-wrap items-center gap-2">
+          <div class="inline-flex rounded-xl p-1 bg-white dark:bg-[#0C1E33] border-[1.5px] border-sky-500/25 dark:border-sky-400/25">
+            <button id="btnVocViewSingle" type="button" onclick="setVocViewMode('single')" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 text-white transition">1 by 1 Focus</button>
+            <button id="btnVocViewGrid" type="button" onclick="setVocViewMode('grid')" class="px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition">All Cards</button>
+          </div>
+          <button id="tabVocContrast" type="button" onclick="switchVocGroup('contrast')" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-[#002B5C] text-white">1. Contrast &amp; Shift (4)</button>
+          <button id="tabVocVerbs" type="button" onclick="switchVocGroup('verbs')" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0C1E33] border-[1.5px] border-sky-500/25 dark:border-sky-400/25">2. Action &amp; Attitude Verbs (4)</button>
+          <button id="tabVocQualifiers" type="button" onclick="switchVocGroup('qualifiers')" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0C1E33] border-[1.5px] border-sky-500/25 dark:border-sky-400/25">3. Frequency &amp; Scope (4)</button>
+        </div>
+      </div>
+
+      <div id="vocSingleBox" class="max-w-4xl mx-auto w-full"></div>
+      <div id="vocGridBox" class="hidden grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+    </section>
+
+    <!-- ==================== 04: 4-STEP READING EXECUTION WORKFLOW ==================== -->
+    <section data-stage="3" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-3 border-b border-sky-500/20 dark:border-sky-400/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-sky-600 dark:text-sky-400 uppercase">Stage 04 · Execution Blueprint</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">How to Execute Any OTE Reading Task</h2>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5">Follow a repeatable sequence instead of re-reading the text randomly.</p>
+        </div>
+        <div class="inline-flex rounded-xl p-1 bg-white dark:bg-[#0C1E33] border-[1.5px] border-sky-500/25 dark:border-sky-400/25 self-start lg:self-auto">
+          <button id="btnStepViewSingle" type="button" onclick="setStepViewMode('single')" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 text-white transition">1 by 1 Focus</button>
+          <button id="btnStepViewAll" type="button" onclick="setStepViewMode('all')" class="px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition">All 4 Steps</button>
+        </div>
+      </div>
+
+      <div id="stepSingleContainer" class="max-w-4xl mx-auto w-full"></div>
+      <div id="stepAllContainer" class="hidden grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+    </section>
+
+    <!-- ==================== 05: PARAPHRASE & EVIDENCE MATCHING LAB ==================== -->
+    <section data-stage="4" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-sky-500/20 dark:border-sky-400/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-sky-600 dark:text-sky-400 uppercase">Stage 05 · Paraphrase Recognition</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Spotting Meaning Across Different Words</h2>
+        </div>
+        <span id="paraScoreBadge" class="px-3.5 py-1.5 rounded-xl bg-[#002B5C] text-white text-xs font-extrabold">SOLVED: 0 / 5</span>
+      </div>
+
+      <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-sky-500/25 dark:border-sky-400/25 rounded-3xl p-6 sm:p-8 max-w-4xl mx-auto w-full space-y-5 shadow-xl">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <span id="paraBadge" class="px-3.5 py-1 rounded-full bg-[#002B5C] text-white text-xs font-bold">PARAPHRASE 1 / 5</span>
+          <button type="button" onclick="speakParaSentence()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#0089A7] text-white text-xs font-bold">
+            <i data-lucide="volume-2" class="w-4 h-4"></i>
+            <span>Listen to Text Line</span>
+          </button>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-sky-500/20 dark:border-sky-400/20 space-y-1">
+          <span class="text-[11px] font-extrabold uppercase tracking-wider text-sky-600 dark:text-sky-300">Sentence in the Passage</span>
+          <p id="paraSourceSentence" class="text-base sm:text-lg font-extrabold text-[#002B5C] dark:text-white"></p>
+        </div>
+
+        <p class="text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-300">
+          Which option expresses the <strong>same meaning</strong> accurately without over-claiming?
+        </p>
+
+        <div id="paraOptionsBox" class="space-y-2.5"></div>
+
+        <div id="paraFeedbackBox" class="hidden p-4 rounded-2xl text-xs sm:text-sm font-bold"></div>
+
+        <div class="flex items-center justify-between gap-3 pt-3 border-t border-slate-100 dark:border-sky-400/15">
+          <button type="button" onclick="stepPara(-1)" class="px-4 py-2.5 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">← Prev</button>
+          <div id="paraDots" class="flex gap-1.5"></div>
+          <button type="button" onclick="stepPara(1)" class="px-4 py-2.5 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 06: EXTRA PRACTICE — CONNECTORS, INFERENCE & TRAP RADAR ==================== -->
+    <section data-stage="5" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-3 border-b border-sky-500/20 dark:border-sky-400/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-sky-600 dark:text-sky-400 uppercase">Stage 06 · Extra Practice &amp; Trap Radar</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Extra Exercises &amp; 6 Exam Traps</h2>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <button id="tabS6Traps" type="button" onclick="switchStage6Tab('traps')" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-[#002B5C] text-white">1. Trap Radar (6)</button>
+          <button id="tabS6Connectors" type="button" onclick="switchStage6Tab('connectors')" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0C1E33] border-[1.5px] border-sky-500/25 dark:border-sky-400/25">2. Connector &amp; Clue Drills (4)</button>
+          <button id="tabS6Tips" type="button" onclick="switchStage6Tab('tips')" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0C1E33] border-[1.5px] border-sky-500/25 dark:border-sky-400/25">3. Pro Exam Tips (6)</button>
+        </div>
+      </div>
+
+      <!-- Tab 1: 6 Traps (Explanation hidden by default) -->
+      <div id="panelS6Traps" class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-sky-500/25 dark:border-sky-400/25 rounded-3xl p-6 sm:p-8 max-w-4xl mx-auto w-full space-y-5 shadow-xl">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <span id="trapBadge" class="px-3.5 py-1 rounded-full bg-[#002B5C] text-white text-xs font-bold">TRAP 1 / 6</span>
+          <span id="trapNameTag" class="px-3 py-1 rounded-full bg-amber-400/20 text-amber-800 dark:text-amber-300 text-xs font-extrabold"></span>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-sky-500/20 dark:border-sky-400/20 space-y-1">
+          <span class="text-[11px] font-extrabold uppercase tracking-wider text-sky-600 dark:text-sky-300">Mini-Excerpt</span>
+          <p id="trapExcerpt" class="text-sm sm:text-base font-bold text-[#002B5C] dark:text-white"></p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
+          <div class="p-3.5 rounded-2xl bg-rose-500/10 border border-rose-500/25">
+            <span class="font-extrabold text-rose-700 dark:text-rose-300 block mb-0.5">Tempting Trap Option</span>
+            <span id="trapWrongOpt" class="font-semibold"></span>
+          </div>
+          <div class="p-3.5 rounded-2xl bg-emerald-500/10 border border-emerald-500/25">
+            <span class="font-extrabold text-emerald-700 dark:text-emerald-300 block mb-0.5">Accurate Reading Choice</span>
+            <span id="trapRightOpt" class="font-semibold"></span>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <button id="btnToggleTrapWhy" type="button" onclick="toggleTrapWhy()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-sky-500/15 hover:bg-sky-500/25 text-sky-800 dark:text-sky-300 text-xs font-bold transition">
+            <i data-lucide="eye" class="w-4 h-4"></i>
+            <span id="btnToggleTrapWhyLabel">Show Trap Analysis</span>
+          </button>
+          <div id="trapWhyBox" class="hidden p-4 rounded-2xl bg-sky-500/10 border border-sky-400/30 text-xs sm:text-sm font-semibold text-[#002B5C] dark:text-white">
+            <p id="trapWhyText"></p>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between gap-3 pt-3 border-t border-slate-100 dark:border-sky-400/15">
+          <button type="button" onclick="stepTrap(-1)" class="px-4 py-2.5 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">← Prev</button>
+          <div id="trapDots" class="flex gap-1.5"></div>
+          <button type="button" onclick="stepTrap(1)" class="px-4 py-2.5 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+        </div>
+      </div>
+
+      <!-- Tab 2: 4 Extra Connector & Clue Exercises -->
+      <div id="panelS6Connectors" class="hidden grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+
+      <!-- Tab 3: 6 Actionable Reading & Exam Tips -->
+      <div id="panelS6Tips" class="hidden grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+    </section>
+
+    <!-- ==================== 07: TIMED PASSAGE EXECUTION DRILL ==================== -->
+    <section data-stage="6" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-sky-500/20 dark:border-sky-400/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-sky-600 dark:text-sky-400 uppercase">Stage 07 · Timed Execution Drill</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Read &amp; Answer Under Pacing</h2>
+        </div>
+
+        <div class="flex items-center gap-2 bg-white dark:bg-[#0C1E33] border-[1.5px] border-sky-500/25 dark:border-sky-400/25 px-3.5 py-2 rounded-2xl shadow-sm">
+          <i data-lucide="timer" class="w-4 h-4 text-sky-500"></i>
+          <span id="drillTimerDisplay" class="font-mono text-sm font-extrabold text-[#002B5C] dark:text-sky-300">03:00</span>
+          <button type="button" onclick="toggleDrillTimer()" id="btnDrillTimerToggle" class="px-2.5 py-1 rounded-lg bg-[#002B5C] text-white text-xs font-bold">Start</button>
+          <button type="button" onclick="resetDrillTimer()" class="px-2.5 py-1 rounded-lg border border-slate-300 dark:border-sky-400/25 text-xs font-bold">Reset</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <article class="lg:col-span-6 bg-white dark:bg-[#0C1E33] border-[1.5px] border-sky-500/25 dark:border-sky-400/25 rounded-3xl p-6 space-y-3.5 shadow-lg">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-extrabold uppercase tracking-wider text-sky-600 dark:text-sky-300">Article · Short-Shift Trials</span>
+            <button type="button" onclick="speakDrillPassage()" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-[#0089A7] text-white text-xs font-bold">
+              <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+              <span>Listen</span>
+            </button>
+          </div>
+          <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white">Why Some Teams Test Four-Day Weeks</h3>
+          <div id="drillPassageBody" class="space-y-3 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+            <p>
+              Several medium-sized companies recently ran six-month trials cutting working time to four days with no drop in pay. Rather than working longer hours on the remaining days, staff were asked to cut unproductive meetings and protect quiet focus blocks.
+            </p>
+            <p>
+              At first, managers worried client response times might slow down. By the end of the trial, however, most teams met their targets on schedule, while employees reported lower stress and fewer sick days—though a few roles that require constant customer coverage still needed rotating shifts.
+            </p>
+          </div>
+        </article>
+
+        <div id="drillQuestionsCol" class="lg:col-span-6 space-y-3"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 08: GAMIFIED CLASSROOM CHALLENGE — "READING SPRINT" ==================== -->
+    <section data-stage="7" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-sky-500/20 dark:border-sky-400/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-sky-600 dark:text-sky-400 uppercase">Stage 08 · Classroom Game Arena</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Reading Sprint: Beat the Clock!</h2>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2">
+          <span id="rsGameScore" class="px-3.5 py-2 rounded-2xl bg-[#002B5C] text-white text-xs font-extrabold shadow">
+            SCORE: 0 / 8
+          </span>
+          <span id="rsGameStreak" class="px-3.5 py-2 rounded-2xl bg-white dark:bg-[#0C1E33] border-[1.5px] border-sky-500/25 dark:border-sky-400/25 text-xs font-extrabold">
+            STREAK: 0 🔥
+          </span>
+          <div class="flex items-center gap-1.5 bg-white dark:bg-[#0C1E33] border-[1.5px] border-sky-500/25 dark:border-sky-400/25 px-3 py-1.5 rounded-2xl">
+            <i data-lucide="timer" class="w-4 h-4 text-sky-500"></i>
+            <span id="rsGameClock" class="font-mono text-xs font-extrabold">14s</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-sky-500/25 dark:border-sky-400/25 rounded-3xl p-6 sm:p-8 max-w-4xl mx-auto w-full space-y-6 shadow-xl">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <span id="rsRoundBadge" class="px-3.5 py-1 rounded-full bg-[#0089A7] text-white text-xs font-bold">ROUND 1 / 8</span>
+          <div class="flex gap-2">
+            <button type="button" onclick="speakRsRound()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#002B5C] text-white text-xs font-bold">
+              <i data-lucide="volume-2" class="w-4 h-4"></i>
+              <span>Listen</span>
+            </button>
+            <button type="button" onclick="restartRsGame()" class="px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">
+              Restart
+            </button>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-sky-500/20 dark:border-sky-400/20 space-y-1.5">
+          <span class="text-[11px] font-extrabold uppercase tracking-wider text-sky-600 dark:text-sky-300">READING EXECUTION CALL</span>
+          <p id="rsGamePrompt" class="text-lg sm:text-xl font-extrabold text-[#002B5C] dark:text-white"></p>
+        </div>
+
+        <div id="rsGameOptions" class="grid grid-cols-1 gap-3"></div>
+
+        <div id="rsGameFeedback" class="hidden p-4 rounded-2xl text-sm font-bold"></div>
+
+        <div class="flex justify-end">
+          <button type="button" onclick="nextRsRound()" class="px-6 py-3 rounded-2xl bg-[#002B5C] hover:bg-[#005A8D] text-white text-xs sm:text-sm font-bold">
+            Next Round →
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Navigation -->
+  <footer class="border-t border-sky-500/20 dark:border-sky-400/20 bg-white dark:bg-[#061322] py-4 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      <button id="btnPrev" type="button" onclick="goStage(currentStage - 1)" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-300 dark:border-sky-400/25 hover:bg-slate-100 dark:hover:bg-[#132C4A] disabled:opacity-30 text-xs font-bold transition">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Previous</span>
+      </button>
+
+      <span id="stageCounter" class="text-xs font-bold tracking-widest text-slate-500 dark:text-slate-400">
+        01 / 08
+      </span>
+
+      <button id="btnNext" type="button" onclick="goStage(currentStage + 1)" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#002B5C] hover:bg-[#005A8D] disabled:opacity-30 text-xs font-bold text-white transition">
+        <span>Next</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    const STAGES = [
+      "01 · BRIEFING & ROADMAP",
+      "02 · READING CONVO",
+      "03 · VOCAB BANK",
+      "04 · 4-STEP WORKFLOW",
+      "05 · PARAPHRASE LAB",
+      "06 · EXTRA LAB & TRAPS",
+      "07 · TIMED DRILL",
+      "08 · READING SPRINT"
+    ];
+
+    let currentStage = 0;
+    const stageSections = document.querySelectorAll('.stage');
+
+    function goStage(idx) {
+      if (idx < 0 || idx >= stageSections.length) return;
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      currentStage = idx;
+      stageSections.forEach((s, i) => s.classList.toggle('hidden', i !== currentStage));
+      document.getElementById('stageTitleHeader').textContent = STAGES[currentStage];
+      document.getElementById('stageCounter').textContent = `${String(currentStage + 1).padStart(2, '0')} / ${String(stageSections.length).padStart(2, '0')}`;
+      document.getElementById('stageProgress').style.width = `${((currentStage + 1) / stageSections.length) * 100}%`;
+      document.getElementById('btnPrev').disabled = currentStage === 0;
+      document.getElementById('btnNext').disabled = currentStage === stageSections.length - 1;
+      renderStagePills();
+      if (currentStage === 7) startRsClock();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      lucide.createIcons();
+    }
+
+    function renderStagePills() {
+      document.getElementById('stagePills').innerHTML = STAGES.map((_, i) => `
+        <button type="button" onclick="goStage(${i})" class="px-2.5 py-1 rounded-lg text-xs font-bold transition ${
+          i === currentStage ? 'bg-sky-500 text-white' : 'text-white/75 hover:text-white hover:bg-white/10'
+        }">${String(i + 1).padStart(2, '0')}</button>
+      `).join('');
+    }
+
+    const themeBtn = document.getElementById('themeBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    if (localStorage.getItem('provoOteReadingTheme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      themeIcon.setAttribute('data-lucide', 'moon');
+    }
+    themeBtn.addEventListener('click', () => {
+      const dark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('provoOteReadingTheme', dark ? 'dark' : 'light');
+      themeIcon.setAttribute('data-lucide', dark ? 'sun' : 'moon');
+      lucide.createIcons();
+    });
+
+    function speakText(text) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'en-GB';
+      u.rate = 0.96;
+      window.speechSynthesis.speak(u);
+    }
+
+    // ==================== 02: READING CONVERSATION PROMPTS ====================
+    const RC_PROMPTS = [
+      {
+        q: "1. Do you enjoy reading in English outside class? What kind of texts do you like?",
+        starter: "I like reading short articles, reviews, or stories about topics I already enjoy, because it feels less like studying."
+      },
+      {
+        q: "2. What is the hardest part of a reading exam for you: unknown words, time pressure, or trick options?",
+        starter: "For me, the hardest part is... when two options look similar or when time starts running out."
+      },
+      {
+        q: "3. What do you usually do when you see an unfamiliar word in a reading text?",
+        starter: "I try to guess its meaning from the context around it first instead of panicking or stopping."
+      },
+      {
+        q: "4. Do you prefer short notices and emails or longer articles?",
+        starter: "Short messages are quicker to scan, while longer articles give more context to understand the main idea."
+      },
+      {
+        q: "5. Have you ever misread a question because you didn't notice a word like 'not', 'except', or 'first'?",
+        starter: "Yes, a couple of times! Reading the question carefully before looking at the choices really helps."
+      },
+      {
+        q: "6. Do you read faster on a computer screen or on paper?",
+        starter: "On a screen I can scroll quickly, though sometimes I lose my place if I don't focus on one paragraph at a time."
+      },
+      {
+        q: "7. Which reading topics do you find easiest or most interesting?",
+        starter: "I find everyday work, travel, and lifestyle topics easier because I already know background vocabulary for them."
+      },
+      {
+        q: "8. How do you stay calm when a reading text feels difficult at first glance?",
+        starter: "I take a breath, look for the general idea of the paragraph, and answer the clearer questions first."
+      }
+    ];
+    let rcIdx = 0;
+
+    function renderRcPrompt() {
+      rcIdx = (rcIdx + RC_PROMPTS.length) % RC_PROMPTS.length;
+      const item = RC_PROMPTS[rcIdx];
+      document.getElementById('rcBadge').textContent = `PROMPT ${rcIdx + 1} / ${RC_PROMPTS.length}`;
+      document.getElementById('rcQuestionText').textContent = item.q;
+      document.getElementById('rcStarterText').textContent = item.starter;
+      document.getElementById('rcHelpBox').classList.add('hidden');
+      document.getElementById('btnToggleRcHelpLabel').textContent = 'Show Idea & Starter';
+      document.getElementById('rcDots').innerHTML = RC_PROMPTS.map((_, i) => `
+        <button type="button" onclick="rcIdx=${i}; renderRcPrompt();" class="w-7 h-7 rounded-lg text-xs font-bold ${
+          i === rcIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#071627]'
+        }">${i + 1}</button>
+      `).join('');
+    }
+    window.stepRc = (d) => { rcIdx += d; renderRcPrompt(); };
+    window.speakRcPrompt = () => speakText(RC_PROMPTS[rcIdx].q);
+    window.toggleRcHelp = () => {
+      const box = document.getElementById('rcHelpBox');
+      const hidden = box.classList.toggle('hidden');
+      document.getElementById('btnToggleRcHelpLabel').textContent = hidden ? 'Show Idea & Starter' : 'Hide Idea & Starter';
+    };
+
+    // ==================== 03: VOCABULARY BANK ====================
+    const VOC_GROUPS = {
+      contrast: [
+        { word: "however / yet / nevertheless", meaning: "Introduces a contrast or unexpected result after what was just said.", ex: "The course was intense; however, most students improved quickly." },
+        { word: "although / even though", meaning: "Connects two contrasting ideas inside a sentence.", ex: "Even though the text was long, the main argument was clear." },
+        { word: "rather than / instead of", meaning: "Shows choosing one option over another.", ex: "They chose cycling rather than driving during rush hour." },
+        { word: "at first / initially", meaning: "Signals an early impression that may change later in the text.", ex: "At first, the new software seemed complicated." }
+      ],
+      verbs: [
+        { word: "overlook", meaning: "Fail to notice or consider something important.", ex: "Candidates sometimes overlook small details in the instructions." },
+        { word: "postpone / put off", meaning: "Delay an event or plan until a later time.", ex: "They postponed the meeting until Thursday morning." },
+        { word: "point out / highlight", meaning: "Draw attention to a fact, reason, or problem.", ex: "The report highlights a rise in remote training." },
+        { word: "aim to / intend to", meaning: "Plan or have a specific goal.", ex: "The program aims to help learners speak more fluently." }
+      ],
+      qualifiers: [
+        { word: "mostly / largely / mainly", meaning: "For the most part; in the majority of cases.", ex: "Feedback was largely positive across all groups." },
+        { word: "rarely / hardly ever", meaning: "Almost never; not very often.", ex: "The train is rarely delayed on Sunday mornings." },
+        { word: "likely / unlikely", meaning: "Probable or improbable based on evidence.", ex: "Prices are unlikely to drop before next month." },
+        { word: "despite + noun / -ing", meaning: "Regardless of a difficulty or obstacle.", ex: "Despite feeling tired, she finished the practice set." }
+      ]
+    };
+
+    let currentVocGroup = 'contrast';
+    let currentVocIdx = 0;
+    let vocViewMode = 'single';
+
+    window.speakVocItem = (grp, idx) => {
+      const it = VOC_GROUPS[grp][idx];
+      speakText(`${it.word}. ${it.ex}`);
+    };
+
+    window.setVocViewMode = (mode) => {
+      vocViewMode = mode;
+      document.getElementById('vocSingleBox').classList.toggle('hidden', mode !== 'single');
+      document.getElementById('vocGridBox').classList.toggle('hidden', mode !== 'grid');
+      document.getElementById('btnVocViewSingle').className = mode === 'single'
+        ? 'px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 text-white transition'
+        : 'px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition';
+      document.getElementById('btnVocViewGrid').className = mode === 'grid'
+        ? 'px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 text-white transition'
+        : 'px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition';
+      renderVocBank();
+    };
+
+    window.stepVocCard = (d) => {
+      const list = VOC_GROUPS[currentVocGroup];
+      currentVocIdx = (currentVocIdx + d + list.length) % list.length;
+      renderVocBank();
+    };
+
+    function renderVocBank() {
+      const list = VOC_GROUPS[currentVocGroup];
+      const item = list[currentVocIdx % list.length];
+
+      document.getElementById('vocSingleBox').innerHTML = `
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-sky-500/25 dark:border-sky-400/25 rounded-3xl p-6 sm:p-9 space-y-4 shadow-xl">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <span class="px-3.5 py-1 rounded-full bg-[#002B5C] text-white text-xs font-bold">ITEM ${(currentVocIdx % list.length) + 1} / ${list.length}</span>
+            <button type="button" onclick="speakVocItem('${currentVocGroup}', ${currentVocIdx})" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#0089A7] text-white text-xs font-bold">
+              <i data-lucide="volume-2" class="w-4 h-4"></i> Hear Example
+            </button>
+          </div>
+
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-sky-600 dark:text-sky-400">${item.word}</h3>
+          <p class="text-sm sm:text-base font-semibold text-[#002B5C] dark:text-white">${item.meaning}</p>
+
+          <div class="p-4 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] border-[1.5px] border-sky-500/20 dark:border-sky-400/20 text-xs sm:text-sm text-slate-700 dark:text-slate-200">
+            <strong>Example:</strong> "${item.ex}"
+          </div>
+
+          <div class="flex items-center justify-between gap-3 pt-2 border-t border-slate-100 dark:border-sky-400/15">
+            <button type="button" onclick="stepVocCard(-1)" class="px-4 py-2.5 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">← Prev</button>
+            <div class="flex gap-1.5">
+              ${list.map((_, i) => `<button type="button" onclick="currentVocIdx=${i}; renderVocBank();" class="w-7 h-7 rounded-lg text-xs font-bold ${i === currentVocIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#071627]'}">${i + 1}</button>`).join('')}
+            </div>
+            <button type="button" onclick="stepVocCard(1)" class="px-4 py-2.5 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('vocGridBox').innerHTML = list.map((cardItem, idx) => `
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-sky-500/25 dark:border-sky-400/25 rounded-3xl p-5 space-y-2 shadow-md">
+          <div class="flex items-center justify-between gap-2">
+            <h3 class="text-base font-extrabold text-sky-600 dark:text-sky-400">${cardItem.word}</h3>
+            <button type="button" onclick="speakVocItem('${currentVocGroup}', ${idx})" class="text-[#0089A7]"><i data-lucide="volume-2" class="w-4 h-4"></i></button>
+          </div>
+          <p class="text-xs sm:text-sm font-medium text-[#002B5C] dark:text-white">${cardItem.meaning}</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400 italic">"${cardItem.ex}"</p>
+        </div>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    window.switchVocGroup = (grp) => {
+      currentVocGroup = grp;
+      currentVocIdx = 0;
+      ['contrast', 'verbs', 'qualifiers'].forEach(k => {
+        const id = 'tabVoc' + k[0].toUpperCase() + k.slice(1);
+        document.getElementById(id).className = k === grp
+          ? 'px-3.5 py-2 rounded-xl text-xs font-bold bg-[#002B5C] text-white'
+          : 'px-3.5 py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0C1E33] border-[1.5px] border-sky-500/25 dark:border-sky-400/25';
+      });
+      renderVocBank();
+    };
+
+    // ==================== 04: 4-STEP WORKFLOW ====================
+    const WORKFLOW_STEPS = [
+      {
+        step: "STEP 01",
+        title: "Scan the Question & Focus Words First",
+        detail: "Before reading every line in depth, identify what the question asks: a contrast, a writer's attitude, a reason, or the main message. Notice qualifying words like 'except', 'surprised', 'mainly', or 'at first'.",
+        audio: "Step one. Scan the question and focus words first. Identify whether you need a reason, an attitude, a contrast, or the main idea."
+      },
+      {
+        step: "STEP 02",
+        title: "Locate the Relevant Zone & Read Around It",
+        detail: "Don't rely on a single word match alone. Read the full sentence and the one right before or after it so you catch contrast pivots like 'but', 'however', 'instead', or 'although'.",
+        audio: "Step two. Locate the relevant zone and read the surrounding sentences so you catch contrast words like but, however, and instead."
+      },
+      {
+        step: "STEP 03",
+        title: "Match Paraphrases, Not Just Repeated Words",
+        detail: "In OTE Reading, correct answers often paraphrase ideas (e.g., 'rarely late' → 'arrives on time more often', or 'a calmer morning' → 'less stressed').",
+        audio: "Step three. Match paraphrases, not just repeated words. Correct answers often express the same idea using synonyms."
+      },
+      {
+        step: "STEP 04",
+        title: "Eliminate Extremes & Keep Moving",
+        detail: "Cross out options that go beyond the text ('always', 'never', 'all', 'impossible') unless clearly stated. If a question takes too long, commit to your best choice and protect your clock.",
+        audio: "Step four. Eliminate extreme options that go beyond the text, and keep moving to protect your exam time."
+      }
+    ];
+    let wfIdx = 0;
+
+    window.setStepViewMode = (mode) => {
+      document.getElementById('stepSingleContainer').classList.toggle('hidden', mode !== 'single');
+      document.getElementById('stepAllContainer').classList.toggle('hidden', mode !== 'all');
+      document.getElementById('btnStepViewSingle').className = mode === 'single'
+        ? 'px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 text-white transition'
+        : 'px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition';
+      document.getElementById('btnStepViewAll').className = mode === 'all'
+        ? 'px-3 py-1.5 rounded-lg text-xs font-bold bg-sky-600 text-white transition'
+        : 'px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition';
+      renderWorkflowSteps();
+    };
+
+    window.stepWorkflow = (d) => {
+      wfIdx = (wfIdx + d + WORKFLOW_STEPS.length) % WORKFLOW_STEPS.length;
+      renderWorkflowSteps();
+    };
+
+    function renderWorkflowSteps() {
+      const s = WORKFLOW_STEPS[wfIdx];
+      document.getElementById('stepSingleContainer').innerHTML = `
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-sky-500/25 dark:border-sky-400/25 rounded-3xl p-6 sm:p-9 space-y-5 shadow-xl">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <span class="px-3.5 py-1 rounded-full bg-[#002B5C] text-white text-xs font-bold">${s.step} / 04</span>
+            <button type="button" onclick="speakText('${s.audio.replace(/'/g, "\'")}')" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#0089A7] text-white text-xs font-bold">
+              <i data-lucide="volume-2" class="w-4 h-4"></i> Listen
+            </button>
+          </div>
+          <h3 class="text-2xl font-extrabold text-[#002B5C] dark:text-white">${s.title}</h3>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">${s.detail}</p>
+          <div class="flex items-center justify-between gap-3 pt-3 border-t border-slate-100 dark:border-sky-400/15">
+            <button type="button" onclick="stepWorkflow(-1)" class="px-4 py-2.5 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">← Prev Step</button>
+            <div class="flex gap-1.5">
+              ${WORKFLOW_STEPS.map((_, i) => `<button type="button" onclick="wfIdx=${i}; renderWorkflowSteps();" class="w-7 h-7 rounded-lg text-xs font-bold ${i === wfIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#071627]'}">${i + 1}</button>`).join('')}
+            </div>
+            <button type="button" onclick="stepWorkflow(1)" class="px-4 py-2.5 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next Step →</button>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('stepAllContainer').innerHTML = WORKFLOW_STEPS.map((item, idx) => `
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-sky-500/25 dark:border-sky-400/25 rounded-3xl p-5 space-y-2.5 shadow-md">
+          <div class="flex items-center justify-between">
+            <span class="px-3 py-1 rounded-full bg-sky-500/15 text-sky-700 dark:text-sky-300 text-xs font-extrabold">${item.step}</span>
+            <button type="button" onclick="speakText('${item.audio.replace(/'/g, "\'")}')" class="text-sky-600 dark:text-sky-300"><i data-lucide="volume-2" class="w-4 h-4"></i></button>
+          </div>
+          <h3 class="text-base font-extrabold text-[#002B5C] dark:text-white">${item.title}</h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">${item.detail}</p>
+        </div>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    // ==================== 05: PARAPHRASE LAB ====================
+    const PARA_ITEMS = [
+      {
+        src: "“The museum updated its booking system so visitors no longer have to queue outside in the rain.”",
+        opts: [
+          "A. Visitors can now enter without waiting outdoors in bad weather.",
+          "B. The museum is closed whenever it rains.",
+          "C. Tickets are now free for all visitors."
+        ],
+        ans: "A",
+        why: "'No longer have to queue outside in the rain' paraphrases into not waiting outdoors in bad weather."
+      },
+      {
+        src: "“Although the train was twenty minutes behind schedule, Clara still made her connecting bus.”",
+        opts: [
+          "A. Clara missed her bus because the train was late.",
+          "B. Clara caught her next bus despite the train delay.",
+          "C. The bus was cancelled due to bad weather."
+        ],
+        ans: "B",
+        why: "'Still made her connecting bus' despite a delay means she caught her next bus."
+      },
+      {
+        src: "“Demand for evening language classes has risen sharply since January.”",
+        opts: [
+          "A. Fewer people take evening classes now.",
+          "B. Evening classes were cancelled in January.",
+          "C. Many more people want evening classes than in January."
+        ],
+        ans: "C",
+        why: "'Demand... has risen sharply' means interest/requests increased noticeably."
+      },
+      {
+        src: "“The handbook explains the rules clearly, yet several new staff members overlooked the safety section.”",
+        opts: [
+          "A. Some new staff missed the safety rules even though the guide was clear.",
+          "B. The handbook did not include safety rules.",
+          "C. Everyone read the safety section carefully."
+        ],
+        ans: "A",
+        why: "'Overlooked' means failed to notice/read, even with a clear handbook."
+      },
+      {
+        src: "“We postponed the outdoor workshop until next week because heavy rain was forecast.”",
+        opts: [
+          "A. The workshop took place outdoors during heavy rain.",
+          "B. The workshop was moved to next week due to predicted rain.",
+          "C. The workshop was permanently cancelled."
+        ],
+        ans: "B",
+        why: "'Postponed... until next week' + 'forecast' = moved to next week due to predicted rain."
+      }
+    ];
+    let paraIdx = 0;
+    const paraSolved = new Set();
+
+    function renderParaLab() {
+      paraIdx = (paraIdx + PARA_ITEMS.length) % PARA_ITEMS.length;
+      const item = PARA_ITEMS[paraIdx];
+      document.getElementById('paraBadge').textContent = `PARAPHRASE ${paraIdx + 1} / ${PARA_ITEMS.length}`;
+      document.getElementById('paraSourceSentence').textContent = item.src;
+      document.getElementById('paraFeedbackBox').classList.add('hidden');
+
+      document.getElementById('paraOptionsBox').innerHTML = item.opts.map(op => {
+        const letter = op[0];
+        return `<button type="button" onclick="checkParaChoice('${letter}')" class="w-full text-left px-4 py-3 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] hover:border-sky-400 border-[1.5px] border-sky-500/20 dark:border-sky-400/20 text-xs sm:text-sm font-bold transition">${op}</button>`;
+      }).join('');
+
+      document.getElementById('paraDots').innerHTML = PARA_ITEMS.map((_, i) => `
+        <button type="button" onclick="paraIdx=${i}; renderParaLab();" class="w-7 h-7 rounded-lg text-xs font-bold ${
+          i === paraIdx ? 'bg-[#002B5C] text-white' : paraSolved.has(i) ? 'bg-emerald-500/20 text-emerald-700 dark:text-emerald-300' : 'bg-slate-100 dark:bg-[#071627]'
+        }">${i + 1}</button>
+      `).join('');
+    }
+    window.stepPara = (d) => { paraIdx += d; renderParaLab(); };
+    window.speakParaSentence = () => speakText(PARA_ITEMS[paraIdx].src);
+    window.checkParaChoice = (letter) => {
+      const item = PARA_ITEMS[paraIdx];
+      const fb = document.getElementById('paraFeedbackBox');
+      fb.classList.remove('hidden');
+      if (letter === item.ans) {
+        paraSolved.add(paraIdx);
+        document.getElementById('paraScoreBadge').textContent = `SOLVED: ${paraSolved.size} / ${PARA_ITEMS.length}`;
+        fb.className = 'p-4 rounded-2xl text-xs sm:text-sm font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Correct (${item.ans})! ${item.why}`;
+      } else {
+        fb.className = 'p-4 rounded-2xl text-xs sm:text-sm font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `✗ Not quite. ${item.why}`;
+      }
+    };
+
+    // ==================== 06: EXTRA LAB & TRAPS ====================
+    window.switchStage6Tab = (tab) => {
+      document.getElementById('panelS6Traps').classList.toggle('hidden', tab !== 'traps');
+      document.getElementById('panelS6Connectors').classList.toggle('hidden', tab !== 'connectors');
+      document.getElementById('panelS6Tips').classList.toggle('hidden', tab !== 'tips');
+      ['traps', 'connectors', 'tips'].forEach(k => {
+        const id = 'tabS6' + k[0].toUpperCase() + k.slice(1);
+        document.getElementById(id).className = k === tab
+          ? 'px-3.5 py-2 rounded-xl text-xs font-bold bg-[#002B5C] text-white'
+          : 'px-3.5 py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0C1E33] border-[1.5px] border-sky-500/25 dark:border-sky-400/25';
+      });
+    };
+
+    const TRAP_ITEMS = [
+      {
+        name: "THE KEYWORD ECHO TRAP",
+        excerpt: "“The cafe was advertised as quiet, but after noon it gets noisy with student groups.”",
+        wrong: "The cafe is always quiet all day.",
+        right: "The cafe is only quiet before noon.",
+        why: "Echoing 'quiet' from the first half ignores 'but after noon it gets noisy'."
+      },
+      {
+        name: "THE EXTREME WORD TRAP",
+        excerpt: "“Most participants preferred the morning sessions, though a few liked afternoon workshops.”",
+        wrong: "Everyone disliked the afternoon workshops.",
+        right: "Most participants favored morning sessions.",
+        why: "'A few liked afternoon workshops' disproves 'Everyone disliked'."
+      },
+      {
+        name: "THE PAST VS. PRESENT TRAP",
+        excerpt: "“Last year we used paper forms, whereas this term everything is digital.”",
+        wrong: "Staff currently fill out paper forms.",
+        right: "The system is now digital instead of paper.",
+        why: "Paper forms belonged to 'last year', not 'this term'."
+      },
+      {
+        name: "THE CAUSE VS. EFFECT TRAP",
+        excerpt: "“Because the train was delayed, we missed the opening talk.”",
+        wrong: "The opening talk was delayed because of traffic.",
+        right: "Missing the talk was caused by a train delay.",
+        why: "Do not swap which event caused the other."
+      },
+      {
+        name: "THE UNMENTIONED DETAIL TRAP",
+        excerpt: "“The new app helps learners track daily reading streaks and save new words.”",
+        wrong: "The app includes live video calls with tutors.",
+        right: "The app lets learners track reading streaks and vocabulary.",
+        why: "Video calls are not mentioned anywhere in the excerpt."
+      },
+      {
+        name: "THE PARTIAL TRUTH TRAP",
+        excerpt: "“The hotel offers free breakfast, while airport transfers cost extra.”",
+        wrong: "Both breakfast and airport transfers are free.",
+        right: "Breakfast is included, but airport transfers cost extra.",
+        why: "'While' contrasts a free perk with a paid extra."
+      }
+    ];
+    let trapIdx = 0;
+
+    function renderTrapRadar() {
+      trapIdx = (trapIdx + TRAP_ITEMS.length) % TRAP_ITEMS.length;
+      const t = TRAP_ITEMS[trapIdx];
+      document.getElementById('trapBadge').textContent = `TRAP ${trapIdx + 1} / ${TRAP_ITEMS.length}`;
+      document.getElementById('trapNameTag').textContent = t.name;
+      document.getElementById('trapExcerpt').textContent = t.excerpt;
+      document.getElementById('trapWrongOpt').textContent = t.wrong;
+      document.getElementById('trapRightOpt').textContent = t.right;
+      document.getElementById('trapWhyText').textContent = t.why;
+      document.getElementById('trapWhyBox').classList.add('hidden');
+      document.getElementById('btnToggleTrapWhyLabel').textContent = 'Show Trap Analysis';
+
+      document.getElementById('trapDots').innerHTML = TRAP_ITEMS.map((_, i) => `
+        <button type="button" onclick="trapIdx=${i}; renderTrapRadar();" class="w-7 h-7 rounded-lg text-xs font-bold ${
+          i === trapIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#071627]'
+        }">${i + 1}</button>
+      `).join('');
+    }
+    window.stepTrap = (d) => { trapIdx += d; renderTrapRadar(); };
+    window.toggleTrapWhy = () => {
+      const box = document.getElementById('trapWhyBox');
+      const hidden = box.classList.toggle('hidden');
+      document.getElementById('btnToggleTrapWhyLabel').textContent = hidden ? 'Show Trap Analysis' : 'Hide Trap Analysis';
+    };
+
+    const CONNECTOR_DRILLS = [
+      {
+        q: "1. '_____ the traffic was heavy, we arrived five minutes early.'",
+        opts: ["A) Although", "B) Because", "C) Unless"],
+        ans: "A",
+        why: "'Although' introduces a contrast between heavy traffic and arriving early."
+      },
+      {
+        q: "2. 'He sent a voice note _____ waiting for a reply to his email.'",
+        opts: ["A) instead of", "B) however", "C) rarely"],
+        ans: "A",
+        why: "'Instead of + -ing' shows choosing one action rather than another."
+      },
+      {
+        q: "3. 'The workshop was postponed; _____, everyone received the slides in advance.'",
+        opts: ["A) however", "B) although", "C) despite"],
+        ans: "A",
+        why: "'However' is used after a semicolon/period followed by a comma to signal contrast."
+      },
+      {
+        q: "4. '_____ the high initial cost, solar panels save money over time.'",
+        opts: ["A) Despite", "B) Yet", "C) Mainly"],
+        ans: "A",
+        why: "'Despite + noun phrase' expresses contrast before the main clause."
+      }
+    ];
+
+    function renderConnectorDrills() {
+      document.getElementById('panelS6Connectors').innerHTML = CONNECTOR_DRILLS.map((item, idx) => `
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-sky-500/25 dark:border-sky-400/25 rounded-3xl p-5 space-y-3 shadow-md">
+          <p class="text-sm font-bold text-[#002B5C] dark:text-white">${item.q}</p>
+          <div class="space-y-1.5">
+            ${item.opts.map(op => {
+              const letter = op[0];
+              return `<button type="button" onclick="checkConnDrill(${idx}, '${letter}')" class="w-full text-left px-3.5 py-2 rounded-xl bg-[#F0F6FA] dark:bg-[#071627] hover:border-sky-400 border-[1.5px] border-sky-500/20 dark:border-sky-400/20 text-xs sm:text-sm font-medium transition">${op}</button>`;
+            }).join('')}
+          </div>
+          <div id="cdFb${idx}" class="hidden p-3 rounded-xl text-xs font-semibold"></div>
+        </div>
+      `).join('');
+    }
+    window.checkConnDrill = (idx, picked) => {
+      const item = CONNECTOR_DRILLS[idx];
+      const fb = document.getElementById(`cdFb${idx}`);
+      fb.classList.remove('hidden');
+      if (picked === item.ans) {
+        fb.className = 'p-3 rounded-xl text-xs font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Correct (${item.ans}). ${item.why}`;
+      } else {
+        fb.className = 'p-3 rounded-xl text-xs font-semibold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `✗ Try again. ${item.why}`;
+      }
+    };
+
+    const PRO_TIPS = [
+      { title: "TIP 1 · DON'T TRANSLATE EVERY WORD", body: "Treat unknown words like speed bumps, not roadblocks. Keep reading to the end of the sentence—the surrounding context often clarifies the general sense." },
+      { title: "TIP 2 · WATCH FOR 'EXCEPT' & 'NOT'", body: "Negatives flip what you are looking for. Circle or underline 'not', 'except', or 'least' mentally so you don't pick a true statement by habit." },
+      { title: "TIP 3 · RESPECT THE TEXT'S LIMITS", body: "If an option sounds smart in real life but isn't supported by the text, skip it. Only choose what the passage actually states or directly implies." },
+      { title: "TIP 4 · FOLLOW CONTRAST HINGES", body: "Words like 'but', 'however', 'yet', and 'instead' often carry the real point the author wants you to notice." },
+      { title: "TIP 5 · MANAGE YOUR CLOCK", body: "Spending four minutes on one hard item steals time from easier items later. Make your best educated guess and keep moving." },
+      { title: "TIP 6 · REVIEW YOUR MISTAKE PATTERN", body: "After each practice set, write down whether you missed an item due to vocabulary, a distractor trap, or rushed reading." }
+    ];
+
+    function renderProTips() {
+      document.getElementById('panelS6Tips').innerHTML = PRO_TIPS.map(t => `
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-sky-500/25 dark:border-sky-400/25 rounded-3xl p-5 space-y-2 shadow-md">
+          <h3 class="text-sm font-extrabold text-sky-600 dark:text-sky-400">${t.title}</h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">${t.body}</p>
+        </div>
+      `).join('');
+    }
+
+    // ==================== 07: TIMED PASSAGE DRILL ====================
+    let drillSec = 180;
+    let drillTimerId = null;
+
+    function updateDrillTimerUI() {
+      const m = String(Math.floor(drillSec / 60)).padStart(2, '0');
+      const s = String(drillSec % 60).padStart(2, '0');
+      document.getElementById('drillTimerDisplay').textContent = `${m}:${s}`;
+    }
+
+    window.toggleDrillTimer = () => {
+      const btn = document.getElementById('btnDrillTimerToggle');
+      if (drillTimerId) {
+        clearInterval(drillTimerId);
+        drillTimerId = null;
+        btn.textContent = 'Start';
+        return;
+      }
+      btn.textContent = 'Pause';
+      drillTimerId = setInterval(() => {
+        if (drillSec > 0) {
+          drillSec--;
+          updateDrillTimerUI();
+        } else {
+          clearInterval(drillTimerId);
+          drillTimerId = null;
+          btn.textContent = 'Start';
+        }
+      }, 1000);
+    };
+
+    window.resetDrillTimer = () => {
+      if (drillTimerId) { clearInterval(drillTimerId); drillTimerId = null; }
+      drillSec = 180;
+      document.getElementById('btnDrillTimerToggle').textContent = 'Start';
+      updateDrillTimerUI();
+    };
+
+    window.speakDrillPassage = () => {
+      const txt = [...document.querySelectorAll('#drillPassageBody p')].map(p => p.textContent.trim()).join(' ');
+      speakText(txt);
+    };
+
+    const DRILL_QS = [
+      {
+        q: "1. How did employees achieve their goals in fewer days?",
+        opts: [
+          "A. By reducing unproductive meetings and protecting quiet focus time.",
+          "B. By working twelve hours on the remaining days.",
+          "C. By taking a pay cut during the trial."
+        ],
+        ans: "A",
+        why: "Paragraph 1 states staff cut unproductive meetings and protected quiet focus blocks."
+      },
+      {
+        q: "2. What limitation does the second paragraph highlight?",
+        opts: [
+          "A. Customer service declined across every department.",
+          "B. Some roles needing constant coverage still required rotating shifts.",
+          "C. The trial lasted less than two weeks."
+        ],
+        ans: "B",
+        why: "Paragraph 2 notes roles requiring constant customer coverage still needed rotating shifts."
+      },
+      {
+        q: "3. What happened regarding employee well-being during the trial?",
+        opts: [
+          "A. Staff reported lower stress and fewer sick days.",
+          "B. Sick days increased across all teams.",
+          "C. The text does not mention well-being."
+        ],
+        ans: "A",
+        why: "Paragraph 2 mentions employees reported lower stress and fewer sick days."
+      }
+    ];
+
+    function renderDrillQuestions() {
+      document.getElementById('drillQuestionsCol').innerHTML = DRILL_QS.map((item, idx) => `
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-sky-500/25 dark:border-sky-400/25 rounded-2xl p-4 space-y-2 shadow-sm">
+          <p class="text-xs sm:text-sm font-bold text-[#002B5C] dark:text-white">${item.q}</p>
+          <div class="space-y-1.5">
+            ${item.opts.map(op => {
+              const letter = op[0];
+              return `<button type="button" onclick="checkDrillQ(${idx}, '${letter}')" class="w-full text-left px-3.5 py-2 rounded-xl bg-[#F0F6FA] dark:bg-[#071627] hover:border-sky-400 border-[1.5px] border-sky-500/20 dark:border-sky-400/20 text-xs font-medium transition">${op}</button>`;
+            }).join('')}
+          </div>
+          <div id="dqFb${idx}" class="hidden p-3 rounded-xl text-xs font-semibold"></div>
+        </div>
+      `).join('');
+    }
+    window.checkDrillQ = (idx, picked) => {
+      const item = DRILL_QS[idx];
+      const fb = document.getElementById(`dqFb${idx}`);
+      fb.classList.remove('hidden');
+      if (picked === item.ans) {
+        fb.className = 'p-3 rounded-xl text-xs font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Correct (${item.ans}). ${item.why}`;
+      } else {
+        fb.className = 'p-3 rounded-xl text-xs font-semibold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `✗ Try again. ${item.why}`;
+      }
+    };
+
+    // ==================== 08: READING SPRINT GAME ====================
+    const RS_ROUNDS = [
+      {
+        prompt: "A choice says 'Everyone agreed with the new policy', but the text says 'Most staff agreed, though two objected'.",
+        opts: ["Eliminate it—it overgeneralizes.", "Pick it—'most' means 'everyone'.", "Ignore the second half of the sentence."],
+        ans: 0,
+        explain: "'Most' is not 'everyone', especially when two people objected."
+      },
+      {
+        prompt: "What should you do right after reading a reading-comprehension question?",
+        opts: ["Identify the key focus and scan for the matching idea in the text.", "Translate every word into your native language first.", "Guess before reading the text."],
+        ans: 0,
+        explain: "Knowing what the question targets makes scanning faster and more accurate."
+      },
+      {
+        prompt: "The passage says 'sales dropped slightly', and an option says 'sales fell a little'.",
+        opts: ["Strong paraphrase match!", "Contradiction.", "Unrelated topic."],
+        ans: 0,
+        explain: "'Dropped slightly' and 'fell a little' convey the same meaning."
+      },
+      {
+        prompt: "Why is reading past 'however' or 'but' crucial in exam questions?",
+        opts: ["Because writers often contrast an initial impression with the real outcome.", "Because words after 'but' never count.", "Because 'but' always means 'because'."],
+        ans: 0,
+        explain: "Contrast markers signal shifts in meaning or exceptions."
+      },
+      {
+        prompt: "You spend over a minute agonizing between two options on one item.",
+        opts: ["Mark your best choice and keep pacing for the rest of the section.", "Stop the test.", "Erase all previous answers."],
+        ans: 0,
+        explain: "Good time execution protects points across the entire section."
+      },
+      {
+        prompt: "The text says 'Last month the studio moved to a bigger space', and an option says 'The studio currently has a larger space'.",
+        opts: ["Matches present reality after the move.", "Contradicts the timeline.", "Changes 'bigger' to 'smaller'."],
+        ans: 0,
+        explain: "Moving to a bigger space last month explains a larger space now."
+      },
+      {
+        prompt: "An answer choice includes a topic that is never mentioned in the text.",
+        opts: ["Eliminate it as an unsupported distractor.", "Assume it is true in real life.", "Pick the longest sentence."],
+        ans: 0,
+        explain: "In reading exams, answers must be supported by the text."
+      },
+      {
+        prompt: "What is the main goal of a 4-step reading routine?",
+        opts: ["Consistent accuracy and calmer pacing under time pressure.", "Reading faster without understanding anything.", "Memorizing random words."],
+        ans: 0,
+        explain: "A clear process builds steady accuracy and confidence."
+      }
+    ];
+
+    let rsRound = 0;
+    let rsScore = 0;
+    let rsStreak = 0;
+    let rsAnswered = false;
+    let rsClock = 14;
+    let rsClockId = null;
+
+    function startRsClock() {
+      if (rsClockId) clearInterval(rsClockId);
+      rsClock = 14;
+      document.getElementById('rsGameClock').textContent = `${rsClock}s`;
+      rsClockId = setInterval(() => {
+        if (rsClock > 0) {
+          rsClock--;
+          document.getElementById('rsGameClock').textContent = `${rsClock}s`;
+        } else {
+          clearInterval(rsClockId);
+          rsClockId = null;
+        }
+      }, 1000);
+    }
+
+    function renderRsRound() {
+      const idx = rsRound % RS_ROUNDS.length;
+      const r = RS_ROUNDS[idx];
+      rsAnswered = false;
+      document.getElementById('rsRoundBadge').textContent = `ROUND ${idx + 1} / ${RS_ROUNDS.length}`;
+      document.getElementById('rsGamePrompt').textContent = r.prompt;
+      document.getElementById('rsGameFeedback').classList.add('hidden');
+      document.getElementById('rsGameOptions').innerHTML = r.opts.map((opt, i) => `
+        <button type="button" onclick="pickRsOption(${i})" class="text-left p-4 rounded-2xl bg-[#F0F6FA] dark:bg-[#071627] hover:border-sky-400 border-[1.5px] border-sky-500/20 dark:border-sky-400/20 text-sm font-bold transition">
+          ${String.fromCharCode(65 + i)}) ${opt}
+        </button>
+      `).join('');
+      if (currentStage === 7) startRsClock();
+    }
+
+    window.speakRsRound = () => speakText(RS_ROUNDS[rsRound % RS_ROUNDS.length].prompt);
+
+    window.pickRsOption = (picked) => {
+      if (rsAnswered) return;
+      rsAnswered = true;
+      if (rsClockId) { clearInterval(rsClockId); rsClockId = null; }
+      const r = RS_ROUNDS[rsRound % RS_ROUNDS.length];
+      const fb = document.getElementById('rsGameFeedback');
+      fb.classList.remove('hidden');
+      if (picked === r.ans) {
+        rsScore++;
+        rsStreak++;
+        fb.className = 'p-4 rounded-2xl text-sm font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Sharp reading! (+1 pt) — ${r.explain}`;
+      } else {
+        rsStreak = 0;
+        fb.className = 'p-4 rounded-2xl text-sm font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `✗ Best choice: ${String.fromCharCode(65 + r.ans)}. ${r.explain}`;
+      }
+      document.getElementById('rsGameScore').textContent = `SCORE: ${rsScore} / ${RS_ROUNDS.length}`;
+      document.getElementById('rsGameStreak').textContent = `STREAK: ${rsStreak} 🔥`;
+    };
+
+    window.nextRsRound = () => { rsRound++; renderRsRound(); };
+    window.restartRsGame = () => {
+      rsRound = 0;
+      rsScore = 0;
+      rsStreak = 0;
+      document.getElementById('rsGameScore').textContent = `SCORE: 0 / ${RS_ROUNDS.length}`;
+      document.getElementById('rsGameStreak').textContent = `STREAK: 0 🔥`;
+      renderRsRound();
+    };
+
+    // Init all stages
+    goStage(0);
+    renderRcPrompt();
+    switchVocGroup('contrast');
+    renderWorkflowSteps();
+    renderParaLab();
+    renderTrapRadar();
+    renderConnectorDrills();
+    renderProTips();
+    renderDrillQuestions();
+    renderRsRound();
+    lucide.createIcons();
+  </script>
+</body>
+</html>

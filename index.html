@@ -404,6 +404,7 @@
     .tag.kids { background: #FEF3C7; color: #B45309; }
     .tag.ote { background: #E0F2FE; color: #0369A1; }
     .tag.teens { background: #D1FAE5; color: #065F46; }
+    .tag.business { background: #E0E7FF; color: #3730A3; }
 
     .status {
       font-size: 0.78rem;
@@ -523,7 +524,7 @@
     <p>Select your class topic below to review grammar, practice vocabulary, and complete interactive exercises.</p>
     <div class="search-box">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <input type="text" id="searchInput" placeholder="Search lessons (e.g. Present Continuous, OTE, Kids, Teens)...">
+      <input type="text" id="searchInput" placeholder="Search lessons (e.g. Present Continuous, OTE, Kids, Teens, Business)...">
     </div>
   </section>
 
@@ -534,6 +535,7 @@
       <button class="filter-btn" data-filter="kids">Kids</button>
       <button class="filter-btn" data-filter="ote">OTE Prep (B1 / B2)</button>
       <button class="filter-btn" data-filter="teens">Teens</button>
+      <button class="filter-btn" data-filter="business">Business English</button>
     </div>
 
     <div class="grid" id="lessonGrid">
@@ -627,6 +629,19 @@
           <p>Conversation prompts, Would You Rather, B1 Present Simple Playbook, practice missions, Reading Part 4, Listening Part 4 with Script X-Ray, Speaking Part 1, and Writing Part 2.</p>
         </div>
         <a href="teens-daily-routine.html" class="card-btn">Start Lesson →</a>
+      </article>
+
+      <!-- ACTIVE LESSON: BUSINESS CALLS -->
+      <article class="card" data-category="business">
+        <div>
+          <div class="card-top">
+            <span class="tag business">Business English</span>
+            <span class="status">● Available</span>
+          </div>
+          <h2>Making &amp; Receiving Calls</h2>
+          <p>Graded phone phrases (simple to executive), numbers &amp; spelling drills, 10 pure listening call scenarios, practice lab, and Switchboard Rush game.</p>
+        </div>
+        <a href="business-phone-calls.html" class="card-btn">Start Lesson →</a>
       </article>
 
     </div>

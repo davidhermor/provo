@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>B1–B2 · BLACK FRIDAY &amp; CONSUMER CULTURE | PROVO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <style>
+    @keyframes stageIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .stage-anim { animation: stageIn 0.24s ease-out forwards; }
+  </style>
+</head>
+<body class="bg-[#F4F6FA] text-slate-900 dark:bg-[#060E1E] dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
+
+  <!-- Sticky Top Bar (B1/B2 Tier: Crimson / Rose-Coral Accent distinct from A1-A2 Teal, Teens Emerald & Business Indigo) -->
+  <header class="sticky top-0 z-40 bg-[#002B5C] text-white border-b border-rose-400/35 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2.5">
+        <a href="index.html" class="flex items-center shrink-0" title="PROVO">
+          <img
+            src="https://i.postimg.cc/vBt4qH44/download.png"
+            alt="PROVO"
+            class="h-8 w-auto object-contain block"
+            onerror="this.style.display='none'; document.getElementById('provoFallback').classList.remove('hidden');"
+          />
+          <span id="provoFallback" class="hidden font-extrabold tracking-widest text-lg text-white">PROVO</span>
+        </a>
+        <span class="px-2.5 py-0.5 rounded-full bg-rose-500/30 border border-rose-300/45 text-rose-100 text-[11px] font-bold tracking-wider">
+          B1 / B2 · UPPER-INTERMEDIATE
+        </span>
+        <span id="stageTitleHeader" class="hidden xl:inline-block text-xs font-bold tracking-wider text-rose-200">
+          01 · COVER &amp; BRIEFING
+        </span>
+      </div>
+
+      <div id="stagePills" class="flex items-center gap-1 overflow-x-auto py-1"></div>
+
+      <div class="flex items-center gap-2 shrink-0">
+        <button
+          id="themeBtn"
+          type="button"
+          class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition"
+          title="Toggle Theme"
+        >
+          <i id="themeIcon" data-lucide="sun" class="w-4 h-4"></i>
+        </button>
+        <a
+          href="index.html"
+          class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs font-bold bg-white/10 hover:bg-white/20 text-white transition"
+        >
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          <span class="hidden sm:inline">PORTAL</span>
+        </a>
+      </div>
+    </div>
+    <div class="w-full h-1.5 bg-black/25">
+      <div id="stageProgress" class="h-full bg-rose-400 transition-all duration-300" style="width: 14.28%"></div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl w-full mx-auto px-4 sm:px-6 py-7 sm:py-10 flex-1 flex flex-col justify-center">
+
+    <!-- ==================== 01: EDITORIAL COVER & BRIEFING ==================== -->
+    <section data-stage="0" class="stage stage-anim">
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 dark:border-rose-400/25 shadow-xl">
+        <div class="lg:col-span-5 h-64 sm:h-auto relative bg-[#091726] overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=1050&q=80"
+            alt="Shopping bags and Black Friday retail tags"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#060E1E]/90 via-[#060E1E]/25 to-transparent"></div>
+          <div class="absolute bottom-5 left-5 right-5 space-y-1 text-white">
+            <span class="text-xs font-bold tracking-widest text-rose-300 uppercase">PROVO · B1/B2 Tier Launch</span>
+            <p class="text-sm font-semibold text-slate-200">Impulse Buying, Dark Patterns &amp; Consumer Psychology</p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 p-7 sm:p-10 flex flex-col justify-center space-y-5">
+          <span class="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-rose-500/15 border border-rose-400/35 text-rose-700 dark:text-rose-300 text-xs font-bold tracking-wider">
+            <i data-lucide="tag" class="w-4 h-4"></i>
+            <span>PROVO STAGE LAB · B1 / B2 EDITION</span>
+          </span>
+
+          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight text-[#002B5C] dark:text-white">
+            Black Friday &amp; <span class="text-rose-600 dark:text-rose-400">Consumer Traps</span>
+          </h1>
+
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            Explore how mega-sales engineer urgency, debate whether Black Friday genuinely saves money or fuels overconsumption, master B1/B2 retail idioms and persuasive language, and test your instincts in a solo &amp; class deal-decoder game.
+          </p>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1 text-xs">
+            <button type="button" onclick="goStage(1)" class="p-3 rounded-2xl bg-[#F4F6FA] dark:bg-[#071224] border-[1.5px] border-rose-500/20 dark:border-rose-400/20 hover:border-rose-400 text-left transition">
+              <div class="font-extrabold text-rose-600 dark:text-rose-400">02 · SPEAKING</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">12 B1/B2 Prompts</div>
+            </button>
+            <button type="button" onclick="goStage(2)" class="p-3 rounded-2xl bg-[#F4F6FA] dark:bg-[#071224] border-[1.5px] border-rose-500/20 dark:border-rose-400/20 hover:border-rose-400 text-left transition">
+              <div class="font-extrabold text-rose-600 dark:text-rose-400">03 · LEXICON</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">12 Idioms &amp; Tactics</div>
+            </button>
+            <button type="button" onclick="goStage(3)" class="p-3 rounded-2xl bg-[#F4F6FA] dark:bg-[#071224] border-[1.5px] border-rose-500/20 dark:border-rose-400/20 hover:border-rose-400 text-left transition">
+              <div class="font-extrabold text-rose-600 dark:text-rose-400">04 · READING</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">Psychology &amp; Grammar</div>
+            </button>
+            <button type="button" onclick="goStage(5)" class="p-3 rounded-2xl bg-[#F4F6FA] dark:bg-[#071224] border-[1.5px] border-rose-500/20 dark:border-rose-400/20 hover:border-rose-400 text-left transition">
+              <div class="font-extrabold text-rose-600 dark:text-rose-400">06 · ARENA</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">Deal Trap Rush</div>
+            </button>
+          </div>
+
+          <div class="pt-1 flex flex-wrap items-center gap-4">
+            <button
+              type="button"
+              onclick="goStage(1)"
+              class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-[#002B5C] via-rose-700 to-rose-600 hover:opacity-95 text-white text-sm sm:text-base font-bold shadow-lg transition"
+            >
+              <span>Start Lesson</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">7 interactive stages · Voice recorder · Solo &amp; class challenge</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 02: 12 VISUAL SPEAKING PROMPTS + FULLSCREEN + RECORDER ==================== -->
+    <section data-stage="1" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-rose-500/20 dark:border-rose-400/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-rose-600 dark:text-rose-400 uppercase">Stage 02 · Discussion &amp; Critical Thinking</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Black Friday Warm-Up (12 Cards)</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Develop extended B1/B2 answers with reasons, examples, and contrasting views.</p>
+      </div>
+
+      <div id="warmupLayout" class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div id="warmupCardCol" class="lg:col-span-7 space-y-4 transition-all">
+          <div class="flex flex-wrap items-center justify-between gap-2 bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 dark:border-rose-400/25 rounded-2xl px-4 py-3 shadow-sm">
+            <div class="flex items-center gap-2">
+              <span id="qBadge" class="px-2.5 py-1 rounded-lg bg-[#002B5C] text-white text-xs font-extrabold">Q1 / 12</span>
+              <span id="qTag" class="px-2.5 py-1 rounded-lg bg-rose-500/15 text-rose-700 dark:text-rose-300 text-xs font-bold">Shopping Habits</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <button id="prevQ" type="button" class="p-2 rounded-xl border border-slate-200 dark:border-rose-400/25 hover:bg-slate-100 dark:hover:bg-[#132C4A] transition" title="Previous">
+                <i data-lucide="chevron-left" class="w-4 h-4"></i>
+              </button>
+              <button id="nextQ" type="button" class="p-2 rounded-xl border border-slate-200 dark:border-rose-400/25 hover:bg-slate-100 dark:hover:bg-[#132C4A] transition" title="Next">
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </button>
+              <button id="shuffleQ" type="button" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 dark:bg-[#071224] hover:bg-slate-200 dark:hover:bg-[#132C4A] text-xs font-bold transition">
+                <i data-lucide="shuffle" class="w-3.5 h-3.5 text-rose-500"></i>
+                <span>Random</span>
+              </button>
+              <button id="toggleFullscreenCard" type="button" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-rose-500/15 text-rose-700 dark:text-rose-200 hover:bg-rose-500/25 text-xs font-bold transition">
+                <i id="fullscreenIcon" data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+                <span id="fullscreenLabel">Fullscreen Card</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 dark:border-rose-400/25 rounded-3xl overflow-hidden shadow-sm">
+            <div id="questionPhotoBox" class="h-52 sm:h-64 bg-[#091726] relative overflow-hidden"></div>
+
+            <div class="p-6 sm:p-8 space-y-4">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-rose-600 dark:text-rose-400">Speaking Prompt</p>
+                <span id="qAngleBadge" class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-[#071224] text-slate-600 dark:text-rose-200"></span>
+              </div>
+              <h3 id="questionText" class="text-xl sm:text-2xl font-extrabold leading-snug text-[#002B5C] dark:text-white"></h3>
+              <p id="questionFollow" class="text-sm text-slate-600 dark:text-slate-300"></p>
+
+              <div class="pt-3 border-t border-slate-100 dark:border-rose-400/15">
+                <button id="toggleStarters" type="button" class="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-rose-700 dark:text-rose-300 hover:underline">
+                  <i data-lucide="lightbulb" class="w-4 h-4"></i>
+                  <span>B1/B2 Discourse Frames</span>
+                </button>
+                <div id="startersBox" class="hidden mt-3 bg-[#F4F6FA] dark:bg-[#071224] border border-rose-500/25 rounded-2xl p-4 text-xs sm:text-sm">
+                  <ul id="startersList" class="list-disc list-inside space-y-1.5 text-slate-700 dark:text-slate-200"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="questionNumberPills" class="flex flex-wrap gap-1.5"></div>
+        </div>
+
+        <div id="warmupRecorderCol" class="lg:col-span-5 bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 dark:border-rose-400/25 rounded-3xl p-6 space-y-4 shadow-sm">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-extrabold uppercase tracking-[0.18em] text-rose-600 dark:text-rose-400">Voice Note · Drive</span>
+            <span id="recTimer" class="font-mono text-xs font-bold text-slate-500 dark:text-slate-400">00:00</span>
+          </div>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Record a 45–60 second B1/B2 response and send it straight to your teacher's folder.</p>
+          <input
+            id="studentNameInput"
+            type="text"
+            placeholder="Your name (e.g. Sofía Gómez)"
+            class="w-full px-3.5 py-2.5 rounded-xl bg-[#F4F6FA] dark:bg-[#071224] border border-slate-200 dark:border-rose-400/25 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500"
+          />
+          <div class="flex items-center gap-2">
+            <button id="btnRecord" type="button" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold transition">
+              <i data-lucide="mic" class="w-4 h-4"></i>
+              <span>Record</span>
+            </button>
+            <button id="btnStop" type="button" disabled class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-900 disabled:opacity-40 text-white text-xs font-bold transition">
+              <i data-lucide="square" class="w-4 h-4"></i>
+              <span>Stop</span>
+            </button>
+            <button id="btnClearAudio" type="button" disabled class="p-2.5 rounded-xl border border-slate-200 dark:border-rose-400/25 hover:bg-slate-100 dark:hover:bg-[#132C4A] disabled:opacity-40 transition" title="Discard">
+              <i data-lucide="trash-2" class="w-4 h-4"></i>
+            </button>
+          </div>
+          <audio id="audioPreview" controls class="w-full hidden rounded-xl"></audio>
+          <div class="flex flex-col sm:flex-row gap-2">
+            <button id="btnSendDrive" type="button" disabled class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#002B5C] hover:bg-[#005A8D] disabled:opacity-40 text-white text-xs font-bold transition">
+              <i data-lucide="send" class="w-3.5 h-3.5"></i>
+              <span id="sendLabel">Send to Teacher</span>
+            </button>
+            <button id="btnDownloadAudio" type="button" disabled class="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl border border-slate-200 dark:border-rose-400/25 hover:bg-slate-100 dark:hover:bg-[#132C4A] disabled:opacity-40 text-xs font-semibold transition">
+              <i data-lucide="download" class="w-3.5 h-3.5"></i>
+              <span>Backup</span>
+            </button>
+          </div>
+          <div id="uploadFeedback" class="hidden text-xs font-semibold px-3 py-2 rounded-xl"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 03: B1/B2 CONSUMER & RETAIL VOCABULARY LAB ==================== -->
+    <section data-stage="2" class="stage hidden stage-anim space-y-8">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-3 border-b border-rose-500/20 dark:border-rose-400/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-rose-600 dark:text-rose-400 uppercase">Stage 03 · High-Frequency B1/B2 Lexicon</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Retail Idioms, Collocations &amp; Tactics</h2>
+        </div>
+        <div class="flex flex-wrap items-center gap-2">
+          <div class="inline-flex rounded-xl p-1 bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 dark:border-rose-400/25">
+            <button id="btnVocabSingle" type="button" onclick="setVocabView('single')" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-rose-600 text-white transition">1 by 1 Focus</button>
+            <button id="btnVocabGrid" type="button" onclick="setVocabView('grid')" class="px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition">All Cards</button>
+          </div>
+          <button id="tabVocabDeals" type="button" onclick="switchVocabDeck('deals')" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-[#002B5C] text-white">1. Deals &amp; Pricing (6)</button>
+          <button id="tabVocabPsych" type="button" onclick="switchVocabDeck('psych')" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 dark:border-rose-400/25">2. Consumer Habits &amp; Traps (6)</button>
+        </div>
+      </div>
+
+      <div id="vocabSingleBox" class="max-w-4xl mx-auto w-full"></div>
+      <div id="vocabGridBox" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+
+      <!-- Definition Match -->
+      <div class="space-y-4 pt-2">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-rose-700 dark:text-rose-300">Quick Collocation &amp; Meaning Match</h3>
+          <div class="flex items-center gap-3">
+            <span id="vocabMatchStatus" class="text-xs font-bold text-rose-700 dark:text-rose-300">Select a definition on the left, then tap its expression</span>
+            <button type="button" onclick="resetVocabMatch()" class="text-xs px-3 py-1.5 rounded-lg border border-slate-300 dark:border-rose-400/25 hover:bg-slate-100 dark:hover:bg-[#132C4A] font-semibold">Reset</button>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          <div id="vocabDefsCol" class="lg:col-span-7 space-y-2.5"></div>
+          <div class="lg:col-span-5 bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 dark:border-rose-400/25 rounded-3xl p-6 space-y-4 shadow-sm">
+            <h4 class="text-xs font-extrabold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">Expressions &amp; Audio</h4>
+            <div id="vocabWordsCol" class="flex flex-wrap gap-2.5"></div>
+            <div id="vocabExampleBox" class="hidden pt-4 border-t border-slate-200 dark:border-rose-400/15 text-xs text-slate-600 dark:text-slate-300 space-y-1"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 04: B1/B2 READING & GRAMMAR IN CONTEXT ==================== -->
+    <section data-stage="3" class="stage hidden stage-anim space-y-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-rose-500/20 dark:border-rose-400/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-rose-600 dark:text-rose-400 uppercase">Stage 04 · Reading &amp; B1/B2 Structures</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Behind the "70% Off" Banner</h2>
+        </div>
+        <button type="button" onclick="speakArticle()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold self-start sm:self-auto transition">
+          <i data-lucide="volume-2" class="w-4 h-4"></i>
+          <span>Listen to Article</span>
+        </button>
+      </div>
+
+      <!-- Authentic B1/B2 Article -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        <div class="lg:col-span-7 bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 dark:border-rose-400/25 rounded-3xl p-6 sm:p-8 space-y-4 shadow-md text-sm sm:text-base leading-relaxed text-slate-700 dark:text-slate-200">
+          <div class="flex items-center justify-between text-xs font-extrabold text-rose-600 dark:text-rose-400 uppercase tracking-wider">
+            <span>Consumer Insights · 180 Words</span>
+            <span>B1/B2 Reading</span>
+          </div>
+          <p>
+            Every November, millions of shoppers stay up past midnight hoping to <strong>snap up a bargain</strong> before stock runs out. Yet consumer watchdogs warn that not every red price tag is the <strong>steal</strong> it appears to be. In many cases, retailers quietly raise prices in October so that a Black Friday discount looks far more generous than it actually is.
+          </p>
+          <p>
+            Psychologists also point to <strong>scarcity tactics</strong> and countdown timers—often called <em>dark patterns</em>—that trigger fear of missing out. If shoppers had taken ten minutes to compare price histories, they <strong>would have realized</strong> that several "doorbuster" deals were cheaper three months earlier. Still, when planned carefully with a strict budget, seasonal sales can be a smart way to replace essentials without <strong>breaking the bank</strong>.
+          </p>
+        </div>
+
+        <div class="lg:col-span-5 bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 dark:border-rose-400/25 rounded-3xl p-6 space-y-4 shadow-md flex flex-col justify-between">
+          <div class="space-y-3">
+            <span class="px-2.5 py-1 rounded-lg bg-[#002B5C] text-white text-[11px] font-extrabold uppercase">B1/B2 Grammar Spotlight</span>
+            <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white">Regret, Contrast &amp; Persuasion</h3>
+
+            <div class="p-3.5 rounded-2xl bg-[#F4F6FA] dark:bg-[#071224] border border-rose-500/20 space-y-1 text-xs">
+              <div class="font-extrabold text-rose-600 dark:text-rose-400">1. Third Conditional (Past Regret / Hindsight)</div>
+              <p><em>"If shoppers <strong>had checked</strong> the price history, they <strong>wouldn't have bought</strong> it."</em></p>
+            </div>
+
+            <div class="p-3.5 rounded-2xl bg-[#F4F6FA] dark:bg-[#071224] border border-rose-500/20 space-y-1 text-xs">
+              <div class="font-extrabold text-rose-600 dark:text-rose-400">2. Contrast Linkers (Despite / Whereas / Yet)</div>
+              <p><em>"<strong>Despite</strong> the huge banners, the real discount was only 5%."</em> (<em>Despite / In spite of</em> + noun / <em>-ing</em>).</p>
+            </div>
+
+            <div class="p-3.5 rounded-2xl bg-[#F4F6FA] dark:bg-[#071224] border border-rose-500/20 space-y-1 text-xs">
+              <div class="font-extrabold text-rose-600 dark:text-rose-400">3. Modals of Deduction &amp; Advice</div>
+              <p><em>"You <strong>should have compared</strong> models before paying." / "That price <strong>can't be</strong> right!"</em></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reading Comprehension Check (4 Questions) -->
+      <div class="space-y-3">
+        <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-rose-700 dark:text-rose-300">Reading &amp; Inference Check</h3>
+        <div id="readingQuizGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 05: B1/B2 PRACTICE LAB (USE OF ENGLISH & TRANSFORMATIONS) ==================== -->
+    <section data-stage="4" class="stage hidden stage-anim space-y-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-rose-500/20 dark:border-rose-400/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-rose-600 dark:text-rose-400 uppercase">Stage 05 · Use of English &amp; Precision</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Practice &amp; Sentence Transformations</h2>
+        </div>
+        <div class="flex gap-2">
+          <button id="tabS5Mcq" type="button" onclick="switchS5Tab('mcq')" class="px-4 py-2 rounded-xl text-xs font-bold bg-[#002B5C] text-white">1. Multiple Choice Cloze (6)</button>
+          <button id="tabS5Transform" type="button" onclick="switchS5Tab('transform')" class="px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 dark:border-rose-400/25">2. Key-Word Transformations (4)</button>
+        </div>
+      </div>
+
+      <div id="panelS5Mcq" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+      <div id="panelS5Transform" class="hidden grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+    </section>
+
+    <!-- ==================== 06: SOLO & CLASS CHALLENGE — "DEAL TRAP RUSH" ==================== -->
+    <section data-stage="5" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-rose-500/20 dark:border-rose-400/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-rose-600 dark:text-rose-400 uppercase">Stage 06 · Solo &amp; Class Challenge</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Deal Trap Rush: Real Bargain or Marketing Trick?</h2>
+        </div>
+        <div class="flex flex-wrap items-center gap-2">
+          <span id="bfGameScore" class="px-3.5 py-1.5 rounded-xl bg-[#002B5C] text-white text-xs font-extrabold">SCORE: 0 / 8</span>
+          <span id="bfGameStreak" class="px-3.5 py-1.5 rounded-xl bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 dark:border-rose-400/25 text-xs font-extrabold">STREAK: 0 🔥</span>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-2">
+        <button type="button" id="bfTabTraps" onclick="switchBfGameMode('traps')" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-[#002B5C] text-white transition">1. Spot the Marketing Trick (4)</button>
+        <button type="button" id="bfTabIdioms" onclick="switchBfGameMode('idioms')" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 dark:border-rose-400/25 transition">2. B1/B2 Idiom &amp; Nuance Clashes (4)</button>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 dark:border-rose-400/25 shadow-xl">
+        <div id="bfGamePhotoBox" class="lg:col-span-5 h-64 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+
+        <div class="lg:col-span-7 p-6 sm:p-10 flex flex-col justify-between space-y-6">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between gap-2">
+              <span id="bfGameBadge" class="px-3 py-1 rounded-full bg-rose-500/15 text-rose-700 dark:text-rose-300 text-xs font-extrabold uppercase tracking-wider"></span>
+              <span id="bfGameCounter" class="text-xs font-bold text-slate-400">Round 1 / 4</span>
+            </div>
+
+            <div class="flex items-start justify-between gap-3">
+              <h3 id="bfGamePrompt" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+              <button type="button" onclick="speakBfGamePrompt()" class="p-2.5 rounded-xl bg-rose-500/15 text-rose-600 dark:text-rose-300 hover:bg-rose-500/25 shrink-0" title="Listen">
+                <i data-lucide="volume-2" class="w-4 h-4"></i>
+              </button>
+            </div>
+
+            <div id="bfGameOptionsBox" class="space-y-2.5"></div>
+
+            <div id="bfGameFeedbackBox" class="hidden p-3.5 rounded-2xl text-xs sm:text-sm font-bold"></div>
+
+            <!-- Hidden clue by default -->
+            <div class="space-y-2 pt-1">
+              <button type="button" onclick="toggleBfGameClue()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#F4F6FA] dark:bg-[#071224] hover:bg-slate-200/70 dark:hover:bg-[#132C4A] border border-slate-200 dark:border-rose-400/25 text-xs font-bold transition">
+                <i data-lucide="eye" class="w-3.5 h-3.5 text-rose-500"></i>
+                <span id="bfGameClueLabel">Show Analytical Clue</span>
+              </button>
+              <div id="bfGameClueBox" class="hidden text-xs font-semibold px-4 py-3 rounded-xl bg-amber-500/15 text-amber-900 dark:text-amber-200 border border-amber-500/30"></div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-100 dark:border-rose-400/15">
+            <button type="button" onclick="stepBfGame(-1)" class="px-4 py-2.5 rounded-2xl border border-slate-300 dark:border-rose-400/25 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-bold transition">
+              ← Prev
+            </button>
+            <button type="button" onclick="restartBfGame()" class="px-4 py-2.5 rounded-2xl border border-slate-300 dark:border-rose-400/25 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-bold transition">
+              Reset Score
+            </button>
+            <button type="button" onclick="stepBfGame(1)" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-gradient-to-r from-[#002B5C] to-rose-600 hover:opacity-95 text-white text-xs sm:text-sm font-bold transition">
+              <span>Next Round</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 07: B1/B2 DEBATE & CONSUMER PITCH LAB ==================== -->
+    <section data-stage="6" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-rose-500/20 dark:border-rose-400/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-rose-600 dark:text-rose-400 uppercase">Stage 07 · Structured Speaking Finale</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Debate &amp; Buyer's Regret Clinic</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Pick a motion, build your argument using B1/B2 connectors, or analyze a buyer's regret case.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div class="lg:col-span-7 bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 dark:border-rose-400/25 rounded-3xl p-6 sm:p-8 space-y-5 shadow-lg">
+          <div class="flex items-center justify-between gap-2">
+            <span id="debateBadge" class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-bold">MOTION 1 / 4</span>
+            <button type="button" onclick="nextDebateMotion()" class="px-3.5 py-1.5 rounded-xl bg-rose-600 text-white text-xs font-bold">Next Motion →</button>
+          </div>
+
+          <h3 id="debateTitle" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+            <div class="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/25 space-y-1.5">
+              <div class="font-extrabold text-emerald-700 dark:text-emerald-300 uppercase">Arguments For</div>
+              <p id="debateFor" class="text-slate-700 dark:text-slate-200 leading-relaxed"></p>
+            </div>
+            <div class="p-4 rounded-2xl bg-rose-500/10 border border-rose-500/25 space-y-1.5">
+              <div class="font-extrabold text-rose-700 dark:text-rose-300 uppercase">Arguments Against</div>
+              <p id="debateAgainst" class="text-slate-700 dark:text-slate-200 leading-relaxed"></p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-[#F4F6FA] dark:bg-[#071224] border border-rose-500/20 space-y-1.5">
+            <span class="text-[11px] font-extrabold uppercase tracking-wider text-rose-600 dark:text-rose-400">Target B1/B2 Connectors to Include</span>
+            <p id="debateConnectors" class="text-xs sm:text-sm font-bold text-[#002B5C] dark:text-white"></p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 dark:border-rose-400/25 rounded-3xl p-6 space-y-4 shadow-lg">
+          <span class="text-xs font-extrabold uppercase tracking-[0.18em] text-rose-600 dark:text-rose-400">Written Mini-Task · Consumer Advice</span>
+          <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white">Write Your 4-Step Black Friday Survival Rule</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300">Combine at least two expressions from today (e.g. <em>snap up a bargain, impulse buy, rip-off, sleep on it, break the bank</em>).</p>
+          <textarea
+            rows="4"
+            placeholder="e.g. Before Black Friday starts, I always make a wishlist so I don't fall for impulse buys..."
+            class="w-full p-3.5 rounded-2xl bg-[#F4F6FA] dark:bg-[#071224] border border-slate-200 dark:border-rose-400/25 text-xs sm:text-sm focus:outline-none focus:border-rose-500"
+          ></textarea>
+          <button type="button" onclick="document.getElementById('survivalSample').classList.toggle('hidden')" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-rose-400/25 text-xs font-bold text-rose-700 dark:text-rose-300">
+            Show / Hide B2 Model Paragraph
+          </button>
+          <div id="survivalSample" class="hidden p-3.5 rounded-2xl bg-rose-500/10 border border-rose-500/25 text-xs text-slate-700 dark:text-slate-200 leading-relaxed">
+            <strong>B2 Model:</strong> "Although Black Friday banners can be tempting, I always track prices weeks in advance so I know whether a deal is a genuine steal or a rip-off. If something isn't on my list, I force myself to sleep on it for 24 hours—that way I avoid buyer's remorse without breaking the bank."
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Navigation -->
+  <footer class="border-t border-rose-500/20 dark:border-rose-400/20 bg-white dark:bg-[#060E1E] py-4 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      <button id="btnPrev" type="button" onclick="goStage(currentStage - 1)" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-300 dark:border-rose-400/25 hover:bg-slate-100 dark:hover:bg-[#132C4A] disabled:opacity-30 text-xs font-bold transition">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Previous</span>
+      </button>
+
+      <span id="stageCounter" class="text-xs font-bold tracking-widest text-slate-500 dark:text-slate-400">
+        01 / 07
+      </span>
+
+      <button id="btnNext" type="button" onclick="goStage(currentStage + 1)" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#002B5C] hover:bg-rose-700 disabled:opacity-30 text-xs font-bold text-white transition">
+        <span>Next</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    const DRIVE_UPLOAD_URL = "https://script.google.com/macros/s/AKfycbwBcX7Z4aABKplkUkpYvM2wEnsBHhWCZzi7dFGDkeUarkXwv-RRI0JXAPDakjkrCrBc/exec";
+
+    const STAGES = [
+      "01 · COVER & BRIEFING",
+      "02 · SPEAKING WARM-UP",
+      "03 · RETAIL LEXICON",
+      "04 · READING & GRAMMAR",
+      "05 · USE OF ENGLISH",
+      "06 · DEAL TRAP RUSH",
+      "07 · DEBATE CLINIC"
+    ];
+
+    let currentStage = 0;
+    const stageSections = document.querySelectorAll('.stage');
+
+    function goStage(idx) {
+      if (idx < 0 || idx >= stageSections.length) return;
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      currentStage = idx;
+      stageSections.forEach((s, i) => s.classList.toggle('hidden', i !== currentStage));
+      document.getElementById('stageTitleHeader').textContent = STAGES[currentStage];
+      document.getElementById('stageCounter').textContent = `${String(currentStage + 1).padStart(2, '0')} / ${String(stageSections.length).padStart(2, '0')}`;
+      document.getElementById('stageProgress').style.width = `${((currentStage + 1) / stageSections.length) * 100}%`;
+      document.getElementById('btnPrev').disabled = currentStage === 0;
+      document.getElementById('btnNext').disabled = currentStage === stageSections.length - 1;
+      renderStagePills();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      lucide.createIcons();
+    }
+
+    function renderStagePills() {
+      document.getElementById('stagePills').innerHTML = STAGES.map((_, i) => `
+        <button type="button" onclick="goStage(${i})" class="px-2.5 py-1 rounded-lg text-xs font-bold transition ${
+          i === currentStage ? 'bg-rose-500 text-white' : 'text-white/75 hover:text-white hover:bg-white/10'
+        }">${String(i + 1).padStart(2, '0')}</button>
+      `).join('');
+    }
+
+    const themeBtn = document.getElementById('themeBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    if (localStorage.getItem('provoB1B2Theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      themeIcon.setAttribute('data-lucide', 'moon');
+    }
+    themeBtn.addEventListener('click', () => {
+      const dark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('provoB1B2Theme', dark ? 'dark' : 'light');
+      themeIcon.setAttribute('data-lucide', dark ? 'sun' : 'moon');
+      lucide.createIcons();
+    });
+
+    function mountPhoto(container, url, altText, fallbackTitle) {
+      container.innerHTML = `<img src="${url}" alt="${altText}" class="w-full h-full object-cover" loading="lazy" />`;
+      const img = container.querySelector('img');
+      if (img) {
+        img.addEventListener('error', () => {
+          container.innerHTML = `
+            <div class="w-full h-full flex flex-col items-center justify-center bg-[#002B5C] text-white p-6 text-center">
+              <i data-lucide="tag" class="w-8 h-8 text-rose-300 mb-2"></i>
+              <span class="text-xs font-extrabold uppercase tracking-widest">${fallbackTitle}</span>
+            </div>
+          `;
+          lucide.createIcons();
+        }, { once: true });
+      }
+    }
+
+    function pickSoniaVoice() {
+      if (!('speechSynthesis' in window)) return null;
+      const voices = window.speechSynthesis.getVoices() || [];
+      if (!voices.length) return null;
+      return (
+        voices.find(v => /sonia/i.test(v.name)) ||
+        voices.find(v => /en[-_]GB/i.test(v.lang) && /natural|online|google|neural/i.test(v.name)) ||
+        voices.find(v => /en[-_]GB/i.test(v.lang)) ||
+        voices.find(v => /^en/i.test(v.lang)) ||
+        null
+      );
+    }
+
+    if ('speechSynthesis' in window && typeof window.speechSynthesis.onvoiceschanged !== 'undefined') {
+      window.speechSynthesis.onvoiceschanged = () => pickSoniaVoice();
+    }
+
+    function speakText(text) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const runUtterance = () => {
+        const u = new SpeechSynthesisUtterance(text);
+        const voice = pickSoniaVoice();
+        if (voice) {
+          u.voice = voice;
+          u.lang = voice.lang;
+        } else {
+          u.lang = 'en-GB';
+        }
+        u.rate = 0.94;
+        u.pitch = 1.02;
+        window.speechSynthesis.speak(u);
+      };
+      if ((window.speechSynthesis.getVoices() || []).length === 0 && 'onvoiceschanged' in window) {
+        const once = () => {
+          window.speechSynthesis.removeEventListener('voiceschanged', once);
+          runUtterance();
+        };
+        window.speechSynthesis.addEventListener('voiceschanged', once);
+        setTimeout(runUtterance, 120);
+      } else {
+        runUtterance();
+      }
+    }
+
+    // ==================== 02: 12 B1/B2 VISUAL PROMPTS ====================
+    const WARMUP_CARDS = [
+      { tag: "Personal Experience", angle: "Best vs. Worst Purchase", q: "Have you ever snapped up a genuine bargain on Black Friday, or ended up regretting an impulse buy?", follow: "Explain what you bought, how much you saved, and whether it was worth it.", photo: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=950&q=80", starters: ["Looking back, the best bargain I ever found was...", "On the other hand, I once regretted buying... because..."] },
+      { tag: "Marketing Psychology", angle: "Urgency & Scarcity", q: "Why do countdown timers, 'Only 2 left in stock!' banners, and red price tags push people to buy faster?", follow: "Discuss how emotion overrides rational comparison.", photo: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=950&q=80", starters: ["When shoppers see a ticking clock, they tend to...", "Retailers deliberately create a sense of urgency so that..."] },
+      { tag: "Online vs. In-Store", angle: "Shopping Channels", q: "Do you prefer browsing online from home or queuing outside physical stores during major sales? Why?", follow: "Compare convenience, crowds, and return policies.", photo: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=950&q=80", starters: ["Personally, I'd much rather shop online because...", "Whereas physical stores let you inspect items, online platforms..."] },
+      { tag: "Fake Discounts", angle: "Consumer Skepticism", q: "How can a careful shopper tell whether a '50% off' promotion is a real discount or a inflated original price?", follow: "Mention price-tracking tools, wishlists, or research habits.", photo: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=950&q=80", starters: ["One effective way to spot fake discounts is to...", "Unless you check the price beforehand, it's easy to..."] },
+      { tag: "Tech & Gadgets", angle: "Planned Upgrades", q: "Which product categories—tech, clothing, travel, or home appliances—offer the most worthwhile Black Friday deals?", follow: "Give concrete examples and explain why.", photo: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=950&q=80", starters: ["In my experience, electronics and appliances...", "By contrast, fast-fashion discounts often..."] },
+      { tag: "Sustainability", angle: "Environmental Impact", q: "Some brands now run 'Green Friday' campaigns or close their shops in protest against overconsumption. What is your take on this?", follow: "Balance environmental concerns with household budgets.", photo: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=950&q=80", starters: ["While I understand why families wait for sales, overconsumption...", "Campaigns like Green Friday raise awareness by..."] },
+      { tag: "Small Businesses", angle: "Local vs. Giants", q: "How does Black Friday affect small local shops compared to multinational e-commerce giants?", follow: "Consider profit margins, delivery expectations, and customer loyalty.", photo: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=950&q=80", starters: ["Small independent shops often struggle to compete because...", "That's why initiatives like Small Business Saturday..."] },
+      { tag: "Cyber Monday & Singles' Day", angle: "Sale Creep", q: "Black Friday used to last a single day, yet now deals stretch across all of November. Has 'Black Month' made sales less exciting?", follow: "Discuss 'sale fatigue' and constant promotional emails.", photo: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=950&q=80", starters: ["Now that promotions last for weeks, consumers...", "Constant discount emails can actually backfire when..."] },
+      { tag: "Returns & Waste", angle: "Hidden Costs", q: "Many people order three sizes online during sales and return two. Should retailers charge for returns to reduce waste?", follow: "Argue for or against free return policies.", photo: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=950&q=80", starters: ["On the one hand, free returns give buyers confidence; on the other...", "Charging a small return fee might discourage..."] },
+      { tag: "Gift Planning", angle: "Early Holiday Shopping", q: "Is Black Friday a smart opportunity to buy Christmas or birthday gifts early, or does it encourage unnecessary spending?", follow: "Explain how you approach gift shopping.", photo: "https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&w=950&q=80", starters: ["If you stick strictly to a gift list, buying in November...", "However, without a clear budget, people often..."] },
+      { tag: "Influencer Ads", angle: "Social Media Hype", q: "How much influence do haul videos, promo codes, and content creators have on what people buy during sales?", follow: "Discuss trust, sponsored posts, and impulse clicks.", photo: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=950&q=80", starters: ["Seeing a creator test a product in real time makes...", "At the same time, viewers need to remember that..."] },
+      { tag: "Hindsight & Advice", angle: "Third Conditional Practice", q: "Think of a purchase you or someone you know made in a rush: how would things have turned out differently if they had waited?", follow: "Use 'If I/they had..., I/they would have...'.", photo: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=950&q=80", starters: ["If I had waited just two more weeks, I would have...", "Had they read the reviews first, they wouldn't have..."] }
+    ];
+
+    let qIdx = 0;
+    let isFullscreenCard = false;
+
+    function renderWarmupCard(idx) {
+      qIdx = (idx + WARMUP_CARDS.length) % WARMUP_CARDS.length;
+      const card = WARMUP_CARDS[qIdx];
+      document.getElementById('qBadge').textContent = `Q${qIdx + 1} / ${WARMUP_CARDS.length}`;
+      document.getElementById('qTag').textContent = card.tag;
+      document.getElementById('qAngleBadge').textContent = card.angle;
+      document.getElementById('questionText').textContent = card.q;
+      document.getElementById('questionFollow').textContent = card.follow;
+      document.getElementById('startersList').innerHTML = card.starters.map(s => `<li>${s}</li>`).join('');
+      document.getElementById('startersBox').classList.add('hidden');
+      mountPhoto(document.getElementById('questionPhotoBox'), card.photo, card.tag, card.tag);
+
+      document.getElementById('questionNumberPills').innerHTML = WARMUP_CARDS.map((_, i) => `
+        <button type="button" onclick="renderWarmupCard(${i})" class="w-8 h-8 rounded-lg text-xs font-extrabold transition ${
+          i === qIdx
+            ? 'bg-[#002B5C] text-white'
+            : 'bg-white dark:bg-[#0B172E] border border-slate-200 dark:border-rose-400/20 text-slate-600 dark:text-slate-300 hover:border-rose-400'
+        }">${i + 1}</button>
+      `).join('');
+    }
+
+    document.getElementById('toggleFullscreenCard').addEventListener('click', () => {
+      isFullscreenCard = !isFullscreenCard;
+      const cardCol = document.getElementById('warmupCardCol');
+      const recCol = document.getElementById('warmupRecorderCol');
+      const label = document.getElementById('fullscreenLabel');
+      const icon = document.getElementById('fullscreenIcon');
+
+      if (isFullscreenCard) {
+        cardCol.classList.remove('lg:col-span-7');
+        cardCol.classList.add('lg:col-span-12');
+        recCol.classList.add('hidden');
+        label.textContent = 'Exit Fullscreen';
+        icon.setAttribute('data-lucide', 'minimize-2');
+      } else {
+        cardCol.classList.remove('lg:col-span-12');
+        cardCol.classList.add('lg:col-span-7');
+        recCol.classList.remove('hidden');
+        label.textContent = 'Fullscreen Card';
+        icon.setAttribute('data-lucide', 'maximize-2');
+      }
+      lucide.createIcons();
+    });
+
+    document.getElementById('prevQ').addEventListener('click', () => renderWarmupCard(qIdx - 1));
+    document.getElementById('nextQ').addEventListener('click', () => renderWarmupCard(qIdx + 1));
+    document.getElementById('shuffleQ').addEventListener('click', () => {
+      let next = Math.floor(Math.random() * WARMUP_CARDS.length);
+      if (next === qIdx && WARMUP_CARDS.length > 1) next = (next + 1) % WARMUP_CARDS.length;
+      renderWarmupCard(next);
+    });
+    document.getElementById('toggleStarters').addEventListener('click', () => {
+      document.getElementById('startersBox').classList.toggle('hidden');
+    });
+
+    // ==================== 03: B1/B2 VOCABULARY DECKS ====================
+    const VOCAB_DECKS = {
+      deals: [
+        { id: 1, phrase: "snap up a bargain", tag: "Phrasal Verb · B1/B2", def: "Quickly buy something at a much lower price than usual before others get it.", ex: "She managed to snap up a bargain on a refurbished laptop at midnight.", note: "Commonly used with 'bargain', 'deal', or 'tickets'." },
+        { id: 2, phrase: "a steal", tag: "Idiom · B2", def: "Something sold at such a low price that it feels almost free.", ex: "At €45 instead of €140, that winter coat was an absolute steal.", note: "Informal and very natural in spoken English." },
+        { id: 3, phrase: "slash prices", tag: "Collocation · B1/B2", def: "Reduce prices dramatically and suddenly.", ex: "Major retailers slashed prices by up to 60% on home electronics.", note: "Stronger and more journalistic than 'cut prices'." },
+        { id: 4, phrase: "break the bank", tag: "Idiom · B1/B2", def: "Cost too much money or exhaust your budget.", ex: "You can upgrade your headphones during the sale without breaking the bank.", note: "Usually used in negative sentences ('without breaking the bank')." },
+        { id: 5, phrase: "a rip-off", tag: "Noun / Idiom · B1/B2", def: "Something that is way too expensive for its real value.", ex: "Raising the price in October just to discount it in November is a total rip-off.", note: "Opposite of 'a steal' or 'good value for money'." },
+        { id: 6, phrase: "shop around", tag: "Phrasal Verb · B1", def: "Compare prices and quality across several shops before buying.", ex: "It always pays to shop around rather than clicking 'buy' on the first site.", note: "Essential B1/B2 consumer advice verb." }
+      ],
+      psych: [
+        { id: 7, phrase: "impulse buy", tag: "Compound Noun · B1/B2", def: "Something you purchase suddenly without planning to.", ex: "Putting cheap accessories near the checkout encourages impulse buys.", note: "Also used as 'buy on impulse'." },
+        { id: 8, phrase: "buyer's remorse", tag: "Noun Phrase · B2", def: "The feeling of regret after making an expensive or unnecessary purchase.", ex: "Many shoppers experience buyer's remorse the morning after Black Friday.", note: "Great B2 collocation for essays and speaking." },
+        { id: 9, phrase: "fear of missing out (FOMO)", tag: "Noun Phrase · B1/B2", def: "Anxiety that an exciting opportunity or deal will disappear if you don't act now.", ex: "Flash sales rely heavily on FOMO to speed up checkout decisions.", note: "Often paired with countdown timers." },
+        { id: 10, phrase: "scarcity tactic", tag: "Marketing Term · B2", def: "A strategy that makes a product seem rare or nearly sold out to boost demand.", ex: "'Only 1 room left at this price' is a classic online scarcity tactic.", note: "Useful for analyzing advertising critically." },
+        { id: 11, phrase: "sleep on it", tag: "Idiom · B1/B2", def: "Wait until the next day before making an important decision.", ex: "If you're unsure about a big purchase, sleep on it before entering your card details.", note: "Natural advice idiom." },
+        { id: 12, phrase: "run out of stock", tag: "Collocation · B1", def: "Have no more items left available to sell.", ex: "Popular sizes tend to run out of stock within the first hour.", note: "Contrast with 'in stock' and 'out of stock'." }
+      ]
+    };
+
+    let vocabDeckKey = 'deals';
+    let vocabCardIdx = 0;
+    let vocabView = 'single';
+
+    window.setVocabView = (mode) => {
+      vocabView = mode;
+      document.getElementById('vocabSingleBox').classList.toggle('hidden', mode !== 'single');
+      document.getElementById('vocabGridBox').classList.toggle('hidden', mode !== 'grid');
+      document.getElementById('btnVocabSingle').className = mode === 'single'
+        ? 'px-3 py-1.5 rounded-lg text-xs font-bold bg-rose-600 text-white transition'
+        : 'px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition';
+      document.getElementById('btnVocabGrid').className = mode === 'grid'
+        ? 'px-3 py-1.5 rounded-lg text-xs font-bold bg-rose-600 text-white transition'
+        : 'px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition';
+      renderVocabSection();
+    };
+
+    window.switchVocabDeck = (key) => {
+      vocabDeckKey = key;
+      vocabCardIdx = 0;
+      document.getElementById('tabVocabDeals').className = key === 'deals'
+        ? 'px-3.5 py-2 rounded-xl text-xs font-bold bg-[#002B5C] text-white'
+        : 'px-3.5 py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 dark:border-rose-400/25';
+      document.getElementById('tabVocabPsych').className = key === 'psych'
+        ? 'px-3.5 py-2 rounded-xl text-xs font-bold bg-[#002B5C] text-white'
+        : 'px-3.5 py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 dark:border-rose-400/25';
+      renderVocabSection();
+    };
+
+    window.stepVocabCard = (d) => {
+      const list = VOCAB_DECKS[vocabDeckKey];
+      vocabCardIdx = (vocabCardIdx + d + list.length) % list.length;
+      renderVocabSection();
+    };
+
+    function renderVocabSection() {
+      const list = VOCAB_DECKS[vocabDeckKey];
+      const item = list[vocabCardIdx % list.length];
+      const safePhrase = item.phrase.replace(/'/g, "\\'");
+      const safeEx = item.ex.replace(/'/g, "\\'");
+
+      document.getElementById('vocabSingleBox').innerHTML = `
+        <div class="bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 dark:border-rose-400/25 rounded-3xl p-6 sm:p-9 space-y-5 shadow-xl">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="px-3.5 py-1 rounded-full bg-[#002B5C] text-white text-xs font-bold">TERM ${(vocabCardIdx % list.length) + 1} / ${list.length}</span>
+              <span class="px-3.5 py-1 rounded-full bg-rose-500/15 text-rose-700 dark:text-rose-300 text-xs font-extrabold">${item.tag}</span>
+            </div>
+            <button type="button" onclick="speakText('${safePhrase}')" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-rose-600 text-white text-xs font-bold">
+              <i data-lucide="volume-2" class="w-4 h-4"></i> Pronounce
+            </button>
+          </div>
+
+          <h3 class="text-2xl sm:text-4xl font-extrabold text-[#002B5C] dark:text-white">${item.phrase}</h3>
+          <p class="text-sm sm:text-base text-slate-700 dark:text-slate-200">${item.def}</p>
+
+          <div class="p-4 rounded-2xl bg-[#F4F6FA] dark:bg-[#071224] border border-rose-500/25 flex items-center justify-between gap-3">
+            <p class="text-sm italic font-semibold text-[#002B5C] dark:text-rose-200">“${item.ex}”</p>
+            <button type="button" onclick="speakText('${safeEx}')" class="p-2.5 rounded-xl bg-rose-500/15 text-rose-700 dark:text-rose-300 shrink-0" title="Listen to example">
+              <i data-lucide="volume-2" class="w-5 h-5"></i>
+            </button>
+          </div>
+
+          <div class="p-3.5 rounded-2xl bg-slate-100/80 dark:bg-white/5 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+            <strong>Usage Note:</strong> ${item.note}
+          </div>
+
+          <div class="flex items-center justify-between gap-3 pt-2 border-t border-slate-100 dark:border-rose-400/15">
+            <button type="button" onclick="stepVocabCard(-1)" class="px-4 py-2.5 rounded-xl border border-slate-300 dark:border-rose-400/25 text-xs font-bold">← Prev Term</button>
+            <div class="flex gap-1.5">
+              ${list.map((_, i) => `<button type="button" onclick="vocabCardIdx=${i}; renderVocabSection();" class="w-7 h-7 rounded-lg text-xs font-bold ${i === vocabCardIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#071224]'}">${i + 1}</button>`).join('')}
+            </div>
+            <button type="button" onclick="stepVocabCard(1)" class="px-4 py-2.5 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next Term →</button>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('vocabGridBox').innerHTML = list.map(v => {
+        const sPhrase = v.phrase.replace(/'/g, "\\'");
+        return `
+          <div class="bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 dark:border-rose-400/25 rounded-3xl p-5 flex flex-col justify-between gap-3 shadow-md">
+            <div class="space-y-2">
+              <div class="flex items-start justify-between gap-2">
+                <h4 class="text-base font-extrabold text-[#002B5C] dark:text-white">${v.phrase}</h4>
+                <button type="button" onclick="speakText('${sPhrase}')" class="p-1.5 rounded-lg bg-[#F4F6FA] dark:bg-[#071224] text-rose-600 dark:text-rose-300 hover:bg-rose-600 hover:text-white transition" title="Listen">
+                  <i data-lucide="volume-2" class="w-4 h-4"></i>
+                </button>
+              </div>
+              <span class="inline-block px-2.5 py-0.5 rounded-md text-[11px] font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300">${v.tag}</span>
+              <p class="text-xs text-slate-600 dark:text-slate-300">${v.def}</p>
+            </div>
+            <p class="text-xs italic text-[#002B5C] dark:text-rose-200 border-t border-slate-100 dark:border-rose-400/15 pt-2.5">“${v.ex}”</p>
+          </div>
+        `;
+      }).join('');
+      lucide.createIcons();
+    }
+
+    // Definition Match (6 core items across both decks)
+    const MATCH_ITEMS = [
+      { id: 1, phrase: "snap up a bargain", def: "Buy something quickly at a great discount before it sells out.", ex: "We snapped up a bargain on flights during the weekend sale." },
+      { id: 2, phrase: "a rip-off", def: "An item that is outrageously overpriced for what you get.", ex: "Paying €30 for a basic phone cable is a complete rip-off." },
+      { id: 3, phrase: "buyer's remorse", def: "Regret felt shortly after making an impulsive or costly purchase.", ex: "Sleep on big purchases to avoid buyer's remorse the next day." },
+      { id: 4, phrase: "break the bank", def: "Spend more money than you can afford.", ex: "You can refresh your wardrobe without breaking the bank." },
+      { id: 5, phrase: "scarcity tactic", def: "Marketing trick that makes stock look almost gone to rush buyers.", ex: "Fake low-stock warnings are a common online scarcity tactic." },
+      { id: 6, phrase: "sleep on it", def: "Delay a buying decision overnight so you can think clearly.", ex: "I'm tempted by the laptop, but I'm going to sleep on it first." }
+    ];
+    let activeDefId = null;
+    const matchedIds = new Set();
+
+    function renderVocabMatch() {
+      const defsCol = document.getElementById('vocabDefsCol');
+      const wordsCol = document.getElementById('vocabWordsCol');
+
+      defsCol.innerHTML = MATCH_ITEMS.map(m => {
+        const done = matchedIds.has(m.id);
+        const sel = activeDefId === m.id;
+        return `
+          <button type="button" onclick="pickMatchDef(${m.id})" ${done ? 'disabled' : ''} class="w-full text-left p-4 rounded-2xl border-[1.5px] transition flex items-center justify-between gap-3 ${
+            done ? 'bg-emerald-500/10 border-emerald-500/35 text-emerald-700 dark:text-emerald-300'
+              : sel ? 'bg-rose-500/15 border-rose-500 text-[#002B5C] dark:text-white'
+              : 'bg-white dark:bg-[#0B172E] border-rose-500/20 dark:border-rose-400/20 hover:border-rose-400'
+          }">
+            <span class="text-xs sm:text-sm"><strong class="text-rose-600 dark:text-rose-400 mr-2">${m.id}.</strong>${m.def}</span>
+            ${done ? `<span class="text-xs font-extrabold px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 shrink-0">${m.phrase}</span>` : ''}
+          </button>
+        `;
+      }).join('');
+
+      const sorted = [...MATCH_ITEMS].sort((a, b) => a.phrase.localeCompare(b.phrase));
+      wordsCol.innerHTML = sorted.map(m => {
+        const done = matchedIds.has(m.id);
+        const safe = m.phrase.replace(/'/g, "\\'");
+        return `
+          <div class="inline-flex items-center rounded-xl border ${done ? 'border-emerald-500/30 bg-emerald-500/10 opacity-50' : 'border-rose-500/25 dark:border-rose-400/25 bg-[#F4F6FA] dark:bg-[#071224]'}">
+            <button type="button" onclick="pickMatchWord(${m.id})" ${done ? 'disabled' : ''} class="px-3.5 py-2 text-xs font-bold hover:text-rose-500 transition">${m.phrase}</button>
+            <button type="button" onclick="speakText('${safe}')" class="pr-2.5 pl-1 py-2 text-slate-400 hover:text-rose-500 transition" title="Listen">
+              <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        `;
+      }).join('');
+      lucide.createIcons();
+    }
+
+    window.pickMatchDef = (id) => {
+      activeDefId = id;
+      document.getElementById('vocabMatchStatus').textContent = `Definition #${id} selected — now tap its expression`;
+      renderVocabMatch();
+    };
+    window.pickMatchWord = (id) => {
+      const status = document.getElementById('vocabMatchStatus');
+      const exBox = document.getElementById('vocabExampleBox');
+      if (activeDefId === null) {
+        status.textContent = "Tap a numbered definition on the left first.";
+        return;
+      }
+      if (activeDefId === id) {
+        matchedIds.add(id);
+        const item = MATCH_ITEMS.find(x => x.id === id);
+        activeDefId = null;
+        status.textContent = `Matched (${matchedIds.size} / ${MATCH_ITEMS.length})`;
+        exBox.classList.remove('hidden');
+        exBox.innerHTML = `<span class="font-bold text-rose-600 dark:text-rose-300">Example:</span> “${item.ex}”`;
+        renderVocabMatch();
+      } else {
+        status.textContent = "Not a match — try another expression.";
+      }
+    };
+    window.resetVocabMatch = () => {
+      matchedIds.clear();
+      activeDefId = null;
+      document.getElementById('vocabMatchStatus').textContent = "Select a definition on the left, then tap its expression";
+      document.getElementById('vocabExampleBox').classList.add('hidden');
+      renderVocabMatch();
+    };
+
+    // ==================== 04: READING & COMPREHENSION ====================
+    window.speakArticle = () => {
+      speakText("Every November, millions of shoppers stay up past midnight hoping to snap up a bargain before stock runs out. Yet consumer watchdogs warn that not every red price tag is the steal it appears to be. In many cases, retailers quietly raise prices in October so that a Black Friday discount looks far more generous than it actually is. Psychologists also point to scarcity tactics and countdown timers—often called dark patterns—that trigger fear of missing out. If shoppers had taken ten minutes to compare price histories, they would have realized that several doorbuster deals were cheaper three months earlier. Still, when planned carefully with a strict budget, seasonal sales can be a smart way to replace essentials without breaking the bank.");
+    };
+
+    const READING_QS = [
+      {
+        q: "1. According to the text, how do some stores make Black Friday discounts look bigger?",
+        opts: ["A) By offering free express shipping on all orders.", "B) By increasing prices quietly the month before.", "C) By selling only last year's models."],
+        ans: "B",
+        why: "The article notes that retailers sometimes raise prices in October to exaggerate November discounts."
+      },
+      {
+        q: "2. What are 'dark patterns' in online shopping?",
+        opts: ["A) Dark-mode website themes that save battery.", "B) Design tricks like countdown timers that pressure users into acting fast.", "C) Secret VIP discount codes shared by email."],
+        ans: "B",
+        why: "Countdown timers and scarcity cues are cited as psychological dark patterns that trigger FOMO."
+      },
+      {
+        q: "3. Which grammar structure is used in 'If shoppers had taken ten minutes..., they would have realized...'?",
+        opts: ["A) Second conditional (unlikely future)", "B) Third conditional (unreal past / hindsight)", "C) Zero conditional (general truth)"],
+        ans: "B",
+        why: "'If + past perfect, would have + past participle' expresses hypothetical past hindsight."
+      },
+      {
+        q: "4. What is the author's overall conclusion about Black Friday?",
+        opts: ["A) Shoppers should boycott all November sales completely.", "B) It can be worthwhile if you stick to a budget and buy planned essentials.", "C) Online timers are always illegal."],
+        ans: "B",
+        why: "The final sentence states that with a strict budget, seasonal sales can help replace essentials."
+      }
+    ];
+
+    function renderReadingQuiz() {
+      document.getElementById('readingQuizGrid').innerHTML = READING_QS.map((item, idx) => `
+        <div class="bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 dark:border-rose-400/25 rounded-3xl p-5 space-y-3 shadow-md">
+          <p class="text-sm font-bold text-[#002B5C] dark:text-white">${item.q}</p>
+          <div class="space-y-1.5">
+            ${item.opts.map(op => {
+              const letter = op[0];
+              return `<button type="button" onclick="checkReadingQ(${idx}, '${letter}')" class="w-full text-left px-3.5 py-2 rounded-xl bg-[#F4F6FA] dark:bg-[#071224] hover:border-rose-400 border-[1.5px] border-rose-500/20 dark:border-rose-400/20 text-xs sm:text-sm font-medium transition">${op}</button>`;
+            }).join('')}
+          </div>
+          <div id="rqFb${idx}" class="hidden p-3 rounded-xl text-xs font-semibold"></div>
+        </div>
+      `).join('');
+    }
+    window.checkReadingQ = (idx, picked) => {
+      const item = READING_QS[idx];
+      const fb = document.getElementById(`rqFb${idx}`);
+      fb.classList.remove('hidden');
+      if (picked === item.ans) {
+        fb.className = 'p-3 rounded-xl text-xs font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Correct (${item.ans}). ${item.why}`;
+      } else {
+        fb.className = 'p-3 rounded-xl text-xs font-semibold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `✗ Not quite. ${item.why}`;
+      }
+    };
+
+    // ==================== 05: USE OF ENGLISH & TRANSFORMATIONS ====================
+    window.switchS5Tab = (tab) => {
+      document.getElementById('panelS5Mcq').classList.toggle('hidden', tab !== 'mcq');
+      document.getElementById('panelS5Transform').classList.toggle('hidden', tab !== 'transform');
+      document.getElementById('tabS5Mcq').className = tab === 'mcq'
+        ? 'px-4 py-2 rounded-xl text-xs font-bold bg-[#002B5C] text-white'
+        : 'px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 dark:border-rose-400/25';
+      document.getElementById('tabS5Transform').className = tab === 'transform'
+        ? 'px-4 py-2 rounded-xl text-xs font-bold bg-[#002B5C] text-white'
+        : 'px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 dark:border-rose-400/25';
+    };
+
+    const S5_MCQS = [
+      {
+        q: "1. ___ the huge '70% OFF' signs, most items were only reduced by 10%.",
+        opts: ["A) Although", "B) Despite", "C) However"],
+        ans: "B",
+        why: "'Despite' is followed directly by a noun phrase ('the huge signs'), whereas 'Although' needs a clause."
+      },
+      {
+        q: "2. If I ___ that the price would drop again on Monday, I wouldn't have ordered on Friday.",
+        opts: ["A) knew", "B) had known", "C) would know"],
+        ans: "B",
+        why: "Third conditional requires past perfect ('had known') in the 'if' clause."
+      },
+      {
+        q: "3. That tablet is €100 more expensive than last month—what a complete ___!",
+        opts: ["A) steal", "B) bargain", "C) rip-off"],
+        ans: "C",
+        why: "A 'rip-off' is something overpriced."
+      },
+      {
+        q: "4. You ___ checked the return policy before buying a non-refundable bundle.",
+        opts: ["A) should have", "B) mustn't have", "C) can't"],
+        ans: "A",
+        why: "'Should have + past participle' criticizes or regrets a past action."
+      },
+      {
+        q: "5. Popular sizes usually ___ of stock within minutes of a flash sale starting.",
+        opts: ["A) run", "B) fall", "C) go"],
+        ans: "A",
+        why: "The fixed collocation is 'run out of stock'."
+      },
+      {
+        q: "6. I never buy expensive tech on impulse; I always prefer to ___ on it first.",
+        opts: ["A) dream", "B) sleep", "C) rest"],
+        ans: "B",
+        why: "'Sleep on it' means wait overnight before deciding."
+      }
+    ];
+
+    function renderS5Mcq() {
+      document.getElementById('panelS5Mcq').innerHTML = S5_MCQS.map((item, idx) => `
+        <div class="bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 dark:border-rose-400/25 rounded-3xl p-5 space-y-3 shadow-md">
+          <p class="text-sm font-bold text-[#002B5C] dark:text-white">${item.q}</p>
+          <div class="space-y-1.5">
+            ${item.opts.map(op => {
+              const letter = op[0];
+              return `<button type="button" onclick="checkS5Mcq(${idx}, '${letter}')" class="w-full text-left px-3.5 py-2 rounded-xl bg-[#F4F6FA] dark:bg-[#071224] hover:border-rose-400 border-[1.5px] border-rose-500/20 dark:border-rose-400/20 text-xs sm:text-sm font-medium transition">${op}</button>`;
+            }).join('')}
+          </div>
+          <div id="s5Fb${idx}" class="hidden p-3 rounded-xl text-xs font-semibold"></div>
+        </div>
+      `).join('');
+    }
+    window.checkS5Mcq = (idx, picked) => {
+      const item = S5_MCQS[idx];
+      const fb = document.getElementById(`s5Fb${idx}`);
+      fb.classList.remove('hidden');
+      if (picked === item.ans) {
+        fb.className = 'p-3 rounded-xl text-xs font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Correct (${item.ans}). ${item.why}`;
+      } else {
+        fb.className = 'p-3 rounded-xl text-xs font-semibold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `✗ Try again. ${item.why}`;
+      }
+    };
+
+    const S5_TRANSFORMS = [
+      {
+        orig: "1. Although the laptop was discounted, it still cost too much for our budget.",
+        cue: "Key word: BANK → Rewrite using 'break the bank':",
+        ans: "✓ Even with the discount, the laptop would still break the bank."
+      },
+      {
+        orig: "2. I regret buying those trainers without comparing prices first.",
+        cue: "Key word: SHOPPED → Rewrite using Third Conditional:",
+        ans: "✓ If I had shopped around first, I wouldn't have bought those trainers."
+      },
+      {
+        orig: "3. Even though there was a countdown timer, Maya didn't rush her decision.",
+        cue: "Key word: DESPITE → Rewrite starting with 'Despite':",
+        ans: "✓ Despite the countdown timer (or Despite having a countdown timer), Maya didn't rush her decision."
+      },
+      {
+        orig: "4. That espresso machine was so cheap that it was an incredible deal.",
+        cue: "Key word: STEAL → Rewrite using 'a steal':",
+        ans: "✓ At that price, that espresso machine was an absolute steal."
+      }
+    ];
+
+    function renderS5Transforms() {
+      document.getElementById('panelS5Transform').innerHTML = S5_TRANSFORMS.map(t => `
+        <div class="bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 dark:border-rose-400/25 rounded-3xl p-5 space-y-3 shadow-md">
+          <p class="text-sm font-bold text-[#002B5C] dark:text-white">${t.orig}</p>
+          <p class="text-xs font-extrabold text-rose-600 dark:text-rose-400">${t.cue}</p>
+          <input type="text" placeholder="Type your B1/B2 rewrite..." class="w-full px-3.5 py-2 rounded-xl bg-[#F4F6FA] dark:bg-[#071224] border border-slate-200 dark:border-rose-400/25 text-xs focus:outline-none focus:border-rose-500" />
+          <button type="button" onclick="this.nextElementSibling.classList.toggle('hidden')" class="px-3.5 py-1.5 rounded-xl bg-[#002B5C] text-white text-xs font-bold">
+            Reveal Model Answer
+          </button>
+          <div class="hidden p-3 rounded-xl bg-emerald-500/15 text-emerald-800 dark:text-emerald-300 text-xs sm:text-sm font-bold">
+            ${t.ans}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // ==================== 06: SOLO & CLASS CHALLENGE — DEAL TRAP RUSH ====================
+    const BF_GAME_DECKS = {
+      traps: [
+        {
+          badge: "ANCHOR PRICING",
+          prompt: "A jacket was €89 all summer. In October it rises to €140, and on Black Friday it is advertised as '35% OFF — Now €91!'. What is happening?",
+          opts: [
+            "A) Artificial anchor pricing—it is actually €2 more expensive than in summer.",
+            "B) A genuine 35% seasonal clearance.",
+            "C) A loyalty reward for early buyers."
+          ],
+          ans: 0,
+          clue: "Compare the 'sale' price (€91) with the normal summer price (€89), not the inflated October tag.",
+          why: "Inflating the reference price beforehand is one of the most common Black Friday pricing tricks.",
+          photo: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          badge: "COUNTDOWN PRESSURE",
+          prompt: "A website flashes 'OFFER EXPIRES IN 04:59!'—yet when you refresh the page in an incognito tab, the timer resets to 05:00.",
+          opts: [
+            "A) A server glitch caused by high traffic.",
+            "B) A fake urgency dark pattern designed to trigger FOMO and impulse buys.",
+            "C) A personalized VIP extension."
+          ],
+          ans: 1,
+          clue: "Real flash sales end at a fixed time for everyone; resetting timers manufacture artificial panic.",
+          why: "Resetting countdown timers are classic dark patterns meant to stop you from shopping around.",
+          photo: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          badge: "DRIP PRICING",
+          prompt: "A monitor is listed at €179, but at the final checkout step a mandatory €35 'express handling & packaging fee' appears.",
+          opts: [
+            "A) Drip pricing—hiding extra charges until the buyer is emotionally committed.",
+            "B) Standard value-added tax calculation.",
+            "C) An optional warranty upgrade."
+          ],
+          ans: 0,
+          clue: "Notice when the mandatory fee appears: right at the final payment screen.",
+          why: "Drip pricing lures shoppers in with a low headline figure and adds unavoidable fees at checkout.",
+          photo: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          badge: "SMART BUYING",
+          prompt: "You tracked an espresso machine for 4 months at €320. On Black Friday an authorized store drops it to €215 with free returns.",
+          opts: [
+            "A) An obvious rip-off.",
+            "B) A verified bargain—verified price history + genuine 33% drop.",
+            "C) An impulse buy trap."
+          ],
+          ans: 1,
+          clue: "You already knew the baseline price (€320) and planned the purchase in advance.",
+          why: "When you verify historical prices beforehand, a 33% drop is a genuine steal.",
+          photo: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80"
+        }
+      ],
+      idioms: [
+        {
+          badge: "IDIOM NUANCE",
+          prompt: "Which sentence uses 'break the bank' naturally in B1/B2 English?",
+          opts: [
+            "A) We found a great coffee grinder that didn't break the bank.",
+            "B) The thief broke the bank to buy shoes on Friday.",
+            "C) My bank broke because the website crashed."
+          ],
+          ans: 0,
+          clue: "'Break the bank' is an idiom about affordability, not a literal bank building.",
+          why: "'Didn't break the bank' means it was affordable and stayed within budget.",
+          photo: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          badge: "CONTRAST LINKERS",
+          prompt: "Choose the grammatically accurate B2 sentence:",
+          opts: [
+            "A) Despite the queues were long, shoppers stayed calm.",
+            "B) Despite the long queues, shoppers stayed calm.",
+            "C) Although the long queues, shoppers stayed calm."
+          ],
+          ans: 1,
+          clue: "'Despite' + noun phrase; 'Although' + full clause (subject + verb).",
+          why: "'Despite the long queues' pairs 'despite' with a noun phrase cleanly.",
+          photo: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          badge: "THIRD CONDITIONAL",
+          prompt: "Express regret about buying an overpriced gadget in a rush:",
+          opts: [
+            "A) If I had slept on it, I wouldn't have bought it.",
+            "B) If I slept on it, I wouldn't have bought it.",
+            "C) If I would have slept on it, I hadn't bought it."
+          ],
+          ans: 0,
+          clue: "Unreal past condition = If + had + past participle, would(n't) have + past participle.",
+          why: "'If I had slept on it, I wouldn't have bought it' is textbook B1/B2 hindsight.",
+          photo: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          badge: "STEAL VS. RIP-OFF",
+          prompt: "Complete: 'Paying €90 for a flimsy plastic backpack is a ___, whereas €25 for a leather one is a ___.'",
+          opts: [
+            "A) steal / rip-off",
+            "B) rip-off / steal",
+            "C) remorse / bargain"
+          ],
+          ans: 1,
+          clue: "Overpriced = rip-off; amazingly cheap for high quality = steal.",
+          why: "'Rip-off' = bad value; 'steal' = extraordinary bargain.",
+          photo: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=80"
+        }
+      ]
+    };
+
+    let bfMode = 'traps';
+    let bfIdx = 0;
+    let bfScore = 0;
+    let bfStreak = 0;
+    const bfAnswered = new Set();
+
+    function renderBfGame() {
+      const deck = BF_GAME_DECKS[bfMode];
+      bfIdx = (bfIdx + deck.length) % deck.length;
+      const item = deck[bfIdx];
+
+      document.getElementById('bfTabTraps').className = bfMode === 'traps'
+        ? 'px-4 py-2 rounded-xl text-xs font-extrabold bg-[#002B5C] text-white transition'
+        : 'px-4 py-2 rounded-xl text-xs font-extrabold bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 dark:border-rose-400/25 transition';
+      document.getElementById('bfTabIdioms').className = bfMode === 'idioms'
+        ? 'px-4 py-2 rounded-xl text-xs font-extrabold bg-[#002B5C] text-white transition'
+        : 'px-4 py-2 rounded-xl text-xs font-extrabold bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 dark:border-rose-400/25 transition';
+
+      document.getElementById('bfGameBadge').textContent = item.badge;
+      document.getElementById('bfGameCounter').textContent = `Round ${bfIdx + 1} / ${deck.length}`;
+      document.getElementById('bfGamePrompt').textContent = item.prompt;
+      mountPhoto(document.getElementById('bfGamePhotoBox'), item.photo, item.badge, item.badge);
+      document.getElementById('bfGameClueBox').textContent = item.clue;
+      document.getElementById('bfGameClueBox').classList.add('hidden');
+      document.getElementById('bfGameClueLabel').textContent = 'Show Analytical Clue';
+      document.getElementById('bfGameFeedbackBox').classList.add('hidden');
+
+      document.getElementById('bfGameOptionsBox').innerHTML = item.opts.map((op, i) => `
+        <button type="button" onclick="pickBfGameOption(${i})" class="w-full text-left px-4 py-3 rounded-2xl bg-[#F4F6FA] dark:bg-[#071224] hover:border-rose-400 border-[1.5px] border-rose-500/20 dark:border-rose-400/20 text-xs sm:text-sm font-bold transition">${op}</button>
+      `).join('');
+
+      document.getElementById('bfGameScore').textContent = `SCORE: ${bfScore} / 8`;
+      document.getElementById('bfGameStreak').textContent = `STREAK: ${bfStreak} 🔥`;
+      if (window.lucide) lucide.createIcons();
+    }
+
+    window.switchBfGameMode = (m) => { bfMode = m; bfIdx = 0; renderBfGame(); };
+    window.stepBfGame = (d) => { bfIdx += d; renderBfGame(); };
+    window.toggleBfGameClue = () => {
+      const box = document.getElementById('bfGameClueBox');
+      const hidden = box.classList.toggle('hidden');
+      document.getElementById('bfGameClueLabel').textContent = hidden ? 'Show Analytical Clue' : 'Hide Analytical Clue';
+    };
+    window.speakBfGamePrompt = () => speakText(BF_GAME_DECKS[bfMode][bfIdx].prompt);
+
+    window.pickBfGameOption = (picked) => {
+      const item = BF_GAME_DECKS[bfMode][bfIdx];
+      const key = `${bfMode}-${bfIdx}`;
+      const fb = document.getElementById('bfGameFeedbackBox');
+      fb.classList.remove('hidden');
+
+      if (picked === item.ans) {
+        if (!bfAnswered.has(key)) {
+          bfAnswered.add(key);
+          bfScore++;
+        }
+        bfStreak++;
+        fb.className = 'p-3.5 rounded-2xl text-xs sm:text-sm font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Sharp catch! ${item.why}`;
+      } else {
+        bfStreak = 0;
+        fb.className = 'p-3.5 rounded-2xl text-xs sm:text-sm font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `✗ Best answer: ${String.fromCharCode(65 + item.ans)}. ${item.why}`;
+      }
+      document.getElementById('bfGameScore').textContent = `SCORE: ${bfScore} / 8`;
+      document.getElementById('bfGameStreak').textContent = `STREAK: ${bfStreak} 🔥`;
+    };
+
+    window.restartBfGame = () => {
+      bfScore = 0;
+      bfStreak = 0;
+      bfAnswered.clear();
+      bfIdx = 0;
+      renderBfGame();
+    };
+
+    // ==================== 07: DEBATE MOTIONS ====================
+    const DEBATE_MOTIONS = [
+      {
+        title: "“Black Friday benefits consumers more than it manipulates them.”",
+        forText: "Households can plan ahead and snap up genuine bargains on expensive essentials like laptops or appliances without breaking the bank.",
+        againstText: "Artificial price hikes, FOMO timers, and impulse buys push people to spend money they wouldn't have spent otherwise.",
+        connectors: "On the one hand... / On the other hand... / Despite the fact that... / Consequently..."
+      },
+      {
+        title: "“Online retailers should be legally required to display the lowest 30-day price.”",
+        forText: "Transparency stops fake discounts and builds genuine trust between brands and buyers.",
+        againstText: "Dynamic pricing fluctuates daily due to supply and shipping costs, making rigid rules hard to enforce.",
+        connectors: "There is no doubt that... / Whereas... / In the long run... / Unless..."
+      },
+      {
+        title: "“Free return shipping during major sales encourages irresponsible waste.”",
+        forText: "Millions of returned items end up in landfills or cost small businesses huge logistics fees.",
+        againstText: "Without free returns, online shoppers cannot check sizing or quality and would stop buying from smaller brands.",
+        connectors: "While it is true that... / Nevertheless... / Having said that... / As a result..."
+      },
+      {
+        title: "“Buying experiences (trips, concerts, courses) brings more lasting value than buying discounted goods.”",
+        forText: "Memories and skills appreciate over time, whereas gadget excitement fades quickly into buyer's remorse.",
+        againstText: "Practical physical items—like a good coat or reliable laptop—improve everyday life for years.",
+        connectors: "Personally, I would argue that... / By contrast... / In terms of value..."
+      }
+    ];
+    let debateIdx = 0;
+
+    function renderDebate() {
+      const m = DEBATE_MOTIONS[debateIdx % DEBATE_MOTIONS.length];
+      document.getElementById('debateBadge').textContent = `MOTION ${(debateIdx % DEBATE_MOTIONS.length) + 1} / ${DEBATE_MOTIONS.length}`;
+      document.getElementById('debateTitle').textContent = m.title;
+      document.getElementById('debateFor').textContent = m.forText;
+      document.getElementById('debateAgainst').textContent = m.againstText;
+      document.getElementById('debateConnectors').textContent = m.connectors;
+    }
+    window.nextDebateMotion = () => { debateIdx++; renderDebate(); };
+
+    // ==================== VOICE NOTE RECORDER ====================
+    const studentNameInput = document.getElementById('studentNameInput');
+    studentNameInput.value = localStorage.getItem('provoStudentName') || '';
+    studentNameInput.addEventListener('input', () => {
+      localStorage.setItem('provoStudentName', studentNameInput.value.trim());
+    });
+
+    let mediaRecorder = null;
+    let audioChunks = [];
+    let audioBlob = null;
+    let selectedMime = 'audio/webm';
+    let recSec = 0;
+    let recTimerId = null;
+
+    const btnRecord = document.getElementById('btnRecord');
+    const btnStop = document.getElementById('btnStop');
+    const btnClearAudio = document.getElementById('btnClearAudio');
+    const btnSendDrive = document.getElementById('btnSendDrive');
+    const btnDownloadAudio = document.getElementById('btnDownloadAudio');
+    const audioPreview = document.getElementById('audioPreview');
+    const recTimer = document.getElementById('recTimer');
+    const uploadFeedback = document.getElementById('uploadFeedback');
+
+    function showRecMsg(msg, ok = true) {
+      uploadFeedback.classList.remove('hidden');
+      uploadFeedback.className = ok
+        ? 'text-xs font-semibold px-3 py-2 rounded-xl bg-emerald-500/15 text-emerald-700 dark:text-emerald-300'
+        : 'text-xs font-semibold px-3 py-2 rounded-xl bg-rose-500/15 text-rose-700 dark:text-rose-300';
+      uploadFeedback.textContent = msg;
+    }
+
+    btnRecord.addEventListener('click', async () => {
+      uploadFeedback.classList.add('hidden');
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        if (MediaRecorder.isTypeSupported('audio/webm')) selectedMime = 'audio/webm';
+        else if (MediaRecorder.isTypeSupported('audio/mp4')) selectedMime = 'audio/mp4';
+        else selectedMime = '';
+
+        audioChunks = [];
+        mediaRecorder = selectedMime ? new MediaRecorder(stream, { mimeType: selectedMime }) : new MediaRecorder(stream);
+        mediaRecorder.ondataavailable = e => { if (e.data && e.data.size > 0) audioChunks.push(e.data); };
+        mediaRecorder.onstop = () => {
+          stream.getTracks().forEach(t => t.stop());
+          audioBlob = new Blob(audioChunks, { type: mediaRecorder.mimeType || selectedMime || 'audio/webm' });
+          audioPreview.src = URL.createObjectURL(audioBlob);
+          audioPreview.classList.remove('hidden');
+          btnSendDrive.disabled = false;
+          btnDownloadAudio.disabled = false;
+          btnClearAudio.disabled = false;
+        };
+
+        mediaRecorder.start();
+        recSec = 0;
+        recTimer.textContent = '00:00';
+        recTimerId = setInterval(() => {
+          recSec++;
+          recTimer.textContent = `${String(Math.floor(recSec / 60)).padStart(2, '0')}:${String(recSec % 60).padStart(2, '0')}`;
+        }, 1000);
+
+        btnRecord.disabled = true;
+        btnStop.disabled = false;
+        btnClearAudio.disabled = true;
+        btnSendDrive.disabled = true;
+      } catch (err) {
+        showRecMsg('Microphone unavailable. Open via HTTPS and allow mic permissions.', false);
+      }
+    });
+
+    btnStop.addEventListener('click', () => {
+      clearInterval(recTimerId);
+      if (mediaRecorder && mediaRecorder.state !== 'inactive') mediaRecorder.stop();
+      btnRecord.disabled = false;
+      btnStop.disabled = true;
+    });
+
+    btnClearAudio.addEventListener('click', () => {
+      audioBlob = null;
+      audioPreview.classList.add('hidden');
+      btnSendDrive.disabled = true;
+      btnDownloadAudio.disabled = true;
+      btnClearAudio.disabled = true;
+      recTimer.textContent = '00:00';
+      uploadFeedback.classList.add('hidden');
+    });
+
+    btnDownloadAudio.addEventListener('click', () => {
+      if (!audioBlob) return;
+      const name = (studentNameInput.value.trim() || 'Student').replace(/\s+/g, '_');
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(audioBlob);
+      a.download = `PROVO-B1B2-Black-Friday-Q${qIdx + 1}-${name}.webm`;
+      a.click();
+    });
+
+    btnSendDrive.addEventListener('click', () => {
+      const studentName = studentNameInput.value.trim();
+      if (!studentName) {
+        showRecMsg('Enter your name before sending.', false);
+        studentNameInput.focus();
+        return;
+      }
+      if (!audioBlob) return;
+      btnSendDrive.disabled = true;
+      document.getElementById('sendLabel').textContent = 'Uploading...';
+
+      const reader = new FileReader();
+      reader.onloadend = async () => {
+        try {
+          const base64Audio = String(reader.result).split(',')[1];
+          const res = await fetch(DRIVE_UPLOAD_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify({
+              studentName,
+              lessonTitle: 'B1B2-Black-Friday',
+              questionNumber: qIdx + 1,
+              mimeType: audioBlob.type || 'audio/webm',
+              audioBase64: base64Audio
+            })
+          });
+          const data = await res.json();
+          if (data.status === 'ok') showRecMsg(`Sent to Drive as ${data.fileName}`, true);
+          else throw new Error(data.message || 'Upload error');
+        } catch (err) {
+          showRecMsg('Could not upload automatically. Use Backup to download the audio.', false);
+        } finally {
+          btnSendDrive.disabled = false;
+          document.getElementById('sendLabel').textContent = 'Send to Teacher';
+        }
+      };
+      reader.readAsDataURL(audioBlob);
+    });
+
+    // Init
+    goStage(0);
+    renderWarmupCard(0);
+    renderVocabSection();
+    renderVocabMatch();
+    renderReadingQuiz();
+    renderS5Mcq();
+    renderS5Transforms();
+    renderBfGame();
+    renderDebate();
+    lucide.createIcons();
+  </script>
+</body>
+</html>

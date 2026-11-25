@@ -84,31 +84,31 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 shadow-2xl">
         <div class="lg:col-span-6 h-80 sm:h-[470px] relative bg-[#091726] overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1050&q=80"
-            alt="Morning coffee on a clean table"
+            src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1050&q=80"
+            alt="Daily routine planner and coffee"
             class="w-full h-full object-cover"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-[#061322]/85 via-black/15 to-transparent"></div>
           <div class="absolute bottom-5 left-6 right-6 flex items-center justify-between text-xs text-cyan-100/90 font-semibold tracking-wider uppercase">
             <span>PROVO · A1–A2 Grammar</span>
-            <span>Routines &amp; Facts</span>
+            <span>Habits &amp; Routines</span>
           </div>
         </div>
 
         <div class="lg:col-span-6 p-8 sm:p-12 flex flex-col justify-center space-y-6">
           <div class="inline-flex items-center gap-2 self-start px-3 py-1 rounded-full bg-[#0089A7]/15 border border-[#0089A7]/35 text-[#005A8D] dark:text-cyan-300 text-xs font-extrabold uppercase tracking-[0.18em]">
-            <i data-lucide="repeat" class="w-3.5 h-3.5"></i>
+            <i data-lucide="calendar-check" class="w-3.5 h-3.5"></i>
             <span>PROVO Stage Lab · Navy Edition</span>
           </div>
 
           <h1 class="text-4xl sm:text-5xl font-extrabold uppercase tracking-tight leading-[1.06] text-[#002B5C] dark:text-white">
             Present<br/>
             Simple<br/>
-            <span class="text-[#0089A7]">Mastery</span>
+            <span class="text-[#0089A7]">Daily Life</span>
           </h1>
 
           <p class="text-slate-600 dark:text-slate-300 text-base leading-relaxed">
-            Build accuracy with habits, schedules, permanent facts, third-person endings, and frequency expressions across guided interactive stages.
+            Talk about daily habits, routines, and facts with clear third-person <em>-s / -es / -ies</em> rules, frequency adverbs, live practice, and interactive solo &amp; class games.
           </p>
 
           <div class="pt-2 flex flex-wrap items-center gap-4">
@@ -120,7 +120,7 @@
               <span>Start Lesson</span>
               <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
-            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">12 visual prompts · Fullscreen mode · Multi-game arcade</span>
+            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">12 routine prompts · Fullscreen mode · Multi-game arcade</span>
           </div>
         </div>
       </div>
@@ -131,9 +131,9 @@
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
         <div>
           <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 02</span>
-          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Visual Warm-Up</h2>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Routine Warm-Up</h2>
         </div>
-        <p class="text-sm text-slate-500 dark:text-slate-400">12 routine &amp; habit prompts. Switch to Fullscreen Card when projecting or sharing screen.</p>
+        <p class="text-sm text-slate-500 dark:text-slate-400">12 daily habit &amp; routine prompts. Switch to Fullscreen Card when projecting or sharing screen.</p>
       </div>
 
       <div id="warmupLayout" class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
@@ -141,7 +141,7 @@
           <div class="flex flex-wrap items-center justify-between gap-2 bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-2xl px-4 py-3 shadow-sm">
             <div class="flex items-center gap-2">
               <span id="qBadge" class="px-2.5 py-1 rounded-lg bg-[#002B5C] text-white text-xs font-extrabold">Q1 / 12</span>
-              <span id="qTag" class="px-2.5 py-1 rounded-lg bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300 text-xs font-bold">Morning Rituals</span>
+              <span id="qTag" class="px-2.5 py-1 rounded-lg bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300 text-xs font-bold">Mornings</span>
             </div>
             <div class="flex items-center gap-1.5">
               <button id="prevQ" type="button" class="p-2 rounded-xl border border-slate-200 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] transition" title="Previous">
@@ -280,11 +280,12 @@
         </div>
       </div>
 
+      <!-- Frequency Adverb Explorer -->
       <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-4 shadow-sm">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div>
-            <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Frequency Thermometer</span>
-            <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white mt-0.5">Tap an Adverb for Examples &amp; Speaking Cues</h3>
+            <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Frequency Scale Explorer</span>
+            <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white mt-0.5">Tap a Frequency Adverb for Word Order &amp; Examples</h3>
           </div>
           <span id="freqPercentBadge" class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold self-start sm:self-auto">100% · Always</span>
         </div>
@@ -292,6 +293,7 @@
         <div id="freqDetailCard" class="p-4 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/15 space-y-1.5"></div>
       </div>
 
+      <!-- Definition Match -->
       <div class="space-y-4">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#005A8D] dark:text-cyan-300">Definition Match</h3>
@@ -310,6 +312,7 @@
         </div>
       </div>
 
+      <!-- Guided Production Lab -->
       <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 sm:p-8 space-y-5 shadow-sm">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div>
@@ -331,43 +334,40 @@
           <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 04</span>
           <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Grammar Guide &amp; Check</h2>
         </div>
-        <p class="text-sm text-slate-500 dark:text-slate-400">Visual diagrams, clear rules for Present Simple, live form inspector, and summary check.</p>
+        <p class="text-sm text-slate-500 dark:text-slate-400">Visual timeline, third-person verb rules, live form inspector, and summary check.</p>
       </div>
 
       <!-- Visual Diagram + Photo -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
         <div class="lg:col-span-7 bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-4 shadow-sm flex flex-col justify-center">
           <div class="flex items-center justify-between text-xs font-extrabold">
-            <span class="px-2.5 py-0.5 rounded bg-[#002B5C] text-white">REPEATED PATTERN</span>
-            <span class="text-[#005A8D] dark:text-cyan-300">Habits · Facts · Timetables · Stative</span>
+            <span class="px-2.5 py-0.5 rounded bg-[#0089A7] text-white">REPEATED HABITS &amp; FACTS</span>
+            <span class="text-[#0089A7] dark:text-cyan-300">base verb / verb + -s (-es / -ies)</span>
           </div>
           <svg viewBox="0 0 500 78" class="w-full h-20 rounded-xl bg-slate-50 dark:bg-[#071627] border border-slate-200/70 dark:border-cyan-400/10">
-            <line x1="25" y1="36" x2="475" y2="36" stroke="#64748B" stroke-width="2" stroke-dasharray="4 4" />
-            <circle cx="85" cy="36" r="8" fill="#002B5C" />
-            <circle cx="190" cy="36" r="8" fill="#005A8D" />
-            <circle cx="295" cy="36" r="8" fill="#0089A7" />
-            <circle cx="400" cy="36" r="8" fill="#002B5C" />
-            <text x="85" y="60" text-anchor="middle" font-size="10" fill="#94A3B8">Mon</text>
-            <text x="190" y="60" text-anchor="middle" font-size="10" fill="#94A3B8">Wed</text>
-            <text x="295" y="60" text-anchor="middle" font-size="10" fill="#94A3B8">Fri</text>
-            <text x="400" y="60" text-anchor="middle" font-size="10" fill="#94A3B8">Sun</text>
+            <line x1="25" y1="36" x2="475" y2="36" stroke="#64748B" stroke-width="2" />
+            <circle cx="95" cy="36" r="7" fill="#0089A7" />
+            <circle cx="200" cy="36" r="7" fill="#0089A7" />
+            <circle cx="305" cy="36" r="7" fill="#0089A7" />
+            <circle cx="410" cy="36" r="7" fill="#0089A7" />
+            <text x="250" y="62" text-anchor="middle" font-size="10" font-weight="bold" fill="#0089A7">DAILY ROUTINES · GENERAL TRUTHS · TIMETABLES</text>
           </svg>
           <p class="text-xs text-slate-600 dark:text-slate-300">
-            Present Simple anchors regular habits, general truths, fixed schedules, and stative verbs (<em>know, prefer, want, need, love, belong</em>).
+            Present Simple expresses regular habits, routines, permanent facts, and schedules—not just what is happening in this second.
           </p>
         </div>
 
         <div class="lg:col-span-5 rounded-3xl overflow-hidden relative bg-[#091726] min-h-[220px] shadow-sm">
           <img
-            src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=850&q=80"
-            alt="Weekly planner and schedule"
+            src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=850&q=80"
+            alt="Checklist and daily routine notes"
             class="w-full h-full object-cover"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-[#061322]/90 via-[#061322]/35 to-transparent"></div>
           <div class="absolute bottom-5 left-6 right-6 text-white space-y-1">
-            <span class="text-[11px] font-extrabold uppercase tracking-[0.2em] text-cyan-300">Key Spelling Rule</span>
-            <p class="text-sm font-bold">He / She / It → -s / -es / -ies</p>
-            <p class="text-xs text-white/80">In negatives and questions with <em>doesn't / does</em>, return to the base verb.</p>
+            <span class="text-[11px] font-extrabold uppercase tracking-[0.2em] text-cyan-300">He / She / It Rule</span>
+            <p class="text-sm font-bold">Add -s in affirmatives, use DOES / DOESN'T</p>
+            <p class="text-xs text-white/80">Say <em>“She <strong>works</strong>”</em> and <em>“She <strong>doesn't work</strong>”</em> (no extra -s after <em>doesn't</em>).</p>
           </div>
         </div>
       </div>
@@ -375,34 +375,33 @@
       <!-- Detailed Grammar Rules -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-2.5 shadow-sm">
-          <span class="inline-block px-2.5 py-1 rounded-lg bg-[#002B5C] text-white text-[11px] font-extrabold uppercase">01 · Spelling · He / She / It</span>
-          <h3 class="text-base font-extrabold text-[#002B5C] dark:text-white">Third-Person Endings</h3>
+          <span class="inline-block px-2.5 py-1 rounded-lg bg-[#002B5C] text-white text-[11px] font-extrabold uppercase">01 · He / She / It Endings</span>
+          <h3 class="text-base font-extrabold text-[#002B5C] dark:text-white">Third-Person Spelling</h3>
           <ul class="text-xs text-slate-600 dark:text-slate-300 space-y-1.5 list-disc list-inside leading-relaxed">
-            <li>General verbs: <strong>+s</strong> (<em>works, plays, reads</em>).</li>
-            <li>Ending in <em>-ch, -sh, -ss, -x, -o</em>: <strong>+es</strong> (<em>watches, goes</em>).</li>
-            <li>Consonant + <em>y</em>: <strong>-ies</strong> (<em>study → studies</em>).</li>
+            <li>Most verbs: <strong>+s</strong> (<em>work → works, live → lives</em>).</li>
+            <li><em>-s, -sh, -ch, -x, -o</em>: <strong>+es</strong> (<em>watch → watches, go → goes</em>).</li>
+            <li>Consonant + <em>y</em>: <strong>-ies</strong> (<em>study → studies</em>); vowel + <em>y</em>: <strong>+s</strong> (<em>play → plays</em>).</li>
             <li>Irregular: <em>have → <strong>has</strong></em>.</li>
           </ul>
         </div>
 
         <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-2.5 shadow-sm">
-          <span class="inline-block px-2.5 py-1 rounded-lg bg-[#005A8D] text-white text-[11px] font-extrabold uppercase">02 · Do / Does</span>
+          <span class="inline-block px-2.5 py-1 rounded-lg bg-[#005A8D] text-white text-[11px] font-extrabold uppercase">02 · Do &amp; Does</span>
           <h3 class="text-base font-extrabold text-[#002B5C] dark:text-white">Negatives &amp; Questions</h3>
           <ul class="text-xs text-slate-600 dark:text-slate-300 space-y-1.5 list-disc list-inside leading-relaxed">
-            <li><em>I / you / we / they</em>: <strong>don't + base verb</strong>.</li>
-            <li><em>He / she / it</em>: <strong>doesn't + base verb</strong>.</li>
-            <li>Questions: <strong>Do / Does + subject + base verb?</strong></li>
-            <li>Never add <em>-s</em> to the main verb after <em>does</em> or <em>doesn't</em>.</li>
+            <li><strong>I / you / we / they:</strong> <em>don't</em> + base verb; <em>Do you...?</em></li>
+            <li><strong>He / she / it:</strong> <em>doesn't</em> + base verb; <em>Does she...?</em></li>
+            <li>Never add <em>-s</em> to the main verb after <em>doesn't</em> or <em>does</em>.</li>
           </ul>
         </div>
 
         <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-2.5 shadow-sm">
-          <span class="inline-block px-2.5 py-1 rounded-lg bg-[#0089A7] text-white text-[11px] font-extrabold uppercase">03 · Adverbs &amp; States</span>
-          <h3 class="text-base font-extrabold text-[#002B5C] dark:text-white">Position &amp; Stative Verbs</h3>
+          <span class="inline-block px-2.5 py-1 rounded-lg bg-[#0089A7] text-white text-[11px] font-extrabold uppercase">03 · Adverb Position</span>
+          <h3 class="text-base font-extrabold text-[#002B5C] dark:text-white">Frequency Adverbs</h3>
           <ul class="text-xs text-slate-600 dark:text-slate-300 space-y-1.5 list-disc list-inside leading-relaxed">
-            <li><strong>Before</strong> main verbs: <em>She <u>always drinks</u> tea.</em></li>
-            <li><strong>After</strong> verb <em>to be</em>: <em>He <u>is always</u> on time.</em></li>
-            <li>Stative verbs (<em>know, prefer, want, belong</em>) describe states rather than actions in progress.</li>
+            <li><strong>Before</strong> main verbs: <em>I <u>usually</u> walk to work.</em></li>
+            <li><strong>After</strong> <em>to be</em>: <em>He <u>is always</u> on time.</em></li>
+            <li><em>Never</em> already has a negative meaning: <em>I <u>never</u> drink coffee at night.</em></li>
           </ul>
         </div>
       </div>
@@ -493,7 +492,7 @@
       <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 space-y-4 shadow-sm">
         <div>
           <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Set 4 · Mini-Chat Context</span>
-          <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white mt-0.5">Pick the Most Natural Chat Reply</h3>
+          <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white mt-0.5">Pick the Most Natural Live Reply</h3>
         </div>
         <div id="miniChatList" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
       </div>
@@ -513,58 +512,81 @@
       </div>
     </section>
 
-    <!-- ==================== 06: SPEAKING GAME (4 CARDS PER MODE) ==================== -->
+    <!-- ==================== 06: SOLO & CLASS GAME (ROUTINE & -S RUSH) ==================== -->
     <section data-stage="5" class="lesson-stage hidden stage-anim space-y-6">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
         <div>
-          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 06 · Live Class Game</span>
-          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Truth, Bluff &amp; Habits</h2>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 06 · Solo &amp; Class Challenge</span>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Routine &amp; -S Rush</h2>
         </div>
-        <p class="text-sm text-slate-500 dark:text-slate-400">4 cards per mode for lively speaking rounds with your teacher.</p>
+        <div class="flex flex-wrap items-center gap-2">
+          <span id="psGameScore" class="px-3.5 py-1.5 rounded-xl bg-[#002B5C] text-white text-xs font-extrabold">SCORE: 0 / 8</span>
+          <span id="psGameStreak" class="px-3.5 py-1.5 rounded-xl bg-slate-100 dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 text-xs font-extrabold">STREAK: 0 🔥</span>
+        </div>
       </div>
 
-      <div class="flex flex-wrap gap-2" id="gameModeTabs"></div>
+      <div class="flex flex-wrap gap-2" id="psGameModeTabs">
+        <button type="button" id="psTabRoutines" onclick="switchPsGameMode('routines')" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-[#002B5C] text-white transition">1. Daily Routine Decoder (4)</button>
+        <button type="button" id="psTabEndings" onclick="switchPsGameMode('endings')" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 transition">-S / Does Traps (4)</button>
+      </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 shadow-lg">
-        <div id="gamePhotoBox" class="lg:col-span-5 h-64 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+        <div id="psGamePhotoBox" class="lg:col-span-5 h-64 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
 
         <div class="lg:col-span-7 p-6 sm:p-10 flex flex-col justify-between space-y-6">
           <div class="space-y-4">
             <div class="flex items-center justify-between gap-2">
-              <span id="gameModeBadge" class="px-3 py-1 rounded-full bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300 text-xs font-extrabold uppercase tracking-wider"></span>
-              <span id="gameCardCounter" class="text-xs font-bold text-slate-400">Card 1 / 4</span>
+              <span id="psGameModeBadge" class="px-3 py-1 rounded-full bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300 text-xs font-extrabold uppercase tracking-wider"></span>
+              <span id="psGameCardCounter" class="text-xs font-bold text-slate-400">Round 1 / 4</span>
             </div>
 
-            <h3 id="gamePromptTitle" class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
-            <p id="gameRuleText" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+            <div class="flex items-start justify-between gap-3">
+              <h3 id="psGamePromptTitle" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+              <button type="button" onclick="speakPsGamePrompt()" class="p-2.5 rounded-xl bg-[#0089A7]/15 text-[#0089A7] hover:bg-[#0089A7]/25 shrink-0" title="Listen">
+                <i data-lucide="volume-2" class="w-4 h-4"></i>
+              </button>
+            </div>
 
-            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/15 space-y-1.5">
-              <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#0089A7]">Teacher Follow-Up Prompt</span>
-              <p id="gameFollowUp" class="text-sm font-semibold text-slate-800 dark:text-slate-100"></p>
+            <div id="psGameOptionsBox" class="space-y-2.5"></div>
+
+            <div id="psGameFeedbackBox" class="hidden p-3.5 rounded-2xl text-xs sm:text-sm font-bold"></div>
+
+            <!-- Hidden rule clue by default -->
+            <div class="space-y-2 pt-1">
+              <button type="button" onclick="togglePsGameClue()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-[#071627] hover:bg-slate-200/70 dark:hover:bg-[#132C4A] border border-slate-200 dark:border-cyan-400/20 text-xs font-bold transition">
+                <i data-lucide="eye" class="w-3.5 h-3.5 text-[#0089A7]"></i>
+                <span id="psGameClueBtnLabel">Show Rule Clue</span>
+              </button>
+              <div id="psGameClueBox" class="hidden text-xs font-semibold px-4 py-3 rounded-xl bg-amber-500/15 text-amber-900 dark:text-amber-200 border border-amber-500/30"></div>
             </div>
           </div>
 
           <div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-100 dark:border-cyan-400/15">
             <button
               type="button"
-              onclick="nextGameCard()"
-              class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-gradient-to-r from-[#002B5C] to-[#005A8D] hover:from-[#005A8D] hover:to-[#0089A7] text-white text-xs sm:text-sm font-bold transition"
+              onclick="stepPsGameCard(-1)"
+              class="px-4 py-2.5 rounded-2xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-bold transition"
             >
-              <i data-lucide="dices" class="w-4 h-4"></i>
-              <span>Draw Next Card</span>
+              ← Prev
             </button>
 
             <button
               type="button"
-              onclick="revealBluffVote()"
-              class="inline-flex items-center gap-2 px-4 py-3 rounded-2xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-bold transition"
+              onclick="restartPsGame()"
+              class="px-4 py-2.5 rounded-2xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-bold transition"
             >
-              <i data-lucide="sparkles" class="w-4 h-4 text-[#0089A7]"></i>
-              <span>Bonus Twist</span>
+              Reset Score
+            </button>
+
+            <button
+              type="button"
+              onclick="stepPsGameCard(1)"
+              class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-gradient-to-r from-[#002B5C] to-[#005A8D] hover:from-[#005A8D] hover:to-[#0089A7] text-white text-xs sm:text-sm font-bold transition"
+            >
+              <span>Next Round</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
           </div>
-
-          <div id="gameTwistBox" class="hidden text-xs font-semibold px-4 py-3 rounded-xl bg-amber-500/15 text-amber-800 dark:text-amber-200 border border-amber-500/30"></div>
         </div>
       </div>
     </section>
@@ -585,17 +607,17 @@
       <!-- Arcade Game Switcher -->
       <div class="flex flex-wrap gap-2">
         <button id="arcTabRounds" type="button" onclick="switchArcadeGame('rounds')" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-[#002B5C] text-white transition">
-          1. Form &amp; Spelling Duel
+          1. Verb Form Duel
         </button>
         <button id="arcTabCues" type="button" onclick="switchArcadeGame('cues')" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7] transition">
-          2. Frequency Sorter
+          2. Third-Person Ending Sorter
         </button>
         <button id="arcTabStative" type="button" onclick="switchArcadeGame('stative')" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7] transition">
-          3. Stative Trap Breaker
+          3. Error Trap Breaker
         </button>
       </div>
 
-      <!-- Game 1: Form & Spelling Duel -->
+      <!-- Game 1: Verb Form Duel -->
       <div id="arcadePanelRounds" class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 sm:p-8 space-y-6 shadow-lg max-w-3xl mx-auto w-full">
         <div class="flex items-center justify-between gap-2">
           <span id="arcadeRoundLabel" class="text-xs font-extrabold uppercase tracking-widest text-[#0089A7]">Round 1 / 8</span>
@@ -616,30 +638,30 @@
         </div>
       </div>
 
-      <!-- Game 2: Frequency Sorter -->
+      <!-- Game 2: Third-Person Ending Sorter -->
       <div id="arcadePanelCues" class="hidden bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 sm:p-8 space-y-5 shadow-lg max-w-3xl mx-auto w-full">
         <div class="flex items-center justify-between gap-2">
-          <span id="cueCounter" class="text-xs font-extrabold uppercase tracking-widest text-[#0089A7]">Expression 1 / 6</span>
-          <span class="text-xs text-slate-400">Does this fit regular routines or states?</span>
+          <span id="cueCounter" class="text-xs font-extrabold uppercase tracking-widest text-[#0089A7]">Verb 1 / 6</span>
+          <span class="text-xs text-slate-400">Which third-person rule applies for he / she / it?</span>
         </div>
         <div id="cuePhraseBox" class="text-2xl sm:text-3xl font-extrabold text-center py-6 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/15 text-[#002B5C] dark:text-white"></div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <button type="button" onclick="answerCue('Routine / Frequency')" class="p-4 rounded-2xl bg-[#002B5C] hover:bg-[#005A8D] text-white text-sm font-extrabold transition">
-            Routine / Frequency
+          <button type="button" onclick="answerCue('Add -es / -ies')" class="p-4 rounded-2xl bg-[#002B5C] hover:bg-[#005A8D] text-white text-sm font-extrabold transition">
+            Add -es / -ies
           </button>
-          <button type="button" onclick="answerCue('Stative / State')" class="p-4 rounded-2xl bg-[#0089A7] hover:opacity-95 text-white text-sm font-extrabold transition">
-            Stative / State
+          <button type="button" onclick="answerCue('Add -s only')" class="p-4 rounded-2xl bg-[#0089A7] hover:opacity-95 text-white text-sm font-extrabold transition">
+            Add -s only
           </button>
         </div>
         <div id="cueFeedback" class="hidden p-4 rounded-2xl text-xs sm:text-sm font-semibold"></div>
         <div class="flex justify-end">
           <button type="button" onclick="nextCue()" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-cyan-400/20 text-xs font-bold hover:bg-slate-100 dark:hover:bg-[#132C4A]">
-            Next Expression →
+            Next Verb →
           </button>
         </div>
       </div>
 
-      <!-- Game 3: Stative Trap Breaker -->
+      <!-- Game 3: Error Trap Breaker -->
       <div id="arcadePanelStative" class="hidden bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 sm:p-8 space-y-5 shadow-lg max-w-3xl mx-auto w-full">
         <div class="flex items-center justify-between gap-2">
           <span id="statCounter" class="text-xs font-extrabold uppercase tracking-widest text-[#0089A7]">Trap 1 / 6</span>
@@ -689,11 +711,11 @@
 
     const STAGES = [
       "01 · Overview",
-      "02 · Visual Warm-Up",
+      "02 · Routine Warm-Up",
       "03 · Vocabulary",
       "04 · Grammar & Check",
       "05 · Practice & Chat",
-      "06 · Truth & Bluff",
+      "06 · Routine & -S Rush",
       "07 · Routine Arcade"
     ];
 
@@ -764,28 +786,65 @@
       }
     }
 
+    function pickNaturalEnglishVoice() {
+      if (!('speechSynthesis' in window)) return null;
+      const voices = window.speechSynthesis.getVoices() || [];
+      if (!voices.length) return null;
+
+      const preferredNames = [
+        "Google UK English Male",
+        "Google UK English Female",
+        "Google US English",
+        "Microsoft Ryan Online (Natural)",
+        "Microsoft Sonia Online (Natural)",
+        "Microsoft Guy Online (Natural)",
+        "Microsoft Jenny Online (Natural)",
+        "Daniel",
+        "Samantha"
+      ];
+
+      for (const name of preferredNames) {
+        const match = voices.find(v => v.name.toLowerCase().includes(name.toLowerCase()));
+        if (match) return match;
+      }
+
+      return voices.find(v => /en[-_](GB|US)/i.test(v.lang)) || voices.find(v => /^en/i.test(v.lang)) || null;
+    }
+
+    if ('speechSynthesis' in window && typeof window.speechSynthesis.onvoiceschanged !== 'undefined') {
+      window.speechSynthesis.onvoiceschanged = () => pickNaturalEnglishVoice();
+    }
+
     function speakPhrase(text) {
       if (!('speechSynthesis' in window)) return;
       window.speechSynthesis.cancel();
       const u = new SpeechSynthesisUtterance(text);
-      u.lang = 'en-US';
+      const voice = pickNaturalEnglishVoice();
+      if (voice) {
+        u.voice = voice;
+        u.lang = voice.lang;
+      } else {
+        u.lang = 'en-US';
+      }
+      u.rate = 0.94;
+      u.pitch = 1.0;
       window.speechSynthesis.speak(u);
     }
 
-    // 02: 12 Visual Question Cards + Fullscreen Toggle
+    // 02: 12 Routine Question Cards + Fullscreen Toggle
     const WARMUP_CARDS = [
-      { tag: "Morning Rituals", angle: "Daily Routine", q: "What does your weekday morning routine look like from the moment you wake up?", follow: "Mention two things you always do and one thing you never do before breakfast.", photo: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=950&q=80", starters: ["I usually wake up at... and immediately...", "I never check... until I finish my coffee."] },
-      { tag: "Someone Close to You", angle: "Third-Person -s / -es", q: "What is one daily habit that your partner, friend, or family member repeats every single day?", follow: "Practice third-person endings (-s / -es / -ies) when describing their routine.", photo: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=950&q=80", starters: ["Every evening, my partner/friend watches...", "She/He always takes... before leaving home."] },
-      { tag: "Food & Cooking", angle: "Regular Meals", q: "What kind of meals do you cook or eat on a regular basis during the week?", follow: "Explain what you prefer to eat on busy days versus relaxed weekends.", photo: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=950&q=80", starters: ["On weekdays I normally prepare...", "I prefer simple dishes like... because..."] },
-      { tag: "Movement & Outdoors", angle: "Frequency Adverbs", q: "How often do you go for a walk, exercise, or spend time outdoors?", follow: "Use frequency adverbs such as usually, every other day, or on weekends.", photo: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=950&q=80", starters: ["I go for a long walk almost every...", "On weekends we often visit..."] },
-      { tag: "Work & Study Rhythm", angle: "Schedules & Focus", q: "At what time of day do you concentrate best, and how do you organize your tasks?", follow: "Contrast what works well for you with habits that distract you.", photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=950&q=80", starters: ["I focus best in the morning when...", "I keep a list so I don't forget..."] },
-      { tag: "City & Commute", angle: "Facts & Routines", q: "How do you usually get around your town or city, and what does your neighborhood feel like?", follow: "Describe permanent facts about where you live and your typical commute.", photo: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=950&q=80", starters: ["I usually walk / drive / take the train to...", "My neighborhood has... and feels very..."] },
-      { tag: "Books, Music & Screens", angle: "Stative Preferences", q: "What kind of music, series, or books do you enjoy in your free time?", follow: "Use stative verbs like enjoy, love, prefer, or hardly ever watch.", photo: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=950&q=80", starters: ["I love listening to... when I...", "I hardly ever watch..., I prefer..."] },
-      { tag: "Evening Wind-Down", angle: "Night Routine", q: "How do you unwind at night so you sleep well?", follow: "Share the last thing you do before turning off the lights.", photo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=950&q=80", starters: ["Before bed I usually drink... and read...", "I try not to look at my phone after..."] },
-      { tag: "Household Tasks", angle: "Negatives & Questions", q: "Which household task do you do regularly, and what does nobody do often at home?", follow: "Practice negative sentences like 'don't / doesn't + base verb'.", photo: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=950&q=80", starters: ["I regularly... around the house, and I don't mind...", "We usually... on Saturdays."] },
-      { tag: "Weekend Reset", angle: "Every Other Weekend", q: "What is a simple weekend tradition you look forward to?", follow: "Say how often it happens and why you like it.", photo: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=950&q=80", starters: ["Every other weekend I...", "On Sundays I always... because..."] },
-      { tag: "Quick Questions", angle: "Do / Does Questions", q: "What are three good Present Simple questions you like asking a new friend?", follow: "Include at least one 'Does she/he...?' question.", photo: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=950&q=80", starters: ["Do you usually...?", "Does your family often...?"] },
-      { tag: "Unpopular Routine", angle: "Opinion & Habit", q: "What is an unpopular daily habit that actually works well for you?", follow: "Explain why it helps you.", photo: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=950&q=80", starters: ["I always... even though many people...", "It works for me because..."] }
+      { tag: "Mornings", angle: "Wake-Up & Start", q: "What time do you usually wake up on weekdays, and what is the first thing you do?", follow: "Use Present Simple for your morning steps.", photo: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=950&q=80", starters: ["I usually wake up at... and then I...", "First, I have a glass of water / coffee."] },
+      { tag: "Work & Study", angle: "Daily Focus", q: "How do you get to work, school, or your study space every day?", follow: "Say how you travel and how long it takes.", photo: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=950&q=80", starters: ["I usually walk / take the train to...", "It takes me about... minutes."] },
+      { tag: "Meals", angle: "Eating Habits", q: "What do you normally eat for breakfast or lunch on a typical day?", follow: "Mention one food you always eat and one you rarely eat.", photo: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=950&q=80", starters: ["For breakfast I usually have...", "I rarely eat... in the morning."] },
+      { tag: "Breaks", angle: "Daily Reset", q: "What do you do when you need a short break during a busy day?", follow: "Use a frequency adverb like sometimes, often, or always.", photo: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=950&q=80", starters: ["When I need a break, I often...", "I sometimes step outside for ten minutes."] },
+      { tag: "Afternoons", angle: "Work & Errands", q: "What tasks or routines do you usually do in the late afternoon?", follow: "Include at least one negative sentence (don't / doesn't).", photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=950&q=80", starters: ["In the afternoon, I usually...", "I don't check work messages after..."] },
+      { tag: "Evenings", angle: "Winding Down", q: "How do you relax in the evening after your main tasks are finished?", follow: "Describe two regular evening habits.", photo: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=950&q=80", starters: ["In the evening, I like to...", "I usually cook dinner and..."] },
+      { tag: "Weekends", angle: "Days Off", q: "How is your weekend routine different from your weekday routine?", follow: "Contrast weekdays with Saturdays or Sundays.", photo: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=950&q=80", starters: ["On weekends, I don't set an alarm...", "On Sundays, I often meet..."] },
+      { tag: "House & Family", angle: "Third-Person -S", q: "What does a family member, roommate, or friend do every day?", follow: "Remember to add -s / -es / -ies for he, she, or it!", photo: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=950&q=80", starters: ["My partner/friend goes to work at...", "She/He always makes..."] },
+      { tag: "Screen Habits", angle: "Digital Routine", q: "How often do you check your phone or messages, and when do you turn notifications off?", follow: "Use frequency expressions like once a day or before bed.", photo: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=950&q=80", starters: ["I check my messages...", "I always put my phone away when..."] },
+      { tag: "Exercise", angle: "Active Habits", q: "Do you exercise or walk regularly? When do you do it?", follow: "Say how often and where.", photo: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=950&q=80", starters: ["I walk / exercise ... times a week.", "I usually go out in the morning/evening."] },
+      { tag: "Bedtime", angle: "Night Routine", q: "What time do you usually go to bed, and do you have a sleep routine?", follow: "Use always, usually, or never.", photo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=950&q=80", starters: ["I usually go to bed around...", "Before sleep, I never..."] },
+      { tag: "General Facts", angle: "True Statements", q: "Share two true general facts about your city, weather, or daily life.", follow: "Use Present Simple for facts that stay true.", photo: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=950&q=80", starters: ["In my city, shops usually open at...", "Winter here doesn't get..."] }
     ];
 
     let qIdx = 0;
@@ -848,12 +907,12 @@
 
     // 03: Complete Vocabulary Lab
     const VOCAB_ITEMS = [
-      { id: 1, phrase: "every other day", tag: "Frequency · Every 2 Days", def: "Once every two days (e.g., Mon, Wed, Fri).", ex: "I go running every other day.", photo: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=800&q=75" },
-      { id: 2, phrase: "hardly ever", tag: "Frequency · Rare (~10%)", def: "Almost never; very rarely.", ex: "We hardly ever eat out on Mondays.", photo: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=75" },
-      { id: 3, phrase: "on a regular basis", tag: "Routine · Steady", def: "Repeatedly at steady, predictable intervals.", ex: "She updates her notes on a regular basis.", photo: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=800&q=75" },
-      { id: 4, phrase: "once in a while", tag: "Frequency · Occasional", def: "Not often; only occasionally.", ex: "I bake homemade treats once in a while.", photo: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=75" },
-      { id: 5, phrase: "belong to", tag: "Stative · Possession", def: "To be the property of someone.", ex: "This guitar belongs to my brother.", photo: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=75" },
-      { id: 6, phrase: "take for granted", tag: "Idiom · Overlook", def: "Fail to appreciate something because it feels constant.", ex: "Don't take good health for granted.", photo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=75" }
+      { id: 1, phrase: "every day / on weekdays", tag: "Routine Cue", def: "Happening regularly on normal days or Monday–Friday.", ex: "She walks to work on weekdays.", photo: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=800&q=75" },
+      { id: 2, phrase: "usually / normally", tag: "Frequency Adverb", def: "In most situations; what happens most often.", ex: "I usually have toast and fruit for breakfast.", photo: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=75" },
+      { id: 3, phrase: "sometimes / occasionally", tag: "Frequency Adverb", def: "Happening now and then, not every day.", ex: "We occasionally eat out on Friday nights.", photo: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=75" },
+      { id: 4, phrase: "hardly ever / rarely", tag: "Low Frequency", def: "Almost never; only a few times a year.", ex: "He rarely watches television on weekdays.", photo: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=75" },
+      { id: 5, phrase: "once or twice a week", tag: "Time Expression", def: "A specific weekly count of how often an action happens.", ex: "They play padel twice a week.", photo: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=800&q=75" },
+      { id: 6, phrase: "tidy up / run errands", tag: "Everyday Action", def: "Clean/organize rooms or do short daily tasks around town.", ex: "I run errands on Saturday mornings.", photo: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=75" }
     ];
 
     let vocabViewMode = 'grid';
@@ -884,7 +943,7 @@
     function renderVocabGrid() {
       const grid = document.getElementById('vocabGridView');
       grid.innerHTML = VOCAB_ITEMS.map((v, i) => {
-        const safe = v.phrase.replace(/'/g, "\\'");
+        const safe = v.phrase.replace(/'/g, "\'");
         return `
           <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-2xl overflow-hidden shadow-sm flex flex-col">
             <div id="vg-photo-${i}" class="h-32 bg-[#091726] relative overflow-hidden"></div>
@@ -933,12 +992,12 @@
     };
 
     const FREQ_SCALE = [
-      { label: "Always", pct: "100%", ex: "She always drinks coffee at 8:00 AM.", ask: "What is something you always do on work/school days?" },
-      { label: "Usually", pct: "80%", ex: "I usually walk to the station.", ask: "How do you usually get around during the week?" },
-      { label: "Often", pct: "60%", ex: "They often meet on Saturday mornings.", ask: "What do you often do with friends or family?" },
-      { label: "Sometimes", pct: "40%", ex: "We sometimes cook at home.", ask: "What do you sometimes eat for dinner?" },
-      { label: "Hardly ever", pct: "10%", ex: "He hardly ever watches TV on weekdays.", ask: "What is one thing you hardly ever do?" },
-      { label: "Never", pct: "0%", ex: "I never skip my morning routine.", ask: "What is something you never do?" }
+      { label: "Always", pct: "100%", ex: "I always check my schedule in the morning.", ask: "What do you always do before work or class?" },
+      { label: "Usually", pct: "~80%", ex: "She usually leaves home at 8:15.", ask: "What time do you usually start your day?" },
+      { label: "Often", pct: "~65%", ex: "We often walk in the park on Sundays.", ask: "Where do you often go at the weekend?" },
+      { label: "Sometimes", pct: "~35%", ex: "He sometimes works from a café.", ask: "What do you sometimes do after dinner?" },
+      { label: "Rarely", pct: "~10%", ex: "They rarely eat fast food.", ask: "What food or habit do you rarely do?" },
+      { label: "Never", pct: "0%", ex: "I never drink coffee late at night.", ask: "What do you never do on a weekday?" }
     ];
     let activeFreqIdx = 0;
 
@@ -982,7 +1041,7 @@
       const sorted = [...VOCAB_ITEMS].sort((a, b) => a.phrase.localeCompare(b.phrase));
       words.innerHTML = sorted.map(item => {
         const matched = doneMatches.has(item.id);
-        const safe = item.phrase.replace(/'/g, "\\'");
+        const safe = item.phrase.replace(/'/g, "\'");
         return `
           <div class="inline-flex items-center rounded-xl border ${matched ? 'border-emerald-500/30 bg-emerald-500/10 opacity-50' : 'border-slate-200 dark:border-cyan-400/20 bg-slate-50 dark:bg-[#071627]'}">
             <button type="button" onclick="pickPhrase(${item.id})" ${matched ? 'disabled' : ''} class="px-3.5 py-2 text-xs font-bold hover:text-[#0089A7] transition">${item.phrase}</button>
@@ -1020,10 +1079,10 @@
     };
 
     const PRODUCTION_PROMPTS = [
-      { target: "every other day", cue: "Write a sentence about something you do every other day.", model: "Model: I go for a walk every other day." },
-      { target: "hardly ever", cue: "Write a sentence about something you hardly ever do.", model: "Model: I hardly ever drink soda." },
-      { target: "on a regular basis", cue: "Write a sentence about a regular habit or class.", model: "Model: We practice speaking on a regular basis." },
-      { target: "once in a while", cue: "Write a sentence about an occasional treat or activity.", model: "Model: I bake homemade treats once in a while." }
+      { target: "usually", cue: "Write a true sentence about what you usually do on weekday mornings.", model: "Model: I usually drink tea and check my notes at 8:00 a.m." },
+      { target: "doesn't", cue: "Write what a friend or family member doesn't do every day.", model: "Model: My brother doesn't cook on weekdays." },
+      { target: "studies / goes", cue: "Write a third-person sentence with -ies or -es.", model: "Model: Sara studies English in the evening and goes to the gym." },
+      { target: "never", cue: "Write a true sentence with 'never' about a routine habit.", model: "Model: I never skip breakfast when I have a busy morning." }
     ];
     let showProdModels = false;
 
@@ -1044,10 +1103,9 @@
 
     // 04: Grammar Form Inspector + Integrated Cloze
     const SUBJECTS = [
-      { key: "i", label: "I", aff: "I <strong>drink</strong> black coffee every morning.", neg: "I <strong>don't drink</strong> coffee late at night.", q: "<strong>Do</strong> I need to bring a notebook?", rule: "Base verb with 'I'; auxiliary 'do / don't'." },
-      { key: "she", label: "She", aff: "She <strong>studies</strong> English twice a week.", neg: "She <strong>doesn't study</strong> on Sundays.", q: "<strong>Does</strong> she <strong>study</strong> in the morning?", rule: "Consonant + y → -ies in affirmative; base verb 'study' after doesn't / Does." },
-      { key: "he", label: "He", aff: "He <strong>watches</strong> football on weekends.", neg: "He <strong>doesn't watch</strong> much TV.", q: "<strong>Does</strong> he <strong>watch</strong> the evening match?", rule: "Verbs ending in -ch take -es in affirmative; base verb 'watch' in negatives/questions." },
-      { key: "they", label: "They", aff: "They <strong>live</strong> in a quiet neighborhood.", neg: "They <strong>don't live</strong> far from the station.", q: "<strong>Do</strong> they <strong>live</strong> near the park?", rule: "Plural subject takes the base verb without -s." }
+      { key: "i", label: "I / We / They", aff: "They <strong>walk</strong> to the station every morning.", neg: "They <strong>don't walk</strong> when it rains.", q: "<strong>Do</strong> they <u>walk</u> every morning?", rule: "With I, you, we, and they, use the base verb in positives and 'don't / Do' in negatives and questions." },
+      { key: "she", label: "She / He", aff: "She <strong>studies</strong> after dinner and <strong>watches</strong> a short show.", neg: "She <strong>doesn't study</strong> on Sundays.", q: "<strong>Does</strong> she <u>study</u> after dinner?", rule: "With he, she, and it, add -s/-es/-ies in positives and use 'doesn't / Does' + base verb." },
+      { key: "it", label: "It (Routine / Fact)", aff: "The train <strong>leaves</strong> at 7:15 a.m.", neg: "It <strong>doesn't stop</strong> at that station.", q: "<strong>Does</strong> it <u>leave</u> on time?", rule: "Singular 'it' takes third-person '-s' in positives and 'doesn't / Does' + base verb." }
     ];
     let currentSubj = "she";
     let currentForm = "aff";
@@ -1078,22 +1136,22 @@
       });
     });
 
-    const CLOZE_BANK = ["habits", "base", "does", "stative", "schedules"];
-    const CLOZE_KEY = ["habits", "schedules", "base", "does", "stative"];
+    const CLOZE_BANK = ["routines", "-s", "doesn't", "base verb", "before"];
+    const CLOZE_KEY = ["routines", "-s", "doesn't", "base verb", "before"];
     const CLOZE_STATE = ["", "", "", "", ""];
     let activeSlot = 0;
 
     function renderCloze() {
       document.getElementById('clozeChips').innerHTML = CLOZE_BANK.map(w => `
-        <button type="button" onclick="putCloze('${w}')" class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7] text-xs font-bold text-[#005A8D] dark:text-cyan-300 transition">${w}</button>
+        <button type="button" onclick="putCloze('${w.replace(/'/g, "\'")}')" class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7] text-xs font-bold text-[#005A8D] dark:text-cyan-300 transition">${w}</button>
       `).join('');
       const segs = [
-        "We use the Present Simple for regular ",
-        " and fixed ",
-        ". With <em>he, she,</em> or <em>it</em>, we add <strong>-s / -es / -ies</strong> in positive sentences, but return to the ",
-        " form when ",
-        " or <em>doesn't</em> is used. We also use it with ",
-        " verbs like <em>prefer</em> and <em>know</em>."
+        "We use the Present Simple for habits, facts, and daily ",
+        ". With <em>he, she,</em> and <em>it</em> in positive sentences, we usually add ",
+        ". For negatives with <em>he, she,</em> or <em>it</em>, we use ",
+        " + ",
+        ". Frequency adverbs like <em>usually</em> go ",
+        " most main verbs."
       ];
       let out = "";
       for (let i = 0; i < segs.length; i++) {
@@ -1122,14 +1180,14 @@
 
     // 05: Practice Pack + Mini-Chat Live
     const PRACTICE_QS = [
-      { q: "1. My brother ___ to work by bike every day.", opts: ["go", "goes"], ans: "goes" },
-      { q: "2. They ___ meat; they follow a vegetarian diet.", opts: ["don't eat", "doesn't eat"], ans: "don't eat" },
-      { q: "3. ___ your sister speak Portuguese?", opts: ["Do", "Does"], ans: "Does" },
-      { q: "4. I really ___ quiet mornings with a cup of tea.", opts: ["prefer", "prefers"], ans: "prefer" },
-      { q: "5. She ___ her emails before checking social media.", opts: ["check", "checks"], ans: "checks" },
-      { q: "6. He ___ TV on weekday mornings.", opts: ["don't watch", "doesn't watch"], ans: "doesn't watch" },
-      { q: "7. ___ they live near the train station?", opts: ["Do", "Does"], ans: "Do" },
-      { q: "8. This notebook ___ to the English group.", opts: ["belong", "belongs"], ans: "belongs" }
+      { q: "1. David ___ coffee every morning.", opts: ["drink", "drinks"], ans: "drinks" },
+      { q: "2. She ___ meat; she is vegetarian.", opts: ["doesn't eat", "don't eat"], ans: "doesn't eat" },
+      { q: "3. ___ you ___ near the station?", opts: ["Do / live", "Does / live"], ans: "Do / live" },
+      { q: "4. ___ your sister ___ English?", opts: ["Does / teach", "Does / teaches"], ans: "Does / teach" },
+      { q: "5. They ___ to the gym on Tuesdays.", opts: ["goes", "go"], ans: "go" },
+      { q: "6. A good student ___ new words in a notebook.", opts: ["studies", "studys"], ans: "studies" },
+      { q: "7. We ___ late on Mondays.", opts: ["are rarely", "rarely are"], ans: "are rarely" },
+      { q: "8. My dad ___ dinner on Sundays.", opts: ["has", "haves"], ans: "has" }
     ];
     const practicePicked = {};
 
@@ -1139,7 +1197,7 @@
           <p class="text-sm font-bold">${item.q}</p>
           <div class="flex flex-wrap gap-2">
             ${item.opts.map(o => `
-              <button type="button" onclick="choosePractice(${i}, '${o.replace(/'/g, "\\'")}')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold border transition ${
+              <button type="button" onclick="choosePractice(${i}, '${o.replace(/'/g, "\'")}')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold border transition ${
                 practicePicked[i] === o ? 'bg-[#002B5C] text-white border-[#002B5C]' : 'bg-slate-50 dark:bg-[#071627] border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7]'
               }">${o}</button>
             `).join('')}
@@ -1155,10 +1213,10 @@
     };
 
     const SCRAMBLES = [
-      { label: "Sentence 1 / 4 · Habit + Adverb", tiles: ["always", "she", "coffee", "drinks", "at breakfast"], target: "she always drinks coffee at breakfast" },
-      { label: "Sentence 2 / 4 · Negative Routine", tiles: ["on Sundays", "he", "work", "doesn't", "usually"], target: "he doesn't usually work on sundays" },
-      { label: "Sentence 3 / 4 · Routine Question", tiles: ["every day", "you", "do", "for a walk", "go"], target: "do you go for a walk every day" },
-      { label: "Sentence 4 / 4 · Frequency Phrase", tiles: ["hardly ever", "they", "late", "arrive", "to class"], target: "they hardly ever arrive late to class" }
+      { label: "Sentence 1 / 4 · Daily Routine", tiles: ["usually", "i", "work", "at home", "on fridays"], target: "i usually work at home on fridays" },
+      { label: "Sentence 2 / 4 · Negative Third Person", tiles: ["doesn't", "he", "before eight", "wake up", "usually"], target: "he doesn't usually wake up before eight" },
+      { label: "Sentence 3 / 4 · Question Form", tiles: ["you", "do", "every day", "exercise", "how often"], target: "how often do you exercise every day" },
+      { label: "Sentence 4 / 4 · Habit & Time", tiles: ["at 9:00", "starts", "the class", "every morning"], target: "the class starts at 9:00 every morning" }
     ];
     let scrambleIdx = 0;
     let placedOrder = [];
@@ -1182,7 +1240,7 @@
       if (placedOrder.length === s.tiles.length) {
         const built = placedOrder.map(i => s.tiles[i]).join(' ').toLowerCase();
         fb.className = built === s.target ? 'text-xs font-bold text-emerald-600 dark:text-emerald-400' : 'text-xs font-bold text-amber-600 dark:text-amber-300';
-        fb.textContent = built === s.target ? 'Great order! Sentence complete.' : `Check order — target: “${s.target}”.`;
+        fb.textContent = built === s.target ? 'Nice job! Sentence order is spot on.' : `Try again — target: “${s.target}”.`;
       } else {
         fb.textContent = '';
       }
@@ -1193,10 +1251,10 @@
     window.nextScramble = () => { scrambleIdx = (scrambleIdx + 1) % SCRAMBLES.length; placedOrder = []; renderScramble(); };
 
     const ODD_ITEMS = [
-      { label: "Group 1 · Frequency", opts: ["usually", "every morning", "hardly ever", "yesterday"], odd: "yesterday", note: "'Yesterday' refers to past time, not Present Simple frequency." },
-      { label: "Group 2 · 3rd Person -s", opts: ["she walks", "he studies", "it flies", "she don't run"], odd: "she don't run", note: "Use 'she doesn't run' with third-person singular." },
-      { label: "Group 3 · Stative Verbs", opts: ["know", "prefer", "belong", "cook"], odd: "cook", note: "'Cook' is a dynamic action verb; the others express states." },
-      { label: "Group 4 · Questions", opts: ["Do you work?", "Does he study?", "Where they live?", "When does it start?"], odd: "Where they live?", note: "Questions need 'do / does': 'Where do they live?'." }
+      { label: "Group 1 · Routine Cues", opts: ["every day", "on Mondays", "usually", "right now"], odd: "right now", note: "'Right now' belongs to Present Continuous, not routine Present Simple." },
+      { label: "Group 2 · Third-Person Spelling", opts: ["watches", "goes", "studies", "studys"], odd: "studys", note: "Consonant + y changes to -ies: 'studies'." },
+      { label: "Group 3 · Negative Form", opts: ["She doesn't drive.", "They don't drive.", "He doesn't drives.", "I don't drive."], odd: "He doesn't drives.", note: "After 'doesn't', use the base verb 'drive' without -s." },
+      { label: "Group 4 · Irregular & Verbs", opts: ["has", "plays", "works", "haves"], odd: "haves", note: "The third-person form of 'have' is 'has'." }
     ];
 
     function renderOdd() {
@@ -1204,7 +1262,7 @@
         <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-2xl p-5 space-y-2.5 shadow-sm">
           <div class="text-xs font-extrabold uppercase tracking-wider text-[#0089A7]">${g.label}</div>
           <div class="space-y-1.5">
-            ${g.opts.map((o, oi) => `<button type="button" onclick="testOdd(${gi}, '${o.replace(/'/g, "\\'")}')" class="w-full text-left px-3 py-2 rounded-xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7] text-xs font-semibold transition"><strong class="text-[#0089A7] mr-2">${String.fromCharCode(65 + oi)}.</strong>${o}</button>`).join('')}
+            ${g.opts.map((o, oi) => `<button type="button" onclick="testOdd(${gi}, '${o.replace(/'/g, "\'")}')" class="w-full text-left px-3 py-2 rounded-xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7] text-xs font-semibold transition"><strong class="text-[#0089A7] mr-2">${String.fromCharCode(65 + oi)}.</strong>${o}</button>`).join('')}
           </div>
           <div id="odd-note-${gi}" class="hidden text-xs p-2.5 rounded-xl font-semibold"></div>
         </div>
@@ -1219,8 +1277,8 @@
     };
 
     const MINI_CHATS = [
-      { incoming: "“Do you walk to work every day?”", replies: ["Yes, I usually walk unless it rains.", "Yes, I walk every day on a regular basis."], best: "Yes, I usually walk unless it rains." },
-      { incoming: "“Does your brother play an instrument?”", replies: ["Yes, he plays the guitar on weekends.", "Yes, he play the guitar on weekends."], best: "Yes, he plays the guitar on weekends." }
+      { incoming: "“Do you live near the station?”", replies: ["Yes, I walk there in ten minutes.", "Yes, I walking there in ten minutes."], best: "Yes, I walk there in ten minutes." },
+      { incoming: "“What does your partner do in the mornings?”", replies: ["She usually makes coffee and checks her emails.", "She usually make coffee and check her emails."], best: "She usually makes coffee and checks her emails." }
     ];
 
     function renderMiniChat() {
@@ -1229,7 +1287,7 @@
           <div class="px-3.5 py-2 rounded-2xl bg-[#002B5C] text-white text-xs sm:text-sm font-bold inline-block">${c.incoming}</div>
           <div class="space-y-1.5">
             ${c.replies.map(r => `
-              <button type="button" onclick="checkChat(${ci}, '${r.replace(/'/g, "\\'")}')" class="w-full text-left px-3.5 py-2 rounded-xl bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7] text-xs font-semibold transition">${r}</button>
+              <button type="button" onclick="checkChat(${ci}, '${r.replace(/'/g, "\'")}')" class="w-full text-left px-3.5 py-2 rounded-xl bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7] text-xs font-semibold transition">${r}</button>
             `).join('')}
           </div>
           <div id="chat-fb-${ci}" class="hidden text-xs font-bold"></div>
@@ -1243,18 +1301,18 @@
       fb.classList.remove('hidden');
       if (chosen === c.best) {
         fb.className = 'text-xs font-bold text-emerald-600 dark:text-emerald-400';
-        fb.textContent = 'Great routine answer!';
+        fb.textContent = 'Natural live reply!';
       } else {
         fb.className = 'text-xs font-bold text-amber-600 dark:text-amber-300';
-        fb.textContent = `Check 3rd-person -s: ${c.best}`;
+        fb.textContent = `Better routine reply: ${c.best}`;
       }
     };
 
     const FIX_HOMEWORK = [
-      { wrong: "She don't like coffee in the morning.", fix: "She doesn't like coffee in the morning.", extra: "Homework: Write 1 negative sentence about a friend or family member." },
-      { wrong: "My brother study English on Tuesdays.", fix: "My brother studies English on Tuesdays.", extra: "Homework: Write 1 positive sentence with a consonant + -y verb." },
-      { wrong: "Does he speaks French?", fix: "Does he speak French?", extra: "Homework: Write 1 'Does...?' question about someone's routine." },
-      { wrong: "He always is tired on Mondays.", fix: "He is always tired on Mondays.", extra: "Homework: Write 1 sentence with 'always' or 'usually' + verb 'to be'." }
+      { wrong: "He go to work by bus every day.", fix: "He goes to work by bus every day.", extra: "Homework: Write 1 sentence about a daily habit with 'he' or 'she'." },
+      { wrong: "She doesn't likes tea.", fix: "She doesn't like tea.", extra: "Homework: Write 1 negative sentence using 'doesn't'." },
+      { wrong: "Do she play tennis on Fridays?", fix: "Does she play tennis on Fridays?", extra: "Homework: Write 1 'Does...?' question about a routine." },
+      { wrong: "I am usually waking up at 7:00.", fix: "I usually wake up at 7:00.", extra: "Homework: Write 1 sentence with 'usually' and a time." }
     ];
     let showFixKey = false;
 
@@ -1270,59 +1328,173 @@
     }
     window.toggleFixKey = () => { showFixKey = !showFixKey; renderFixHomework(); };
 
-    // 06: Speaking Game (4 Cards per Mode)
-    const GAME_MODES = [
-      { key: "bluff", label: "2 Habits & 1 Bluff" },
-      { key: "detective", label: "Routine Detective" },
-      { key: "debate", label: "Unpopular Routine Opinion" }
-    ];
-    const GAME_CARDS = {
-      bluff: [
-        { title: "Card 1 · Morning & Breakfast Habits", rule: "Say 3 sentences in Present Simple about your mornings—2 true and 1 lie. Your teacher asks 2 questions to catch the bluff!", follow: "What time do you actually eat, and who prepares breakfast in your house?", photo: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Include one sentence about what your partner or a family member does in the morning!" },
-        { title: "Card 2 · Weekend Escapes & Free Time", rule: "Tell your teacher 3 things you regularly do on weekends—hide one fake hobby among two real ones.", follow: "How often do you really go there, and what do you bring with you?", photo: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Use 'hardly ever' or 'every other weekend' in one of your clues." },
-        { title: "Card 3 · Work & Study Habits", rule: "Share 3 sentences about how you study or work—2 real habits and 1 bluff.", follow: "Do you prefer quiet places or music when you focus?", photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Add a negative sentence with 'don't' or 'doesn't'." },
-        { title: "Card 4 · Night & Sleep Routine", rule: "Say 3 things you usually do before bed—let your teacher guess which one is invented.", follow: "What happens when you stay up later than usual?", photo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Use 'once in a while' in one of your sentences." }
+    // 06: Solo & Class Game (Routine & -S Rush)
+    const PS_GAME_DECKS = {
+      routines: [
+        {
+          badge: "WEEKDAY HABIT",
+          prompt: "On workdays, Lucas sets his alarm for 6:45 a.m., makes coffee, and leaves home at 7:30.",
+          opts: ["A) Lucas usually leaves home at 7:30 on workdays.", "B) Lucas is leaving home right now at 7:30.", "C) Lucas leave home every day."],
+          ans: 0,
+          clue: "Regular workdays + 'Lucas' (he) -> base verb + '-s' ('leaves').",
+          why: "'Lucas usually leaves...' expresses a regular weekday routine with third-person -s.",
+          photo: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          badge: "NEGATIVE ROUTINE",
+          prompt: "Sara doesn't drink soda or energy drinks; she only drinks water and herbal tea.",
+          opts: ["A) Sara don't drink soda.", "B) Sara doesn't drink soda.", "C) Sara doesn't drinks soda."],
+          ans: 1,
+          clue: "Singular subject 'Sara' + negative 'doesn't' + base verb without '-s'.",
+          why: "'Sara doesn't drink...' uses 'doesn't' followed by the base verb 'drink'.",
+          photo: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          badge: "WEEKEND HABIT",
+          prompt: "Every Saturday morning, the local market opens at 8:00 a.m. and people buy fresh fruit.",
+          opts: ["A) People buy fresh fruit at the Saturday market.", "B) People buys fresh fruit at the Saturday market.", "C) People is buying fresh fruit."],
+          ans: 0,
+          clue: "Plural subject 'People' takes the base verb 'buy' without '-s'.",
+          why: "'People' is plural, so it takes 'buy' rather than 'buys'.",
+          photo: "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          badge: "ROUTINE QUESTION",
+          prompt: "You want to ask a classmate how often they go running during the week.",
+          opts: ["A) How often does you go running?", "B) How often do you go running?", "C) How often are you go running?"],
+          ans: 1,
+          clue: "Questions with 'you' in Present Simple use 'do' + subject + base verb.",
+          why: "'How often do you go running?' is the natural Present Simple question.",
+          photo: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=900&q=80"
+        }
       ],
-      detective: [
-        { title: "Card 1 · Guess the Mystery Profession", rule: "Think of a job without naming it. Describe what this person does every day using Present Simple until your teacher guesses it.", follow: "Does this person work indoors or outdoors? Do they wear a uniform?", photo: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Swap roles! Ask your teacher 4 Yes/No questions starting with 'Does he/she...?'" },
-        { title: "Card 2 · Guess the Daily Object", rule: "Pick an everyday object on your desk or in your bag. Explain how people use it and who owns one, without saying its name.", follow: "Do you use it every day, and where do you keep it at home?", photo: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Use at least two stative verbs (e.g., 'It belongs to...', 'People need it when...')." },
-        { title: "Card 3 · Mystery Friend or Relative", rule: "Describe someone's weekly habits and preferences without saying who they are.", follow: "Does this person live near you? What do they love doing?", photo: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Your teacher can ask up to 4 'Does...?' questions." },
-        { title: "Card 4 · Mystery Place", rule: "Describe a place people visit regularly and what happens there every week.", follow: "How often do you go there, and who goes with you?", photo: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Include one negative sentence with 'doesn't' or 'don't'." }
-      ],
-      debate: [
-        { title: "Card 1 · “People check their phones way too often.”", rule: "React to this statement using Present Simple to describe your own digital habits and what people around you usually do.", follow: "When do you put your phone on silent, and which apps do you open first?", photo: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Give one rule that everyone in your house follows during dinner." },
-        { title: "Card 2 · “Waking up at 6 AM makes life better.”", rule: "Agree or disagree! Explain what early birds vs. night owls do and which schedule suits you best.", follow: "What happens when you wake up late on a weekday?", photo: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Contrast your weekday wake-up time with your Sunday routine." },
-        { title: "Card 3 · “Cooking from scratch is worth the time.”", rule: "Share your view on cooking habits and how often you cook at home.", follow: "What dish do you prefer when you want something quick?", photo: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Mention one food you hardly ever eat." },
-        { title: "Card 4 · “Reading paper books beats digital screens.”", rule: "Compare reading habits and state your preference using Present Simple.", follow: "When do you usually read?", photo: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Defend the opposite opinion for 30 seconds!" }
+      endings: [
+        {
+          badge: "CONSONANT + Y -> -IES",
+          prompt: "Choose the correct third-person form of 'study': 'She _____ every night.'",
+          opts: ["A) studys", "B) studies", "C) studyes"],
+          ans: 1,
+          clue: "When a verb ends in a consonant + 'y' (d + y), change 'y' to 'ies'.",
+          why: "'Study' becomes 'studies' after a consonant ('d').",
+          photo: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          badge: "VOWEL + Y -> -S",
+          prompt: "Choose the correct third-person form of 'play': 'He _____ guitar on weekends.'",
+          opts: ["A) plaies", "B) plays", "C) playes"],
+          ans: 1,
+          clue: "When a vowel (a, e, i, o, u) comes before 'y', keep 'y' and add '-s'.",
+          why: "'Play' has vowel 'a' before 'y', so it simply becomes 'plays'.",
+          photo: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          badge: "-CH / -SH / -O -> -ES",
+          prompt: "Choose the right form for 'watch': 'Tom _____ a film every Friday.'",
+          opts: ["A) watchs", "B) watches", "C) watch"],
+          ans: 1,
+          clue: "Verbs ending in '-ch', '-sh', '-s', '-x', or '-o' take '-es' with he/she/it.",
+          why: "'Watch' ends in '-ch', so its third-person form is 'watches'.",
+          photo: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          badge: "NO DOUBLE -S AFTER DOESN'T",
+          prompt: "Which sentence has NO grammar mistake?",
+          opts: ["A) She doesn't likes coffee.", "B) She doesn't like coffee.", "C) She don't like coffee."],
+          ans: 1,
+          clue: "Once 'doesn't' carries the third-person singular marker, the main verb stays in base form.",
+          why: "'She doesn't like...' keeps 'like' without an extra '-s'.",
+          photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=900&q=80"
+        }
       ]
     };
 
-    let activeGameMode = "bluff";
-    let gameCardIdx = 0;
+    let psMode = 'routines';
+    let psIdx = 0;
+    let psScore = 0;
+    let psStreak = 0;
+    const psAnswered = new Set();
 
-    function renderGame() {
-      document.getElementById('gameModeTabs').innerHTML = GAME_MODES.map(m => `
-        <button type="button" onclick="setGameMode('${m.key}')" class="px-4 py-2 rounded-xl text-xs font-extrabold border transition ${
-          activeGameMode === m.key ? 'bg-[#002B5C] text-white border-[#002B5C]' : 'bg-white dark:bg-[#0C1E33] border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7]'
-        }">${m.label}</button>
+    function renderPsGame() {
+      const deck = PS_GAME_DECKS[psMode];
+      psIdx = (psIdx + deck.length) % deck.length;
+      const item = deck[psIdx];
+
+      document.getElementById('psTabRoutines').className = psMode === 'routines'
+        ? 'px-4 py-2 rounded-xl text-xs font-extrabold bg-[#002B5C] text-white transition'
+        : 'px-4 py-2 rounded-xl text-xs font-extrabold bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 transition';
+      document.getElementById('psTabEndings').className = psMode === 'endings'
+        ? 'px-4 py-2 rounded-xl text-xs font-extrabold bg-[#002B5C] text-white transition'
+        : 'px-4 py-2 rounded-xl text-xs font-extrabold bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 transition';
+
+      document.getElementById('psGameModeBadge').textContent = item.badge;
+      document.getElementById('psGameCardCounter').textContent = `Round ${psIdx + 1} / ${deck.length}`;
+      document.getElementById('psGamePromptTitle').textContent = item.prompt;
+      mountPhoto(document.getElementById('psGamePhotoBox'), item.photo, item.badge, item.badge);
+      document.getElementById('psGameClueBox').textContent = item.clue;
+      document.getElementById('psGameClueBox').classList.add('hidden');
+      document.getElementById('psGameClueBtnLabel').textContent = 'Show Rule Clue';
+      document.getElementById('psGameFeedbackBox').classList.add('hidden');
+
+      document.getElementById('psGameOptionsBox').innerHTML = item.opts.map((op, i) => `
+        <button type="button" onclick="pickPsGameOption(${i})" class="w-full text-left px-4 py-3 rounded-2xl bg-slate-50 dark:bg-[#071627] hover:border-[#0089A7] border border-slate-200 dark:border-cyan-400/20 text-xs sm:text-sm font-bold transition">${op}</button>
       `).join('');
-      const list = GAME_CARDS[activeGameMode];
-      const card = list[gameCardIdx % list.length];
-      const modeObj = GAME_MODES.find(m => m.key === activeGameMode);
 
-      document.getElementById('gameModeBadge').textContent = modeObj.label;
-      document.getElementById('gameCardCounter').textContent = `Card ${(gameCardIdx % list.length) + 1} / ${list.length}`;
-      document.getElementById('gamePromptTitle').textContent = card.title;
-      document.getElementById('gameRuleText').textContent = card.rule;
-      document.getElementById('gameFollowUp').textContent = card.follow;
-      document.getElementById('gameTwistBox').textContent = card.twist;
-      document.getElementById('gameTwistBox').classList.add('hidden');
-      mountPhoto(document.getElementById('gamePhotoBox'), card.photo, card.title, modeObj.label);
-      lucide.createIcons();
+      document.getElementById('psGameScore').textContent = `SCORE: ${psScore} / 8`;
+      document.getElementById('psGameStreak').textContent = `STREAK: ${psStreak} 🔥`;
+      if (window.lucide) lucide.createIcons();
     }
-    window.setGameMode = (key) => { activeGameMode = key; gameCardIdx = 0; renderGame(); };
-    window.nextGameCard = () => { gameCardIdx++; renderGame(); };
-    window.revealBluffVote = () => { document.getElementById('gameTwistBox').classList.toggle('hidden'); };
+
+    window.switchPsGameMode = (mode) => {
+      psMode = mode;
+      psIdx = 0;
+      renderPsGame();
+    };
+
+    window.stepPsGameCard = (d) => {
+      psIdx += d;
+      renderPsGame();
+    };
+
+    window.togglePsGameClue = () => {
+      const box = document.getElementById('psGameClueBox');
+      const hidden = box.classList.toggle('hidden');
+      document.getElementById('psGameClueBtnLabel').textContent = hidden ? 'Show Rule Clue' : 'Hide Rule Clue';
+    };
+
+    window.speakPsGamePrompt = () => {
+      speakPhrase(PS_GAME_DECKS[psMode][psIdx].prompt);
+    };
+
+    window.pickPsGameOption = (picked) => {
+      const item = PS_GAME_DECKS[psMode][psIdx];
+      const key = `${psMode}-${psIdx}`;
+      const fb = document.getElementById('psGameFeedbackBox');
+      fb.classList.remove('hidden');
+
+      if (picked === item.ans) {
+        if (!psAnswered.has(key)) {
+          psAnswered.add(key);
+          psScore++;
+        }
+        psStreak++;
+        fb.className = 'p-3.5 rounded-2xl text-xs sm:text-sm font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Spot on! ${item.why}`;
+      } else {
+        psStreak = 0;
+        fb.className = 'p-3.5 rounded-2xl text-xs sm:text-sm font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `✗ Not quite (${String.fromCharCode(65 + item.ans)}). ${item.why}`;
+      }
+      document.getElementById('psGameScore').textContent = `SCORE: ${psScore} / 8`;
+      document.getElementById('psGameStreak').textContent = `STREAK: ${psStreak} 🔥`;
+    };
+
+    window.restartPsGame = () => {
+      psScore = 0;
+      psStreak = 0;
+      psAnswered.clear();
+      psIdx = 0;
+      renderPsGame();
+    };
 
     // 07: Multi-Mode Gamified Arcade
     let arcadeScore = 0;
@@ -1364,14 +1536,14 @@
     };
 
     const ARCADE_ROUNDS = [
-      { sentence: "“She ___ her teeth before bed every night.”", opts: ["brush", "brushes"], ans: "brushes", why: "Verbs ending in -sh take -es with 'she'." },
-      { sentence: "“___ your brother drive to work?”", opts: ["Do", "Does"], ans: "Does", why: "Use 'Does' with third-person singular 'your brother'." },
-      { sentence: "“They ___ coffee in the afternoon.”", opts: ["don't drink", "doesn't drink"], ans: "don't drink", why: "Plural subject 'they' uses 'don't + base verb'." },
-      { sentence: "“My friend ___ languages very quickly.”", opts: ["studys", "studies"], ans: "studies", why: "Consonant + y ('study') changes to -ies ('studies')." },
-      { sentence: "“He ___ to the gym on Mondays.”", opts: ["go", "goes"], ans: "goes", why: "Verbs ending in -o ('go') add -es for 'he'." },
-      { sentence: "“I ___ want a cold drink right now.”", opts: ["don't", "doesn't"], ans: "don't", why: "Use 'don't' with 'I'." },
-      { sentence: "“She ___ a small acoustic guitar.”", opts: ["have", "has"], ans: "has", why: "Third-person singular of 'have' is 'has'." },
-      { sentence: "“What time ___ the train leave?”", opts: ["do", "does"], ans: "does", why: "'The train' is singular (it) → 'does'." }
+      { sentence: "“She ___ her emails every morning before work.”", opts: ["checks", "check"], ans: "checks", why: "Singular 'she' takes 'checks' in Present Simple." },
+      { sentence: "“We ___ late on weekdays.”", opts: ["don't arrive", "doesn't arrive"], ans: "don't arrive", why: "Plural 'we' uses 'don't arrive'." },
+      { sentence: "“___ he live in Manresa?”", opts: ["Does", "Do"], ans: "Does", why: "Third-person singular 'he' uses 'Does'." },
+      { sentence: "“They ___ dinner at 8:30 p.m.”", opts: ["have", "has"], ans: "have", why: "Plural 'they' takes 'have'." },
+      { sentence: "“My friend ___ English at the academy.”", opts: ["teaches", "teachs"], ans: "teaches", why: "Verbs ending in '-ch' add '-es': 'teaches'." },
+      { sentence: "“I ___ sugar in my tea.”", opts: ["never use", "use never"], ans: "never use", why: "Frequency adverbs like 'never' go before the main verb." },
+      { sentence: "“The train ___ at 7:45 a.m.”", opts: ["arrives", "arrive"], ans: "arrives", why: "Singular 'the train' takes 'arrives'." },
+      { sentence: "“___ you walk to school or work?”", opts: ["Do", "Does"], ans: "Do", why: "Questions with 'you' start with 'Do'." }
     ];
     let arcadeIdx = 0;
     let arcadeAnswered = false;
@@ -1384,7 +1556,7 @@
       arcadeAnswered = false;
 
       document.getElementById('arcadeOptions').innerHTML = r.opts.map(o => `
-        <button type="button" onclick="answerArcade('${o.replace(/'/g, "\\'")}')" class="p-4 rounded-2xl border border-slate-200 dark:border-cyan-400/20 bg-slate-50 dark:bg-[#071627] hover:border-[#0089A7] text-sm font-extrabold text-[#002B5C] dark:text-white transition">${o}</button>
+        <button type="button" onclick="answerArcade('${o.replace(/'/g, "\'")}')" class="p-4 rounded-2xl border border-slate-200 dark:border-cyan-400/20 bg-slate-50 dark:bg-[#071627] hover:border-[#0089A7] text-sm font-extrabold text-[#002B5C] dark:text-white transition">${o}</button>
       `).join('');
     }
 
@@ -1405,47 +1577,47 @@
     window.nextArcadeRound = () => { arcadeIdx = (arcadeIdx + 1) % ARCADE_ROUNDS.length; renderArcade(); };
     window.resetArcade = () => { arcadeIdx = 0; arcadeScore = 0; arcadeStreak = 0; updateArcadeHeader(); renderArcade(); renderCue(); renderStative(); };
 
-    const FREQ_CUES = [
-      { cue: "every other day", kind: "Routine / Frequency", note: "Once every two days—classic Present Simple routine." },
-      { cue: "belong to", kind: "Stative / State", note: "Expresses possession/state rather than a dynamic action." },
-      { cue: "hardly ever", kind: "Routine / Frequency", note: "Frequency adverb meaning almost never." },
-      { cue: "prefer", kind: "Stative / State", note: "Stative verb expressing preference." },
-      { cue: "on a regular basis", kind: "Routine / Frequency", note: "Steady repetition over time." },
-      { cue: "know", kind: "Stative / State", note: "Mental state verb—normally used in Present Simple." }
+    const ING_VERBS = [
+      { cue: "study → studies", rule: "Add -es / -ies", note: "Consonant + y changes 'y' to 'ies'." },
+      { cue: "play → plays", rule: "Add -s only", note: "Vowel + y keeps 'y' and adds '-s'." },
+      { cue: "watch → watches", rule: "Add -es / -ies", note: "Verbs ending in '-ch' add '-es'." },
+      { cue: "walk → walks", rule: "Add -s only", note: "Regular verb ending in 'k' adds '-s'." },
+      { cue: "go → goes", rule: "Add -es / -ies", note: "Verbs ending in '-o' take '-es' in third person." },
+      { cue: "read → reads", rule: "Add -s only", note: "Regular verb adds '-s'." }
     ];
     let cueIdx = 0;
     let cueAnswered = false;
 
     function renderCue() {
-      const c = FREQ_CUES[cueIdx % FREQ_CUES.length];
-      document.getElementById('cueCounter').textContent = `Expression ${(cueIdx % FREQ_CUES.length) + 1} / ${FREQ_CUES.length}`;
-      document.getElementById('cuePhraseBox').textContent = `“${c.cue}”`;
+      const c = ING_VERBS[cueIdx % ING_VERBS.length];
+      document.getElementById('cueCounter').textContent = `Verb ${(cueIdx % ING_VERBS.length) + 1} / ${ING_VERBS.length}`;
+      document.getElementById('cuePhraseBox').textContent = c.cue;
       document.getElementById('cueFeedback').classList.add('hidden');
       cueAnswered = false;
     }
 
-    window.answerCue = (pickedKind) => {
+    window.answerCue = (pickedRule) => {
       if (cueAnswered) return;
       cueAnswered = true;
-      const c = FREQ_CUES[cueIdx % FREQ_CUES.length];
-      const ok = pickedKind === c.kind;
+      const c = ING_VERBS[cueIdx % ING_VERBS.length];
+      const ok = pickedRule === c.rule;
       rewardPoints(ok);
       const fb = document.getElementById('cueFeedback');
       fb.classList.remove('hidden');
       fb.className = ok
         ? 'p-4 rounded-2xl text-xs sm:text-sm font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30'
         : 'p-4 rounded-2xl text-xs sm:text-sm font-semibold bg-amber-500/15 text-amber-800 dark:text-amber-200 border border-amber-500/30';
-      fb.textContent = ok ? `Spot on! ${c.note}` : `Category: ${c.kind}. ${c.note}`;
+      fb.textContent = ok ? `Spot on! ${c.note}` : `Rule: ${c.rule}. ${c.note}`;
     };
-    window.nextCue = () => { cueIdx = (cueIdx + 1) % FREQ_CUES.length; renderCue(); };
+    window.nextCue = () => { cueIdx = (cueIdx + 1) % ING_VERBS.length; renderCue(); };
 
     const STATIVE_ITEMS = [
-      { s: "“I prefer tea in the morning.”", valid: true, why: "Natural! 'Prefer' is a stative verb in Present Simple." },
-      { s: "“She don't like noisy cafés.”", valid: false, why: "Trap! Use 'She doesn't like noisy cafés'." },
-      { s: "“They live near the station.”", valid: true, why: "Natural! Present Simple fits a regular/permanent residence." },
-      { s: "“He watch football on Sundays.”", valid: false, why: "Trap! Add -es for 'he': 'He watches football on Sundays'." },
-      { s: "“We hardly ever eat fast food.”", valid: true, why: "Natural! 'Hardly ever' goes before the main verb." },
-      { s: "“Does she plays the piano?”", valid: false, why: "Trap! Use the base verb after 'Does': 'Does she play the piano?'." }
+      { s: "“She usually leaves the house at 8:00 a.m.”", valid: true, why: "Natural! Third-person '-s' and adverb position are right." },
+      { s: "“He doesn't works on Saturdays.”", valid: false, why: "Trap! Use base verb after 'doesn't': 'He doesn't work on Saturdays.'." },
+      { s: "“They often play football after school.”", valid: true, why: "Natural! Clear routine sentence with 'often'." },
+      { s: "“She studys for her exams in the library.”", valid: false, why: "Trap! Change consonant + y to '-ies': 'She studies...'." },
+      { s: "“Do your friends come to class on Tuesdays?”", valid: true, why: "Natural! Proper 'Do + plural subject + base verb' question." },
+      { s: "“My brother haves lunch at 2:00 p.m.”", valid: false, why: "Trap! The third-person form of 'have' is 'has'." }
     ];
     let statIdx = 0;
     let statAnswered = false;
@@ -1621,7 +1793,7 @@
     renderOdd();
     renderMiniChat();
     renderFixHomework();
-    renderGame();
+    renderPsGame();
     renderArcade();
     renderCue();
     renderStative();

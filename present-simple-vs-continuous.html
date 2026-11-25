@@ -432,7 +432,7 @@
         <div id="switcherRows" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
       </div>
 
-      <!-- Integrated Summary Cloze Exercise (replaces former Stage 05) -->
+      <!-- Integrated Summary Cloze Exercise -->
       <div class="bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 rounded-3xl p-6 sm:p-8 space-y-5 shadow-sm">
         <div>
           <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Grammar Check · Fill the Summary</span>
@@ -521,58 +521,81 @@
       </div>
     </section>
 
-    <!-- ==================== 06: SPEAKING GAME (4 CARDS PER MODE) ==================== -->
+    <!-- ==================== 06: SOLO & CLASS GAME (CONTRAST SHOWDOWN) ==================== -->
     <section data-stage="5" class="lesson-stage hidden stage-anim space-y-6">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
         <div>
-          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 06 · Live Class Game</span>
-          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Tense Showdown</h2>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 06 · Solo &amp; Class Challenge</span>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Contrast Rush</h2>
         </div>
-        <p class="text-sm text-slate-500 dark:text-slate-400">4 cards per mode for lively speaking rounds with your teacher.</p>
+        <div class="flex flex-wrap items-center gap-2">
+          <span id="pspcGameScore" class="px-3.5 py-1.5 rounded-xl bg-[#002B5C] text-white text-xs font-extrabold">SCORE: 0 / 8</span>
+          <span id="pspcGameStreak" class="px-3.5 py-1.5 rounded-xl bg-slate-100 dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 text-xs font-extrabold">STREAK: 0 🔥</span>
+        </div>
       </div>
 
-      <div class="flex flex-wrap gap-2" id="gameModeTabs"></div>
+      <div class="flex flex-wrap gap-2" id="pspcGameModeTabs">
+        <button type="button" id="pspcTabContrast" onclick="switchPspcGameMode('contrast')" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-[#002B5C] text-white transition">1. Habit vs. Right Now (4)</button>
+        <button type="button" id="pspcTabStative" onclick="switchPspcGameMode('stative')" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 transition">2. Stative &amp; Trap Clashes (4)</button>
+      </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 shadow-lg">
-        <div id="gamePhotoBox" class="lg:col-span-5 h-64 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+        <div id="pspcGamePhotoBox" class="lg:col-span-5 h-64 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
 
         <div class="lg:col-span-7 p-6 sm:p-10 flex flex-col justify-between space-y-6">
           <div class="space-y-4">
             <div class="flex items-center justify-between gap-2">
-              <span id="gameModeBadge" class="px-3 py-1 rounded-full bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300 text-xs font-extrabold uppercase tracking-wider"></span>
-              <span id="gameCardCounter" class="text-xs font-bold text-slate-400">Card 1 / 4</span>
+              <span id="pspcGameModeBadge" class="px-3 py-1 rounded-full bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300 text-xs font-extrabold uppercase tracking-wider"></span>
+              <span id="pspcGameCardCounter" class="text-xs font-bold text-slate-400">Round 1 / 4</span>
             </div>
 
-            <h3 id="gamePromptTitle" class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
-            <p id="gameRuleText" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+            <div class="flex items-start justify-between gap-3">
+              <h3 id="pspcGamePromptTitle" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+              <button type="button" onclick="speakPspcGamePrompt()" class="p-2.5 rounded-xl bg-[#0089A7]/15 text-[#0089A7] hover:bg-[#0089A7]/25 shrink-0" title="Listen">
+                <i data-lucide="volume-2" class="w-4 h-4"></i>
+              </button>
+            </div>
 
-            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/15 space-y-1.5">
-              <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#0089A7]">Teacher Follow-Up Prompt</span>
-              <p id="gameFollowUp" class="text-sm font-semibold text-slate-800 dark:text-slate-100"></p>
+            <div id="pspcGameOptionsBox" class="space-y-2.5"></div>
+
+            <div id="pspcGameFeedbackBox" class="hidden p-3.5 rounded-2xl text-xs sm:text-sm font-bold"></div>
+
+            <!-- Hidden rule clue by default -->
+            <div class="space-y-2 pt-1">
+              <button type="button" onclick="togglePspcGameClue()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-[#071627] hover:bg-slate-200/70 dark:hover:bg-[#132C4A] border border-slate-200 dark:border-cyan-400/20 text-xs font-bold transition">
+                <i data-lucide="eye" class="w-3.5 h-3.5 text-[#0089A7]"></i>
+                <span id="pspcGameClueBtnLabel">Show Rule Clue</span>
+              </button>
+              <div id="pspcGameClueBox" class="hidden text-xs font-semibold px-4 py-3 rounded-xl bg-amber-500/15 text-amber-900 dark:text-amber-200 border border-amber-500/30"></div>
             </div>
           </div>
 
           <div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-100 dark:border-cyan-400/15">
             <button
               type="button"
-              onclick="nextGameCard()"
-              class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-gradient-to-r from-[#002B5C] to-[#005A8D] hover:from-[#005A8D] hover:to-[#0089A7] text-white text-xs sm:text-sm font-bold transition"
+              onclick="stepPspcGameCard(-1)"
+              class="px-4 py-2.5 rounded-2xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-bold transition"
             >
-              <i data-lucide="dices" class="w-4 h-4"></i>
-              <span>Draw Next Card</span>
+              ← Prev
             </button>
 
             <button
               type="button"
-              onclick="revealBluffVote()"
-              class="inline-flex items-center gap-2 px-4 py-3 rounded-2xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-bold transition"
+              onclick="restartPspcGame()"
+              class="px-4 py-2.5 rounded-2xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-bold transition"
             >
-              <i data-lucide="sparkles" class="w-4 h-4 text-[#0089A7]"></i>
-              <span>Bonus Twist</span>
+              Reset Score
+            </button>
+
+            <button
+              type="button"
+              onclick="stepPspcGameCard(1)"
+              class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-gradient-to-r from-[#002B5C] to-[#005A8D] hover:from-[#005A8D] hover:to-[#0089A7] text-white text-xs sm:text-sm font-bold transition"
+            >
+              <span>Next Round</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
           </div>
-
-          <div id="gameTwistBox" class="hidden text-xs font-semibold px-4 py-3 rounded-xl bg-amber-500/15 text-amber-800 dark:text-amber-200 border border-amber-500/30"></div>
         </div>
       </div>
     </section>
@@ -701,7 +724,7 @@
       "03 · Vocabulary",
       "04 · Grammar & Check",
       "05 · Practice & Chat",
-      "06 · Tense Showdown",
+      "06 · Contrast Rush",
       "07 · Grammar Arcade"
     ];
 
@@ -772,11 +795,48 @@
       }
     }
 
+    function pickNaturalEnglishVoice() {
+      if (!('speechSynthesis' in window)) return null;
+      const voices = window.speechSynthesis.getVoices() || [];
+      if (!voices.length) return null;
+
+      const preferredNames = [
+        "Google UK English Male",
+        "Google UK English Female",
+        "Google US English",
+        "Microsoft Ryan Online (Natural)",
+        "Microsoft Sonia Online (Natural)",
+        "Microsoft Guy Online (Natural)",
+        "Microsoft Jenny Online (Natural)",
+        "Daniel",
+        "Samantha"
+      ];
+
+      for (const name of preferredNames) {
+        const match = voices.find(v => v.name.toLowerCase().includes(name.toLowerCase()));
+        if (match) return match;
+      }
+
+      return voices.find(v => /en[-_](GB|US)/i.test(v.lang)) || voices.find(v => /^en/i.test(v.lang)) || null;
+    }
+
+    if ('speechSynthesis' in window && typeof window.speechSynthesis.onvoiceschanged !== 'undefined') {
+      window.speechSynthesis.onvoiceschanged = () => pickNaturalEnglishVoice();
+    }
+
     function speakPhrase(text) {
       if (!('speechSynthesis' in window)) return;
       window.speechSynthesis.cancel();
       const u = new SpeechSynthesisUtterance(text);
-      u.lang = 'en-US';
+      const voice = pickNaturalEnglishVoice();
+      if (voice) {
+        u.voice = voice;
+        u.lang = voice.lang;
+      } else {
+        u.lang = 'en-US';
+      }
+      u.rate = 0.94;
+      u.pitch = 1.0;
       window.speechSynthesis.speak(u);
     }
 
@@ -1275,59 +1335,173 @@
     }
     window.toggleFixKey = () => { showFixKey = !showFixKey; renderFixHomework(); };
 
-    // 06: Speaking Game (4 Cards per Mode)
-    const GAME_MODES = [
-      { key: "contrast", label: "Routine vs. Right Now" },
-      { key: "detective", label: "Contrast Detective" },
-      { key: "debates", label: "Quick Class Debates" }
-    ];
-    const GAME_CARDS = {
+    // 06: Solo & Class Game (Contrast Rush)
+    const PSPC_GAME_DECKS = {
       contrast: [
-        { title: "Card 1 · Morning Coffee & Right Now", rule: "Say what you normally drink or eat in the morning, and what you are drinking or eating (or not having) right now.", follow: "Do you change your routine on weekends?", photo: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Ask your teacher what they usually drink vs. what they have right now." },
-        { title: "Card 2 · Commute vs. Today's Trip", rule: "Compare how you usually travel or commute with any special trip or movement you are making this week.", follow: "Does traffic or weather ever change your usual route?", photo: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Use 'on a regular basis' and 'at the moment' in your answer." },
-        { title: "Card 3 · Work / Study Rhythm", rule: "Describe your usual study or work schedule, then say what project or skill you are focusing on right now.", follow: "Are you working faster or slower than usual today?", photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Include one negative sentence in Present Continuous." },
-        { title: "Card 4 · Free Time vs. Tonight", rule: "Share a hobby you enjoy regularly, and contrast it with what you are planning or doing this evening.", follow: "What do you hardly ever do on a weeknight?", photo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Make one sentence true and one a playful bluff for your teacher to spot." }
+        {
+          badge: "HABIT VS. RIGHT NOW",
+          prompt: "Marc usually walks to the station at 8:00 a.m., but today it is pouring with rain so he is taking a taxi.",
+          opts: ["A) He usually walks, but today he is taking a taxi.", "B) He is usually walking, but today he takes a taxi.", "C) He usually walk, but today he taking a taxi."],
+          ans: 0,
+          clue: "Usual habit ('usually walks') vs. an exception happening today ('is taking').",
+          why: "Present Simple for the regular habit ('usually walks') + Present Continuous for today's change ('is taking').",
+          photo: "https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          badge: "WEEKLY SCHEDULE VS. NOW",
+          prompt: "Every Wednesday evening they play padel, while right now they are having dinner at home.",
+          opts: ["A) They play padel on Wednesdays; right now they have dinner.", "B) They play padel on Wednesdays; right now they are having dinner.", "C) They are playing padel on Wednesdays; right now they are having dinner."],
+          ans: 1,
+          clue: "Repeated schedule ('play') vs. action unfolding right now ('are having').",
+          why: "'Play' shows the Wednesday habit and 'are having' shows what they are doing right now.",
+          photo: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          badge: "TEMPORARY PROJECT",
+          prompt: "Elena normally works in marketing, but this month she is training a new team in another office.",
+          opts: ["A) She is training a new team this month.", "B) She trains a new team right now this month.", "C) She training a new team this month."],
+          ans: 0,
+          clue: "Temporary assignment around 'this month' -> am/is/are + verb-ing.",
+          why: "'Is training' fits a temporary project for this month.",
+          photo: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          badge: "LIVE ALERT",
+          prompt: "Listen! Someone _____ the guitar in the next room.",
+          opts: ["A) plays", "B) is playing", "C) are playing"],
+          ans: 1,
+          clue: "'Listen!' signals an action happening at this exact second.",
+          why: "Singular 'Someone' + 'is playing' matches an action you hear right now.",
+          photo: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=900&q=80"
+        }
       ],
-      detective: [
-        { title: "Card 1 · Who Am I Thinking Of?", rule: "Think of a real person (a friend, celebrity, or family member). Give 2 Present Simple facts and 1 Present Continuous clue for right now.", follow: "Does this person live near you? What are they probably doing right now?", photo: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Your teacher can ask up to 4 'Does he/she...?' or 'Is he/she...?' questions." },
-        { title: "Card 2 · What Place Is This?", rule: "Describe a place people visit regularly and what people are usually doing there right now.", follow: "Do you go there often? Is it busy at this moment?", photo: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Use a stative verb like 'prefer', 'love', or 'belong'." },
-        { title: "Card 3 · Mystery Habit vs. Today", rule: "Pick an everyday object on your desk or near you. Say how people use it and how you are using it right now.", follow: "Who owns it, and how often do you touch it?", photo: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Try not to say the object's name until your teacher guesses!" },
-        { title: "Card 4 · Two Truths & One Twist", rule: "Give two true statements about your routines/current week and one exaggerated statement—your teacher guesses which is which.", follow: "Which part is happening right now versus every week?", photo: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Swap roles and test your teacher!" }
-      ],
-      debates: [
-        { title: "Card 1 · “People check screens too much.”", rule: "Give your opinion (Present Simple) and say what you or people around you are doing with screens today (Present Continuous).", follow: "When do you put your phone away?", photo: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Defend the opposite side for 30 seconds!" },
-        { title: "Card 2 · “Cooking at home is always better.”", rule: "Compare cooking at home vs. eating out using habits and what you are eating or craving lately.", follow: "What do you prefer cooking when you have very little time?", photo: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Mention one dish you hardly ever make." },
-        { title: "Card 3 · “Online classes beat in-person classes.”", rule: "Contrast online and in-person learning using Present Simple facts and how you are studying right now.", follow: "Which format helps you speak more?", photo: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Give one pro and one con in two sentences." },
-        { title: "Card 4 · “Early mornings are underrated.”", rule: "Argue for or against early mornings using your normal sleep pattern and what you are doing right now.", follow: "How do you feel when you wake up early on a rainy day?", photo: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Compare weekday mornings with Sunday mornings." }
+      stative: [
+        {
+          badge: "STATIVE OPINION",
+          prompt: "Which sentence uses 'think' correctly to express a general opinion?",
+          opts: ["A) I'm thinking this grammar rule is super clear.", "B) I think this grammar rule is super clear.", "C) I am think this grammar rule is clear."],
+          ans: 1,
+          clue: "When 'think' means 'have an opinion', use Present Simple ('I think').",
+          why: "'I think...' expresses a belief/opinion, not a mental process in progress.",
+          photo: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          badge: "DYNAMIC THOUGHT",
+          prompt: "Which sentence uses 'think' correctly for an active decision right now?",
+          opts: ["A) I think about which option to pick right now.", "B) I am thinking about which option to pick right now.", "C) I thinking about which option right now."],
+          ans: 1,
+          clue: "Considering options in your mind at this moment is dynamic -> 'am thinking about'.",
+          why: "'I am thinking about...' shows an active thought process happening now.",
+          photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          badge: "POSSESSION VS. ACTION",
+          prompt: "Spot the natural sentence about possession:",
+          opts: ["A) That laptop is belonging to Daniel.", "B) That laptop belongs to Daniel.", "C) That laptop belonging to Daniel."],
+          ans: 1,
+          clue: "'Belong to' is a stative verb of possession and stays in Present Simple.",
+          why: "'Belongs to' is the accurate Present Simple form for 'that laptop'.",
+          photo: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          badge: "STATE OF KNOWING",
+          prompt: "Choose the grammatically natural sentence:",
+          opts: ["A) She doesn't know the answer yet.", "B) She isn't knowing the answer yet.", "C) She don't know the answer yet."],
+          ans: 0,
+          clue: "'Know' is a stative verb; use 'doesn't know' with 'she'.",
+          why: "'She doesn't know...' avoids putting stative 'know' into continuous.",
+          photo: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80"
+        }
       ]
     };
 
-    let activeGameMode = "contrast";
-    let gameCardIdx = 0;
+    let pspcMode = 'contrast';
+    let pspcIdx = 0;
+    let pspcScore = 0;
+    let pspcStreak = 0;
+    const pspcAnswered = new Set();
 
-    function renderGame() {
-      document.getElementById('gameModeTabs').innerHTML = GAME_MODES.map(m => `
-        <button type="button" onclick="setGameMode('${m.key}')" class="px-4 py-2 rounded-xl text-xs font-extrabold border transition ${
-          activeGameMode === m.key ? 'bg-[#002B5C] text-white border-[#002B5C]' : 'bg-white dark:bg-[#0C1E33] border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7]'
-        }">${m.label}</button>
+    function renderPspcGame() {
+      const deck = PSPC_GAME_DECKS[pspcMode];
+      pspcIdx = (pspcIdx + deck.length) % deck.length;
+      const item = deck[pspcIdx];
+
+      document.getElementById('pspcTabContrast').className = pspcMode === 'contrast'
+        ? 'px-4 py-2 rounded-xl text-xs font-extrabold bg-[#002B5C] text-white transition'
+        : 'px-4 py-2 rounded-xl text-xs font-extrabold bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 transition';
+      document.getElementById('pspcTabStative').className = pspcMode === 'stative'
+        ? 'px-4 py-2 rounded-xl text-xs font-extrabold bg-[#002B5C] text-white transition'
+        : 'px-4 py-2 rounded-xl text-xs font-extrabold bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 transition';
+
+      document.getElementById('pspcGameModeBadge').textContent = item.badge;
+      document.getElementById('pspcGameCardCounter').textContent = `Round ${pspcIdx + 1} / ${deck.length}`;
+      document.getElementById('pspcGamePromptTitle').textContent = item.prompt;
+      mountPhoto(document.getElementById('pspcGamePhotoBox'), item.photo, item.badge, item.badge);
+      document.getElementById('pspcGameClueBox').textContent = item.clue;
+      document.getElementById('pspcGameClueBox').classList.add('hidden');
+      document.getElementById('pspcGameClueBtnLabel').textContent = 'Show Rule Clue';
+      document.getElementById('pspcGameFeedbackBox').classList.add('hidden');
+
+      document.getElementById('pspcGameOptionsBox').innerHTML = item.opts.map((op, i) => `
+        <button type="button" onclick="pickPspcGameOption(${i})" class="w-full text-left px-4 py-3 rounded-2xl bg-slate-50 dark:bg-[#071627] hover:border-[#0089A7] border border-slate-200 dark:border-cyan-400/20 text-xs sm:text-sm font-bold transition">${op}</button>
       `).join('');
-      const list = GAME_CARDS[activeGameMode];
-      const card = list[gameCardIdx % list.length];
-      const modeObj = GAME_MODES.find(m => m.key === activeGameMode);
 
-      document.getElementById('gameModeBadge').textContent = modeObj.label;
-      document.getElementById('gameCardCounter').textContent = `Card ${(gameCardIdx % list.length) + 1} / ${list.length}`;
-      document.getElementById('gamePromptTitle').textContent = card.title;
-      document.getElementById('gameRuleText').textContent = card.rule;
-      document.getElementById('gameFollowUp').textContent = card.follow;
-      document.getElementById('gameTwistBox').textContent = card.twist;
-      document.getElementById('gameTwistBox').classList.add('hidden');
-      mountPhoto(document.getElementById('gamePhotoBox'), card.photo, card.title, modeObj.label);
-      lucide.createIcons();
+      document.getElementById('pspcGameScore').textContent = `SCORE: ${pspcScore} / 8`;
+      document.getElementById('pspcGameStreak').textContent = `STREAK: ${pspcStreak} 🔥`;
+      if (window.lucide) lucide.createIcons();
     }
-    window.setGameMode = (key) => { activeGameMode = key; gameCardIdx = 0; renderGame(); };
-    window.nextGameCard = () => { gameCardIdx++; renderGame(); };
-    window.revealBluffVote = () => { document.getElementById('gameTwistBox').classList.toggle('hidden'); };
+
+    window.switchPspcGameMode = (mode) => {
+      pspcMode = mode;
+      pspcIdx = 0;
+      renderPspcGame();
+    };
+
+    window.stepPspcGameCard = (d) => {
+      pspcIdx += d;
+      renderPspcGame();
+    };
+
+    window.togglePspcGameClue = () => {
+      const box = document.getElementById('pspcGameClueBox');
+      const hidden = box.classList.toggle('hidden');
+      document.getElementById('pspcGameClueBtnLabel').textContent = hidden ? 'Show Rule Clue' : 'Hide Rule Clue';
+    };
+
+    window.speakPspcGamePrompt = () => {
+      speakPhrase(PSPC_GAME_DECKS[pspcMode][pspcIdx].prompt);
+    };
+
+    window.pickPspcGameOption = (picked) => {
+      const item = PSPC_GAME_DECKS[pspcMode][pspcIdx];
+      const key = `${pspcMode}-${pspcIdx}`;
+      const fb = document.getElementById('pspcGameFeedbackBox');
+      fb.classList.remove('hidden');
+
+      if (picked === item.ans) {
+        if (!pspcAnswered.has(key)) {
+          pspcAnswered.add(key);
+          pspcScore++;
+        }
+        pspcStreak++;
+        fb.className = 'p-3.5 rounded-2xl text-xs sm:text-sm font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Spot on! ${item.why}`;
+      } else {
+        pspcStreak = 0;
+        fb.className = 'p-3.5 rounded-2xl text-xs sm:text-sm font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `✗ Not quite (${String.fromCharCode(65 + item.ans)}). ${item.why}`;
+      }
+      document.getElementById('pspcGameScore').textContent = `SCORE: ${pspcScore} / 8`;
+      document.getElementById('pspcGameStreak').textContent = `STREAK: ${pspcStreak} 🔥`;
+    };
+
+    window.restartPspcGame = () => {
+      pspcScore = 0;
+      pspcStreak = 0;
+      pspcAnswered.clear();
+      pspcIdx = 0;
+      renderPspcGame();
+    };
 
     // 07: Multi-Mode Gamified Arcade
     let arcadeScore = 0;
@@ -1632,7 +1806,7 @@
     renderOdd();
     renderMiniChat();
     renderFixHomework();
-    renderGame();
+    renderPspcGame();
     renderArcade();
     renderCue();
     renderStative();

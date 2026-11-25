@@ -511,58 +511,81 @@
       </div>
     </section>
 
-    <!-- ==================== 06: SPEAKING GAME (4 CARDS PER MODE) ==================== -->
+    <!-- ==================== 06: SOLO & CLASS GAME (SCENE & -ING RUSH) ==================== -->
     <section data-stage="5" class="lesson-stage hidden stage-anim space-y-6">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
         <div>
-          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 06 · Live Class Game</span>
-          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Action Miming &amp; Snapshots</h2>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 06 · Solo &amp; Class Challenge</span>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Scene &amp; -Ing Rush</h2>
         </div>
-        <p class="text-sm text-slate-500 dark:text-slate-400">4 cards per mode for lively speaking rounds with your teacher.</p>
+        <div class="flex flex-wrap items-center gap-2">
+          <span id="pcGameScore" class="px-3.5 py-1.5 rounded-xl bg-[#002B5C] text-white text-xs font-extrabold">SCORE: 0 / 8</span>
+          <span id="pcGameStreak" class="px-3.5 py-1.5 rounded-xl bg-slate-100 dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 text-xs font-extrabold">STREAK: 0 🔥</span>
+        </div>
       </div>
 
-      <div class="flex flex-wrap gap-2" id="gameModeTabs"></div>
+      <div class="flex flex-wrap gap-2" id="pcGameModeTabs">
+        <button type="button" id="pcTabScenes" onclick="switchPcGameMode('scenes')" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-[#002B5C] text-white transition">1. What's Happening? (4)</button>
+        <button type="button" id="pcTabSpelling" onclick="switchPcGameMode('spelling')" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 transition">-Ing Spelling &amp; Form Traps (4)</button>
+      </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 shadow-lg">
-        <div id="gamePhotoBox" class="lg:col-span-5 h-64 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+        <div id="pcGamePhotoBox" class="lg:col-span-5 h-64 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
 
         <div class="lg:col-span-7 p-6 sm:p-10 flex flex-col justify-between space-y-6">
           <div class="space-y-4">
             <div class="flex items-center justify-between gap-2">
-              <span id="gameModeBadge" class="px-3 py-1 rounded-full bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300 text-xs font-extrabold uppercase tracking-wider"></span>
-              <span id="gameCardCounter" class="text-xs font-bold text-slate-400">Card 1 / 4</span>
+              <span id="pcGameModeBadge" class="px-3 py-1 rounded-full bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300 text-xs font-extrabold uppercase tracking-wider"></span>
+              <span id="pcGameCardCounter" class="text-xs font-bold text-slate-400">Round 1 / 4</span>
             </div>
 
-            <h3 id="gamePromptTitle" class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
-            <p id="gameRuleText" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+            <div class="flex items-start justify-between gap-3">
+              <h3 id="pcGamePromptTitle" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+              <button type="button" onclick="speakPcGamePrompt()" class="p-2.5 rounded-xl bg-[#0089A7]/15 text-[#0089A7] hover:bg-[#0089A7]/25 shrink-0" title="Listen">
+                <i data-lucide="volume-2" class="w-4 h-4"></i>
+              </button>
+            </div>
 
-            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/15 space-y-1.5">
-              <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#0089A7]">Teacher Follow-Up Prompt</span>
-              <p id="gameFollowUp" class="text-sm font-semibold text-slate-800 dark:text-slate-100"></p>
+            <div id="pcGameOptionsBox" class="space-y-2.5"></div>
+
+            <div id="pcGameFeedbackBox" class="hidden p-3.5 rounded-2xl text-xs sm:text-sm font-bold"></div>
+
+            <!-- Hidden rule clue by default -->
+            <div class="space-y-2 pt-1">
+              <button type="button" onclick="togglePcGameClue()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-[#071627] hover:bg-slate-200/70 dark:hover:bg-[#132C4A] border border-slate-200 dark:border-cyan-400/20 text-xs font-bold transition">
+                <i data-lucide="eye" class="w-3.5 h-3.5 text-[#0089A7]"></i>
+                <span id="pcGameClueBtnLabel">Show Rule Clue</span>
+              </button>
+              <div id="pcGameClueBox" class="hidden text-xs font-semibold px-4 py-3 rounded-xl bg-amber-500/15 text-amber-900 dark:text-amber-200 border border-amber-500/30"></div>
             </div>
           </div>
 
           <div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-100 dark:border-cyan-400/15">
             <button
               type="button"
-              onclick="nextGameCard()"
-              class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-gradient-to-r from-[#002B5C] to-[#005A8D] hover:from-[#005A8D] hover:to-[#0089A7] text-white text-xs sm:text-sm font-bold transition"
+              onclick="stepPcGameCard(-1)"
+              class="px-4 py-2.5 rounded-2xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-bold transition"
             >
-              <i data-lucide="dices" class="w-4 h-4"></i>
-              <span>Draw Next Card</span>
+              ← Prev
             </button>
 
             <button
               type="button"
-              onclick="revealBluffVote()"
-              class="inline-flex items-center gap-2 px-4 py-3 rounded-2xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-bold transition"
+              onclick="restartPcGame()"
+              class="px-4 py-2.5 rounded-2xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-bold transition"
             >
-              <i data-lucide="sparkles" class="w-4 h-4 text-[#0089A7]"></i>
-              <span>Bonus Twist</span>
+              Reset Score
+            </button>
+
+            <button
+              type="button"
+              onclick="stepPcGameCard(1)"
+              class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-gradient-to-r from-[#002B5C] to-[#005A8D] hover:from-[#005A8D] hover:to-[#0089A7] text-white text-xs sm:text-sm font-bold transition"
+            >
+              <span>Next Round</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
           </div>
-
-          <div id="gameTwistBox" class="hidden text-xs font-semibold px-4 py-3 rounded-xl bg-amber-500/15 text-amber-800 dark:text-amber-200 border border-amber-500/30"></div>
         </div>
       </div>
     </section>
@@ -691,7 +714,7 @@
       "03 · Vocabulary",
       "04 · Grammar & Check",
       "05 · Practice & Chat",
-      "06 · Miming & Snapshots",
+      "06 · Scene & -Ing Rush",
       "07 · Action Arcade"
     ];
 
@@ -762,11 +785,48 @@
       }
     }
 
+    function pickNaturalEnglishVoice() {
+      if (!('speechSynthesis' in window)) return null;
+      const voices = window.speechSynthesis.getVoices() || [];
+      if (!voices.length) return null;
+
+      const preferredNames = [
+        "Google UK English Male",
+        "Google UK English Female",
+        "Google US English",
+        "Microsoft Ryan Online (Natural)",
+        "Microsoft Sonia Online (Natural)",
+        "Microsoft Guy Online (Natural)",
+        "Microsoft Jenny Online (Natural)",
+        "Daniel",
+        "Samantha"
+      ];
+
+      for (const name of preferredNames) {
+        const match = voices.find(v => v.name.toLowerCase().includes(name.toLowerCase()));
+        if (match) return match;
+      }
+
+      return voices.find(v => /en[-_](GB|US)/i.test(v.lang)) || voices.find(v => /^en/i.test(v.lang)) || null;
+    }
+
+    if ('speechSynthesis' in window && typeof window.speechSynthesis.onvoiceschanged !== 'undefined') {
+      window.speechSynthesis.onvoiceschanged = () => pickNaturalEnglishVoice();
+    }
+
     function speakPhrase(text) {
       if (!('speechSynthesis' in window)) return;
       window.speechSynthesis.cancel();
       const u = new SpeechSynthesisUtterance(text);
-      u.lang = 'en-US';
+      const voice = pickNaturalEnglishVoice();
+      if (voice) {
+        u.voice = voice;
+        u.lang = voice.lang;
+      } else {
+        u.lang = 'en-US';
+      }
+      u.rate = 0.94;
+      u.pitch = 1.0;
       window.speechSynthesis.speak(u);
     }
 
@@ -1267,59 +1327,173 @@
     }
     window.toggleFixKey = () => { showFixKey = !showFixKey; renderFixHomework(); };
 
-    // 06: Speaking Game (4 Cards per Mode)
-    const GAME_MODES = [
-      { key: "mime", label: "Act & Guess" },
-      { key: "snapshot", label: "Scene Snapshot" },
-      { key: "twenty", label: "Are You ...?" }
-    ];
-    const GAME_CARDS = {
-      mime: [
-        { title: "Card 1 · Cooking & Tasting", rule: "Act out preparing a snack or tasting something hot/sour while your teacher guesses using “You are ...ing!”", follow: "What are you stirring, and are you adding salt or lemon?", photo: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Make a negative guess too—e.g., “You aren't washing dishes!”" },
-        { title: "Card 2 · Stuck in the Rain", rule: "Act out walking fast with an umbrella or searching for keys in your bag while your teacher guesses what you're doing.", follow: "Are you running for a bus, or are you looking for your keys?", photo: "https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Switch roles and guess your teacher's mime!" },
-        { title: "Card 3 · Playing an Instrument", rule: "Mime playing guitar, drums, or piano while your teacher asks 'Are you playing...?'", follow: "Are you practicing a fast song or a slow melody?", photo: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Add a second action at the same time (e.g., singing or tapping your foot)." },
-        { title: "Card 4 · Packing for a Trip", rule: "Act out folding clothes and closing a heavy suitcase while your teacher describes each step.", follow: "Where are you traveling, and what are you putting inside?", photo: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Say one thing you aren't packing!" }
+    // 06: Solo & Class Game (Scene & -Ing Rush)
+    const PC_GAME_DECKS = {
+      scenes: [
+        {
+          badge: "IN PROGRESS RIGHT NOW",
+          prompt: "It is 9:15 a.m. Mia has her laptop open and headphones on while sitting at her desk.",
+          opts: ["A) Mia is working from home right now.", "B) Mia works from home right now.", "C) Mia are working from home right now."],
+          ans: 0,
+          clue: "Singular subject (Mia) + 'is' + verb'-ing' for an action happening at this moment.",
+          why: "'Mia is working...' uses singular 'is' + '-ing' for an action in progress right now.",
+          photo: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          badge: "TEMPORARY SITUATION",
+          prompt: "Leo usually lives in Madrid, but this month he is staying in a small flat in Valencia.",
+          opts: ["A) He stays in a small flat this month.", "B) He is staying in a small flat this month.", "C) He staying in a small flat this month."],
+          ans: 1,
+          clue: "Temporary situations around 'this month / this week' take Present Continuous.",
+          why: "'Is staying' fits a temporary living arrangement for this month.",
+          photo: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          badge: "PLANNED ARRANGEMENT",
+          prompt: "Tickets are booked and bags are packed: we are meeting Sam at the station at 6:00 p.m.",
+          opts: ["A) We are meeting Sam at six.", "B) We meets Sam at six.", "C) We is meeting Sam at six."],
+          ans: 0,
+          clue: "Plural subject 'we' + 'are' + '-ing' can describe a fixed plan or arrangement.",
+          why: "'We are meeting...' is natural for a pre-arranged plan.",
+          photo: "https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          badge: "NEGATIVE ACTION",
+          prompt: "The baby is wide awake and smiling in the crib—he isn't sleeping.",
+          opts: ["A) He not sleeping.", "B) He aren't sleeping.", "C) He isn't sleeping."],
+          ans: 2,
+          clue: "Negative singular: subject + 'isn't' + verb'-ing'.",
+          why: "'He isn't sleeping' is the proper singular negative form.",
+          photo: "https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=900&q=80"
+        }
       ],
-      snapshot: [
-        { title: "Card 1 · Busy Studio / Café", rule: "Look at the photo and say 3 things people are doing right now (and 1 thing nobody is doing).", follow: "Who is typing, and what are they holding?", photo: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Describe what the person on the left is wearing." },
-        { title: "Card 2 · Weekend Mountain Trail", rule: "Describe this outdoor scene in Present Continuous: movement, weather, and what hikers are doing.", follow: "Are they walking uphill or resting? Is the sun shining?", photo: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Add one sentence about what you are doing right now in class." },
-        { title: "Card 3 · Study Desk Snapshot", rule: "Describe everything happening on this desk scene as if someone just stepped away for a second.", follow: "What is sitting on the table, and what is open?", photo: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Imagine what the student is doing in the next room." },
-        { title: "Card 4 · Friends Talking", rule: "Describe how these friends are spending time together right now.", follow: "Are they laughing, walking, or talking?", photo: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Make one negative sentence about the photo." }
-      ],
-      twenty: [
-        { title: "Card 1 · Are You ...? Rapid Round", rule: "Your teacher asks 4 quick “Are you ...ing?” questions about right now or this week. Answer with short answers + a detail!", follow: "Are you sitting down? Are you drinking water? Are you learning something new this week?", photo: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Ask your teacher two “Are you ...ing today?” questions back!" },
-        { title: "Card 2 · True or False Right Now", rule: "Say 2 sentences about what you are doing right now—one true and one false—and let your teacher spot the false one.", follow: "Are you wearing shoes right now? Are you listening to music?", photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Do the same with what someone in your home is doing right now." },
-        { title: "Card 3 · This Week's Challenge", rule: "Answer 3 questions about temporary things you are doing this week.", follow: "Are you sleeping well this week? Are you reading anything interesting?", photo: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Use 'at the moment' and 'these days'." },
-        { title: "Card 4 · Evening Arrangement Check", rule: "Talk about your plans for tonight using 'I'm + verb-ing'.", follow: "Are you cooking tonight, or are you eating something simple?", photo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Ask your teacher what they are doing tonight!" }
+      spelling: [
+        {
+          badge: "CVC DOUBLING RULE",
+          prompt: "Choose the correct -ing spelling for 'run' in: 'Look! The train _____.'",
+          opts: ["A) is runing", "B) is running", "C) are running"],
+          ans: 1,
+          clue: "Short one-syllable verb ending in consonant-vowel-consonant (r-u-n): double the final consonant.",
+          why: "'Running' doubles the 'n' before adding '-ing'.",
+          photo: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          badge: "SILENT -E RULE",
+          prompt: "Choose the correct form for 'make' in: 'They _____ dinner together.'",
+          opts: ["A) are makeing", "B) is making", "C) are making"],
+          ans: 2,
+          clue: "Drop final silent '-e' before '-ing', and match plural 'they' with 'are'.",
+          why: "'Make' loses '-e' -> 'making', paired with 'they are'.",
+          photo: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          badge: "QUESTION WORD ORDER",
+          prompt: "Which question is grammatically accurate?",
+          opts: ["A) What are you reading right now?", "B) What you are reading right now?", "C) What do you reading right now?"],
+          ans: 0,
+          clue: "In Present Continuous questions, put 'am / is / are' BEFORE the subject.",
+          why: "'What are you reading...?' follows Question word + am/is/are + subject + verb-ing.",
+          photo: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          badge: "VERB 'TO BE' CHECK",
+          prompt: "Spot the right sentence for 'I' in Present Continuous:",
+          opts: ["A) I is writing a note.", "B) I am writing a note.", "C) I be writing a note."],
+          ans: 1,
+          clue: "The first-person singular form of 'to be' is always 'am' ('I'm').",
+          why: "'I am writing...' is the only grammatically valid form here.",
+          photo: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=80"
+        }
       ]
     };
 
-    let activeGameMode = "mime";
-    let gameCardIdx = 0;
+    let pcMode = 'scenes';
+    let pcIdx = 0;
+    let pcScore = 0;
+    let pcStreak = 0;
+    const pcAnswered = new Set();
 
-    function renderGame() {
-      document.getElementById('gameModeTabs').innerHTML = GAME_MODES.map(m => `
-        <button type="button" onclick="setGameMode('${m.key}')" class="px-4 py-2 rounded-xl text-xs font-extrabold border transition ${
-          activeGameMode === m.key ? 'bg-[#002B5C] text-white border-[#002B5C]' : 'bg-white dark:bg-[#0C1E33] border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7]'
-        }">${m.label}</button>
+    function renderPcGame() {
+      const deck = PC_GAME_DECKS[pcMode];
+      pcIdx = (pcIdx + deck.length) % deck.length;
+      const item = deck[pcIdx];
+
+      document.getElementById('pcTabScenes').className = pcMode === 'scenes'
+        ? 'px-4 py-2 rounded-xl text-xs font-extrabold bg-[#002B5C] text-white transition'
+        : 'px-4 py-2 rounded-xl text-xs font-extrabold bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 transition';
+      document.getElementById('pcTabSpelling').className = pcMode === 'spelling'
+        ? 'px-4 py-2 rounded-xl text-xs font-extrabold bg-[#002B5C] text-white transition'
+        : 'px-4 py-2 rounded-xl text-xs font-extrabold bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 transition';
+
+      document.getElementById('pcGameModeBadge').textContent = item.badge;
+      document.getElementById('pcGameCardCounter').textContent = `Round ${pcIdx + 1} / ${deck.length}`;
+      document.getElementById('pcGamePromptTitle').textContent = item.prompt;
+      mountPhoto(document.getElementById('pcGamePhotoBox'), item.photo, item.badge, item.badge);
+      document.getElementById('pcGameClueBox').textContent = item.clue;
+      document.getElementById('pcGameClueBox').classList.add('hidden');
+      document.getElementById('pcGameClueBtnLabel').textContent = 'Show Rule Clue';
+      document.getElementById('pcGameFeedbackBox').classList.add('hidden');
+
+      document.getElementById('pcGameOptionsBox').innerHTML = item.opts.map((op, i) => `
+        <button type="button" onclick="pickPcGameOption(${i})" class="w-full text-left px-4 py-3 rounded-2xl bg-slate-50 dark:bg-[#071627] hover:border-[#0089A7] border border-slate-200 dark:border-cyan-400/20 text-xs sm:text-sm font-bold transition">${op}</button>
       `).join('');
-      const list = GAME_CARDS[activeGameMode];
-      const card = list[gameCardIdx % list.length];
-      const modeObj = GAME_MODES.find(m => m.key === activeGameMode);
 
-      document.getElementById('gameModeBadge').textContent = modeObj.label;
-      document.getElementById('gameCardCounter').textContent = `Card ${(gameCardIdx % list.length) + 1} / ${list.length}`;
-      document.getElementById('gamePromptTitle').textContent = card.title;
-      document.getElementById('gameRuleText').textContent = card.rule;
-      document.getElementById('gameFollowUp').textContent = card.follow;
-      document.getElementById('gameTwistBox').textContent = card.twist;
-      document.getElementById('gameTwistBox').classList.add('hidden');
-      mountPhoto(document.getElementById('gamePhotoBox'), card.photo, card.title, modeObj.label);
-      lucide.createIcons();
+      document.getElementById('pcGameScore').textContent = `SCORE: ${pcScore} / 8`;
+      document.getElementById('pcGameStreak').textContent = `STREAK: ${pcStreak} 🔥`;
+      if (window.lucide) lucide.createIcons();
     }
-    window.setGameMode = (key) => { activeGameMode = key; gameCardIdx = 0; renderGame(); };
-    window.nextGameCard = () => { gameCardIdx++; renderGame(); };
-    window.revealBluffVote = () => { document.getElementById('gameTwistBox').classList.toggle('hidden'); };
+
+    window.switchPcGameMode = (mode) => {
+      pcMode = mode;
+      pcIdx = 0;
+      renderPcGame();
+    };
+
+    window.stepPcGameCard = (d) => {
+      pcIdx += d;
+      renderPcGame();
+    };
+
+    window.togglePcGameClue = () => {
+      const box = document.getElementById('pcGameClueBox');
+      const hidden = box.classList.toggle('hidden');
+      document.getElementById('pcGameClueBtnLabel').textContent = hidden ? 'Show Rule Clue' : 'Hide Rule Clue';
+    };
+
+    window.speakPcGamePrompt = () => {
+      speakPhrase(PC_GAME_DECKS[pcMode][pcIdx].prompt);
+    };
+
+    window.pickPcGameOption = (picked) => {
+      const item = PC_GAME_DECKS[pcMode][pcIdx];
+      const key = `${pcMode}-${pcIdx}`;
+      const fb = document.getElementById('pcGameFeedbackBox');
+      fb.classList.remove('hidden');
+
+      if (picked === item.ans) {
+        if (!pcAnswered.has(key)) {
+          pcAnswered.add(key);
+          pcScore++;
+        }
+        pcStreak++;
+        fb.className = 'p-3.5 rounded-2xl text-xs sm:text-sm font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Spot on! ${item.why}`;
+      } else {
+        pcStreak = 0;
+        fb.className = 'p-3.5 rounded-2xl text-xs sm:text-sm font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `✗ Not quite (${String.fromCharCode(65 + item.ans)}). ${item.why}`;
+      }
+      document.getElementById('pcGameScore').textContent = `SCORE: ${pcScore} / 8`;
+      document.getElementById('pcGameStreak').textContent = `STREAK: ${pcStreak} 🔥`;
+    };
+
+    window.restartPcGame = () => {
+      pcScore = 0;
+      pcStreak = 0;
+      pcAnswered.clear();
+      pcIdx = 0;
+      renderPcGame();
+    };
 
     // 07: Multi-Mode Gamified Arcade
     let arcadeScore = 0;
@@ -1618,7 +1792,7 @@
     renderOdd();
     renderMiniChat();
     renderFixHomework();
-    renderGame();
+    renderPcGame();
     renderArcade();
     renderCue();
     renderStative();

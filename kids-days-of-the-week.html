@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KIDS · DAYS OF THE WEEK | PROVO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <style>
+    @keyframes stageIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .stage-anim { animation: stageIn 0.24s ease-out forwards; }
+  </style>
+</head>
+<body class="bg-[#FFFBEB] text-slate-900 dark:bg-[#071324] dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200 uppercase">
+
+  <!-- Sticky Top Bar (Kids Amber Accent) -->
+  <header class="sticky top-0 z-40 bg-[#002B5C] text-white border-b border-amber-400/35 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2.5">
+        <a href="index.html" class="flex items-center shrink-0" title="PROVO">
+          <img
+            src="https://i.postimg.cc/vBt4qH44/download.png"
+            alt="PROVO"
+            class="h-8 w-auto object-contain block"
+            onerror="this.style.display='none'; document.getElementById('provoFallback').classList.remove('hidden');"
+          />
+          <span id="provoFallback" class="hidden font-extrabold tracking-widest text-lg text-white">PROVO</span>
+        </a>
+        <span class="px-2.5 py-0.5 rounded-full bg-amber-400 text-[#002B5C] text-[11px] font-extrabold tracking-wider">
+          KIDS · DAYS
+        </span>
+        <span id="stageTitleHeader" class="hidden xl:inline-block text-xs font-bold tracking-wider text-amber-200">
+          01 · WELCOME!
+        </span>
+      </div>
+
+      <div id="stagePills" class="flex items-center gap-1 overflow-x-auto py-1"></div>
+
+      <div class="flex items-center gap-2 shrink-0">
+        <button
+          id="themeBtn"
+          type="button"
+          class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition"
+          title="TOGGLE THEME"
+        >
+          <i id="themeIcon" data-lucide="sun" class="w-4 h-4"></i>
+        </button>
+        <a
+          href="index.html"
+          class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs font-bold bg-white/10 hover:bg-white/20 text-white transition"
+        >
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          <span class="hidden sm:inline">PORTAL</span>
+        </a>
+      </div>
+    </div>
+    <div class="w-full h-1.5 bg-black/25">
+      <div id="stageProgress" class="h-full bg-amber-400 transition-all duration-300" style="width: 12.5%"></div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl w-full mx-auto px-4 sm:px-6 py-7 sm:py-10 flex-1 flex flex-col justify-center">
+
+    <!-- ==================== 01: COVER ==================== -->
+    <section data-stage="0" class="stage stage-anim">
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0D1F38] border-[1.5px] border-amber-400/35 dark:border-amber-400/25 shadow-xl">
+        <div class="lg:col-span-5 h-64 sm:h-auto relative bg-[#091726] overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1050&q=80"
+            alt="COLORFUL CLASSROOM BLOCKS AND LEARNING FUN"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#071324]/90 via-[#071324]/25 to-transparent"></div>
+          <div class="absolute bottom-5 left-5 right-5 space-y-1 text-white">
+            <span class="text-xs font-bold tracking-widest text-amber-300">PROVO · KIDS ADVENTURE</span>
+            <p class="text-sm font-semibold text-slate-200">MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY &amp; SUNDAY!</p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 p-7 sm:p-10 flex flex-col justify-center space-y-5">
+          <span class="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-amber-400/20 border border-amber-400/45 text-amber-800 dark:text-amber-300 text-xs font-extrabold tracking-wider">
+            <i data-lucide="calendar-days" class="w-4 h-4"></i>
+            <span>PROVO KIDS STAGE LAB</span>
+          </span>
+
+          <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight text-[#002B5C] dark:text-white">
+            DAYS OF THE <span class="text-amber-500">WEEK</span>
+          </h1>
+
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            LISTEN AND SAY ALL 7 DAYS OF THE WEEK, MATCH NUMBERS 1 TO 7, SING ALONG WITH SUPER SIMPLE SONGS, PLAY MISSING DAY RUSH, AND CHOOSE YOUR FAVOURITE DAY OF THE WEEK!
+          </p>
+
+          <!-- 7 Day Quick Buttons -->
+          <div class="flex flex-wrap gap-2 pt-1" id="coverDayPills"></div>
+
+          <div class="pt-2">
+            <button
+              type="button"
+              onclick="goStage(1)"
+              class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-[#002B5C] via-amber-600 to-amber-500 hover:opacity-95 text-white text-sm sm:text-base font-extrabold shadow-lg transition"
+            >
+              <span>LET'S PLAY!</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 02: SAY & LISTEN (7 DAYS CARDS) ==================== -->
+    <section data-stage="1" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-amber-400/30 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-amber-600 dark:text-amber-300">STAGE 02 · LISTEN &amp; REPEAT</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">THE 7 DAYS OF THE WEEK</h2>
+        </div>
+        <div class="inline-flex rounded-xl p-1 bg-white dark:bg-[#0D1F38] border-[1.5px] border-amber-400/35">
+          <button id="btnDaySingle" type="button" onclick="setDayView('single')" class="px-3.5 py-1.5 rounded-lg text-xs font-extrabold bg-amber-500 text-white transition">1 BY 1</button>
+          <button id="btnDayGrid" type="button" onclick="setDayView('grid')" class="px-3.5 py-1.5 rounded-lg text-xs font-extrabold text-slate-600 dark:text-slate-300 transition">ALL 7 DAYS</button>
+        </div>
+      </div>
+
+      <div id="daySingleBox" class="max-w-3xl mx-auto w-full"></div>
+      <div id="dayGridBox" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+    </section>
+
+    <!-- ==================== 03: NUMBER 1 TO 7 -> MATCH DAY ==================== -->
+    <section data-stage="2" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-amber-400/30 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-amber-600 dark:text-amber-300">STAGE 03 · NUMBER TO DAY</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">NUMBER 1 TO 7 CHALLENGE</h2>
+        </div>
+        <span id="guessScoreBadge" class="px-3.5 py-1.5 rounded-full bg-[#002B5C] text-amber-300 text-xs font-extrabold self-start sm:self-auto">
+          STARS: 0 / 7 ⭐
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0D1F38] border-[1.5px] border-amber-400/35 shadow-xl max-w-4xl mx-auto w-full">
+        <div class="lg:col-span-5 h-52 lg:h-auto bg-gradient-to-br from-[#002B5C] via-amber-600 to-amber-500 flex flex-col items-center justify-center p-8 text-center text-white space-y-2">
+          <span class="text-xs font-extrabold tracking-widest text-amber-200">DAY NUMBER</span>
+          <div id="guessBigNumber" class="text-8xl font-extrabold leading-none drop-shadow">1</div>
+          <span id="guessOrdinalLabel" class="px-3.5 py-1 rounded-full bg-black/25 text-xs font-extrabold">DAY 1 OF 7</span>
+        </div>
+
+        <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-5">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between gap-2">
+              <span id="guessBadge" class="px-3 py-1 rounded-full bg-amber-400/20 text-amber-800 dark:text-amber-300 text-xs font-extrabold">NUMBER 1 / 7</span>
+              <button type="button" onclick="speakGuessClue()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-white text-xs font-extrabold transition">
+                <i data-lucide="volume-2" class="w-4 h-4"></i>
+                <span>LISTEN</span>
+              </button>
+            </div>
+
+            <h3 id="guessPrompt" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+
+            <div id="guessOptions" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5"></div>
+
+            <div id="guessFeedback" class="hidden p-3.5 rounded-2xl text-xs sm:text-sm font-extrabold"></div>
+          </div>
+
+          <div class="flex items-center justify-between gap-3 pt-3 border-t border-slate-100 dark:border-amber-400/15">
+            <button type="button" onclick="stepGuess(-1)" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-amber-400/30 text-xs font-extrabold">← PREV</button>
+            <div id="guessDots" class="flex gap-1.5"></div>
+            <button type="button" onclick="stepGuess(1)" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-extrabold">NEXT →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 04: SUPER SIMPLE SONGS VIDEO ==================== -->
+    <section data-stage="3" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-amber-400/30 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-amber-600 dark:text-amber-300">STAGE 04 · SING &amp; DANCE</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">SUPER SIMPLE SONGS · DAYS OF THE WEEK</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">WATCH, SING ALONG AND POINT TO EACH DAY!</p>
+      </div>
+
+      <div class="bg-white dark:bg-[#0D1F38] border-[1.5px] border-amber-400/35 rounded-3xl p-4 sm:p-6 max-w-4xl mx-auto w-full space-y-4 shadow-xl">
+        <div class="aspect-video w-full rounded-2xl overflow-hidden bg-[#091726]">
+          <iframe
+            class="w-full h-full"
+            src="https://www.youtube.com/embed/vcMmiR7jWQc"
+            title="DAYS OF THE WEEK · SUPER SIMPLE SONGS"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+          <span class="text-xs sm:text-sm font-extrabold text-[#002B5C] dark:text-amber-200">
+            🎶 SING ALONG WITH THE PUPPETS!
+          </span>
+          <a
+            href="https://www.youtube.com/watch?v=vcMmiR7jWQc"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-white text-xs font-extrabold transition"
+          >
+            <i data-lucide="external-link" class="w-4 h-4"></i>
+            <span>OPEN ON YOUTUBE</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 05: CHANT & WEEK TRAIN ==================== -->
+    <section data-stage="4" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-amber-400/30 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-amber-600 dark:text-amber-300">STAGE 05 · CHANT, CLAP &amp; ORDER</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">DAYS CHANT &amp; TRAIN BUILDER</h2>
+        </div>
+        <button type="button" onclick="speakFullChant()" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-white text-xs font-extrabold self-start sm:self-auto transition">
+          <i data-lucide="music" class="w-4 h-4"></i>
+          <span>PLAY FULL WEEK CHANT</span>
+        </button>
+      </div>
+
+      <!-- Interactive Clap-Along Chant Strip -->
+      <div class="bg-white dark:bg-[#0D1F38] border-[1.5px] border-amber-400/35 rounded-3xl p-6 space-y-4 shadow-md">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <span class="text-xs font-extrabold uppercase tracking-wider text-amber-600 dark:text-amber-300">TAP EACH DAY TO HEAR &amp; CLAP THE RHYTHM!</span>
+          <span class="text-xs font-bold text-slate-500 dark:text-slate-400">5 SCHOOL DAYS + 2 WEEKEND DAYS</span>
+        </div>
+        <div id="chantStrip" class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2.5"></div>
+      </div>
+
+      <!-- Put the Week in Order Game -->
+      <div class="bg-white dark:bg-[#0D1F38] border-[1.5px] border-amber-400/35 rounded-3xl p-6 sm:p-8 space-y-4 shadow-lg">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-wider text-amber-600 dark:text-amber-300">WEEK TRAIN PUZZLE</span>
+            <h3 class="text-lg sm:text-xl font-extrabold text-[#002B5C] dark:text-white">TAP THE DAYS IN ORDER FROM MONDAY TO SUNDAY!</h3>
+          </div>
+          <button type="button" onclick="resetWeekTrain()" class="px-3.5 py-2 rounded-xl border border-slate-300 dark:border-amber-400/30 text-xs font-extrabold hover:bg-slate-100 dark:hover:bg-[#132C4A]">
+            RESET TRAIN
+          </button>
+        </div>
+
+        <div id="trainTrack" class="min-h-[62px] p-3.5 rounded-2xl bg-[#FFFBEB] dark:bg-[#071324] border-2 border-dashed border-amber-400/60 flex flex-wrap gap-2 items-center"></div>
+        <div id="trainPool" class="flex flex-wrap gap-2.5"></div>
+        <div id="trainFeedback" class="text-xs sm:text-sm font-extrabold"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 06: MISSING DAY RUSH ==================== -->
+    <section data-stage="5" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-amber-400/30 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-amber-600 dark:text-amber-300">STAGE 06 · SPOT THE MISSING DAY</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">WHICH DAY IS MISSING?</h2>
+        </div>
+        <div class="flex items-center gap-2">
+          <span id="rushScoreBadge" class="px-3.5 py-1.5 rounded-xl bg-[#002B5C] text-amber-300 text-xs font-extrabold">SCORE: 0 / 7</span>
+          <span id="rushStreakBadge" class="px-3.5 py-1.5 rounded-xl bg-white dark:bg-[#0D1F38] border border-amber-400/35 text-xs font-extrabold">STREAK: 0 🔥</span>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-[#0D1F38] border-[1.5px] border-amber-400/35 rounded-3xl p-6 sm:p-9 max-w-4xl mx-auto w-full space-y-6 shadow-xl">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <span id="rushRoundBadge" class="px-3.5 py-1 rounded-full bg-amber-500 text-white text-xs font-extrabold">ROUND 1 / 7</span>
+          <div class="flex gap-2">
+            <button type="button" onclick="speakRushPrompt()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#002B5C] text-white text-xs font-extrabold">
+              <i data-lucide="volume-2" class="w-4 h-4"></i>
+              <span>READ IN ORDER</span>
+            </button>
+            <button type="button" onclick="restartRushGame()" class="px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-amber-400/30 text-xs font-extrabold">
+              RESTART
+            </button>
+          </div>
+        </div>
+
+        <!-- Full week sequence with one missing slot -->
+        <div id="rushSequenceStrip" class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2"></div>
+
+        <h3 class="text-lg sm:text-xl font-extrabold text-[#002B5C] dark:text-white">WHICH DAY IS MISSING?</h3>
+
+        <div id="rushOptions" class="grid grid-cols-1 sm:grid-cols-3 gap-3"></div>
+
+        <div id="rushFeedback" class="hidden p-4 rounded-2xl text-sm font-extrabold"></div>
+
+        <div class="flex justify-end">
+          <button type="button" onclick="nextRushRound()" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-[#002B5C] to-amber-600 text-white text-xs sm:text-sm font-extrabold">
+            NEXT ROUND →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 07: MY FAVOURITE DAY OF THE WEEK ==================== -->
+    <section data-stage="6" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-amber-400/30 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-amber-600 dark:text-amber-300">STAGE 07 · SPEAKING FINALE</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">MY FAVOURITE DAY OF THE WEEK</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">TAP A DAY AND SAY YOUR SENTENCE OUT LOUD!</p>
+      </div>
+
+      <div class="bg-white dark:bg-[#0D1F38] border-[1.5px] border-amber-400/35 rounded-3xl p-6 sm:p-9 max-w-3xl mx-auto w-full space-y-6 shadow-xl">
+        <div id="favDayPicker" class="flex flex-wrap justify-center gap-2.5"></div>
+
+        <div class="p-6 rounded-3xl bg-[#FFFBEB] dark:bg-[#071324] border-2 border-amber-400/45 space-y-4 text-center">
+          <p id="favSentenceOut" class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white"></p>
+          <button type="button" onclick="speakFavoriteSentence()" class="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-amber-500 hover:bg-amber-400 text-white text-xs sm:text-sm font-extrabold shadow transition">
+            <i data-lucide="volume-2" class="w-4 h-4"></i>
+            <span>LISTEN &amp; REPEAT</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 08: LESSON COMPLETE! ==================== -->
+    <section data-stage="7" class="stage hidden stage-anim space-y-6">
+      <div class="bg-white dark:bg-[#0D1F38] border-[1.5px] border-amber-400/35 rounded-3xl p-8 sm:p-12 max-w-3xl mx-auto w-full text-center space-y-6 shadow-xl">
+        <div class="text-6xl">🏆⭐🎉</div>
+        <span class="inline-block px-4 py-1.5 rounded-full bg-amber-400/20 text-amber-800 dark:text-amber-300 text-xs font-extrabold tracking-wider">
+          MISSION COMPLETE!
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-[#002B5C] dark:text-white">
+          GREAT JOB! YOU LEARNED ALL 7 DAYS!
+        </h2>
+        <p class="text-sm sm:text-base font-bold text-slate-600 dark:text-slate-300">
+          MONDAY · TUESDAY · WEDNESDAY · THURSDAY · FRIDAY · SATURDAY · SUNDAY
+        </p>
+        <div class="pt-2 flex flex-wrap items-center justify-center gap-3">
+          <button type="button" onclick="goStage(0)" class="px-6 py-3.5 rounded-2xl bg-amber-500 hover:bg-amber-400 text-white text-xs sm:text-sm font-extrabold shadow transition">
+            PLAY AGAIN FROM START
+          </button>
+          <a href="index.html" class="px-6 py-3.5 rounded-2xl bg-[#002B5C] hover:bg-amber-600 text-white text-xs sm:text-sm font-extrabold transition">
+            BACK TO PORTAL
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Navigation -->
+  <footer class="border-t border-amber-400/30 bg-white dark:bg-[#071324] py-4 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      <button id="btnPrev" type="button" onclick="goStage(currentStage - 1)" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-300 dark:border-amber-400/30 hover:bg-slate-100 dark:hover:bg-[#132C4A] disabled:opacity-30 text-xs font-extrabold transition">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>PREVIOUS</span>
+      </button>
+
+      <span id="stageCounter" class="text-xs font-extrabold tracking-widest text-slate-500 dark:text-slate-400">
+        01 / 08
+      </span>
+
+      <button id="btnNext" type="button" onclick="goStage(currentStage + 1)" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#002B5C] hover:bg-amber-600 disabled:opacity-30 text-xs font-extrabold text-white transition">
+        <span>NEXT</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    const STAGES = [
+      "01 · WELCOME!",
+      "02 · 7 DAYS CARDS",
+      "03 · NUMBER 1 TO 7",
+      "04 · SUPER SIMPLE SONG",
+      "05 · CHANT & TRAIN",
+      "06 · MISSING DAY",
+      "07 · FAVOURITE DAY",
+      "08 · WELL DONE!"
+    ];
+
+    let currentStage = 0;
+    const stageSections = document.querySelectorAll('.stage');
+
+    function goStage(idx) {
+      if (idx < 0 || idx >= stageSections.length) return;
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      currentStage = idx;
+      stageSections.forEach((s, i) => s.classList.toggle('hidden', i !== currentStage));
+      document.getElementById('stageTitleHeader').textContent = STAGES[currentStage];
+      document.getElementById('stageCounter').textContent = `${String(currentStage + 1).padStart(2, '0')} / ${String(stageSections.length).padStart(2, '0')}`;
+      document.getElementById('stageProgress').style.width = `${((currentStage + 1) / stageSections.length) * 100}%`;
+      document.getElementById('btnPrev').disabled = currentStage === 0;
+      document.getElementById('btnNext').disabled = currentStage === stageSections.length - 1;
+      renderStagePills();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      lucide.createIcons();
+    }
+
+    function renderStagePills() {
+      document.getElementById('stagePills').innerHTML = STAGES.map((_, i) => `
+        <button type="button" onclick="goStage(${i})" class="px-2.5 py-1 rounded-lg text-xs font-extrabold transition ${
+          i === currentStage ? 'bg-amber-400 text-[#002B5C]' : 'text-white/75 hover:text-white hover:bg-white/10'
+        }">${String(i + 1).padStart(2, '0')}</button>
+      `).join('');
+    }
+
+    const themeBtn = document.getElementById('themeBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    if (localStorage.getItem('provoKidsTheme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      themeIcon.setAttribute('data-lucide', 'moon');
+    }
+    themeBtn.addEventListener('click', () => {
+      const dark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('provoKidsTheme', dark ? 'dark' : 'light');
+      themeIcon.setAttribute('data-lucide', dark ? 'sun' : 'moon');
+      lucide.createIcons();
+    });
+
+    function mountPhoto(container, url, altText, fallbackTitle) {
+      container.innerHTML = `<img src="${url}" alt="${altText}" class="w-full h-full object-cover" loading="lazy" />`;
+      const img = container.querySelector('img');
+      if (img) {
+        img.addEventListener('error', () => {
+          container.innerHTML = `
+            <div class="w-full h-full flex flex-col items-center justify-center bg-[#002B5C] text-white p-6 text-center">
+              <i data-lucide="calendar-days" class="w-10 h-10 text-amber-300 mb-2"></i>
+              <span class="text-sm font-extrabold uppercase tracking-widest">${fallbackTitle}</span>
+            </div>
+          `;
+          lucide.createIcons();
+        }, { once: true });
+      }
+    }
+
+    function pickSoniaVoice() {
+      if (!('speechSynthesis' in window)) return null;
+      const voices = window.speechSynthesis.getVoices() || [];
+      if (!voices.length) return null;
+      return (
+        voices.find(v => /sonia/i.test(v.name)) ||
+        voices.find(v => /en[-_]GB/i.test(v.lang) && /natural|online|google|neural/i.test(v.name)) ||
+        voices.find(v => /en[-_]GB/i.test(v.lang)) ||
+        voices.find(v => /^en/i.test(v.lang)) ||
+        null
+      );
+    }
+
+    if ('speechSynthesis' in window && typeof window.speechSynthesis.onvoiceschanged !== 'undefined') {
+      window.speechSynthesis.onvoiceschanged = () => pickSoniaVoice();
+    }
+
+    function speakKidText(text) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const runUtterance = () => {
+        const u = new SpeechSynthesisUtterance(text);
+        const voice = pickSoniaVoice();
+        if (voice) {
+          u.voice = voice;
+          u.lang = voice.lang;
+        } else {
+          u.lang = 'en-GB';
+        }
+        u.rate = 0.88;
+        u.pitch = 1.08;
+        window.speechSynthesis.speak(u);
+      };
+      if ((window.speechSynthesis.getVoices() || []).length === 0 && 'onvoiceschanged' in window) {
+        const once = () => {
+          window.speechSynthesis.removeEventListener('voiceschanged', once);
+          runUtterance();
+        };
+        window.speechSynthesis.addEventListener('voiceschanged', once);
+        setTimeout(runUtterance, 120);
+      } else {
+        runUtterance();
+      }
+    }
+
+    // ==================== DATA: 7 DAYS OF THE WEEK ====================
+    const DAYS_DATA = [
+      { day: "MONDAY", num: 1, badge: "DAY 1", color: "#EF4444", emoji: "1️⃣", phrase: "NUMBER 1 IS MONDAY!", photo: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80" },
+      { day: "TUESDAY", num: 2, badge: "DAY 2", color: "#F97316", emoji: "2️⃣", phrase: "NUMBER 2 IS TUESDAY!", photo: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=900&q=80" },
+      { day: "WEDNESDAY", num: 3, badge: "DAY 3", color: "#EAB308", emoji: "3️⃣", phrase: "NUMBER 3 IS WEDNESDAY!", photo: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=900&q=80" },
+      { day: "THURSDAY", num: 4, badge: "DAY 4", color: "#22C55E", emoji: "4️⃣", phrase: "NUMBER 4 IS THURSDAY!", photo: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=900&q=80" },
+      { day: "FRIDAY", num: 5, badge: "DAY 5", color: "#06B6D4", emoji: "5️⃣", phrase: "NUMBER 5 IS FRIDAY!", photo: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=900&q=80" },
+      { day: "SATURDAY", num: 6, badge: "DAY 6", color: "#3B82F6", emoji: "6️⃣", phrase: "NUMBER 6 IS SATURDAY!", photo: "https://images.unsplash.com/photo-1541625602330-2277a4c46182?auto=format&fit=crop&w=900&q=80" },
+      { day: "SUNDAY", num: 7, badge: "DAY 7", color: "#A855F7", emoji: "7️⃣", phrase: "NUMBER 7 IS SUNDAY!", photo: "https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=900&q=80" }
+    ];
+
+    document.getElementById('coverDayPills').innerHTML = DAYS_DATA.map(d => `
+      <button type="button" onclick="speakKidText('${d.day}')" style="background:${d.color}" class="px-3.5 py-1.5 rounded-full text-white text-xs font-extrabold shadow hover:scale-105 transition">
+        ${d.num} · ${d.day}
+      </button>
+    `).join('');
+
+    // ==================== 02: 7 DAYS CARDS ====================
+    let dayIdx = 0;
+    let dayView = 'single';
+
+    window.setDayView = (mode) => {
+      dayView = mode;
+      document.getElementById('daySingleBox').classList.toggle('hidden', mode !== 'single');
+      document.getElementById('dayGridBox').classList.toggle('hidden', mode !== 'grid');
+      document.getElementById('btnDaySingle').className = mode === 'single'
+        ? 'px-3.5 py-1.5 rounded-lg text-xs font-extrabold bg-amber-500 text-white transition'
+        : 'px-3.5 py-1.5 rounded-lg text-xs font-extrabold text-slate-600 dark:text-slate-300 transition';
+      document.getElementById('btnDayGrid').className = mode === 'grid'
+        ? 'px-3.5 py-1.5 rounded-lg text-xs font-extrabold bg-amber-500 text-white transition'
+        : 'px-3.5 py-1.5 rounded-lg text-xs font-extrabold text-slate-600 dark:text-slate-300 transition';
+      renderDaysSection();
+    };
+
+    window.stepDayCard = (delta) => {
+      dayIdx = (dayIdx + delta + DAYS_DATA.length) % DAYS_DATA.length;
+      renderDaysSection();
+    };
+
+    function renderDaysSection() {
+      const item = DAYS_DATA[dayIdx];
+      document.getElementById('daySingleBox').innerHTML = `
+        <div class="bg-white dark:bg-[#0D1F38] border-[1.5px] border-amber-400/35 rounded-3xl overflow-hidden shadow-xl">
+          <div class="grid grid-cols-1 md:grid-cols-12">
+            <div id="daySinglePhoto" class="md:col-span-5 h-56 md:h-auto bg-[#091726]"></div>
+            <div class="md:col-span-7 p-6 sm:p-9 flex flex-col justify-between space-y-5">
+              <div class="space-y-4">
+                <div class="flex items-center justify-between gap-2">
+                  <span style="background:${item.color}" class="px-3.5 py-1 rounded-full text-white text-xs font-extrabold">${item.badge}</span>
+                  <span class="text-2xl">${item.emoji}</span>
+                </div>
+
+                <h3 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-[#002B5C] dark:text-white">${item.day}</h3>
+                <p class="text-base sm:text-lg font-bold text-slate-700 dark:text-slate-200">${item.phrase}</p>
+
+                <div class="flex flex-wrap gap-2.5 pt-1">
+                  <button type="button" onclick="speakKidText('${item.day}')" class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-amber-500 hover:bg-amber-400 text-white text-xs sm:text-sm font-extrabold shadow transition">
+                    <i data-lucide="volume-2" class="w-4 h-4"></i>
+                    <span>SAY "${item.day}"</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-amber-400/15">
+                <button type="button" onclick="stepDayCard(-1)" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-amber-400/30 text-xs font-extrabold">← PREV</button>
+                <div class="flex gap-1.5">
+                  ${DAYS_DATA.map((_, i) => `<button type="button" onclick="dayIdx=${i}; renderDaysSection();" class="w-7 h-7 rounded-lg text-xs font-extrabold ${i === dayIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#071324]'}">${i + 1}</button>`).join('')}
+                </div>
+                <button type="button" onclick="stepDayCard(1)" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-extrabold">NEXT →</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+      mountPhoto(document.getElementById('daySinglePhoto'), item.photo, item.day, item.day);
+
+      document.getElementById('dayGridBox').innerHTML = DAYS_DATA.map(d => `
+        <div class="bg-white dark:bg-[#0D1F38] border-[1.5px] border-amber-400/35 rounded-3xl p-5 flex flex-col justify-between gap-3 shadow-md">
+          <div class="space-y-2">
+            <div class="flex items-center justify-between">
+              <span style="background:${d.color}" class="px-2.5 py-0.5 rounded-full text-white text-[10px] font-extrabold">${d.badge}</span>
+              <span class="text-xl">${d.emoji}</span>
+            </div>
+            <h4 class="text-2xl font-extrabold text-[#002B5C] dark:text-white">${d.day}</h4>
+          </div>
+          <button type="button" onclick="speakKidText('${d.day}')" class="w-full py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-white text-xs font-extrabold inline-flex items-center justify-center gap-1.5 transition">
+            <i data-lucide="volume-2" class="w-4 h-4"></i>
+            <span>LISTEN</span>
+          </button>
+        </div>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    // ==================== 03: NUMBER 1 TO 7 -> MATCH DAY ====================
+    const NUMBER_MATCH_QS = [
+      { num: 1, prompt: "NUMBER 1 IS...", ans: "MONDAY", opts: ["MONDAY", "TUESDAY", "SUNDAY"] },
+      { num: 2, prompt: "NUMBER 2 IS...", ans: "TUESDAY", opts: ["MONDAY", "TUESDAY", "WEDNESDAY"] },
+      { num: 3, prompt: "NUMBER 3 IS...", ans: "WEDNESDAY", opts: ["TUESDAY", "WEDNESDAY", "THURSDAY"] },
+      { num: 4, prompt: "NUMBER 4 IS...", ans: "THURSDAY", opts: ["WEDNESDAY", "THURSDAY", "FRIDAY"] },
+      { num: 5, prompt: "NUMBER 5 IS...", ans: "FRIDAY", opts: ["THURSDAY", "FRIDAY", "SATURDAY"] },
+      { num: 6, prompt: "NUMBER 6 IS...", ans: "SATURDAY", opts: ["FRIDAY", "SATURDAY", "SUNDAY"] },
+      { num: 7, prompt: "NUMBER 7 IS...", ans: "SUNDAY", opts: ["MONDAY", "SATURDAY", "SUNDAY"] }
+    ];
+
+    let guessIdx = 0;
+    let guessStars = 0;
+    const guessSolved = new Set();
+
+    function renderGuess() {
+      guessIdx = (guessIdx + NUMBER_MATCH_QS.length) % NUMBER_MATCH_QS.length;
+      const g = NUMBER_MATCH_QS[guessIdx];
+      document.getElementById('guessBigNumber').textContent = g.num;
+      document.getElementById('guessOrdinalLabel').textContent = `NUMBER ${g.num} OF 7`;
+      document.getElementById('guessBadge').textContent = `NUMBER ${guessIdx + 1} / 7`;
+      document.getElementById('guessPrompt').textContent = g.prompt;
+      document.getElementById('guessFeedback').classList.add('hidden');
+
+      document.getElementById('guessOptions').innerHTML = g.opts.map(op => `
+        <button type="button" onclick="pickGuessOption('${op}')" class="p-3.5 rounded-2xl bg-[#FFFBEB] dark:bg-[#071324] hover:border-amber-400 border-[1.5px] border-amber-400/30 text-sm font-extrabold text-[#002B5C] dark:text-white transition">
+          ${op}
+        </button>
+      `).join('');
+
+      document.getElementById('guessDots').innerHTML = NUMBER_MATCH_QS.map((_, i) => `
+        <button type="button" onclick="guessIdx=${i}; renderGuess();" class="w-7 h-7 rounded-lg text-xs font-extrabold ${i === guessIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#071324]'}">${i + 1}</button>
+      `).join('');
+    }
+
+    window.speakGuessClue = () => speakKidText(`Number ${NUMBER_MATCH_QS[guessIdx].num}`);
+
+    window.pickGuessOption = (picked) => {
+      const g = NUMBER_MATCH_QS[guessIdx];
+      const fb = document.getElementById('guessFeedback');
+      fb.classList.remove('hidden');
+      if (picked === g.ans) {
+        if (!guessSolved.has(guessIdx)) {
+          guessSolved.add(guessIdx);
+          guessStars++;
+          document.getElementById('guessScoreBadge').textContent = `STARS: ${guessStars} / 7 ⭐`;
+        }
+        fb.className = 'p-3.5 rounded-2xl text-xs sm:text-sm font-extrabold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `⭐ YES! NUMBER ${g.num} IS ${g.ans}!`;
+        speakKidText(`Yes! Number ${g.num} is ${g.ans}!`);
+      } else {
+        fb.className = 'p-3.5 rounded-2xl text-xs sm:text-sm font-extrabold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `TRY AGAIN! TAP LISTEN TO HEAR NUMBER ${g.num}.`;
+        speakKidText(`Try again! Number ${g.num}.`);
+      }
+    };
+
+    window.stepGuess = (d) => { guessIdx += d; renderGuess(); };
+
+    // ==================== 05: CHANT & WEEK TRAIN ====================
+    function renderChantStrip() {
+      document.getElementById('chantStrip').innerHTML = DAYS_DATA.map((d, i) => `
+        <button type="button" onclick="speakKidText('${d.day}!')" style="border-color:${d.color}" class="p-3.5 rounded-2xl bg-[#FFFBEB] dark:bg-[#071324] border-2 hover:scale-105 transition text-center space-y-1">
+          <div class="text-xl">${d.emoji}</div>
+          <div class="text-xs font-extrabold text-[#002B5C] dark:text-white">${d.day}</div>
+          <div class="text-[10px] font-bold text-slate-400">${i < 5 ? 'WEEKDAY' : 'WEEKEND'}</div>
+        </button>
+      `).join('');
+    }
+
+    window.speakFullChant = () => {
+      speakKidText("Monday! Tuesday! Wednesday! Thursday! Friday! Saturday! Sunday!");
+    };
+
+    const SHUFFLED_DAYS = ["FRIDAY", "MONDAY", "SUNDAY", "WEDNESDAY", "SATURDAY", "TUESDAY", "THURSDAY"];
+    const CORRECT_ORDER = ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"];
+    let trainPlaced = [];
+
+    function renderWeekTrain() {
+      const track = document.getElementById('trainTrack');
+      const pool = document.getElementById('trainPool');
+      const fb = document.getElementById('trainFeedback');
+
+      track.innerHTML = trainPlaced.length
+        ? trainPlaced.map((d, idx) => `
+            <button type="button" onclick="removeTrainDay(${idx})" class="px-3.5 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-extrabold inline-flex items-center gap-1.5 hover:bg-rose-600 transition">
+              <span>🚂 ${idx + 1}. ${d}</span>
+              <span>✕</span>
+            </button>
+          `).join('')
+        : `<span class="text-xs font-bold text-slate-400">TAP MONDAY FIRST TO START THE TRAIN...</span>`;
+
+      pool.innerHTML = SHUFFLED_DAYS.map(d => {
+        const used = trainPlaced.includes(d);
+        return `
+          <button type="button" ${used ? 'disabled' : ''} onclick="addTrainDay('${d}')" class="px-4 py-2.5 rounded-xl text-xs font-extrabold border-2 transition ${
+            used
+              ? 'opacity-30 border-slate-200 dark:border-slate-700'
+              : 'bg-amber-400/20 border-amber-400 text-[#002B5C] dark:text-amber-200 hover:bg-amber-400 hover:text-[#002B5C]'
+          }">
+            ${d}
+          </button>
+        `;
+      }).join('');
+
+      if (trainPlaced.length === CORRECT_ORDER.length) {
+        const ok = trainPlaced.every((val, idx) => val === CORRECT_ORDER[idx]);
+        if (ok) {
+          fb.className = 'text-xs sm:text-sm font-extrabold text-emerald-600 dark:text-emerald-300';
+          fb.textContent = '🎉 AWESOME! MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY!';
+          speakKidText("Awesome! Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday!");
+        } else {
+          fb.className = 'text-xs sm:text-sm font-extrabold text-rose-600 dark:text-rose-300';
+          fb.textContent = 'ALMOST! TAP A DAY IN THE TRAIN TO CHECK THE ORDER.';
+        }
+      } else {
+        fb.textContent = '';
+      }
+    }
+
+    window.addTrainDay = (d) => {
+      if (!trainPlaced.includes(d)) {
+        trainPlaced.push(d);
+        speakKidText(d);
+        renderWeekTrain();
+      }
+    };
+    window.removeTrainDay = (idx) => {
+      trainPlaced.splice(idx, 1);
+      renderWeekTrain();
+    };
+    window.resetWeekTrain = () => {
+      trainPlaced = [];
+      renderWeekTrain();
+    };
+
+    // ==================== 06: MISSING DAY RUSH ====================
+    const MISSING_DAY_ROUNDS = [
+      { missingIdx: 1, ans: "TUESDAY", opts: ["TUESDAY", "THURSDAY", "SUNDAY"] },
+      { missingIdx: 2, ans: "WEDNESDAY", opts: ["MONDAY", "WEDNESDAY", "SATURDAY"] },
+      { missingIdx: 4, ans: "FRIDAY", opts: ["TUESDAY", "FRIDAY", "SUNDAY"] },
+      { missingIdx: 6, ans: "SUNDAY", opts: ["THURSDAY", "SATURDAY", "SUNDAY"] },
+      { missingIdx: 0, ans: "MONDAY", opts: ["MONDAY", "WEDNESDAY", "FRIDAY"] },
+      { missingIdx: 3, ans: "THURSDAY", opts: ["THURSDAY", "SATURDAY", "MONDAY"] },
+      { missingIdx: 5, ans: "SATURDAY", opts: ["TUESDAY", "FRIDAY", "SATURDAY"] }
+    ];
+
+    let rushIdx = 0;
+    let rushScore = 0;
+    let rushStreak = 0;
+    let rushAnswered = false;
+
+    function renderRush() {
+      const idx = rushIdx % MISSING_DAY_ROUNDS.length;
+      const item = MISSING_DAY_ROUNDS[idx];
+      rushAnswered = false;
+      document.getElementById('rushRoundBadge').textContent = `ROUND ${idx + 1} / ${MISSING_DAY_ROUNDS.length}`;
+      document.getElementById('rushFeedback').classList.add('hidden');
+
+      document.getElementById('rushSequenceStrip').innerHTML = CORRECT_ORDER.map((dayName, i) => {
+        const isMissing = i === item.missingIdx;
+        return `
+          <div class="p-3 rounded-2xl text-center border-2 ${
+            isMissing
+              ? 'bg-rose-500/15 border-dashed border-rose-500 text-rose-700 dark:text-rose-300'
+              : 'bg-[#FFFBEB] dark:bg-[#071324] border-amber-400/35 text-[#002B5C] dark:text-white'
+          }">
+            <div class="text-[10px] font-extrabold opacity-70">${i + 1}</div>
+            <div class="text-xs sm:text-sm font-extrabold mt-0.5">${isMissing ? '❓ ???' : dayName}</div>
+          </div>
+        `;
+      }).join('');
+
+      document.getElementById('rushOptions').innerHTML = item.opts.map(op => `
+        <button type="button" onclick="pickRushOption('${op}')" class="p-4 rounded-2xl bg-[#FFFBEB] dark:bg-[#071324] hover:border-amber-400 border-[1.5px] border-amber-400/30 text-sm sm:text-base font-extrabold text-[#002B5C] dark:text-white transition">
+          ${op}
+        </button>
+      `).join('');
+    }
+
+    window.speakRushPrompt = () => {
+      const item = MISSING_DAY_ROUNDS[rushIdx % MISSING_DAY_ROUNDS.length];
+      const spokenList = CORRECT_ORDER.map((d, i) => i === item.missingIdx ? "blank" : d).join(", ");
+      speakKidText(spokenList);
+    };
+
+    window.pickRushOption = (picked) => {
+      if (rushAnswered) return;
+      rushAnswered = true;
+      const item = MISSING_DAY_ROUNDS[rushIdx % MISSING_DAY_ROUNDS.length];
+      const fb = document.getElementById('rushFeedback');
+      fb.classList.remove('hidden');
+      if (picked === item.ans) {
+        rushScore++;
+        rushStreak++;
+        fb.className = 'p-4 rounded-2xl text-sm font-extrabold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `⭐ GREAT JOB! THE MISSING DAY IS ${item.ans}!`;
+        speakKidText(`Great job! ${item.ans}!`);
+      } else {
+        rushStreak = 0;
+        fb.className = 'p-4 rounded-2xl text-sm font-extrabold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `NICE TRY! THE MISSING DAY IS ${item.ans}.`;
+        speakKidText(`The missing day is ${item.ans}.`);
+      }
+      document.getElementById('rushScoreBadge').textContent = `SCORE: ${rushScore} / ${MISSING_DAY_ROUNDS.length}`;
+      document.getElementById('rushStreakBadge').textContent = `STREAK: ${rushStreak} 🔥`;
+    };
+
+    window.nextRushRound = () => { rushIdx++; renderRush(); };
+    window.restartRushGame = () => {
+      rushIdx = 0;
+      rushScore = 0;
+      rushStreak = 0;
+      document.getElementById('rushScoreBadge').textContent = `SCORE: 0 / ${MISSING_DAY_ROUNDS.length}`;
+      document.getElementById('rushStreakBadge').textContent = `STREAK: 0 🔥`;
+      renderRush();
+    };
+
+    // ==================== 07: MY FAVOURITE DAY OF THE WEEK ====================
+    let selectedFavDay = "SATURDAY";
+
+    function renderFavoriteBuilder() {
+      document.getElementById('favDayPicker').innerHTML = DAYS_DATA.map(d => `
+        <button type="button" onclick="selectedFavDay='${d.day}'; renderFavoriteBuilder();" class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold border-2 transition ${
+          selectedFavDay === d.day
+            ? 'bg-[#002B5C] border-[#002B5C] text-white'
+            : 'bg-[#FFFBEB] dark:bg-[#071324] border-amber-400/30 text-[#002B5C] dark:text-white'
+        }">${d.emoji} ${d.day}</button>
+      `).join('');
+
+      document.getElementById('favSentenceOut').textContent = `“MY FAVOURITE DAY OF THE WEEK IS ${selectedFavDay}!”`;
+    }
+
+    window.speakFavoriteSentence = () => {
+      speakKidText(`My favourite day of the week is ${selectedFavDay}!`);
+    };
+
+    // Init
+    goStage(0);
+    renderDaysSection();
+    renderGuess();
+    renderChantStrip();
+    renderWeekTrain();
+    renderRush();
+    renderFavoriteBuilder();
+    lucide.createIcons();
+  </script>
+</body>
+</html>

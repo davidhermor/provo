@@ -141,7 +141,7 @@
       </div>
     </section>
 
-    <!-- ==================== 02: EXPANDED & GRADED PHRASE BANK (SIMPLE / STANDARD / EXECUTIVE) ==================== -->
+    <!-- ==================== 02: EXPANDED & GRADED PHRASE BANK ==================== -->
     <section data-stage="1" class="stage hidden stage-anim space-y-6">
       <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-3 border-b border-indigo-500/20 dark:border-indigo-400/20 pb-3">
         <div>
@@ -224,7 +224,7 @@
       </div>
     </section>
 
-    <!-- ==================== 04: PURE LISTENING CALL SCENARIOS (TRANSCRIPT & MODEL HIDDEN BY DEFAULT) ==================== -->
+    <!-- ==================== 04: PURE LISTENING CALL SCENARIOS ==================== -->
     <section data-stage="3" class="stage hidden stage-anim space-y-6">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-indigo-500/20 dark:border-indigo-400/20 pb-3">
         <div>
@@ -245,7 +245,6 @@
                 <span id="simRoleTag" class="px-3 py-1 rounded-full bg-indigo-500/15 text-indigo-700 dark:text-indigo-300 text-xs font-extrabold"></span>
               </div>
 
-              <!-- Pure Listening Audio Bar -->
               <div class="p-4 rounded-2xl bg-[#F4F5FA] dark:bg-[#071224] border-[1.5px] border-indigo-500/25 dark:border-indigo-400/25 flex flex-wrap items-center justify-between gap-3">
                 <div class="flex items-center gap-2.5">
                   <span class="w-9 h-9 rounded-xl bg-indigo-600 text-white flex items-center justify-center shrink-0">
@@ -264,7 +263,6 @@
 
               <p id="simTaskBrief" class="text-sm font-bold text-[#002B5C] dark:text-slate-100 leading-relaxed"></p>
 
-              <!-- Both Caller Transcript AND Model Response Hidden by Default -->
               <div class="flex flex-wrap gap-2 pt-1">
                 <button id="btnToggleSimTranscript" type="button" onclick="toggleSimTranscript()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-200/80 dark:bg-white/10 hover:bg-slate-300/70 dark:hover:bg-white/15 text-slate-800 dark:text-slate-200 text-xs font-bold transition">
                   <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
@@ -297,7 +295,7 @@
       </div>
     </section>
 
-    <!-- ==================== 05: EXPANDED ETIQUETTE, REGISTER & GAP-FILL PRACTICE ==================== -->
+    <!-- ==================== 05: EXPANDED PRACTICE LAB ==================== -->
     <section data-stage="4" class="stage hidden stage-anim space-y-6">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-indigo-500/20 dark:border-indigo-400/20 pb-3">
         <div>
@@ -314,7 +312,7 @@
       <div id="panelExUpgrade" class="hidden grid grid-cols-1 md:grid-cols-2 gap-4"></div>
     </section>
 
-    <!-- ==================== 06: GAMIFIED CLASSROOM CHALLENGE — "CALL DESK RUSH" ==================== -->
+    <!-- ==================== 06: GAMIFIED CLASSROOM CHALLENGE ==================== -->
     <section data-stage="5" class="stage hidden stage-anim space-y-6">
       <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-indigo-500/20 dark:border-indigo-400/20 pb-3">
         <div>
@@ -322,7 +320,6 @@
           <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Switchboard Rush: Beat the Clock!</h2>
         </div>
 
-        <!-- Scoreboard & Timer -->
         <div class="flex flex-wrap items-center gap-2">
           <span id="gameScoreBadge" class="px-3.5 py-2 rounded-2xl bg-indigo-600 text-white text-xs font-extrabold shadow">
             SCORE: 0 / 10
@@ -404,7 +401,7 @@
 
     function goStage(idx) {
       if (idx < 0 || idx >= stageSections.length) return;
-      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      stopCurrentAudio();
       currentStage = idx;
       stageSections.forEach((s, i) => s.classList.toggle('hidden', i !== currentStage));
       document.getElementById('stageTitleHeader').textContent = STAGES[currentStage];
@@ -438,6 +435,18 @@
       themeIcon.setAttribute('data-lucide', dark ? 'sun' : 'moon');
       lucide.createIcons();
     });
+
+    // ==================== HYBRID NATURAL AUDIO ENGINE (MP3 + VOICE FALLBACK) ====================
+    let activeHtmlAudio = null;
+
+    function stopCurrentAudio() {
+      if (activeHtmlAudio) {
+        activeHtmlAudio.pause();
+        activeHtmlAudio.currentTime = 0;
+        activeHtmlAudio = null;
+      }
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+    }
 
     function pickNaturalEnglishVoice(preferredLang = 'en-GB') {
       if (!('speechSynthesis' in window)) return null;
@@ -474,10 +483,8 @@
       window.speechSynthesis.onvoiceschanged = () => pickNaturalEnglishVoice('en-GB');
     }
 
-    function speakText(text) {
+    function speakWithSynthesis(text) {
       if (!('speechSynthesis' in window)) return;
-      window.speechSynthesis.cancel();
-
       const runUtterance = () => {
         const u = new SpeechSynthesisUtterance(text);
         const voice = pickNaturalEnglishVoice('en-GB');
@@ -504,10 +511,26 @@
       }
     }
 
-    // ==================== 02: GRADED PHRASE BANK (SIMPLE + STANDARD + FORMAL) ====================
+    // Plays pre-recorded MP3 from audio/business-calls/<audioKey>.mp3 if uploaded, else falls back cleanly
+    function playClip(audioKey, fallbackText) {
+      stopCurrentAudio();
+      if (!audioKey) {
+        speakWithSynthesis(fallbackText);
+        return;
+      }
+      const audio = new Audio(`audio/business-calls/${audioKey}.mp3`);
+      activeHtmlAudio = audio;
+      audio.play().catch(() => {
+        if (activeHtmlAudio === audio) activeHtmlAudio = null;
+        speakWithSynthesis(fallbackText);
+      });
+    }
+
+    // ==================== 02: GRADED PHRASE BANK ====================
     const PHRASE_BANKS = {
       making: [
         {
+          id: "m1",
           fn: "INTRODUCING YOURSELF",
           simple: "Hi, it's David from Provo.",
           standard: "Hello, this is David speaking from Provo.",
@@ -515,6 +538,7 @@
           note: "Use 'this is...' on the phone instead of 'I am...'. Notice 'Provo' alone without 'Academy'."
         },
         {
+          id: "m2",
           fn: "ASKING FOR SOMEONE",
           simple: "Can I speak to Marta, please?",
           standard: "Could I speak to Marta Soler in Operations, please?",
@@ -522,6 +546,7 @@
           note: "Adding the department or surname avoids confusion in larger offices."
         },
         {
+          id: "m3",
           fn: "STATING YOUR REASON",
           simple: "I'm calling about tomorrow's meeting.",
           standard: "I'm calling regarding our training session next Tuesday.",
@@ -529,6 +554,7 @@
           note: "'About' is great for everyday calls; 'regarding' or 'The reason for my call is...' sounds more executive."
         },
         {
+          id: "m4",
           fn: "CHECKING AVAILABILITY",
           simple: "Do you have two minutes to talk?",
           standard: "Is this a good time to talk for a couple of minutes?",
@@ -536,6 +562,7 @@
           note: "A quick availability check prevents rushing through important details."
         },
         {
+          id: "m5",
           fn: "ASKING FOR AN EXTENSION",
           simple: "Extension 402, please.",
           standard: "Could you put me through to extension 402, please?",
@@ -543,6 +570,7 @@
           note: "'Put me through to' and 'connect me with' are interchangeable."
         },
         {
+          id: "m6",
           fn: "RETURNING A MISSED CALL",
           simple: "Hi, I'm calling you back.",
           standard: "Hello, I'm returning a call from Marta Soler.",
@@ -552,6 +580,7 @@
       ],
       receiving: [
         {
+          id: "r1",
           fn: "ANSWERING THE PHONE",
           simple: "Hello, Provo, David speaking.",
           standard: "Good morning, Provo, David speaking. How can I help you?",
@@ -559,6 +588,7 @@
           note: "Company name + your name + short offer to help is the golden 3-part opening."
         },
         {
+          id: "r2",
           fn: "ASKING WHO IS CALLING",
           simple: "Who's calling, please?",
           standard: "May I ask who's calling, please?",
@@ -566,6 +596,7 @@
           note: "Always soften with 'please' so you don't sound like an interrogation."
         },
         {
+          id: "r3",
           fn: "PUTTING ON HOLD",
           simple: "One moment, please.",
           standard: "Just a moment, please. I'll check the schedule for you.",
@@ -573,6 +604,7 @@
           note: "Tell the caller why they are waiting so they don't think the line went dead."
         },
         {
+          id: "r4",
           fn: "TRANSFERRING A CALL",
           simple: "I'll transfer you now.",
           standard: "I'll put you through to our billing team right away.",
@@ -580,6 +612,7 @@
           note: "'Hold the line' = stay on the phone."
         },
         {
+          id: "r5",
           fn: "WHEN SOMEONE IS BUSY",
           simple: "Sorry, she's in a meeting right now.",
           standard: "I'm afraid she's in a meeting at the moment. Can I take a message?",
@@ -587,6 +620,7 @@
           note: "'I'm afraid...' is the standard polite way to deliver bad news in English."
         },
         {
+          id: "r6",
           fn: "OFFERING ALTERNATIVE HELP",
           simple: "Can I help you instead?",
           standard: "She's out of the office today, but I can help you with that.",
@@ -596,6 +630,7 @@
       ],
       trouble: [
         {
+          id: "t1",
           fn: "TAKING CONTACT DETAILS",
           simple: "What's your phone number and email?",
           standard: "Could I take your number and email address so she can reach you?",
@@ -603,6 +638,7 @@
           note: "Read back numbers in groups of two or three digits."
         },
         {
+          id: "t2",
           fn: "BAD CONNECTION",
           simple: "Sorry, I can't hear you well.",
           standard: "Sorry, you're breaking up a bit. Could you repeat that?",
@@ -610,6 +646,7 @@
           note: "'Breaking up' / 'cutting out' = audio dropping due to weak signal."
         },
         {
+          id: "t3",
           fn: "ASKING TO SLOW DOWN / SPELL",
           simple: "Can you spell your name, please?",
           standard: "Could you spell your surname for me, please?",
@@ -617,6 +654,7 @@
           note: "Never guess the spelling of a client's surname or street."
         },
         {
+          id: "t4",
           fn: "CONFIRMING INFORMATION",
           simple: "So, Friday at 10:00, right?",
           standard: "Just to confirm, we're meeting on Friday at 10:00 a.m.",
@@ -624,6 +662,7 @@
           note: "A 10-second recap prevents costly misunderstandings."
         },
         {
+          id: "t5",
           fn: "PROMISING FOLLOW-UP",
           simple: "I'll send you an email today.",
           standard: "I'll send you a quick confirmation email right after this call.",
@@ -631,6 +670,7 @@
           note: "Sets a clear timeline for your next action."
         },
         {
+          id: "t6",
           fn: "CLOSING PROFESSIONALLY",
           simple: "Thanks for calling. Bye!",
           standard: "Thanks for your time today. Speak soon!",
@@ -645,7 +685,8 @@
     let bankViewMode = 'single';
 
     window.speakBankItem = (key, idx, level) => {
-      speakText(PHRASE_BANKS[key][idx][level]);
+      const item = PHRASE_BANKS[key][idx];
+      playClip(`bank-${item.id}-${level}`, item[level]);
     };
 
     window.setBankViewMode = (mode) => {
@@ -775,30 +816,35 @@
     // ==================== 03: DICTATION DRILLS ====================
     const DICTATION_DRILLS = [
       {
+        id: "dict-1",
         context: "Extension & direct line: listen carefully to the digits.",
         spoken: "Extension four oh eight, double two.",
         answer: "40822",
         displayAnswer: "40822 (ext. 408, 22)"
       },
       {
+        id: "dict-2",
         context: "Support email address at Provo: write it in standard email format.",
         spoken: "info at provo dot com.",
         answer: "info@provo.com",
         displayAnswer: "info@provo.com"
       },
       {
+        id: "dict-3",
         context: "Booking reference code: letters and numbers.",
         spoken: "Reference B nine, double four, K.",
         answer: "B944K",
         displayAnswer: "B944K"
       },
       {
+        id: "dict-4",
         context: "Mobile callback number: listen and type the digits.",
         spoken: "Six double five, oh nine, eight one, three.",
         answer: "65509813",
         displayAnswer: "65509813"
       },
       {
+        id: "dict-5",
         context: "Client email with hyphen and underscore: listen carefully.",
         spoken: "m underscore vega at nordik hyphen logistics dot eu.",
         answer: "m_vega@nordik-logistics.eu",
@@ -820,7 +866,10 @@
         }">${i + 1}</button>
       `).join('');
     }
-    window.speakDictation = () => speakText(DICTATION_DRILLS[dictIdx].spoken);
+    window.speakDictation = () => {
+      const d = DICTATION_DRILLS[dictIdx];
+      playClip(d.id, d.spoken);
+    };
     window.checkDictation = () => {
       const d = DICTATION_DRILLS[dictIdx];
       const val = document.getElementById('dictationInput').value.trim().toLowerCase().replace(/\s+/g, '');
@@ -837,9 +886,10 @@
     };
     window.stepDictation = (delta) => { dictIdx += delta; renderDictation(); };
 
-    // ==================== 04: PURE LISTENING CALL SIMULATOR (10 SCENARIOS) ====================
+    // ==================== 04: PURE LISTENING CALL SIMULATOR ====================
     const SIM_SCENARIOS = [
       {
+        id: "sim-01",
         role: "01 · INCOMING CALL",
         caller: "Good morning. Is Mr. Reid available? My name is Elena Ruiz from Apex Print.",
         brief: "Task: Listen to the caller. Mr. Reid is on another call until 11:30. Explain politely and offer to take a message.",
@@ -847,6 +897,7 @@
         photo: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80"
       },
       {
+        id: "sim-02",
         role: "02 · OUTGOING CALL",
         caller: "Hello, Provo, David speaking. How can I help you?",
         brief: "Task: You are calling Provo to speak to Laura Chen and confirm Friday's workshop.",
@@ -854,6 +905,7 @@
         photo: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80"
       },
       {
+        id: "sim-03",
         role: "03 · WRONG DEPARTMENT",
         caller: "Sorry, I think you have the wrong extension—this is the warehouse.",
         brief: "Task: Apologize politely and ask to be transferred to Customer Service.",
@@ -861,13 +913,16 @@
         photo: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80"
       },
       {
+        id: "sim-04",
         role: "04 · BAD CONNECTION",
         caller: "The shipment will arrive at gate four at... [static] ...tomorrow morning.",
+        spokenClean: "The shipment will arrive at gate four at... tomorrow morning.",
         brief: "Task: Tell the caller the audio is breaking up and ask them to repeat the time.",
         model: "Simple: 'Sorry, I couldn't hear the time. Can you repeat that?' | Formal: 'I'm sorry, you're breaking up a bit. Could you repeat the arrival time, please?'",
         photo: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80"
       },
       {
+        id: "sim-05",
         role: "05 · CONFIRMING EMAIL",
         caller: "Sure, my email is k underscore alvarez at brightleaf hyphen media dot co dot uk.",
         brief: "Task: Read the email address back to confirm every symbol and word.",
@@ -875,6 +930,7 @@
         photo: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"
       },
       {
+        id: "sim-06",
         role: "06 · RESCHEDULING A CALL",
         caller: "Hi, I'm calling about our 3:00 p.m. call today. Something urgent just came up.",
         brief: "Task: React calmly and propose moving the call to tomorrow at 10:30 a.m.",
@@ -882,6 +938,7 @@
         photo: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800&q=80"
       },
       {
+        id: "sim-07",
         role: "07 · INVOICE INQUIRY",
         caller: "Hello, we received invoice 409, but the VAT amount looks different from our quote.",
         brief: "Task: Put the caller on hold for a moment while you open the file.",
@@ -889,6 +946,7 @@
         photo: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80"
       },
       {
+        id: "sim-08",
         role: "08 · LEAVING A VOICEMAIL",
         caller: "You've reached Sara Vidal at Provo. I can't take your call right now. Please leave a message after the tone.",
         brief: "Task: Leave a concise 15-second voicemail with your name, reason for calling, and callback number.",
@@ -896,6 +954,7 @@
         photo: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80"
       },
       {
+        id: "sim-09",
         role: "09 · SPELLING A SURNAME",
         caller: "My surname is Szczepanski, and I'm calling to confirm my hotel booking.",
         brief: "Task: Politely ask the caller to spell their surname slowly.",
@@ -903,6 +962,7 @@
         photo: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80"
       },
       {
+        id: "sim-10",
         role: "10 · CLOSING THE CALL",
         caller: "Perfect, that's everything I needed today. Thank you very much!",
         brief: "Task: Close the call warmly and mention you will send a short summary email.",
@@ -934,7 +994,10 @@
       `).join('');
     }
     window.stepSim = (d) => { simIdx += d; renderSim(); };
-    window.speakSimCaller = () => speakText(SIM_SCENARIOS[simIdx].caller);
+    window.speakSimCaller = () => {
+      const s = SIM_SCENARIOS[simIdx];
+      playClip(s.id, s.spokenClean || s.caller);
+    };
     window.toggleSimTranscript = () => {
       const box = document.getElementById('simTranscriptBox');
       const hidden = box.classList.toggle('hidden');
@@ -1065,6 +1128,7 @@
     // ==================== 06: GAMIFIED SWITCHBOARD RUSH ====================
     const GAME_ROUNDS = [
       {
+        id: "game-01",
         caller: "“Good morning, Provo! Can I speak to Alex in Design, please?”",
         opts: [
           "Sure, one moment please—I'll put you through to Alex right away.",
@@ -1075,7 +1139,9 @@
         explain: "'One moment please—I'll put you through...' is smooth, polite, and natural."
       },
       {
+        id: "game-02",
         caller: "“Hi, this is Marc from Solis Tech. Is Clara available?” (Clara is in a meeting)",
+        spokenClean: "Hi, this is Marc from Solis Tech. Is Clara available?",
         opts: [
           "No, she is busy. Bye!",
           "I'm afraid Clara is in a meeting at the moment. Can I take a message?",
@@ -1085,7 +1151,9 @@
         explain: "'I'm afraid... Can I take a message?' softens the unavailability and offers a next step."
       },
       {
+        id: "game-03",
         caller: "“Sorry, my signal is terrible here... did you say Thursday at... [static]?”",
+        spokenClean: "Sorry, my signal is terrible here... did you say Thursday at?",
         opts: [
           "Your phone is broken.",
           "Sorry, you're breaking up a bit. I said Thursday at 11:00 a.m.",
@@ -1095,6 +1163,7 @@
         explain: "'You're breaking up a bit' is the exact idiomatic phrase for a bad phone signal."
       },
       {
+        id: "game-04",
         caller: "“Hello, I'm calling to check if you received our signed contract.”",
         opts: [
           "Hold on a second while I check our inbox for you.",
@@ -1105,7 +1174,9 @@
         explain: "Telling the caller what you are checking keeps the call calm and helpful."
       },
       {
+        id: "game-05",
         caller: "“Could you take down my email? It's p.roca@nordik-group.com.”",
+        spokenClean: "Could you take down my email? It's p dot roca at nordik hyphen group dot com.",
         opts: [
           "Okay, written.",
           "Let me read that back to confirm: p dot roca at nordik hyphen group dot com.",
@@ -1115,6 +1186,7 @@
         explain: "Reading an email back using 'dot', 'at', and 'hyphen' prevents typos."
       },
       {
+        id: "game-06",
         caller: "“Oh, apologies—I think I dialed the wrong extension!”",
         opts: [
           "Yes, look at the number next time.",
@@ -1125,6 +1197,7 @@
         explain: "Offering to redirect a misdialed caller is great customer etiquette."
       },
       {
+        id: "game-07",
         caller: "“Hi, I missed a call from this number ten minutes ago.”",
         opts: [
           "Hello! Yes, this is David from Provo—I was calling regarding tomorrow's class.",
@@ -1135,6 +1208,7 @@
         explain: "Identify yourself, the company ('Provo'), and the reason for the earlier call."
       },
       {
+        id: "game-08",
         caller: "“Would 4:30 p.m. today work for a quick 10-minute call?”",
         opts: [
           "4:30 is impossible for me always.",
@@ -1145,6 +1219,7 @@
         explain: "Give a brief reason and immediately propose an alternative time."
       },
       {
+        id: "game-09",
         caller: "“My surname is Wojcik—let me know if you need the spelling.”",
         opts: [
           "Yes please, could you spell it out for me?",
@@ -1155,6 +1230,7 @@
         explain: "'Could you spell it out for me?' is polite and saves follow-up errors."
       },
       {
+        id: "game-10",
         caller: "“Thanks so much for sorting that out so quickly!”",
         opts: [
           "Ok.",
@@ -1203,7 +1279,10 @@
       if (currentStage === 5) startRoundClock();
     }
 
-    window.speakGameCall = () => speakText(GAME_ROUNDS[gRound % GAME_ROUNDS.length].caller);
+    window.speakGameCall = () => {
+      const r = GAME_ROUNDS[gRound % GAME_ROUNDS.length];
+      playClip(r.id, r.spokenClean || r.caller);
+    };
 
     window.pickGameOption = (pickedIdx) => {
       if (gAnswered) return;

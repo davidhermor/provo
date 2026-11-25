@@ -405,6 +405,7 @@
     .tag.ote { background: #E0F2FE; color: #0369A1; }
     .tag.teens { background: #D1FAE5; color: #065F46; }
     .tag.business { background: #E0E7FF; color: #3730A3; }
+    .tag.b1-b2 { background: #FFE4E6; color: #BE123C; }
 
     .status {
       font-size: 0.78rem;
@@ -524,7 +525,7 @@
     <p>Select your class topic below to review grammar, practice vocabulary, and complete interactive exercises.</p>
     <div class="search-box">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <input type="text" id="searchInput" placeholder="Search lessons (e.g. Present Continuous, OTE, Kids, Teens, Business)...">
+      <input type="text" id="searchInput" placeholder="Search lessons (e.g. Present Continuous, B1/B2, Conversation Class, OTE, Kids, Business)...">
     </div>
   </section>
 
@@ -532,6 +533,7 @@
     <div class="filters">
       <button class="filter-btn active" data-filter="all">All Lessons</button>
       <button class="filter-btn" data-filter="a1-a2">A1–A2</button>
+      <button class="filter-btn" data-filter="b1-b2">B1 / B2</button>
       <button class="filter-btn" data-filter="kids">Kids</button>
       <button class="filter-btn" data-filter="ote">OTE Prep (B1 / B2)</button>
       <button class="filter-btn" data-filter="teens">Teens</button>
@@ -539,6 +541,19 @@
     </div>
 
     <div class="grid" id="lessonGrid">
+
+      <!-- ACTIVE LESSON: B1/B2 BLACK FRIDAY CONVERSATION CLASS -->
+      <article class="card" data-category="b1-b2">
+        <div>
+          <div class="card-top">
+            <span class="tag b1-b2">B1 / B2 · Conversation Class</span>
+            <span class="status">● Available</span>
+          </div>
+          <h2>Black Friday &amp; Consumer Traps</h2>
+          <p>12 discussion cards with discourse frames, 12 retail idioms &amp; tactics, reading on dark patterns, Third Conditional &amp; transformations, Deal Trap Rush, and Debate Clinic.</p>
+        </div>
+        <a href="b1-b2-black-friday.html" class="card-btn">Start Lesson →</a>
+      </article>
 
       <!-- ACTIVE LESSON 1 -->
       <article class="card" data-category="a1-a2">
@@ -648,7 +663,7 @@
       <article class="card" data-category="a1-a2">
         <div>
           <div class="card-top">
-            <span class="tag">A1–A2 Vocabulary</span>
+            <span class="tag">A1–A2 · Conversation Class</span>
             <span class="status">● Available</span>
           </div>
           <h2>Eating Out</h2>
@@ -661,7 +676,7 @@
       <article class="card" data-category="a1-a2">
         <div>
           <div class="card-top">
-            <span class="tag">A1–A2 Vocabulary</span>
+            <span class="tag">A1–A2 · Conversation Class</span>
             <span class="status">● Available</span>
           </div>
           <h2>Shopping &amp; Clothes</h2>

@@ -108,7 +108,7 @@
           </h1>
 
           <p class="text-slate-600 dark:text-slate-300 text-base leading-relaxed">
-            Use <em>my, your, his, her, its, our,</em> and <em>their</em> naturally before nouns, avoid common contraction traps like <em>its/it's</em> or <em>your/you're</em>, and play live speaking games.
+            Use <em>my, your, his, her, its, our,</em> and <em>their</em> naturally before nouns, avoid common contraction traps like <em>its/it's</em> or <em>your/you're</em>, and play live solo &amp; class games.
           </p>
 
           <div class="pt-2 flex flex-wrap items-center gap-4">
@@ -508,58 +508,81 @@
       </div>
     </section>
 
-    <!-- ==================== 06: SPEAKING GAME (4 CARDS PER MODE) ==================== -->
+    <!-- ==================== 06: SOLO & CLASS GAME (POSSESSIVE RUSH) ==================== -->
     <section data-stage="5" class="lesson-stage hidden stage-anim space-y-6">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-cyan-400/15 pb-4">
         <div>
-          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 06 · Live Class Game</span>
-          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Whose Is It?</h2>
+          <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-[#0089A7]">Stage 06 · Solo &amp; Class Challenge</span>
+          <h2 class="text-3xl font-extrabold uppercase tracking-tight text-[#002B5C] dark:text-white mt-1">Possessive Rush</h2>
         </div>
-        <p class="text-sm text-slate-500 dark:text-slate-400">4 cards per mode for lively speaking rounds with your teacher.</p>
+        <div class="flex flex-wrap items-center gap-2">
+          <span id="paGameScore" class="px-3.5 py-1.5 rounded-xl bg-[#002B5C] text-white text-xs font-extrabold">SCORE: 0 / 8</span>
+          <span id="paGameStreak" class="px-3.5 py-1.5 rounded-xl bg-slate-100 dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 text-xs font-extrabold">STREAK: 0 🔥</span>
+        </div>
       </div>
 
-      <div class="flex flex-wrap gap-2" id="gameModeTabs"></div>
+      <div class="flex flex-wrap gap-2" id="paGameModeTabs">
+        <button type="button" id="paTabOwners" onclick="switchPaGameMode('owners')" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-[#002B5C] text-white transition">1. Match the Owner (4)</button>
+        <button type="button" id="paTabTraps" onclick="switchPaGameMode('traps')" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 transition">2. Contraction &amp; Noun Traps (4)</button>
+      </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border border-slate-200/90 dark:border-cyan-400/15 shadow-lg">
-        <div id="gamePhotoBox" class="lg:col-span-5 h-64 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+        <div id="paGamePhotoBox" class="lg:col-span-5 h-64 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
 
         <div class="lg:col-span-7 p-6 sm:p-10 flex flex-col justify-between space-y-6">
           <div class="space-y-4">
             <div class="flex items-center justify-between gap-2">
-              <span id="gameModeBadge" class="px-3 py-1 rounded-full bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300 text-xs font-extrabold uppercase tracking-wider"></span>
-              <span id="gameCardCounter" class="text-xs font-bold text-slate-400">Card 1 / 4</span>
+              <span id="paGameModeBadge" class="px-3 py-1 rounded-full bg-[#0089A7]/15 text-[#005A8D] dark:text-cyan-300 text-xs font-extrabold uppercase tracking-wider"></span>
+              <span id="paGameCardCounter" class="text-xs font-bold text-slate-400">Round 1 / 4</span>
             </div>
 
-            <h3 id="gamePromptTitle" class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
-            <p id="gameRuleText" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+            <div class="flex items-start justify-between gap-3">
+              <h3 id="paGamePromptTitle" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+              <button type="button" onclick="speakPaGamePrompt()" class="p-2.5 rounded-xl bg-[#0089A7]/15 text-[#0089A7] hover:bg-[#0089A7]/25 shrink-0" title="Listen">
+                <i data-lucide="volume-2" class="w-4 h-4"></i>
+              </button>
+            </div>
 
-            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-[#071627] border border-slate-200 dark:border-cyan-400/15 space-y-1.5">
-              <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#0089A7]">Teacher Follow-Up Prompt</span>
-              <p id="gameFollowUp" class="text-sm font-semibold text-slate-800 dark:text-slate-100"></p>
+            <div id="paGameOptionsBox" class="space-y-2.5"></div>
+
+            <div id="paGameFeedbackBox" class="hidden p-3.5 rounded-2xl text-xs sm:text-sm font-bold"></div>
+
+            <!-- Hidden rule clue by default -->
+            <div class="space-y-2 pt-1">
+              <button type="button" onclick="togglePaGameClue()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-[#071627] hover:bg-slate-200/70 dark:hover:bg-[#132C4A] border border-slate-200 dark:border-cyan-400/20 text-xs font-bold transition">
+                <i data-lucide="eye" class="w-3.5 h-3.5 text-[#0089A7]"></i>
+                <span id="paGameClueBtnLabel">Show Rule Clue</span>
+              </button>
+              <div id="paGameClueBox" class="hidden text-xs font-semibold px-4 py-3 rounded-xl bg-amber-500/15 text-amber-900 dark:text-amber-200 border border-amber-500/30"></div>
             </div>
           </div>
 
           <div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-100 dark:border-cyan-400/15">
             <button
               type="button"
-              onclick="nextGameCard()"
-              class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-gradient-to-r from-[#002B5C] to-[#005A8D] hover:from-[#005A8D] hover:to-[#0089A7] text-white text-xs sm:text-sm font-bold transition"
+              onclick="stepPaGameCard(-1)"
+              class="px-4 py-2.5 rounded-2xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-bold transition"
             >
-              <i data-lucide="dices" class="w-4 h-4"></i>
-              <span>Draw Next Card</span>
+              ← Prev
             </button>
 
             <button
               type="button"
-              onclick="revealBluffVote()"
-              class="inline-flex items-center gap-2 px-4 py-3 rounded-2xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-bold transition"
+              onclick="restartPaGame()"
+              class="px-4 py-2.5 rounded-2xl border border-slate-300 dark:border-cyan-400/20 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-bold transition"
             >
-              <i data-lucide="sparkles" class="w-4 h-4 text-[#0089A7]"></i>
-              <span>Bonus Twist</span>
+              Reset Score
+            </button>
+
+            <button
+              type="button"
+              onclick="stepPaGameCard(1)"
+              class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-gradient-to-r from-[#002B5C] to-[#005A8D] hover:from-[#005A8D] hover:to-[#0089A7] text-white text-xs sm:text-sm font-bold transition"
+            >
+              <span>Next Round</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
           </div>
-
-          <div id="gameTwistBox" class="hidden text-xs font-semibold px-4 py-3 rounded-xl bg-amber-500/15 text-amber-800 dark:text-amber-200 border border-amber-500/30"></div>
         </div>
       </div>
     </section>
@@ -681,7 +704,7 @@
       "03 · Vocabulary",
       "04 · Grammar & Check",
       "05 · Practice & Chat",
-      "06 · Whose Is It?",
+      "06 · Possessive Rush",
       "07 · Possessive Arcade"
     ];
 
@@ -752,11 +775,48 @@
       }
     }
 
+    function pickNaturalEnglishVoice() {
+      if (!('speechSynthesis' in window)) return null;
+      const voices = window.speechSynthesis.getVoices() || [];
+      if (!voices.length) return null;
+
+      const preferredNames = [
+        "Google UK English Male",
+        "Google UK English Female",
+        "Google US English",
+        "Microsoft Ryan Online (Natural)",
+        "Microsoft Sonia Online (Natural)",
+        "Microsoft Guy Online (Natural)",
+        "Microsoft Jenny Online (Natural)",
+        "Daniel",
+        "Samantha"
+      ];
+
+      for (const name of preferredNames) {
+        const match = voices.find(v => v.name.toLowerCase().includes(name.toLowerCase()));
+        if (match) return match;
+      }
+
+      return voices.find(v => /en[-_](GB|US)/i.test(v.lang)) || voices.find(v => /^en/i.test(v.lang)) || null;
+    }
+
+    if ('speechSynthesis' in window && typeof window.speechSynthesis.onvoiceschanged !== 'undefined') {
+      window.speechSynthesis.onvoiceschanged = () => pickNaturalEnglishVoice();
+    }
+
     function speakPhrase(text) {
       if (!('speechSynthesis' in window)) return;
       window.speechSynthesis.cancel();
       const u = new SpeechSynthesisUtterance(text);
-      u.lang = 'en-US';
+      const voice = pickNaturalEnglishVoice();
+      if (voice) {
+        u.voice = voice;
+        u.lang = voice.lang;
+      } else {
+        u.lang = 'en-US';
+      }
+      u.rate = 0.94;
+      u.pitch = 1.0;
       window.speechSynthesis.speak(u);
     }
 
@@ -1249,59 +1309,173 @@
     }
     window.toggleFixKey = () => { showFixKey = !showFixKey; renderFixHomework(); };
 
-    // 06: Speaking Game (4 Cards per Mode)
-    const GAME_MODES = [
-      { key: "whose", label: "Whose Is It?" },
-      { key: "profile", label: "Swap & Describe" },
-      { key: "spotter", label: "Trap Spotter Live" }
-    ];
-    const GAME_CARDS = {
-      whose: [
-        { title: "Card 1 · Desk & Bag Items", rule: "Name 3 everyday objects near you or in a room and say whose they are using 'my, your, his, her, our, their'.", follow: "Where do you usually keep your most important item?", photo: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Make 1 true statement and 1 playful guess for your teacher to confirm." },
-        { title: "Card 2 · Family & Friends' Favorites", rule: "Describe 3 things that belong to or are loved by people in your circle (e.g., his bike, her playlist, their car).", follow: "What is your favorite shared thing at home?", photo: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Use 'his', 'her', and 'their' in separate sentences." },
-        { title: "Card 3 · Places & Their Details", rule: "Pick a place you know well and talk about its atmosphere, its best spot, and what people do there.", follow: "Why do you like its vibe?", photo: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Use 'its' accurately without saying 'it's'." },
-        { title: "Card 4 · Weekend Gear", rule: "Talk about what you pack for a weekend trip or walk using possessive adjectives.", follow: "What is in your bag right now?", photo: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Ask your teacher what is in their bag!" }
+    // 06: Solo & Class Game (Possessive Rush)
+    const PA_GAME_DECKS = {
+      owners: [
+        {
+          badge: "MALE OWNER -> HIS",
+          prompt: "Lucas leaves his keys and his laptop on the desk before going to make tea.",
+          opts: ["A) Lucas puts his keys and his laptop on the desk.", "B) Lucas puts her keys and her laptop on the desk.", "C) Lucas puts their keys on the desk."],
+          ans: 0,
+          clue: "Lucas is a male subject -> possessive adjective 'his' before each noun.",
+          why: "'His' matches Lucas and comes directly before 'keys' and 'laptop'.",
+          photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          badge: "FEMALE OWNER -> HER",
+          prompt: "Elena opens her notebook and writes her daily goals for the week.",
+          opts: ["A) Elena writes his daily goals.", "B) Elena writes her daily goals.", "C) Elena writes its daily goals."],
+          ans: 1,
+          clue: "Elena is a female subject -> possessive adjective 'her' before 'daily goals'.",
+          why: "'Her' is the right possessive adjective for Elena.",
+          photo: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          badge: "GROUP WITH SPEAKER -> OUR",
+          prompt: "My family and I walk together along our favorite mountain trail every weekend.",
+          opts: ["A) We walk along their favorite trail.", "B) We walk along our favorite trail.", "C) We walk along its favorite trail."],
+          ans: 1,
+          clue: "'My family and I' = 'we' -> use 'our' before the noun phrase.",
+          why: "'Our' matches the group including the speaker ('we').",
+          photo: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          badge: "OTHER GROUP -> THEIR",
+          prompt: "The students put their phones away and open their books at the start of class.",
+          opts: ["A) The students open their books.", "B) The students open his books.", "C) The students open our books."],
+          ans: 0,
+          clue: "'The students' = 'they' -> use 'their' before 'books'.",
+          why: "'Their' matches plural 'the students' without adding '-s'.",
+          photo: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80"
+        }
       ],
-      profile: [
-        { title: "Card 1 · Describe Your Teacher's Setup", rule: "Say 3 sentences about your teacher's workspace, routine, or tools using 'your' (or 'his/her').", follow: "What do you notice in this class or workspace?", photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Let your teacher correct or confirm each guess!" },
-        { title: "Card 2 · A Day in Their Shoes", rule: "Imagine a friend or family member's day and describe their morning, their lunch, and their evening routine.", follow: "How is their routine different from yours?", photo: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Use 'their' at least three times." },
-        { title: "Card 3 · Music & Media Taste", rule: "Talk about a favorite artist or show and describe their style or characters.", follow: "What is your favorite song or episode?", photo: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Compare your taste with a friend's taste." },
-        { title: "Card 4 · Evening Wind-Down", rule: "Describe how you and your family spend your evenings at home.", follow: "What is your favorite part of the evening?", photo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Use 'my' and 'our' together." }
-      ],
-      spotter: [
-        { title: "Card 1 · Spot the 'Its / It's' Mistake", rule: "Your teacher reads 2 quick sentences—one with 'its' and one with 'it's'. Explain which is possessive and which is a contraction.", follow: "What does 'it's' stand for in full?", photo: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Invent your own sentence using 'its' + noun." },
-        { title: "Card 2 · Spot the 'Your / You're' Mistake", rule: "Explain the difference between 'your book' and 'you're ready' and give one example of each.", follow: "Which one comes before a noun?", photo: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Quiz your teacher with a fast example!" },
-        { title: "Card 3 · Spot the 'Their / They're' Mistake", rule: "Contrast 'their house' with 'they're at home' in two clear sentences.", follow: "Why is 'theirs books' incorrect?", photo: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Give one example with 'our' as well." },
-        { title: "Card 4 · Rapid Possessive Round", rule: "Answer 4 quick 'Whose...?' prompts from your teacher using full sentences with a possessive adjective.", follow: "Can you answer without pausing?", photo: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=850&q=80", twist: "Bonus Twist: Ask your teacher 2 'Whose...?' questions back!" }
+      traps: [
+        {
+          badge: "ITS VS. IT'S",
+          prompt: "Choose the sentence that uses 'its' as a possessive adjective properly:",
+          opts: ["A) The café is famous for its fresh pastries.", "B) The café is famous for it's fresh pastries.", "C) The café is famous for its' fresh pastries."],
+          ans: 0,
+          clue: "Possessive 'its' has NO apostrophe; 'it's' means 'it is' or 'it has'.",
+          why: "'Its fresh pastries' shows possession without an apostrophe.",
+          photo: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          badge: "YOUR VS. YOU'RE",
+          prompt: "Which sentence uses 'your' correctly before a noun?",
+          opts: ["A) You're backpack is on the chair.", "B) Your backpack is on the chair.", "C) Your right about that."],
+          ans: 1,
+          clue: "Use 'your' + noun ('your backpack'); use 'you're' for 'you are'.",
+          why: "'Your backpack' is possessive; 'You're right' would be the contraction.",
+          photo: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          badge: "NO -S ON POSSESSIVE ADJECTIVE",
+          prompt: "Spot the trap-free sentence:",
+          opts: ["A) They always bring theirs water bottles.", "B) They always bring their water bottles.", "C) They always bring they're water bottles."],
+          ans: 1,
+          clue: "Possessive adjectives do not take '-s' before a noun.",
+          why: "'Their water bottles' is clean and natural.",
+          photo: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=900&q=80"
+        },
+        {
+          badge: "THEIR VS. THEY'RE",
+          prompt: "Complete: '_____ waiting outside, and _____ bags are by the door.'",
+          opts: ["A) Their / they're", "B) They're / their", "C) Their / their"],
+          ans: 1,
+          clue: "First slot = 'They are' ('They're'); second slot = possessive before 'bags' ('their').",
+          why: "'They're waiting outside, and their bags are by the door.'",
+          photo: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80"
+        }
       ]
     };
 
-    let activeGameMode = "whose";
-    let gameCardIdx = 0;
+    let paMode = 'owners';
+    let paIdx = 0;
+    let paScore = 0;
+    let paStreak = 0;
+    const paAnswered = new Set();
 
-    function renderGame() {
-      document.getElementById('gameModeTabs').innerHTML = GAME_MODES.map(m => `
-        <button type="button" onclick="setGameMode('${m.key}')" class="px-4 py-2 rounded-xl text-xs font-extrabold border transition ${
-          activeGameMode === m.key ? 'bg-[#002B5C] text-white border-[#002B5C]' : 'bg-white dark:bg-[#0C1E33] border-slate-200 dark:border-cyan-400/20 hover:border-[#0089A7]'
-        }">${m.label}</button>
+    function renderPaGame() {
+      const deck = PA_GAME_DECKS[paMode];
+      paIdx = (paIdx + deck.length) % deck.length;
+      const item = deck[paIdx];
+
+      document.getElementById('paTabOwners').className = paMode === 'owners'
+        ? 'px-4 py-2 rounded-xl text-xs font-extrabold bg-[#002B5C] text-white transition'
+        : 'px-4 py-2 rounded-xl text-xs font-extrabold bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 transition';
+      document.getElementById('paTabTraps').className = paMode === 'traps'
+        ? 'px-4 py-2 rounded-xl text-xs font-extrabold bg-[#002B5C] text-white transition'
+        : 'px-4 py-2 rounded-xl text-xs font-extrabold bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-cyan-400/20 transition';
+
+      document.getElementById('paGameModeBadge').textContent = item.badge;
+      document.getElementById('paGameCardCounter').textContent = `Round ${paIdx + 1} / ${deck.length}`;
+      document.getElementById('paGamePromptTitle').textContent = item.prompt;
+      mountPhoto(document.getElementById('paGamePhotoBox'), item.photo, item.badge, item.badge);
+      document.getElementById('paGameClueBox').textContent = item.clue;
+      document.getElementById('paGameClueBox').classList.add('hidden');
+      document.getElementById('paGameClueBtnLabel').textContent = 'Show Rule Clue';
+      document.getElementById('paGameFeedbackBox').classList.add('hidden');
+
+      document.getElementById('paGameOptionsBox').innerHTML = item.opts.map((op, i) => `
+        <button type="button" onclick="pickPaGameOption(${i})" class="w-full text-left px-4 py-3 rounded-2xl bg-slate-50 dark:bg-[#071627] hover:border-[#0089A7] border border-slate-200 dark:border-cyan-400/20 text-xs sm:text-sm font-bold transition">${op}</button>
       `).join('');
-      const list = GAME_CARDS[activeGameMode];
-      const card = list[gameCardIdx % list.length];
-      const modeObj = GAME_MODES.find(m => m.key === activeGameMode);
 
-      document.getElementById('gameModeBadge').textContent = modeObj.label;
-      document.getElementById('gameCardCounter').textContent = `Card ${(gameCardIdx % list.length) + 1} / ${list.length}`;
-      document.getElementById('gamePromptTitle').textContent = card.title;
-      document.getElementById('gameRuleText').textContent = card.rule;
-      document.getElementById('gameFollowUp').textContent = card.follow;
-      document.getElementById('gameTwistBox').textContent = card.twist;
-      document.getElementById('gameTwistBox').classList.add('hidden');
-      mountPhoto(document.getElementById('gamePhotoBox'), card.photo, card.title, modeObj.label);
-      lucide.createIcons();
+      document.getElementById('paGameScore').textContent = `SCORE: ${paScore} / 8`;
+      document.getElementById('paGameStreak').textContent = `STREAK: ${paStreak} 🔥`;
+      if (window.lucide) lucide.createIcons();
     }
-    window.setGameMode = (key) => { activeGameMode = key; gameCardIdx = 0; renderGame(); };
-    window.nextGameCard = () => { gameCardIdx++; renderGame(); };
-    window.revealBluffVote = () => { document.getElementById('gameTwistBox').classList.toggle('hidden'); };
+
+    window.switchPaGameMode = (mode) => {
+      paMode = mode;
+      paIdx = 0;
+      renderPaGame();
+    };
+
+    window.stepPaGameCard = (d) => {
+      paIdx += d;
+      renderPaGame();
+    };
+
+    window.togglePaGameClue = () => {
+      const box = document.getElementById('paGameClueBox');
+      const hidden = box.classList.toggle('hidden');
+      document.getElementById('paGameClueBtnLabel').textContent = hidden ? 'Show Rule Clue' : 'Hide Rule Clue';
+    };
+
+    window.speakPaGamePrompt = () => {
+      speakPhrase(PA_GAME_DECKS[paMode][paIdx].prompt);
+    };
+
+    window.pickPaGameOption = (picked) => {
+      const item = PA_GAME_DECKS[paMode][paIdx];
+      const key = `${paMode}-${paIdx}`;
+      const fb = document.getElementById('paGameFeedbackBox');
+      fb.classList.remove('hidden');
+
+      if (picked === item.ans) {
+        if (!paAnswered.has(key)) {
+          paAnswered.add(key);
+          paScore++;
+        }
+        paStreak++;
+        fb.className = 'p-3.5 rounded-2xl text-xs sm:text-sm font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Spot on! ${item.why}`;
+      } else {
+        paStreak = 0;
+        fb.className = 'p-3.5 rounded-2xl text-xs sm:text-sm font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `✗ Not quite (${String.fromCharCode(65 + item.ans)}). ${item.why}`;
+      }
+      document.getElementById('paGameScore').textContent = `SCORE: ${paScore} / 8`;
+      document.getElementById('paGameStreak').textContent = `STREAK: ${paStreak} 🔥`;
+    };
+
+    window.restartPaGame = () => {
+      paScore = 0;
+      paStreak = 0;
+      paAnswered.clear();
+      paIdx = 0;
+      renderPaGame();
+    };
 
     // 07: Multi-Mode Gamified Arcade
     let arcadeScore = 0;
@@ -1604,7 +1778,7 @@
     renderOdd();
     renderMiniChat();
     renderFixHomework();
-    renderGame();
+    renderPaGame();
     renderArcade();
     renderCue();
     renderStative();

@@ -439,12 +439,49 @@
       lucide.createIcons();
     });
 
+    function pickNaturalEnglishVoice(preferredLang = 'en-GB') {
+      if (!('speechSynthesis' in window)) return null;
+      const voices = window.speechSynthesis.getVoices() || [];
+      if (!voices.length) return null;
+
+      const preferredNames = [
+        "Google UK English Male",
+        "Google UK English Female",
+        "Google US English",
+        "Microsoft Ryan Online (Natural)",
+        "Microsoft Sonia Online (Natural)",
+        "Microsoft Guy Online (Natural)",
+        "Microsoft Jenny Online (Natural)",
+        "Daniel",
+        "Samantha"
+      ];
+
+      for (const name of preferredNames) {
+        const match = voices.find(v => v.name.toLowerCase().includes(name.toLowerCase()));
+        if (match) return match;
+      }
+
+      const regionMatch = voices.find(v => v.lang && v.lang.toLowerCase().startsWith(preferredLang.toLowerCase()));
+      return regionMatch || voices.find(v => /en[-_](GB|US)/i.test(v.lang)) || voices.find(v => /^en/i.test(v.lang)) || null;
+    }
+
+    if ('speechSynthesis' in window && typeof window.speechSynthesis.onvoiceschanged !== 'undefined') {
+      window.speechSynthesis.onvoiceschanged = () => pickNaturalEnglishVoice('en-GB');
+    }
+
     function speakText(text) {
       if (!('speechSynthesis' in window)) return;
       window.speechSynthesis.cancel();
       const u = new SpeechSynthesisUtterance(text);
-      u.lang = 'en-GB';
-      u.rate = 0.95;
+      const voice = pickNaturalEnglishVoice('en-GB');
+      if (voice) {
+        u.voice = voice;
+        u.lang = voice.lang;
+      } else {
+        u.lang = 'en-GB';
+      }
+      u.rate = 0.93;
+      u.pitch = 1.0;
       window.speechSynthesis.speak(u);
     }
 
@@ -620,7 +657,6 @@
       const list = PHRASE_BANKS[currentBankKey];
       const item = list[currentBankCardIdx % list.length];
 
-      // 1. Large 1-by-1 Focus Card
       document.getElementById('phraseBankSingleBox').innerHTML = `
         <div class="bg-white dark:bg-[#0B172E] border-[1.5px] border-indigo-500/25 dark:border-indigo-400/25 rounded-3xl p-6 sm:p-9 space-y-5 shadow-xl">
           <div class="flex flex-wrap items-center justify-between gap-2">
@@ -673,7 +709,6 @@
         </div>
       `;
 
-      // 2. All Cards Grid View
       document.getElementById('phraseBankGrid').innerHTML = list.map((cardItem, idx) => `
         <div class="bg-white dark:bg-[#0B172E] border-[1.5px] border-indigo-500/25 dark:border-indigo-400/25 rounded-3xl p-5 space-y-3 shadow-md">
           <div class="flex items-center justify-between gap-2">
@@ -868,7 +903,6 @@
       document.getElementById('simModelReply').textContent = s.model;
       document.getElementById('simPhotoBox').innerHTML = `<img src="${s.photo}" alt="${s.role}" class="w-full h-full object-cover" loading="lazy" />`;
 
-      // Hide both transcript and model response by default on every scenario
       document.getElementById('simTranscriptBox').classList.add('hidden');
       document.getElementById('btnToggleSimTranscriptLabel').textContent = 'Show Caller Transcript';
       document.getElementById('simHelpBox').classList.add('hidden');

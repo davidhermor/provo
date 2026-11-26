@@ -12,68 +12,22 @@
       --navy: #002B5C;
       --ocean: #005A8D;
       --teal: #0089A7;
-      --ice: #F0F6FA;
-      --bg: #F7FAFC;
-      --text: #1E293B;
-      --muted: #64748B;
-      --white: #FFFFFF;
-      --border: #E2E8F0;
+      --ice: #EBF4F9;
+      --bg: #EEF4F8;
+      --text: #0F172A;
+      --muted: #52637A;
+      --surface: #FFFFFF;
+      --surface-alt: #F7FAFC;
+      --border: #D7E3EE;
     }
 
     html.dark {
-      --bg: #061322;
+      --bg: #051120;
       --text: #F1F5F9;
       --muted: #94A3B8;
-      --white: #0C1E33;
-      --border: rgba(56, 189, 248, 0.2);
-    }
-
-    html.dark .card {
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
-    }
-
-    html.dark .card h2 {
-      color: #F8FAFC;
-    }
-
-    html.dark .search-box input {
-      background: #0C1E33;
-      color: #F8FAFC;
-      border: 1px solid rgba(56, 189, 248, 0.25);
-    }
-
-    html.dark .filter-btn {
-      background: #0C1E33;
-      color: #E2E8F0;
-      border-color: rgba(56, 189, 248, 0.25);
-    }
-
-    html.dark .filter-btn:hover {
-      background: #132C4A;
-      color: #FFFFFF;
-    }
-
-    html.dark .filter-btn.active {
-      background: var(--teal);
-      color: #FFFFFF;
-      border-color: var(--teal);
-    }
-
-    .theme-toggle {
-      background: rgba(255, 255, 255, 0.12);
-      color: #FFFFFF;
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      border-radius: 999px;
-      padding: 0.4rem 0.85rem;
-      font-family: inherit;
-      font-size: 0.8rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background 0.2s ease;
-    }
-
-    .theme-toggle:hover {
-      background: rgba(255, 255, 255, 0.22);
+      --surface: #0B1B30;
+      --surface-alt: #081526;
+      --border: rgba(56, 189, 248, 0.22);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -82,75 +36,62 @@
       font-family: 'Plus Jakarta Sans', sans-serif;
       background-color: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.55;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       transition: background-color 0.2s ease, color 0.2s ease;
     }
 
-    /* Password Gate Overlay */
+    /* Password Gate */
     #authGate {
       position: fixed;
       inset: 0;
       z-index: 9999;
-      background: linear-gradient(135deg, #001B3A 0%, var(--navy) 50%, var(--ocean) 100%);
+      background: linear-gradient(135deg, #001A38 0%, var(--navy) 55%, var(--ocean) 100%);
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 1.25rem;
     }
 
-    #authGate.hidden {
-      display: none;
-    }
+    #authGate.hidden { display: none; }
 
     .auth-card {
-      background: var(--white);
+      background: var(--surface);
       color: var(--text);
       width: 100%;
       max-width: 420px;
-      border-radius: 24px;
+      border-radius: 26px;
       padding: 2.2rem 2rem;
-      box-shadow: 0 24px 60px rgba(0, 12, 30, 0.45);
+      box-shadow: 0 26px 64px rgba(0, 10, 25, 0.5);
       border: 1px solid var(--border);
       text-align: center;
-    }
-
-    html.dark .auth-card h2 {
-      color: #F8FAFC;
-    }
-
-    .auth-logo {
-      height: 40px;
-      margin: 0 auto 1rem;
-      display: block;
     }
 
     .auth-badge {
       display: inline-block;
       background: rgba(0, 137, 167, 0.15);
       color: var(--teal);
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 800;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       padding: 0.3rem 0.8rem;
       border-radius: 999px;
-      margin-bottom: 0.85rem;
+      margin-bottom: 0.8rem;
     }
 
     .auth-card h2 {
       font-size: 1.45rem;
       font-weight: 800;
-      color: var(--navy);
-      margin-bottom: 0.45rem;
+      margin-bottom: 0.4rem;
     }
 
     .auth-card p {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: var(--muted);
-      margin-bottom: 1.4rem;
+      margin-bottom: 1.35rem;
     }
 
     .auth-input-wrap {
@@ -161,68 +102,61 @@
     .auth-input {
       width: 100%;
       padding: 0.9rem 3rem 0.9rem 1rem;
-      border-radius: 12px;
+      border-radius: 14px;
       border: 1.5px solid var(--border);
-      background: var(--bg);
+      background: var(--surface-alt);
       color: var(--text);
       font-family: inherit;
       font-size: 0.95rem;
       font-weight: 600;
       outline: none;
-      transition: border-color 0.2s ease;
     }
 
-    .auth-input:focus {
-      border-color: var(--teal);
-    }
+    .auth-input:focus { border-color: var(--teal); }
 
     .auth-eye {
       position: absolute;
-      right: 0.75rem;
+      right: 0.8rem;
       top: 50%;
       transform: translateY(-50%);
       background: none;
       border: none;
       color: var(--muted);
-      font-size: 0.8rem;
-      font-weight: 700;
+      font-size: 0.78rem;
+      font-weight: 800;
       cursor: pointer;
     }
 
     .auth-btn {
       width: 100%;
-      padding: 0.9rem 1.2rem;
+      padding: 0.92rem 1.2rem;
       border: none;
-      border-radius: 12px;
+      border-radius: 14px;
       background: linear-gradient(135deg, var(--navy), var(--teal));
       color: #FFFFFF;
       font-family: inherit;
       font-size: 0.95rem;
-      font-weight: 700;
+      font-weight: 800;
       cursor: pointer;
-      transition: opacity 0.2s ease;
-    }
-
-    .auth-btn:hover {
-      opacity: 0.93;
     }
 
     .auth-error {
       color: #E11D48;
-      font-size: 0.83rem;
+      font-size: 0.82rem;
       font-weight: 700;
-      margin-top: 0.75rem;
+      margin-top: 0.7rem;
       min-height: 1.2rem;
     }
 
-    /* Sticky Navbar */
+    /* Top Bar */
     header {
-      background-color: var(--navy);
-      padding: 0.9rem 5%;
+      background: var(--navy);
+      padding: 0.85rem 5%;
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 12px rgba(0, 43, 92, 0.18);
+      border-bottom: 1px solid rgba(56, 189, 248, 0.22);
+      box-shadow: 0 6px 20px rgba(0, 24, 54, 0.22);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -235,8 +169,8 @@
       text-decoration: none;
       color: #FFFFFF;
       font-weight: 800;
-      font-size: 1.35rem;
-      letter-spacing: 0.5px;
+      font-size: 1.25rem;
+      letter-spacing: 0.04em;
     }
 
     .brand img {
@@ -248,117 +182,214 @@
     .header-actions {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.5rem;
     }
 
-    .header-badge {
-      background: rgba(255, 255, 255, 0.12);
+    .ctrl-btn {
+      background: rgba(255, 255, 255, 0.11);
       color: #FFFFFF;
-      padding: 0.35rem 0.85rem;
+      border: 1px solid rgba(255, 255, 255, 0.22);
       border-radius: 999px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 0.38rem 0.8rem;
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.18s ease;
     }
 
-    /* Hero Banner */
-    .hero {
+    .ctrl-btn:hover { background: rgba(255, 255, 255, 0.22); }
+
+    /* Asymmetric Editorial Hero with Lighter Blue Gradient */
+    .hero-wrap {
       background: linear-gradient(135deg, var(--navy) 0%, var(--ocean) 55%, var(--teal) 100%);
       color: #FFFFFF;
-      padding: 3.5rem 5% 4.5rem;
-      text-align: center;
+      padding: 2.75rem 5% 4.25rem;
+    }
+
+    .hero-grid {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.35fr 0.95fr;
+      gap: 1.75rem;
+      align-items: center;
     }
 
     .hero h1 {
-      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-size: clamp(1.9rem, 3.8vw, 2.85rem);
       font-weight: 800;
-      margin-bottom: 0.75rem;
-      letter-spacing: -0.02em;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+      margin-bottom: 0.85rem;
     }
 
-    .hero p {
-      max-width: 620px;
-      margin: 0 auto 2rem;
-      font-size: 1.05rem;
-      opacity: 0.92;
+    .hero h1 span {
+      color: #A5F3FC;
     }
 
-    /* Search Bar */
+    .hero-copy {
+      font-size: 0.98rem;
+      color: #F0F9FF;
+      max-width: 560px;
+      margin-bottom: 1.35rem;
+    }
+
     .search-box {
-      max-width: 520px;
-      margin: 0 auto;
       position: relative;
+      max-width: 520px;
     }
 
     .search-box input {
       width: 100%;
-      padding: 0.95rem 1.25rem 0.95rem 3rem;
-      border-radius: 14px;
-      border: none;
+      padding: 0.9rem 1.2rem 0.9rem 2.85rem;
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.96);
+      color: #0F172A;
       font-family: inherit;
-      font-size: 0.98rem;
-      box-shadow: 0 10px 25px rgba(0, 20, 45, 0.22);
+      font-size: 0.92rem;
+      font-weight: 600;
       outline: none;
-      background: #FFFFFF;
-      color: var(--text);
+      box-shadow: 0 14px 30px rgba(0, 14, 34, 0.25);
+    }
+
+    html.dark .search-box input {
+      background: #0A192D;
+      color: #F8FAFC;
+      border-color: rgba(56, 189, 248, 0.35);
     }
 
     .search-box svg {
       position: absolute;
-      left: 1rem;
+      left: 0.95rem;
       top: 50%;
       transform: translateY(-50%);
-      color: var(--muted);
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 18px;
+      color: #64748B;
     }
 
-    /* Main Container */
+    /* Spotlight Quick-Launch Panel inside Hero */
+    .spotlight-panel {
+      background: rgba(255, 255, 255, 0.11);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 24px;
+      padding: 1.35rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .spotlight-label {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #A5F3FC;
+    }
+
+    .quick-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.72rem 0.9rem;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      text-decoration: none;
+      color: #FFFFFF;
+      transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .quick-item:hover {
+      transform: translateX(3px);
+      background: rgba(255, 255, 255, 0.16);
+      border-color: #E0F2FE;
+    }
+
+    .quick-item strong {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 800;
+    }
+
+    .quick-item small {
+      display: block;
+      font-size: 0.74rem;
+      color: #E0F2FE;
+    }
+
+    .quick-arrow {
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: #E0F2FE;
+    }
+
+    /* Main Workspace */
     main {
-      max-width: 1120px;
+      max-width: 1180px;
       width: 92%;
-      margin: -2rem auto 4rem;
+      margin: -2.25rem auto 3.75rem;
       flex: 1;
     }
 
-    /* Category Filters */
+    .toolbar {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 0.85rem 1rem;
+      box-shadow: 0 10px 28px rgba(0, 43, 92, 0.08);
+      margin-bottom: 1.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
     .filters {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.6rem;
-      justify-content: center;
-      background: var(--white);
-      padding: 0.75rem;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0, 43, 92, 0.08);
-      margin-bottom: 2.25rem;
-      border: 1px solid var(--border);
+      gap: 0.45rem;
     }
 
     .filter-btn {
-      background: transparent;
-      border: 1px solid transparent;
-      padding: 0.55rem 1.1rem;
-      border-radius: 10px;
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      padding: 0.5rem 0.95rem;
+      border-radius: 12px;
       font-family: inherit;
-      font-weight: 600;
-      font-size: 0.9rem;
+      font-weight: 700;
+      font-size: 0.84rem;
       color: var(--muted);
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: all 0.16s ease;
     }
 
     .filter-btn:hover {
-      background: var(--ice);
-      color: var(--navy);
+      color: var(--text);
+      border-color: var(--teal);
     }
 
     .filter-btn.active {
-      background: var(--navy);
+      background: linear-gradient(135deg, var(--navy), var(--teal));
       color: #FFFFFF;
+      border-color: transparent;
     }
 
-    /* Lesson Grid */
+    .counter-pill {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--teal);
+      background: rgba(0, 137, 167, 0.12);
+      padding: 0.42rem 0.85rem;
+      border-radius: 999px;
+    }
+
+    /* Card Layout with Fine Category Hover Border */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
@@ -366,9 +397,9 @@
     }
 
     .card {
-      background: var(--white);
+      background: var(--surface);
       border-radius: 18px;
-      border: 1px solid var(--border);
+      border: 1.5px solid var(--border);
       padding: 1.6rem;
       display: flex;
       flex-direction: column;
@@ -383,22 +414,35 @@
       border-color: var(--teal);
     }
 
+    .card[data-category="a1-a2"]:hover { border-color: #0089A7; }
+    .card[data-category="b1-b2"]:hover { border-color: #F43F5E; }
+    .card[data-category="kids"]:hover { border-color: #F59E0B; }
+    .card[data-category="ote"]:hover { border-color: #0EA5E9; }
+    .card[data-category="teens"]:hover { border-color: #10B981; }
+    .card[data-category="business"]:hover { border-color: #6366F1; }
+
     .card-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 0.5rem;
       margin-bottom: 1rem;
     }
 
     .tag {
-      font-size: 0.76rem;
-      font-weight: 700;
+      font-size: 0.7rem;
+      font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      padding: 0.3rem 0.75rem;
+      padding: 0.28rem 0.7rem;
       border-radius: 8px;
       background: var(--ice);
       color: var(--ocean);
+    }
+
+    html.dark .tag {
+      background: rgba(56, 189, 248, 0.14);
+      color: #7DD3FC;
     }
 
     .tag.kids { background: #FEF3C7; color: #B45309; }
@@ -409,15 +453,15 @@
 
     .status {
       font-size: 0.78rem;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--teal);
+      white-space: nowrap;
     }
 
     .card h2 {
       font-size: 1.22rem;
-      color: var(--navy);
+      font-weight: 800;
       margin-bottom: 0.55rem;
-      font-weight: 700;
     }
 
     .card p {
@@ -448,16 +492,21 @@
       text-align: center;
       padding: 3rem 1rem;
       color: var(--muted);
+      font-weight: 700;
       display: none;
     }
 
     footer {
       text-align: center;
-      padding: 1.75rem 5%;
-      background: var(--white);
+      padding: 1.6rem 5%;
+      background: var(--surface);
       border-top: 1px solid var(--border);
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       color: var(--muted);
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 520px) {
@@ -503,6 +552,7 @@
     </div>
   </div>
 
+  <!-- Top Bar -->
   <header>
     <a href="index.html" class="brand" title="PROVO">
       <img
@@ -514,35 +564,90 @@
     </a>
 
     <div class="header-actions">
-      <button id="portalThemeBtn" type="button" class="theme-toggle" title="Toggle Dark Mode">🌙 Dark</button>
-      <button id="portalLockBtn" type="button" class="theme-toggle" title="Lock Portal">🔒 Lock</button>
-      <span class="header-badge">Student Learning Portal</span>
+      <button id="portalThemeBtn" type="button" class="ctrl-btn" title="Toggle Dark Mode">🌙 Dark</button>
+      <button id="portalLockBtn" type="button" class="ctrl-btn" title="Lock Portal">🔒 Lock</button>
     </div>
   </header>
 
-  <section class="hero">
-    <h1>Interactive English Lessons</h1>
-    <p>Select your class topic below to review grammar, practice vocabulary, and complete interactive exercises.</p>
-    <div class="search-box">
-      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <input type="text" id="searchInput" placeholder="Search lessons (e.g. Present Continuous, B1/B2, Conversation Class, OTE, Kids, Business)...">
+  <!-- Asymmetric Editorial Hero -->
+  <section class="hero-wrap">
+    <div class="hero-grid">
+      <div>
+        <h1>Speak, Practice &amp; Level Up at Your <span>Own Pace</span></h1>
+        <p class="hero-copy">
+          Guided interactive sessions designed to help students build confidence, express ideas naturally, and prepare for real communication and exams.
+        </p>
+        <div class="search-box">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" id="searchInput" placeholder="Search by topic, level, or skill...">
+        </div>
+      </div>
+
+      <aside class="spotlight-panel">
+        <div class="spotlight-label">Recent Additions</div>
+        <a href="a1-a2-feelings-moods.html" class="quick-item">
+          <div>
+            <strong>Feelings &amp; Moods</strong>
+            <small>A1–A2 · Everyday emotions &amp; intensity</small>
+          </div>
+          <span class="quick-arrow">→</span>
+        </a>
+        <a href="teens-social-media.html" class="quick-item">
+          <div>
+            <strong>Social Media &amp; Your Feed</strong>
+            <small>Teens · Life online, trends &amp; opinions</small>
+          </div>
+          <span class="quick-arrow">→</span>
+        </a>
+        <a href="b1-b2-passive-voice.html" class="quick-item">
+          <div>
+            <strong>Mastering The Passive</strong>
+            <small>B1 / B2 · Focusing on actions, news &amp; processes</small>
+          </div>
+          <span class="quick-arrow">→</span>
+        </a>
+        <a href="ote-writing-essay.html" class="quick-item">
+          <div>
+            <strong>Mastering the OTE Essay</strong>
+            <small>OTE Prep · Clear structure &amp; exam writing</small>
+          </div>
+          <span class="quick-arrow">→</span>
+        </a>
+      </aside>
     </div>
   </section>
 
+  <!-- Main Workspace -->
   <main>
-    <div class="filters">
-      <button class="filter-btn active" data-filter="all">All Lessons</button>
-      <button class="filter-btn" data-filter="a1-a2">A1–A2</button>
-      <button class="filter-btn" data-filter="b1-b2">B1 / B2</button>
-      <button class="filter-btn" data-filter="kids">Kids</button>
-      <button class="filter-btn" data-filter="ote">OTE Prep (B1 / B2)</button>
-      <button class="filter-btn" data-filter="teens">Teens</button>
-      <button class="filter-btn" data-filter="business">Business English</button>
+    <div class="toolbar">
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="a1-a2">A1–A2</button>
+        <button class="filter-btn" data-filter="b1-b2">B1 / B2</button>
+        <button class="filter-btn" data-filter="kids">Kids</button>
+        <button class="filter-btn" data-filter="ote">OTE Prep (B1 / B2)</button>
+        <button class="filter-btn" data-filter="teens">Teens</button>
+        <button class="filter-btn" data-filter="business">Business English</button>
+      </div>
+      <span id="visibleCountLabel" class="counter-pill">16 lessons</span>
     </div>
 
     <div class="grid" id="lessonGrid">
 
-      <!-- ACTIVE LESSON: B1/B2 BLACK FRIDAY CONVERSATION CLASS -->
+      <!-- A1-A2 FEELINGS & MOODS -->
+      <article class="card" data-category="a1-a2">
+        <div>
+          <div class="card-top">
+            <span class="tag">A1–A2 · Moods &amp; Speaking</span>
+            <span class="status">● Available</span>
+          </div>
+          <h2>Feelings &amp; Moods</h2>
+          <p>A friendly session on talking about everyday emotions, how moods shift through the day, and how to sound more expressive when someone asks how you're doing.</p>
+        </div>
+        <a href="a1-a2-feelings-moods.html" class="card-btn">Start Lesson →</a>
+      </article>
+
+      <!-- B1/B2 BLACK FRIDAY -->
       <article class="card" data-category="b1-b2">
         <div>
           <div class="card-top">
@@ -550,12 +655,12 @@
             <span class="status">● Available</span>
           </div>
           <h2>Black Friday &amp; Consumer Traps</h2>
-          <p>12 discussion cards with discourse frames, 12 retail idioms &amp; tactics, reading on dark patterns, Third Conditional &amp; transformations, Deal Trap Rush, and Debate Clinic.</p>
+          <p>A lively look at sales culture, impulse buying, and clever marketing tricks, plus how to talk about smart shopping habits and consumer choices.</p>
         </div>
         <a href="b1-b2-black-friday.html" class="card-btn">Start Lesson →</a>
       </article>
 
-      <!-- ACTIVE LESSON: B1/B2 PASSIVE VOICE -->
+      <!-- B1/B2 PASSIVE VOICE -->
       <article class="card" data-category="b1-b2">
         <div>
           <div class="card-top">
@@ -563,12 +668,12 @@
             <span class="status">● Available</span>
           </div>
           <h2>Mastering The Passive</h2>
-          <p>10 illustrated conversation cards, interactive Active-to-Passive SVG diagram across tenses, B2 structures, 10 visual collocations, news report, Passive Arena, and finale.</p>
+          <p>A clear guide to shifting focus from who does an action to what happens—ideal for news stories, inventions, processes, and more natural B2 phrasing.</p>
         </div>
         <a href="b1-b2-passive-voice.html" class="card-btn">Start Lesson →</a>
       </article>
 
-      <!-- ACTIVE LESSON: OTE WRITING ESSAY -->
+      <!-- OTE WRITING ESSAY -->
       <article class="card" data-category="ote">
         <div>
           <div class="card-top">
@@ -576,12 +681,12 @@
             <span class="status">● Available</span>
           </div>
           <h2>Mastering the OTE Essay</h2>
-          <p>Conversation cards, 4-paragraph blueprint with mini-checks, B1-to-B2 phrasebook, annotated model with complex B2 grammar highlights, Essay Polish Rush, and live 100-160w Drive studio.</p>
+          <p>Practical preparation for writing well-organized essays under exam conditions, building clear arguments, and polishing tone and accuracy.</p>
         </div>
         <a href="ote-writing-essay.html" class="card-btn">Start Lesson →</a>
       </article>
 
-      <!-- ACTIVE LESSON 1 -->
+      <!-- PRESENT CONTINUOUS -->
       <article class="card" data-category="a1-a2">
         <div>
           <div class="card-top">
@@ -589,12 +694,12 @@
             <span class="status">● Available</span>
           </div>
           <h2>Present Continuous</h2>
-          <p>Actions in progress, temporary situations, future arrangements, -ing spelling rules, and interactive self-check practice.</p>
+          <p>A clear, approachable look at what is happening right now, temporary plans around us, and how to form -ing verbs without getting tripped up.</p>
         </div>
         <a href="present-continuous.html" class="card-btn">Start Lesson →</a>
       </article>
 
-      <!-- ACTIVE LESSON 2 (OTE Prep) -->
+      <!-- TIME FILLERS -->
       <article class="card" data-category="ote">
         <div>
           <div class="card-top">
@@ -602,12 +707,12 @@
             <span class="status">● Available</span>
           </div>
           <h2>Speaking Warm-Ups &amp; Time Fillers</h2>
-          <p>Interactive conversation cards, 20s/30s speaking timer, key vocabulary with audio pronunciation, and direct voice note submission.</p>
+          <p>Helpful ways to buy thinking time smoothly while speaking so you never freeze when a question catches you off guard.</p>
         </div>
         <a href="time-fillers.html" class="card-btn">Start Lesson →</a>
       </article>
 
-      <!-- ACTIVE LESSON 3 -->
+      <!-- PRESENT SIMPLE VS CONTINUOUS -->
       <article class="card" data-category="a1-a2">
         <div>
           <div class="card-top">
@@ -615,12 +720,12 @@
             <span class="status">● Available</span>
           </div>
           <h2>Present Simple vs. Present Continuous</h2>
-          <p>Interactive tense switcher, visual timelines, stative verbs, vocabulary with audio, speaking recorder, and self-check practice.</p>
+          <p>Side-by-side practice to help you tell routines and general truths apart from actions taking place right now or temporarily.</p>
         </div>
         <a href="present-simple-vs-continuous.html" class="card-btn">Start Lesson →</a>
       </article>
 
-      <!-- ACTIVE LESSON 4 -->
+      <!-- PRESENT SIMPLE -->
       <article class="card" data-category="a1-a2">
         <div>
           <div class="card-top">
@@ -628,12 +733,12 @@
             <span class="status">● Available</span>
           </div>
           <h2>Present Simple</h2>
-          <p>Habits, routines, third-person endings, interactive form inspector, vocabulary match, and voice notes.</p>
+          <p>Everyday routines, habits, and facts in English, with friendly examples to help you talk about your week smoothly.</p>
         </div>
         <a href="present-simple.html" class="card-btn">Start Lesson →</a>
       </article>
 
-      <!-- ACTIVE LESSON 5 -->
+      <!-- POSSESSIVE ADJECTIVES -->
       <article class="card" data-category="a1-a2">
         <div>
           <div class="card-top">
@@ -641,12 +746,12 @@
             <span class="status">● Available</span>
           </div>
           <h2>Possessive Adjectives</h2>
-          <p>My, your, his, her, its, our, and their before nouns, contraction traps, visual warm-up, practice pack, and arcade.</p>
+          <p>Simple, everyday practice with <em>my, your, his, her, its, our,</em> and <em>their</em> so talking about people and things feels effortless.</p>
         </div>
         <a href="possessive-adjectives.html" class="card-btn">Start Lesson →</a>
       </article>
 
-      <!-- ACTIVE LESSON: KIDS COLORS -->
+      <!-- KIDS COLORS -->
       <article class="card" data-category="kids">
         <div>
           <div class="card-top">
@@ -654,12 +759,12 @@
             <span class="status">● Available</span>
           </div>
           <h2>Colors</h2>
-          <p>Purple, pink, blue, yellow, red, orange, and green with audio, object guessing, car story, videos, and class games.</p>
+          <p>A playful, colorful session for young learners to recognize, hear, and say colors around them in English.</p>
         </div>
         <a href="kids-colors.html" class="card-btn">Start Lesson →</a>
       </article>
 
-      <!-- ACTIVE LESSON: TEENS DAILY ROUTINE -->
+      <!-- TEENS DAILY ROUTINE -->
       <article class="card" data-category="teens">
         <div>
           <div class="card-top">
@@ -667,12 +772,12 @@
             <span class="status">● Available</span>
           </div>
           <h2>My Daily Routine</h2>
-          <p>Conversation prompts, Would You Rather, B1 Present Simple Playbook, practice missions, Reading Part 4, Listening Part 4 with Script X-Ray, Speaking Part 1, and Writing Part 2.</p>
+          <p>Relatable prompts and everyday English for talking about mornings, school, free time, and how your typical day really looks.</p>
         </div>
         <a href="teens-daily-routine.html" class="card-btn">Start Lesson →</a>
       </article>
 
-      <!-- ACTIVE LESSON: TEENS SOCIAL MEDIA -->
+      <!-- TEENS SOCIAL MEDIA -->
       <article class="card" data-category="teens">
         <div>
           <div class="card-top">
@@ -680,12 +785,12 @@
             <span class="status">● Available</span>
           </div>
           <h2>Social Media &amp; Your Feed</h2>
-          <p>12 real talk cards with voice notes, 10 illustrated feed vocabulary cards, short reading on highlight reels, 1-by-1 practice, This or That game, and Hot Takes.</p>
+          <p>An open, relatable conversation space about algorithms, group chats, highlight reels, and how people actually use their feeds.</p>
         </div>
         <a href="teens-social-media.html" class="card-btn">Start Lesson →</a>
       </article>
 
-      <!-- ACTIVE LESSON: BUSINESS CALLS -->
+      <!-- BUSINESS CALLS -->
       <article class="card" data-category="business">
         <div>
           <div class="card-top">
@@ -693,12 +798,12 @@
             <span class="status">● Available</span>
           </div>
           <h2>Making &amp; Receiving Calls</h2>
-          <p>Graded phone phrases (simple to executive), numbers &amp; spelling drills, 10 pure listening call scenarios, practice lab, and Switchboard Rush game.</p>
+          <p>Practical phone English for handling calls politely, clarifying names or numbers, and sounding clear and assured on the line.</p>
         </div>
         <a href="business-phone-calls.html" class="card-btn">Start Lesson →</a>
       </article>
 
-      <!-- ACTIVE LESSON: A1-A2 EATING OUT -->
+      <!-- A1-A2 EATING OUT -->
       <article class="card" data-category="a1-a2">
         <div>
           <div class="card-top">
@@ -706,12 +811,12 @@
             <span class="status">● Available</span>
           </div>
           <h2>Eating Out</h2>
-          <p>Lead-in discussion cards, restaurant Food Quiz, 8 pairs of taste &amp; texture opposites, world food stories, and Famous Dish speaking task.</p>
+          <p>A warm conversation class about restaurants, favorite dishes, flavors, and sharing food experiences in English.</p>
         </div>
         <a href="a1-a2-eating-out.html" class="card-btn">Start Lesson →</a>
       </article>
 
-      <!-- ACTIVE LESSON: A1-A2 SHOPPING & CLOTHES -->
+      <!-- A1-A2 SHOPPING & CLOTHES -->
       <article class="card" data-category="a1-a2">
         <div>
           <div class="card-top">
@@ -719,12 +824,12 @@
             <span class="status">● Available</span>
           </div>
           <h2>Shopping &amp; Clothes</h2>
-          <p>12 speaking cards, Shopping Quiz, 8 pairs of style &amp; price opposites, world shopping stories, outfit presentation, and Checkout Rush game.</p>
+          <p>Everyday talk about style, shopping habits, finding the right fit, and sharing opinions on clothes and trends.</p>
         </div>
         <a href="a1-a2-shopping-clothes.html" class="card-btn">Start Lesson →</a>
       </article>
 
-      <!-- ACTIVE LESSON: OTE READING STRATEGY -->
+      <!-- OTE READING STRATEGY -->
       <article class="card" data-category="ote">
         <div>
           <div class="card-top">
@@ -732,20 +837,20 @@
             <span class="status">● Available</span>
           </div>
           <h2>Reading Strategy &amp; Exam Execution</h2>
-          <p>Reading conversation cards, 12 exam vocabulary items, 4-step workflow, paraphrase lab, 6 distractor traps &amp; connector drills, timed passage, and Reading Sprint game.</p>
+          <p>Smart habits for reading exam texts calmly, spotting tricky wording, and managing time without second-guessing every line.</p>
         </div>
         <a href="ote-reading-strategy.html" class="card-btn">Start Lesson →</a>
       </article>
-      
+
     </div>
 
     <div class="empty-state" id="emptyState">
-      No lessons match your search. Try another keyword or click "All Lessons".
+      No lessons match your search. Try another keyword or select "All".
     </div>
   </main>
 
   <footer>
-    <strong>PROVO</strong> • Interactive Classroom &amp; Self-Study Hub
+    <strong>PROVO</strong> · Interactive Classroom &amp; Self-Study Portal
   </footer>
 
   <script>
@@ -794,11 +899,12 @@
   </script>
 
   <script>
-    // Filters & Search
+    // Filters, Search & Live Counter
     const filterBtns = document.querySelectorAll('.filter-btn');
     const cards = document.querySelectorAll('.card');
     const searchInput = document.getElementById('searchInput');
     const emptyState = document.getElementById('emptyState');
+    const countLabel = document.getElementById('visibleCountLabel');
 
     let currentFilter = 'all';
 
@@ -820,6 +926,7 @@
         }
       });
 
+      countLabel.textContent = `${visibleCount} ${visibleCount === 1 ? 'lesson' : 'lessons'}`;
       emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
     }
 
@@ -833,6 +940,7 @@
     });
 
     searchInput.addEventListener('input', filterLessons);
+    filterLessons();
   </script>
 
   <script>

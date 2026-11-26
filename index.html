@@ -527,33 +527,36 @@
 
   <!-- Student Password Gate -->
   <div id="authGate">
-    <div class="auth-card">
+    <div style="width: 100%; max-width: 420px; display: flex; flex-direction: column; align-items: center;">
       <img
         src="https://i.postimg.cc/vBt4qH44/download.png"
         alt="PROVO"
         class="auth-logo"
-        onerror="this.style.display='none'; document.getElementById('authLogoFallback').classList.remove('hidden');"
+        style="margin-bottom: 1.1rem;"
+        onerror="this.style.display='none';"
       >
-      <span id="authLogoFallback" class="hidden" style="color: var(--navy); font-weight: 800; font-size: 1.4rem; display: block; margin-bottom: 0.75rem;">PROVO</span>
-      <span class="auth-badge">Students Only</span>
-      <h2>Student Portal Access</h2>
-      <p>Enter your classroom password to unlock all interactive lessons and exam activities.</p>
 
-      <form id="authForm">
-        <div class="auth-input-wrap">
-          <input
-            type="password"
-            id="portalPassInput"
-            class="auth-input"
-            placeholder="Enter password..."
-            autocomplete="off"
-            required
-          >
-          <button type="button" id="togglePassEye" class="auth-eye">Show</button>
-        </div>
-        <button type="submit" class="auth-btn">Enter Portal →</button>
-      </form>
-      <div id="authError" class="auth-error"></div>
+      <div class="auth-card" style="width: 100%;">
+        <span class="auth-badge">Students Only</span>
+        <h2>Student Portal Access</h2>
+        <p>Enter your classroom password to unlock all interactive lessons and exam activities.</p>
+
+        <form id="authForm">
+          <div class="auth-input-wrap">
+            <input
+              type="password"
+              id="portalPassInput"
+              class="auth-input"
+              placeholder="Enter password..."
+              autocomplete="off"
+              required
+            >
+            <button type="button" id="togglePassEye" class="auth-eye">Show</button>
+          </div>
+          <button type="submit" class="auth-btn">Enter Portal →</button>
+        </form>
+        <div id="authError" class="auth-error"></div>
+      </div>
     </div>
   </div>
 

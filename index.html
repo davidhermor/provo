@@ -69,6 +69,15 @@
       text-align: center;
     }
 
+    .auth-logo {
+      max-height: 44px;
+      width: auto;
+      max-width: 180px;
+      object-fit: contain;
+      margin: 0 auto 1.1rem;
+      display: block;
+    }
+
     .auth-badge {
       display: inline-block;
       background: rgba(0, 137, 167, 0.15);
@@ -519,17 +528,13 @@
   <!-- Student Password Gate -->
   <div id="authGate">
     <div class="auth-card">
-      <div style="background: #002B5C; padding: 0.75rem 1.25rem; border-radius: 14px; display: inline-block; margin-bottom: 1rem;">
-        <img
-          src="https://i.postimg.cc/vBt4qH44/download.png"
-          alt="PROVO"
-          class="auth-logo"
-          style="margin: 0;"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"
-        >
-        <span style="display: none; color: #FFFFFF; font-weight: 800; font-size: 1.3rem;">PROVO</span>
-      </div>
-      <br>
+      <img
+        src="https://i.postimg.cc/vBt4qH44/download.png"
+        alt="PROVO"
+        class="auth-logo"
+        onerror="this.style.display='none'; document.getElementById('authLogoFallback').classList.remove('hidden');"
+      >
+      <span id="authLogoFallback" class="hidden" style="color: var(--navy); font-weight: 800; font-size: 1.4rem; display: block; margin-bottom: 0.75rem;">PROVO</span>
       <span class="auth-badge">Students Only</span>
       <h2>Student Portal Access</h2>
       <p>Enter your classroom password to unlock all interactive lessons and exam activities.</p>

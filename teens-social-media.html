@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TEENS · SOCIAL MEDIA &amp; FEED CULTURE | PROVO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <style>
+    @keyframes stageIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .stage-anim { animation: stageIn 0.24s ease-out forwards; }
+  </style>
+</head>
+<body class="bg-[#F2FBF7] text-slate-900 dark:bg-[#06141B] dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
+
+  <!-- Sticky Top Bar (Teens Emerald/Teal Accent) -->
+  <header class="sticky top-0 z-40 bg-[#002B5C] text-white border-b border-emerald-400/35 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2.5">
+        <a href="index.html" class="flex items-center shrink-0" title="PROVO">
+          <img
+            src="https://i.postimg.cc/vBt4qH44/download.png"
+            alt="PROVO"
+            class="h-8 w-auto object-contain block"
+            onerror="this.style.display='none'; document.getElementById('provoFallback').classList.remove('hidden');"
+          />
+          <span id="provoFallback" class="hidden font-extrabold tracking-widest text-lg text-white">PROVO</span>
+        </a>
+        <span class="px-2.5 py-0.5 rounded-full bg-emerald-400/20 border border-emerald-300/45 text-emerald-100 text-[11px] font-bold tracking-wider">
+          TEENS · CONVERSATION CLASS
+        </span>
+        <span id="stageTitleHeader" class="hidden xl:inline-block text-xs font-bold tracking-wider text-emerald-200">
+          01 · FEED CHECK-IN
+        </span>
+      </div>
+
+      <div id="stagePills" class="flex items-center gap-1 overflow-x-auto py-1"></div>
+
+      <div class="flex items-center gap-2 shrink-0">
+        <button
+          id="themeBtn"
+          type="button"
+          class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition"
+          title="Toggle Theme"
+        >
+          <i id="themeIcon" data-lucide="sun" class="w-4 h-4"></i>
+        </button>
+        <a
+          href="index.html"
+          class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs font-bold bg-white/10 hover:bg-white/20 text-white transition"
+        >
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          <span class="hidden sm:inline">PORTAL</span>
+        </a>
+      </div>
+    </div>
+    <div class="w-full h-1.5 bg-black/25">
+      <div id="stageProgress" class="h-full bg-emerald-400 transition-all duration-300" style="width: 14.28%"></div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl w-full mx-auto px-4 sm:px-6 py-7 sm:py-10 flex-1 flex flex-col justify-center">
+
+    <!-- ==================== 01: COVER & FEED CHECK-IN ==================== -->
+    <section data-stage="0" class="stage stage-anim">
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0B222D] border-[1.5px] border-emerald-500/25 dark:border-emerald-400/25 shadow-xl">
+        <div class="lg:col-span-5 h-64 sm:h-auto relative bg-[#091726] overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1050&q=80"
+            alt="Friends hanging out, taking photos and sharing stories on phones"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#06141B]/90 via-[#06141B]/25 to-transparent"></div>
+          <div class="absolute bottom-5 left-5 right-5 space-y-1 text-white">
+            <span class="text-xs font-bold tracking-widest text-emerald-300 uppercase">PROVO · Teens Conversation Class</span>
+            <p class="text-sm font-semibold text-slate-200">For You Pages, Lurkers vs. Posters, Group Chats &amp; Digital Boundaries</p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 p-7 sm:p-10 flex flex-col justify-center space-y-5">
+          <span class="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/35 text-emerald-700 dark:text-emerald-300 text-xs font-bold tracking-wider">
+            <i data-lucide="smartphone" class="w-4 h-4"></i>
+            <span>PROVO STAGE LAB · CONVERSATION CLASS</span>
+          </span>
+
+          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight text-[#002B5C] dark:text-white">
+            Social Media &amp; <span class="text-emerald-600 dark:text-emerald-400">Your Feed</span>
+          </h1>
+
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            No lectures on "kids these days"—just real talk about algorithms, close friends stories, group chats, lurking vs. posting, and keeping your peace online. Includes 12 conversation cards with voice notes, illustrated feed vocabulary, a short reading, card-by-card practice, and a This or That debate game.
+          </p>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1 text-xs">
+            <button type="button" onclick="goStage(1)" class="p-3 rounded-2xl bg-[#F2FBF7] dark:bg-[#071922] border-[1.5px] border-emerald-500/20 hover:border-emerald-400 text-left transition">
+              <div class="font-extrabold text-emerald-600 dark:text-emerald-400">02 · SPEAKING</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">12 Real Talk Cards</div>
+            </button>
+            <button type="button" onclick="goStage(2)" class="p-3 rounded-2xl bg-[#F2FBF7] dark:bg-[#071922] border-[1.5px] border-emerald-500/20 hover:border-emerald-400 text-left transition">
+              <div class="font-extrabold text-emerald-600 dark:text-emerald-400">03 · VOCAB</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">10 Illustrated Cards</div>
+            </button>
+            <button type="button" onclick="goStage(4)" class="p-3 rounded-2xl bg-[#F2FBF7] dark:bg-[#071922] border-[1.5px] border-emerald-500/20 hover:border-emerald-400 text-left transition">
+              <div class="font-extrabold text-emerald-600 dark:text-emerald-400">05 · PRACTICE</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">1 by 1 or Grid</div>
+            </button>
+            <button type="button" onclick="goStage(5)" class="p-3 rounded-2xl bg-[#F2FBF7] dark:bg-[#071922] border-[1.5px] border-emerald-500/20 hover:border-emerald-400 text-left transition">
+              <div class="font-extrabold text-emerald-600 dark:text-emerald-400">06 · GAME</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">This or That</div>
+            </button>
+          </div>
+
+          <div class="pt-1">
+            <button
+              type="button"
+              onclick="goStage(1)"
+              class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-[#002B5C] via-emerald-700 to-emerald-600 hover:opacity-95 text-white text-sm sm:text-base font-bold shadow-lg transition"
+            >
+              <span>Start Conversation Class</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 02: 12 TEEN CONVERSATION CARDS + VOICE RECORDER ==================== -->
+    <section data-stage="1" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-emerald-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-emerald-600 dark:text-emerald-400 uppercase">Stage 02 · Speaking &amp; Discussion</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Real Talk Cards (12 Prompts)</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Answer honestly, add examples from your feed, and record a voice note if you want.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div class="lg:col-span-7 space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-2 bg-white dark:bg-[#0B222D] border-[1.5px] border-emerald-500/25 rounded-2xl px-4 py-3 shadow-sm">
+            <div class="flex items-center gap-2">
+              <span id="teenQBadge" class="px-2.5 py-1 rounded-lg bg-[#002B5C] text-white text-xs font-extrabold">Q1 / 12</span>
+              <span id="teenQTag" class="px-2.5 py-1 rounded-lg bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 text-xs font-bold"></span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <button type="button" onclick="stepTeenQ(-1)" class="p-2 rounded-xl border border-slate-200 dark:border-emerald-400/25 hover:bg-slate-100 dark:hover:bg-[#133342]"><i data-lucide="chevron-left" class="w-4 h-4"></i></button>
+              <button type="button" onclick="stepTeenQ(1)" class="p-2 rounded-xl border border-slate-200 dark:border-emerald-400/25 hover:bg-slate-100 dark:hover:bg-[#133342]"><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+              <button type="button" onclick="shuffleTeenQ()" class="inline-flex items-center gap-1 px-3 py-2 rounded-xl bg-slate-100 dark:bg-[#071922] text-xs font-bold">
+                <i data-lucide="shuffle" class="w-3.5 h-3.5 text-emerald-500"></i>
+                <span>Random</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-[#0B222D] border-[1.5px] border-emerald-500/25 rounded-3xl overflow-hidden shadow-md">
+            <div id="teenQPhotoBox" class="h-52 sm:h-60 bg-[#091726] relative overflow-hidden"></div>
+            <div class="p-6 sm:p-8 space-y-4">
+              <h3 id="teenQText" class="text-xl sm:text-2xl font-extrabold leading-snug text-[#002B5C] dark:text-white"></h3>
+              <p id="teenQFollow" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300"></p>
+              <div>
+                <button type="button" onclick="document.getElementById('teenStartersBox').classList.toggle('hidden')" class="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-emerald-700 dark:text-emerald-300 hover:underline">
+                  <i data-lucide="sparkles" class="w-4 h-4"></i>
+                  <span>Conversation Starters</span>
+                </button>
+                <div id="teenStartersBox" class="hidden mt-2.5 p-3.5 rounded-2xl bg-[#F2FBF7] dark:bg-[#071922] border border-emerald-500/20 text-xs space-y-1"></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="teenQPills" class="flex flex-wrap gap-1.5"></div>
+        </div>
+
+        <!-- Voice Recorder Column -->
+        <div class="lg:col-span-5 bg-white dark:bg-[#0B222D] border-[1.5px] border-emerald-500/25 rounded-3xl p-6 space-y-4 shadow-md">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-extrabold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Voice Note · Drive</span>
+            <span id="teenRecTimer" class="font-mono text-xs font-bold text-slate-500 dark:text-slate-400">00:00</span>
+          </div>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Record a quick answer in English and send it to your teacher's folder.</p>
+          <input
+            id="teenNameInput"
+            type="text"
+            placeholder="Your name (e.g. Leo Martínez)"
+            class="w-full px-3.5 py-2.5 rounded-xl bg-[#F2FBF7] dark:bg-[#071922] border border-slate-200 dark:border-emerald-400/25 text-sm outline-none focus:border-emerald-400"
+          />
+          <div class="flex items-center gap-2">
+            <button id="teenBtnRec" type="button" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition">
+              <i data-lucide="mic" class="w-4 h-4"></i>
+              <span>Record</span>
+            </button>
+            <button id="teenBtnStop" type="button" disabled class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 disabled:opacity-40 text-white text-xs font-bold transition">
+              <i data-lucide="square" class="w-4 h-4"></i>
+              <span>Stop</span>
+            </button>
+            <button id="teenBtnClear" type="button" disabled class="p-2.5 rounded-xl border border-slate-200 dark:border-emerald-400/25 disabled:opacity-40" title="Discard">
+              <i data-lucide="trash-2" class="w-4 h-4"></i>
+            </button>
+          </div>
+          <audio id="teenAudioPreview" controls class="w-full hidden rounded-xl"></audio>
+          <div class="flex gap-2">
+            <button id="teenBtnSend" type="button" disabled class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#002B5C] disabled:opacity-40 text-white text-xs font-bold transition">
+              <i data-lucide="send" class="w-3.5 h-3.5"></i>
+              <span id="teenSendLabel">Send to Teacher</span>
+            </button>
+            <button id="teenBtnDl" type="button" disabled class="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl border border-slate-200 dark:border-emerald-400/25 disabled:opacity-40 text-xs font-semibold">
+              <i data-lucide="download" class="w-3.5 h-3.5"></i>
+              <span>Save</span>
+            </button>
+          </div>
+          <div id="teenUploadFb" class="hidden text-xs font-semibold px-3 py-2 rounded-xl"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 03: CARD-BY-CARD TEEN FEED VOCABULARY WITH DISTINCT IMAGES ==================== -->
+    <section data-stage="2" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-emerald-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-emerald-600 dark:text-emerald-400 uppercase">Stage 03 · How People Talk About Feeds</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Social Media Vocabulary Cards (10)</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Each expression has its own visual cue and audio example.</p>
+      </div>
+
+      <div id="teenVocabCardBox" class="max-w-4xl mx-auto w-full"></div>
+    </section>
+
+    <!-- ==================== 04: SHORT TEEN READING — "THE HIGHLIGHT REEL" ==================== -->
+    <section data-stage="3" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-emerald-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-emerald-600 dark:text-emerald-400 uppercase">Stage 04 · Short Reading &amp; Chat</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Everyone Looks Like They're Having More Fun</h2>
+        </div>
+        <button type="button" onclick="speakTeenArticle()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold self-start sm:self-auto">
+          <i data-lucide="volume-2" class="w-4 h-4"></i>
+          <span>Listen to Text</span>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div class="lg:col-span-7 bg-white dark:bg-[#0B222D] border-[1.5px] border-emerald-500/25 rounded-3xl p-6 sm:p-8 space-y-4 shadow-md text-sm sm:text-base leading-relaxed">
+          <p>
+            Scroll for ten minutes at 11:30 p.m. and it can feel like everyone else is at a rooftop party, hitting PRs at the gym, or traveling somewhere sunny—while you are just lying on your bed eating cereal. Most teens know logically that feeds are curated, yet <strong>doomscrolling</strong> late at night still messes with your mood.
+          </p>
+          <p>
+            A lot of what gets posted is a <strong>highlight reel</strong>: the best angle, the best lighting, or a clip filmed on the one sunny afternoon out of a rainy week. <strong>Mutings</strong>, taking a break from <strong>main-character energy</strong> when you just want to chill, or keeping a <strong>finsta / alt account</strong> for real friends are ways teens actually protect their space without deleting everything.
+          </p>
+        </div>
+
+        <div class="lg:col-span-5 bg-white dark:bg-[#0B222D] border-[1.5px] border-emerald-500/25 rounded-3xl p-6 space-y-4 shadow-md">
+          <span class="px-2.5 py-1 rounded-lg bg-[#002B5C] text-white text-xs font-extrabold uppercase">Quick Discussion Check</span>
+          <p id="readCheckQ" class="text-sm font-bold text-[#002B5C] dark:text-white"></p>
+          <div id="readCheckOpts" class="space-y-2 text-xs font-bold"></div>
+          <div id="readCheckFb" class="hidden p-3 rounded-xl text-xs font-bold"></div>
+          <button type="button" onclick="nextReadCheck()" class="text-xs font-extrabold text-emerald-600 dark:text-emerald-400 hover:underline">
+            Next Check Question →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 05: QUICK INTERACTIVE PRACTICE LAB (CARD-BY-CARD OR GRID) ==================== -->
+    <section data-stage="4" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-emerald-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-emerald-600 dark:text-emerald-400 uppercase">Stage 05 · Quick Practice</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Pick the Natural Phrasing (6 Drills)</h2>
+        </div>
+        <div class="inline-flex rounded-xl p-1 bg-white dark:bg-[#0B222D] border-[1.5px] border-emerald-500/25 self-start sm:self-auto">
+          <button id="btnPracSingle" type="button" onclick="setTeenPracticeView('single')" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-emerald-600 text-white transition">1 by 1 Card</button>
+          <button id="btnPracGrid" type="button" onclick="setTeenPracticeView('grid')" class="px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition">All Cards</button>
+        </div>
+      </div>
+
+      <div id="teenPracticeSingleBox" class="max-w-3xl mx-auto w-full"></div>
+      <div id="teenPracticeGrid" class="hidden grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+    </section>
+
+    <!-- ==================== 06: GAMIFIED CHALLENGE — "THIS OR THAT: FEED EDITION" ==================== -->
+    <section data-stage="5" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-emerald-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-emerald-600 dark:text-emerald-400 uppercase">Stage 06 · Interactive Speaking Game</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">This or That: Feed Edition!</h2>
+        </div>
+        <div class="flex items-center gap-2">
+          <span id="totRoundBadge" class="px-3.5 py-1.5 rounded-xl bg-[#002B5C] text-emerald-300 text-xs font-extrabold">ROUND 1 / 8</span>
+          <button type="button" onclick="randomTotRound()" class="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold">
+            <i data-lucide="shuffle" class="w-3.5 h-3.5"></i>
+            <span>Shuffle</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-[#0B222D] border-[1.5px] border-emerald-500/25 rounded-3xl p-6 sm:p-9 max-w-4xl mx-auto w-full space-y-6 shadow-xl">
+        <div class="text-center space-y-1">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">TAP YOUR PICK &amp; DEFEND WHY IN 15 SECONDS!</span>
+          <h3 id="totTopicTitle" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white"></h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <button
+            id="totBtnA"
+            type="button"
+            onclick="pickTotChoice('A')"
+            class="p-6 sm:p-8 rounded-3xl border-2 border-emerald-500/25 bg-[#F2FBF7] dark:bg-[#071922] hover:border-emerald-400 text-left space-y-2 transition group"
+          >
+            <span class="px-2.5 py-1 rounded-lg bg-[#002B5C] text-white text-[11px] font-extrabold">THIS</span>
+            <div id="totOptionAText" class="text-lg sm:text-2xl font-extrabold text-[#002B5C] dark:text-white pt-1"></div>
+            <p id="totOptionASub" class="text-xs text-slate-500 dark:text-slate-400"></p>
+          </button>
+
+          <button
+            id="totBtnB"
+            type="button"
+            onclick="pickTotChoice('B')"
+            class="p-6 sm:p-8 rounded-3xl border-2 border-emerald-500/25 bg-[#F2FBF7] dark:bg-[#071922] hover:border-emerald-400 text-left space-y-2 transition group"
+          >
+            <span class="px-2.5 py-1 rounded-lg bg-emerald-600 text-white text-[11px] font-extrabold">THAT</span>
+            <div id="totOptionBText" class="text-lg sm:text-2xl font-extrabold text-[#002B5C] dark:text-white pt-1"></div>
+            <p id="totOptionBSub" class="text-xs text-slate-500 dark:text-slate-400"></p>
+          </button>
+        </div>
+
+        <div id="totFollowBox" class="hidden p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/25 space-y-1">
+          <span class="text-[11px] font-extrabold uppercase tracking-wider text-emerald-700 dark:text-emerald-300">FOLLOW-UP CHALLENGE</span>
+          <p id="totFollowQuestion" class="text-sm font-bold text-[#002B5C] dark:text-white"></p>
+        </div>
+
+        <div class="flex items-center justify-between gap-3 pt-2 border-t border-slate-100 dark:border-emerald-400/15">
+          <button type="button" onclick="stepTot(-1)" class="px-4 py-2.5 rounded-xl border border-slate-300 dark:border-emerald-400/25 text-xs font-bold">← Prev</button>
+          <div id="totDots" class="flex flex-wrap gap-1.5"></div>
+          <button type="button" onclick="stepTot(1)" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#002B5C] to-emerald-600 text-white text-xs sm:text-sm font-bold">Next →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 07: HOT TAKES & DEBATE BUILDER ==================== -->
+    <section data-stage="6" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-emerald-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-emerald-600 dark:text-emerald-400 uppercase">Stage 07 · Speaking Finale</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Hot Takes &amp; Opinion Builder</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Pick a hot take, tap your stance, and say your opinion out loud.</p>
+      </div>
+
+      <div class="bg-white dark:bg-[#0B222D] border-[1.5px] border-emerald-500/25 rounded-3xl p-6 sm:p-9 max-w-4xl mx-auto w-full space-y-6 shadow-xl">
+        <div class="space-y-2">
+          <span class="text-xs font-extrabold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">1. CHOOSE A HOT TAKE</span>
+          <div id="hotTakePicker" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5"></div>
+        </div>
+
+        <div class="space-y-2">
+          <span class="text-xs font-extrabold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">2. YOUR STANCE</span>
+          <div class="flex flex-wrap gap-2">
+            <button type="button" id="stanceAgree" onclick="setTeenStance('agree')" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-emerald-600 text-white">I'm with this ✓</button>
+            <button type="button" id="stanceDepends" onclick="setTeenStance('depends')" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-slate-100 dark:bg-[#071922] border border-emerald-500/25">Depends on the app ~</button>
+            <button type="button" id="stanceDisagree" onclick="setTeenStance('disagree')" class="px-4 py-2 rounded-xl text-xs font-extrabold bg-slate-100 dark:bg-[#071922] border border-emerald-500/25">Nah, hard disagree ✕</button>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-[#F2FBF7] dark:bg-[#071922] border-2 border-emerald-500/35 space-y-3">
+          <p id="teenOpinionOut" class="text-base sm:text-xl font-extrabold text-[#002B5C] dark:text-white leading-relaxed"></p>
+          <button type="button" onclick="speakTeenOpinion()" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs sm:text-sm font-bold shadow transition">
+            <i data-lucide="volume-2" class="w-4 h-4"></i>
+            <span>Listen &amp; Speak Out Loud</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Navigation -->
+  <footer class="border-t border-emerald-500/20 bg-white dark:bg-[#06141B] py-4 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      <button id="btnPrev" type="button" onclick="goStage(currentStage - 1)" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-300 dark:border-emerald-400/25 hover:bg-slate-100 dark:hover:bg-[#133342] disabled:opacity-30 text-xs font-bold transition">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Previous</span>
+      </button>
+
+      <span id="stageCounter" class="text-xs font-bold tracking-widest text-slate-500 dark:text-slate-400">
+        01 / 07
+      </span>
+
+      <button id="btnNext" type="button" onclick="goStage(currentStage + 1)" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#002B5C] hover:bg-emerald-700 disabled:opacity-30 text-xs font-bold text-white transition">
+        <span>Next</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    const DRIVE_UPLOAD_URL = "https://script.google.com/macros/s/AKfycbwBcX7Z4aABKplkUkpYvM2wEnsBHhWCZzi7dFGDkeUarkXwv-RRI0JXAPDakjkrCrBc/exec";
+
+    const STAGES = [
+      "01 · FEED CHECK-IN",
+      "02 · REAL TALK CARDS",
+      "03 · FEED VOCAB",
+      "04 · SHORT READING",
+      "05 · QUICK PRACTICE",
+      "06 · THIS OR THAT",
+      "07 · HOT TAKES"
+    ];
+
+    let currentStage = 0;
+    const stageSections = document.querySelectorAll('.stage');
+
+    function goStage(idx) {
+      if (idx < 0 || idx >= stageSections.length) return;
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      currentStage = idx;
+      stageSections.forEach((s, i) => s.classList.toggle('hidden', i !== currentStage));
+      document.getElementById('stageTitleHeader').textContent = STAGES[currentStage];
+      document.getElementById('stageCounter').textContent = `${String(currentStage + 1).padStart(2, '0')} / ${String(stageSections.length).padStart(2, '0')}`;
+      document.getElementById('stageProgress').style.width = `${((currentStage + 1) / stageSections.length) * 100}%`;
+      document.getElementById('btnPrev').disabled = currentStage === 0;
+      document.getElementById('btnNext').disabled = currentStage === stageSections.length - 1;
+      renderStagePills();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      lucide.createIcons();
+    }
+
+    function renderStagePills() {
+      document.getElementById('stagePills').innerHTML = STAGES.map((_, i) => `
+        <button type="button" onclick="goStage(${i})" class="px-2.5 py-1 rounded-lg text-xs font-bold transition ${
+          i === currentStage ? 'bg-emerald-500 text-white' : 'text-white/75 hover:text-white hover:bg-white/10'
+        }">${String(i + 1).padStart(2, '0')}</button>
+      `).join('');
+    }
+
+    const themeBtn = document.getElementById('themeBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    if (localStorage.getItem('provoTeensTheme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      themeIcon.setAttribute('data-lucide', 'moon');
+    }
+    themeBtn.addEventListener('click', () => {
+      const dark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('provoTeensTheme', dark ? 'dark' : 'light');
+      themeIcon.setAttribute('data-lucide', dark ? 'sun' : 'moon');
+      lucide.createIcons();
+    });
+
+    function mountPhoto(container, url, altText, fallbackTitle) {
+      container.innerHTML = `<img src="${url}" alt="${altText}" class="w-full h-full object-cover" loading="lazy" />`;
+      const img = container.querySelector('img');
+      if (img) {
+        img.addEventListener('error', () => {
+          container.innerHTML = `
+            <div class="w-full h-full flex flex-col items-center justify-center bg-[#002B5C] text-white p-6 text-center">
+              <i data-lucide="smartphone" class="w-8 h-8 text-emerald-300 mb-2"></i>
+              <span class="text-xs font-extrabold uppercase tracking-widest">${fallbackTitle}</span>
+            </div>
+          `;
+          lucide.createIcons();
+        }, { once: true });
+      }
+    }
+
+    function pickSoniaVoice() {
+      if (!('speechSynthesis' in window)) return null;
+      const voices = window.speechSynthesis.getVoices() || [];
+      if (!voices.length) return null;
+      return (
+        voices.find(v => /sonia/i.test(v.name)) ||
+        voices.find(v => /en[-_]GB/i.test(v.lang) && /natural|online|google|neural/i.test(v.name)) ||
+        voices.find(v => /en[-_]GB/i.test(v.lang)) ||
+        voices.find(v => /^en/i.test(v.lang)) ||
+        null
+      );
+    }
+
+    if ('speechSynthesis' in window && typeof window.speechSynthesis.onvoiceschanged !== 'undefined') {
+      window.speechSynthesis.onvoiceschanged = () => pickSoniaVoice();
+    }
+
+    function speakText(text) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const runUtterance = () => {
+        const u = new SpeechSynthesisUtterance(text);
+        const voice = pickSoniaVoice();
+        if (voice) {
+          u.voice = voice;
+          u.lang = voice.lang;
+        } else {
+          u.lang = 'en-GB';
+        }
+        u.rate = 0.96;
+        u.pitch = 1.03;
+        window.speechSynthesis.speak(u);
+      };
+      if ((window.speechSynthesis.getVoices() || []).length === 0 && 'onvoiceschanged' in window) {
+        const once = () => {
+          window.speechSynthesis.removeEventListener('voiceschanged', once);
+          runUtterance();
+        };
+        window.speechSynthesis.addEventListener('voiceschanged', once);
+        setTimeout(runUtterance, 120);
+      } else {
+        runUtterance();
+      }
+    }
+
+    // ==================== 02: 12 TEEN CONVERSATION CARDS ====================
+    const TEEN_CARDS = [
+      { tag: "Lurker vs. Poster", q: "Are you more of a lurker who just scrolls and likes, or do you actually post stories and videos?", follow: "When do you actually decide to post something vs. keep it in your drafts?", photo: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=950&q=80", starters: ["• Honestly, I mostly just scroll and send memes to...", "• Usually I post when something funny happens like..."] },
+      { tag: "The Algorithm", q: "What kind of stuff is your feed or For You page full of right now?", follow: "Football, music, gaming, cooking, art, or random weird clips?", photo: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=950&q=80", starters: ["• My algorithm knows me way too well—it's all...", "• One random thing I somehow ended up watching is..."] },
+      { tag: "Group Chats", q: "What are your group chats with friends actually like—non-stop memes or super quiet?", follow: "Do you mute them or read every single message?", photo: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=950&q=80", starters: ["• Our group chat goes crazy whenever...", "• I keep most chats muted except..."] },
+      { tag: "Late Night Scrolling", q: "How often do you end up staying awake later than planned just watching short videos?", follow: "What makes you finally put the phone down?", photo: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=950&q=80", starters: ["• It happens way too often when...", "• I usually stop when I realize..."] },
+      { tag: "Close Friends", q: "Who makes the cut for 'Close Friends' on stories, and what goes there instead of your main feed?", follow: "Is it for low-key updates, inside jokes, or messy real life?", photo: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=950&q=80", starters: ["• Close friends is more for...", "• I post on my main feed only when..."] },
+      { tag: "Trends & Challenges", q: "Have you ever tried a viral trend, sound, or recipe you saw online? Did it live up to the hype?", follow: "Or do you skip trends most of the time?", photo: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=950&q=80", starters: ["• I tried ___ once and it turned out...", "• Most trends feel pretty repetitive after..."] },
+      { tag: "Creator Trust", q: "Do you trust recommendations from creators/YouTubers more or less than normal ads?", follow: "How can you tell when someone actually likes a product vs. is just promoting it?", photo: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=950&q=80", starters: ["• I trust creators more when they...", "• You can tell it's just promo when..."] },
+      { tag: "Comparison & Pressure", q: "Does seeing other people's posts ever make you feel behind, or do you not really care?", follow: "What helps keep things in perspective?", photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=950&q=80", starters: ["• Sometimes when everyone looks busy, it feels like...", "• Remembering that people only post the good bits helps..."] },
+      { tag: "Voice Notes & DMs", q: "Do you prefer texting short messages or sending voice notes to friends?", follow: "How long are your voice notes—10 seconds or two-minute podcasts?", photo: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=950&q=80", starters: ["• I send voice notes when I have a whole story to tell...", "• Short texts are way easier when..."] },
+      { tag: "Digital Detox", q: "Have you ever taken a break from an app for a few days? What happened?", follow: "Did you miss it or feel more relaxed?", photo: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=950&q=80", starters: ["• For the first day I kept tapping the icon out of habit...", "• After a couple of days, I noticed..."] },
+      { tag: "Comment Sections", q: "Are comment sections a goldmine of funny jokes or mostly toxic arguments?", follow: "Do you ever leave comments or just read them?", photo: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=950&q=80", starters: ["• The funniest part of a video is often the comments...", "• I skip comments completely when..."] },
+      { tag: "Real Life vs. Screen Time", q: "What's one thing you love doing offline that beats scrolling any day?", follow: "Music, sport, hanging out, gaming with mates, or going outside?", photo: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=950&q=80", starters: ["• Nothing beats ___ offline because...", "• When I'm actually doing something fun, I forget to check my phone."] }
+    ];
+
+    let teenQIdx = 0;
+
+    function renderTeenQ(idx) {
+      teenQIdx = (idx + TEEN_CARDS.length) % TEEN_CARDS.length;
+      const c = TEEN_CARDS[teenQIdx];
+      document.getElementById('teenQBadge').textContent = `Q${teenQIdx + 1} / ${TEEN_CARDS.length}`;
+      document.getElementById('teenQTag').textContent = c.tag;
+      document.getElementById('teenQText').textContent = c.q;
+      document.getElementById('teenQFollow').textContent = c.follow;
+      document.getElementById('teenStartersBox').innerHTML = c.starters.map(s => `<div>${s}</div>`).join('');
+      document.getElementById('teenStartersBox').classList.add('hidden');
+      mountPhoto(document.getElementById('teenQPhotoBox'), c.photo, c.tag, c.tag);
+
+      document.getElementById('teenQPills').innerHTML = TEEN_CARDS.map((_, i) => `
+        <button type="button" onclick="renderTeenQ(${i})" class="w-8 h-8 rounded-lg text-xs font-extrabold transition ${
+          i === teenQIdx ? 'bg-[#002B5C] text-white' : 'bg-white dark:bg-[#0B222D] border border-emerald-500/20'
+        }">${i + 1}</button>
+      `).join('');
+    }
+    window.stepTeenQ = (d) => renderTeenQ(teenQIdx + d);
+    window.shuffleTeenQ = () => renderTeenQ(Math.floor(Math.random() * TEEN_CARDS.length));
+
+    // ==================== 03: CARD-BY-CARD TEEN FEED VOCABULARY WITH DISTINCT IMAGES ====================
+    const TEEN_VOCAB = [
+      { term: "lurker", tag: "Everyday Noun", def: "Someone who reads or watches posts regularly without commenting or posting much themselves.", ex: "I'm a total lurker on that app—I watch everything and barely post.", photo: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=900&q=80" },
+      { term: "doomscrolling", tag: "Modern Habit", def: "Scrolling endlessly through negative or stressful news and posts late at night.", ex: "Try not to fall into doomscrolling right before going to sleep.", photo: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=900&q=80" },
+      { term: "highlight reel", tag: "Metaphor", def: "The best, most polished moments people share online rather than everyday routine.", ex: "Remember everyone's feed is a highlight reel, not real life 24/7.", photo: "https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=900&q=80" },
+      { term: "go viral", tag: "Collocation", def: "Spread super fast and get shared or viewed by tons of people online.", ex: "That random 10-second clip went viral overnight.", photo: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=900&q=80" },
+      { term: "mute a thread / chat", tag: "Action Phrase", def: "Turn off notifications from a group chat or account so you aren't constantly pinged.", ex: "I muted the class chat during exam week so I could focus.", photo: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=900&q=80" },
+      { term: "curate your feed", tag: "Verb Phrase", def: "Choose carefully who you follow and interact with so your feed feels positive and relevant.", ex: "Curating your feed makes a huge difference to how you feel online.", photo: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=900&q=80" },
+      { term: "clickbait", tag: "Media Noun", def: "Sensational or exaggerated titles/thumbnails designed just to get clicks.", ex: "The title sounded huge, but the video was total clickbait.", photo: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=900&q=80" },
+      { term: "take a step back", tag: "Phrasal Expression", def: "Pause and get distance from a situation or app for a bit.", ex: "When social media gets annoying, I just take a step back for a weekend.", photo: "https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=900&q=80" },
+      { term: "overshare", tag: "Verb", def: "Share personal details or drama online that probably work better kept private.", ex: "Some people overshare every argument they have.", photo: "https://images.unsplash.com/photo-1516534775068-ba3e7458af70?auto=format&fit=crop&w=900&q=80" },
+      { term: "call someone out", tag: "Phrasal Verb", def: "Publicly point out fake behavior, hypocrisy, or a bad take.", ex: "Lots of comments called the post out for being obviously staged.", photo: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=900&q=80" }
+    ];
+    let tvIdx = 0;
+
+    function renderTeenVocabCard() {
+      tvIdx = (tvIdx + TEEN_VOCAB.length) % TEEN_VOCAB.length;
+      const v = TEEN_VOCAB[tvIdx];
+      const safeEx = v.ex.replace(/'/g, "\\'");
+
+      document.getElementById('teenVocabCardBox').innerHTML = `
+        <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0B222D] border-[1.5px] border-emerald-500/25 shadow-xl">
+          <div id="tvPhotoBox" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+          <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-5">
+            <div class="space-y-4">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="px-3.5 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">WORD ${tvIdx + 1} / ${TEEN_VOCAB.length}</span>
+                  <span class="px-3.5 py-1 rounded-full bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 text-xs font-extrabold">${v.tag}</span>
+                </div>
+                <button type="button" onclick="speakText('${safeEx}')" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-600 text-white text-xs font-bold">
+                  <i data-lucide="volume-2" class="w-4 h-4"></i> Hear Example
+                </button>
+              </div>
+
+              <h3 class="text-3xl sm:text-4xl font-extrabold text-[#002B5C] dark:text-white">${v.term}</h3>
+              <p class="text-sm sm:text-base text-slate-700 dark:text-slate-200">${v.def}</p>
+
+              <div class="p-4 rounded-2xl bg-[#F2FBF7] dark:bg-[#071922] border border-emerald-500/20">
+                <p class="text-sm italic font-semibold text-[#002B5C] dark:text-emerald-200">“${v.ex}”</p>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-emerald-400/15">
+              <button type="button" onclick="tvIdx--; renderTeenVocabCard();" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-emerald-400/25 text-xs font-bold">← Prev</button>
+              <div class="flex flex-wrap gap-1">
+                ${TEEN_VOCAB.map((_, i) => `<button type="button" onclick="tvIdx=${i}; renderTeenVocabCard();" class="w-7 h-7 rounded-lg text-xs font-bold ${i === tvIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#071922]'}">${i + 1}</button>`).join('')}
+              </div>
+              <button type="button" onclick="tvIdx++; renderTeenVocabCard();" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+            </div>
+          </div>
+        </div>
+      `;
+      mountPhoto(document.getElementById('tvPhotoBox'), v.photo, v.term, v.term.toUpperCase());
+      lucide.createIcons();
+    }
+
+    // ==================== 04: SHORT READING CHECK ====================
+    window.speakTeenArticle = () => {
+      speakText("Scroll for ten minutes at 11:30 p.m. and it can feel like everyone else is at a rooftop party, hitting PRs at the gym, or traveling somewhere sunny—while you are just lying on your bed eating cereal. Most teens know logically that feeds are curated, yet doomscrolling late at night still messes with your mood. A lot of what gets posted is a highlight reel: the best angle, the best lighting, or a clip filmed on the one sunny afternoon out of a rainy week. Muting chats, taking a break, or keeping a smaller account for close friends are ways teens actually protect their space without deleting everything.");
+    };
+
+    const READ_CHECKS = [
+      { q: "What does 'highlight reel' mean in the text?", opts: ["A) A live stream that never stops", "B) The best, most polished moments people share online", "C) A video editing app"], ans: 1, why: "People usually share their best moments and angles rather than ordinary everyday routines." },
+      { q: "How do teens keep space online without deleting apps completely?", opts: ["A) By muting chats, taking breaks, or using a close-friends/alt space", "B) By never messaging friends again", "C) By buying a new phone every week"], ans: 0, why: "Setting boundaries like muting or taking short breaks helps without quitting everything." }
+    ];
+    let rcIdx = 0;
+
+    function renderReadCheck() {
+      const item = READ_CHECKS[rcIdx % READ_CHECKS.length];
+      document.getElementById('readCheckQ').textContent = item.q;
+      document.getElementById('readCheckFb').classList.add('hidden');
+      document.getElementById('readCheckOpts').innerHTML = item.opts.map((op, i) => `
+        <button type="button" onclick="pickReadCheck(${i})" class="w-full text-left p-3 rounded-xl bg-[#F2FBF7] dark:bg-[#071922] border border-emerald-500/20 hover:border-emerald-400 transition">${op}</button>
+      `).join('');
+    }
+    window.pickReadCheck = (i) => {
+      const item = READ_CHECKS[rcIdx % READ_CHECKS.length];
+      const fb = document.getElementById('readCheckFb');
+      fb.classList.remove('hidden');
+      if (i === item.ans) {
+        fb.className = 'p-3 rounded-xl text-xs font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Spot on! ${item.why}`;
+      } else {
+        fb.className = 'p-3 rounded-xl text-xs font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `✗ Try again. ${item.why}`;
+      }
+    };
+    window.nextReadCheck = () => { rcIdx++; renderReadCheck(); };
+
+    // ==================== 05: QUICK PRACTICE LAB (1 BY 1 CARD OR GRID) ====================
+    const TEEN_PRACTICE = [
+      { q: "1. You don't want 200 notifications from a group chat while doing homework:", opts: ["A) I'll mute the chat for a bit.", "B) I'll silence the speech of the chat."], ans: 0, why: "'Mute the chat' is natural everyday English." },
+      { q: "2. A video has a huge title like 'YOU WON'T BELIEVE WHAT HAPPENED!' but nothing happens:", opts: ["A) That's total clickbait.", "B) That's total clickfood."], ans: 0, why: "'Clickbait' describes sensationalized titles/thumbnails made just for clicks." },
+      { q: "3. Someone watches clips all day without ever posting or commenting:", opts: ["A) They're a lurker.", "B) They're a walker."], ans: 0, why: "A 'lurker' browses or watches without actively posting." },
+      { q: "4. A small clip suddenly gets shared by thousands of people:", opts: ["A) It went viral.", "B) It went infected."], ans: 0, why: "'Go viral' means spread rapidly online." },
+      { q: "5. You stay up till 1 a.m. reading bad news and stressful posts:", opts: ["A) Doomscrolling.", "B) Moodtyping."], ans: 0, why: "'Doomscrolling' is endless scrolling through stressful/negative content." },
+      { q: "6. Someone posts only their best outfits and trips, never boring days:", opts: ["A) A highlight reel.", "B) A spotlight wheel."], ans: 0, why: "'Highlight reel' refers to curated best moments." }
+    ];
+
+    let teenPracView = 'single';
+    let teenPracIdx = 0;
+
+    window.setTeenPracticeView = (mode) => {
+      teenPracView = mode;
+      document.getElementById('teenPracticeSingleBox').classList.toggle('hidden', mode !== 'single');
+      document.getElementById('teenPracticeGrid').classList.toggle('hidden', mode !== 'grid');
+      document.getElementById('btnPracSingle').className = mode === 'single'
+        ? 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-emerald-600 text-white transition'
+        : 'px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition';
+      document.getElementById('btnPracGrid').className = mode === 'grid'
+        ? 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-emerald-600 text-white transition'
+        : 'px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition';
+      renderTeenPractice();
+    };
+
+    function renderTeenPractice() {
+      teenPracIdx = (teenPracIdx + TEEN_PRACTICE.length) % TEEN_PRACTICE.length;
+      const singleItem = TEEN_PRACTICE[teenPracIdx];
+
+      document.getElementById('teenPracticeSingleBox').innerHTML = `
+        <div class="bg-white dark:bg-[#0B222D] border-[1.5px] border-emerald-500/25 rounded-3xl p-6 sm:p-9 space-y-5 shadow-xl">
+          <div class="flex items-center justify-between">
+            <span class="px-3.5 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">DRILL ${teenPracIdx + 1} / ${TEEN_PRACTICE.length}</span>
+            <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400">NATURAL PHRASING</span>
+          </div>
+
+          <p class="text-lg sm:text-xl font-extrabold text-[#002B5C] dark:text-white leading-snug">${singleItem.q}</p>
+
+          <div class="space-y-2.5 text-sm font-semibold">
+            ${singleItem.opts.map((op, i) => `
+              <button type="button" onclick="checkTeenPracticeSingle(${i})" class="w-full text-left px-4 py-3.5 rounded-2xl bg-[#F2FBF7] dark:bg-[#071922] border-[1.5px] border-emerald-500/20 hover:border-emerald-400 transition">${op}</button>
+            `).join('')}
+          </div>
+
+          <div id="tpSingleFb" class="hidden p-3.5 rounded-2xl text-xs sm:text-sm font-bold"></div>
+
+          <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-emerald-400/15">
+            <button type="button" onclick="teenPracIdx--; renderTeenPractice();" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-emerald-400/25 text-xs font-bold">← Prev Card</button>
+            <div class="flex gap-1.5">
+              ${TEEN_PRACTICE.map((_, i) => `<button type="button" onclick="teenPracIdx=${i}; renderTeenPractice();" class="w-7 h-7 rounded-lg text-xs font-bold ${i === teenPracIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#071922]'}">${i + 1}</button>`).join('')}
+            </div>
+            <button type="button" onclick="teenPracIdx++; renderTeenPractice();" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next Card →</button>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('teenPracticeGrid').innerHTML = TEEN_PRACTICE.map((item, idx) => `
+        <div class="bg-white dark:bg-[#0B222D] border-[1.5px] border-emerald-500/25 rounded-3xl p-5 space-y-3 shadow-md">
+          <p class="text-sm font-bold text-[#002B5C] dark:text-white">${item.q}</p>
+          <div class="space-y-1.5 text-xs sm:text-sm font-semibold">
+            ${item.opts.map((op, i) => `
+              <button type="button" onclick="checkTeenPractice(${idx}, ${i})" class="w-full text-left px-3.5 py-2.5 rounded-xl bg-[#F2FBF7] dark:bg-[#071922] border border-emerald-500/20 hover:border-emerald-400 transition">${op}</button>
+            `).join('')}
+          </div>
+          <div id="tpFb${idx}" class="hidden p-3 rounded-xl text-xs font-bold"></div>
+        </div>
+      `).join('');
+    }
+
+    window.checkTeenPracticeSingle = (picked) => {
+      const item = TEEN_PRACTICE[teenPracIdx];
+      const fb = document.getElementById('tpSingleFb');
+      fb.classList.remove('hidden');
+      if (picked === item.ans) {
+        fb.className = 'p-3.5 rounded-2xl text-xs sm:text-sm font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Nice! ${item.why}`;
+      } else {
+        fb.className = 'p-3.5 rounded-2xl text-xs sm:text-sm font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `✗ Try again. ${item.why}`;
+      }
+    };
+
+    window.checkTeenPractice = (idx, picked) => {
+      const item = TEEN_PRACTICE[idx];
+      const fb = document.getElementById(`tpFb${idx}`);
+      fb.classList.remove('hidden');
+      if (picked === item.ans) {
+        fb.className = 'p-3 rounded-xl text-xs font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Nice! ${item.why}`;
+      } else {
+        fb.className = 'p-3 rounded-xl text-xs font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `✗ Try again. ${item.why}`;
+      }
+    };
+
+    // ==================== 06: THIS OR THAT — FEED EDITION ====================
+    const TOT_ROUNDS = [
+      {
+        title: "Communication Style",
+        aText: "Short text messages",
+        aSub: "Fast to read anywhere without headphones",
+        bText: "45-second voice notes",
+        bSub: "Better tone, zero typing effort",
+        follow: "What's the longest voice note you'll actually listen to before skipping it?"
+      },
+      {
+        title: "Feed Behavior",
+        aText: "Full-time Lurker",
+        aSub: "Watch everything, leave zero trace",
+        bText: "Regular Story Poster",
+        bSub: "Share daily moments, music & memes",
+        follow: "Do you feel pressure to make stories look aesthetic, or do you post whatever?"
+      },
+      {
+        title: "Video Length",
+        aText: "15-second vertical clips",
+        aSub: "Quick laughs, fast scrolling",
+        bText: "30-minute YouTube deep dives",
+        bSub: "Watch while eating or chilling at night",
+        follow: "Which type of content do you actually remember the next day?"
+      },
+      {
+        title: "Account Setup",
+        aText: "One public / main account",
+        aSub: "Keep everything in one place",
+        bText: "Main + Close Friends / Alt",
+        bSub: "Keep real life for a small circle",
+        follow: "Why do so many people prefer smaller private spaces over huge public profiles?"
+      },
+      {
+        title: "Group Chat Energy",
+        aText: "Notifications ON 24/7",
+        aSub: "Never miss a joke or plan",
+        bText: "Muted & check later",
+        bSub: "Protect focus while gaming or studying",
+        follow: "Have you ever missed an important plan because a chat was muted?"
+      },
+      {
+        title: "Discovery",
+        aText: "Trust the For You algorithm",
+        aSub: "Let the app surprise you",
+        bText: "Only watch people you follow",
+        bSub: "Stay in control of what shows up",
+        follow: "How often does your algorithm show you something totally irrelevant?"
+      },
+      {
+        title: "Offline Hangouts",
+        aText: "Take photos/clips for memories",
+        aSub: "Capture the moment while hanging out",
+        bText: "Phones stay in pockets",
+        bSub: "Enjoy the moment with zero cameras",
+        follow: "When does filming an event ruin the vibe vs. make it funnier later?"
+      },
+      {
+        title: "Weekend Reset",
+        aText: "Late-night scroll session",
+        aSub: "Unwind in bed with funny clips",
+        bText: "48-hour app break",
+        bSub: "Reset attention and sleep early",
+        follow: "Which app would be hardest for you to delete for a whole weekend?"
+      }
+    ];
+
+    let totIdx = 0;
+
+    function renderTotRound() {
+      totIdx = (totIdx + TOT_ROUNDS.length) % TOT_ROUNDS.length;
+      const r = TOT_ROUNDS[totIdx];
+      document.getElementById('totRoundBadge').textContent = `ROUND ${totIdx + 1} / ${TOT_ROUNDS.length}`;
+      document.getElementById('totTopicTitle').textContent = r.title;
+      document.getElementById('totOptionAText').textContent = r.aText;
+      document.getElementById('totOptionASub').textContent = r.aSub;
+      document.getElementById('totOptionBText').textContent = r.bText;
+      document.getElementById('totOptionBSub').textContent = r.bSub;
+      document.getElementById('totFollowQuestion').textContent = r.follow;
+      document.getElementById('totFollowBox').classList.add('hidden');
+
+      document.getElementById('totBtnA').className = 'p-6 sm:p-8 rounded-3xl border-2 border-emerald-500/25 bg-[#F2FBF7] dark:bg-[#071922] hover:border-emerald-400 text-left space-y-2 transition';
+      document.getElementById('totBtnB').className = 'p-6 sm:p-8 rounded-3xl border-2 border-emerald-500/25 bg-[#F2FBF7] dark:bg-[#071922] hover:border-emerald-400 text-left space-y-2 transition';
+
+      document.getElementById('totDots').innerHTML = TOT_ROUNDS.map((_, i) => `
+        <button type="button" onclick="totIdx=${i}; renderTotRound();" class="w-7 h-7 rounded-lg text-xs font-bold ${
+          i === totIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#071922]'
+        }">${i + 1}</button>
+      `).join('');
+    }
+
+    window.pickTotChoice = (side) => {
+      const r = TOT_ROUNDS[totIdx];
+      document.getElementById('totBtnA').className = side === 'A'
+        ? 'p-6 sm:p-8 rounded-3xl border-2 border-emerald-500 bg-emerald-500/15 text-left space-y-2 transition shadow-md'
+        : 'p-6 sm:p-8 rounded-3xl border-2 border-emerald-500/20 bg-[#F2FBF7] dark:bg-[#071922] opacity-60 text-left space-y-2 transition';
+      document.getElementById('totBtnB').className = side === 'B'
+        ? 'p-6 sm:p-8 rounded-3xl border-2 border-emerald-500 bg-emerald-500/15 text-left space-y-2 transition shadow-md'
+        : 'p-6 sm:p-8 rounded-3xl border-2 border-emerald-500/20 bg-[#F2FBF7] dark:bg-[#071922] opacity-60 text-left space-y-2 transition';
+
+      document.getElementById('totFollowBox').classList.remove('hidden');
+      const chosen = side === 'A' ? r.aText : r.bText;
+      speakText(`I'd definitely pick ${chosen}.`);
+    };
+
+    window.stepTot = (d) => { totIdx += d; renderTotRound(); };
+    window.randomTotRound = () => {
+      totIdx = Math.floor(Math.random() * TOT_ROUNDS.length);
+      renderTotRound();
+    };
+
+    // ==================== 07: HOT TAKES BUILDER ====================
+    const HOT_TAKES = [
+      { id: 0, short: "Voice notes > long texts", topic: "sending voice notes instead of long texts" },
+      { id: 1, short: "Like counts should stay hidden", topic: "hiding like counts on posts" },
+      { id: 2, short: "Muting chats is self-care", topic: "muting group chats when you need quiet" },
+      { id: 3, short: "Short videos kill attention", topic: "short-form video feeds affecting attention spans" }
+    ];
+    let selectedTakeId = 0;
+    let selectedStance = 'agree';
+
+    function renderHotTakes() {
+      document.getElementById('hotTakePicker').innerHTML = HOT_TAKES.map(t => `
+        <button type="button" onclick="selectedTakeId=${t.id}; renderHotTakes();" class="p-3.5 rounded-2xl text-left text-xs sm:text-sm font-bold border-2 transition ${
+          selectedTakeId === t.id
+            ? 'bg-[#002B5C] border-[#002B5C] text-white'
+            : 'bg-[#F2FBF7] dark:bg-[#071922] border-emerald-500/20'
+        }">${t.short}</button>
+      `).join('');
+
+      const t = HOT_TAKES[selectedTakeId];
+      let out = "";
+      if (selectedStance === 'agree') {
+        out = `“Honestly, I'm totally with this—when it comes to ${t.topic}, it just makes things way easier and less stressful.”`;
+      } else if (selectedStance === 'depends') {
+        out = `“I think it really depends on the situation—with ${t.topic}, it's great sometimes, but it can also get annoying.”`;
+      } else {
+        out = `“Nah, I don't really agree with that—when it comes to ${t.topic}, I feel like the opposite is actually true.”`;
+      }
+      document.getElementById('teenOpinionOut').textContent = out;
+    }
+
+    window.setTeenStance = (s) => {
+      selectedStance = s;
+      ['agree', 'depends', 'disagree'].forEach(k => {
+        const el = document.getElementById('stance' + k[0].toUpperCase() + k.slice(1));
+        el.className = k === s
+          ? 'px-4 py-2 rounded-xl text-xs font-extrabold bg-emerald-600 text-white'
+          : 'px-4 py-2 rounded-xl text-xs font-extrabold bg-slate-100 dark:bg-[#071922] border border-emerald-500/25';
+      });
+      renderHotTakes();
+    };
+    window.speakTeenOpinion = () => {
+      const raw = document.getElementById('teenOpinionOut').textContent.replace(/^[“”]+|[“”]+$/g, '');
+      speakText(raw);
+    };
+
+    // ==================== VOICE RECORDER ====================
+    const teenNameInput = document.getElementById('teenNameInput');
+    teenNameInput.value = localStorage.getItem('provoStudentName') || '';
+    teenNameInput.addEventListener('input', () => {
+      localStorage.setItem('provoStudentName', teenNameInput.value.trim());
+    });
+
+    let mediaRecorder = null;
+    let audioChunks = [];
+    let audioBlob = null;
+    let recSec = 0;
+    let recInterval = null;
+
+    const teenBtnRec = document.getElementById('teenBtnRec');
+    const teenBtnStop = document.getElementById('teenBtnStop');
+    const teenBtnClear = document.getElementById('teenBtnClear');
+    const teenBtnSend = document.getElementById('teenBtnSend');
+    const teenBtnDl = document.getElementById('teenBtnDl');
+    const teenAudioPreview = document.getElementById('teenAudioPreview');
+    const teenRecTimer = document.getElementById('teenRecTimer');
+    const teenUploadFb = document.getElementById('teenUploadFb');
+
+    function showTeenFb(msg, ok = true) {
+      teenUploadFb.classList.remove('hidden');
+      teenUploadFb.className = ok
+        ? 'text-xs font-semibold px-3 py-2 rounded-xl bg-emerald-500/15 text-emerald-700 dark:text-emerald-300'
+        : 'text-xs font-semibold px-3 py-2 rounded-xl bg-rose-500/15 text-rose-700 dark:text-rose-300';
+      teenUploadFb.textContent = msg;
+    }
+
+    teenBtnRec.addEventListener('click', async () => {
+      teenUploadFb.classList.add('hidden');
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        audioChunks = [];
+        mediaRecorder = new MediaRecorder(stream);
+        mediaRecorder.ondataavailable = e => { if (e.data && e.data.size > 0) audioChunks.push(e.data); };
+        mediaRecorder.onstop = () => {
+          stream.getTracks().forEach(t => t.stop());
+          audioBlob = new Blob(audioChunks, { type: mediaRecorder.mimeType || 'audio/webm' });
+          teenAudioPreview.src = URL.createObjectURL(audioBlob);
+          teenAudioPreview.classList.remove('hidden');
+          teenBtnSend.disabled = false;
+          teenBtnDl.disabled = false;
+          teenBtnClear.disabled = false;
+        };
+        mediaRecorder.start();
+        recSec = 0;
+        teenRecTimer.textContent = '00:00';
+        recInterval = setInterval(() => {
+          recSec++;
+          teenRecTimer.textContent = `${String(Math.floor(recSec / 60)).padStart(2, '0')}:${String(recSec % 60).padStart(2, '0')}`;
+        }, 1000);
+        teenBtnRec.disabled = true;
+        teenBtnStop.disabled = false;
+        teenBtnClear.disabled = true;
+        teenBtnSend.disabled = true;
+      } catch (e) {
+        showTeenFb('Microphone unavailable. Allow mic permissions in your browser.', false);
+      }
+    });
+
+    teenBtnStop.addEventListener('click', () => {
+      clearInterval(recInterval);
+      if (mediaRecorder && mediaRecorder.state !== 'inactive') mediaRecorder.stop();
+      teenBtnRec.disabled = false;
+      teenBtnStop.disabled = true;
+    });
+
+    teenBtnClear.addEventListener('click', () => {
+      audioBlob = null;
+      teenAudioPreview.classList.add('hidden');
+      teenBtnSend.disabled = true;
+      teenBtnDl.disabled = true;
+      teenBtnClear.disabled = true;
+      teenRecTimer.textContent = '00:00';
+      teenUploadFb.classList.add('hidden');
+    });
+
+    teenBtnDl.addEventListener('click', () => {
+      if (!audioBlob) return;
+      const name = (teenNameInput.value.trim() || 'Student').replace(/\s+/g, '_');
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(audioBlob);
+      a.download = `PROVO-Teens-Social-Media-Q${teenQIdx + 1}-${name}.webm`;
+      a.click();
+    });
+
+    teenBtnSend.addEventListener('click', () => {
+      const studentName = teenNameInput.value.trim();
+      if (!studentName) {
+        showTeenFb('Enter your name first.', false);
+        teenNameInput.focus();
+        return;
+      }
+      if (!audioBlob) return;
+      teenBtnSend.disabled = true;
+      document.getElementById('teenSendLabel').textContent = 'Uploading...';
+      const reader = new FileReader();
+      reader.onloadend = async () => {
+        try {
+          const base64Audio = String(reader.result).split(',')[1];
+          const res = await fetch(DRIVE_UPLOAD_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify({
+              studentName,
+              lessonTitle: 'Teens-Social-Media',
+              questionNumber: teenQIdx + 1,
+              mimeType: audioBlob.type || 'audio/webm',
+              audioBase64: base64Audio
+            })
+          });
+          const data = await res.json();
+          if (data.status === 'ok') showTeenFb(`✓ Sent to Drive as ${data.fileName}`, true);
+          else throw new Error(data.message || 'Upload error');
+        } catch (err) {
+          showTeenFb('Could not upload automatically. Use Save to download your audio.', false);
+        } finally {
+          teenBtnSend.disabled = false;
+          document.getElementById('teenSendLabel').textContent = 'Send to Teacher';
+        }
+      };
+      reader.readAsDataURL(audioBlob);
+    });
+
+    // Init
+    goStage(0);
+    renderTeenQ(0);
+    renderTeenVocabCard();
+    renderReadCheck();
+    renderTeenPractice();
+    renderTotRound();
+    renderHotTakes();
+    lucide.createIcons();
+  </script>
+</body>
+</html>

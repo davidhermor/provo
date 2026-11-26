@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>B1 / B2 GRAMMAR · THE PASSIVE VOICE | PROVO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <style>
+    @keyframes stageIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .stage-anim { animation: stageIn 0.24s ease-out forwards; }
+  </style>
+</head>
+<body class="bg-[#F4F6FA] text-slate-900 dark:bg-[#060E1E] dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
+
+  <!-- Sticky Top Bar (B1/B2 Tier: Crimson / Rose-Coral Accent on PROVO Navy) -->
+  <header class="sticky top-0 z-40 bg-[#002B5C] text-white border-b border-rose-400/35 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2.5">
+        <a href="index.html" class="flex items-center shrink-0" title="PROVO">
+          <img
+            src="https://i.postimg.cc/vBt4qH44/download.png"
+            alt="PROVO"
+            class="h-8 w-auto object-contain block"
+            onerror="this.style.display='none'; document.getElementById('provoFallback').classList.remove('hidden');"
+          />
+          <span id="provoFallback" class="hidden font-extrabold tracking-widest text-lg text-white">PROVO</span>
+        </a>
+        <span class="px-2.5 py-0.5 rounded-full bg-rose-500/30 border border-rose-300/45 text-rose-100 text-[11px] font-bold tracking-wider">
+          B1 / B2 · GRAMMAR LAB
+        </span>
+        <span id="stageTitleHeader" class="hidden xl:inline-block text-xs font-bold tracking-wider text-rose-200">
+          01 · COVER &amp; BRIEFING
+        </span>
+      </div>
+
+      <div id="stagePills" class="flex items-center gap-1 overflow-x-auto py-1"></div>
+
+      <div class="flex items-center gap-2 shrink-0">
+        <button
+          id="themeBtn"
+          type="button"
+          class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition"
+          title="Toggle Theme"
+        >
+          <i id="themeIcon" data-lucide="sun" class="w-4 h-4"></i>
+        </button>
+        <a
+          href="index.html"
+          class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs font-bold bg-white/10 hover:bg-white/20 text-white transition"
+        >
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          <span class="hidden sm:inline">PORTAL</span>
+        </a>
+      </div>
+    </div>
+    <div class="w-full h-1.5 bg-black/25">
+      <div id="stageProgress" class="h-full bg-rose-400 transition-all duration-300" style="width: 12.5%"></div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl w-full mx-auto px-4 sm:px-6 py-7 sm:py-10 flex-1 flex flex-col justify-center">
+
+    <!-- ==================== 01: COVER & BRIEFING ==================== -->
+    <section data-stage="0" class="stage stage-anim">
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 dark:border-rose-400/25 shadow-xl">
+        <div class="lg:col-span-5 h-64 sm:h-auto relative bg-[#091726] overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1050&q=80"
+            alt="Global news headlines and press printing"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#060E1E]/90 via-[#060E1E]/25 to-transparent"></div>
+          <div class="absolute bottom-5 left-5 right-5 space-y-1 text-white">
+            <span class="text-xs font-bold tracking-widest text-rose-300 uppercase">PROVO · B1/B2 Grammar &amp; Speaking</span>
+            <p class="text-sm font-semibold text-slate-200">Headlines, Inventions, Processes, Crime &amp; Impersonal Reporting</p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 p-7 sm:p-10 flex flex-col justify-center space-y-5">
+          <span class="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-rose-500/15 border border-rose-400/35 text-rose-700 dark:text-rose-300 text-xs font-bold tracking-wider">
+            <i data-lucide="repeat" class="w-4 h-4"></i>
+            <span>PROVO STAGE LAB · B1 / B2 EDITION</span>
+          </span>
+
+          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight text-[#002B5C] dark:text-white">
+            Mastering <span class="text-rose-600 dark:text-rose-400">The Passive</span>
+          </h1>
+
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            Learn when and why English speakers shift focus from the person doing an action to the action or result itself. Warm up with visual discussion prompts, explore our interactive Active → Passive visual machine, master 10 media &amp; process collocations, read a B2 news report, and test your reflexes in Passive Arena.
+          </p>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1 text-xs">
+            <button type="button" onclick="goStage(1)" class="p-3 rounded-2xl bg-[#F4F6FA] dark:bg-[#071224] border-[1.5px] border-rose-500/20 hover:border-rose-400 text-left transition">
+              <div class="font-extrabold text-rose-600 dark:text-rose-400">02 · SPEAKING</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">10 Visual Cards</div>
+            </button>
+            <button type="button" onclick="goStage(2)" class="p-3 rounded-2xl bg-[#F4F6FA] dark:bg-[#071224] border-[1.5px] border-rose-500/20 hover:border-rose-400 text-left transition">
+              <div class="font-extrabold text-rose-600 dark:text-rose-400">03 · GRAMMAR</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">Visual Lab &amp; Tenses</div>
+            </button>
+            <button type="button" onclick="goStage(4)" class="p-3 rounded-2xl bg-[#F4F6FA] dark:bg-[#071224] border-[1.5px] border-rose-500/20 hover:border-rose-400 text-left transition">
+              <div class="font-extrabold text-rose-600 dark:text-rose-400">05 · VOCAB</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">10 Illustrated Terms</div>
+            </button>
+            <button type="button" onclick="goStage(6)" class="p-3 rounded-2xl bg-[#F4F6FA] dark:bg-[#071224] border-[1.5px] border-rose-500/20 hover:border-rose-400 text-left transition">
+              <div class="font-extrabold text-rose-600 dark:text-rose-400">07 · ARENA</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">Passive Rush Game</div>
+            </button>
+          </div>
+
+          <div class="pt-1 flex flex-wrap items-center gap-4">
+            <button
+              type="button"
+              onclick="goStage(1)"
+              class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-[#002B5C] via-rose-700 to-rose-600 hover:opacity-95 text-white text-sm sm:text-base font-bold shadow-lg transition"
+            >
+              <span>Start Lesson</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">8 interactive stages · Visual diagrams · Voice recorder</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 02: 10 VISUAL CONVERSATION CARDS + VOICE RECORDER ==================== -->
+    <section data-stage="1" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-rose-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-rose-600 dark:text-rose-400 uppercase">Stage 02 · Speaking &amp; Context Warm-Up</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Inventions, Landmarks &amp; News (10 Cards)</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Discuss each prompt naturally—notice how passive forms appear in your answers.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div class="lg:col-span-7 space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-2 bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 rounded-2xl px-4 py-3 shadow-sm">
+            <div class="flex items-center gap-2">
+              <span id="qBadge" class="px-2.5 py-1 rounded-lg bg-[#002B5C] text-white text-xs font-extrabold">Q1 / 10</span>
+              <span id="qTag" class="px-2.5 py-1 rounded-lg bg-rose-500/15 text-rose-700 dark:text-rose-300 text-xs font-bold"></span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <button type="button" onclick="stepQ(-1)" class="p-2 rounded-xl border border-slate-200 dark:border-rose-400/25 hover:bg-slate-100 dark:hover:bg-[#132C4A]"><i data-lucide="chevron-left" class="w-4 h-4"></i></button>
+              <button type="button" onclick="stepQ(1)" class="p-2 rounded-xl border border-slate-200 dark:border-rose-400/25 hover:bg-slate-100 dark:hover:bg-[#132C4A]"><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+              <button type="button" onclick="shuffleQ()" class="inline-flex items-center gap-1 px-3 py-2 rounded-xl bg-slate-100 dark:bg-[#071224] text-xs font-bold">
+                <i data-lucide="shuffle" class="w-3.5 h-3.5 text-rose-500"></i>
+                <span>Random</span>
+              </button>
+              <button type="button" onclick="speakQ()" class="inline-flex items-center gap-1 px-3 py-2 rounded-xl bg-rose-600 text-white text-xs font-bold">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                <span>Listen</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 rounded-3xl overflow-hidden shadow-md">
+            <div id="qPhotoBox" class="h-56 sm:h-64 bg-[#091726] relative overflow-hidden"></div>
+            <div class="p-6 sm:p-8 space-y-4">
+              <h3 id="qText" class="text-xl sm:text-2xl font-extrabold leading-snug text-[#002B5C] dark:text-white"></h3>
+              <p id="qFollow" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300"></p>
+              <div>
+                <button type="button" onclick="document.getElementById('qStartersBox').classList.toggle('hidden')" class="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-rose-700 dark:text-rose-300 hover:underline">
+                  <i data-lucide="lightbulb" class="w-4 h-4"></i>
+                  <span>B1/B2 Passive Starters</span>
+                </button>
+                <div id="qStartersBox" class="hidden mt-2.5 p-3.5 rounded-2xl bg-[#F4F6FA] dark:bg-[#071224] border border-rose-500/20 text-xs space-y-1"></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="qPills" class="flex flex-wrap gap-1.5"></div>
+        </div>
+
+        <!-- Voice Recorder Column -->
+        <div class="lg:col-span-5 bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 rounded-3xl p-6 space-y-4 shadow-md">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-extrabold uppercase tracking-wider text-rose-600 dark:text-rose-400">Voice Note · Drive</span>
+            <span id="recTimer" class="font-mono text-xs font-bold text-slate-500 dark:text-slate-400">00:00</span>
+          </div>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Record a 30–45 second response using passive forms and send it to your teacher.</p>
+          <input
+            id="studentNameInput"
+            type="text"
+            placeholder="Your name (e.g. Clara Soler)"
+            class="w-full px-3.5 py-2.5 rounded-xl bg-[#F4F6FA] dark:bg-[#071224] border border-slate-200 dark:border-rose-400/25 text-sm outline-none focus:border-rose-400"
+          />
+          <div class="flex items-center gap-2">
+            <button id="btnRecord" type="button" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold transition">
+              <i data-lucide="mic" class="w-4 h-4"></i>
+              <span>Record</span>
+            </button>
+            <button id="btnStop" type="button" disabled class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 disabled:opacity-40 text-white text-xs font-bold transition">
+              <i data-lucide="square" class="w-4 h-4"></i>
+              <span>Stop</span>
+            </button>
+            <button id="btnClearAudio" type="button" disabled class="p-2.5 rounded-xl border border-slate-200 dark:border-rose-400/25 disabled:opacity-40" title="Discard">
+              <i data-lucide="trash-2" class="w-4 h-4"></i>
+            </button>
+          </div>
+          <audio id="audioPreview" controls class="w-full hidden rounded-xl"></audio>
+          <div class="flex gap-2">
+            <button id="btnSendDrive" type="button" disabled class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#002B5C] disabled:opacity-40 text-white text-xs font-bold transition">
+              <i data-lucide="send" class="w-3.5 h-3.5"></i>
+              <span id="sendLabel">Send to Teacher</span>
+            </button>
+            <button id="btnDownloadAudio" type="button" disabled class="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl border border-slate-200 dark:border-rose-400/25 disabled:opacity-40 text-xs font-semibold">
+              <i data-lucide="download" class="w-3.5 h-3.5"></i>
+              <span>Save</span>
+            </button>
+          </div>
+          <div id="uploadFeedback" class="hidden text-xs font-semibold px-3 py-2 rounded-xl"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 03: DEEP GRAMMAR LAB PART 1 — VISUAL TRANSFORMATION & WHEN TO USE ==================== -->
+    <section data-stage="2" class="stage hidden stage-anim space-y-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-rose-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-rose-600 dark:text-rose-400 uppercase">Stage 03 · Grammar Architecture (1/2)</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">How &amp; Why We Use the Passive</h2>
+        </div>
+        <span class="px-3 py-1 rounded-full bg-rose-500/15 text-rose-700 dark:text-rose-300 text-xs font-extrabold">Core Formula: BE + Past Participle (V3)</span>
+      </div>
+
+      <!-- Visual SVG Flow Diagram: Active -> Passive Shift -->
+      <div class="bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <span class="text-xs font-extrabold uppercase tracking-wider text-rose-600 dark:text-rose-400">VISUAL MECHANICS · ACTIVE → PASSIVE SHIFT</span>
+          <div class="flex flex-wrap gap-1.5" id="tenseSelectorPills"></div>
+        </div>
+
+        <!-- Custom Responsive SVG Structural Diagram -->
+        <div class="rounded-2xl bg-[#F4F6FA] dark:bg-[#071224] border border-rose-500/20 p-4 sm:p-6 overflow-x-auto">
+          <svg viewBox="0 0 820 230" class="w-full min-w-[640px] h-auto" role="img" aria-label="Active to Passive sentence transformation diagram">
+            <!-- Active Row -->
+            <text x="20" y="26" fill="#94A3B8" font-size="11" font-weight="800" letter-spacing="1.5">ACTIVE VOICE (FOCUS ON AGENT / DOER)</text>
+            <rect x="20" y="38" width="210" height="54" rx="14" fill="#1E293B" stroke="#64748B" stroke-width="1.5" />
+            <text x="125" y="59" fill="#94A3B8" font-size="10" font-weight="700" text-anchor="middle">SUBJECT (DOER)</text>
+            <text id="svgActSubj" x="125" y="79" fill="#F8FAFC" font-size="14" font-weight="800" text-anchor="middle">Engineers</text>
+
+            <rect x="260" y="38" width="250" height="54" rx="14" fill="#002B5C" stroke="#38BDF8" stroke-width="1.5" />
+            <text x="385" y="59" fill="#7DD3FC" font-size="10" font-weight="700" text-anchor="middle">ACTIVE VERB</text>
+            <text id="svgActVerb" x="385" y="79" fill="#FFFFFF" font-size="14" font-weight="800" text-anchor="middle">design</text>
+
+            <rect x="540" y="38" width="250" height="54" rx="14" fill="#881337" stroke="#FB7185" stroke-width="2" />
+            <text x="665" y="59" fill="#FDA4AF" font-size="10" font-weight="700" text-anchor="middle">OBJECT (RECEIVER)</text>
+            <text id="svgActObj" x="665" y="79" fill="#FFFFFF" font-size="14" font-weight="800" text-anchor="middle">electric cars</text>
+
+            <!-- Crossover Arrows -->
+            <defs>
+              <marker id="arrowRose" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L7,3 z" fill="#F43F5E" />
+              </marker>
+              <marker id="arrowSlate" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L7,3 z" fill="#94A3B8" />
+              </marker>
+            </defs>
+            <path d="M 650 94 C 650 132, 130 108, 130 144" fill="none" stroke="#F43F5E" stroke-width="2.5" stroke-dasharray="5,4" marker-end="url(#arrowRose)" />
+            <path d="M 135 94 C 135 128, 665 110, 665 144" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-dasharray="4,4" marker-end="url(#arrowSlate)" />
+            <line x1="385" y1="94" x2="385" y2="144" stroke="#38BDF8" stroke-width="2" marker-end="url(#arrowRose)" />
+
+            <!-- Passive Row -->
+            <text x="20" y="222" fill="#FB7185" font-size="11" font-weight="800" letter-spacing="1.5">PASSIVE VOICE (FOCUS ON RECEIVER / RESULT)</text>
+            <rect x="20" y="148" width="210" height="54" rx="14" fill="#881337" stroke="#FB7185" stroke-width="2" />
+            <text x="125" y="169" fill="#FDA4AF" font-size="10" font-weight="700" text-anchor="middle">NEW SUBJECT (RECEIVER)</text>
+            <text id="svgPasSubj" x="125" y="189" fill="#FFFFFF" font-size="14" font-weight="800" text-anchor="middle">Electric cars</text>
+
+            <rect x="260" y="148" width="270" height="54" rx="14" fill="#0F172A" stroke="#F43F5E" stroke-width="2" />
+            <text x="395" y="169" fill="#FDA4AF" font-size="10" font-weight="700" text-anchor="middle">BE (CONJUGATED) + PAST PARTICIPLE</text>
+            <text id="svgPasVerb" x="395" y="189" fill="#FFFFFF" font-size="14" font-weight="800" text-anchor="middle">are designed</text>
+
+            <rect x="560" y="148" width="230" height="54" rx="14" fill="#1E293B" stroke="#64748B" stroke-width="1.5" stroke-dasharray="5,3" />
+            <text x="675" y="169" fill="#94A3B8" font-size="10" font-weight="700" text-anchor="middle">OPTIONAL AGENT (BY + DOER)</text>
+            <text id="svgPasAgent" x="675" y="189" fill="#CBD5E1" font-size="13" font-weight="700" text-anchor="middle">(by engineers)</text>
+          </svg>
+        </div>
+
+        <!-- Live Audio & Tense Note Bar -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-2xl bg-rose-500/10 border border-rose-500/25">
+          <div class="space-y-0.5 text-xs sm:text-sm">
+            <div class="font-extrabold text-[#002B5C] dark:text-white" id="tenseFullPassive"></div>
+            <div class="text-slate-600 dark:text-slate-300" id="tenseGrammarTip"></div>
+          </div>
+          <button type="button" onclick="speakSelectedTense()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-rose-600 text-white text-xs font-bold shrink-0">
+            <i data-lucide="volume-2" class="w-4 h-4"></i>
+            <span>Hear Active &amp; Passive</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 4 Core Reasons to Use the Passive (Illustrated Cards) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 rounded-3xl overflow-hidden shadow-md flex flex-col">
+          <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=600&q=80" alt="Unknown agent mystery" class="h-32 w-full object-cover" />
+          <div class="p-5 space-y-1.5 flex-1">
+            <span class="text-[11px] font-extrabold text-rose-600 dark:text-rose-400">1. UNKNOWN DOER</span>
+            <h3 class="text-base font-extrabold text-[#002B5C] dark:text-white">We don't know who did it</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300"><em>“My bike <strong>was stolen</strong> outside the station.”</em> (Adding <em>by someone</em> is redundant.)</p>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 rounded-3xl overflow-hidden shadow-md flex flex-col">
+          <img src="https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&w=600&q=80" alt="Obvious agent" class="h-32 w-full object-cover" />
+          <div class="p-5 space-y-1.5 flex-1">
+            <span class="text-[11px] font-extrabold text-rose-600 dark:text-rose-400">2. OBVIOUS DOER</span>
+            <h3 class="text-base font-extrabold text-[#002B5C] dark:text-white">Context makes it obvious</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300"><em>“The suspect <strong>was arrested</strong> at dawn.”</em> (Clearly by the police.)</p>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 rounded-3xl overflow-hidden shadow-md flex flex-col">
+          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Industrial manufacturing process" class="h-32 w-full object-cover" />
+          <div class="p-5 space-y-1.5 flex-1">
+            <span class="text-[11px] font-extrabold text-rose-600 dark:text-rose-400">3. PROCESSES &amp; FACTS</span>
+            <h3 class="text-base font-extrabold text-[#002B5C] dark:text-white">Focus on the process/object</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300"><em>“Coffee beans <strong>are roasted</strong> at 200 °C.”</em> (Common in science, essays, and reports.)</p>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 rounded-3xl overflow-hidden shadow-md flex flex-col">
+          <img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=600&q=80" alt="Famous painting in gallery" class="h-32 w-full object-cover" />
+          <div class="p-5 space-y-1.5 flex-1">
+            <span class="text-[11px] font-extrabold text-rose-600 dark:text-rose-400">4. HIGHLIGHTING THE WORK</span>
+            <h3 class="text-base font-extrabold text-[#002B5C] dark:text-white">Keep the topic as subject</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300"><em>“Guernica <strong>was painted by</strong> Picasso in 1937.”</em> (Use <strong>by</strong> only when the agent adds vital info.)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 04: DEEP GRAMMAR LAB PART 2 — B2 STRUCTURES (MODALS, 2 OBJECTS, IMPERSONAL, CAUSATIVE) ==================== -->
+    <section data-stage="3" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-rose-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-rose-600 dark:text-rose-400 uppercase">Stage 04 · Grammar Architecture (2/2 · B2 Upgrade)</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Advanced B2 Passive Structures</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Step through the 4 B2 structures that elevate essays, reports, and formal speaking.</p>
+      </div>
+
+      <div id="b2PassiveCardBox" class="max-w-4xl mx-auto w-full"></div>
+
+      <!-- Mini Check for Stage 04 -->
+      <div class="bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 rounded-3xl p-6 max-w-4xl mx-auto w-full space-y-3 shadow-md">
+        <span class="text-xs font-extrabold uppercase tracking-wider text-rose-600 dark:text-rose-400">Quick B2 Concept Check</span>
+        <p class="text-sm font-bold text-[#002B5C] dark:text-white">Which sentence correctly uses an impersonal reporting passive?</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm font-semibold">
+          <button type="button" onclick="checkB2Mini('A')" class="p-3.5 rounded-xl bg-[#F4F6FA] dark:bg-[#071224] border border-rose-500/20 hover:border-rose-400 text-left">A) It is widely believed that renewable energy reduces long-term costs.</button>
+          <button type="button" onclick="checkB2Mini('B')" class="p-3.5 rounded-xl bg-[#F4F6FA] dark:bg-[#071224] border border-rose-500/20 hover:border-rose-400 text-left">B) It widely believes that renewable energy reduces long-term costs.</button>
+        </div>
+        <div id="b2MiniFb" class="hidden p-3 rounded-xl text-xs font-bold"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 05: ILLUSTRATED B1/B2 VOCABULARY (10 TERMS) ==================== -->
+    <section data-stage="4" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-rose-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-rose-600 dark:text-rose-400 uppercase">Stage 05 · Natural Passive Collocations</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">10 High-Frequency Passive Expressions</h2>
+        </div>
+        <div class="inline-flex rounded-xl p-1 bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 self-start sm:self-auto">
+          <button id="btnVocSingle" type="button" onclick="setVocView('single')" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-rose-600 text-white transition">1 by 1 Card</button>
+          <button id="btnVocGrid" type="button" onclick="setVocView('grid')" class="px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition">All 10 Cards</button>
+        </div>
+      </div>
+
+      <div id="vocSingleBox" class="max-w-4xl mx-auto w-full"></div>
+      <div id="vocGridBox" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+    </section>
+
+    <!-- ==================== 06: B2 READING & GRAMMAR X-RAY + TRANSFORMATION LAB ==================== -->
+    <section data-stage="5" class="stage hidden stage-anim space-y-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-rose-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-rose-600 dark:text-rose-400 uppercase">Stage 06 · Reading in Context &amp; Transformations</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">News Report &amp; Active → Passive Drills</h2>
+        </div>
+        <button type="button" onclick="speakPassiveArticle()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold self-start sm:self-auto">
+          <i data-lucide="volume-2" class="w-4 h-4"></i>
+          <span>Listen to Report</span>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        <div class="lg:col-span-5 rounded-3xl overflow-hidden bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 shadow-md flex flex-col">
+          <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=900&q=80" alt="Solar panels and green city innovation" class="h-48 w-full object-cover" />
+          <div class="p-6 space-y-2 flex-1 flex flex-col justify-between">
+            <div class="space-y-2">
+              <span class="px-2.5 py-1 rounded-lg bg-[#002B5C] text-white text-[11px] font-extrabold uppercase">NEWS BRIEF · GREEN TECH</span>
+              <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white">How Solar Roads Are Being Tested</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300">Notice how formal news reports rely on present continuous passives, modal passives, and reporting structures.</p>
+            </div>
+            <button type="button" onclick="togglePassiveHighlights()" class="self-start px-3.5 py-1.5 rounded-xl bg-rose-500/15 text-rose-700 dark:text-rose-300 text-xs font-bold">
+              Toggle Passive Highlights
+            </button>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 rounded-3xl p-6 sm:p-8 space-y-4 shadow-md text-sm sm:text-base leading-relaxed">
+          <p>
+            Over the past decade, billions of euros <span class="pas-hl bg-rose-400/25 px-1 rounded font-semibold">have been invested</span> in cleaner urban infrastructure. In several European cities, experimental cycle paths <span class="pas-hl bg-rose-400/25 px-1 rounded font-semibold">are currently being fitted</span> with durable solar panels capable of powering street lights at night.
+          </p>
+          <p>
+            <span class="pas-hl bg-rose-400/25 px-1 rounded font-semibold">It is widely believed</span> that smart surfaces could transform how electricity <span class="pas-hl bg-rose-400/25 px-1 rounded font-semibold">is generated</span> in crowded neighbourhoods. However, engineers warn that installation costs <span class="pas-hl bg-rose-400/25 px-1 rounded font-semibold">must be reduced</span> before the technology <span class="pas-hl bg-rose-400/25 px-1 rounded font-semibold">can be rolled out</span> nationwide.
+          </p>
+        </div>
+      </div>
+
+      <!-- 4 Key-Word Transformations -->
+      <div class="space-y-3">
+        <h3 class="text-xs font-extrabold uppercase tracking-[0.2em] text-rose-700 dark:text-rose-300">B1/B2 Sentence Transformations (Active → Passive)</h3>
+        <div id="transformGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 07: GAMIFIED ARENA — "PASSIVE RUSH" ==================== -->
+    <section data-stage="6" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-rose-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-rose-600 dark:text-rose-400 uppercase">Stage 07 · Interactive Challenge</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Passive Arena: Form, Tense &amp; Agent Check!</h2>
+        </div>
+        <div class="flex items-center gap-2">
+          <span id="arenaScoreBadge" class="px-3.5 py-1.5 rounded-xl bg-[#002B5C] text-white text-xs font-extrabold">SCORE: 0 / 8</span>
+          <span id="arenaStreakBadge" class="px-3.5 py-1.5 rounded-xl bg-white dark:bg-[#0B172E] border border-rose-500/25 text-xs font-extrabold">STREAK: 0 🔥</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 shadow-xl max-w-4xl mx-auto w-full">
+        <div id="arenaPhotoBox" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+
+        <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-5">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between gap-2">
+              <span id="arenaRoundBadge" class="px-3 py-1 rounded-full bg-rose-500/15 text-rose-700 dark:text-rose-300 text-xs font-extrabold">ROUND 1 / 8</span>
+              <button type="button" onclick="restartArena()" class="px-3 py-1.5 rounded-xl border border-slate-300 dark:border-rose-400/25 text-xs font-bold">Reset Score</button>
+            </div>
+
+            <h3 id="arenaPrompt" class="text-lg sm:text-xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+
+            <div id="arenaOptions" class="space-y-2 text-xs sm:text-sm font-bold"></div>
+
+            <div id="arenaFeedback" class="hidden p-3.5 rounded-2xl text-xs sm:text-sm font-bold"></div>
+          </div>
+
+          <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-rose-400/15">
+            <button type="button" onclick="stepArena(-1)" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-rose-400/25 text-xs font-bold">← Prev</button>
+            <button type="button" onclick="stepArena(1)" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#002B5C] to-rose-600 text-white text-xs sm:text-sm font-bold">Next Round →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 08: SPEAKING & MINI-REPORT FINALE ==================== -->
+    <section data-stage="7" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-rose-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-rose-600 dark:text-rose-400 uppercase">Stage 08 · Production Finale</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Newsroom &amp; Process Pitch Builder</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Choose a topic card, build a formal passive opening, and deliver your 45-second report.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div class="lg:col-span-6 bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 rounded-3xl overflow-hidden shadow-lg">
+          <div id="finalePhotoBox" class="h-48 bg-[#091726] overflow-hidden"></div>
+          <div class="p-6 space-y-4">
+            <div class="flex flex-wrap gap-2" id="finaleTopicTabs"></div>
+            <h3 id="finaleTitle" class="text-xl font-extrabold text-[#002B5C] dark:text-white"></h3>
+            <p id="finaleTask" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300"></p>
+            <div class="p-4 rounded-2xl bg-[#F4F6FA] dark:bg-[#071224] border border-rose-500/20 text-xs space-y-1.5">
+              <div class="font-extrabold text-rose-600 dark:text-rose-400 uppercase">Target Passive Prompts</div>
+              <div id="finalePrompts" class="font-semibold text-slate-700 dark:text-slate-200 space-y-1"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 rounded-3xl p-6 space-y-4 shadow-lg">
+          <span class="text-xs font-extrabold uppercase tracking-wider text-rose-600 dark:text-rose-400">Draft Your News / Process Paragraph</span>
+          <textarea
+            rows="6"
+            placeholder="Write 3–4 sentences using at least three different passive forms (e.g. present simple passive, past simple passive, modal passive, or impersonal passive)..."
+            class="w-full p-4 rounded-2xl bg-[#F4F6FA] dark:bg-[#071224] border border-slate-200 dark:border-rose-400/25 text-xs sm:text-sm leading-relaxed outline-none focus:border-rose-400"
+          ></textarea>
+          <button type="button" onclick="document.getElementById('finaleModelBox').classList.toggle('hidden')" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-rose-400/25 text-xs font-bold text-rose-700 dark:text-rose-300">
+            Show / Hide B2 Sample Report
+          </button>
+          <div id="finaleModelBox" class="hidden p-4 rounded-2xl bg-rose-500/10 border border-rose-500/25 text-xs text-slate-700 dark:text-slate-200 leading-relaxed"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Navigation -->
+  <footer class="border-t border-rose-500/20 bg-white dark:bg-[#060E1E] py-4 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      <button id="btnPrev" type="button" onclick="goStage(currentStage - 1)" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-300 dark:border-rose-400/25 hover:bg-slate-100 dark:hover:bg-[#132C4A] disabled:opacity-30 text-xs font-bold transition">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Previous</span>
+      </button>
+
+      <span id="stageCounter" class="text-xs font-bold tracking-widest text-slate-500 dark:text-slate-400">
+        01 / 08
+      </span>
+
+      <button id="btnNext" type="button" onclick="goStage(currentStage + 1)" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#002B5C] hover:bg-rose-700 disabled:opacity-30 text-xs font-bold text-white transition">
+        <span>Next</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    const DRIVE_UPLOAD_URL = "https://script.google.com/macros/s/AKfycbwBcX7Z4aABKplkUkpYvM2wEnsBHhWCZzi7dFGDkeUarkXwv-RRI0JXAPDakjkrCrBc/exec";
+
+    const STAGES = [
+      "01 · COVER & BRIEFING",
+      "02 · CONVERSATION CARDS",
+      "03 · PASSIVE MECHANICS",
+      "04 · B2 STRUCTURES",
+      "05 · VOCABULARY LAB",
+      "06 · READING & DRILLS",
+      "07 · PASSIVE ARENA",
+      "08 · PRODUCTION FINALE"
+    ];
+
+    let currentStage = 0;
+    const stageSections = document.querySelectorAll('.stage');
+
+    function goStage(idx) {
+      if (idx < 0 || idx >= stageSections.length) return;
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      currentStage = idx;
+      stageSections.forEach((s, i) => s.classList.toggle('hidden', i !== currentStage));
+      document.getElementById('stageTitleHeader').textContent = STAGES[currentStage];
+      document.getElementById('stageCounter').textContent = `${String(currentStage + 1).padStart(2, '0')} / ${String(stageSections.length).padStart(2, '0')}`;
+      document.getElementById('stageProgress').style.width = `${((currentStage + 1) / stageSections.length) * 100}%`;
+      document.getElementById('btnPrev').disabled = currentStage === 0;
+      document.getElementById('btnNext').disabled = currentStage === stageSections.length - 1;
+      renderStagePills();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      lucide.createIcons();
+    }
+
+    function renderStagePills() {
+      document.getElementById('stagePills').innerHTML = STAGES.map((_, i) => `
+        <button type="button" onclick="goStage(${i})" class="px-2.5 py-1 rounded-lg text-xs font-bold transition ${
+          i === currentStage ? 'bg-rose-500 text-white' : 'text-white/75 hover:text-white hover:bg-white/10'
+        }">${String(i + 1).padStart(2, '0')}</button>
+      `).join('');
+    }
+
+    const themeBtn = document.getElementById('themeBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    if (localStorage.getItem('provoPassiveTheme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      themeIcon.setAttribute('data-lucide', 'moon');
+    }
+    themeBtn.addEventListener('click', () => {
+      const dark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('provoPassiveTheme', dark ? 'dark' : 'light');
+      themeIcon.setAttribute('data-lucide', dark ? 'sun' : 'moon');
+      lucide.createIcons();
+    });
+
+    function mountPhoto(container, url, altText, fallbackTitle) {
+      container.innerHTML = `<img src="${url}" alt="${altText}" class="w-full h-full object-cover" loading="lazy" />`;
+      const img = container.querySelector('img');
+      if (img) {
+        img.addEventListener('error', () => {
+          container.innerHTML = `
+            <div class="w-full h-full flex flex-col items-center justify-center bg-[#002B5C] text-white p-6 text-center">
+              <i data-lucide="repeat" class="w-8 h-8 text-rose-300 mb-2"></i>
+              <span class="text-xs font-extrabold uppercase tracking-widest">${fallbackTitle}</span>
+            </div>
+          `;
+          lucide.createIcons();
+        }, { once: true });
+      }
+    }
+
+    function pickSoniaVoice() {
+      if (!('speechSynthesis' in window)) return null;
+      const voices = window.speechSynthesis.getVoices() || [];
+      if (!voices.length) return null;
+      return (
+        voices.find(v => /sonia/i.test(v.name)) ||
+        voices.find(v => /en[-_]GB/i.test(v.lang) && /natural|online|google|neural/i.test(v.name)) ||
+        voices.find(v => /en[-_]GB/i.test(v.lang)) ||
+        voices.find(v => /^en/i.test(v.lang)) ||
+        null
+      );
+    }
+
+    if ('speechSynthesis' in window && typeof window.speechSynthesis.onvoiceschanged !== 'undefined') {
+      window.speechSynthesis.onvoiceschanged = () => pickSoniaVoice();
+    }
+
+    function speakText(text) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const runUtterance = () => {
+        const u = new SpeechSynthesisUtterance(text);
+        const voice = pickSoniaVoice();
+        if (voice) {
+          u.voice = voice;
+          u.lang = voice.lang;
+        } else {
+          u.lang = 'en-GB';
+        }
+        u.rate = 0.94;
+        u.pitch = 1.02;
+        window.speechSynthesis.speak(u);
+      };
+      if ((window.speechSynthesis.getVoices() || []).length === 0 && 'onvoiceschanged' in window) {
+        const once = () => {
+          window.speechSynthesis.removeEventListener('voiceschanged', once);
+          runUtterance();
+        };
+        window.speechSynthesis.addEventListener('voiceschanged', once);
+        setTimeout(runUtterance, 120);
+      } else {
+        runUtterance();
+      }
+    }
+
+    // ==================== 02: 10 CONVERSATION CARDS WITH IMAGES ====================
+    const Q_CARDS = [
+      { tag: "Inventions", q: "Which modern invention could you not live without, and do you know who it was invented by?", follow: "How was everyday life changed after it was introduced?", photo: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=950&q=80", starters: ["• One invention I rely on daily is..., which was invented by...", "• Before it was developed, people had to..."] },
+      { tag: "Landmarks & Architecture", q: "What is the most famous building or monument in your city or country, and when was it built?", follow: "Why do you think it was designed that way?", photo: "https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&w=950&q=80", starters: ["• One iconic landmark is..., which was built in...", "• It is visited by millions of people every year because..."] },
+      { tag: "Local Food & Craft", q: "Think of a traditional dish or local product from your region: how is it made?", follow: "Describe the main steps without worrying about who makes it.", photo: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=950&q=80", starters: ["• First, the ingredients are mixed together and...", "• Traditionally, it is served with..."] },
+      { tag: "Breaking News", q: "What big news story has been talked about everywhere this week?", follow: "How is the story being reported on TV versus social media?", photo: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=950&q=80", starters: ["• Lately, a lot has been said about...", "• It is widely believed that the situation will..."] },
+      { tag: "Lost & Found", q: "Have you ever had something valuable stolen, lost, or damaged while traveling?", follow: "Was it ever recovered or replaced?", photo: "https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=950&q=80", starters: ["• Once, my ___ was stolen/lost while I was...", "• Luckily, it was found by... / Unfortunately, it was never..."] },
+      { tag: "Cinema & Books", q: "What is a film or series that was adapted from a book you loved? Was the book better?", follow: "Who was the film directed by?", photo: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=950&q=80", starters: ["• A great example is..., which was adapted from...", "• Even though the film was directed by..., I still prefer..."] },
+      { tag: "City Changes", q: "How is your neighbourhood being changed right now? Are new bike lanes, parks, or buildings being built?", follow: "Do locals feel the changes are needed?", photo: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=950&q=80", starters: ["• At the moment, several streets are being...", "• Many residents feel that more green spaces should be..."] },
+      { tag: "Rules & Laws", q: "What is one rule in schools, airports, or cities that you think should be changed?", follow: "Why was that rule originally created?", photo: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=950&q=80", starters: ["• In my opinion, passengers shouldn't be forced to...", "• That rule was probably introduced to..."] },
+      { tag: "Urban Legends", q: "Is there a famous rumour or myth in your country that is often repeated even though it isn't true?", follow: "Why do people still believe it?", photo: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=950&q=80", starters: ["• It is often claimed that..., but in reality...", "• People have been told this story for generations."] },
+      { tag: "Getting Things Done", q: "Do you prefer fixing things yourself or having them repaired by a professional?", follow: "When was the last time you had something checked or serviced?", photo: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=950&q=80", starters: ["• When it comes to electronics or cars, I prefer to have them...", "• Last month I had my ___ repaired/checked because..."] }
+    ];
+    let qIdx = 0;
+
+    function renderQ(idx) {
+      qIdx = (idx + Q_CARDS.length) % Q_CARDS.length;
+      const c = Q_CARDS[qIdx];
+      document.getElementById('qBadge').textContent = `Q${qIdx + 1} / ${Q_CARDS.length}`;
+      document.getElementById('qTag').textContent = c.tag;
+      document.getElementById('qText').textContent = c.q;
+      document.getElementById('qFollow').textContent = c.follow;
+      document.getElementById('qStartersBox').innerHTML = c.starters.map(s => `<div>${s}</div>`).join('');
+      document.getElementById('qStartersBox').classList.add('hidden');
+      mountPhoto(document.getElementById('qPhotoBox'), c.photo, c.tag, c.tag);
+      document.getElementById('qPills').innerHTML = Q_CARDS.map((_, i) => `
+        <button type="button" onclick="renderQ(${i})" class="w-8 h-8 rounded-lg text-xs font-extrabold ${
+          i === qIdx ? 'bg-[#002B5C] text-white' : 'bg-white dark:bg-[#0B172E] border border-rose-500/20'
+        }">${i + 1}</button>
+      `).join('');
+    }
+    window.stepQ = (d) => renderQ(qIdx + d);
+    window.shuffleQ = () => renderQ(Math.floor(Math.random() * Q_CARDS.length));
+    window.speakQ = () => speakText(`${Q_CARDS[qIdx].q} ${Q_CARDS[qIdx].follow}`);
+
+    // ==================== 03: INTERACTIVE SVG TENSE MATRIX ====================
+    const TENSE_MATRIX = [
+      {
+        label: "Present Simple",
+        actSubj: "Engineers", actVerb: "design", actObj: "electric cars",
+        pasSubj: "Electric cars", pasVerb: "are designed", pasAgent: "(by engineers)",
+        full: "Active: Engineers design electric cars. → Passive: Electric cars are designed (by engineers).",
+        tip: "Use am / is / are + Past Participle for habits, general truths, and industrial processes."
+      },
+      {
+        label: "Present Continuous",
+        actSubj: "Workers", actVerb: "are building", actObj: "a new bridge",
+        pasSubj: "A new bridge", pasVerb: "is being built", pasAgent: "(by workers)",
+        full: "Active: Workers are building a new bridge. → Passive: A new bridge is being built.",
+        tip: "Keep the -ing on BE: am / is / are + BEING + Past Participle."
+      },
+      {
+        label: "Past Simple",
+        actSubj: "Fleming", actVerb: "discovered", actObj: "penicillin",
+        pasSubj: "Penicillin", pasVerb: "was discovered", pasAgent: "by Fleming",
+        full: "Active: Fleming discovered penicillin. → Passive: Penicillin was discovered by Fleming.",
+        tip: "Use was / were + Past Participle for completed historical events and discoveries."
+      },
+      {
+        label: "Past Continuous",
+        actSubj: "Mechanics", actVerb: "were repairing", actObj: "the train",
+        pasSubj: "The train", pasVerb: "was being repaired", pasAgent: "(by mechanics)",
+        full: "Active: Mechanics were repairing the train. → Passive: The train was being repaired.",
+        tip: "Use was / were + BEING + Past Participle for an action in progress at a past moment."
+      },
+      {
+        label: "Present Perfect",
+        actSubj: "Hackers", actVerb: "have stolen", actObj: "user data",
+        pasSubj: "User data", pasVerb: "has been stolen", pasAgent: "(by hackers)",
+        full: "Active: Hackers have stolen user data. → Passive: User data has been stolen.",
+        tip: "Watch subject-verb agreement: 'User data' is uncountable singular → HAS been stolen."
+      },
+      {
+        label: "Future (Will) & Modals",
+        actSubj: "The board", actVerb: "will announce", actObj: "the results",
+        pasSubj: "The results", pasVerb: "will be announced", pasAgent: "(by the board)",
+        full: "Active: The board will announce the results. → Passive: The results will be announced.",
+        tip: "After will / must / can / should, always use bare infinitive BE + Past Participle."
+      }
+    ];
+    let selectedTenseIdx = 0;
+
+    function renderTenseDiagram() {
+      const t = TENSE_MATRIX[selectedTenseIdx];
+      document.getElementById('tenseSelectorPills').innerHTML = TENSE_MATRIX.map((item, i) => `
+        <button type="button" onclick="selectedTenseIdx=${i}; renderTenseDiagram();" class="px-3 py-1.5 rounded-xl text-xs font-bold transition ${
+          i === selectedTenseIdx
+            ? 'bg-rose-600 text-white'
+            : 'bg-[#F4F6FA] dark:bg-[#071224] border border-rose-500/20 hover:border-rose-400'
+        }">${item.label}</button>
+      `).join('');
+
+      document.getElementById('svgActSubj').textContent = t.actSubj;
+      document.getElementById('svgActVerb').textContent = t.actVerb;
+      document.getElementById('svgActObj').textContent = t.actObj;
+      document.getElementById('svgPasSubj').textContent = t.pasSubj;
+      document.getElementById('svgPasVerb').textContent = t.pasVerb;
+      document.getElementById('svgPasAgent').textContent = t.pasAgent;
+      document.getElementById('tenseFullPassive').textContent = t.full;
+      document.getElementById('tenseGrammarTip').textContent = t.tip;
+    }
+    window.speakSelectedTense = () => speakText(TENSE_MATRIX[selectedTenseIdx].full);
+
+    // ==================== 04: ADVANCED B2 PASSIVE STRUCTURES (CARD-BY-CARD) ====================
+    const B2_STRUCTURES = [
+      {
+        tag: "01 · TWO-OBJECT VERBS (GIVE, OFFER, SEND, AWARD)",
+        title: "Making a Person the Passive Subject",
+        desc: "Verbs with two objects (give someone something) have two passive forms. In natural English, we usually make the PERSON the subject.",
+        ex1: "Active: The company offered Maya a promotion.",
+        ex2: "Natural Passive: Maya was offered a promotion. (More natural than 'A promotion was offered to Maya.')",
+        photo: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        tag: "02 · IMPERSONAL REPORTING PASSIVES",
+        title: "It is believed that... / He is said to...",
+        desc: "Essential for B2 essays and journalism when reporting general opinions without naming a specific source.",
+        ex1: "Pattern A: It is widely believed that sleep improves memory.",
+        ex2: "Pattern B: Sleep is widely believed to improve memory.",
+        photo: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        tag: "03 · PAST MODAL PASSIVES (DEDUCTION & REGRET)",
+        title: "Must have been / Should have been + V3",
+        desc: "Used to speculate about past events or criticize something that was not done properly.",
+        ex1: "Deduction: The package must have been delivered to the wrong flat.",
+        ex2: "Criticism: These safety checks should have been completed yesterday.",
+        photo: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        tag: "04 · HAVE / GET SOMETHING DONE (CAUSATIVE)",
+        title: "Arranging for a Professional to Do a Service",
+        desc: "When you pay or arrange for someone else to perform a service for you (haircut, car repair, eye test), use have/get + object + V3.",
+        ex1: "Service: We are having the kitchen painted next week.",
+        ex2: "Informal / Spoken: I need to get my screen repaired.",
+        photo: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=900&q=80"
+      }
+    ];
+    let b2Idx = 0;
+
+    function renderB2Card() {
+      b2Idx = (b2Idx + B2_STRUCTURES.length) % B2_STRUCTURES.length;
+      const item = B2_STRUCTURES[b2Idx];
+
+      document.getElementById('b2PassiveCardBox').innerHTML = `
+        <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 shadow-xl">
+          <div id="b2PhotoBox" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+          <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between gap-2">
+                <span class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">STRUCTURE ${b2Idx + 1} / ${B2_STRUCTURES.length}</span>
+                <button type="button" onclick="speakText('${item.ex2.replace(/'/g, "\\'")}')" class="inline-flex items-center gap-1 text-xs font-bold text-rose-600 dark:text-rose-300">
+                  <i data-lucide="volume-2" class="w-4 h-4"></i> Hear Example
+                </button>
+              </div>
+              <span class="block text-[11px] font-extrabold text-rose-600 dark:text-rose-400">${item.tag}</span>
+              <h3 class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white">${item.title}</h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">${item.desc}</p>
+              <div class="p-3.5 rounded-2xl bg-[#F4F6FA] dark:bg-[#071224] border border-rose-500/20 text-xs space-y-1.5">
+                <div class="text-slate-500 dark:text-slate-400 font-semibold">${item.ex1}</div>
+                <div class="text-[#002B5C] dark:text-rose-200 font-extrabold">${item.ex2}</div>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-rose-400/15">
+              <button type="button" onclick="b2Idx--; renderB2Card();" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-rose-400/25 text-xs font-bold">← Prev</button>
+              <div class="flex gap-1.5">
+                ${B2_STRUCTURES.map((_, i) => `<button type="button" onclick="b2Idx=${i}; renderB2Card();" class="w-7 h-7 rounded-lg text-xs font-bold ${i === b2Idx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#071224]'}">${i + 1}</button>`).join('')}
+              </div>
+              <button type="button" onclick="b2Idx++; renderB2Card();" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+            </div>
+          </div>
+        </div>
+      `;
+      mountPhoto(document.getElementById('b2PhotoBox'), item.photo, item.title, item.title);
+      lucide.createIcons();
+    }
+
+    window.checkB2Mini = (picked) => {
+      const fb = document.getElementById('b2MiniFb');
+      fb.classList.remove('hidden');
+      if (picked === 'A') {
+        fb.className = 'p-3 rounded-xl text-xs font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = '✓ Spot on! "It is widely believed that..." uses the passive form of "believe".';
+      } else {
+        fb.className = 'p-3 rounded-xl text-xs font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = '✗ Watch out: "It widely believes" is active! You need BE + V3 ("It is widely believed").';
+      }
+    };
+
+    // ==================== 05: 10 ILLUSTRATED PASSIVE VOCABULARY CARDS ====================
+    const PASSIVE_VOCAB = [
+      { term: "be held (in / at)", tag: "Events & Conferences", def: "Take place or be organized in a specific venue or city.", ex: "The next climate summit will be held in Geneva.", photo: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=900&q=80" },
+      { term: "be launched", tag: "Tech & Products", def: "Be introduced to the public or market for the first time.", ex: "The new satellite was launched from French Guiana last night.", photo: "https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&w=900&q=80" },
+      { term: "be founded (in / by)", tag: "Companies & History", def: "Be established or started as an organization or institution.", ex: "The university was founded over four hundred years ago.", photo: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=900&q=80" },
+      { term: "be awarded", tag: "Prizes & Grants", def: "Receive a prize, contract, or official recognition.", ex: "She was awarded first prize for her documentary.", photo: "https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?auto=format&fit=crop&w=900&q=80" },
+      { term: "be banned (from)", tag: "Rules & Law", def: "Be officially forbidden by law or authority.", ex: "Single-use plastics have been banned in several countries.", photo: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=900&q=80" },
+      { term: "be postponed / called off", tag: "Schedules & Matches", def: "Be delayed to a later date (postponed) or cancelled completely (called off).", ex: "The outdoor concert was postponed due to heavy storms.", photo: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=900&q=80" },
+      { term: "be manufactured / assembled", tag: "Industry", def: "Be produced in large quantities using machinery.", ex: "These components are manufactured in northern Spain.", photo: "https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=900&q=80" },
+      { term: "be sentenced to", tag: "Crime & Justice", def: "Receive a punishment decided by a judge in court.", ex: "The fraudster was sentenced to three years in prison.", photo: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=900&q=80" },
+      { term: "be renovated / restored", tag: "Buildings & Art", def: "Be repaired and brought back to excellent condition.", ex: "The historic theatre is currently being renovated.", photo: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80" },
+      { term: "be widely regarded as", tag: "B2 Academic / Essay", def: "Be generally considered by most people or experts to be.", ex: "He is widely regarded as one of the finest architects of his generation.", photo: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80" }
+    ];
+    let vocIdx = 0;
+    let vocView = 'single';
+
+    window.setVocView = (mode) => {
+      vocView = mode;
+      document.getElementById('vocSingleBox').classList.toggle('hidden', mode !== 'single');
+      document.getElementById('vocGridBox').classList.toggle('hidden', mode !== 'grid');
+      document.getElementById('btnVocSingle').className = mode === 'single'
+        ? 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-rose-600 text-white transition'
+        : 'px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition';
+      document.getElementById('btnVocGrid').className = mode === 'grid'
+        ? 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-rose-600 text-white transition'
+        : 'px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition';
+      renderVocab();
+    };
+
+    function renderVocab() {
+      vocIdx = (vocIdx + PASSIVE_VOCAB.length) % PASSIVE_VOCAB.length;
+      const v = PASSIVE_VOCAB[vocIdx];
+      const safeEx = v.ex.replace(/'/g, "\\'");
+
+      document.getElementById('vocSingleBox').innerHTML = `
+        <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 shadow-xl">
+          <div id="vocPhotoBox" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+          <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">TERM ${vocIdx + 1} / ${PASSIVE_VOCAB.length}</span>
+                  <span class="px-3 py-1 rounded-full bg-rose-500/15 text-rose-700 dark:text-rose-300 text-xs font-extrabold">${v.tag}</span>
+                </div>
+                <button type="button" onclick="speakText('${safeEx}')" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-rose-600 text-white text-xs font-bold">
+                  <i data-lucide="volume-2" class="w-4 h-4"></i> Hear Example
+                </button>
+              </div>
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">${v.term}</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300">${v.def}</p>
+              <div class="p-4 rounded-2xl bg-[#F4F6FA] dark:bg-[#071224] border border-rose-500/20">
+                <p class="text-sm italic font-semibold text-[#002B5C] dark:text-rose-200">“${v.ex}”</p>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-rose-400/15">
+              <button type="button" onclick="vocIdx--; renderVocab();" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-rose-400/25 text-xs font-bold">← Prev</button>
+              <div class="flex flex-wrap gap-1">
+                ${PASSIVE_VOCAB.map((_, i) => `<button type="button" onclick="vocIdx=${i}; renderVocab();" class="w-7 h-7 rounded-lg text-xs font-bold ${i === vocIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#071224]'}">${i + 1}</button>`).join('')}
+              </div>
+              <button type="button" onclick="vocIdx++; renderVocab();" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+            </div>
+          </div>
+        </div>
+      `;
+      mountPhoto(document.getElementById('vocPhotoBox'), v.photo, v.term, v.term.toUpperCase());
+
+      document.getElementById('vocGridBox').innerHTML = PASSIVE_VOCAB.map(item => `
+        <div class="bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 rounded-3xl overflow-hidden shadow-md flex flex-col">
+          <img src="${item.photo}" alt="${item.term}" class="h-36 w-full object-cover" loading="lazy" />
+          <div class="p-5 flex-1 flex flex-col justify-between gap-3">
+            <div class="space-y-1.5">
+              <div class="flex items-start justify-between gap-2">
+                <h4 class="text-base font-extrabold text-[#002B5C] dark:text-white">${item.term}</h4>
+                <button type="button" onclick="speakText('${item.ex.replace(/'/g, "\\'")}')" class="p-1.5 rounded-lg bg-[#F4F6FA] dark:bg-[#071224] text-rose-600 dark:text-rose-300"><i data-lucide="volume-2" class="w-4 h-4"></i></button>
+              </div>
+              <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300">${item.tag}</span>
+              <p class="text-xs text-slate-600 dark:text-slate-300">${item.def}</p>
+            </div>
+            <p class="text-xs italic text-[#002B5C] dark:text-rose-200 border-t border-slate-100 dark:border-rose-400/15 pt-2">“${item.ex}”</p>
+          </div>
+        </div>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    // ==================== 06: READING & TRANSFORMATIONS ====================
+    window.speakPassiveArticle = () => {
+      speakText("Over the past decade, billions of euros have been invested in cleaner urban infrastructure. In several European cities, experimental cycle paths are currently being fitted with durable solar panels capable of powering street lights at night. It is widely believed that smart surfaces could transform how electricity is generated in crowded neighbourhoods. However, engineers warn that installation costs must be reduced before the technology can be rolled out nationwide.");
+    };
+
+    window.togglePassiveHighlights = () => {
+      document.querySelectorAll('.pas-hl').forEach(el => el.classList.toggle('bg-rose-400/25'));
+    };
+
+    const TRANSFORM_DRILLS = [
+      {
+        orig: "1. Active: Someone stole my laptop from the library yesterday.",
+        cue: "Rewrite in Passive (omit unnecessary agent):",
+        ans: "✓ My laptop was stolen from the library yesterday."
+      },
+      {
+        orig: "2. Active: Technicians are upgrading the server right now.",
+        cue: "Rewrite using Present Continuous Passive:",
+        ans: "✓ The server is being upgraded right now."
+      },
+      {
+        orig: "3. Active: People say that this castle is haunted.",
+        cue: "Rewrite using Impersonal Passive ('It is...'):",
+        ans: "✓ It is said that this castle is haunted. (or: This castle is said to be haunted.)"
+      },
+      {
+        orig: "4. Active: A local mechanic repaired our car yesterday.",
+        cue: "Rewrite using Causative ('have/get something done'):",
+        ans: "✓ We had (or got) our car repaired yesterday."
+      }
+    ];
+
+    document.getElementById('transformGrid').innerHTML = TRANSFORM_DRILLS.map(t => `
+      <div class="bg-white dark:bg-[#0B172E] border-[1.5px] border-rose-500/25 rounded-3xl p-5 space-y-3 shadow-md">
+        <p class="text-sm font-bold text-[#002B5C] dark:text-white">${t.orig}</p>
+        <p class="text-xs font-extrabold text-rose-600 dark:text-rose-400">${t.cue}</p>
+        <input type="text" placeholder="Type your passive sentence..." class="w-full px-3.5 py-2 rounded-xl bg-[#F4F6FA] dark:bg-[#071224] border border-slate-200 dark:border-rose-400/25 text-xs outline-none focus:border-rose-400" />
+        <button type="button" onclick="this.nextElementSibling.classList.toggle('hidden')" class="px-3.5 py-1.5 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Reveal Model Answer</button>
+        <div class="hidden p-3 rounded-xl bg-emerald-500/15 text-emerald-800 dark:text-emerald-300 text-xs sm:text-sm font-bold">${t.ans}</div>
+      </div>
+    `).join('');
+
+    // ==================== 07: PASSIVE ARENA GAME (8 ROUNDS WITH IMAGES) ====================
+    const ARENA_ROUNDS = [
+      {
+        prompt: "1. Choose the correct passive form: “The Sistine Chapel ceiling ___ by Michelangelo.”",
+        opts: ["A) was painted", "B) painted", "C) has painted"],
+        ans: 0,
+        why: "Completed historical action + agent ('by Michelangelo') → Past Simple Passive ('was painted').",
+        photo: "https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        prompt: "2. Spot the natural sentence (omit redundant agents):",
+        opts: ["A) The thief was arrested by the police at midnight.", "B) The thief was arrested at midnight."],
+        ans: 1,
+        why: "When the agent is completely obvious ('by the police'), omitting it sounds much more natural.",
+        photo: "https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        prompt: "3. “Look at the cranes! A new hospital ___ next to the park.”",
+        opts: ["A) is building", "B) is being built", "C) has been build"],
+        ans: 1,
+        why: "Action happening right now → Present Continuous Passive ('is being built').",
+        photo: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        prompt: "4. “All confidential files ___ before you leave the office.”",
+        opts: ["A) must be locked", "B) must locked", "C) must to be locked"],
+        ans: 0,
+        why: "Modal + bare infinitive 'be' + past participle ('must be locked').",
+        photo: "https://images.unsplash.com/photo-1568992687947-868a62a9f521?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        prompt: "5. “She ___ a scholarship to study engineering in London.”",
+        opts: ["A) awarded", "B) was awarded", "C) was awarding"],
+        ans: 1,
+        why: "Two-object verb ('award someone something') → person becomes passive subject ('was awarded').",
+        photo: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        prompt: "6. “The flight ___ because of thick fog at the airport.”",
+        opts: ["A) has cancelled", "B) has been cancelled", "C) was cancelling"],
+        ans: 1,
+        why: "Recent news affecting the present → Present Perfect Passive ('has been cancelled').",
+        photo: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        prompt: "7. “I'm going to the optician's to ___.”",
+        opts: ["A) have my eyes tested", "B) test my eyes by them", "C) have tested my eyes"],
+        ans: 0,
+        why: "Causative structure: have + object ('my eyes') + past participle ('tested').",
+        photo: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        prompt: "8. “___ that regular exercise lowers anxiety.”",
+        opts: ["A) It widely believes", "B) It is widely believed", "C) There is widely believed"],
+        ans: 1,
+        why: "Impersonal reporting passive starts with 'It is + adverb + past participle + that...'.",
+        photo: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=80"
+      }
+    ];
+    let arenaIdx = 0;
+    let arenaScore = 0;
+    let arenaStreak = 0;
+    const arenaSolved = new Set();
+
+    function renderArena() {
+      arenaIdx = (arenaIdx + ARENA_ROUNDS.length) % ARENA_ROUNDS.length;
+      const r = ARENA_ROUNDS[arenaIdx];
+      document.getElementById('arenaRoundBadge').textContent = `ROUND ${arenaIdx + 1} / ${ARENA_ROUNDS.length}`;
+      document.getElementById('arenaPrompt').textContent = r.prompt;
+      document.getElementById('arenaFeedback').classList.add('hidden');
+      mountPhoto(document.getElementById('arenaPhotoBox'), r.photo, `Round ${arenaIdx + 1}`, `ROUND ${arenaIdx + 1}`);
+      document.getElementById('arenaOptions').innerHTML = r.opts.map((op, i) => `
+        <button type="button" onclick="pickArenaOption(${i})" class="w-full text-left p-3.5 rounded-2xl bg-[#F4F6FA] dark:bg-[#071224] border-[1.5px] border-rose-500/20 hover:border-rose-400 transition">${op}</button>
+      `).join('');
+    }
+
+    window.pickArenaOption = (picked) => {
+      const r = ARENA_ROUNDS[arenaIdx];
+      const fb = document.getElementById('arenaFeedback');
+      fb.classList.remove('hidden');
+      if (picked === r.ans) {
+        if (!arenaSolved.has(arenaIdx)) {
+          arenaSolved.add(arenaIdx);
+          arenaScore++;
+        }
+        arenaStreak++;
+        fb.className = 'p-3.5 rounded-2xl text-xs sm:text-sm font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Correct! ${r.why}`;
+      } else {
+        arenaStreak = 0;
+        fb.className = 'p-3.5 rounded-2xl text-xs sm:text-sm font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `✗ Not quite — ${r.why}`;
+      }
+      document.getElementById('arenaScoreBadge').textContent = `SCORE: ${arenaScore} / ${ARENA_ROUNDS.length}`;
+      document.getElementById('arenaStreakBadge').textContent = `STREAK: ${arenaStreak} 🔥`;
+    };
+    window.stepArena = (d) => { arenaIdx += d; renderArena(); };
+    window.restartArena = () => {
+      arenaScore = 0;
+      arenaStreak = 0;
+      arenaSolved.clear();
+      arenaIdx = 0;
+      document.getElementById('arenaScoreBadge').textContent = `SCORE: 0 / ${ARENA_ROUNDS.length}`;
+      document.getElementById('arenaStreakBadge').textContent = `STREAK: 0 🔥`;
+      renderArena();
+    };
+
+    // ==================== 08: PRODUCTION FINALE ====================
+    const FINALE_TOPICS = [
+      {
+        label: "1. Breaking News",
+        title: "Museum Art Theft Report",
+        task: "Report the overnight theft of a famous painting without knowing who took it.",
+        prompts: ["• was stolen overnight...", "• security cameras had been disabled...", "• an investigation has been launched..."],
+        photo: "https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=900&q=80",
+        model: "“Last night, a nineteenth-century landscape painting was stolen from the City Art Gallery. According to officials, the alarm system had been disabled before the gallery closed, and the frame was found abandoned near the rear exit. A full police investigation has now been launched.”"
+      },
+      {
+        label: "2. How It's Made",
+        title: "Artisan Chocolate Production",
+        task: "Explain the stages of turning raw cacao beans into chocolate bars.",
+        prompts: ["• cocoa beans are harvested and dried...", "• they are roasted at high temperatures...", "• sugar and milk are blended before..."],
+        photo: "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=900&q=80",
+        model: "“First, ripe cacao pods are harvested by hand and the beans are left to ferment in the sun. Next, the dried beans are roasted and crushed into a rich paste. Finally, sugar and milk are blended in before the chocolate is poured into moulds and wrapped.”"
+      },
+      {
+        label: "3. City Transformation",
+        title: "Pedestrianizing the Old Town",
+        task: "Summarize how your city centre is being redesigned for cleaner mobility.",
+        prompts: ["• private cars have been banned...", "• wider pavements are currently being built...", "• it is hoped that local air quality..."],
+        photo: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=900&q=80",
+        model: "“Over the last six months, private cars have been banned from three main streets in the old town. Wider pavements and cycle lanes are currently being built, and new trees will be planted next spring. It is hoped that both air quality and local foot traffic will improve.”"
+      }
+    ];
+    let finIdx = 0;
+
+    function renderFinale() {
+      const f = FINALE_TOPICS[finIdx];
+      document.getElementById('finaleTopicTabs').innerHTML = FINALE_TOPICS.map((item, i) => `
+        <button type="button" onclick="finIdx=${i}; renderFinale();" class="px-3 py-1.5 rounded-xl text-xs font-bold transition ${
+          i === finIdx ? 'bg-[#002B5C] text-white' : 'bg-[#F4F6FA] dark:bg-[#071224] border border-rose-500/20'
+        }">${item.label}</button>
+      `).join('');
+      mountPhoto(document.getElementById('finalePhotoBox'), f.photo, f.title, f.title);
+      document.getElementById('finaleTitle').textContent = f.title;
+      document.getElementById('finaleTask').textContent = f.task;
+      document.getElementById('finalePrompts').innerHTML = f.prompts.map(p => `<div>${p}</div>`).join('');
+      document.getElementById('finaleModelBox').innerHTML = `<strong>B2 Sample Report:</strong> ${f.model}`;
+      document.getElementById('finaleModelBox').classList.add('hidden');
+    }
+
+    // Init
+    goStage(0);
+    renderQ(0);
+    renderTenseDiagram();
+    renderB2Card();
+    renderVocab();
+    renderArena();
+    renderFinale();
+    lucide.createIcons();
+  </script>
+</body>
+</html>

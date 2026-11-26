@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OTE PREP (B1/B2) · WRITING PART 2: THE ESSAY | PROVO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <style>
+    @keyframes stageIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .stage-anim { animation: stageIn 0.24s ease-out forwards; }
+  </style>
+</head>
+<body class="bg-[#F2F7FB] text-slate-900 dark:bg-[#061120] dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
+
+  <!-- Sticky Top Bar (OTE Prep Sky/Cyan Accent) -->
+  <header class="sticky top-0 z-40 bg-[#002B5C] text-white border-b border-sky-400/35 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2.5">
+        <a href="index.html" class="flex items-center shrink-0" title="PROVO">
+          <img
+            src="https://i.postimg.cc/vBt4qH44/download.png"
+            alt="PROVO"
+            class="h-8 w-auto object-contain block"
+            onerror="this.style.display='none'; document.getElementById('provoFallback').classList.remove('hidden');"
+          />
+          <span id="provoFallback" class="hidden font-extrabold tracking-widest text-lg text-white">PROVO</span>
+        </a>
+        <span class="px-2.5 py-0.5 rounded-full bg-sky-400/25 border border-sky-300/45 text-sky-100 text-[11px] font-bold tracking-wider">
+          OTE PREP (B1 / B2) · WRITING
+        </span>
+        <span id="stageTitleHeader" class="hidden xl:inline-block text-xs font-bold tracking-wider text-sky-200">
+          01 · EXAM BRIEFING
+        </span>
+      </div>
+
+      <div id="stagePills" class="flex items-center gap-1 overflow-x-auto py-1"></div>
+
+      <div class="flex items-center gap-2 shrink-0">
+        <button
+          id="themeBtn"
+          type="button"
+          class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition"
+          title="Toggle Theme"
+        >
+          <i id="themeIcon" data-lucide="sun" class="w-4 h-4"></i>
+        </button>
+        <a
+          href="index.html"
+          class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs font-bold bg-white/10 hover:bg-white/20 text-white transition"
+        >
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          <span class="hidden sm:inline">PORTAL</span>
+        </a>
+      </div>
+    </div>
+    <div class="w-full h-1.5 bg-black/25">
+      <div id="stageProgress" class="h-full bg-sky-400 transition-all duration-300" style="width: 12.5%"></div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl w-full mx-auto px-4 sm:px-6 py-7 sm:py-10 flex-1 flex flex-col justify-center">
+
+    <!-- ==================== 01: EXAM BRIEFING ==================== -->
+    <section data-stage="0" class="stage stage-anim">
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0B1B32] border-[1.5px] border-sky-500/25 dark:border-sky-400/25 shadow-xl">
+        <div class="lg:col-span-5 h-64 sm:h-auto relative bg-[#091726] overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1050&q=80"
+            alt="Writing an essay notebook and laptop"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#061120]/90 via-[#061120]/25 to-transparent"></div>
+          <div class="absolute bottom-5 left-5 right-5 space-y-1 text-white">
+            <span class="text-xs font-bold tracking-widest text-sky-300 uppercase">Oxford Test of English · Writing</span>
+            <p class="text-sm font-semibold text-slate-200">Writing Part 2 · 100–160 Words · 25 Minutes</p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 p-7 sm:p-10 flex flex-col justify-center space-y-5">
+          <span class="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-sky-500/15 border border-sky-400/35 text-sky-700 dark:text-sky-300 text-xs font-bold tracking-wider">
+            <i data-lucide="pen-tool" class="w-4 h-4"></i>
+            <span>PROVO STAGE LAB · OTE WRITING PART 2</span>
+          </span>
+
+          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight text-[#002B5C] dark:text-white">
+            Mastering the <span class="text-sky-600 dark:text-sky-400">OTE Essay</span>
+          </h1>
+
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            In <strong>Writing Part 2</strong> of the Oxford Test of English (B1/B2), you write a structured <strong>100–160 word</strong> essay in <strong>25 minutes</strong> responding to the prompt and developing your own arguments clearly. Warm up with relaxed conversation questions, explore paragraph blueprints card by card, upgrade B1 to B2 connectors, inspect a scored model, and write &amp; submit your timed essay directly to Drive.
+          </p>
+
+          <!-- Key OTE Specs Strip -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1 text-xs">
+            <div class="p-3 rounded-2xl bg-[#F2F7FB] dark:bg-[#071324] border-[1.5px] border-sky-500/20">
+              <div class="font-extrabold text-sky-600 dark:text-sky-400">WORD TARGET</div>
+              <div class="font-extrabold text-sm text-[#002B5C] dark:text-white mt-0.5">100 – 160 Words</div>
+            </div>
+            <div class="p-3 rounded-2xl bg-[#F2F7FB] dark:bg-[#071324] border-[1.5px] border-sky-500/20">
+              <div class="font-extrabold text-sky-600 dark:text-sky-400">EXAM TIME</div>
+              <div class="font-extrabold text-sm text-[#002B5C] dark:text-white mt-0.5">25 Minutes</div>
+            </div>
+            <div class="p-3 rounded-2xl bg-[#F2F7FB] dark:bg-[#071324] border-[1.5px] border-sky-500/20">
+              <div class="font-extrabold text-sky-600 dark:text-sky-400">TASK FOCUS</div>
+              <div class="font-extrabold text-sm text-[#002B5C] dark:text-white mt-0.5">Prompt + Own Ideas</div>
+            </div>
+            <div class="p-3 rounded-2xl bg-[#F2F7FB] dark:bg-[#071324] border-[1.5px] border-sky-500/20">
+              <div class="font-extrabold text-sky-600 dark:text-sky-400">REGISTER</div>
+              <div class="font-extrabold text-sm text-[#002B5C] dark:text-white mt-0.5">Neutral / Formal</div>
+            </div>
+          </div>
+
+          <div class="pt-1 flex flex-wrap items-center gap-4">
+            <button
+              type="button"
+              onclick="goStage(1)"
+              class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-[#002B5C] via-[#005A8D] to-[#0089A7] hover:opacity-95 text-white text-sm sm:text-base font-bold shadow-lg transition"
+            >
+              <span>Start Stage 02: Conversation Warm-Up</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+            <button
+              type="button"
+              onclick="goStage(7)"
+              class="inline-flex items-center gap-2 px-4 py-3 rounded-2xl border border-sky-500/35 text-sky-700 dark:text-sky-300 hover:bg-sky-500/10 text-xs font-bold transition"
+            >
+              <i data-lucide="file-edit" class="w-4 h-4"></i>
+              <span>Jump to Stage 08: Live Essay Studio</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 02: RELAXED CONVERSATION WARM-UP WITH IMAGES ==================== -->
+    <section data-stage="1" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-sky-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-sky-600 dark:text-sky-400 uppercase">Stage 02 · Icebreaker &amp; Speaking</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Writing &amp; Exam Essays: Conversation Cards (8)</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Relaxed chat about exams, writing habits, and blank-page moments.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0B1B32] border-[1.5px] border-sky-500/25 shadow-xl max-w-4xl mx-auto w-full">
+        <div id="convPhotoBox" class="lg:col-span-5 h-60 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+
+        <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-5">
+          <div class="space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-2">
+                <span id="convBadge" class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">CARD 1 / 8</span>
+                <span id="convTag" class="px-3 py-1 rounded-full bg-sky-500/15 text-sky-700 dark:text-sky-300 text-xs font-bold"></span>
+              </div>
+              <button type="button" onclick="speakConvQuestion()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold transition">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                <span>Listen</span>
+              </button>
+            </div>
+
+            <h3 id="convQuestion" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+            <p id="convFollowUp" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300"></p>
+
+            <div>
+              <button type="button" onclick="document.getElementById('convHintsBox').classList.toggle('hidden')" class="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-sky-700 dark:text-sky-300 hover:underline">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                <span>Show Chat Starters</span>
+              </button>
+              <div id="convHintsBox" class="hidden mt-2.5 p-3.5 rounded-2xl bg-[#F2F7FB] dark:bg-[#071324] border border-sky-500/20 text-xs space-y-1 text-slate-700 dark:text-slate-200"></div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-sky-400/15">
+            <button type="button" onclick="stepConv(-1)" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">← Prev</button>
+            <div id="convDots" class="flex flex-wrap gap-1"></div>
+            <button type="button" onclick="stepConv(1)" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 03: CARD-BY-CARD 4-PARAGRAPH BLUEPRINT + MINI EXERCISE ==================== -->
+    <section data-stage="2" class="stage hidden stage-anim space-y-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-sky-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-sky-600 dark:text-sky-400 uppercase">Stage 03 · Card-by-Card Structure &amp; Word Budget</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">The 140-Word OTE Essay Blueprint</h2>
+        </div>
+        <span class="px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 text-xs font-extrabold">Target: 100–160 Words</span>
+      </div>
+
+      <!-- Card-by-Card Blueprint Viewer -->
+      <div class="bg-white dark:bg-[#0B1B32] border-[1.5px] border-sky-500/25 rounded-3xl p-6 sm:p-9 max-w-4xl mx-auto w-full space-y-5 shadow-xl">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div class="flex items-center gap-2">
+            <span id="bpBadge" class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">PART 1 / 4</span>
+            <span id="bpBudgetTag" class="px-3 py-1 rounded-full bg-sky-500/15 text-sky-700 dark:text-sky-300 text-xs font-extrabold"></span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <button type="button" onclick="stepBlueprint(-1)" class="p-2 rounded-xl border border-slate-200 dark:border-sky-400/25 hover:bg-slate-100 dark:hover:bg-[#132C4A]"><i data-lucide="chevron-left" class="w-4 h-4"></i></button>
+            <button type="button" onclick="stepBlueprint(1)" class="p-2 rounded-xl border border-slate-200 dark:border-sky-400/25 hover:bg-slate-100 dark:hover:bg-[#132C4A]"><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+          </div>
+        </div>
+
+        <h3 id="bpTitle" class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white"></h3>
+        <p id="bpDesc" class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+
+        <div class="p-4 rounded-2xl bg-[#F2F7FB] dark:bg-[#071324] border border-sky-500/20 flex items-center justify-between gap-3">
+          <p id="bpSample" class="text-xs sm:text-sm italic font-semibold text-[#002B5C] dark:text-sky-200"></p>
+          <button type="button" onclick="speakBlueprintSample()" class="p-2.5 rounded-xl bg-sky-500/15 text-sky-700 dark:text-sky-300 shrink-0" title="Listen to sample">
+            <i data-lucide="volume-2" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <div class="flex items-center justify-between gap-2 pt-2 border-t border-slate-100 dark:border-sky-400/15">
+          <button type="button" onclick="stepBlueprint(-1)" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">← Prev Card</button>
+          <div id="bpDots" class="flex gap-1.5"></div>
+          <button type="button" onclick="stepBlueprint(1)" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next Card →</button>
+        </div>
+      </div>
+
+      <!-- Mini Practice Exercise for Stage 03 -->
+      <div class="bg-white dark:bg-[#0B1B32] border-[1.5px] border-sky-500/25 rounded-3xl p-6 max-w-4xl mx-auto w-full space-y-3 shadow-md">
+        <span class="text-xs font-extrabold uppercase tracking-wider text-sky-600 dark:text-sky-400">Mini Check · Paragraph Function</span>
+        <p class="text-sm font-bold text-[#002B5C] dark:text-white">Where should you state your main thesis and introduce your key arguments in an OTE essay?</p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs font-bold">
+          <button type="button" onclick="checkBpMini('A')" class="p-3 rounded-xl bg-[#F2F7FB] dark:bg-[#071324] border border-sky-500/20 hover:border-sky-400 text-left">A) At the very end of the final sentence</button>
+          <button type="button" onclick="checkBpMini('B')" class="p-3 rounded-xl bg-[#F2F7FB] dark:bg-[#071324] border border-sky-500/20 hover:border-sky-400 text-left">B) In the introduction, right after paraphrasing the topic</button>
+          <button type="button" onclick="checkBpMini('C')" class="p-3 rounded-xl bg-[#F2F7FB] dark:bg-[#071324] border border-sky-500/20 hover:border-sky-400 text-left">C) Only in a bulleted list before paragraph 1</button>
+        </div>
+        <div id="bpMiniFeedback" class="hidden p-3 rounded-xl text-xs font-bold"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 04: CARD-BY-CARD B1 -> B2 PHRASEBOOK + MINI EXERCISE ==================== -->
+    <section data-stage="3" class="stage hidden stage-anim space-y-8">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-3 border-b border-sky-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-sky-600 dark:text-sky-400 uppercase">Stage 04 · Card-by-Card Cohesion &amp; Register</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">B1 → B2 Essay Phrasebook (12 Cards)</h2>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <button id="tabLexOpening" type="button" onclick="switchLexGroup('opening')" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-[#002B5C] text-white">1. Openings &amp; Opinion (4)</button>
+          <button id="tabLexLinking" type="button" onclick="switchLexGroup('linking')" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0B1B32] border-[1.5px] border-sky-500/25">2. Adding &amp; Contrasting (4)</button>
+          <button id="tabLexResult" type="button" onclick="switchLexGroup('result')" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0B1B32] border-[1.5px] border-sky-500/25">3. Cause, Result &amp; Closing (4)</button>
+        </div>
+      </div>
+
+      <!-- Single Card Focus Box -->
+      <div id="lexSingleCardBox" class="max-w-4xl mx-auto w-full"></div>
+
+      <!-- Mini Practice Exercise for Stage 04 -->
+      <div class="bg-white dark:bg-[#0B1B32] border-[1.5px] border-sky-500/25 rounded-3xl p-6 max-w-4xl mx-auto w-full space-y-3 shadow-md">
+        <span class="text-xs font-extrabold uppercase tracking-wider text-sky-600 dark:text-sky-400">Mini Check · Choose the B2 Connector</span>
+        <p class="text-sm font-bold text-[#002B5C] dark:text-white">Complete: “___ working from home saves commuting time, some employees feel isolated.”</p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs font-bold">
+          <button type="button" onclick="checkLexMini('A')" class="p-3 rounded-xl bg-[#F2F7FB] dark:bg-[#071324] border border-sky-500/20 hover:border-sky-400 text-left">A) Although</button>
+          <button type="button" onclick="checkLexMini('B')" class="p-3 rounded-xl bg-[#F2F7FB] dark:bg-[#071324] border border-sky-500/20 hover:border-sky-400 text-left">B) Despite</button>
+          <button type="button" onclick="checkLexMini('C')" class="p-3 rounded-xl bg-[#F2F7FB] dark:bg-[#071324] border border-sky-500/20 hover:border-sky-400 text-left">C) Therefore</button>
+        </div>
+        <div id="lexMiniFeedback" class="hidden p-3 rounded-xl text-xs font-bold"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 05: INTERACTIVE B2 MODEL X-RAY (LINKERS + B2 LEXICON + COMPLEX GRAMMAR) ==================== -->
+    <section data-stage="4" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-sky-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-sky-600 dark:text-sky-400 uppercase">Stage 05 · Annotated Exam Model (146 Words)</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">X-Ray of a High-Scoring OTE Essay</h2>
+        </div>
+        <button type="button" onclick="speakModelEssay()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold self-start sm:self-auto">
+          <i data-lucide="volume-2" class="w-4 h-4"></i>
+          <span>Listen to Full Model</span>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div class="lg:col-span-5 bg-white dark:bg-[#0B1B32] border-[1.5px] border-sky-500/25 rounded-3xl p-6 space-y-4 shadow-md">
+          <span class="px-2.5 py-1 rounded-lg bg-[#002B5C] text-white text-[11px] font-extrabold uppercase">EXAM TASK</span>
+          <p class="text-sm font-bold text-[#002B5C] dark:text-white leading-relaxed">
+            In your English class, you have been talking about technology in education. Now your teacher has asked you to write an essay.<br /><br />
+            <em>“Should schools replace printed textbooks with digital tablets?”</em>
+          </p>
+          <div class="p-3.5 rounded-2xl bg-[#F2F7FB] dark:bg-[#071324] text-xs space-y-1.5">
+            <div class="font-extrabold text-sky-700 dark:text-sky-300">Highlight Layers:</div>
+            <div><span class="inline-block w-3 h-3 rounded bg-amber-400/60 mr-1.5 align-middle"></span><strong>Linkers &amp; Contrast</strong></div>
+            <div><span class="inline-block w-3 h-3 rounded bg-emerald-400/60 mr-1.5 align-middle"></span><strong>B2 Lexicon</strong></div>
+            <div><span class="inline-block w-3 h-3 rounded bg-violet-400/60 mr-1.5 align-middle"></span><strong>Complex B2 Grammar</strong> (Inversion, Passive, Non-defining Relative Clause, Third Conditional)</div>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-1">
+            <button type="button" onclick="highlightXray('all')" class="px-3 py-1.5 rounded-xl bg-sky-600 text-white text-xs font-bold">All Layers</button>
+            <button type="button" onclick="highlightXray('linkers')" class="px-3 py-1.5 rounded-xl bg-amber-500/20 text-amber-800 dark:text-amber-200 text-xs font-bold">Linkers</button>
+            <button type="button" onclick="highlightXray('vocab')" class="px-3 py-1.5 rounded-xl bg-emerald-500/20 text-emerald-800 dark:text-emerald-200 text-xs font-bold">B2 Lexicon</button>
+            <button type="button" onclick="highlightXray('grammar')" class="px-3 py-1.5 rounded-xl bg-violet-500/20 text-violet-800 dark:text-violet-200 text-xs font-bold">Complex Grammar</button>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 bg-white dark:bg-[#0B1B32] border-[1.5px] border-sky-500/25 rounded-3xl p-6 sm:p-8 space-y-4 shadow-md text-sm sm:text-base leading-relaxed">
+          <div class="flex items-center justify-between text-xs font-extrabold text-sky-600 dark:text-sky-400">
+            <span>MODEL ESSAY · 4 PARAGRAPHS</span>
+            <span>WORD COUNT: 152 WORDS ✓</span>
+          </div>
+
+          <p>
+            <span class="xray-linker bg-amber-400/25 px-1 rounded font-semibold">Nowadays</span>, <span class="xray-grammar bg-violet-400/25 px-1 rounded font-semibold" title="Passive reporting structure">it is widely debated whether</span> traditional textbooks <span class="xray-grammar bg-violet-400/25 px-1 rounded font-semibold" title="Modal passive">should be replaced</span> by tablets. <span class="xray-linker bg-amber-400/25 px-1 rounded font-semibold">In my opinion</span>, <span class="xray-linker bg-amber-400/25 px-1 rounded font-semibold">although</span> digital devices offer clear benefits, printed books remain essential.
+          </p>
+          <p>
+            <span class="xray-linker bg-amber-400/25 px-1 rounded font-semibold">Firstly</span>, <span class="xray-grammar bg-violet-400/25 px-1 rounded font-semibold" title="Negative inversion: Not only + auxiliary + subject">not only do tablets reduce</span> heavy backpacks, but <span class="xray-vocab bg-emerald-400/25 px-1 rounded font-semibold">updating digital materials</span> is also cost-effective. <span class="xray-linker bg-amber-400/25 px-1 rounded font-semibold">However</span>, constant notifications often <span class="xray-vocab bg-emerald-400/25 px-1 rounded font-semibold">undermine concentration</span><span class="xray-grammar bg-violet-400/25 px-1 rounded font-semibold" title="Sentential non-defining relative clause">, which negatively affects exam performance</span>.
+          </p>
+          <p>
+            <span class="xray-linker bg-amber-400/25 px-1 rounded font-semibold">Furthermore</span>, <span class="xray-grammar bg-violet-400/25 px-1 rounded font-semibold" title="Third conditional">if schools had considered the environmental footprint earlier, fewer resources would have been wasted</span> on short-lived hardware <span class="xray-vocab bg-emerald-400/25 px-1 rounded font-semibold">generating electronic waste</span>.
+          </p>
+          <p>
+            <span class="xray-linker bg-amber-400/25 px-1 rounded font-semibold">To sum up</span>, <span class="xray-linker bg-amber-400/25 px-1 rounded font-semibold">despite</span> their convenience, tablets should complement printed textbooks rather than replace them entirely.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 06: CARD-BY-CARD EDITING LAB WITH IMAGES ==================== -->
+    <section data-stage="5" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-sky-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-sky-600 dark:text-sky-400 uppercase">Stage 06 · Card-by-Card Editing &amp; Accuracy Lab</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Fix Informal &amp; Grammar Traps (6 Cards)</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Step through each card, inspect the visual cue, and pick the exam-ready fix.</p>
+      </div>
+
+      <div id="fixerSingleCardBox" class="max-w-4xl mx-auto w-full"></div>
+    </section>
+
+    <!-- ==================== 07: GAMIFIED CHALLENGE — "ESSAY POLISH RUSH" ==================== -->
+    <section data-stage="6" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-sky-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-sky-600 dark:text-sky-400 uppercase">Stage 07 · Interactive Game</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Essay Polish Rush: Level Up Your Draft!</h2>
+        </div>
+        <div class="flex items-center gap-2">
+          <span id="polishScoreBadge" class="px-3.5 py-1.5 rounded-xl bg-[#002B5C] text-sky-300 text-xs font-extrabold">SCORE: 0 / 6</span>
+          <span id="polishStreakBadge" class="px-3.5 py-1.5 rounded-xl bg-white dark:bg-[#0B1B32] border border-sky-500/25 text-xs font-extrabold">STREAK: 0 🔥</span>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-[#0B1B32] border-[1.5px] border-sky-500/25 rounded-3xl p-6 sm:p-9 max-w-4xl mx-auto w-full space-y-6 shadow-xl">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <span id="polishRoundBadge" class="px-3.5 py-1 rounded-full bg-sky-600 text-white text-xs font-extrabold">ROUND 1 / 6</span>
+          <button type="button" onclick="restartPolishGame()" class="px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">
+            Restart Game
+          </button>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-[#F2F7FB] dark:bg-[#071324] border border-sky-500/20 space-y-1">
+          <span class="text-[11px] font-extrabold uppercase tracking-wider text-sky-600 dark:text-sky-400">DRAFT SENTENCE TO UPGRADE</span>
+          <p id="polishPrompt" class="text-lg sm:text-xl font-extrabold text-[#002B5C] dark:text-white"></p>
+        </div>
+
+        <div id="polishOptions" class="grid grid-cols-1 gap-2.5"></div>
+
+        <div id="polishFeedback" class="hidden p-4 rounded-2xl text-xs sm:text-sm font-bold"></div>
+
+        <div class="flex justify-end">
+          <button type="button" onclick="nextPolishRound()" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-[#002B5C] to-sky-600 text-white text-xs sm:text-sm font-bold">
+            Next Challenge →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 08: LIVE OTE ESSAY STUDIO + WORD COUNT + DRIVE UPLOAD + MARKING CRITERIA ==================== -->
+    <section data-stage="7" class="stage hidden stage-anim space-y-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-sky-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-sky-600 dark:text-sky-400 uppercase">Stage 08 · Timed Exam Simulation (25 Mins)</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Write Your OTE Essay &amp; Send to Drive</h2>
+        </div>
+        <div class="flex items-center gap-2">
+          <span id="examClockDisplay" class="font-mono px-3.5 py-1.5 rounded-xl bg-[#002B5C] text-sky-300 text-xs font-extrabold">25:00</span>
+          <button type="button" id="btnToggleExamTimer" onclick="toggleExamTimer()" class="px-3.5 py-1.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold">Start 25m Timer</button>
+          <button type="button" onclick="resetExamTimer()" class="px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">Reset</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <!-- Left Column: Task Selector & Student Details -->
+        <div class="lg:col-span-5 bg-white dark:bg-[#0B1B32] border-[1.5px] border-sky-500/25 rounded-3xl p-6 space-y-5 shadow-lg">
+          <div class="space-y-2">
+            <label for="essayTaskSelect" class="text-xs font-extrabold uppercase tracking-wider text-sky-600 dark:text-sky-400 block">
+              1. Choose Your Exam Task
+            </label>
+            <select
+              id="essayTaskSelect"
+              onchange="renderSelectedEssayTask()"
+              class="w-full px-3.5 py-2.5 rounded-xl bg-[#F2F7FB] dark:bg-[#071324] border-[1.5px] border-sky-500/25 text-xs sm:text-sm font-bold outline-none focus:border-sky-400"
+            >
+              <option value="0">Task A: Working from Home vs. Office</option>
+              <option value="1">Task B: Social Media &amp; Teenagers</option>
+              <option value="2">Task C: Banning Cars from City Centres</option>
+            </select>
+          </div>
+
+          <div id="selectedTaskCard" class="p-4 rounded-2xl bg-[#F2F7FB] dark:bg-[#071324] border border-sky-500/25 space-y-2.5 text-xs sm:text-sm"></div>
+
+          <div class="space-y-2 pt-1 border-t border-slate-100 dark:border-sky-400/15">
+            <label for="essayStudentName" class="text-xs font-extrabold uppercase tracking-wider text-sky-600 dark:text-sky-400 block">
+              2. Student Name (For Google Drive File)
+            </label>
+            <input
+              id="essayStudentName"
+              type="text"
+              placeholder="e.g. Laura Martín"
+              class="w-full px-3.5 py-2.5 rounded-xl bg-[#F2F7FB] dark:bg-[#071324] border-[1.5px] border-sky-500/25 text-sm font-semibold outline-none focus:border-sky-400"
+            />
+          </div>
+        </div>
+
+        <!-- Right Column: Live Essay Editor, Real-Time Word Counter & Drive Submission -->
+        <div class="lg:col-span-7 bg-white dark:bg-[#0B1B32] border-[1.5px] border-sky-500/25 rounded-3xl p-6 sm:p-7 space-y-4 shadow-lg">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <span class="text-xs font-extrabold uppercase tracking-wider text-sky-600 dark:text-sky-400">Your Essay Draft</span>
+            <div class="flex items-center gap-2">
+              <span id="wordCountBadge" class="px-3.5 py-1 rounded-full bg-slate-200 dark:bg-[#071324] text-slate-700 dark:text-slate-200 text-xs font-extrabold">
+                0 / 100–160 WORDS
+              </span>
+              <span id="wordStatusPill" class="px-2.5 py-1 rounded-full bg-amber-500/15 text-amber-700 dark:text-amber-300 text-[11px] font-bold">
+                Too short (&lt;100)
+              </span>
+            </div>
+          </div>
+
+          <!-- Visual Word Range Progress Bar -->
+          <div class="w-full h-2 rounded-full bg-slate-200 dark:bg-[#071324] overflow-hidden">
+            <div id="wordRangeBar" class="h-full bg-amber-500 transition-all duration-200" style="width: 0%"></div>
+          </div>
+
+          <textarea
+            id="essayTextarea"
+            rows="12"
+            placeholder="Write your 4-paragraph OTE essay here (100–160 words). Present your position clearly and support it with well-developed ideas..."
+            class="w-full p-4 rounded-2xl bg-[#F2F7FB] dark:bg-[#071324] border-[1.5px] border-sky-500/25 text-sm sm:text-base leading-relaxed outline-none focus:border-sky-400 resize-y"
+          ></textarea>
+
+          <div class="flex flex-wrap items-center justify-between gap-2 text-xs text-slate-500 dark:text-slate-400">
+            <span id="paraCountLabel">Paragraphs: 0 · Characters: 0</span>
+            <button type="button" onclick="clearEssayDraft()" class="text-rose-600 dark:text-rose-400 font-bold hover:underline">
+              Clear Draft
+            </button>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2.5 pt-2">
+            <button
+              id="btnSubmitEssayDrive"
+              type="button"
+              onclick="submitEssayToDrive()"
+              class="flex-1 min-w-[200px] inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-gradient-to-r from-[#002B5C] via-[#005A8D] to-[#0089A7] hover:opacity-95 text-white text-xs sm:text-sm font-extrabold shadow transition"
+            >
+              <i data-lucide="cloud-upload" class="w-4 h-4"></i>
+              <span id="submitEssayLabel">Send Essay to Google Drive</span>
+            </button>
+
+            <button
+              type="button"
+              onclick="downloadEssayTxt()"
+              class="inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-2xl border border-slate-300 dark:border-sky-400/25 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-bold transition"
+            >
+              <i data-lucide="download" class="w-4 h-4"></i>
+              <span>Download .TXT</span>
+            </button>
+
+            <button
+              type="button"
+              onclick="copyEssayText()"
+              class="inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-2xl border border-slate-300 dark:border-sky-400/25 hover:bg-slate-100 dark:hover:bg-[#132C4A] text-xs font-bold transition"
+            >
+              <i data-lucide="copy" class="w-4 h-4"></i>
+              <span>Copy</span>
+            </button>
+          </div>
+
+          <div id="essaySubmitFeedback" class="hidden p-3.5 rounded-2xl text-xs sm:text-sm font-bold"></div>
+        </div>
+      </div>
+
+      <!-- Marking Criteria & Pre-Flight Checklist Placed Below the Essay Task -->
+      <div class="space-y-4 pt-2">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-sky-500/20 pb-2">
+          <div>
+            <span class="text-xs font-bold tracking-widest text-sky-600 dark:text-sky-400 uppercase">Post-Writing Review &amp; Assessment</span>
+            <h3 class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white">OTE Marking Criteria &amp; Pre-Submission Checklist</h3>
+          </div>
+          <span class="text-xs font-bold text-sky-700 dark:text-sky-300">Check your draft before sending</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="bg-white dark:bg-[#0B1B32] border-[1.5px] border-sky-500/25 rounded-3xl p-5 space-y-2 shadow-sm">
+            <span class="text-xs font-extrabold text-sky-600 dark:text-sky-400">01 · TASK ACHIEVEMENT</span>
+            <h4 class="text-base font-extrabold text-[#002B5C] dark:text-white">Prompt Answered + Word Limit</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-300">Did you address the essay question directly and stay inside 100–160 words?</p>
+          </div>
+          <div class="bg-white dark:bg-[#0B1B32] border-[1.5px] border-sky-500/25 rounded-3xl p-5 space-y-2 shadow-sm">
+            <span class="text-xs font-extrabold text-sky-600 dark:text-sky-400">02 · ORGANIZATION</span>
+            <h4 class="text-base font-extrabold text-[#002B5C] dark:text-white">Paragraphs &amp; Cohesion</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-300">Are there clear paragraphs connected with natural linkers (<em>Firstly, However, To sum up</em>)?</p>
+          </div>
+          <div class="bg-white dark:bg-[#0B1B32] border-[1.5px] border-sky-500/25 rounded-3xl p-5 space-y-2 shadow-sm">
+            <span class="text-xs font-extrabold text-sky-600 dark:text-sky-400">03 · GRAMMAR</span>
+            <h4 class="text-base font-extrabold text-[#002B5C] dark:text-white">Range &amp; Control</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-300">Did you combine simple sentences with relative clauses, conditionals, or passives accurately?</p>
+          </div>
+          <div class="bg-white dark:bg-[#0B1B32] border-[1.5px] border-sky-500/25 rounded-3xl p-5 space-y-2 shadow-sm">
+            <span class="text-xs font-extrabold text-sky-600 dark:text-sky-400">04 · LEXIS</span>
+            <h4 class="text-base font-extrabold text-[#002B5C] dark:text-white">Precision &amp; Tone</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-300">Did you avoid slang/contractions (<em>gonna, kids, don't</em>) and paraphrase the prompt?</p>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-[#0B1B32] border-[1.5px] border-sky-500/25 rounded-3xl p-6 space-y-3 shadow-md">
+          <h4 class="text-sm font-extrabold uppercase tracking-wider text-sky-700 dark:text-sky-300">Interactive Pre-Submission Checklist</h4>
+          <div id="checklistBox" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Navigation -->
+  <footer class="border-t border-sky-500/20 bg-white dark:bg-[#061120] py-4 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      <button id="btnPrev" type="button" onclick="goStage(currentStage - 1)" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-300 dark:border-sky-400/25 hover:bg-slate-100 dark:hover:bg-[#132C4A] disabled:opacity-30 text-xs font-bold transition">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Previous</span>
+      </button>
+
+      <span id="stageCounter" class="text-xs font-bold tracking-widest text-slate-500 dark:text-slate-400">
+        01 / 08
+      </span>
+
+      <button id="btnNext" type="button" onclick="goStage(currentStage + 1)" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#002B5C] hover:bg-[#005A8D] disabled:opacity-30 text-xs font-bold text-white transition">
+        <span>Next</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    const DRIVE_UPLOAD_URL = "https://script.google.com/macros/s/AKfycbwBcX7Z4aABKplkUkpYvM2wEnsBHhWCZzi7dFGDkeUarkXwv-RRI0JXAPDakjkrCrBc/exec";
+
+    const STAGES = [
+      "01 · EXAM BRIEFING",
+      "02 · CONVERSATION",
+      "03 · 4-PARA BLUEPRINT",
+      "04 · B1→B2 PHRASEBOOK",
+      "05 · MODEL X-RAY",
+      "06 · EDITING LAB",
+      "07 · ESSAY RUSH GAME",
+      "08 · WRITE & SEND"
+    ];
+
+    let currentStage = 0;
+    const stageSections = document.querySelectorAll('.stage');
+
+    function goStage(idx) {
+      if (idx < 0 || idx >= stageSections.length) return;
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      currentStage = idx;
+      stageSections.forEach((s, i) => s.classList.toggle('hidden', i !== currentStage));
+      document.getElementById('stageTitleHeader').textContent = STAGES[currentStage];
+      document.getElementById('stageCounter').textContent = `${String(currentStage + 1).padStart(2, '0')} / ${String(stageSections.length).padStart(2, '0')}`;
+      document.getElementById('stageProgress').style.width = `${((currentStage + 1) / stageSections.length) * 100}%`;
+      document.getElementById('btnPrev').disabled = currentStage === 0;
+      document.getElementById('btnNext').disabled = currentStage === stageSections.length - 1;
+      renderStagePills();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      lucide.createIcons();
+    }
+
+    function renderStagePills() {
+      document.getElementById('stagePills').innerHTML = STAGES.map((_, i) => `
+        <button type="button" onclick="goStage(${i})" class="px-2.5 py-1 rounded-lg text-xs font-bold transition ${
+          i === currentStage ? 'bg-sky-500 text-white' : 'text-white/75 hover:text-white hover:bg-white/10'
+        }">${String(i + 1).padStart(2, '0')}</button>
+      `).join('');
+    }
+
+    const themeBtn = document.getElementById('themeBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    if (localStorage.getItem('provoOteEssayTheme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      themeIcon.setAttribute('data-lucide', 'moon');
+    }
+    themeBtn.addEventListener('click', () => {
+      const dark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('provoOteEssayTheme', dark ? 'dark' : 'light');
+      themeIcon.setAttribute('data-lucide', dark ? 'sun' : 'moon');
+      lucide.createIcons();
+    });
+
+    function mountPhoto(container, url, altText, fallbackTitle) {
+      container.innerHTML = `<img src="${url}" alt="${altText}" class="w-full h-full object-cover" loading="lazy" />`;
+      const img = container.querySelector('img');
+      if (img) {
+        img.addEventListener('error', () => {
+          container.innerHTML = `
+            <div class="w-full h-full flex flex-col items-center justify-center bg-[#002B5C] text-white p-6 text-center">
+              <i data-lucide="pen-tool" class="w-8 h-8 text-sky-300 mb-2"></i>
+              <span class="text-xs font-extrabold uppercase tracking-widest">${fallbackTitle}</span>
+            </div>
+          `;
+          lucide.createIcons();
+        }, { once: true });
+      }
+    }
+
+    function pickSoniaVoice() {
+      if (!('speechSynthesis' in window)) return null;
+      const voices = window.speechSynthesis.getVoices() || [];
+      if (!voices.length) return null;
+      return (
+        voices.find(v => /sonia/i.test(v.name)) ||
+        voices.find(v => /en[-_]GB/i.test(v.lang) && /natural|online|google|neural/i.test(v.name)) ||
+        voices.find(v => /en[-_]GB/i.test(v.lang)) ||
+        voices.find(v => /^en/i.test(v.lang)) ||
+        null
+      );
+    }
+
+    if ('speechSynthesis' in window && typeof window.speechSynthesis.onvoiceschanged !== 'undefined') {
+      window.speechSynthesis.onvoiceschanged = () => pickSoniaVoice();
+    }
+
+    function speakText(text) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const runUtterance = () => {
+        const u = new SpeechSynthesisUtterance(text);
+        const voice = pickSoniaVoice();
+        if (voice) {
+          u.voice = voice;
+          u.lang = voice.lang;
+        } else {
+          u.lang = 'en-GB';
+        }
+        u.rate = 0.94;
+        u.pitch = 1.02;
+        window.speechSynthesis.speak(u);
+      };
+      if ((window.speechSynthesis.getVoices() || []).length === 0 && 'onvoiceschanged' in window) {
+        const once = () => {
+          window.speechSynthesis.removeEventListener('voiceschanged', once);
+          runUtterance();
+        };
+        window.speechSynthesis.addEventListener('voiceschanged', once);
+        setTimeout(runUtterance, 120);
+      } else {
+        runUtterance();
+      }
+    }
+
+    // ==================== 02: RELAXED CONVERSATION QUESTIONS WITH IMAGES ====================
+    const CONVERSATION_CARDS = [
+      {
+        tag: "Exam Memories",
+        q: "How do you usually feel when an exam starts with an essay question?",
+        follow: "Calm and organized, or slightly stressed until you map out your ideas?",
+        hints: ["• To be honest, when I first see the essay topic, I...", "• Once I take a minute to plan, I feel..."],
+        photo: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=950&q=80"
+      },
+      {
+        tag: "Blank Page Syndrome",
+        q: "Have you ever stared at a blank screen or page not knowing how to start?",
+        follow: "What helps you break the ice and write your first sentence?",
+        hints: ["• Yes, definitely—especially when I'm tired or...", "• A trick that helps me get started is..."],
+        photo: "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=950&q=80"
+      },
+      {
+        tag: "Paper vs. Keyboard",
+        q: "Do you prefer typing essays on a computer or writing them by hand on paper?",
+        follow: "Which one helps you edit and organize your thoughts better?",
+        hints: ["• I find typing much faster because...", "• On the other hand, writing by hand helps me..."],
+        photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=950&q=80"
+      },
+      {
+        tag: "Word Count Pressure",
+        q: "In writing exams, is it harder for you to reach the minimum word count or stay under the limit?",
+        follow: "Do you tend to write too little or over-explain?",
+        hints: ["• My main challenge is usually...", "• When I run out of words, I try to add..."],
+        photo: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=950&q=80"
+      },
+      {
+        tag: "Planning Habits",
+        q: "Are you someone who outlines before writing, or do you dive straight in and fix things later?",
+        follow: "Has your habit changed as you've practiced more English?",
+        hints: ["• I used to jump straight in, but now I...", "• Making a quick outline saves me time because..."],
+        photo: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=950&q=80"
+      },
+      {
+        tag: "Spanish vs. English Style",
+        q: "What feels different between writing an opinion text in Spanish/Catalan and in English?",
+        follow: "Think about sentence length, directness, or vocabulary.",
+        hints: ["• In English, shorter and clearer sentences often...", "• One habit I have to watch out for is..."],
+        photo: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=950&q=80"
+      },
+      {
+        tag: "Time Management",
+        q: "How good are you at leaving a few minutes at the end to proofread your work?",
+        follow: "What kind of careless slips do you catch when you re-read?",
+        hints: ["• I try to save at least three minutes to...", "• The most common slip I catch is..."],
+        photo: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=950&q=80"
+      },
+      {
+        tag: "Opinion Topics",
+        q: "Which essay topics do you enjoy most—technology, lifestyle, work, or society?",
+        follow: "Why do those topics feel easier to talk and write about?",
+        hints: ["• I find topics about ___ easier because...", "• If a topic feels unfamiliar, I try to connect it to..."],
+        photo: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=950&q=80"
+      }
+    ];
+
+    let convIdx = 0;
+
+    function renderConvCard() {
+      convIdx = (convIdx + CONVERSATION_CARDS.length) % CONVERSATION_CARDS.length;
+      const c = CONVERSATION_CARDS[convIdx];
+      document.getElementById('convBadge').textContent = `CARD ${convIdx + 1} / ${CONVERSATION_CARDS.length}`;
+      document.getElementById('convTag').textContent = c.tag;
+      document.getElementById('convQuestion').textContent = c.q;
+      document.getElementById('convFollowUp').textContent = c.follow;
+      document.getElementById('convHintsBox').innerHTML = c.hints.map(h => `<div>${h}</div>`).join('');
+      document.getElementById('convHintsBox').classList.add('hidden');
+      mountPhoto(document.getElementById('convPhotoBox'), c.photo, c.tag, c.tag);
+      document.getElementById('convDots').innerHTML = CONVERSATION_CARDS.map((_, i) => `
+        <button type="button" onclick="convIdx=${i}; renderConvCard();" class="w-6 h-6 rounded-lg text-[11px] font-bold ${
+          i === convIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#071324]'
+        }">${i + 1}</button>
+      `).join('');
+    }
+    window.stepConv = (d) => { convIdx += d; renderConvCard(); };
+    window.speakConvQuestion = () => speakText(`${CONVERSATION_CARDS[convIdx].q} ${CONVERSATION_CARDS[convIdx].follow}`);
+
+    // ==================== 03: CARD-BY-CARD 4-PARAGRAPH BLUEPRINT ====================
+    const BLUEPRINT_CARDS = [
+      {
+        badge: "PART 1 / 4",
+        budget: "~25–30 WORDS · INTRODUCTION",
+        title: "Paraphrase the Question + State Your Position",
+        desc: "Introduce the topic in your own words (avoid copying the question word for word) and make your stance clear right away.",
+        sample: "“Nowadays, many people debate whether public transport should be free. In my view, although this policy has high costs, its benefits outweigh the drawbacks.”"
+      },
+      {
+        badge: "PART 2 / 4",
+        budget: "~45–55 WORDS · FIRST BODY PARAGRAPH",
+        title: "Develop Your Core Supporting Arguments",
+        desc: "Present your first main ideas clearly using topic linkers (Firstly, Furthermore) and back them up with concrete reasons or examples.",
+        sample: "“Firstly, free buses and trains would significantly reduce traffic congestion and air pollution in city centres. Moreover, commuters would save a noticeable share of their monthly income.”"
+      },
+      {
+        badge: "PART 3 / 4",
+        budget: "~35–40 WORDS · SECOND BODY PARAGRAPH",
+        title: "Counter-Argument or Additional Dimension",
+        desc: "Add depth and balance by examining a contrasting view or a practical challenge (such as cost, logistics, or long-term impact).",
+        sample: "“On the other hand, funding such a scheme could require higher local taxes, which might limit investment in service frequency and maintenance.”"
+      },
+      {
+        badge: "PART 4 / 4",
+        budget: "~20–25 WORDS · CONCLUSION",
+        title: "Summarize & Give a Clear Final Verdict",
+        desc: "Signal the closing with To sum up or In conclusion, restate your position cleanly, and make sure your total count stays inside 100–160 words.",
+        sample: "“In conclusion, despite the financial challenges, free public transport is a worthwhile investment for cleaner, fairer cities.”"
+      }
+    ];
+    let bpIdx = 0;
+
+    function renderBlueprintCard() {
+      bpIdx = (bpIdx + BLUEPRINT_CARDS.length) % BLUEPRINT_CARDS.length;
+      const b = BLUEPRINT_CARDS[bpIdx];
+      document.getElementById('bpBadge').textContent = b.badge;
+      document.getElementById('bpBudgetTag').textContent = b.budget;
+      document.getElementById('bpTitle').textContent = b.title;
+      document.getElementById('bpDesc').textContent = b.desc;
+      document.getElementById('bpSample').textContent = b.sample;
+      document.getElementById('bpDots').innerHTML = BLUEPRINT_CARDS.map((_, i) => `
+        <button type="button" onclick="bpIdx=${i}; renderBlueprintCard();" class="w-7 h-7 rounded-lg text-xs font-bold ${
+          i === bpIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#071324]'
+        }">${i + 1}</button>
+      `).join('');
+    }
+    window.stepBlueprint = (d) => { bpIdx += d; renderBlueprintCard(); };
+    window.speakBlueprintSample = () => speakText(BLUEPRINT_CARDS[bpIdx].sample);
+
+    window.checkBpMini = (picked) => {
+      const fb = document.getElementById('bpMiniFeedback');
+      fb.classList.remove('hidden');
+      if (picked === 'B') {
+        fb.className = 'p-3 rounded-xl text-xs font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = '✓ Correct! A clear thesis in the introduction gives direction to the whole essay.';
+      } else {
+        fb.className = 'p-3 rounded-xl text-xs font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = '✗ Not quite—state your main thesis clearly in the introduction so the reader knows your stance early.';
+      }
+    };
+
+    // ==================== 04: CARD-BY-CARD B1 -> B2 PHRASEBOOK ====================
+    const LEX_GROUPS = {
+      opening: [
+        { fn: "INTRODUCING A DEBATE", b1: "Many people talk about...", b2: "There is ongoing debate over whether...", ex: "There is ongoing debate over whether remote work improves productivity." },
+        { fn: "STATING YOUR OPINION", b1: "I think that...", b2: "From my perspective, / It seems clear that...", ex: "From my perspective, public transport must remain affordable for students." },
+        { fn: "BALANCED THESIS", b1: "There are good and bad things.", b2: "Although this trend offers clear benefits, it also poses certain risks.", ex: "Although online learning offers flexibility, it also poses risks to motivation." },
+        { fn: "INTRODUCING AN ANGLE", b1: "Also, another thing is...", b2: "Another crucial factor worth considering is...", ex: "Another crucial factor worth considering is the long-term environmental impact." }
+      ],
+      linking: [
+        { fn: "ADDING A STRONG POINT", b1: "Also / And...", b2: "Furthermore, / In addition to this,", ex: "Furthermore, regular exercise lowers stress levels during exam periods." },
+        { fn: "CONTRASTING TWO IDEAS", b1: "But...", b2: "However, / On the other hand, / Whereas...", ex: "Whereas cities offer wider job prospects, rural areas provide a calmer lifestyle." },
+        { fn: "CONCESSION (+ NOUN / -ING)", b1: "Even if it is expensive...", b2: "Despite the high initial cost, / In spite of...", ex: "Despite the high initial cost, solar panels save households money over time." },
+        { fn: "GIVING CONCRETE EXAMPLES", b1: "For example...", b2: "For instance, / A clear illustration of this is...", ex: "For instance, several European capitals have successfully introduced low-emission zones." }
+      ],
+      result: [
+        { fn: "EXPRESSING CONSEQUENCE", b1: "So...", b2: "Consequently, / As a result, / Therefore,", ex: "Consequently, fewer commuters rely on private cars to reach the city centre." },
+        { fn: "EXPLAINING CAUSE", b1: "Because...", b2: "Due to / Owing to (+ noun phrase)", ex: "Owing to rising housing costs, many young adults share apartments." },
+        { fn: "MAKING A CONDITION", b1: "If we don't...", b2: "Unless governments invest in...", ex: "Unless governments invest in cycling lanes, commuters will continue driving." },
+        { fn: "CONCLUDING CLEARLY", b1: "In the end, I think...", b2: "To sum up, / Taking everything into account,", ex: "Taking everything into account, a balanced approach is far more effective." }
+      ]
+    };
+
+    let currentLexGroup = 'opening';
+    let currentLexIdx = 0;
+
+    function renderLexCard() {
+      const list = LEX_GROUPS[currentLexGroup];
+      currentLexIdx = (currentLexIdx + list.length) % list.length;
+      const item = list[currentLexIdx];
+      const safeEx = item.ex.replace(/'/g, "\\'");
+
+      document.getElementById('lexSingleCardBox').innerHTML = `
+        <div class="bg-white dark:bg-[#0B1B32] border-[1.5px] border-sky-500/25 rounded-3xl p-6 sm:p-9 space-y-5 shadow-xl">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="px-3.5 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">CARD ${currentLexIdx + 1} / ${list.length}</span>
+              <span class="px-3.5 py-1 rounded-full bg-sky-500/15 text-sky-700 dark:text-sky-300 text-xs font-extrabold">${item.fn}</span>
+            </div>
+            <button type="button" onclick="speakText('${safeEx}')" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-sky-600 text-white text-xs font-bold">
+              <i data-lucide="volume-2" class="w-4 h-4"></i> Hear Example
+            </button>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
+            <div class="p-4 rounded-2xl bg-slate-100 dark:bg-[#071324]">
+              <span class="font-extrabold text-slate-400 block mb-1">BASIC (B1)</span>
+              <span class="font-semibold">${item.b1}</span>
+            </div>
+            <div class="p-4 rounded-2xl bg-sky-500/10 border border-sky-500/25">
+              <span class="font-extrabold text-sky-600 dark:text-sky-300 block mb-1">UPGRADED (B2)</span>
+              <strong class="text-sm sm:text-base text-[#002B5C] dark:text-white">${item.b2}</strong>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-[#F2F7FB] dark:bg-[#071324] border border-sky-500/20">
+            <span class="text-[11px] font-extrabold uppercase tracking-wider text-sky-600 dark:text-sky-400 block mb-1">Example in Context</span>
+            <p class="text-sm italic font-semibold text-[#002B5C] dark:text-sky-200">“${item.ex}”</p>
+          </div>
+
+          <div class="flex items-center justify-between gap-2 pt-2 border-t border-slate-100 dark:border-sky-400/15">
+            <button type="button" onclick="currentLexIdx--; renderLexCard();" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">← Prev Card</button>
+            <div class="flex gap-1.5">
+              ${list.map((_, i) => `<button type="button" onclick="currentLexIdx=${i}; renderLexCard();" class="w-7 h-7 rounded-lg text-xs font-bold ${i === currentLexIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#071324]'}">${i + 1}</button>`).join('')}
+            </div>
+            <button type="button" onclick="currentLexIdx++; renderLexCard();" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next Card →</button>
+          </div>
+        </div>
+      `;
+      lucide.createIcons();
+    }
+
+    window.switchLexGroup = (key) => {
+      currentLexGroup = key;
+      currentLexIdx = 0;
+      ['opening', 'linking', 'result'].forEach(k => {
+        const id = 'tabLex' + k[0].toUpperCase() + k.slice(1);
+        document.getElementById(id).className = k === key
+          ? 'px-3.5 py-2 rounded-xl text-xs font-bold bg-[#002B5C] text-white'
+          : 'px-3.5 py-2 rounded-xl text-xs font-bold bg-white dark:bg-[#0B1B32] border-[1.5px] border-sky-500/25';
+      });
+      renderLexCard();
+    };
+
+    window.checkLexMini = (picked) => {
+      const fb = document.getElementById('lexMiniFeedback');
+      fb.classList.remove('hidden');
+      if (picked === 'A') {
+        fb.className = 'p-3 rounded-xl text-xs font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = '✓ Correct! "Although + subject + verb" introduces a contrast clause smoothly.';
+      } else {
+        fb.className = 'p-3 rounded-xl text-xs font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = '✗ Not quite—use "Although" before a subject + verb clause.';
+      }
+    };
+
+    // ==================== 05: MODEL X-RAY ====================
+    window.speakModelEssay = () => {
+      speakText("Nowadays, it is widely debated whether traditional textbooks should be replaced by tablets. In my view, although digital devices offer clear benefits, printed books remain essential. Firstly, not only do tablets reduce heavy backpacks, but updating digital materials is also cost-effective. However, constant notifications often undermine concentration, which negatively affects exam performance. Furthermore, if schools had considered the environmental footprint earlier, fewer resources would have been wasted on short-lived hardware generating electronic waste. To sum up, despite their convenience, tablets should complement printed textbooks rather than replace them entirely.");
+    };
+
+    window.highlightXray = (mode) => {
+      document.querySelectorAll('.xray-linker').forEach(el => {
+        el.classList.toggle('bg-amber-400/25', mode === 'all' || mode === 'linkers');
+      });
+      document.querySelectorAll('.xray-vocab').forEach(el => {
+        el.classList.toggle('bg-emerald-400/25', mode === 'all' || mode === 'vocab');
+      });
+      document.querySelectorAll('.xray-grammar').forEach(el => {
+        el.classList.toggle('bg-violet-400/25', mode === 'all' || mode === 'grammar');
+      });
+    };
+
+    // ==================== 06: CARD-BY-CARD EDITING LAB WITH IMAGES ====================
+    const FIXER_CARDS = [
+      {
+        bad: '❌ "Kids nowadays are gonna spend all day on their phones."',
+        q: "1. Replace informal contractions/slang for an OTE essay:",
+        opts: [
+          "A) Young people nowadays are going to spend excessive time on their smartphones.",
+          "B) Kids today gonna be on phones 24/7."
+        ],
+        ans: "A",
+        why: "Avoid 'kids' and 'gonna' in essays; use 'young people / teenagers' and full verb forms.",
+        photo: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        bad: '❌ "Despite cars are polluting, people still drive to work."',
+        q: "2. Fix the grammar after 'Despite':",
+        opts: [
+          "A) Despite cars pollute, people still drive to work.",
+          "B) Despite the pollution caused by cars, people still drive to work."
+        ],
+        ans: "B",
+        why: "'Despite' must be followed by a noun phrase or -ing form, not a full clause.",
+        photo: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        bad: '❌ "In this essay I will write about two things and my idea."',
+        q: "3. Upgrade this mechanical thesis statement:",
+        opts: [
+          "A) While remote work offers clear flexibility, maintaining team collaboration remains a challenge.",
+          "B) Here are three paragraphs about working from home."
+        ],
+        ans: "A",
+        why: "State your actual argument in the introduction rather than announcing 'In this essay I will write about...'.",
+        photo: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        bad: '❌ "On the other hand, tourism creates jobs. On the other hand, it raises rent."',
+        q: "4. Fix the linker misuse:",
+        opts: [
+          "A) On the one hand, tourism creates jobs. On the other hand, it drives up local rent.",
+          "B) On the other hand, tourism creates jobs, and on the other hand, it raises rent."
+        ],
+        ans: "A",
+        why: "Pair 'On the one hand...' for the first side with 'On the other hand...' for the contrasting side.",
+        photo: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        bad: '❌ "People should to use public transport more often."',
+        q: "5. Fix the modal verb pattern:",
+        opts: [
+          "A) Citizens ought use public transport more frequently.",
+          "B) Citizens should make greater use of public transport."
+        ],
+        ans: "B",
+        why: "'Should' is followed directly by a bare infinitive (without 'to').",
+        photo: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        bad: '❌ "To finish, I think fast food is bad. Also schools should teach cooking."',
+        q: "6. Fix the conclusion (no brand-new arguments at the end!):",
+        opts: [
+          "A) To sum up, combining higher taxes with nutrition education is the most effective way to improve public health.",
+          "B) In conclusion, fast food is unhealthy and also gyms are expensive."
+        ],
+        ans: "A",
+        why: "A conclusion summarizes points already discussed rather than introducing unrelated new ideas.",
+        photo: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80"
+      }
+    ];
+    let fixerIdx = 0;
+
+    function renderFixerCard() {
+      fixerIdx = (fixerIdx + FIXER_CARDS.length) % FIXER_CARDS.length;
+      const d = FIXER_CARDS[fixerIdx];
+
+      document.getElementById('fixerSingleCardBox').innerHTML = `
+        <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0B1B32] border-[1.5px] border-sky-500/25 shadow-xl">
+          <div id="fixerPhotoBox" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+          <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between gap-2">
+                <span class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">CARD ${fixerIdx + 1} / ${FIXER_CARDS.length}</span>
+                <span class="text-xs font-bold text-sky-600 dark:text-sky-400">REGISTER &amp; GRAMMAR</span>
+              </div>
+              <div class="text-xs font-extrabold text-rose-600 dark:text-rose-400">${d.bad}</div>
+              <p class="text-sm sm:text-base font-bold text-[#002B5C] dark:text-white">${d.q}</p>
+              <div class="space-y-2">
+                ${d.opts.map(op => `
+                  <button type="button" onclick="checkFixer('${op[0]}')" class="w-full text-left px-4 py-2.5 rounded-xl bg-[#F2F7FB] dark:bg-[#071324] hover:border-sky-400 border-[1.5px] border-sky-500/20 text-xs sm:text-sm font-semibold transition">${op}</button>
+                `).join('')}
+              </div>
+              <div id="fixFb" class="hidden p-3 rounded-xl text-xs font-bold"></div>
+            </div>
+
+            <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-sky-400/15">
+              <button type="button" onclick="fixerIdx--; renderFixerCard();" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">← Prev</button>
+              <div class="flex gap-1.5">
+                ${FIXER_CARDS.map((_, i) => `<button type="button" onclick="fixerIdx=${i}; renderFixerCard();" class="w-7 h-7 rounded-lg text-xs font-bold ${i === fixerIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#071324]'}">${i + 1}</button>`).join('')}
+              </div>
+              <button type="button" onclick="fixerIdx++; renderFixerCard();" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+            </div>
+          </div>
+        </div>
+      `;
+      mountPhoto(document.getElementById('fixerPhotoBox'), d.photo, d.q, `DRILL ${fixerIdx + 1}`);
+      lucide.createIcons();
+    }
+
+    window.checkFixer = (picked) => {
+      const d = FIXER_CARDS[fixerIdx];
+      const fb = document.getElementById('fixFb');
+      fb.classList.remove('hidden');
+      if (picked === d.ans) {
+        fb.className = 'p-3 rounded-xl text-xs font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Spot on! ${d.why}`;
+      } else {
+        fb.className = 'p-3 rounded-xl text-xs font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `✗ Try again. ${d.why}`;
+      }
+    };
+
+    // ==================== 07: GAMIFIED CHALLENGE — ESSAY POLISH RUSH ====================
+    const POLISH_ROUNDS = [
+      {
+        prompt: "Upgrade using Negative Inversion: “Tablets save paper and they also reduce backpack weight.”",
+        opts: [
+          "A) Not only do tablets save paper, but they also reduce backpack weight.",
+          "B) Not only tablets save paper, but also they reduce backpack weight."
+        ],
+        ans: 0,
+        explain: "After 'Not only' at the start of a clause, invert auxiliary + subject ('do tablets save')."
+      },
+      {
+        prompt: "Upgrade using Passive Voice: “People widely believe that remote work improves work-life balance.”",
+        opts: [
+          "A) It is widely believed that remote work improves work-life balance.",
+          "B) It widely believes that remote work improves work-life balance."
+        ],
+        ans: 0,
+        explain: "Impersonal passive ('It is widely believed that...') creates an objective B2 essay tone."
+      },
+      {
+        prompt: "Upgrade using a Non-Defining Relative Clause: “Notifications distract students. This lowers their grades.”",
+        opts: [
+          "A) Notifications distract students, that lowers their grades.",
+          "B) Notifications distract students, which lowers their grades."
+        ],
+        ans: 1,
+        explain: "Use ', which' (never ', that') to refer back to the whole preceding clause."
+      },
+      {
+        prompt: "Upgrade using Third Conditional: “Cities didn't invest in buses earlier, so traffic got worse.”",
+        opts: [
+          "A) If cities had invested in buses earlier, traffic would not have worsened.",
+          "B) If cities would have invested in buses earlier, traffic hadn't worsened."
+        ],
+        ans: 0,
+        explain: "Third conditional uses 'If + past perfect (had invested), would have + past participle'."
+      },
+      {
+        prompt: "Upgrade using Past Perfect: “By the time the ban started, many shops already lost customers.”",
+        opts: [
+          "A) By the time the ban started, many shops had already lost customers.",
+          "B) By the time the ban had started, many shops already lose customers."
+        ],
+        ans: 0,
+        explain: "Use Past Perfect ('had already lost') for an action completed before another past point."
+      },
+      {
+        prompt: "Upgrade using Inversion with 'Rarely': “Public transport has rarely been so affordable.”",
+        opts: [
+          "A) Rarely public transport has been so affordable.",
+          "B) Rarely has public transport been so affordable."
+        ],
+        ans: 1,
+        explain: "Limiting adverbs like 'Rarely' at the beginning trigger auxiliary + subject inversion ('has public transport')."
+      }
+    ];
+
+    let polishIdx = 0;
+    let polishScore = 0;
+    let polishStreak = 0;
+    let polishAnswered = false;
+
+    function renderPolishRound() {
+      const idx = polishIdx % POLISH_ROUNDS.length;
+      const r = POLISH_ROUNDS[idx];
+      polishAnswered = false;
+      document.getElementById('polishRoundBadge').textContent = `ROUND ${idx + 1} / ${POLISH_ROUNDS.length}`;
+      document.getElementById('polishPrompt').textContent = r.prompt;
+      document.getElementById('polishFeedback').classList.add('hidden');
+      document.getElementById('polishOptions').innerHTML = r.opts.map((op, i) => `
+        <button type="button" onclick="pickPolishOption(${i})" class="w-full text-left p-4 rounded-2xl bg-[#F2F7FB] dark:bg-[#071324] hover:border-sky-400 border-[1.5px] border-sky-500/20 text-xs sm:text-sm font-bold transition">${op}</button>
+      `).join('');
+    }
+
+    window.pickPolishOption = (picked) => {
+      if (polishAnswered) return;
+      polishAnswered = true;
+      const r = POLISH_ROUNDS[polishIdx % POLISH_ROUNDS.length];
+      const fb = document.getElementById('polishFeedback');
+      fb.classList.remove('hidden');
+      if (picked === r.ans) {
+        polishScore++;
+        polishStreak++;
+        fb.className = 'p-4 rounded-2xl text-xs sm:text-sm font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Level up! (+1 pt) — ${r.explain}`;
+      } else {
+        polishStreak = 0;
+        fb.className = 'p-4 rounded-2xl text-xs sm:text-sm font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `✗ Better upgrade: ${r.explain}`;
+      }
+      document.getElementById('polishScoreBadge').textContent = `SCORE: ${polishScore} / ${POLISH_ROUNDS.length}`;
+      document.getElementById('polishStreakBadge').textContent = `STREAK: ${polishStreak} 🔥`;
+    };
+
+    window.nextPolishRound = () => { polishIdx++; renderPolishRound(); };
+    window.restartPolishGame = () => {
+      polishIdx = 0;
+      polishScore = 0;
+      polishStreak = 0;
+      document.getElementById('polishScoreBadge').textContent = `SCORE: 0 / ${POLISH_ROUNDS.length}`;
+      document.getElementById('polishStreakBadge').textContent = `STREAK: 0 🔥`;
+      renderPolishRound();
+    };
+
+    // ==================== 07B (BELOW TASK IN STAGE 08): CHECKLIST ====================
+    const CHECKLIST_ITEMS = [
+      "Word count is strictly between 100 and 160 words.",
+      "The essay question and core arguments are clearly developed.",
+      "Organized into clear paragraphs with cohesive linkers (Firstly, However, To sum up).",
+      "Complex structures (conditionals, passives, relative/contrast clauses) are used accurately.",
+      "Neutral/formal tone used (no slang or informal contractions).",
+      "Proofread spelling, punctuation, and agreement before sending."
+    ];
+    document.getElementById('checklistBox').innerHTML = CHECKLIST_ITEMS.map(txt => `
+      <label class="flex items-start gap-2.5 p-3 rounded-2xl bg-[#F2F7FB] dark:bg-[#071324] border border-sky-500/20 cursor-pointer">
+        <input type="checkbox" class="mt-0.5 accent-sky-600 w-4 h-4 shrink-0" />
+        <span class="font-semibold text-slate-700 dark:text-slate-200">${txt}</span>
+      </label>
+    `).join('');
+
+    // ==================== 08: LIVE OTE ESSAY STUDIO, WORD COUNTER & DRIVE UPLOAD ====================
+    const EXAM_TASKS = [
+      {
+        code: "OTE-Essay-TaskA-RemoteWork",
+        title: "Working from Home vs. Office",
+        prompt: "In your English class, you have been talking about modern workplaces. Now your teacher has asked you to write an essay.",
+        question: "“Is working from home better than working in a traditional office?”",
+        focus: "Compare flexibility, commuting, and teamwork, and support your opinion with clear examples."
+      },
+      {
+        code: "OTE-Essay-TaskB-SocialMedia",
+        title: "Social Media & Teenagers",
+        prompt: "In your English class, you have been discussing how young people use technology. Now your teacher has asked you to write an essay.",
+        question: "“Has social media improved the way young people communicate?”",
+        focus: "Discuss digital connection versus face-to-face interaction and give a clear B1/B2 conclusion."
+      },
+      {
+        code: "OTE-Essay-TaskC-CarFreeCities",
+        title: "Banning Cars from City Centres",
+        prompt: "In your English class, you have been talking about urban transport and the environment. Now your teacher has asked you to write an essay.",
+        question: "“Should private cars be banned from large city centres?”",
+        focus: "Weigh environmental and urban benefits against practical impacts on residents and local businesses."
+      }
+    ];
+
+    function renderSelectedEssayTask() {
+      const idx = Number(document.getElementById('essayTaskSelect').value || 0);
+      const t = EXAM_TASKS[idx];
+      document.getElementById('selectedTaskCard').innerHTML = `
+        <p class="text-slate-600 dark:text-slate-300">${t.prompt}</p>
+        <p class="font-extrabold text-[#002B5C] dark:text-white text-sm sm:text-base">${t.question}</p>
+        <p class="text-xs text-slate-700 dark:text-slate-200 pt-1">${t.focus}</p>
+        <div class="pt-1 text-[11px] font-bold text-sky-700 dark:text-sky-300">
+          Write 100–160 words.
+        </div>
+      `;
+    }
+
+    const essayTextarea = document.getElementById('essayTextarea');
+    const essayStudentName = document.getElementById('essayStudentName');
+    essayStudentName.value = localStorage.getItem('provoStudentName') || '';
+    essayStudentName.addEventListener('input', () => {
+      localStorage.setItem('provoStudentName', essayStudentName.value.trim());
+    });
+
+    const savedDraft = localStorage.getItem('provoOteEssayDraft');
+    if (savedDraft) essayTextarea.value = savedDraft;
+
+    function countWords(str) {
+      const cleaned = str.trim();
+      if (!cleaned) return 0;
+      return cleaned.split(/\s+/).filter(Boolean).length;
+    }
+
+    function updateWordMetrics() {
+      const text = essayTextarea.value;
+      localStorage.setItem('provoOteEssayDraft', text);
+      const words = countWords(text);
+      const chars = text.length;
+      const paras = text.trim() ? text.trim().split(/\n\s*\n/).filter(Boolean).length : 0;
+
+      const badge = document.getElementById('wordCountBadge');
+      const pill = document.getElementById('wordStatusPill');
+      const bar = document.getElementById('wordRangeBar');
+
+      badge.textContent = `${words} / 100–160 WORDS`;
+      document.getElementById('paraCountLabel').textContent = `Paragraphs: ${paras} · Characters: ${chars}`;
+
+      const pct = Math.min(100, Math.round((words / 160) * 100));
+      bar.style.width = `${pct}%`;
+
+      if (words === 0) {
+        pill.className = 'px-2.5 py-1 rounded-full bg-slate-200 dark:bg-[#071324] text-slate-600 dark:text-slate-300 text-[11px] font-bold';
+        pill.textContent = 'Start typing...';
+        bar.className = 'h-full bg-slate-400 transition-all duration-200';
+      } else if (words < 100) {
+        pill.className = 'px-2.5 py-1 rounded-full bg-amber-500/15 text-amber-700 dark:text-amber-300 text-[11px] font-bold';
+        pill.textContent = `Need ${100 - words} more words`;
+        bar.className = 'h-full bg-amber-500 transition-all duration-200';
+      } else if (words <= 160) {
+        pill.className = 'px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 text-[11px] font-bold';
+        pill.textContent = '✓ Ideal OTE Range (100–160)';
+        bar.className = 'h-full bg-emerald-500 transition-all duration-200';
+      } else {
+        pill.className = 'px-2.5 py-1 rounded-full bg-rose-500/15 text-rose-700 dark:text-rose-300 text-[11px] font-bold';
+        pill.textContent = `Over limit by ${words - 160} words`;
+        bar.className = 'h-full bg-rose-500 transition-all duration-200';
+      }
+    }
+
+    essayTextarea.addEventListener('input', updateWordMetrics);
+
+    window.clearEssayDraft = () => {
+      essayTextarea.value = '';
+      localStorage.removeItem('provoOteEssayDraft');
+      updateWordMetrics();
+      document.getElementById('essaySubmitFeedback').classList.add('hidden');
+    };
+
+    function buildFormattedSubmission() {
+      const idx = Number(document.getElementById('essayTaskSelect').value || 0);
+      const task = EXAM_TASKS[idx];
+      const student = essayStudentName.value.trim() || 'Student';
+      const essayBody = essayTextarea.value.trim();
+      const words = countWords(essayBody);
+      const now = new Date().toLocaleString();
+
+      return [
+        `PROVO · OXFORD TEST OF ENGLISH (B1/B2) — WRITING PART 2: ESSAY`,
+        `Student: ${student}`,
+        `Task: ${task.title} (${task.question})`,
+        `Word Count: ${words} words (Target: 100–160)`,
+        `Submitted: ${now}`,
+        `------------------------------------------------------------`,
+        ``,
+        essayBody
+      ].join('\n');
+    }
+
+    function showEssayFeedback(msg, ok = true) {
+      const fb = document.getElementById('essaySubmitFeedback');
+      fb.classList.remove('hidden');
+      fb.className = ok
+        ? 'p-3.5 rounded-2xl text-xs sm:text-sm font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300'
+        : 'p-3.5 rounded-2xl text-xs sm:text-sm font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+      fb.textContent = msg;
+    }
+
+    window.downloadEssayTxt = () => {
+      const text = essayTextarea.value.trim();
+      if (!text) {
+        showEssayFeedback('Write your essay before downloading.', false);
+        return;
+      }
+      const student = (essayStudentName.value.trim() || 'Student').replace(/\s+/g, '_');
+      const idx = Number(document.getElementById('essayTaskSelect').value || 0);
+      const blob = new Blob([buildFormattedSubmission()], { type: 'text/plain;charset=utf-8' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `PROVO-${EXAM_TASKS[idx].code}-${student}.txt`;
+      a.click();
+    };
+
+    window.copyEssayText = async () => {
+      const text = essayTextarea.value.trim();
+      if (!text) {
+        showEssayFeedback('Nothing to copy yet.', false);
+        return;
+      }
+      try {
+        await navigator.clipboard.writeText(buildFormattedSubmission());
+        showEssayFeedback('✓ Essay copied to clipboard!', true);
+      } catch (e) {
+        showEssayFeedback('Could not access clipboard automatically—select and copy from the box.', false);
+      }
+    };
+
+    window.submitEssayToDrive = async () => {
+      const studentName = essayStudentName.value.trim();
+      const essayBody = essayTextarea.value.trim();
+      if (!studentName) {
+        showEssayFeedback('Please enter your name before sending to Google Drive.', false);
+        essayStudentName.focus();
+        return;
+      }
+      if (!essayBody) {
+        showEssayFeedback('Please write your essay before sending.', false);
+        essayTextarea.focus();
+        return;
+      }
+
+      const btn = document.getElementById('btnSubmitEssayDrive');
+      const lbl = document.getElementById('submitEssayLabel');
+      btn.disabled = true;
+      lbl.textContent = 'Sending to Drive...';
+
+      const idx = Number(document.getElementById('essayTaskSelect').value || 0);
+      const task = EXAM_TASKS[idx];
+      const formattedText = buildFormattedSubmission();
+      const words = countWords(essayBody);
+
+      const utf8Bytes = new TextEncoder().encode(formattedText);
+      let binary = '';
+      utf8Bytes.forEach(b => { binary += String.fromCharCode(b); });
+      const base64Text = btoa(binary);
+
+      try {
+        const res = await fetch(DRIVE_UPLOAD_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({
+            studentName,
+            lessonTitle: `${task.code}-${words}w`,
+            questionNumber: idx + 1,
+            mimeType: 'text/plain',
+            textContent: formattedText,
+            audioBase64: base64Text
+          })
+        });
+        const data = await res.json();
+        if (data.status === 'ok') {
+          showEssayFeedback(`✓ Sent to teacher's Google Drive folder as ${data.fileName} (${words} words)!`, true);
+        } else {
+          throw new Error(data.message || 'Upload error');
+        }
+      } catch (err) {
+        showEssayFeedback('Could not reach Drive automatically. Please click "Download .TXT" to save a backup copy.', false);
+      } finally {
+        btn.disabled = false;
+        lbl.textContent = 'Send Essay to Google Drive';
+      }
+    };
+
+    // ==================== 25-MINUTE EXAM TIMER ====================
+    let examSeconds = 25 * 60;
+    let examTimerId = null;
+
+    function renderExamClock() {
+      const m = String(Math.floor(examSeconds / 60)).padStart(2, '0');
+      const s = String(examSeconds % 60).padStart(2, '0');
+      document.getElementById('examClockDisplay').textContent = `${m}:${s}`;
+    }
+
+    window.toggleExamTimer = () => {
+      const btn = document.getElementById('btnToggleExamTimer');
+      if (examTimerId) {
+        clearInterval(examTimerId);
+        examTimerId = null;
+        btn.textContent = 'Resume Timer';
+      } else {
+        btn.textContent = 'Pause Timer';
+        examTimerId = setInterval(() => {
+          if (examSeconds > 0) {
+            examSeconds--;
+            renderExamClock();
+          } else {
+            clearInterval(examTimerId);
+            examTimerId = null;
+            btn.textContent = 'Time Up!';
+          }
+        }, 1000);
+      }
+    };
+
+    window.resetExamTimer = () => {
+      if (examTimerId) {
+        clearInterval(examTimerId);
+        examTimerId = null;
+      }
+      examSeconds = 25 * 60;
+      renderExamClock();
+      document.getElementById('btnToggleExamTimer').textContent = 'Start 25m Timer';
+    };
+
+    // Init
+    goStage(0);
+    renderConvCard();
+    renderBlueprintCard();
+    switchLexGroup('opening');
+    renderFixerCard();
+    renderPolishRound();
+    renderSelectedEssayTask();
+    updateWordMetrics();
+    renderExamClock();
+    lucide.createIcons();
+  </script>
+</body>
+</html>

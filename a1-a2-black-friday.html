@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A1–A2 · BLACK FRIDAY &amp; SHOPPING SALES | PROVO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <style>
+    @keyframes stageIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .stage-anim { animation: stageIn 0.24s ease-out forwards; }
+  </style>
+</head>
+<body class="bg-[#F2F7FA] text-slate-900 dark:bg-[#061322] dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
+
+  <!-- Sticky Top Bar -->
+  <header class="sticky top-0 z-40 bg-[#002B5C] text-white border-b border-sky-400/35 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2.5">
+        <a href="index.html" class="flex items-center shrink-0" title="PROVO">
+          <img
+            src="https://i.postimg.cc/vBt4qH44/download.png"
+            alt="PROVO"
+            class="h-8 w-auto object-contain block"
+            onerror="this.style.display='none'; document.getElementById('provoFallback').classList.remove('hidden');"
+          />
+          <span id="provoFallback" class="hidden font-extrabold tracking-widest text-lg text-white">PROVO</span>
+        </a>
+        <span class="px-2.5 py-0.5 rounded-full bg-teal-500/25 border border-teal-300/45 text-teal-100 text-[11px] font-bold tracking-wider">
+          A1–A2 · BLACK FRIDAY
+        </span>
+        <span id="stageTitleHeader" class="hidden xl:inline-block text-xs font-bold tracking-wider text-sky-200">
+          01 · WARM-UP
+        </span>
+      </div>
+
+      <div id="stagePills" class="flex items-center gap-1 overflow-x-auto py-1"></div>
+
+      <div class="flex items-center gap-2 shrink-0">
+        <button
+          id="themeBtn"
+          type="button"
+          class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition"
+          title="Toggle Theme"
+        >
+          <i id="themeIcon" data-lucide="sun" class="w-4 h-4"></i>
+        </button>
+        <a
+          href="index.html"
+          class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs font-bold bg-white/10 hover:bg-white/20 text-white transition"
+        >
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          <span class="hidden sm:inline">PORTAL</span>
+        </a>
+      </div>
+    </div>
+    <div class="w-full h-1.5 bg-black/25">
+      <div id="stageProgress" class="h-full bg-teal-400 transition-all duration-300" style="width: 20%"></div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl w-full mx-auto px-4 sm:px-6 py-7 sm:py-10 flex-1 flex flex-col justify-center">
+
+    <!-- ==================== 01: INTRO & WARM-UP ==================== -->
+    <section data-stage="0" class="stage stage-anim">
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-teal-500/25 shadow-xl">
+        <div class="lg:col-span-5 h-64 sm:h-auto relative bg-[#091726] overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=1050&q=80"
+            alt="Shopping bags during Black Friday sales"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#061322]/90 via-[#061322]/25 to-transparent"></div>
+          <div class="absolute bottom-5 left-5 right-5 space-y-1 text-white">
+            <span class="text-xs font-bold tracking-widest text-teal-300 uppercase">PROVO · Everyday English</span>
+            <p class="text-sm font-semibold text-slate-200">Sales · Prices · Discounts · Shopping Online &amp; In Shops</p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 p-7 sm:p-10 flex flex-col justify-center space-y-5">
+          <span class="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/15 border border-teal-400/35 text-teal-700 dark:text-teal-300 text-xs font-bold tracking-wider">
+            <i data-lucide="tag" class="w-4 h-4"></i>
+            <span>A1–A2 · SPEAKING &amp; VOCABULARY</span>
+          </span>
+
+          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight text-[#002B5C] dark:text-white">
+            Black Friday &amp; <span class="text-teal-600 dark:text-teal-400">Big Sales</span>
+          </h1>
+
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            Talk about shopping days, discounts, prices, and buying things online or in stores using clear, everyday A1–A2 English.
+          </p>
+
+          <div class="p-4 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border border-teal-500/20 space-y-2">
+            <div class="text-xs font-extrabold uppercase tracking-wider text-teal-700 dark:text-teal-300">Quick Warm-Up Question</div>
+            <p class="text-sm sm:text-base font-bold text-[#002B5C] dark:text-white">
+              “Do you like Black Friday sales, or do you prefer to buy things at normal prices?”
+            </p>
+            <p class="text-xs text-slate-600 dark:text-slate-300">
+              Try answering with: <em>“I usually look for discounts on...”</em> or <em>“I don't buy much on Black Friday because...”</em>
+            </p>
+          </div>
+
+          <div class="pt-1">
+            <button
+              type="button"
+              onclick="goStage(1)"
+              class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-[#002B5C] via-[#005A8D] to-[#0089A7] hover:opacity-95 text-white text-sm sm:text-base font-bold shadow-lg transition"
+            >
+              <span>Start Lesson</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 02: 8 CONVERSATION CARDS ==================== -->
+    <section data-stage="1" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-teal-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-teal-600 dark:text-teal-400 uppercase">Stage 02 · Speaking Practice</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Black Friday Speaking Cards (8 Cards)</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Read aloud, listen, and answer with simple sentences.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-teal-500/25 shadow-xl max-w-4xl mx-auto w-full">
+        <div id="bfPhotoBox" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+
+        <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-5">
+          <div class="space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-2">
+                <span id="bfBadge" class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">CARD 1 / 8</span>
+                <span id="bfTag" class="px-3 py-1 rounded-full bg-teal-500/15 text-teal-700 dark:text-teal-300 text-xs font-bold"></span>
+              </div>
+              <button type="button" onclick="speakBfQ()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#0089A7] hover:bg-[#00748E] text-white text-xs font-bold transition">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                <span>Listen</span>
+              </button>
+            </div>
+
+            <h3 id="bfQuestion" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+            <p id="bfFollow" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300"></p>
+
+            <div>
+              <button type="button" onclick="document.getElementById('bfStarters').classList.toggle('hidden')" class="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-teal-700 dark:text-teal-300 hover:underline">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                <span>Helpful Answers</span>
+              </button>
+              <div id="bfStarters" class="hidden mt-2.5 p-3.5 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border border-teal-500/20 text-xs space-y-1"></div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-sky-400/15">
+            <button type="button" onclick="stepBf(-1)" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">← Prev</button>
+            <div id="bfDots" class="flex flex-wrap gap-1"></div>
+            <button type="button" onclick="stepBf(1)" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 03: 10 KEY SHOPPING & SALES WORDS ==================== -->
+    <section data-stage="2" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-teal-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-teal-600 dark:text-teal-400 uppercase">Stage 03 · Core Vocabulary</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">10 Sales &amp; Shopping Words</h2>
+        </div>
+        <div class="inline-flex rounded-xl p-1 bg-white dark:bg-[#0C1E33] border-[1.5px] border-teal-500/25 self-start sm:self-auto">
+          <button id="btnVwSingle" type="button" onclick="setVwMode('single')" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-[#0089A7] text-white transition">1 by 1 Card</button>
+          <button id="btnVwGrid" type="button" onclick="setVwMode('grid')" class="px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition">All 10 Words</button>
+        </div>
+      </div>
+
+      <div id="vwSingleBox" class="max-w-4xl mx-auto w-full"></div>
+      <div id="vwGridBox" class="hidden grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+    </section>
+
+    <!-- ==================== 04: USEFUL PHRASES & PRICE TALK ==================== -->
+    <section data-stage="3" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-teal-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-teal-600 dark:text-teal-400 uppercase">Stage 04 · Everyday Expressions</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Talking About Deals, Prices &amp; Choices</h2>
+        </div>
+        <span class="px-3 py-1 rounded-full bg-teal-500/15 text-teal-700 dark:text-teal-300 text-xs font-extrabold">Tap Listen to Hear Each Line</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="phraseCardsGrid"></div>
+    </section>
+
+    <!-- ==================== 05: QUICK SHOPPING GAME ==================== -->
+    <section data-stage="4" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-teal-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-teal-600 dark:text-teal-400 uppercase">Stage 05 · Quick Game</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Sale or Full Price? Pick the Right Word!</h2>
+        </div>
+        <div class="flex items-center gap-2">
+          <span id="saleScoreBadge" class="px-3.5 py-1.5 rounded-xl bg-[#002B5C] text-teal-300 text-xs font-extrabold">SCORE: 0 / 6</span>
+          <button type="button" onclick="resetSaleGame()" class="px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">
+            Play Again
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-teal-500/25 rounded-3xl p-6 sm:p-9 max-w-4xl mx-auto w-full space-y-6 shadow-xl">
+        <div class="flex items-center justify-between gap-2">
+          <span id="saleRoundBadge" class="px-3.5 py-1 rounded-full bg-[#0089A7] text-white text-xs font-extrabold">ROUND 1 / 6</span>
+          <span class="text-xs font-bold text-slate-500 dark:text-slate-400">A1–A2 Shopping Challenge</span>
+        </div>
+
+        <h3 id="salePrompt" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+        <div id="saleOptions" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+        <div id="saleFeedback" class="hidden p-4 rounded-2xl text-xs sm:text-sm font-bold"></div>
+
+        <div class="flex justify-end">
+          <button type="button" onclick="nextSaleRound()" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-[#002B5C] to-[#0089A7] text-white text-xs sm:text-sm font-bold">
+            Next Question →
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Navigation -->
+  <footer class="border-t border-teal-500/20 bg-white dark:bg-[#061322] py-4 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      <button id="btnPrev" type="button" onclick="goStage(currentStage - 1)" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-300 dark:border-sky-400/25 hover:bg-slate-100 dark:hover:bg-[#132C4A] disabled:opacity-30 text-xs font-bold transition">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Previous</span>
+      </button>
+
+      <span id="stageCounter" class="text-xs font-bold tracking-widest text-slate-500 dark:text-slate-400">
+        01 / 05
+      </span>
+
+      <button id="btnNext" type="button" onclick="goStage(currentStage + 1)" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#002B5C] hover:bg-[#005A8D] disabled:opacity-30 text-xs font-bold text-white transition">
+        <span>Next</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    const STAGES = [
+      "01 · WARM-UP",
+      "02 · SPEAKING CARDS",
+      "03 · 10 SALES WORDS",
+      "04 · USEFUL PHRASES",
+      "05 · QUICK GAME"
+    ];
+
+    let currentStage = 0;
+    const stageSections = document.querySelectorAll('.stage');
+
+    function goStage(idx) {
+      if (idx < 0 || idx >= stageSections.length) return;
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      currentStage = idx;
+      stageSections.forEach((s, i) => s.classList.toggle('hidden', i !== currentStage));
+      document.getElementById('stageTitleHeader').textContent = STAGES[currentStage];
+      document.getElementById('stageCounter').textContent = `${String(currentStage + 1).padStart(2, '0')} / ${String(stageSections.length).padStart(2, '0')}`;
+      document.getElementById('stageProgress').style.width = `${((currentStage + 1) / stageSections.length) * 100}%`;
+      document.getElementById('btnPrev').disabled = currentStage === 0;
+      document.getElementById('btnNext').disabled = currentStage === stageSections.length - 1;
+      renderStagePills();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      lucide.createIcons();
+    }
+
+    function renderStagePills() {
+      document.getElementById('stagePills').innerHTML = STAGES.map((_, i) => `
+        <button type="button" onclick="goStage(${i})" class="px-2.5 py-1 rounded-lg text-xs font-bold transition ${
+          i === currentStage ? 'bg-[#0089A7] text-white' : 'text-white/75 hover:text-white hover:bg-white/10'
+        }">${String(i + 1).padStart(2, '0')}</button>
+      `).join('');
+    }
+
+    const themeBtn = document.getElementById('themeBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    if (localStorage.getItem('provoBfA1A2Theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      themeIcon.setAttribute('data-lucide', 'moon');
+    }
+    themeBtn.addEventListener('click', () => {
+      const dark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('provoBfA1A2Theme', dark ? 'dark' : 'light');
+      themeIcon.setAttribute('data-lucide', dark ? 'sun' : 'moon');
+      lucide.createIcons();
+    });
+
+    function mountPhoto(container, url, altText, fallbackTitle) {
+      container.innerHTML = `<img src="${url}" alt="${altText}" class="w-full h-full object-cover" loading="lazy" />`;
+      const img = container.querySelector('img');
+      if (img) {
+        img.addEventListener('error', () => {
+          container.innerHTML = `
+            <div class="w-full h-full flex flex-col items-center justify-center bg-[#002B5C] text-white p-6 text-center">
+              <i data-lucide="tag" class="w-8 h-8 text-teal-300 mb-2"></i>
+              <span class="text-xs font-extrabold uppercase tracking-widest">${fallbackTitle}</span>
+            </div>
+          `;
+          lucide.createIcons();
+        }, { once: true });
+      }
+    }
+
+    function pickVoice() {
+      if (!('speechSynthesis' in window)) return null;
+      const voices = window.speechSynthesis.getVoices() || [];
+      if (!voices.length) return null;
+      return (
+        voices.find(v => /sonia/i.test(v.name)) ||
+        voices.find(v => /en[-_]GB/i.test(v.lang)) ||
+        voices.find(v => /^en/i.test(v.lang)) ||
+        null
+      );
+    }
+
+    function speakText(text) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      const v = pickVoice();
+      if (v) {
+        u.voice = v;
+        u.lang = v.lang;
+      } else {
+        u.lang = 'en-GB';
+      }
+      u.rate = 0.92;
+      u.pitch = 1.02;
+      window.speechSynthesis.speak(u);
+    }
+
+    // ==================== 02: 8 SPEAKING CARDS ====================
+    const BF_CARDS = [
+      { tag: "Sales Days", q: "When is Black Friday, and do shops in your town have big sales in November?", follow: "Does it last one day or a whole week?", photo: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=950&q=80", starters: ["• Many shops have sales for a whole week in November.", "• I see big sale signs in windows and online."] },
+      { tag: "Online vs. Shops", q: "Do you prefer shopping online or going to a shopping center on sale days?", follow: "Why is one better for you?", photo: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=950&q=80", starters: ["• I prefer shopping online because it's quiet and easy.", "• I like going to shops to see the size and color."] },
+      { tag: "Clothes & Shoes", q: "What clothes, shoes, or accessories do people usually look for in the sales?", follow: "Do you usually buy winter clothes or sports gear?", photo: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=950&q=80", starters: ["• People often look for coats, sneakers, and sweaters.", "• I usually look for comfortable shoes or hoodies."] },
+      { tag: "Tech & Gadgets", q: "Are headphones, phones, or laptops popular during Black Friday?", follow: "Have you ever waited for a sale to buy tech?", photo: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=950&q=80", starters: ["• Yes, headphones and gadgets are very popular.", "• Sometimes I wait to see if the price goes down."] },
+      { tag: "Good Deals", q: "What was the last good bargain or discount you found?", follow: "How much did it cost?", photo: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=950&q=80", starters: ["• I found a nice jacket with a 30% discount.", "• It was cheaper than usual, so I bought it."] },
+      { tag: "Impulse Buying", q: "Do you sometimes buy things you don't really need just because they are cheap?", follow: "How do you stop yourself?", photo: "https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?auto=format&fit=crop&w=950&q=80", starters: ["• Sometimes I do, especially when the price is low!", "• I make a small list before I shop."] },
+      { tag: "Crowds & Queues", q: "Do you like busy shops and long queues, or do you avoid crowds?", follow: "What time of day is busiest?", photo: "https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?auto=format&fit=crop&w=950&q=80", starters: ["• I don't like long queues or noisy crowds.", "• Shops are usually busy in the late afternoon."] },
+      { tag: "Christmas Gifts", q: "Do people buy Christmas presents early during Black Friday?", follow: "Who do you buy presents for?", photo: "https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=950&q=80", starters: ["• Yes, many people start buying Christmas gifts early.", "• I like to buy small presents for family."] }
+    ];
+    let bfIdx = 0;
+
+    function renderBfCard() {
+      bfIdx = (bfIdx + BF_CARDS.length) % BF_CARDS.length;
+      const c = BF_CARDS[bfIdx];
+      document.getElementById('bfBadge').textContent = `CARD ${bfIdx + 1} / ${BF_CARDS.length}`;
+      document.getElementById('bfTag').textContent = c.tag;
+      document.getElementById('bfQuestion').textContent = c.q;
+      document.getElementById('bfFollow').textContent = c.follow;
+      document.getElementById('bfStarters').innerHTML = c.starters.map(s => `<div>${s}</div>`).join('');
+      document.getElementById('bfStarters').classList.add('hidden');
+      mountPhoto(document.getElementById('bfPhotoBox'), c.photo, c.tag, c.tag);
+      document.getElementById('bfDots').innerHTML = BF_CARDS.map((_, i) => `
+        <button type="button" onclick="bfIdx=${i}; renderBfCard();" class="w-6 h-6 rounded-lg text-[11px] font-bold ${
+          i === bfIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#081526]'
+        }">${i + 1}</button>
+      `).join('');
+    }
+    window.stepBf = (d) => { bfIdx += d; renderBfCard(); };
+    window.speakBfQ = () => speakText(`${BF_CARDS[bfIdx].q} ${BF_CARDS[bfIdx].follow}`);
+
+    // ==================== 03: 10 SALES & SHOPPING WORDS ====================
+    const SALES_WORDS = [
+      { word: "a discount", pos: "noun", meaning: "A lower price than usual.", ex: "There is a 20% discount on winter coats today.", photo: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=800&q=80" },
+      { word: "a bargain", pos: "noun", meaning: "Something bought for a very good, low price.", ex: "These trainers were a real bargain at €35.", photo: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80" },
+      { word: "on sale", pos: "phrase", meaning: "Sold at a reduced price for a short time.", ex: "These headphones are on sale this weekend.", photo: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80" },
+      { word: "price tag", pos: "noun", meaning: "The label that shows how much something costs.", ex: "Let's check the price tag before we go to the till.", photo: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=800&q=80" },
+      { word: "half price", pos: "phrase", meaning: "50% off the normal price.", ex: "The backpack is half price today.", photo: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80" },
+      { word: "queue", pos: "noun / verb", meaning: "A line of people waiting; or to wait in line.", ex: "There was a long queue at the checkout.", photo: "https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?auto=format&fit=crop&w=800&q=80" },
+      { word: "checkout", pos: "noun", meaning: "The place where you pay for your items in a shop.", ex: "I'll meet you near the checkout in five minutes.", photo: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80" },
+      { word: "shopping basket", pos: "noun", meaning: "A small basket you carry in a shop or fill online.", ex: "I put two books in my online shopping basket.", photo: "https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?auto=format&fit=crop&w=800&q=80" },
+      { word: "receipt", pos: "noun", meaning: "The paper or digital proof of what you paid.", ex: "Keep your receipt in case you need to exchange it.", photo: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80" },
+      { word: "refund / exchange", pos: "nouns", meaning: "Getting money back (refund) or swapping for another item/size (exchange).", ex: "If it's too small, can I get an exchange?", photo: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80" }
+    ];
+    let vwIdx = 0;
+    let vwMode = 'single';
+
+    window.setVwMode = (mode) => {
+      vwMode = mode;
+      document.getElementById('vwSingleBox').classList.toggle('hidden', mode !== 'single');
+      const g = document.getElementById('vwGridBox');
+      g.classList.toggle('hidden', mode !== 'grid');
+      g.classList.toggle('grid', mode === 'grid');
+      document.getElementById('btnVwSingle').className = mode === 'single'
+        ? 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-[#0089A7] text-white transition'
+        : 'px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition';
+      document.getElementById('btnVwGrid').className = mode === 'grid'
+        ? 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-[#0089A7] text-white transition'
+        : 'px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition';
+      renderSalesWords();
+    };
+
+    function renderSalesWords() {
+      vwIdx = (vwIdx + SALES_WORDS.length) % SALES_WORDS.length;
+      const w = SALES_WORDS[vwIdx];
+      const safeEx = w.ex.replace(/'/g, "\\'");
+
+      document.getElementById('vwSingleBox').innerHTML = `
+        <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-teal-500/25 shadow-xl">
+          <div id="vwPhotoBox" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+          <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">WORD ${vwIdx + 1} / ${SALES_WORDS.length}</span>
+                  <span class="px-3 py-1 rounded-full bg-teal-500/15 text-teal-700 dark:text-teal-300 text-xs font-bold">${w.pos}</span>
+                </div>
+                <button type="button" onclick="speakText('${safeEx}')" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#0089A7] text-white text-xs font-bold">
+                  <i data-lucide="volume-2" class="w-4 h-4"></i> Listen
+                </button>
+              </div>
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">${w.word}</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300">${w.meaning}</p>
+              <div class="p-4 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border border-teal-500/20">
+                <p class="text-sm italic font-semibold text-[#002B5C] dark:text-sky-200">“${w.ex}”</p>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-sky-400/15">
+              <button type="button" onclick="vwIdx--; renderSalesWords();" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">← Prev</button>
+              <div class="flex flex-wrap gap-1">
+                ${SALES_WORDS.map((_, i) => `<button type="button" onclick="vwIdx=${i}; renderSalesWords();" class="w-7 h-7 rounded-lg text-xs font-bold ${i === vwIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#081526]'}">${i + 1}</button>`).join('')}
+              </div>
+              <button type="button" onclick="vwIdx++; renderSalesWords();" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+            </div>
+          </div>
+        </div>
+      `;
+      mountPhoto(document.getElementById('vwPhotoBox'), w.photo, w.word, w.word.toUpperCase());
+
+      document.getElementById('vwGridBox').innerHTML = SALES_WORDS.map(item => `
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-teal-500/25 rounded-3xl overflow-hidden shadow-md flex flex-col">
+          <img src="${item.photo}" alt="${item.word}" class="h-32 w-full object-cover" loading="lazy" />
+          <div class="p-5 flex-1 flex flex-col justify-between gap-3">
+            <div class="space-y-1.5">
+              <div class="flex items-start justify-between gap-2">
+                <h4 class="text-lg font-extrabold text-[#002B5C] dark:text-white">${item.word}</h4>
+                <button type="button" onclick="speakText('${item.ex.replace(/'/g, "\\'")}')" class="p-1.5 rounded-lg bg-[#EEF4F8] dark:bg-[#081526] text-teal-600 dark:text-teal-300"><i data-lucide="volume-2" class="w-4 h-4"></i></button>
+              </div>
+              <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-teal-500/15 text-teal-700 dark:text-teal-300">${item.pos}</span>
+              <p class="text-xs text-slate-600 dark:text-slate-300">${item.meaning}</p>
+            </div>
+            <p class="text-xs italic text-[#002B5C] dark:text-sky-200 border-t border-slate-100 dark:border-sky-400/15 pt-2">“${item.ex}”</p>
+          </div>
+        </div>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    // ==================== 04: USEFUL PHRASES ====================
+    const PHRASES = [
+      { title: "How much is this with the discount?", tip: "Ask the price clearly in a shop.", ex: "Excuse me, how much is this jacket with the Black Friday discount?" },
+      { title: "Is this a good deal?", tip: "Compare the sale price to normal prices.", ex: "It was €90 last week and now it's €60—that's a good deal." },
+      { title: "I'm just browsing, thanks.", tip: "Polite way to answer shop staff when looking around.", ex: "Hi there! — Thanks, I'm just browsing today." },
+      { title: "Do you have this in another size?", tip: "Essential when shopping for clothes or shoes.", ex: "Do you have these sneakers in a size 42?" },
+      { title: "I'll think about it.", tip: "When you don't want to buy right away.", ex: "The price is nice, but I'll think about it until tomorrow." },
+      { title: "Free delivery is a nice bonus.", tip: "Great for online shopping.", ex: "I like this website because there's free delivery over €30." }
+    ];
+
+    function renderPhrases() {
+      document.getElementById('phraseCardsGrid').innerHTML = PHRASES.map(p => `
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-teal-500/25 rounded-2xl p-5 flex items-start justify-between gap-4 shadow-sm">
+          <div class="space-y-1.5">
+            <h3 class="text-base font-extrabold text-[#002B5C] dark:text-white">${p.title}</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400">${p.tip}</p>
+            <p class="text-sm italic font-semibold text-teal-700 dark:text-teal-300 pt-1">“${p.ex}”</p>
+          </div>
+          <button type="button" onclick="speakText('${p.ex.replace(/'/g, "\\'")}')" class="p-2.5 rounded-xl bg-[#0089A7] hover:bg-[#00748E] text-white shrink-0 transition" title="Listen">
+            <i data-lucide="volume-2" class="w-4 h-4"></i>
+          </button>
+        </div>
+      `).join('');
+    }
+
+    // ==================== 05: QUICK GAME ====================
+    const SALE_ROUNDS = [
+      { prompt: "A sweater costs €50 normally, and today it costs €25. It is...", opts: ["half price", "a receipt"], ans: 0, why: "€25 out of €50 is half price (50% off)." },
+      { prompt: "You buy a bag for a very low, lucky price. You found...", opts: ["a queue", "a bargain"], ans: 1, why: "A bargain is something bought for a great, low price." },
+      { prompt: "You want to pay for your items in a shop. You go to the...", opts: ["checkout", "price tag"], ans: 0, why: "You pay at the checkout." },
+      { prompt: "Ten people are waiting in line to pay. There is a long...", opts: ["queue", "discount"], ans: 0, why: "A queue is a line of people waiting." },
+      { prompt: "You want to check how much an item costs on the label. You look at the...", opts: ["price tag", "shopping basket"], ans: 0, why: "The price tag shows the price." },
+      { prompt: "The shirt is too big and you want a smaller size. You ask for an...", opts: ["exchange", "discount"], ans: 0, why: "An exchange swaps an item for another size or product." }
+    ];
+    let saleIdx = 0;
+    let saleScore = 0;
+    let saleDone = false;
+
+    function renderSaleRound() {
+      const idx = saleIdx % SALE_ROUNDS.length;
+      const r = SALE_ROUNDS[idx];
+      saleDone = false;
+      document.getElementById('saleRoundBadge').textContent = `ROUND ${idx + 1} / ${SALE_ROUNDS.length}`;
+      document.getElementById('salePrompt').textContent = r.prompt;
+      document.getElementById('saleFeedback').classList.add('hidden');
+      document.getElementById('saleOptions').innerHTML = r.opts.map((op, i) => `
+        <button type="button" onclick="pickSaleOpt(${i})" class="w-full text-left p-4 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border-[1.5px] border-teal-500/20 hover:border-teal-400 text-sm font-extrabold transition">${op}</button>
+      `).join('');
+    }
+
+    window.pickSaleOpt = (picked) => {
+      if (saleDone) return;
+      saleDone = true;
+      const r = SALE_ROUNDS[saleIdx % SALE_ROUNDS.length];
+      const fb = document.getElementById('saleFeedback');
+      fb.classList.remove('hidden');
+      if (picked === r.ans) {
+        saleScore++;
+        fb.className = 'p-4 rounded-2xl text-xs sm:text-sm font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Well done! (+1 pt) — ${r.why}`;
+      } else {
+        fb.className = 'p-4 rounded-2xl text-xs sm:text-sm font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `✗ Not quite — ${r.why}`;
+      }
+      document.getElementById('saleScoreBadge').textContent = `SCORE: ${saleScore} / ${SALE_ROUNDS.length}`;
+    };
+    window.nextSaleRound = () => { saleIdx++; renderSaleRound(); };
+    window.resetSaleGame = () => {
+      saleIdx = 0;
+      saleScore = 0;
+      document.getElementById('saleScoreBadge').textContent = `SCORE: 0 / ${SALE_ROUNDS.length}`;
+      renderSaleRound();
+    };
+
+    // Init
+    goStage(0);
+    renderBfCard();
+    setVwMode('single');
+    renderPhrases();
+    renderSaleRound();
+    lucide.createIcons();
+  </script>
+</body>
+</html>

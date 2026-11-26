@@ -592,35 +592,8 @@
       </div>
 
       <aside class="spotlight-panel">
-        <div class="spotlight-label">Most Visited</div>
-        <a href="a1-a2-feelings-moods.html" class="quick-item">
-          <div>
-            <strong>Feelings &amp; Moods</strong>
-            <small>A1–A2 · Everyday emotions &amp; intensity</small>
-          </div>
-          <span class="quick-arrow">→</span>
-        </a>
-        <a href="teens-social-media.html" class="quick-item">
-          <div>
-            <strong>Social Media &amp; Your Feed</strong>
-            <small>Teens · Life online, trends &amp; opinions</small>
-          </div>
-          <span class="quick-arrow">→</span>
-        </a>
-        <a href="b1-b2-passive-voice.html" class="quick-item">
-          <div>
-            <strong>Mastering The Passive</strong>
-            <small>B1 / B2 · Focusing on actions, news &amp; processes</small>
-          </div>
-          <span class="quick-arrow">→</span>
-        </a>
-        <a href="ote-writing-essay.html" class="quick-item">
-          <div>
-            <strong>Mastering the OTE Essay</strong>
-            <small>OTE Prep · Clear structure &amp; exam writing</small>
-          </div>
-          <span class="quick-arrow">→</span>
-        </a>
+        <div class="spotlight-label" id="spotlightLabel">Most Visited</div>
+        <div id="mostVisitedList" style="display: flex; flex-direction: column; gap: 0.75rem;"></div>
       </aside>
     </div>
   </section>
@@ -637,7 +610,7 @@
         <button class="filter-btn" data-filter="teens">Teens</button>
         <button class="filter-btn" data-filter="business">Business English</button>
       </div>
-      <span id="visibleCountLabel" class="counter-pill">17 lessons</span>
+      <span id="visibleCountLabel" class="counter-pill">18 lessons</span>
     </div>
 
     <div class="grid" id="lessonGrid">
@@ -994,6 +967,88 @@
         localStorage.setItem('provoPortalTheme', isDark ? 'dark' : 'light');
         btn.textContent = isDark ? '☀️ Light' : '🌙 Dark';
       });
+    })();
+  </script>
+
+  <script>
+    // Automatic Most Visited Tracker (localStorage)
+    (function () {
+      const VISITS_KEY = 'provoLessonVisits';
+      const DEFAULTS = [
+        'a1-a2-feelings-moods.html',
+        'teens-social-media.html',
+        'b1-b2-passive-voice.html',
+        'ote-writing-essay.html'
+      ];
+
+      function getVisits() {
+        try {
+          return JSON.parse(localStorage.getItem(VISITS_KEY) || '{}');
+        } catch (e) {
+          return {};
+        }
+      }
+
+      function saveVisit(href) {
+        if (!href) return;
+        const visits = getVisits();
+        visits[href] = (visits[href] || 0) + 1;
+        localStorage.setItem(VISITS_KEY, JSON.stringify(visits));
+      }
+
+      function renderMostVisited() {
+        const container = document.getElementById('mostVisitedList');
+        if (!container) return;
+
+        const visits = getVisits();
+        const catalog = {};
+
+        document.querySelectorAll('#lessonGrid .card').forEach(card => {
+          const link = card.querySelector('a.card-btn');
+          const title = card.querySelector('h2');
+          const tag = card.querySelector('.tag');
+          if (link && title) {
+            const href = link.getAttribute('href');
+            catalog[href] = {
+              href,
+              title: title.textContent.trim(),
+              tag: tag ? tag.textContent.trim() : '',
+              count: visits[href] || 0
+            };
+          }
+        });
+
+        const sorted = Object.values(catalog).sort((a, b) => {
+          if (b.count !== a.count) return b.count - a.count;
+          const idxA = DEFAULTS.indexOf(a.href);
+          const idxB = DEFAULTS.indexOf(b.href);
+          if (idxA !== -1 && idxB !== -1) return idxA - idxB;
+          if (idxA !== -1) return -1;
+          if (idxB !== -1) return 1;
+          return 0;
+        });
+
+        const top4 = sorted.slice(0, 4);
+
+        container.innerHTML = top4.map(item => `
+          <a href="${item.href}" class="quick-item" data-track-href="${item.href}">
+            <div>
+              <strong>${item.title}</strong>
+              <small>${item.tag}${item.count > 0 ? ` · Opened ${item.count}×` : ''}</small>
+            </div>
+            <span class="quick-arrow">→</span>
+          </a>
+        `).join('');
+      }
+
+      document.addEventListener('click', (e) => {
+        const btn = e.target.closest('a.card-btn, a.quick-item');
+        if (btn) {
+          saveVisit(btn.getAttribute('href'));
+        }
+      });
+
+      renderMostVisited();
     })();
   </script>
 </body>

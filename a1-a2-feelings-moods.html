@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A1–A2 · FEELINGS &amp; MOODS | PROVO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <style>
+    @keyframes stageIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .stage-anim { animation: stageIn 0.24s ease-out forwards; }
+  </style>
+</head>
+<body class="bg-[#F0F7FA] text-slate-900 dark:bg-[#061322] dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
+
+  <!-- Sticky Top Bar (A1-A2 Teal / Ocean Accent on PROVO Navy) -->
+  <header class="sticky top-0 z-40 bg-[#002B5C] text-white border-b border-cyan-400/35 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2.5">
+        <a href="index.html" class="flex items-center shrink-0" title="PROVO">
+          <img
+            src="https://i.postimg.cc/vBt4qH44/download.png"
+            alt="PROVO"
+            class="h-8 w-auto object-contain block"
+            onerror="this.style.display='none'; document.getElementById('provoFallback').classList.remove('hidden');"
+          />
+          <span id="provoFallback" class="hidden font-extrabold tracking-widest text-lg text-white">PROVO</span>
+        </a>
+        <span class="px-2.5 py-0.5 rounded-full bg-cyan-400/20 border border-cyan-300/45 text-cyan-100 text-[11px] font-bold tracking-wider">
+          A1–A2 · FEELINGS &amp; MOODS
+        </span>
+        <span id="stageTitleHeader" class="hidden xl:inline-block text-xs font-bold tracking-wider text-cyan-200">
+          01 · COVER &amp; BRIEFING
+        </span>
+      </div>
+
+      <div id="stagePills" class="flex items-center gap-1 overflow-x-auto py-1"></div>
+
+      <div class="flex items-center gap-2 shrink-0">
+        <button
+          id="themeBtn"
+          type="button"
+          class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition"
+          title="Toggle Theme"
+        >
+          <i id="themeIcon" data-lucide="sun" class="w-4 h-4"></i>
+        </button>
+        <a
+          href="index.html"
+          class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs font-bold bg-white/10 hover:bg-white/20 text-white transition"
+        >
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          <span class="hidden sm:inline">PORTAL</span>
+        </a>
+      </div>
+    </div>
+    <div class="w-full h-1.5 bg-black/25">
+      <div id="stageProgress" class="h-full bg-cyan-400 transition-all duration-300" style="width: 12.5%"></div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl w-full mx-auto px-4 sm:px-6 py-7 sm:py-10 flex-1 flex flex-col justify-center">
+
+    <!-- ==================== 01: COVER & BRIEFING ==================== -->
+    <section data-stage="0" class="stage stage-anim">
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-cyan-500/25 dark:border-cyan-400/25 shadow-xl">
+        <div class="lg:col-span-5 h-64 sm:h-auto relative bg-[#091726] overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1050&q=80"
+            alt="Expressive smile and everyday emotion"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#061322]/90 via-[#061322]/25 to-transparent"></div>
+          <div class="absolute bottom-5 left-5 right-5 space-y-1 text-white">
+            <span class="text-xs font-bold tracking-widest text-cyan-300 uppercase">PROVO · A1–A2 Conversation &amp; Grammar</span>
+            <p class="text-sm font-semibold text-slate-200">How Are You Feeling? · Mood Options · Intensity Adverbs · Short Writing</p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 p-7 sm:p-10 flex flex-col justify-center space-y-5">
+          <span class="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-cyan-500/15 border border-cyan-400/35 text-cyan-700 dark:text-cyan-300 text-xs font-bold tracking-wider">
+            <i data-lucide="smile" class="w-4 h-4"></i>
+            <span>PROVO STAGE LAB · A1–A2 EDITION</span>
+          </span>
+
+          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight text-[#002B5C] dark:text-white">
+            Feelings &amp; <span class="text-[#0089A7] dark:text-cyan-400">Moods</span>
+          </h1>
+
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            Talk about real situations, mood swings, and what changes how you feel in minutes. Explore more natural ways to say how you're feeling, add intensity adverbs, dive into 24 illustrated feelings with a speaking question on every card, play Mood Rush, and write a short paragraph under 80–100 words.
+          </p>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1 text-xs">
+            <button type="button" onclick="goStage(1)" class="p-3 rounded-2xl bg-[#F0F7FA] dark:bg-[#071628] border-[1.5px] border-cyan-500/20 hover:border-cyan-400 text-left transition">
+              <div class="font-extrabold text-[#0089A7] dark:text-cyan-400">02 · SPEAKING</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">10 Sharp Prompts</div>
+            </button>
+            <button type="button" onclick="goStage(2)" class="p-3 rounded-2xl bg-[#F0F7FA] dark:bg-[#071628] border-[1.5px] border-cyan-500/20 hover:border-cyan-400 text-left transition">
+              <div class="font-extrabold text-[#0089A7] dark:text-cyan-400">03 · GRAMMAR</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">Ways to Say It</div>
+            </button>
+            <button type="button" onclick="goStage(4)" class="p-3 rounded-2xl bg-[#F0F7FA] dark:bg-[#071628] border-[1.5px] border-cyan-500/20 hover:border-cyan-400 text-left transition">
+              <div class="font-extrabold text-[#0089A7] dark:text-cyan-400">05 · VOCAB</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">24 Moods + Qs</div>
+            </button>
+            <button type="button" onclick="goStage(7)" class="p-3 rounded-2xl bg-[#F0F7FA] dark:bg-[#071628] border-[1.5px] border-cyan-500/20 hover:border-cyan-400 text-left transition">
+              <div class="font-extrabold text-[#0089A7] dark:text-cyan-400">08 · WRITING</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">Under 80–100w</div>
+            </button>
+          </div>
+
+          <div class="pt-1">
+            <button
+              type="button"
+              onclick="goStage(1)"
+              class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-[#002B5C] via-[#005A8D] to-[#0089A7] hover:opacity-95 text-white text-sm sm:text-base font-bold shadow-lg transition"
+            >
+              <span>Start Lesson</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 02: 10 MORE INTERESTING CONVERSATION CARDS + VOICE RECORDER ==================== -->
+    <section data-stage="1" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-cyan-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-[#0089A7] dark:text-cyan-400 uppercase">Stage 02 · Conversation Warm-Up</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Real Mood Situations (10 Cards)</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Go beyond “I'm fine”—share a real example and why your mood changed.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div class="lg:col-span-7 space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-2 bg-white dark:bg-[#0C1E33] border-[1.5px] border-cyan-500/25 rounded-2xl px-4 py-3 shadow-sm">
+            <div class="flex items-center gap-2">
+              <span id="qBadge" class="px-2.5 py-1 rounded-lg bg-[#002B5C] text-white text-xs font-extrabold">Q1 / 10</span>
+              <span id="qTag" class="px-2.5 py-1 rounded-lg bg-cyan-500/15 text-cyan-700 dark:text-cyan-300 text-xs font-bold"></span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <button type="button" onclick="stepQ(-1)" class="p-2 rounded-xl border border-slate-200 dark:border-cyan-400/25 hover:bg-slate-100 dark:hover:bg-[#132C4A]"><i data-lucide="chevron-left" class="w-4 h-4"></i></button>
+              <button type="button" onclick="stepQ(1)" class="p-2 rounded-xl border border-slate-200 dark:border-cyan-400/25 hover:bg-slate-100 dark:hover:bg-[#132C4A]"><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+              <button type="button" onclick="speakQ()" class="inline-flex items-center gap-1 px-3 py-2 rounded-xl bg-[#0089A7] text-white text-xs font-bold">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                <span>Listen</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-cyan-500/25 rounded-3xl overflow-hidden shadow-md">
+            <div id="qPhotoBox" class="h-56 sm:h-64 bg-[#091726] relative overflow-hidden"></div>
+            <div class="p-6 sm:p-8 space-y-4">
+              <h3 id="qText" class="text-xl sm:text-2xl font-extrabold leading-snug text-[#002B5C] dark:text-white"></h3>
+              <p id="qFollow" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300"></p>
+              <div>
+                <button type="button" onclick="document.getElementById('qStartersBox').classList.toggle('hidden')" class="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-[#0089A7] dark:text-cyan-300 hover:underline">
+                  <i data-lucide="message-circle" class="w-4 h-4"></i>
+                  <span>Show Answer Starters</span>
+                </button>
+                <div id="qStartersBox" class="hidden mt-2.5 p-3.5 rounded-2xl bg-[#F0F7FA] dark:bg-[#071628] border border-cyan-500/20 text-xs space-y-1"></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="qPills" class="flex flex-wrap gap-1.5"></div>
+        </div>
+
+        <!-- Voice Recorder Column -->
+        <div class="lg:col-span-5 bg-white dark:bg-[#0C1E33] border-[1.5px] border-cyan-500/25 rounded-3xl p-6 space-y-4 shadow-md">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-extrabold uppercase tracking-wider text-[#0089A7] dark:text-cyan-400">Voice Note · Drive</span>
+            <span id="recTimer" class="font-mono text-xs font-bold text-slate-500 dark:text-slate-400">00:00</span>
+          </div>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Record a quick answer and send your voice note to your teacher.</p>
+          <input
+            id="studentNameInput"
+            type="text"
+            placeholder="Your name (e.g. Mateo Ruiz)"
+            class="w-full px-3.5 py-2.5 rounded-xl bg-[#F0F7FA] dark:bg-[#071628] border border-slate-200 dark:border-cyan-400/25 text-sm outline-none focus:border-cyan-400"
+          />
+          <div class="flex items-center gap-2">
+            <button id="btnRecord" type="button" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#0089A7] hover:opacity-95 text-white text-xs font-bold transition">
+              <i data-lucide="mic" class="w-4 h-4"></i>
+              <span>Record</span>
+            </button>
+            <button id="btnStop" type="button" disabled class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 disabled:opacity-40 text-white text-xs font-bold transition">
+              <i data-lucide="square" class="w-4 h-4"></i>
+              <span>Stop</span>
+            </button>
+            <button id="btnClearAudio" type="button" disabled class="p-2.5 rounded-xl border border-slate-200 dark:border-cyan-400/25 disabled:opacity-40" title="Discard">
+              <i data-lucide="trash-2" class="w-4 h-4"></i>
+            </button>
+          </div>
+          <audio id="audioPreview" controls class="w-full hidden rounded-xl"></audio>
+          <div class="flex gap-2">
+            <button id="btnSendDrive" type="button" disabled class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#002B5C] disabled:opacity-40 text-white text-xs font-bold transition">
+              <i data-lucide="send" class="w-3.5 h-3.5"></i>
+              <span id="sendLabel">Send to Teacher</span>
+            </button>
+            <button id="btnDownloadAudio" type="button" disabled class="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl border border-slate-200 dark:border-cyan-400/25 disabled:opacity-40 text-xs font-semibold">
+              <i data-lucide="download" class="w-3.5 h-3.5"></i>
+              <span>Save</span>
+            </button>
+          </div>
+          <div id="uploadFeedback" class="hidden text-xs font-semibold px-3 py-2 rounded-xl"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 03: VISUAL GRAMMAR LAB 1 — MORE WAYS TO SAY HOW YOU'RE FEELING ==================== -->
+    <section data-stage="2" class="stage hidden stage-anim space-y-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-cyan-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-[#0089A7] dark:text-cyan-400 uppercase">Stage 03 · Grammar Visual Lab (1/2)</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Ways to Express Your Feelings</h2>
+        </div>
+        <span class="px-3 py-1 rounded-full bg-cyan-500/15 text-cyan-700 dark:text-cyan-300 text-xs font-extrabold">6 Natural Ways to Say It</span>
+      </div>
+
+      <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-cyan-500/25 rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <span class="text-xs font-extrabold uppercase tracking-wider text-[#0089A7] dark:text-cyan-400">VISUAL BLOCKS · TAP ANY OPTION</span>
+          <div class="flex flex-wrap gap-1.5" id="feelingBuilderPresets"></div>
+        </div>
+
+        <div class="rounded-2xl bg-[#F0F7FA] dark:bg-[#071628] border border-cyan-500/20 p-4 sm:p-6 overflow-x-auto">
+          <svg viewBox="0 0 820 155" class="w-full min-w-[620px] h-auto" role="img" aria-label="Subject plus to be plus feeling plus adjective">
+            <rect x="20" y="24" width="235" height="96" rx="18" fill="#002B5C" stroke="#38BDF8" stroke-width="2" />
+            <text x="137" y="48" fill="#7DD3FC" font-size="11" font-weight="800" text-anchor="middle">SUBJECT + “TO BE”</text>
+            <text id="svgBeBlock" x="137" y="82" fill="#FFFFFF" font-size="22" font-weight="800" text-anchor="middle">I'm</text>
+            <text x="137" y="106" fill="#CBD5E1" font-size="11" font-weight="600" text-anchor="middle">am / is / are (+ not)</text>
+
+            <rect x="285" y="24" width="235" height="96" rx="18" fill="#0F766E" stroke="#2DD4BF" stroke-width="2" />
+            <text x="402" y="48" fill="#99F6E4" font-size="11" font-weight="800" text-anchor="middle">VERB PHRASE</text>
+            <text id="svgVerbBlock" x="402" y="82" fill="#FFFFFF" font-size="20" font-weight="800" text-anchor="middle">feeling</text>
+            <text x="402" y="106" fill="#CCFBF1" font-size="11" font-weight="600" text-anchor="middle">feeling / starting to feel</text>
+
+            <rect x="550" y="24" width="250" height="96" rx="18" fill="#0369A1" stroke="#7DD3FC" stroke-width="2" />
+            <text x="675" y="48" fill="#BAE6FD" font-size="11" font-weight="800" text-anchor="middle">FEELING ADJECTIVE</text>
+            <text id="svgAdjBlock" x="675" y="82" fill="#FFFFFF" font-size="22" font-weight="800" text-anchor="middle">happy.</text>
+            <text x="675" y="106" fill="#E0F2FE" font-size="11" font-weight="600" text-anchor="middle">adjective at the end</text>
+          </svg>
+        </div>
+
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-2xl bg-cyan-500/10 border border-cyan-500/25">
+          <div class="space-y-0.5">
+            <div class="text-xs font-extrabold uppercase text-[#0089A7] dark:text-cyan-300" id="feelingNuanceLabel"></div>
+            <div id="feelingPairText" class="text-sm sm:text-base font-extrabold text-[#002B5C] dark:text-white"></div>
+          </div>
+          <button type="button" onclick="speakFeelingPair()" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#0089A7] text-white text-xs font-bold shrink-0">
+            <i data-lucide="volume-2" class="w-4 h-4"></i>
+            <span>Listen</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Illustrated Examples Strip -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-cyan-500/25 rounded-3xl overflow-hidden shadow-md">
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=700&q=80" alt="Friends celebrating happily" class="h-32 w-full object-cover" />
+          <div class="p-4 flex items-center justify-between gap-2">
+            <span class="text-sm font-extrabold text-[#002B5C] dark:text-white">I'm <span class="text-[#0089A7] dark:text-cyan-400">feeling pumped</span>.</span>
+            <button type="button" onclick="speakText('I am feeling pumped.')" class="p-2 rounded-xl bg-cyan-500/15 text-[#0089A7] dark:text-cyan-300"><i data-lucide="volume-2" class="w-4 h-4"></i></button>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-cyan-500/25 rounded-3xl overflow-hidden shadow-md">
+          <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=700&q=80" alt="Getting ready and excited" class="h-32 w-full object-cover" />
+          <div class="p-4 flex items-center justify-between gap-2">
+            <span class="text-sm font-extrabold text-[#002B5C] dark:text-white">I'm <span class="text-[#0089A7] dark:text-cyan-400">starting to feel</span> better.</span>
+            <button type="button" onclick="speakText('I am starting to feel better.')" class="p-2 rounded-xl bg-cyan-500/15 text-[#0089A7] dark:text-cyan-300"><i data-lucide="volume-2" class="w-4 h-4"></i></button>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-cyan-500/25 rounded-3xl overflow-hidden shadow-md">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=700&q=80" alt="Calm and not stressed" class="h-32 w-full object-cover" />
+          <div class="p-4 flex items-center justify-between gap-2">
+            <span class="text-sm font-extrabold text-[#002B5C] dark:text-white">I'm <span class="text-[#0089A7] dark:text-cyan-400">not feeling</span> stressed at all.</span>
+            <button type="button" onclick="speakText('I am not feeling stressed at all.')" class="p-2 rounded-xl bg-cyan-500/15 text-[#0089A7] dark:text-cyan-300"><i data-lucide="volume-2" class="w-4 h-4"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 04: VISUAL GRAMMAR LAB 2 — MORE ADVERB & QUESTION OPTIONS ==================== -->
+    <section data-stage="3" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-cyan-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-[#0089A7] dark:text-cyan-400 uppercase">Stage 04 · Grammar Visual Lab (2/2)</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">More Adverbs &amp; Ways to Ask</h2>
+        </div>
+        <span class="px-3 py-1 rounded-full bg-purple-500/15 text-purple-700 dark:text-purple-300 text-xs font-extrabold">pretty · quite · very · really · so</span>
+      </div>
+
+      <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-cyan-500/25 rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <span class="text-xs font-extrabold uppercase tracking-wider text-purple-600 dark:text-purple-300">INTENSITY &amp; QUESTION OPTIONS</span>
+          <div class="flex flex-wrap gap-1.5" id="adverbSwitcher"></div>
+        </div>
+
+        <div class="rounded-2xl bg-[#F0F7FA] dark:bg-[#071628] border border-cyan-500/20 p-4 sm:p-6 overflow-x-auto">
+          <svg viewBox="0 0 820 155" class="w-full min-w-[620px] h-auto" role="img" aria-label="Subject plus to be plus adverb plus adjective">
+            <rect x="20" y="24" width="220" height="96" rx="18" fill="#002B5C" stroke="#38BDF8" stroke-width="2" />
+            <text x="130" y="48" fill="#7DD3FC" font-size="11" font-weight="800" text-anchor="middle">SUBJECT + “TO BE”</text>
+            <text id="svgAdvSubj" x="130" y="82" fill="#FFFFFF" font-size="22" font-weight="800" text-anchor="middle">I'm</text>
+            <text x="130" y="106" fill="#CBD5E1" font-size="11" font-weight="600" text-anchor="middle">I'm / You're / He's / They're</text>
+
+            <rect x="270" y="24" width="240" height="96" rx="18" fill="#6D28D9" stroke="#C4B5FD" stroke-width="2" />
+            <text x="390" y="48" fill="#DDD6FE" font-size="11" font-weight="800" text-anchor="middle">ADVERB (DEGREE)</text>
+            <text id="svgAdvWord" x="390" y="82" fill="#FFFFFF" font-size="24" font-weight="800" text-anchor="middle">pretty</text>
+            <text x="390" y="106" fill="#EDE9FE" font-size="11" font-weight="600" text-anchor="middle">pretty · quite · very · really · so</text>
+
+            <rect x="540" y="24" width="260" height="96" rx="18" fill="#0369A1" stroke="#7DD3FC" stroke-width="2" />
+            <text x="670" y="48" fill="#BAE6FD" font-size="11" font-weight="800" text-anchor="middle">FEELING ADJECTIVE</text>
+            <text id="svgAdvMood" x="670" y="82" fill="#FFFFFF" font-size="22" font-weight="800" text-anchor="middle">tired.</text>
+            <text x="670" y="106" fill="#E0F2FE" font-size="11" font-weight="600" text-anchor="middle">describes how you feel</text>
+          </svg>
+        </div>
+
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-2xl bg-purple-500/10 border border-purple-500/25">
+          <div class="space-y-1">
+            <div id="advDialogueLine" class="text-sm sm:text-base font-extrabold text-[#002B5C] dark:text-white"></div>
+            <div id="advScaleNote" class="text-xs text-slate-600 dark:text-slate-300"></div>
+          </div>
+          <button type="button" onclick="speakAdvLine()" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-purple-600 text-white text-xs font-bold shrink-0">
+            <i data-lucide="volume-2" class="w-4 h-4"></i>
+            <span>Listen</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mini Check for Stage 04 -->
+      <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-cyan-500/25 rounded-3xl p-6 space-y-3 shadow-md">
+        <span class="text-xs font-extrabold uppercase tracking-wider text-[#0089A7] dark:text-cyan-400">Quick Check · Natural Question &amp; Adverb</span>
+        <p class="text-sm font-bold text-[#002B5C] dark:text-white">Which reply means “not extremely, just moderately”?</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm font-semibold">
+          <button type="button" onclick="checkAdvMini('A')" class="p-3.5 rounded-xl bg-[#F0F7FA] dark:bg-[#071628] border border-cyan-500/20 hover:border-cyan-400 text-left">A) I'm so exhausted I can't move.</button>
+          <button type="button" onclick="checkAdvMini('B')" class="p-3.5 rounded-xl bg-[#F0F7FA] dark:bg-[#071628] border border-cyan-500/20 hover:border-cyan-400 text-left">B) I'm pretty tired, nothing crazy.</button>
+        </div>
+        <div id="advMiniFb" class="hidden p-3 rounded-xl text-xs font-bold"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 05: ILLUSTRATED VOCABULARY GALLERY (1 BY 1 OR ALL 24 + QUESTION ON EACH CARD) ==================== -->
+    <section data-stage="4" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-3 border-b border-cyan-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-[#0089A7] dark:text-cyan-400 uppercase">Stage 05 · Illustrated Feelings &amp; Moods</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Mood Cards + Speaking Question Each</h2>
+        </div>
+        <div class="flex flex-wrap items-center gap-2">
+          <div class="inline-flex rounded-xl p-1 bg-white dark:bg-[#0C1E33] border-[1.5px] border-cyan-500/25">
+            <button id="btnMoodSingle" type="button" onclick="setMoodView('single')" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-[#0089A7] text-white transition">1 by 1 Card</button>
+            <button id="btnMoodAllCards" type="button" onclick="setMoodView('grid')" class="px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition">All Cards</button>
+          </div>
+          <button id="tabMoodAll" type="button" onclick="filterMoods('all')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-[#002B5C] text-white">All (24)</button>
+          <button id="tabMoodUp" type="button" onclick="filterMoods('up')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-white dark:bg-[#0C1E33] border-[1.5px] border-cyan-500/25">Upbeat (9)</button>
+          <button id="tabMoodDown" type="button" onclick="filterMoods('down')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-white dark:bg-[#0C1E33] border-[1.5px] border-cyan-500/25">Low / Tense (15)</button>
+        </div>
+      </div>
+
+      <div id="moodSingleBox" class="max-w-4xl mx-auto w-full"></div>
+      <div id="moodsGrid" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+    </section>
+
+    <!-- ==================== 06: PRACTICE LAB (MIXED ANSWER POSITIONS) ==================== -->
+    <section data-stage="5" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-cyan-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-[#0089A7] dark:text-cyan-400 uppercase">Stage 06 · Interactive Practice</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Choose the Right Feeling &amp; Form (6 Drills)</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Read carefully—the right answer isn't always option A!</p>
+      </div>
+
+      <div id="practiceGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+    </section>
+
+    <!-- ==================== 07: GAMIFIED CHALLENGE — "MOOD RUSH" ==================== -->
+    <section data-stage="6" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-cyan-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-[#0089A7] dark:text-cyan-400 uppercase">Stage 07 · Interactive Game</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Mood Rush: Spot the Feeling!</h2>
+        </div>
+        <div class="flex items-center gap-2">
+          <span id="rushScoreBadge" class="px-3.5 py-1.5 rounded-xl bg-[#002B5C] text-cyan-300 text-xs font-extrabold">SCORE: 0 / 8</span>
+          <span id="rushStreakBadge" class="px-3.5 py-1.5 rounded-xl bg-white dark:bg-[#0C1E33] border border-cyan-500/25 text-xs font-extrabold">STREAK: 0 🔥</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-cyan-500/25 shadow-xl max-w-4xl mx-auto w-full">
+        <div id="rushPhotoBox" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+
+        <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-5">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between gap-2">
+              <span id="rushRoundBadge" class="px-3 py-1 rounded-full bg-[#0089A7] text-white text-xs font-extrabold">ROUND 1 / 8</span>
+              <button type="button" onclick="restartRush()" class="px-3 py-1.5 rounded-xl border border-slate-300 dark:border-cyan-400/25 text-xs font-bold">Reset</button>
+            </div>
+
+            <h3 id="rushSituation" class="text-lg sm:text-xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+
+            <div id="rushOptions" class="grid grid-cols-2 gap-2.5 text-xs sm:text-sm font-bold"></div>
+
+            <div id="rushFeedback" class="hidden p-3.5 rounded-2xl text-xs sm:text-sm font-bold"></div>
+          </div>
+
+          <div class="flex justify-end pt-3 border-t border-slate-100 dark:border-cyan-400/15">
+            <button type="button" onclick="nextRush()" class="px-6 py-2.5 rounded-2xl bg-gradient-to-r from-[#002B5C] to-[#0089A7] text-white text-xs sm:text-sm font-bold">
+              Next Situation →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 08: SHORT WRITING TASK (UNDER 80–100 WORDS) + DRIVE SEND ==================== -->
+    <section data-stage="7" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-cyan-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-[#0089A7] dark:text-cyan-400 uppercase">Stage 08 · Short Writing Task</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Short Mood &amp; Routine Note (Under 80–100 Words)</h2>
+        </div>
+        <span class="px-3 py-1 rounded-full bg-cyan-500/15 text-cyan-700 dark:text-cyan-300 text-xs font-extrabold">Keep it under 80–100 words</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div class="lg:col-span-5 bg-white dark:bg-[#0C1E33] border-[1.5px] border-cyan-500/25 rounded-3xl overflow-hidden shadow-lg">
+          <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=80" alt="Writing a short note on paper" class="h-44 w-full object-cover" />
+          <div class="p-6 space-y-3 text-xs sm:text-sm">
+            <span class="text-xs font-extrabold uppercase tracking-wider text-[#0089A7] dark:text-cyan-400">Writing Prompt</span>
+            <p class="font-bold text-[#002B5C] dark:text-white">
+              Write a short message or diary note (around 50–80 words, and never over 100 words) about how you feel today.
+            </p>
+            <ul class="space-y-1 text-slate-600 dark:text-slate-300 text-xs">
+              <li>• Say how you are feeling right now or today.</li>
+              <li>• Include 2–3 feeling adjectives (e.g. <em>tired, excited, calm, stressed</em>).</li>
+              <li>• Use <em>very</em>, <em>really</em>, or <em>so</em> once or twice.</li>
+              <li>• Say what helps you feel better when your mood drops.</li>
+            </ul>
+            <input
+              id="writeStudentName"
+              type="text"
+              placeholder="Your name (e.g. Mateo Ruiz)"
+              class="w-full px-3.5 py-2.5 rounded-xl bg-[#F0F7FA] dark:bg-[#071628] border border-slate-200 dark:border-cyan-400/25 text-sm outline-none focus:border-cyan-400"
+            />
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 bg-white dark:bg-[#0C1E33] border-[1.5px] border-cyan-500/25 rounded-3xl p-6 sm:p-7 space-y-4 shadow-lg">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <span class="text-xs font-extrabold uppercase tracking-wider text-[#0089A7] dark:text-cyan-400">Your Short Text</span>
+            <div class="flex items-center gap-2">
+              <span id="shortWordBadge" class="px-3 py-1 rounded-full bg-slate-200 dark:bg-[#071628] text-xs font-extrabold">0 WORDS</span>
+              <span id="shortWordStatus" class="px-2.5 py-1 rounded-full bg-cyan-500/15 text-cyan-700 dark:text-cyan-300 text-[11px] font-bold">Target: &lt; 80–100w</span>
+            </div>
+          </div>
+
+          <textarea
+            id="shortWritingTextarea"
+            rows="7"
+            placeholder="Today I'm feeling pretty tired because I had a busy morning, but I'm really excited about this afternoon..."
+            class="w-full p-4 rounded-2xl bg-[#F0F7FA] dark:bg-[#071628] border-[1.5px] border-cyan-500/25 text-sm leading-relaxed outline-none focus:border-cyan-400"
+          ></textarea>
+
+          <div class="flex flex-wrap items-center gap-2">
+            <button
+              id="btnSendShortDrive"
+              type="button"
+              onclick="sendShortWritingToDrive()"
+              class="flex-1 min-w-[180px] inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#002B5C] hover:bg-[#0089A7] text-white text-xs font-bold transition"
+            >
+              <i data-lucide="send" class="w-4 h-4"></i>
+              <span id="sendShortLabel">Send to Teacher</span>
+            </button>
+            <button type="button" onclick="downloadShortTxt()" class="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-cyan-400/25 text-xs font-bold">
+              <i data-lucide="download" class="w-4 h-4"></i>
+              <span>.TXT</span>
+            </button>
+            <button type="button" onclick="copyShortText()" class="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-cyan-400/25 text-xs font-bold">
+              <i data-lucide="copy" class="w-4 h-4"></i>
+              <span>Copy</span>
+            </button>
+          </div>
+
+          <div id="shortWriteFb" class="hidden p-3 rounded-xl text-xs font-bold"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Navigation -->
+  <footer class="border-t border-cyan-500/20 bg-white dark:bg-[#061322] py-4 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      <button id="btnPrev" type="button" onclick="goStage(currentStage - 1)" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-300 dark:border-cyan-400/25 hover:bg-slate-100 dark:hover:bg-[#132C4A] disabled:opacity-30 text-xs font-bold transition">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Previous</span>
+      </button>
+
+      <span id="stageCounter" class="text-xs font-bold tracking-widest text-slate-500 dark:text-slate-400">
+        01 / 08
+      </span>
+
+      <button id="btnNext" type="button" onclick="goStage(currentStage + 1)" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#002B5C] hover:bg-[#005A8D] disabled:opacity-30 text-xs font-bold text-white transition">
+        <span>Next</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    const DRIVE_UPLOAD_URL = "https://script.google.com/macros/s/AKfycbwBcX7Z4aABKplkUkpYvM2wEnsBHhWCZzi7dFGDkeUarkXwv-RRI0JXAPDakjkrCrBc/exec";
+
+    const STAGES = [
+      "01 · COVER & BRIEFING",
+      "02 · SPEAKING CARDS",
+      "03 · WAYS TO SAY IT",
+      "04 · ADVERBS & QUESTIONS",
+      "05 · 24 MOODS + QS",
+      "06 · PRACTICE DRILLS",
+      "07 · MOOD RUSH",
+      "08 · SHORT WRITING"
+    ];
+
+    let currentStage = 0;
+    const stageSections = document.querySelectorAll('.stage');
+
+    function goStage(idx) {
+      if (idx < 0 || idx >= stageSections.length) return;
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      currentStage = idx;
+      stageSections.forEach((s, i) => s.classList.toggle('hidden', i !== currentStage));
+      document.getElementById('stageTitleHeader').textContent = STAGES[currentStage];
+      document.getElementById('stageCounter').textContent = `${String(currentStage + 1).padStart(2, '0')} / ${String(stageSections.length).padStart(2, '0')}`;
+      document.getElementById('stageProgress').style.width = `${((currentStage + 1) / stageSections.length) * 100}%`;
+      document.getElementById('btnPrev').disabled = currentStage === 0;
+      document.getElementById('btnNext').disabled = currentStage === stageSections.length - 1;
+      renderStagePills();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      lucide.createIcons();
+    }
+
+    function renderStagePills() {
+      document.getElementById('stagePills').innerHTML = STAGES.map((_, i) => `
+        <button type="button" onclick="goStage(${i})" class="px-2.5 py-1 rounded-lg text-xs font-bold transition ${
+          i === currentStage ? 'bg-[#0089A7] text-white' : 'text-white/75 hover:text-white hover:bg-white/10'
+        }">${String(i + 1).padStart(2, '0')}</button>
+      `).join('');
+    }
+
+    const themeBtn = document.getElementById('themeBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    if (localStorage.getItem('provoFeelingsTheme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      themeIcon.setAttribute('data-lucide', 'moon');
+    }
+    themeBtn.addEventListener('click', () => {
+      const dark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('provoFeelingsTheme', dark ? 'dark' : 'light');
+      themeIcon.setAttribute('data-lucide', dark ? 'sun' : 'moon');
+      lucide.createIcons();
+    });
+
+    function mountPhoto(container, url, altText, fallbackTitle) {
+      container.innerHTML = `<img src="${url}" alt="${altText}" class="w-full h-full object-cover" loading="lazy" />`;
+      const img = container.querySelector('img');
+      if (img) {
+        img.addEventListener('error', () => {
+          container.innerHTML = `
+            <div class="w-full h-full flex flex-col items-center justify-center bg-[#002B5C] text-white p-6 text-center">
+              <i data-lucide="smile" class="w-8 h-8 text-cyan-300 mb-2"></i>
+              <span class="text-xs font-extrabold uppercase tracking-widest">${fallbackTitle}</span>
+            </div>
+          `;
+          lucide.createIcons();
+        }, { once: true });
+      }
+    }
+
+    function pickSoniaVoice() {
+      if (!('speechSynthesis' in window)) return null;
+      const voices = window.speechSynthesis.getVoices() || [];
+      if (!voices.length) return null;
+      return (
+        voices.find(v => /sonia/i.test(v.name)) ||
+        voices.find(v => /en[-_]GB/i.test(v.lang) && /natural|online|google|neural/i.test(v.name)) ||
+        voices.find(v => /en[-_]GB/i.test(v.lang)) ||
+        voices.find(v => /^en/i.test(v.lang)) ||
+        null
+      );
+    }
+
+    if ('speechSynthesis' in window && typeof window.speechSynthesis.onvoiceschanged !== 'undefined') {
+      window.speechSynthesis.onvoiceschanged = () => pickSoniaVoice();
+    }
+
+    function speakText(text) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const runUtterance = () => {
+        const u = new SpeechSynthesisUtterance(text);
+        const voice = pickSoniaVoice();
+        if (voice) {
+          u.voice = voice;
+          u.lang = voice.lang;
+        } else {
+          u.lang = 'en-GB';
+        }
+        u.rate = 0.93;
+        u.pitch = 1.02;
+        window.speechSynthesis.speak(u);
+      };
+      if ((window.speechSynthesis.getVoices() || []).length === 0 && 'onvoiceschanged' in window) {
+        const once = () => {
+          window.speechSynthesis.removeEventListener('voiceschanged', once);
+          runUtterance();
+        };
+        window.speechSynthesis.addEventListener('voiceschanged', once);
+        setTimeout(runUtterance, 120);
+      } else {
+        runUtterance();
+      }
+    }
+
+    // ==================== 02: 10 MORE INTERESTING CONVERSATION CARDS ====================
+    const Q_CARDS = [
+      { tag: "Mood Flip", q: "What's something that can turn your mood around in ten minutes—from tired or grumpy to upbeat?", follow: "A playlist, food, a walk, a shower, or talking to a friend?", photo: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=950&q=80", starters: ["• Putting on ___ usually shifts my mood right away.", "• If I'm feeling a bit down, ___ helps a lot."] },
+      { tag: "Train or Bus Delays", q: "You're already running late and your bus or train gets delayed. How do you react—annoyed, calm, or stressed?", follow: "Do you stay quiet or get irritated?", photo: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=950&q=80", starters: ["• When a train is delayed and I'm in a rush, I feel...", "• I try to stay calm, though sometimes I get..."] },
+      { tag: "Unexpected Good News", q: "Tell me about a time you felt genuinely surprised—in a good way—when you didn't expect it.", follow: "Where were you when it happened?", photo: "https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&w=950&q=80", starters: ["• I was totally surprised when...", "• I didn't expect it at all, so I felt..."] },
+      { tag: "Screen Fatigue", q: "After hours looking at screens, do you feel tired, distracted, or just ready to switch off?", follow: "What do you do when your brain feels full?", photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=950&q=80", starters: ["• After too much screen time I feel pretty...", "• When my head feels full, I like to..."] },
+      { tag: "Crowd Energy", q: "At a busy concert, match, or party, do you feel excited and energized or a bit overwhelmed?", follow: "Depends on the crowd or your mood that day?", photo: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=950&q=80", starters: ["• In big crowds I usually feel...", "• It depends on my mood—some days I'm really..."] },
+      { tag: "Small Annoyances", q: "What's a tiny everyday annoyance that makes you more irritated than it probably should?", follow: "Slow Wi-Fi, people walking slowly in front of you, loud chewing...?", photo: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=950&q=80", starters: ["• Honestly, ___ makes me way more annoyed than it should.", "• It's a small thing, but it really gets on my nerves."] },
+      { tag: "Before Big Moments", rightNow: true, q: "Right before an interview, exam, or big event, what's your honest mix of nervous and confident?", follow: "Do nerves help you focus or slow you down?", photo: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=950&q=80", starters: ["• Usually I feel a bit nervous at first, then...", "• A little bit of nerves actually helps me..."] },
+      { tag: "Rainy Days vs. Sun", q: "Does the weather actually change your mood, or can you stay cheerful on a grey, rainy day?", follow: "Which weather puts you in your best mood?", photo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=950&q=80", starters: ["• Sunny days always make me feel more...", "• On rainy days I sometimes feel a bit..., unless..."] },
+      { tag: "Curiosity Spark", q: "What's a topic, skill, or place you're curious about right now, even if you haven't started yet?", follow: "Why did it catch your attention?", photo: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=950&q=80", starters: ["• Lately I've been really curious about...", "• I want to try it because..."] },
+      { tag: "Sunday Evening Vibe", q: "How do you usually feel on Sunday evening—relaxed, slightly bored, or dreading the week ahead?", follow: "What's your ideal Sunday night routine?", photo: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=950&q=80", starters: ["• On Sunday nights I usually feel...", "• My favourite way to end the weekend is..."] }
+    ];
+    let qIdx = 0;
+
+    function renderQ(idx) {
+      qIdx = (idx + Q_CARDS.length) % Q_CARDS.length;
+      const c = Q_CARDS[qIdx];
+      document.getElementById('qBadge').textContent = `Q${qIdx + 1} / ${Q_CARDS.length}`;
+      document.getElementById('qTag').textContent = c.tag;
+      document.getElementById('qText').textContent = c.q;
+      document.getElementById('qFollow').textContent = c.follow;
+      document.getElementById('qStartersBox').innerHTML = c.starters.map(s => `<div>${s}</div>`).join('');
+      document.getElementById('qStartersBox').classList.add('hidden');
+      mountPhoto(document.getElementById('qPhotoBox'), c.photo, c.tag, c.tag);
+      document.getElementById('qPills').innerHTML = Q_CARDS.map((_, i) => `
+        <button type="button" onclick="renderQ(${i})" class="w-8 h-8 rounded-lg text-xs font-extrabold ${
+          i === qIdx ? 'bg-[#002B5C] text-white' : 'bg-white dark:bg-[#0C1E33] border border-cyan-500/20'
+        }">${i + 1}</button>
+      `).join('');
+    }
+    window.stepQ = (d) => renderQ(qIdx + d);
+    window.speakQ = () => speakText(`${Q_CARDS[qIdx].q} ${Q_CARDS[qIdx].follow}`);
+
+    // ==================== 03: MORE WAYS TO SAY HOW YOU'RE FEELING ====================
+    const FEELING_PRESETS = [
+      { label: "I'm feeling...", be: "I'm", verb: "feeling", adj: "happy.", nuance: "Everyday & natural", pair: "“How are you feeling?” → “I'm feeling happy.”" },
+      { label: "Not feeling...", be: "I'm not", verb: "feeling", adj: "stressed.", nuance: "Negative mood check", pair: "“Are you feeling stressed?” → “No, I'm not feeling stressed.”" },
+      { label: "Starting to feel...", be: "I'm", verb: "starting to feel", adj: "better.", nuance: "Gradual change", pair: "“How are you feeling now?” → “I'm starting to feel better.”" },
+      { label: "She's feeling...", be: "She's", verb: "feeling", adj: "excited.", nuance: "Third person singular", pair: "“How is she feeling?” → “She's feeling excited.”" },
+      { label: "They're feeling...", be: "They're", verb: "feeling", adj: "confident.", nuance: "Plural group mood", pair: "“How are they feeling?” → “They're feeling confident.”" },
+      { label: "Getting a bit...", be: "I'm", verb: "getting a bit", adj: "tired.", nuance: "Casual & gradual", pair: "“How are you doing?” → “I'm getting a bit tired.”" }
+    ];
+    let fpIdx = 0;
+
+    function renderFeelingBuilder() {
+      const p = FEELING_PRESETS[fpIdx];
+      document.getElementById('feelingBuilderPresets').innerHTML = FEELING_PRESETS.map((item, i) => `
+        <button type="button" onclick="fpIdx=${i}; renderFeelingBuilder();" class="px-3 py-1.5 rounded-xl text-xs font-bold transition ${
+          i === fpIdx ? 'bg-[#0089A7] text-white' : 'bg-[#F0F7FA] dark:bg-[#071628] border border-cyan-500/20'
+        }">${item.label}</button>
+      `).join('');
+
+      document.getElementById('svgBeBlock').textContent = p.be;
+      document.getElementById('svgVerbBlock').textContent = p.verb;
+      document.getElementById('svgAdjBlock').textContent = p.adj;
+      document.getElementById('feelingNuanceLabel').textContent = `${p.nuance} · Question & Answer`;
+      document.getElementById('feelingPairText').textContent = p.pair;
+    }
+    window.speakFeelingPair = () => speakText(FEELING_PRESETS[fpIdx].pair.replace(/[“”→]/g, ' '));
+
+    // ==================== 04: MORE ADVERBS & QUESTION OPTIONS ====================
+    const ADV_EXAMPLES = [
+      { subj: "I'm", adv: "pretty", mood: "tired.", line: "“How are you?” → “I'm pretty tired.”", note: "‘Pretty’ and ‘quite’ are great everyday A2 options for a moderate degree." },
+      { subj: "I'm", adv: "quite", mood: "relaxed.", line: "“How are you holding up?” → “I'm quite relaxed.”", note: "‘How are you holding up?’ is a natural way to ask how someone is coping." },
+      { subj: "I'm", adv: "really", mood: "excited.", line: "“How are you feeling today?” → “I'm really excited.”", note: "‘Really’ adds strong emphasis in spoken English." },
+      { subj: "They're", adv: "so", mood: "disappointed.", line: "“How are they?” → “They're so disappointed.”", note: "‘So’ sounds expressive and immediate before strong adjectives." },
+      { subj: "He's", adv: "very", mood: "curious.", line: "“How is he?” → “He's very curious about it.”", note: "‘Very’ is classic, clear, and neutral across all contexts." }
+    ];
+    let advIdx = 0;
+
+    function renderAdvBuilder() {
+      const item = ADV_EXAMPLES[advIdx];
+      document.getElementById('adverbSwitcher').innerHTML = ADV_EXAMPLES.map((ex, i) => `
+        <button type="button" onclick="advIdx=${i}; renderAdvBuilder();" class="px-3 py-1.5 rounded-xl text-xs font-bold transition ${
+          i === advIdx ? 'bg-purple-600 text-white' : 'bg-[#F0F7FA] dark:bg-[#071628] border border-cyan-500/20'
+        }">${ex.adv} ${ex.mood.replace('.', '')}</button>
+      `).join('');
+
+      document.getElementById('svgAdvSubj').textContent = item.subj;
+      document.getElementById('svgAdvWord').textContent = item.adv;
+      document.getElementById('svgAdvMood').textContent = item.mood;
+      document.getElementById('advDialogueLine').textContent = item.line;
+      document.getElementById('advScaleNote').textContent = item.note;
+    }
+    window.speakAdvLine = () => speakText(ADV_EXAMPLES[advIdx].line.replace(/[“”→]/g, ' '));
+
+    window.checkAdvMini = (picked) => {
+      const fb = document.getElementById('advMiniFb');
+      fb.classList.remove('hidden');
+      if (picked === 'B') {
+        fb.className = 'p-3 rounded-xl text-xs font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = '✓ Correct! “Pretty tired” expresses a moderate level without sounding extreme.';
+      } else {
+        fb.className = 'p-3 rounded-xl text-xs font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = '✗ Not quite—option B (“pretty tired”) shows a moderate degree.';
+      }
+    };
+
+    // ==================== 05: 24 ILLUSTRATED MOODS (1 BY 1 OR ALL + QUESTION ON EACH CARD) ====================
+    const MOODS_24 = [
+      { word: "calm", group: "up", photo: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=700&q=80", q: "What helps you stay calm when things get busy?" },
+      { word: "relaxed", group: "up", photo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=700&q=80", q: "When do you feel most relaxed during the week?" },
+      { word: "happy", group: "up", photo: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=700&q=80", q: "What is one small thing that made you happy recently?" },
+      { word: "confident", group: "up", photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=700&q=80", q: "In what situation do you feel most confident speaking English?" },
+      { word: "proud", group: "up", photo: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=700&q=80", q: "What is something you felt proud of achieving?" },
+      { word: "excited", group: "up", photo: "https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&w=700&q=80", q: "What are you feeling excited about right now?" },
+      { word: "pleased", group: "up", photo: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=700&q=80", q: "When were you last really pleased with a result or decision?" },
+      { word: "cheerful", group: "up", photo: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=700&q=80", q: "Who or what always puts you in a cheerful mood?" },
+      { word: "amused", group: "up", photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=700&q=80", q: "What is the funniest thing you saw or heard recently?" },
+      { word: "surprised", group: "down", photo: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=700&q=80", q: "What news or event recently left you surprised?" },
+      { word: "worried", group: "down", photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=700&q=80", q: "Do you tend to get worried easily or stay cool?" },
+      { word: "lonely", group: "down", photo: "https://images.unsplash.com/photo-1516589091380-5d8e87df6999?auto=format&fit=crop&w=700&q=80", q: "What do you do when you feel a bit lonely?" },
+      { word: "scared", group: "down", photo: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=700&q=80", q: "Have you ever felt scared in a film or real situation?" },
+      { word: "terrified", group: "down", photo: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=700&q=80", q: "What's the difference between feeling scared and terrified?" },
+      { word: "nervous", group: "down", photo: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=700&q=80", q: "How do you calm down when you feel nervous?" },
+      { word: "anxious", group: "down", photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=700&q=80", q: "What usually makes people feel anxious about deadlines?" },
+      { word: "distracted", group: "down", photo: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80", q: "What distracts you most when you try to concentrate?" },
+      { word: "confused", group: "down", photo: "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=700&q=80", q: "When do you feel confused—with directions, tech, or instructions?" },
+      { word: "irritated", group: "down", photo: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=700&q=80", q: "What small habit makes you feel irritated right away?" },
+      { word: "angry", group: "down", photo: "https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&w=700&q=80", q: "How do you usually react when you feel angry?" },
+      { word: "disappointed", group: "down", photo: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=700&q=80", q: "When did you last feel disappointed by a plan or result?" },
+      { word: "miserable", group: "down", photo: "https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=700&q=80", q: "What makes a bad day feel really miserable?" },
+      { word: "stressed", group: "down", photo: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=700&q=80", q: "What is your best trick when you feel stressed?" },
+      { word: "jealous", group: "down", photo: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=700&q=80", q: "When do people sometimes feel jealous of others?" },
+      { word: "annoyed", group: "down", photo: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=700&q=80", q: "Are you feeling annoyed about anything today?" },
+      { word: "furious", group: "down", photo: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=700&q=80", q: "What would make you feel furious instead of just annoyed?" },
+      { word: "sad", group: "down", photo: "https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=700&q=80", q: "What kind of movie or song can make you feel sad?" },
+      { word: "unhappy", group: "down", photo: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=700&q=80", q: "What changes when someone is unhappy at work or school?" },
+      { word: "tired", group: "down", photo: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=700&q=80", q: "How are you feeling right now—tired or wide awake?" },
+      { word: "bored", group: "down", photo: "https://images.unsplash.com/photo-1516534775068-ba3e7458af70?auto=format&fit=crop&w=700&q=80", q: "What do you do when you're bored with nothing to do?" },
+      { word: "curious", group: "down", photo: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=700&q=80", q: "What are you curious to learn next in English?" },
+      { word: "grateful", group: "up", photo: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=700&q=80", q: "Who are you grateful to this week?" }
+    ];
+
+    let moodFilterMode = 'all';
+    let moodViewMode = 'single';
+    let moodCardIdx = 0;
+
+    function getFilteredMoods() {
+      return moodFilterMode === 'all' ? MOODS_24 : MOODS_24.filter(m => m.group === moodFilterMode);
+    }
+
+    window.setMoodView = (mode) => {
+      moodViewMode = mode;
+      moodCardIdx = 0;
+      document.getElementById('moodSingleBox').classList.toggle('hidden', mode !== 'single');
+      document.getElementById('moodsGrid').classList.toggle('hidden', mode !== 'grid');
+      document.getElementById('btnMoodSingle').className = mode === 'single'
+        ? 'px-3 py-1.5 rounded-lg text-xs font-bold bg-[#0089A7] text-white transition'
+        : 'px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition';
+      document.getElementById('btnMoodAllCards').className = mode === 'grid'
+        ? 'px-3 py-1.5 rounded-lg text-xs font-bold bg-[#0089A7] text-white transition'
+        : 'px-3 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition';
+      renderMoodsStage();
+    };
+
+    window.filterMoods = (mode) => {
+      moodFilterMode = mode;
+      moodCardIdx = 0;
+      ['all', 'up', 'down'].forEach(k => {
+        const id = 'tabMood' + k[0].toUpperCase() + k.slice(1);
+        document.getElementById(id).className = k === mode
+          ? 'px-3 py-1.5 rounded-xl text-xs font-bold bg-[#002B5C] text-white'
+          : 'px-3 py-1.5 rounded-xl text-xs font-bold bg-white dark:bg-[#0C1E33] border-[1.5px] border-cyan-500/25';
+      });
+      renderMoodsStage();
+    };
+
+    function renderMoodsStage() {
+      const list = getFilteredMoods();
+      moodCardIdx = (moodCardIdx + list.length) % list.length;
+      const cur = list[moodCardIdx];
+
+      document.getElementById('moodSingleBox').innerHTML = `
+        <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-cyan-500/25 shadow-xl">
+          <div id="moodSinglePhoto" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+          <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between gap-2">
+                <span class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">CARD ${moodCardIdx + 1} / ${list.length}</span>
+                <button type="button" onclick="speakText('I am feeling ${cur.word}. ${cur.q.replace(/'/g, "\\'")}')" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#0089A7] text-white text-xs font-bold">
+                  <i data-lucide="volume-2" class="w-4 h-4"></i> Listen
+                </button>
+              </div>
+              <h3 class="text-3xl sm:text-4xl font-extrabold text-[#002B5C] dark:text-white">${cur.word}</h3>
+              <p class="text-sm font-semibold text-slate-600 dark:text-slate-300">“I'm feeling <span class="text-[#0089A7] dark:text-cyan-400 font-extrabold">${cur.word}</span>.”</p>
+              <div class="p-4 rounded-2xl bg-[#F0F7FA] dark:bg-[#071628] border border-cyan-500/20">
+                <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#0089A7] dark:text-cyan-400 block mb-1">Question to Answer</span>
+                <p class="text-sm font-bold text-[#002B5C] dark:text-white">${cur.q}</p>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-cyan-400/15">
+              <button type="button" onclick="moodCardIdx--; renderMoodsStage();" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-cyan-400/25 text-xs font-bold">← Prev</button>
+              <span class="text-xs font-bold text-slate-400">${moodCardIdx + 1} of ${list.length}</span>
+              <button type="button" onclick="moodCardIdx++; renderMoodsStage();" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+            </div>
+          </div>
+        </div>
+      `;
+      mountPhoto(document.getElementById('moodSinglePhoto'), cur.photo, cur.word, cur.word.toUpperCase());
+
+      document.getElementById('moodsGrid').innerHTML = list.map(m => `
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-cyan-500/25 rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between">
+          <div>
+            <img src="${m.photo}" alt="${m.word}" class="h-32 w-full object-cover" loading="lazy" />
+            <div class="p-4 space-y-2">
+              <div class="flex items-center justify-between gap-2">
+                <h4 class="text-lg font-extrabold text-[#002B5C] dark:text-white">${m.word}</h4>
+                <button type="button" onclick="speakText('I am feeling ${m.word}. ${m.q.replace(/'/g, "\\'")}')" class="p-1.5 rounded-lg bg-cyan-500/15 text-[#0089A7] dark:text-cyan-300"><i data-lucide="volume-2" class="w-4 h-4"></i></button>
+              </div>
+              <p class="text-xs font-semibold text-slate-600 dark:text-slate-300">${m.q}</p>
+            </div>
+          </div>
+        </div>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    // ==================== 06: PRACTICE DRILLS (CORRECT OPTION NOT ALWAYS FIRST) ====================
+    const PRACTICE_ITEMS = [
+      { q: "1. “How are you feeling today?” — “I'm ___ excited about our trip!”", opts: ["A) much", "B) really"], ans: 1, why: "Use 'really', 'very', or 'so' before adjectives like 'excited'." },
+      { q: "2. You didn't sleep well last night and your eyes feel heavy. You are...", opts: ["A) proud", "B) tired", "C) cheerful"], ans: 1, why: "'Tired' means needing rest or sleep." },
+      { q: "3. You pass a tough test after studying hard. How do you feel?", opts: ["A) lonely", "B) confused", "C) proud"], ans: 2, why: "'Proud' fits a personal achievement or milestone." },
+      { q: "4. Two people tell you different instructions and you aren't sure what to do. You feel...", opts: ["A) confused", "B) relaxed"], ans: 0, why: "'Confused' means unsure or mixed up about what to do." },
+      { q: "5. Complete the natural question: “___ are you feeling?”", opts: ["A) Who", "B) How"], ans: 1, why: "Use 'How' to ask about someone's feelings or state." },
+      { q: "6. Someone helps you out when you are in a hurry. You feel...", opts: ["A) furious", "B) bored", "C) grateful"], ans: 2, why: "'Grateful' expresses thanks for help or kindness." }
+    ];
+
+    function renderPractice() {
+      document.getElementById('practiceGrid').innerHTML = PRACTICE_ITEMS.map((item, idx) => `
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-cyan-500/25 rounded-3xl p-5 space-y-3 shadow-md">
+          <p class="text-sm font-bold text-[#002B5C] dark:text-white">${item.q}</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm font-bold">
+            ${item.opts.map((op, i) => `
+              <button type="button" onclick="checkPractice(${idx}, ${i})" class="p-3 rounded-xl bg-[#F0F7FA] dark:bg-[#071628] border border-cyan-500/20 hover:border-cyan-400 text-left transition">${op}</button>
+            `).join('')}
+          </div>
+          <div id="prFb${idx}" class="hidden p-3 rounded-xl text-xs font-bold"></div>
+        </div>
+      `).join('');
+    }
+    window.checkPractice = (idx, picked) => {
+      const item = PRACTICE_ITEMS[idx];
+      const fb = document.getElementById(`prFb${idx}`);
+      fb.classList.remove('hidden');
+      if (picked === item.ans) {
+        fb.className = 'p-3 rounded-xl text-xs font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Correct! ${item.why}`;
+      } else {
+        fb.className = 'p-3 rounded-xl text-xs font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `✗ Try again. ${item.why}`;
+      }
+    };
+
+    // ==================== 07: MOOD RUSH GAME ====================
+    const RUSH_ROUNDS = [
+      { sit: "You are on holiday on a quiet beach with a good book.", opts: ["furious", "relaxed", "nervous", "miserable"], ans: 1, photo: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" },
+      { sit: "You open a surprise birthday gift from your family!", opts: ["bored", "surprised", "lonely", "annoyed"], ans: 1, photo: "https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&w=800&q=80" },
+      { sit: "You have worked for 10 hours with no break.", opts: ["cheerful", "amused", "tired", "confident"], ans: 2, photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80" },
+      { sit: "Everyone is on holiday and you are alone at home.", opts: ["excited", "proud", "calm", "lonely"], ans: 3, photo: "https://images.unsplash.com/photo-1516589091380-5d8e87df6999?auto=format&fit=crop&w=800&q=80" },
+      { sit: "You see a huge spider right next to your shoe!", opts: ["scared", "relaxed", "grateful", "pleased"], ans: 0, photo: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80" },
+      { sit: "You see a mystery box with a question mark on it.", opts: ["furious", "curious", "miserable", "jealous"], ans: 1, photo: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=800&q=80" },
+      { sit: "Someone spills coffee on your notes and doesn't say sorry.", opts: ["calm", "cheerful", "annoyed", "grateful"], ans: 2, photo: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" },
+      { sit: "You practiced a lot and feel ready for your speaking test.", opts: ["terrified", "confused", "unhappy", "confident"], ans: 3, photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" }
+    ];
+    let rushIdx = 0;
+    let rushScore = 0;
+    let rushStreak = 0;
+    let rushDone = false;
+
+    function renderRush() {
+      const idx = rushIdx % RUSH_ROUNDS.length;
+      const r = RUSH_ROUNDS[idx];
+      rushDone = false;
+      document.getElementById('rushRoundBadge').textContent = `ROUND ${idx + 1} / ${RUSH_ROUNDS.length}`;
+      document.getElementById('rushSituation').textContent = r.sit;
+      document.getElementById('rushFeedback').classList.add('hidden');
+      mountPhoto(document.getElementById('rushPhotoBox'), r.photo, r.opts[r.ans], `ROUND ${idx + 1}`);
+      document.getElementById('rushOptions').innerHTML = r.opts.map((op, i) => `
+        <button type="button" onclick="pickRush(${i})" class="p-3.5 rounded-2xl bg-[#F0F7FA] dark:bg-[#071628] border-[1.5px] border-cyan-500/20 hover:border-cyan-400 text-left transition">${op}</button>
+      `).join('');
+    }
+    window.pickRush = (picked) => {
+      if (rushDone) return;
+      rushDone = true;
+      const r = RUSH_ROUNDS[rushIdx % RUSH_ROUNDS.length];
+      const ansWord = r.opts[r.ans];
+      const fb = document.getElementById('rushFeedback');
+      fb.classList.remove('hidden');
+      if (picked === r.ans) {
+        rushScore++;
+        rushStreak++;
+        fb.className = 'p-3.5 rounded-2xl text-xs sm:text-sm font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Yes! “${ansWord}” fits this situation.`;
+        speakText(`I am feeling ${ansWord}.`);
+      } else {
+        rushStreak = 0;
+        fb.className = 'p-3.5 rounded-2xl text-xs sm:text-sm font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `✗ Best match: “${ansWord}”.`;
+      }
+      document.getElementById('rushScoreBadge').textContent = `SCORE: ${rushScore} / ${RUSH_ROUNDS.length}`;
+      document.getElementById('rushStreakBadge').textContent = `STREAK: ${rushStreak} 🔥`;
+    };
+    window.nextRush = () => { rushIdx++; renderRush(); };
+    window.restartRush = () => {
+      rushIdx = 0;
+      rushScore = 0;
+      rushStreak = 0;
+      document.getElementById('rushScoreBadge').textContent = `SCORE: 0 / ${RUSH_ROUNDS.length}`;
+      document.getElementById('rushStreakBadge').textContent = `STREAK: 0 🔥`;
+      renderRush();
+    };
+
+    // ==================== 08: SHORT WRITING TASK (UNDER 80–100 WORDS) ====================
+    const shortTa = document.getElementById('shortWritingTextarea');
+    const writeNameEl = document.getElementById('writeStudentName');
+    writeNameEl.value = localStorage.getItem('provoStudentName') || '';
+    writeNameEl.addEventListener('input', () => localStorage.setItem('provoStudentName', writeNameEl.value.trim()));
+    if (localStorage.getItem('provoShortMoodDraft')) shortTa.value = localStorage.getItem('provoShortMoodDraft');
+
+    function countShortWords(str) {
+      const t = str.trim();
+      return t ? t.split(/\s+/).filter(Boolean).length : 0;
+    }
+
+    function updateShortCount() {
+      const txt = shortTa.value;
+      localStorage.setItem('provoShortMoodDraft', txt);
+      const w = countShortWords(txt);
+      const badge = document.getElementById('shortWordBadge');
+      const status = document.getElementById('shortWordStatus');
+      badge.textContent = `${w} ${w === 1 ? 'WORD' : 'WORDS'}`;
+
+      if (w === 0) {
+        status.className = 'px-2.5 py-1 rounded-full bg-cyan-500/15 text-cyan-700 dark:text-cyan-300 text-[11px] font-bold';
+        status.textContent = 'Target: < 80–100w';
+      } else if (w <= 80) {
+        status.className = 'px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 text-[11px] font-bold';
+        status.textContent = '✓ Ideal short length (≤ 80w)';
+      } else if (w <= 100) {
+        status.className = 'px-2.5 py-1 rounded-full bg-amber-500/15 text-amber-700 dark:text-amber-300 text-[11px] font-bold';
+        status.textContent = 'Getting long (81–100w)';
+      } else {
+        status.className = 'px-2.5 py-1 rounded-full bg-rose-500/15 text-rose-700 dark:text-rose-300 text-[11px] font-bold';
+        status.textContent = `Over 100w (+${w - 100})`;
+      }
+    }
+    shortTa.addEventListener('input', updateShortCount);
+
+    function showShortFb(msg, ok = true) {
+      const fb = document.getElementById('shortWriteFb');
+      fb.classList.remove('hidden');
+      fb.className = ok
+        ? 'p-3 rounded-xl text-xs font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300'
+        : 'p-3 rounded-xl text-xs font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+      fb.textContent = msg;
+    }
+
+    window.copyShortText = async () => {
+      if (!shortTa.value.trim()) return showShortFb('Write something first.', false);
+      try {
+        await navigator.clipboard.writeText(shortTa.value.trim());
+        showShortFb('✓ Copied to clipboard!', true);
+      } catch (e) {
+        showShortFb('Could not copy automatically.', false);
+      }
+    };
+
+    window.downloadShortTxt = () => {
+      if (!shortTa.value.trim()) return showShortFb('Write something first.', false);
+      const name = (writeNameEl.value.trim() || 'Student').replace(/\s+/g, '_');
+      const w = countShortWords(shortTa.value);
+      const blob = new Blob([`Student: ${writeNameEl.value.trim() || 'Student'}\nWords: ${w}\n\n${shortTa.value.trim()}`], { type: 'text/plain;charset=utf-8' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `PROVO-A1A2-Feelings-Moods-${name}-${w}w.txt`;
+      a.click();
+    };
+
+    window.sendShortWritingToDrive = async () => {
+      const studentName = writeNameEl.value.trim();
+      const body = shortTa.value.trim();
+      if (!studentName) {
+        showShortFb('Enter your name first.', false);
+        writeNameEl.focus();
+        return;
+      }
+      if (!body) {
+        showShortFb('Write a short note before sending.', false);
+        shortTa.focus();
+        return;
+      }
+      const w = countShortWords(body);
+      const formatted = `PROVO · A1–A2 FEELINGS & MOODS (SHORT WRITING)\nStudent: ${studentName}\nWords: ${w}\n\n${body}`;
+      const bytes = new TextEncoder().encode(formatted);
+      let bin = '';
+      bytes.forEach(b => { bin += String.fromCharCode(b); });
+      const b64 = btoa(bin);
+
+      document.getElementById('btnSendShortDrive').disabled = true;
+      document.getElementById('sendShortLabel').textContent = 'Sending...';
+      try {
+        const res = await fetch(DRIVE_UPLOAD_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({
+            studentName,
+            lessonTitle: `A1A2-Feelings-Moods-${w}w`,
+            questionNumber: 8,
+            mimeType: 'text/plain',
+            textContent: formatted,
+            audioBase64: b64
+          })
+        });
+        const data = await res.json();
+        if (data.status === 'ok') showShortFb(`✓ Sent to Drive as ${data.fileName} (${w} words)!`, true);
+        else throw new Error(data.message || 'Upload error');
+      } catch (e) {
+        showShortFb('Could not reach Drive automatically. Use .TXT to save a copy.', false);
+      } finally {
+        document.getElementById('btnSendShortDrive').disabled = false;
+        document.getElementById('sendShortLabel').textContent = 'Send to Teacher';
+      }
+    };
+
+    // Init
+    goStage(0);
+    renderQ(0);
+    renderFeelingBuilder();
+    renderAdvBuilder();
+    renderMoodsStage();
+    renderPractice();
+    renderRush();
+    updateShortCount();
+    lucide.createIcons();
+  </script>
+</body>
+</html>

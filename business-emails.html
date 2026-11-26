@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BUSINESS ENGLISH · WRITING &amp; REPLYING TO EMAILS | PROVO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <style>
+    @keyframes stageIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .stage-anim { animation: stageIn 0.24s ease-out forwards; }
+  </style>
+</head>
+<body class="bg-[#F2F4FC] text-slate-900 dark:bg-[#070E21] dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
+
+  <!-- Sticky Top Bar (Business Indigo Accent on PROVO Navy) -->
+  <header class="sticky top-0 z-40 bg-[#002B5C] text-white border-b border-indigo-400/35 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2.5">
+        <a href="index.html" class="flex items-center shrink-0" title="PROVO">
+          <img
+            src="https://i.postimg.cc/vBt4qH44/download.png"
+            alt="PROVO"
+            class="h-8 w-auto object-contain block"
+            onerror="this.style.display='none'; document.getElementById('provoFallback').classList.remove('hidden');"
+          />
+          <span id="provoFallback" class="hidden font-extrabold tracking-widest text-lg text-white">PROVO</span>
+        </a>
+        <span class="px-2.5 py-0.5 rounded-full bg-indigo-500/25 border border-indigo-300/45 text-indigo-100 text-[11px] font-bold tracking-wider">
+          BUSINESS ENGLISH · EMAILS
+        </span>
+        <span id="stageTitleHeader" class="hidden xl:inline-block text-xs font-bold tracking-wider text-indigo-200">
+          01 · INBOX BRIEFING
+        </span>
+      </div>
+
+      <div id="stagePills" class="flex items-center gap-1 overflow-x-auto py-1"></div>
+
+      <div class="flex items-center gap-2 shrink-0">
+        <button
+          id="themeBtn"
+          type="button"
+          class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition"
+          title="Toggle Theme"
+        >
+          <i id="themeIcon" data-lucide="sun" class="w-4 h-4"></i>
+        </button>
+        <a
+          href="index.html"
+          class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs font-bold bg-white/10 hover:bg-white/20 text-white transition"
+        >
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          <span class="hidden sm:inline">PORTAL</span>
+        </a>
+      </div>
+    </div>
+    <div class="w-full h-1.5 bg-black/25">
+      <div id="stageProgress" class="h-full bg-indigo-400 transition-all duration-300" style="width: 14.28%"></div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl w-full mx-auto px-4 sm:px-6 py-7 sm:py-10 flex-1 flex flex-col justify-center">
+
+    <!-- ==================== 01: INBOX BRIEFING ==================== -->
+    <section data-stage="0" class="stage stage-anim">
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0D1A36] border-[1.5px] border-indigo-500/25 dark:border-indigo-400/25 shadow-xl">
+        <div class="lg:col-span-5 h-64 sm:h-auto relative bg-[#091726] overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1050&q=80"
+            alt="Writing workplace emails on a laptop"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#070E21]/90 via-[#070E21]/25 to-transparent"></div>
+          <div class="absolute bottom-5 left-5 right-5 space-y-1 text-white">
+            <span class="text-xs font-bold tracking-widest text-indigo-300 uppercase">PROVO · Workplace Communication</span>
+            <p class="text-sm font-semibold text-slate-200">Subject Lines · Openings · Replies · Follow-Ups · Sign-Offs</p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 p-7 sm:p-10 flex flex-col justify-center space-y-5">
+          <span class="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-indigo-500/15 border border-indigo-400/35 text-indigo-700 dark:text-indigo-300 text-xs font-bold tracking-wider">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            <span>PROVO STAGE LAB · BUSINESS ENGLISH</span>
+          </span>
+
+          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight text-[#002B5C] dark:text-white">
+            Writing &amp; Replying to <span class="text-indigo-600 dark:text-indigo-400">Emails</span>
+          </h1>
+
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            Write clear, polite, and direct emails without sounding stiff or overly casual. Practice warm-up questions about inbox habits, build structured email blocks, master 12 high-utility email phrases card by card, fix tone &amp; clarity traps, play Inbox Triage Rush, and draft real replies.
+          </p>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1 text-xs">
+            <button type="button" onclick="goStage(1)" class="p-3 rounded-2xl bg-[#F2F4FC] dark:bg-[#081227] border-[1.5px] border-indigo-500/20 hover:border-indigo-400 text-left transition">
+              <div class="font-extrabold text-indigo-600 dark:text-indigo-400">02 · SPEAKING</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">8 Inbox Cards</div>
+            </button>
+            <button type="button" onclick="goStage(2)" class="p-3 rounded-2xl bg-[#F2F4FC] dark:bg-[#081227] border-[1.5px] border-indigo-500/20 hover:border-indigo-400 text-left transition">
+              <div class="font-extrabold text-indigo-600 dark:text-indigo-400">03 · BLUEPRINT</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">5-Part Structure</div>
+            </button>
+            <button type="button" onclick="goStage(3)" class="p-3 rounded-2xl bg-[#F2F4FC] dark:bg-[#081227] border-[1.5px] border-indigo-500/20 hover:border-indigo-400 text-left transition">
+              <div class="font-extrabold text-indigo-600 dark:text-indigo-400">04 · PHRASES</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">12 Email Cards</div>
+            </button>
+            <button type="button" onclick="goStage(6)" class="p-3 rounded-2xl bg-[#F2F4FC] dark:bg-[#081227] border-[1.5px] border-indigo-500/20 hover:border-indigo-400 text-left transition">
+              <div class="font-extrabold text-indigo-600 dark:text-indigo-400">07 · REPLY LAB</div>
+              <div class="font-bold text-[#002B5C] dark:text-white mt-0.5">Live Inbox Replies</div>
+            </button>
+          </div>
+
+          <div class="pt-1">
+            <button
+              type="button"
+              onclick="goStage(1)"
+              class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-[#002B5C] via-indigo-700 to-indigo-600 hover:opacity-95 text-white text-sm sm:text-base font-bold shadow-lg transition"
+            >
+              <span>Start Email Lab</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 02: 8 ILLUSTRATED INBOX CONVERSATION CARDS ==================== -->
+    <section data-stage="1" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-indigo-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase">Stage 02 · Warm-Up Discussion</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Inbox Habits &amp; Email Realities (8 Cards)</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Compare how you handle messages, delays, tone, and quick replies at work.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0D1A36] border-[1.5px] border-indigo-500/25 shadow-xl max-w-4xl mx-auto w-full">
+        <div id="inboxPhotoBox" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+
+        <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-5">
+          <div class="space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-2">
+                <span id="inboxBadge" class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">CARD 1 / 8</span>
+                <span id="inboxTag" class="px-3 py-1 rounded-full bg-indigo-500/15 text-indigo-700 dark:text-indigo-300 text-xs font-bold"></span>
+              </div>
+              <button type="button" onclick="speakInboxQ()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold transition">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                <span>Listen</span>
+              </button>
+            </div>
+
+            <h3 id="inboxQuestion" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+            <p id="inboxFollow" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300"></p>
+
+            <div>
+              <button type="button" onclick="document.getElementById('inboxStarters').classList.toggle('hidden')" class="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-indigo-700 dark:text-indigo-300 hover:underline">
+                <i data-lucide="message-square" class="w-4 h-4"></i>
+                <span>Speaking Prompts</span>
+              </button>
+              <div id="inboxStarters" class="hidden mt-2.5 p-3.5 rounded-2xl bg-[#F2F4FC] dark:bg-[#081227] border border-indigo-500/20 text-xs space-y-1"></div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-indigo-400/15">
+            <button type="button" onclick="stepInbox(-1)" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-indigo-400/25 text-xs font-bold">← Prev</button>
+            <div id="inboxDots" class="flex flex-wrap gap-1"></div>
+            <button type="button" onclick="stepInbox(1)" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 03: VISUAL 5-PART EMAIL BLUEPRINT & TONE CALIBRATOR ==================== -->
+    <section data-stage="2" class="stage hidden stage-anim space-y-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-indigo-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase">Stage 03 · Anatomy of a Clear Email</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">The 5-Part Workplace Email Blueprint</h2>
+        </div>
+        <span class="px-3 py-1 rounded-full bg-indigo-500/15 text-indigo-700 dark:text-indigo-300 text-xs font-extrabold">Clarity First · Polite &amp; Actionable</span>
+      </div>
+
+      <!-- Visual SVG Anatomy Diagram -->
+      <div class="bg-white dark:bg-[#0D1A36] border-[1.5px] border-indigo-500/25 rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <span class="text-xs font-extrabold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">VISUAL STRUCTURE · CLICK ANY STEP</span>
+          <div class="flex flex-wrap gap-1.5" id="emailStepPills"></div>
+        </div>
+
+        <div class="rounded-2xl bg-[#F2F4FC] dark:bg-[#081227] border border-indigo-500/20 p-4 sm:p-6 overflow-x-auto">
+          <svg viewBox="0 0 860 130" class="w-full min-w-[660px] h-auto" role="img" aria-label="Five parts of a professional email">
+            <rect x="15" y="20" width="150" height="88" rx="14" fill="#002B5C" stroke="#818CF8" stroke-width="1.8" />
+            <text x="90" y="43" fill="#C7D2FE" font-size="10" font-weight="800" text-anchor="middle">1. SUBJECT</text>
+            <text x="90" y="67" fill="#FFFFFF" font-size="13" font-weight="800" text-anchor="middle">Clear &amp; Specific</text>
+            <text x="90" y="88" fill="#E0E7FF" font-size="10" text-anchor="middle">Topic + action/date</text>
+
+            <rect x="182" y="20" width="155" height="88" rx="14" fill="#1E3A8A" stroke="#93C5FD" stroke-width="1.8" />
+            <text x="259" y="43" fill="#BFDBFE" font-size="10" font-weight="800" text-anchor="middle">2. OPENING</text>
+            <text x="259" y="67" fill="#FFFFFF" font-size="13" font-weight="800" text-anchor="middle">Purpose in Line 1</text>
+            <text x="259" y="88" fill="#DBEAFE" font-size="10" text-anchor="middle">Why you're writing</text>
+
+            <rect x="354" y="20" width="165" height="88" rx="14" fill="#3730A3" stroke="#A5B4FC" stroke-width="1.8" />
+            <text x="436" y="43" fill="#E0E7FF" font-size="10" font-weight="800" text-anchor="middle">3. KEY DETAILS</text>
+            <text x="436" y="67" fill="#FFFFFF" font-size="13" font-weight="800" text-anchor="middle">Context / Bullets</text>
+            <text x="436" y="88" fill="#EDE9FE" font-size="10" text-anchor="middle">Keep paragraphs short</text>
+
+            <rect x="536" y="20" width="155" height="88" rx="14" fill="#4338CA" stroke="#C4B5FD" stroke-width="1.8" />
+            <text x="613" y="43" fill="#EDE9FE" font-size="10" font-weight="800" text-anchor="middle">4. NEXT STEP</text>
+            <text x="613" y="67" fill="#FFFFFF" font-size="13" font-weight="800" text-anchor="middle">Clear Call to Action</text>
+            <text x="613" y="88" fill="#F5F3FF" font-size="10" text-anchor="middle">Who does what &amp; when</text>
+
+            <rect x="708" y="20" width="137" height="88" rx="14" fill="#0F766E" stroke="#5EEAD4" stroke-width="1.8" />
+            <text x="776" y="43" fill="#CCFBF1" font-size="10" font-weight="800" text-anchor="middle">5. SIGN-OFF</text>
+            <text x="776" y="67" fill="#FFFFFF" font-size="13" font-weight="800" text-anchor="middle">Matched Tone</text>
+            <text x="776" y="88" fill="#F0FDFA" font-size="10" text-anchor="middle">Best / Kind regards</text>
+          </svg>
+        </div>
+
+        <div class="p-4 sm:p-5 rounded-2xl bg-indigo-500/10 border border-indigo-500/25 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="space-y-1">
+            <h3 id="emailStepTitle" class="text-base sm:text-lg font-extrabold text-[#002B5C] dark:text-white"></h3>
+            <p id="emailStepDesc" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300"></p>
+            <p id="emailStepEx" class="text-xs sm:text-sm italic font-bold text-indigo-700 dark:text-indigo-300 pt-1"></p>
+          </div>
+          <button type="button" onclick="speakEmailStep()" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-indigo-600 text-white text-xs font-bold shrink-0">
+            <i data-lucide="volume-2" class="w-4 h-4"></i>
+            <span>Listen</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Illustrated Tone Guide Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-white dark:bg-[#0D1A36] border-[1.5px] border-indigo-500/25 rounded-3xl overflow-hidden shadow-md">
+          <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=700&q=80" alt="Friendly colleague handshake" class="h-32 w-full object-cover" />
+          <div class="p-5 space-y-1.5">
+            <span class="text-[11px] font-extrabold text-indigo-600 dark:text-indigo-400">WARM &amp; COLLABORATIVE</span>
+            <h4 class="text-base font-extrabold text-[#002B5C] dark:text-white">Internal Teams &amp; Regular Contacts</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-300"><em>“Hi Sam, quick update on the deck—could you take a look before 4 p.m.? Best, Alex”</em></p>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-[#0D1A36] border-[1.5px] border-indigo-500/25 rounded-3xl overflow-hidden shadow-md">
+          <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=700&q=80" alt="Client meeting discussion" class="h-32 w-full object-cover" />
+          <div class="p-5 space-y-1.5">
+            <span class="text-[11px] font-extrabold text-indigo-600 dark:text-indigo-400">POLITE &amp; CLEAR</span>
+            <h4 class="text-base font-extrabold text-[#002B5C] dark:text-white">Clients, Suppliers &amp; External Partners</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-300"><em>“Dear Ms. Patel, thank you for sending over the quote. Please let me know if Tuesday at 10:00 works. Kind regards,”</em></p>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-[#0D1A36] border-[1.5px] border-indigo-500/25 rounded-3xl overflow-hidden shadow-md">
+          <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=700&q=80" alt="Calendar deadline check" class="h-32 w-full object-cover" />
+          <div class="p-5 space-y-1.5">
+            <span class="text-[11px] font-extrabold text-indigo-600 dark:text-indigo-400">FIRM WITHOUT BEING RUDE</span>
+            <h4 class="text-base font-extrabold text-[#002B5C] dark:text-white">Reminders, Delays &amp; Pushback</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-300"><em>“Just checking in on the invoice attached earlier—let me know if anything is missing on our end.”</em></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 04: 12 ILLUSTRATED EMAIL PHRASE CARDS (1 BY 1 OR GRID) ==================== -->
+    <section data-stage="3" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-indigo-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase">Stage 04 · Ready-to-Use Email Toolkit</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">12 High-Utility Email Phrases</h2>
+        </div>
+        <div class="inline-flex rounded-xl p-1 bg-white dark:bg-[#0D1A36] border-[1.5px] border-indigo-500/25 self-start sm:self-auto">
+          <button id="btnEpSingle" type="button" onclick="setEpView('single')" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-indigo-600 text-white transition">1 by 1 Card</button>
+          <button id="btnEpGrid" type="button" onclick="setEpView('grid')" class="px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition">All 12 Cards</button>
+        </div>
+      </div>
+
+      <div id="epSingleBox" class="max-w-4xl mx-auto w-full"></div>
+      <div id="epGridBox" class="hidden grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+    </section>
+
+    <!-- ==================== 05: TONE & CLARITY FIXER LAB ==================== -->
+    <section data-stage="4" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-indigo-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase">Stage 05 · Editing &amp; Tone Lab</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Fix Blunt or Confusing Emails (6 Cards)</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Turn blunt or unclear drafts into smooth, professional workplace English.</p>
+      </div>
+
+      <div id="emailFixerCardBox" class="max-w-4xl mx-auto w-full"></div>
+    </section>
+
+    <!-- ==================== 06: GAMIFIED CHALLENGE — "INBOX TRIAGE RUSH" ==================== -->
+    <section data-stage="5" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-indigo-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase">Stage 06 · Interactive Game</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Inbox Triage Rush: Pick the Best Line!</h2>
+        </div>
+        <div class="flex items-center gap-2">
+          <span id="triScoreBadge" class="px-3.5 py-1.5 rounded-xl bg-[#002B5C] text-indigo-300 text-xs font-extrabold">SCORE: 0 / 6</span>
+          <span id="triStreakBadge" class="px-3.5 py-1.5 rounded-xl bg-white dark:bg-[#0D1A36] border border-indigo-500/25 text-xs font-extrabold">STREAK: 0 🔥</span>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-[#0D1A36] border-[1.5px] border-indigo-500/25 rounded-3xl p-6 sm:p-9 max-w-4xl mx-auto w-full space-y-6 shadow-xl">
+        <div class="flex items-center justify-between gap-2">
+          <span id="triRoundBadge" class="px-3.5 py-1 rounded-full bg-indigo-600 text-white text-xs font-extrabold">ROUND 1 / 6</span>
+          <button type="button" onclick="restartTriage()" class="px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-indigo-400/25 text-xs font-bold">
+            Restart
+          </button>
+        </div>
+
+        <h3 id="triPrompt" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+        <div id="triOptions" class="grid grid-cols-1 gap-2.5"></div>
+        <div id="triFeedback" class="hidden p-4 rounded-2xl text-xs sm:text-sm font-bold"></div>
+
+        <div class="flex justify-end">
+          <button type="button" onclick="nextTriage()" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-[#002B5C] to-indigo-600 text-white text-xs sm:text-sm font-bold">
+            Next Email →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 07: LIVE INBOX REPLY STUDIO + DRIVE SEND ==================== -->
+    <section data-stage="6" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-indigo-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase">Stage 07 · Practical Writing &amp; Reply</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Read an Incoming Email &amp; Write Your Reply</h2>
+        </div>
+        <span class="px-3 py-1 rounded-full bg-indigo-500/15 text-indigo-700 dark:text-indigo-300 text-xs font-extrabold">Real Scenarios · Send to Drive</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div class="lg:col-span-5 bg-white dark:bg-[#0D1A36] border-[1.5px] border-indigo-500/25 rounded-3xl p-6 space-y-4 shadow-lg">
+          <div class="space-y-1.5">
+            <label for="inboxScenarioSelect" class="text-xs font-extrabold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 block">
+              1. Pick an Incoming Email
+            </label>
+            <select
+              id="inboxScenarioSelect"
+              onchange="renderIncomingEmail()"
+              class="w-full px-3.5 py-2.5 rounded-xl bg-[#F2F4FC] dark:bg-[#081227] border-[1.5px] border-indigo-500/25 text-xs sm:text-sm font-bold outline-none focus:border-indigo-400"
+            >
+              <option value="0">Scenario 1: Reschedule Client Call</option>
+              <option value="1">Scenario 2: Late Deliverable / Update</option>
+              <option value="2">Scenario 3: Clarify Invoice / Scope</option>
+            </select>
+          </div>
+
+          <div id="incomingEmailCard" class="p-4 rounded-2xl bg-[#F2F4FC] dark:bg-[#081227] border border-indigo-500/25 space-y-2.5 text-xs sm:text-sm"></div>
+
+          <input
+            id="emailStudentName"
+            type="text"
+            placeholder="Your name (e.g. Sofía Vidal)"
+            class="w-full px-3.5 py-2.5 rounded-xl bg-[#F2F4FC] dark:bg-[#081227] border border-slate-200 dark:border-indigo-400/25 text-sm outline-none focus:border-indigo-400"
+          />
+        </div>
+
+        <div class="lg:col-span-7 bg-white dark:bg-[#0D1A36] border-[1.5px] border-indigo-500/25 rounded-3xl p-6 sm:p-7 space-y-4 shadow-lg">
+          <div class="flex items-center justify-between gap-2">
+            <span class="text-xs font-extrabold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">2. Draft Your Reply</span>
+            <span id="emailWordCounter" class="px-3 py-1 rounded-full bg-slate-200 dark:bg-[#081227] text-xs font-extrabold">0 WORDS</span>
+          </div>
+
+          <textarea
+            id="emailReplyTextarea"
+            rows="9"
+            placeholder="Subject: Re: ...&#10;&#10;Hi ...,&#10;&#10;Thanks for reaching out. ..."
+            class="w-full p-4 rounded-2xl bg-[#F2F4FC] dark:bg-[#081227] border-[1.5px] border-indigo-500/25 text-sm leading-relaxed outline-none focus:border-indigo-400"
+          ></textarea>
+
+          <div class="flex flex-wrap items-center gap-2">
+            <button
+              id="btnSendEmailDrive"
+              type="button"
+              onclick="sendEmailReplyToDrive()"
+              class="flex-1 min-w-[180px] inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#002B5C] hover:bg-indigo-600 text-white text-xs font-bold transition"
+            >
+              <i data-lucide="send" class="w-4 h-4"></i>
+              <span id="sendEmailLabel">Send Reply to Teacher</span>
+            </button>
+            <button type="button" onclick="downloadEmailTxt()" class="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-indigo-400/25 text-xs font-bold">
+              <i data-lucide="download" class="w-4 h-4"></i>
+              <span>.TXT</span>
+            </button>
+            <button type="button" onclick="copyEmailReply()" class="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-indigo-400/25 text-xs font-bold">
+              <i data-lucide="copy" class="w-4 h-4"></i>
+              <span>Copy</span>
+            </button>
+          </div>
+
+          <div id="emailReplyFb" class="hidden p-3 rounded-xl text-xs font-bold"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Navigation -->
+  <footer class="border-t border-indigo-500/20 bg-white dark:bg-[#070E21] py-4 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      <button id="btnPrev" type="button" onclick="goStage(currentStage - 1)" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-300 dark:border-indigo-400/25 hover:bg-slate-100 dark:hover:bg-[#132C4A] disabled:opacity-30 text-xs font-bold transition">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Previous</span>
+      </button>
+
+      <span id="stageCounter" class="text-xs font-bold tracking-widest text-slate-500 dark:text-slate-400">
+        01 / 07
+      </span>
+
+      <button id="btnNext" type="button" onclick="goStage(currentStage + 1)" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#002B5C] hover:bg-indigo-700 disabled:opacity-30 text-xs font-bold text-white transition">
+        <span>Next</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    const DRIVE_UPLOAD_URL = "https://script.google.com/macros/s/AKfycbwBcX7Z4aABKplkUkpYvM2wEnsBHhWCZzi7dFGDkeUarkXwv-RRI0JXAPDakjkrCrBc/exec";
+
+    const STAGES = [
+      "01 · INBOX BRIEFING",
+      "02 · INBOX CARDS",
+      "03 · 5-PART BLUEPRINT",
+      "04 · 12 EMAIL PHRASES",
+      "05 · TONE FIXER",
+      "06 · TRIAGE RUSH",
+      "07 · REPLY STUDIO"
+    ];
+
+    let currentStage = 0;
+    const stageSections = document.querySelectorAll('.stage');
+
+    function goStage(idx) {
+      if (idx < 0 || idx >= stageSections.length) return;
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      currentStage = idx;
+      stageSections.forEach((s, i) => s.classList.toggle('hidden', i !== currentStage));
+      document.getElementById('stageTitleHeader').textContent = STAGES[currentStage];
+      document.getElementById('stageCounter').textContent = `${String(currentStage + 1).padStart(2, '0')} / ${String(stageSections.length).padStart(2, '0')}`;
+      document.getElementById('stageProgress').style.width = `${((currentStage + 1) / stageSections.length) * 100}%`;
+      document.getElementById('btnPrev').disabled = currentStage === 0;
+      document.getElementById('btnNext').disabled = currentStage === stageSections.length - 1;
+      renderStagePills();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      lucide.createIcons();
+    }
+
+    function renderStagePills() {
+      document.getElementById('stagePills').innerHTML = STAGES.map((_, i) => `
+        <button type="button" onclick="goStage(${i})" class="px-2.5 py-1 rounded-lg text-xs font-bold transition ${
+          i === currentStage ? 'bg-indigo-500 text-white' : 'text-white/75 hover:text-white hover:bg-white/10'
+        }">${String(i + 1).padStart(2, '0')}</button>
+      `).join('');
+    }
+
+    const themeBtn = document.getElementById('themeBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    if (localStorage.getItem('provoEmailsTheme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      themeIcon.setAttribute('data-lucide', 'moon');
+    }
+    themeBtn.addEventListener('click', () => {
+      const dark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('provoEmailsTheme', dark ? 'dark' : 'light');
+      themeIcon.setAttribute('data-lucide', dark ? 'sun' : 'moon');
+      lucide.createIcons();
+    });
+
+    function mountPhoto(container, url, altText, fallbackTitle) {
+      container.innerHTML = `<img src="${url}" alt="${altText}" class="w-full h-full object-cover" loading="lazy" />`;
+      const img = container.querySelector('img');
+      if (img) {
+        img.addEventListener('error', () => {
+          container.innerHTML = `
+            <div class="w-full h-full flex flex-col items-center justify-center bg-[#002B5C] text-white p-6 text-center">
+              <i data-lucide="mail" class="w-8 h-8 text-indigo-300 mb-2"></i>
+              <span class="text-xs font-extrabold uppercase tracking-widest">${fallbackTitle}</span>
+            </div>
+          `;
+          lucide.createIcons();
+        }, { once: true });
+      }
+    }
+
+    function pickSoniaVoice() {
+      if (!('speechSynthesis' in window)) return null;
+      const voices = window.speechSynthesis.getVoices() || [];
+      if (!voices.length) return null;
+      return (
+        voices.find(v => /sonia/i.test(v.name)) ||
+        voices.find(v => /en[-_]GB/i.test(v.lang) && /natural|online|google|neural/i.test(v.name)) ||
+        voices.find(v => /en[-_]GB/i.test(v.lang)) ||
+        voices.find(v => /^en/i.test(v.lang)) ||
+        null
+      );
+    }
+
+    if ('speechSynthesis' in window && typeof window.speechSynthesis.onvoiceschanged !== 'undefined') {
+      window.speechSynthesis.onvoiceschanged = () => pickSoniaVoice();
+    }
+
+    function speakText(text) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const runUtterance = () => {
+        const u = new SpeechSynthesisUtterance(text);
+        const voice = pickSoniaVoice();
+        if (voice) {
+          u.voice = voice;
+          u.lang = voice.lang;
+        } else {
+          u.lang = 'en-GB';
+        }
+        u.rate = 0.94;
+        u.pitch = 1.02;
+        window.speechSynthesis.speak(u);
+      };
+      if ((window.speechSynthesis.getVoices() || []).length === 0 && 'onvoiceschanged' in window) {
+        const once = () => {
+          window.speechSynthesis.removeEventListener('voiceschanged', once);
+          runUtterance();
+        };
+        window.speechSynthesis.addEventListener('voiceschanged', once);
+        setTimeout(runUtterance, 120);
+      } else {
+        runUtterance();
+      }
+    }
+
+    // ==================== 02: 8 INBOX CONVERSATION CARDS ====================
+    const INBOX_CARDS = [
+      { tag: "Inbox Zero vs. Chaos", q: "Do you keep your work inbox tidy and organized, or do unread messages pile up?", follow: "How do you decide what gets answered first?", photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=950&q=80", starters: ["• I usually reply to quick questions first and flag...", "• When things get busy, unread emails build up fast."] },
+      { tag: "Tone Misreadings", q: "Have you ever thought a short email sounded cold or annoyed when the sender was just in a rush?", follow: "How do you avoid sounding blunt in English?", photo: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=950&q=80", starters: ["• Short replies can easily sound a bit abrupt if...", "• Adding a quick 'Thanks for the update' softens the tone."] },
+      { tag: "Email vs. Chat", q: "When is an email better than a quick message on Slack, Teams, or WhatsApp?", follow: "Think about decisions, attachments, and paper trails.", photo: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=950&q=80", starters: ["• Email works better when there are files or details to...", "• Chat is faster for quick questions, while email keeps..."] },
+      { tag: "Long Walls of Text", q: "How do you react when you open a huge email with zero bullet points or clear ask?", follow: "What makes an email easy to scan in 20 seconds?", photo: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=950&q=80", starters: ["• If it's a huge block of text, I scan for...", "• Short bullets and a clear question at the bottom help."] },
+      { tag: "Subject Lines", q: "What makes a good subject line—and what kind of subject lines get ignored?", follow: "Give an example of a clear subject line.", photo: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=950&q=80", starters: ["• A good subject line tells you the topic and...", "• Vague subjects like 'Quick question' or 'Hello' are easy to miss."] },
+      { tag: "Follow-Ups", q: "How long do you wait before sending a polite follow-up when nobody replies?", follow: "How do you nudge someone without sounding impatient?", photo: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=950&q=80", starters: ["• Usually after two or three working days I...", "• Framing it as 'bumping this to the top of your inbox' helps."] },
+      { tag: "CC & Reply All", q: "When is 'Reply All' helpful, and when does it just flood everyone's inbox?", follow: "Who actually needs to be CC'd?", photo: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=950&q=80", starters: ["• Only hit Reply All if everyone needs the answer, otherwise...", "• I CC people when they need visibility on a decision."] },
+      { tag: "Spanglish Habits", q: "What phrasing habits from Spanish or Catalan tend to sneak into your English emails?", follow: "For example, overly literal greetings or long run-on sentences?", photo: "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=950&q=80", starters: ["• Sometimes I translate too literally from...", "• In English I try to keep sentences shorter and more direct."] }
+    ];
+    let inboxIdx = 0;
+
+    function renderInboxCard() {
+      inboxIdx = (inboxIdx + INBOX_CARDS.length) % INBOX_CARDS.length;
+      const c = INBOX_CARDS[inboxIdx];
+      document.getElementById('inboxBadge').textContent = `CARD ${inboxIdx + 1} / ${INBOX_CARDS.length}`;
+      document.getElementById('inboxTag').textContent = c.tag;
+      document.getElementById('inboxQuestion').textContent = c.q;
+      document.getElementById('inboxFollow').textContent = c.follow;
+      document.getElementById('inboxStarters').innerHTML = c.starters.map(s => `<div>${s}</div>`).join('');
+      document.getElementById('inboxStarters').classList.add('hidden');
+      mountPhoto(document.getElementById('inboxPhotoBox'), c.photo, c.tag, c.tag);
+      document.getElementById('inboxDots').innerHTML = INBOX_CARDS.map((_, i) => `
+        <button type="button" onclick="inboxIdx=${i}; renderInboxCard();" class="w-6 h-6 rounded-lg text-[11px] font-bold ${
+          i === inboxIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#081227]'
+        }">${i + 1}</button>
+      `).join('');
+    }
+    window.stepInbox = (d) => { inboxIdx += d; renderInboxCard(); };
+    window.speakInboxQ = () => speakText(`${INBOX_CARDS[inboxIdx].q} ${INBOX_CARDS[inboxIdx].follow}`);
+
+    // ==================== 03: 5-PART BLUEPRINT ====================
+    const EMAIL_STEPS = [
+      { pill: "1. Subject", title: "1. Subject Line: Topic + Action / Date", desc: "Busy readers decide whether to open or delay based on the subject line. State what it's about clearly.", ex: "Example: “Q1 Budget Review — Feedback needed by Thursday”" },
+      { pill: "2. Opening", title: "2. Opening: State Your Purpose Early", desc: "Don't bury why you're writing at paragraph four. Name the context and goal right away.", ex: "Example: “I'm writing to follow up on yesterday's call regarding the onboarding timeline.”" },
+      { pill: "3. Key Details", title: "3. Key Details: Keep It Easy to Scan", desc: "Use short sentences or 2–3 bullet points when sharing dates, figures, or multiple items.", ex: "Example: “• Draft sent to legal on Monday • Final sign-off expected Friday”" },
+      { pill: "4. Next Step", title: "4. Next Step: Make the Action Unmistakable", desc: "Specify what you need from the reader—approval, a time slot, or an answer—and by when.", ex: "Example: “Could you confirm if 11:00 a.m. works for you?”" },
+      { pill: "5. Sign-Off", title: "5. Sign-Off: Match the Relationship", desc: "Use 'Best' or 'Thanks' with teammates, and 'Kind regards' or 'Best regards' with clients or new contacts.", ex: "Example: “Thanks again for your help, / Best regards,”" }
+    ];
+    let esIdx = 0;
+
+    function renderEmailStep() {
+      const s = EMAIL_STEPS[esIdx];
+      document.getElementById('emailStepPills').innerHTML = EMAIL_STEPS.map((item, i) => `
+        <button type="button" onclick="esIdx=${i}; renderEmailStep();" class="px-3 py-1.5 rounded-xl text-xs font-bold transition ${
+          i === esIdx ? 'bg-indigo-600 text-white' : 'bg-[#F2F4FC] dark:bg-[#081227] border border-indigo-500/20'
+        }">${item.pill}</button>
+      `).join('');
+      document.getElementById('emailStepTitle').textContent = s.title;
+      document.getElementById('emailStepDesc').textContent = s.desc;
+      document.getElementById('emailStepEx').textContent = s.ex;
+    }
+    window.speakEmailStep = () => speakText(EMAIL_STEPS[esIdx].ex.replace(/^Example:\s*[“”]?|[“”]?$/g, ''));
+
+    // ==================== 04: 12 ILLUSTRATED EMAIL PHRASE CARDS ====================
+    const EMAIL_PHRASES = [
+      { phrase: "I'm reaching out regarding...", cat: "Opening", use: "Natural, modern way to start an email about a specific topic or issue.", ex: "I'm reaching out regarding the updated schedule for next week.", photo: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" },
+      { phrase: "Thanks for getting back to me so quickly.", cat: "Replying", use: "Warm appreciation when replying to a fast or helpful answer.", ex: "Thanks for getting back to me so quickly—that clears it up.", photo: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80" },
+      { phrase: "Please find ... attached.", cat: "Attachments", use: "Standard workplace phrasing when sending a document, report, or PDF.", ex: "Please find the updated proposal attached for your review.", photo: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80" },
+      { phrase: "Just circling back on...", cat: "Follow-Up", use: "Friendly, low-friction way to follow up on an earlier message.", ex: "Just circling back on this to see if you had any thoughts.", photo: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800&q=80" },
+      { phrase: "Would ... work for you?", cat: "Scheduling", use: "Polite, flexible way to propose a meeting time or deadline.", ex: "Would Wednesday at 2:30 p.m. work for you?", photo: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80" },
+      { phrase: "To clarify, what I meant was...", cat: "Clarifying", use: "Helpful when clearing up a misunderstanding calmly.", ex: "To clarify, what I meant was the draft version, not the final one.", photo: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" },
+      { phrase: "Let me double-check with ... and get back to you.", cat: "Buying Time", use: "Honest, reliable reply when you need to confirm facts first.", ex: "Let me double-check with finance and get back to you by noon.", photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80" },
+      { phrase: "Sorry for the delay in replying.", cat: "Apologies", use: "Clean, natural apology for a late response without over-apologizing.", ex: "Sorry for the delay in replying—it's been a hectic week.", photo: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" },
+      { phrase: "Unfortunately, we won't be able to...", cat: "Saying No Politely", use: "Clear, respectful way to decline a request or tight deadline.", ex: "Unfortunately, we won't be able to hit Friday's deadline.", photo: "https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&w=800&q=80" },
+      { phrase: "Could you share your thoughts on...?", cat: "Asking Input", use: "Invites feedback or collaboration in a constructive tone.", ex: "Could you share your thoughts on the new layout?", photo: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" },
+      { phrase: "I'll take care of ... on my end.", cat: "Ownership", use: "Shows clear responsibility for your part of a task.", ex: "I'll take care of booking the room on my end.", photo: "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=800&q=80" },
+      { phrase: "Please let me know if anything else is needed.", cat: "Closing", use: "Smooth, helpful wrap-up line before your sign-off.", ex: "Please let me know if anything else is needed before we start.", photo: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" }
+    ];
+    let epIdx = 0;
+    let epView = 'single';
+
+    window.setEpView = (mode) => {
+      epView = mode;
+      document.getElementById('epSingleBox').classList.toggle('hidden', mode !== 'single');
+      const gridEl = document.getElementById('epGridBox');
+      gridEl.classList.toggle('hidden', mode !== 'grid');
+      gridEl.classList.toggle('grid', mode === 'grid');
+      document.getElementById('btnEpSingle').className = mode === 'single'
+        ? 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-indigo-600 text-white transition'
+        : 'px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition';
+      document.getElementById('btnEpGrid').className = mode === 'grid'
+        ? 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-indigo-600 text-white transition'
+        : 'px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition';
+      renderEmailPhrases();
+    };
+
+    function renderEmailPhrases() {
+      epIdx = (epIdx + EMAIL_PHRASES.length) % EMAIL_PHRASES.length;
+      const p = EMAIL_PHRASES[epIdx];
+      const safeEx = p.ex.replace(/'/g, "\\'");
+
+      document.getElementById('epSingleBox').innerHTML = `
+        <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0D1A36] border-[1.5px] border-indigo-500/25 shadow-xl">
+          <div id="epPhotoBox" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+          <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">CARD ${epIdx + 1} / ${EMAIL_PHRASES.length}</span>
+                  <span class="px-3 py-1 rounded-full bg-indigo-500/15 text-indigo-700 dark:text-indigo-300 text-xs font-extrabold">${p.cat}</span>
+                </div>
+                <button type="button" onclick="speakText('${safeEx}')" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-indigo-600 text-white text-xs font-bold">
+                  <i data-lucide="volume-2" class="w-4 h-4"></i> Listen
+                </button>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white">${p.phrase}</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300">${p.use}</p>
+              <div class="p-4 rounded-2xl bg-[#F2F4FC] dark:bg-[#081227] border border-indigo-500/20">
+                <p class="text-sm italic font-semibold text-[#002B5C] dark:text-indigo-200">“${p.ex}”</p>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-indigo-400/15">
+              <button type="button" onclick="epIdx--; renderEmailPhrases();" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-indigo-400/25 text-xs font-bold">← Prev</button>
+              <div class="flex flex-wrap gap-1">
+                ${EMAIL_PHRASES.map((_, i) => `<button type="button" onclick="epIdx=${i}; renderEmailPhrases();" class="w-7 h-7 rounded-lg text-xs font-bold ${i === epIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#081227]'}">${i + 1}</button>`).join('')}
+              </div>
+              <button type="button" onclick="epIdx++; renderEmailPhrases();" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+            </div>
+          </div>
+        </div>
+      `;
+      mountPhoto(document.getElementById('epPhotoBox'), p.photo, p.phrase, p.cat.toUpperCase());
+
+      document.getElementById('epGridBox').innerHTML = EMAIL_PHRASES.map(item => `
+        <div class="bg-white dark:bg-[#0D1A36] border-[1.5px] border-indigo-500/25 rounded-3xl overflow-hidden shadow-md flex flex-col">
+          <img src="${item.photo}" alt="${item.phrase}" class="h-32 w-full object-cover" loading="lazy" />
+          <div class="p-5 flex-1 flex flex-col justify-between gap-3">
+            <div class="space-y-1.5">
+              <div class="flex items-start justify-between gap-2">
+                <h4 class="text-base font-extrabold text-[#002B5C] dark:text-white">${item.phrase}</h4>
+                <button type="button" onclick="speakText('${item.ex.replace(/'/g, "\\'")}')" class="p-1.5 rounded-lg bg-[#F2F4FC] dark:bg-[#081227] text-indigo-600 dark:text-indigo-300"><i data-lucide="volume-2" class="w-4 h-4"></i></button>
+              </div>
+              <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-indigo-500/15 text-indigo-700 dark:text-indigo-300">${item.cat}</span>
+              <p class="text-xs text-slate-600 dark:text-slate-300">${item.use}</p>
+            </div>
+            <p class="text-xs italic text-[#002B5C] dark:text-indigo-200 border-t border-slate-100 dark:border-indigo-400/15 pt-2">“${item.ex}”</p>
+          </div>
+        </div>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    // ==================== 05: TONE FIXER LAB ====================
+    const EMAIL_FIXERS = [
+      {
+        bad: '❌ "Send me the report now."',
+        q: "1. Make this request polite and clear for a colleague:",
+        opts: [
+          "A) Could you send over the report when you get a chance today?",
+          "B) You must send report now please."
+        ],
+        ans: "A",
+        why: "'Could you send over... when you get a chance today?' is polite, clear, and natural.",
+        photo: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        bad: '❌ "I cannot come to the meeting on Friday."',
+        q: "2. Upgrade this to a helpful reply that offers an alternative:",
+        opts: [
+          "A) I won't make Friday's meeting—could we catch up on Monday morning instead?",
+          "B) No Friday meeting for me."
+        ],
+        ans: "A",
+        why: "Pairing a clear 'won't make' with an alternative ('could we... instead?') keeps collaboration moving.",
+        photo: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        bad: '❌ "You didn\'t answer my email from two days ago."',
+        q: "3. Turn this accusation into a smooth follow-up:",
+        opts: [
+          "A) Just bumping this to the top of your inbox in case it got buried.",
+          "B) Why didn't you reply to me?"
+        ],
+        ans: "A",
+        why: "Blaming a busy inbox rather than the person avoids unnecessary friction.",
+        photo: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        bad: '❌ "Attached is the file that I attach."',
+        q: "4. Fix the repetition:",
+        opts: [
+          "A) Please find the signed contract attached.",
+          "B) I attach the attached file here."
+        ],
+        ans: "A",
+        why: "'Please find [document] attached' is crisp and avoids repeating 'attach'.",
+        photo: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        bad: '❌ "I don\'t know the answer, ask someone else."',
+        q: "5. Give a constructive workplace reply:",
+        opts: [
+          "A) I'm not sure off the top of my head, but I'll check with the team and get back to you.",
+          "B) Not my problem, ask another person."
+        ],
+        ans: "A",
+        why: "'Off the top of my head' + offering to check sounds helpful and professional.",
+        photo: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=900&q=80"
+      },
+      {
+        bad: '❌ "Thanks for nothing, the deadline passed."',
+        q: "6. Keep a missed-deadline email calm and solution-focused:",
+        opts: [
+          "A) Since the original deadline has passed, let's confirm a realistic new date for delivery.",
+          "B) You ruined the deadline completely."
+        ],
+        ans: "A",
+        why: "Focusing on the next step ('confirm a realistic new date') keeps things productive.",
+        photo: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=900&q=80"
+      }
+    ];
+    let efIdx = 0;
+
+    function renderEmailFixer() {
+      efIdx = (efIdx + EMAIL_FIXERS.length) % EMAIL_FIXERS.length;
+      const d = EMAIL_FIXERS[efIdx];
+
+      document.getElementById('emailFixerCardBox').innerHTML = `
+        <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0D1A36] border-[1.5px] border-indigo-500/25 shadow-xl">
+          <div id="efPhotoBox" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+          <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between gap-2">
+                <span class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">CARD ${efIdx + 1} / ${EMAIL_FIXERS.length}</span>
+                <span class="text-xs font-bold text-indigo-600 dark:text-indigo-400">TONE &amp; CLARITY</span>
+              </div>
+              <div class="text-xs font-extrabold text-rose-600 dark:text-rose-400">${d.bad}</div>
+              <p class="text-sm sm:text-base font-bold text-[#002B5C] dark:text-white">${d.q}</p>
+              <div class="space-y-2">
+                ${d.opts.map(op => `
+                  <button type="button" onclick="checkEmailFixer('${op[0]}')" class="w-full text-left px-4 py-2.5 rounded-xl bg-[#F2F4FC] dark:bg-[#081227] hover:border-indigo-400 border-[1.5px] border-indigo-500/20 text-xs sm:text-sm font-semibold transition">${op}</button>
+                `).join('')}
+              </div>
+              <div id="efFb" class="hidden p-3 rounded-xl text-xs font-bold"></div>
+            </div>
+
+            <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-indigo-400/15">
+              <button type="button" onclick="efIdx--; renderEmailFixer();" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-indigo-400/25 text-xs font-bold">← Prev</button>
+              <div class="flex gap-1.5">
+                ${EMAIL_FIXERS.map((_, i) => `<button type="button" onclick="efIdx=${i}; renderEmailFixer();" class="w-7 h-7 rounded-lg text-xs font-bold ${i === efIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#081227]'}">${i + 1}</button>`).join('')}
+              </div>
+              <button type="button" onclick="efIdx++; renderEmailFixer();" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+            </div>
+          </div>
+        </div>
+      `;
+      mountPhoto(document.getElementById('efPhotoBox'), d.photo, d.q, `DRILL ${efIdx + 1}`);
+      lucide.createIcons();
+    }
+
+    window.checkEmailFixer = (picked) => {
+      const d = EMAIL_FIXERS[efIdx];
+      const fb = document.getElementById('efFb');
+      fb.classList.remove('hidden');
+      if (picked === d.ans) {
+        fb.className = 'p-3 rounded-xl text-xs font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Great call! ${d.why}`;
+      } else {
+        fb.className = 'p-3 rounded-xl text-xs font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `✗ Try again. ${d.why}`;
+      }
+    };
+
+    // ==================== 06: INBOX TRIAGE RUSH GAME ====================
+    const TRIAGE_ROUNDS = [
+      { prompt: "You're attaching a slide deck to a colleague. Which line fits best?", opts: ["A) Please find the updated slide deck attached.", "B) Look at the file I put."], ans: 0, why: "'Please find ... attached' is standard and clear." },
+      { prompt: "A client asks if you can meet on Thursday at 9:00 a.m., but you're free at 11:00 a.m.:", opts: ["A) No, 9 is bad.", "B) Thursday at 9 doesn't work for me—would 11:00 a.m. suit you?"], ans: 1, why: "Polite decline + concrete alternative keeps scheduling smooth." },
+      { prompt: "You need to confirm a detail with your manager before answering a client:", opts: ["A) Let me double-check with my manager and get back to you shortly.", "B) Wait, I ask boss now."], ans: 0, why: "'Double-check ... and get back to you' sets clear expectations." },
+      { prompt: "Nobody has replied to your email after three working days:", opts: ["A) Just circling back on this—any updates on your side?", "B) Hello? Are you there?"], ans: 0, why: "'Circling back on this' is a natural, calm follow-up." },
+      { prompt: "You want to close a helpful email to a client:", opts: ["A) Please let me know if you have any questions. Kind regards,", "B) Bye bye now,"], ans: 0, why: "Matches a polite client tone cleanly." },
+      { prompt: "A colleague asks a vague question and you want to make sure you answer the right thing:", opts: ["A) To make sure I'm on the same page, do you mean...?", "B) Say it clearly next time."], ans: 0, why: "'To make sure I'm on the same page...' checks alignment politely." }
+    ];
+    let triIdx = 0;
+    let triScore = 0;
+    let triStreak = 0;
+    let triDone = false;
+
+    function renderTriage() {
+      const idx = triIdx % TRIAGE_ROUNDS.length;
+      const r = TRIAGE_ROUNDS[idx];
+      triDone = false;
+      document.getElementById('triRoundBadge').textContent = `ROUND ${idx + 1} / ${TRIAGE_ROUNDS.length}`;
+      document.getElementById('triPrompt').textContent = r.prompt;
+      document.getElementById('triFeedback').classList.add('hidden');
+      document.getElementById('triOptions').innerHTML = r.opts.map((op, i) => `
+        <button type="button" onclick="pickTriage(${i})" class="w-full text-left p-4 rounded-2xl bg-[#F2F4FC] dark:bg-[#081227] border-[1.5px] border-indigo-500/20 hover:border-indigo-400 text-xs sm:text-sm font-bold transition">${op}</button>
+      `).join('');
+    }
+
+    window.pickTriage = (picked) => {
+      if (triDone) return;
+      triDone = true;
+      const r = TRIAGE_ROUNDS[triIdx % TRIAGE_ROUNDS.length];
+      const fb = document.getElementById('triFeedback');
+      fb.classList.remove('hidden');
+      if (picked === r.ans) {
+        triScore++;
+        triStreak++;
+        fb.className = 'p-4 rounded-2xl text-xs sm:text-sm font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Sharp reply! (+1 pt) — ${r.why}`;
+      } else {
+        triStreak = 0;
+        fb.className = 'p-4 rounded-2xl text-xs sm:text-sm font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `✗ Better choice — ${r.why}`;
+      }
+      document.getElementById('triScoreBadge').textContent = `SCORE: ${triScore} / ${TRIAGE_ROUNDS.length}`;
+      document.getElementById('triStreakBadge').textContent = `STREAK: ${triStreak} 🔥`;
+    };
+    window.nextTriage = () => { triIdx++; renderTriage(); };
+    window.restartTriage = () => {
+      triIdx = 0;
+      triScore = 0;
+      triStreak = 0;
+      document.getElementById('triScoreBadge').textContent = `SCORE: 0 / ${TRIAGE_ROUNDS.length}`;
+      document.getElementById('triStreakBadge').textContent = `STREAK: 0 🔥`;
+      renderTriage();
+    };
+
+    // ==================== 07: INCOMING EMAILS & REPLY STUDIO ====================
+    const INCOMING_EMAILS = [
+      {
+        code: "Email-Reply-Reschedule",
+        from: "From: Hannah Brooks <h.brooks@northstar-client.co.uk>",
+        subj: "Subject: Catch-up call on Thursday",
+        body: "Hi,\n\nSomething urgent came up on Thursday morning. Could we move our 10:00 a.m. call to later that afternoon or Friday morning instead?\n\nBest,\nHannah",
+        tip: "Reply with a clear confirmation/choice, suggest a specific slot, and close politely."
+      },
+      {
+        code: "Email-Reply-StatusUpdate",
+        from: "From: Daniel Meyer <d.meyer@partnerops.com>",
+        subj: "Subject: Summary slides for tomorrow's sync",
+        body: "Hi,\n\nAre the summary slides ready to share ahead of tomorrow's meeting, or should we expect them later today?\n\nThanks,\nDaniel",
+        tip: "Give a direct status update, state when it will be sent, and confirm next steps."
+      },
+      {
+        code: "Email-Reply-Clarification",
+        from: "From: Claire Moreau <cmoreau@ateliernord.eu>",
+        subj: "Subject: Order #408 — delivery address",
+        body: "Hello,\n\nBefore we dispatch order #408, could you confirm whether it should go to the warehouse or the main office?\n\nKind regards,\nClaire",
+        tip: "Answer the question clearly in line one and confirm what happens next."
+      }
+    ];
+
+    function renderIncomingEmail() {
+      const idx = Number(document.getElementById('inboxScenarioSelect').value || 0);
+      const item = INCOMING_EMAILS[idx];
+      document.getElementById('incomingEmailCard').innerHTML = `
+        <div class="text-xs font-extrabold text-indigo-600 dark:text-indigo-400">${item.from}</div>
+        <div class="text-xs font-extrabold text-[#002B5C] dark:text-white">${item.subj}</div>
+        <pre class="whitespace-pre-wrap font-sans text-xs sm:text-sm text-slate-700 dark:text-slate-200 pt-2 border-t border-slate-200 dark:border-indigo-400/15">${item.body}</pre>
+        <p class="text-[11px] font-bold text-indigo-700 dark:text-indigo-300 pt-1">${item.tip}</p>
+      `;
+    }
+
+    const replyTa = document.getElementById('emailReplyTextarea');
+    const emailNameEl = document.getElementById('emailStudentName');
+    emailNameEl.value = localStorage.getItem('provoStudentName') || '';
+    emailNameEl.addEventListener('input', () => localStorage.setItem('provoStudentName', emailNameEl.value.trim()));
+    if (localStorage.getItem('provoEmailReplyDraft')) replyTa.value = localStorage.getItem('provoEmailReplyDraft');
+
+    function updateReplyCount() {
+      const txt = replyTa.value;
+      localStorage.setItem('provoEmailReplyDraft', txt);
+      const w = txt.trim() ? txt.trim().split(/\s+/).filter(Boolean).length : 0;
+      document.getElementById('emailWordCounter').textContent = `${w} ${w === 1 ? 'WORD' : 'WORDS'}`;
+    }
+    replyTa.addEventListener('input', updateReplyCount);
+
+    function showReplyFb(msg, ok = true) {
+      const fb = document.getElementById('emailReplyFb');
+      fb.classList.remove('hidden');
+      fb.className = ok
+        ? 'p-3 rounded-xl text-xs font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300'
+        : 'p-3 rounded-xl text-xs font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+      fb.textContent = msg;
+    }
+
+    window.copyEmailReply = async () => {
+      if (!replyTa.value.trim()) return showReplyFb('Write your reply first.', false);
+      try {
+        await navigator.clipboard.writeText(replyTa.value.trim());
+        showReplyFb('✓ Reply copied to clipboard!', true);
+      } catch (e) {
+        showReplyFb('Could not copy automatically.', false);
+      }
+    };
+
+    window.downloadEmailTxt = () => {
+      if (!replyTa.value.trim()) return showReplyFb('Write your reply first.', false);
+      const idx = Number(document.getElementById('inboxScenarioSelect').value || 0);
+      const name = (emailNameEl.value.trim() || 'Student').replace(/\s+/g, '_');
+      const blob = new Blob([`Student: ${emailNameEl.value.trim() || 'Student'}\nScenario: ${INCOMING_EMAILS[idx].subj}\n\n${replyTa.value.trim()}`], { type: 'text/plain;charset=utf-8' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `PROVO-${INCOMING_EMAILS[idx].code}-${name}.txt`;
+      a.click();
+    };
+
+    window.sendEmailReplyToDrive = async () => {
+      const studentName = emailNameEl.value.trim();
+      const body = replyTa.value.trim();
+      if (!studentName) {
+        showReplyFb('Enter your name first.', false);
+        emailNameEl.focus();
+        return;
+      }
+      if (!body) {
+        showReplyFb('Write your email reply before sending.', false);
+        replyTa.focus();
+        return;
+      }
+      const idx = Number(document.getElementById('inboxScenarioSelect').value || 0);
+      const sc = INCOMING_EMAILS[idx];
+      const formatted = `PROVO · BUSINESS EMAIL REPLY\nStudent: ${studentName}\n${sc.subj}\n\n${body}`;
+      const bytes = new TextEncoder().encode(formatted);
+      let bin = '';
+      bytes.forEach(b => { bin += String.fromCharCode(b); });
+      const b64 = btoa(bin);
+
+      document.getElementById('btnSendEmailDrive').disabled = true;
+      document.getElementById('sendEmailLabel').textContent = 'Sending...';
+      try {
+        const res = await fetch(DRIVE_UPLOAD_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({
+            studentName,
+            lessonTitle: sc.code,
+            questionNumber: idx + 1,
+            mimeType: 'text/plain',
+            textContent: formatted,
+            audioBase64: b64
+          })
+        });
+        const data = await res.json();
+        if (data.status === 'ok') showReplyFb(`✓ Sent to Drive as ${data.fileName}!`, true);
+        else throw new Error(data.message || 'Upload error');
+      } catch (e) {
+        showReplyFb('Could not reach Drive automatically. Use .TXT to save a copy.', false);
+      } finally {
+        document.getElementById('btnSendEmailDrive').disabled = false;
+        document.getElementById('sendEmailLabel').textContent = 'Send Reply to Teacher';
+      }
+    };
+
+    // Init
+    goStage(0);
+    renderInboxCard();
+    renderEmailStep();
+    setEpView('single');
+    renderEmailFixer();
+    renderTriage();
+    renderIncomingEmail();
+    updateReplyCount();
+    lucide.createIcons();
+  </script>
+</body>
+</html>

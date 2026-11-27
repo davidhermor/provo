@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TRAVEL ENGLISH · HOTELS &amp; ACCOMMODATION | PROVO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <style>
+    @keyframes stageIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .stage-anim { animation: stageIn 0.24s ease-out forwards; }
+  </style>
+</head>
+<body class="bg-[#FFF7ED] text-slate-900 dark:bg-[#061322] dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
+
+  <!-- Sticky Top Bar -->
+  <header class="sticky top-0 z-40 bg-[#002B5C] text-white border-b border-orange-400/35 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2.5">
+        <a href="index.html" class="flex items-center shrink-0" title="PROVO">
+          <img
+            src="https://i.postimg.cc/vBt4qH44/download.png"
+            alt="PROVO"
+            class="h-8 w-auto object-contain block"
+            onerror="this.style.display='none'; document.getElementById('provoFallback').classList.remove('hidden');"
+          />
+          <span id="provoFallback" class="hidden font-extrabold tracking-widest text-lg text-white">PROVO</span>
+        </a>
+        <span class="px-2.5 py-0.5 rounded-full bg-orange-500/25 border border-orange-300/45 text-orange-100 text-[11px] font-bold tracking-wider">
+          TRAVEL · HOTELS
+        </span>
+        <span id="stageTitleHeader" class="hidden xl:inline-block text-xs font-bold tracking-wider text-orange-200">
+          01 · STAY BRIEFING
+        </span>
+      </div>
+
+      <div id="stagePills" class="flex items-center gap-1 overflow-x-auto py-1"></div>
+
+      <div class="flex items-center gap-2 shrink-0">
+        <!-- Global Multilevel Switch -->
+        <div class="inline-flex rounded-xl p-0.5 bg-black/30 border border-white/15" title="Switch Lesson Level">
+          <button id="lvlBtnA" type="button" onclick="setTravelLevel('A')" class="px-2.5 py-1 rounded-lg text-[11px] font-extrabold bg-orange-500 text-slate-950 transition">A1–A2</button>
+          <button id="lvlBtnB" type="button" onclick="setTravelLevel('B')" class="px-2.5 py-1 rounded-lg text-[11px] font-extrabold text-white/80 hover:text-white transition">B1–B2</button>
+        </div>
+
+        <button
+          id="themeBtn"
+          type="button"
+          class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition"
+          title="Toggle Theme"
+        >
+          <i id="themeIcon" data-lucide="sun" class="w-4 h-4"></i>
+        </button>
+        <a
+          href="index.html"
+          class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs font-bold bg-white/10 hover:bg-white/20 text-white transition"
+        >
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          <span class="hidden sm:inline">PORTAL</span>
+        </a>
+      </div>
+    </div>
+    <div class="w-full h-1.5 bg-black/25">
+      <div id="stageProgress" class="h-full bg-orange-400 transition-all duration-300" style="width: 12.5%"></div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl w-full mx-auto px-4 sm:px-6 py-7 sm:py-10 flex-1 flex flex-col justify-center">
+
+    <!-- ==================== 01: STAY BRIEFING & MULTILEVEL MODE ==================== -->
+    <section data-stage="0" class="stage stage-anim">
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 shadow-xl">
+        <div class="lg:col-span-5 h-64 sm:h-auto relative bg-[#091726] overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&amp;fit=crop&amp;w=1050&amp;q=80"
+            alt="Hotel lobby and reception area"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#061322]/90 via-[#061322]/25 to-transparent"></div>
+          <div class="absolute bottom-5 left-5 right-5 space-y-1 text-white">
+            <span class="text-xs font-bold tracking-widest text-orange-300 uppercase">PROVO · Travel English Series</span>
+            <p class="text-sm font-semibold text-slate-200">Reception · Check-In · Room Requests · Wi-Fi · Late Check-Out</p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 p-7 sm:p-10 flex flex-col justify-center space-y-5">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <span id="heroModeBadge" class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-orange-500/15 border border-orange-400/35 text-orange-700 dark:text-orange-300 text-xs font-bold tracking-wider">
+              <i data-lucide="bed-double" class="w-4 h-4"></i>
+              <span>LEVEL A1–A2 · CLEAR SURVIVAL ENGLISH</span>
+            </span>
+
+            <div class="inline-flex rounded-xl p-1 bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/25">
+              <button type="button" onclick="setTravelLevel('A')" id="heroLvlA" class="px-3 py-1 rounded-lg text-xs font-extrabold bg-orange-500 text-slate-950 transition">A1–A2 Survival</button>
+              <button type="button" onclick="setTravelLevel('B')" id="heroLvlB" class="px-3 py-1 rounded-lg text-xs font-extrabold text-slate-600 dark:text-slate-300 transition">B1–B2 Confident</button>
+            </div>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight text-[#002B5C] dark:text-white">
+            Hotels &amp; Stays: <span class="text-orange-600 dark:text-orange-400">Smooth Check-In</span>
+          </h1>
+
+          <p id="heroDesc" class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+
+          <!-- Interactive Mini Booking Card -->
+          <div class="p-4 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/25 space-y-2.5">
+            <div class="flex items-center justify-between text-[11px] font-extrabold uppercase tracking-wider text-orange-700 dark:text-orange-300">
+              <span>Booking Confirmation · #PV-819</span>
+              <span>3 NIGHTS · LISBON</span>
+            </div>
+            <div class="grid grid-cols-4 gap-2 text-center">
+              <div class="p-2 rounded-xl bg-white dark:bg-[#0C1E33]">
+                <div class="text-[10px] text-slate-400 font-bold">ROOM</div>
+                <div class="text-sm font-extrabold text-[#002B5C] dark:text-white">Double</div>
+              </div>
+              <div class="p-2 rounded-xl bg-white dark:bg-[#0C1E33]">
+                <div class="text-[10px] text-slate-400 font-bold">FLOOR</div>
+                <div class="text-sm font-extrabold text-orange-600 dark:text-orange-400">3rd · 308</div>
+              </div>
+              <div class="p-2 rounded-xl bg-white dark:bg-[#0C1E33]">
+                <div class="text-[10px] text-slate-400 font-bold">CHECK-IN</div>
+                <div class="text-sm font-extrabold text-[#002B5C] dark:text-white">15:00</div>
+              </div>
+              <div class="p-2 rounded-xl bg-white dark:bg-[#0C1E33]">
+                <div class="text-[10px] text-slate-400 font-bold">CHECK-OUT</div>
+                <div class="text-sm font-extrabold text-[#002B5C] dark:text-white">11:00</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-1">
+            <button
+              type="button"
+              onclick="goStage(1)"
+              class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-[#002B5C] via-orange-700 to-orange-500 hover:opacity-95 text-white text-sm sm:text-base font-bold shadow-lg transition"
+            >
+              <span>Enter Hotel Lab</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 02: CONVERSATION QUESTIONS + VOICE RECORDER ==================== -->
+    <section data-stage="1" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-orange-500/20 pb-3">
+        <div>
+          <span id="s2SubBadge" class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 02 · Conversation Questions (A1–A2)</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">8 Hotel &amp; Accommodation Questions</h2>
+        </div>
+        <div class="inline-flex rounded-xl p-1 bg-white dark:bg-[#0C1E33] border border-orange-500/25 self-start sm:self-auto">
+          <button type="button" onclick="setTravelLevel('A')" class="lvl-sync-a px-3 py-1 rounded-lg text-xs font-extrabold bg-orange-500 text-slate-950 transition">A1–A2</button>
+          <button type="button" onclick="setTravelLevel('B')" class="lvl-sync-b px-3 py-1 rounded-lg text-xs font-extrabold text-slate-600 dark:text-slate-300 transition">B1–B2</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 shadow-xl max-w-4xl mx-auto w-full">
+        <div id="cqPhotoBox" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+
+        <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-5">
+          <div class="space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-2">
+                <span id="cqBadge" class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">QUESTION 1 / 8</span>
+                <span id="cqTag" class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-700 dark:text-orange-300 text-xs font-bold"></span>
+              </div>
+              <button type="button" onclick="speakCq()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-orange-600 hover:bg-orange-500 text-white text-xs font-bold transition">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                <span>Listen</span>
+              </button>
+            </div>
+
+            <h3 id="cqQuestion" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+            <p id="cqFollow" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300"></p>
+
+            <div>
+              <button type="button" onclick="document.getElementById('cqStarters').classList.toggle('hidden')" class="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-orange-700 dark:text-orange-300 hover:underline">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                <span>Helpful Starters</span>
+              </button>
+              <div id="cqStarters" class="hidden mt-2.5 p-3.5 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/20 text-xs space-y-1"></div>
+            </div>
+
+            <!-- Voice Note Recorder -->
+            <div class="p-4 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/20 space-y-3">
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-xs font-extrabold uppercase tracking-wider text-orange-700 dark:text-orange-300">Voice Note Answer</span>
+                <span id="recTimer" class="text-xs font-extrabold text-slate-500 dark:text-slate-400">Ready</span>
+              </div>
+
+              <input
+                id="htStudentName"
+                type="text"
+                placeholder="Your name (e.g. Elena Ruiz)"
+                class="w-full px-3 py-2 rounded-xl bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-sky-400/25 text-xs sm:text-sm outline-none focus:border-orange-400"
+              />
+
+              <div class="flex flex-wrap items-center gap-2">
+                <button
+                  id="btnRecStart"
+                  type="button"
+                  onclick="startVoiceRec()"
+                  class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold transition"
+                >
+                  <i data-lucide="mic" class="w-3.5 h-3.5"></i>
+                  <span>Record</span>
+                </button>
+                <button
+                  id="btnRecStop"
+                  type="button"
+                  onclick="stopVoiceRec()"
+                  disabled
+                  class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-700 disabled:opacity-40 text-white text-xs font-bold transition"
+                >
+                  <i data-lucide="square" class="w-3.5 h-3.5"></i>
+                  <span>Stop</span>
+                </button>
+                <button
+                  id="btnSendAudioDrive"
+                  type="button"
+                  onclick="sendAudioToDrive()"
+                  disabled
+                  class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#002B5C] hover:bg-orange-600 disabled:opacity-40 text-white text-xs font-bold transition"
+                >
+                  <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                  <span id="sendAudioLabel">Send Audio to Teacher</span>
+                </button>
+              </div>
+
+              <audio id="recPlayback" controls class="hidden w-full h-9"></audio>
+              <div id="recFeedback" class="hidden text-xs font-bold p-2.5 rounded-xl"></div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-sky-400/15">
+            <button type="button" onclick="stepCq(-1)" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">← Prev</button>
+            <div id="cqDots" class="flex flex-wrap gap-1"></div>
+            <button type="button" onclick="stepCq(1)" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 03: 12 ESSENTIAL HOTEL VOCABULARY CARDS ==================== -->
+    <section data-stage="2" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-orange-500/20 pb-3">
+        <div>
+          <span id="s3SubBadge" class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 03 · Vocabulary (A1–A2)</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">12 Key Hotel &amp; Stay Words</h2>
+        </div>
+        <div class="inline-flex rounded-xl p-1 bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 self-start sm:self-auto">
+          <button id="btnHvSingle" type="button" onclick="setHvMode('single')" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-orange-600 text-white transition">1 by 1 Card</button>
+          <button id="btnHvGrid" type="button" onclick="setHvMode('grid')" class="px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition">All 12 Words</button>
+        </div>
+      </div>
+
+      <div id="hvSingleBox" class="max-w-4xl mx-auto w-full"></div>
+      <div id="hvGridBox" class="hidden grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+    </section>
+
+    <!-- ==================== 04: READING & RECEPTION DESK MESSAGES ==================== -->
+    <section data-stage="3" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-orange-500/20 pb-3">
+        <div>
+          <span id="s4SubBadge" class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 04 · Reading &amp; Reception (A1–A2)</span>
+          <h2 id="readingStoryTitle" class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white"></h2>
+        </div>
+        <button type="button" onclick="speakReadingText()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-orange-600 hover:bg-orange-500 text-white text-xs font-bold self-start sm:self-auto transition">
+          <i data-lucide="volume-2" class="w-4 h-4"></i>
+          <span>Listen to Story</span>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div class="lg:col-span-7 space-y-5">
+          <article class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl overflow-hidden shadow-lg">
+            <img
+              src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&amp;fit=crop&amp;w=1050&amp;q=80"
+              alt="Boutique hotel room with balcony"
+              class="h-44 w-full object-cover"
+            />
+            <div id="htReadingBody" class="p-6 sm:p-7 space-y-3.5 text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed"></div>
+          </article>
+
+          <!-- Reception Audio Messages -->
+          <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl p-5 sm:p-6 space-y-3 shadow-md">
+            <div class="flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-orange-700 dark:text-orange-300">
+              <i data-lucide="bell-ring" class="w-4 h-4"></i>
+              <span>Reception Desk Audio (Click to Hear &amp; Decode)</span>
+            </div>
+            <div id="paListBox" class="space-y-2.5"></div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl p-6 space-y-4 shadow-lg">
+          <span class="text-xs font-extrabold uppercase tracking-wider text-orange-600 dark:text-orange-400">Comprehension Check (4 Questions)</span>
+          <div id="readingQuizBox" class="space-y-4"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 05: MULTILEVEL REQUESTS & PHRASE LAB ==================== -->
+    <section data-stage="4" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-orange-500/20 pb-3">
+        <div>
+          <span id="s5SubBadge" class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 05 · Useful Phrases (A1–A2)</span>
+          <h2 id="s5Heading" class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white"></h2>
+        </div>
+        <span id="s5Pill" class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-700 dark:text-orange-300 text-xs font-extrabold"></span>
+      </div>
+
+      <div id="phraseTipsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
+
+      <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl p-6 sm:p-8 space-y-4 shadow-lg">
+        <div class="flex items-center justify-between gap-2">
+          <h3 id="gramPracticeTitle" class="text-lg font-extrabold text-[#002B5C] dark:text-white"></h3>
+          <span id="gramScorePill" class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-700 dark:text-orange-300 text-xs font-extrabold">0 / 6</span>
+        </div>
+        <div id="gramDrillList" class="grid grid-cols-1 md:grid-cols-2 gap-3"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 06: INTERACTIVE HOTEL SIMULATOR ==================== -->
+    <section data-stage="5" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-orange-500/20 pb-3">
+        <div>
+          <span id="s6SubBadge" class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 06 · Interactive Simulator (A1–A2)</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Hotel Stay Challenge: Arrival to Check-Out (6 Steps)</h2>
+        </div>
+        <div class="flex items-center gap-2">
+          <span id="simScoreBadge" class="px-3.5 py-1.5 rounded-xl bg-[#002B5C] text-orange-300 text-xs font-extrabold">SCORE: 0 / 6</span>
+          <button type="button" onclick="resetSimGame()" class="px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">
+            Restart Stay
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl p-6 sm:p-9 max-w-4xl mx-auto w-full space-y-6 shadow-xl">
+        <div class="flex items-center justify-between gap-2">
+          <span id="simRoundBadge" class="px-3.5 py-1 rounded-full bg-orange-600 text-white text-xs font-extrabold">STEP 1 / 6</span>
+          <span id="simLevelTag" class="text-xs font-bold text-slate-500 dark:text-slate-400"></span>
+        </div>
+
+        <h3 id="simPrompt" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+        <div id="simOptions" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+        <div id="simFeedback" class="hidden p-4 rounded-2xl text-xs sm:text-sm font-bold"></div>
+
+        <div class="flex justify-end">
+          <button type="button" onclick="nextSimRound()" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-[#002B5C] to-orange-600 text-white text-xs sm:text-sm font-bold">
+            Next Step →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 07: 8 REAL HOTEL ROLE-PLAYS ==================== -->
+    <section data-stage="6" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-orange-500/20 pb-3">
+        <div>
+          <span id="s7SubBadge" class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 07 · Real Hotel Role-Plays (A1–A2)</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">8 Reception &amp; Room Situations</h2>
+        </div>
+        <div class="inline-flex rounded-xl p-1 bg-white dark:bg-[#0C1E33] border border-orange-500/25 self-start sm:self-auto">
+          <button type="button" onclick="setTravelLevel('A')" class="lvl-sync-a px-3 py-1 rounded-lg text-xs font-extrabold bg-orange-500 text-slate-950 transition">A1–A2 Simple</button>
+          <button type="button" onclick="setTravelLevel('B')" class="lvl-sync-b px-3 py-1 rounded-lg text-xs font-extrabold text-slate-600 dark:text-slate-300 transition">B1–B2 Polite/Detailed</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 shadow-xl max-w-4xl mx-auto w-full">
+        <div id="htPhotoBox" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+
+        <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-5">
+          <div class="space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-2">
+                <span id="htBadge" class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">SITUATION 1 / 8</span>
+                <span id="htTag" class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-700 dark:text-orange-300 text-xs font-bold"></span>
+              </div>
+              <button type="button" onclick="speakHtPrompt()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-orange-600 hover:bg-orange-500 text-white text-xs font-bold transition">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                <span>Listen</span>
+              </button>
+            </div>
+
+            <div class="p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/25">
+              <div class="text-[11px] font-extrabold uppercase tracking-wider text-amber-700 dark:text-amber-300">Receptionist / Host Prompt</div>
+              <p id="htStaffLine" class="text-sm sm:text-base font-bold text-[#002B5C] dark:text-white mt-0.5"></p>
+            </div>
+
+            <h3 id="htTask" class="text-lg sm:text-xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+
+            <div class="p-4 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/25 space-y-2">
+              <div class="flex items-center justify-between">
+                <span id="htModelLabel" class="text-[11px] font-extrabold uppercase tracking-wider text-orange-700 dark:text-orange-300"></span>
+                <button type="button" onclick="speakHtModel()" class="text-xs font-bold text-orange-700 dark:text-orange-300 hover:underline inline-flex items-center gap-1">
+                  <i data-lucide="volume-2" class="w-3.5 h-3.5"></i> Hear Answer
+                </button>
+              </div>
+              <p id="htModelAnswer" class="text-sm font-semibold text-slate-800 dark:text-slate-100"></p>
+              <p id="htAltTip" class="text-xs text-slate-500 dark:text-slate-400"></p>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-sky-400/15">
+            <button type="button" onclick="stepHt(-1)" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">← Prev</button>
+            <div id="htDots" class="flex flex-wrap gap-1"></div>
+            <button type="button" onclick="stepHt(1)" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 08: ACCOMMODATION DILEMMAS (ONE BY ONE) ==================== -->
+    <section data-stage="7" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-orange-500/20 pb-3">
+        <div>
+          <span id="s8SubBadge" class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 08 · Accommodation Dilemmas (A1–A2)</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Where Do You Prefer Staying? (4 Dilemmas)</h2>
+        </div>
+        <span class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-700 dark:text-orange-300 text-xs font-extrabold">1 Dilemma at a Time</span>
+      </div>
+
+      <div id="debateSingleBox" class="max-w-4xl mx-auto w-full"></div>
+
+      <div class="max-w-4xl mx-auto w-full p-5 rounded-3xl bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-md">
+        <div class="space-y-1">
+          <span class="text-xs font-extrabold uppercase tracking-wider text-orange-600 dark:text-orange-400">Opinion Starters for Current Level</span>
+          <p id="debateStarterBar" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300"></p>
+        </div>
+        <button type="button" onclick="goStage(1)" class="px-4 py-2.5 rounded-xl bg-[#002B5C] hover:bg-orange-600 text-white text-xs font-bold shrink-0 transition">
+          Practice Speaking →
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Navigation -->
+  <footer class="border-t border-orange-500/20 bg-white dark:bg-[#061322] py-4 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      <button id="btnPrev" type="button" onclick="goStage(currentStage - 1)" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-300 dark:border-sky-400/25 hover:bg-slate-100 dark:hover:bg-[#132C4A] disabled:opacity-30 text-xs font-bold transition">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Previous</span>
+      </button>
+
+      <span id="stageCounter" class="text-xs font-bold tracking-widest text-slate-500 dark:text-slate-400">
+        01 / 08
+      </span>
+
+      <button id="btnNext" type="button" onclick="goStage(currentStage + 1)" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#002B5C] hover:bg-orange-700 disabled:opacity-30 text-xs font-bold text-white transition">
+        <span>Next</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    const DRIVE_UPLOAD_URL = "https://script.google.com/macros/s/AKfycbwBcX7Z4aABKplkUkpYvM2wEnsBHhWCZzi7dFGDkeUarkXwv-RRI0JXAPDakjkrCrBc/exec";
+
+    const STAGES = [
+      "01 · STAY BRIEFING",
+      "02 · CONVERSATION",
+      "03 · 12 HOTEL WORDS",
+      "04 · READING & DESK",
+      "05 · PHRASE UPGRADE",
+      "06 · SIMULATOR",
+      "07 · ROLE-PLAYS",
+      "08 · STAY DILEMMAS"
+    ];
+
+    let currentStage = 0;
+    let travelLevel = 'A'; // 'A' = A1-A2 Survival, 'B' = B1-B2 Confident
+    const stageSections = document.querySelectorAll('.stage');
+
+    function syncLevelBadges() {
+      const tag = travelLevel === 'A' ? 'A1–A2' : 'B1–B2';
+      const heroBadge = document.getElementById('heroModeBadge');
+      if (heroBadge) {
+        heroBadge.innerHTML = `<i data-lucide="bed-double" class="w-4 h-4"></i><span>${
+          travelLevel === 'A' ? 'LEVEL A1–A2 · CLEAR SURVIVAL ENGLISH' : 'LEVEL B1–B2 · NATURAL & POLITE FLUENCY'
+        }</span>`;
+      }
+      const heroDesc = document.getElementById('heroDesc');
+      if (heroDesc) {
+        heroDesc.innerHTML = travelLevel === 'A'
+          ? 'Clear, practical English for checking in, asking for Wi-Fi or extra towels, solving room issues, and checking out without stress.'
+          : 'Natural, polite English for confirming bookings, resolving room mix-ups, requesting late check-out, and dealing with reception smoothly.';
+      }
+      const s2 = document.getElementById('s2SubBadge');
+      if (s2) s2.textContent = `Stage 02 · Conversation Questions (${tag})`;
+      const s3 = document.getElementById('s3SubBadge');
+      if (s3) s3.textContent = `Stage 03 · Vocabulary (${tag})`;
+      const s4 = document.getElementById('s4SubBadge');
+      if (s4) s4.textContent = `Stage 04 · Reading & Reception (${tag})`;
+      const s5 = document.getElementById('s5SubBadge');
+      if (s5) s5.textContent = `Stage 05 · Useful Phrases (${tag})`;
+      const s6 = document.getElementById('s6SubBadge');
+      if (s6) s6.textContent = `Stage 06 · Interactive Simulator (${tag})`;
+      const s7 = document.getElementById('s7SubBadge');
+      if (s7) s7.textContent = `Stage 07 · Real Hotel Role-Plays (${tag})`;
+      const s8 = document.getElementById('s8SubBadge');
+      if (s8) s8.textContent = `Stage 08 · Accommodation Dilemmas (${tag})`;
+    }
+
+    function refreshAllStagesForLevel() {
+      syncLevelBadges();
+      renderCqCard();
+      renderHtVocab();
+      renderReadingSection();
+      renderPhraseLab();
+      renderSimRound();
+      renderHtCard();
+      renderDebates();
+      lucide.createIcons();
+    }
+
+    window.setTravelLevel = (lvl) => {
+      travelLevel = lvl;
+      const isA = lvl === 'A';
+      const activeCls = 'bg-orange-500 text-slate-950';
+      const idleHeader = 'text-white/80 hover:text-white';
+      const idleCard = 'text-slate-600 dark:text-slate-300';
+
+      const bA = document.getElementById('lvlBtnA');
+      const bB = document.getElementById('lvlBtnB');
+      if (bA && bB) {
+        bA.className = `px-2.5 py-1 rounded-lg text-[11px] font-extrabold transition ${isA ? activeCls : idleHeader}`;
+        bB.className = `px-2.5 py-1 rounded-lg text-[11px] font-extrabold transition ${!isA ? activeCls : idleHeader}`;
+      }
+
+      const hA = document.getElementById('heroLvlA');
+      const hB = document.getElementById('heroLvlB');
+      if (hA && hB) {
+        hA.className = `px-3 py-1 rounded-lg text-xs font-extrabold transition ${isA ? activeCls : idleCard}`;
+        hB.className = `px-3 py-1 rounded-lg text-xs font-extrabold transition ${!isA ? activeCls : idleCard}`;
+      }
+
+      document.querySelectorAll('.lvl-sync-a').forEach(el => {
+        el.className = `lvl-sync-a px-3 py-1 rounded-lg text-xs font-extrabold transition ${isA ? activeCls : idleCard}`;
+      });
+      document.querySelectorAll('.lvl-sync-b').forEach(el => {
+        el.className = `lvl-sync-b px-3 py-1 rounded-lg text-xs font-extrabold transition ${!isA ? activeCls : idleCard}`;
+      });
+
+      refreshAllStagesForLevel();
+    };
+
+    function goStage(idx) {
+      if (idx < 0 || idx >= stageSections.length) return;
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      currentStage = idx;
+      stageSections.forEach((s, i) => s.classList.toggle('hidden', i !== currentStage));
+      document.getElementById('stageTitleHeader').textContent = STAGES[currentStage];
+      document.getElementById('stageCounter').textContent = `${String(currentStage + 1).padStart(2, '0')} / ${String(stageSections.length).padStart(2, '0')}`;
+      document.getElementById('stageProgress').style.width = `${((currentStage + 1) / stageSections.length) * 100}%`;
+      document.getElementById('btnPrev').disabled = currentStage === 0;
+      document.getElementById('btnNext').disabled = currentStage === stageSections.length - 1;
+      renderStagePills();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      lucide.createIcons();
+    }
+
+    function renderStagePills() {
+      document.getElementById('stagePills').innerHTML = STAGES.map((_, i) => `
+        <button type="button" onclick="goStage(${i})" class="px-2.5 py-1 rounded-lg text-xs font-bold transition ${
+          i === currentStage ? 'bg-orange-500 text-slate-950' : 'text-white/75 hover:text-white hover:bg-white/10'
+        }">${String(i + 1).padStart(2, '0')}</button>
+      `).join('');
+    }
+
+    const themeBtn = document.getElementById('themeBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    if (localStorage.getItem('provoTravelTheme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      themeIcon.setAttribute('data-lucide', 'moon');
+    }
+    themeBtn.addEventListener('click', () => {
+      const dark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('provoTravelTheme', dark ? 'dark' : 'light');
+      themeIcon.setAttribute('data-lucide', dark ? 'sun' : 'moon');
+      lucide.createIcons();
+    });
+
+    function mountPhoto(container, url, altText, fallbackTitle) {
+      container.innerHTML = `<img src="${url}" alt="${altText}" class="w-full h-full object-cover" loading="lazy" />`;
+      const img = container.querySelector('img');
+      if (img) {
+        img.addEventListener('error', () => {
+          container.innerHTML = `
+            <div class="w-full h-full flex flex-col items-center justify-center bg-[#002B5C] text-white p-6 text-center">
+              <i data-lucide="bed-double" class="w-8 h-8 text-orange-300 mb-2"></i>
+              <span class="text-xs font-extrabold uppercase tracking-widest">${fallbackTitle}</span>
+            </div>
+          `;
+          lucide.createIcons();
+        }, { once: true });
+      }
+    }
+
+    function pickVoice() {
+      if (!('speechSynthesis' in window)) return null;
+      const voices = window.speechSynthesis.getVoices() || [];
+      if (!voices.length) return null;
+      return (
+        voices.find(v => /sonia/i.test(v.name)) ||
+        voices.find(v => /en[-_]GB/i.test(v.lang)) ||
+        voices.find(v => /^en/i.test(v.lang)) ||
+        null
+      );
+    }
+
+    function speakText(text) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      const v = pickVoice();
+      if (v) {
+        u.voice = v;
+        u.lang = v.lang;
+      } else {
+        u.lang = 'en-GB';
+      }
+      u.rate = travelLevel === 'A' ? 0.89 : 0.96;
+      u.pitch = 1.02;
+      window.speechSynthesis.speak(u);
+    }
+
+    // ==================== 02: CONVERSATION QUESTIONS ====================
+    const CQ_CARDS = [
+      {
+        tag: "Hotels vs. Apartments",
+        qA: "Do you prefer staying in a hotel or an apartment when you travel?",
+        followA: "Why do you like it?",
+        startersA: ["• I prefer a hotel because they clean the room.", "• I like an apartment because it has a kitchen."],
+        qB: "When you go away for a few days, do you generally book a hotel or a holiday apartment?",
+        followB: "What makes one option more convenient than the other depending on who you travel with?",
+        startersB: ["• When travelling with family, an apartment gives us way more space and a kitchen.", "• For short solo or couple trips, a hotel with reception is effortless."],
+        photo: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Booking Priorities",
+        qA: "What is most important for you: price, location, or breakfast?",
+        followA: "Choose one or two.",
+        startersA: ["• Location is very important for me.", "• I like good price and free Wi-Fi."],
+        qB: "When comparing accommodation online, what are your top non-negotiables?",
+        followB: "How much do guest reviews and cancellation policies influence your final choice?",
+        startersB: ["• Walkability to public transport and quiet rooms always come first for me.", "• I always filter by high cleanliness ratings and free cancellation."],
+        photo: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Hotel Breakfast",
+        qA: "Do you like hotel breakfast buffets, or do you eat in a café outside?",
+        followA: "What do you eat for breakfast on holiday?",
+        startersA: ["• I love hotel breakfast with fruit, bread, and coffee.", "• Sometimes I go to a local café."],
+        qB: "Do you usually include breakfast in your booking, or prefer exploring local cafés in the morning?",
+        followB: "What makes a hotel breakfast feel worth the extra cost?",
+        startersB: ["• A generous buffet saves time when we have early sightseeing plans.", "• In cities with great bakeries, I'd rather grab coffee and pastries outside."],
+        photo: "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "First Impressions",
+        qA: "What is the first thing you check in your hotel room?",
+        followA: "The bed, the bathroom, the view, or the Wi-Fi?",
+        startersA: ["• First I check the bed and the bathroom.", "• I connect to the Wi-Fi and look out the window."],
+        qB: "What's the very first thing you do or check as soon as you unlock your room door?",
+        followB: "Have you ever walked into a room that looked quite different from the photos?",
+        startersB: ["• I usually check the view, test the air conditioning, and look for power sockets near the bed.", "• Once the room was much smaller than advertised, so I politely asked reception for another one."],
+        photo: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Room Problems",
+        qA: "Did you ever have a small problem in a hotel—like noise or cold water?",
+        followA: "Did you tell reception?",
+        startersA: ["• Once the room was noisy from the street.", "• Yes, we asked for a quiet room."],
+        qB: "Have you ever had to ask reception to fix an issue or switch rooms during a stay?",
+        followB: "How did the staff handle your request?",
+        startersB: ["• The air conditioning wasn't cooling properly, so maintenance came up within ten minutes.", "• Being polite and specific usually gets a much faster solution at reception."],
+        photo: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Check-In & Check-Out",
+        qA: "Is 11:00 a.m. check-out too early for you on holiday?",
+        followA: "What do you do with your bags after check-out?",
+        startersA: ["• Yes, 11:00 is a bit early!", "• We leave our bags at reception."],
+        qB: "How do you manage your luggage when your flight leaves in the evening but check-out is at 11:00?",
+        followB: "Have you ever requested a late check-out or used luggage storage?",
+        startersB: ["• Almost every hotel offers free luggage storage for the afternoon, which is super handy.", "• If the hotel isn't full, asking nicely sometimes gets you an extra hour or two."],
+        photo: "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Amenities & Extras",
+        qA: "Do you use the hotel pool, gym, or spa when you travel?",
+        followA: "Or do you spend all day walking outside?",
+        startersA: ["• I spend most of the day walking around the city.", "• In summer, I love a hotel with a pool."],
+        qB: "Which hotel amenities do you actually use, and which ones do you consider unnecessary?",
+        followB: "Does your answer change between a city break and a beach or mountain trip?",
+        startersB: ["• On a city break I rarely touch the gym because I already walk twenty thousand steps.", "• At a resort or spa hotel, having a sauna or heated pool makes the stay feel special."],
+        photo: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Memorable Stay",
+        qA: "What was the best hotel or place you ever stayed in?",
+        followA: "Where was it?",
+        startersA: ["• The best place was in...", "• It was clean, quiet, and near the beach."],
+        qB: "Tell us about one of the most memorable places you've ever stayed—a boutique hotel, cabin, or apartment.",
+        followB: "What stood out about the location, design, or hospitality?",
+        startersB: ["• One place I still remember was a small guesthouse in..., where the hosts gave us great local tips.", "• Having a balcony overlooking the old town made mornings unforgettable."],
+        photo: "https://images.unsplash.com/photo-1520250497591-112f2f40a324?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      }
+    ];
+    let cqIdx = 0;
+
+    function renderCqCard() {
+      cqIdx = (cqIdx + CQ_CARDS.length) % CQ_CARDS.length;
+      const c = CQ_CARDS[cqIdx];
+      const qText = travelLevel === 'A' ? c.qA : c.qB;
+      const fText = travelLevel === 'A' ? c.followA : c.followB;
+      const sList = travelLevel === 'A' ? c.startersA : c.startersB;
+
+      document.getElementById('cqBadge').textContent = `QUESTION ${cqIdx + 1} / ${CQ_CARDS.length}`;
+      document.getElementById('cqTag').textContent = c.tag;
+      document.getElementById('cqQuestion').textContent = qText;
+      document.getElementById('cqFollow').textContent = fText;
+      document.getElementById('cqStarters').innerHTML = sList.map(s => `<div>${s}</div>`).join('');
+      document.getElementById('cqStarters').classList.add('hidden');
+      mountPhoto(document.getElementById('cqPhotoBox'), c.photo, c.tag, c.tag);
+      document.getElementById('cqDots').innerHTML = CQ_CARDS.map((_, i) => `
+        <button type="button" onclick="cqIdx=${i}; renderCqCard();" class="w-6 h-6 rounded-lg text-[11px] font-bold ${
+          i === cqIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#081526]'
+        }">${i + 1}</button>
+      `).join('');
+    }
+    window.stepCq = (d) => { cqIdx += d; renderCqCard(); };
+    window.speakCq = () => {
+      const c = CQ_CARDS[cqIdx];
+      speakText(`${travelLevel === 'A' ? c.qA : c.qB} ${travelLevel === 'A' ? c.followA : c.followB}`);
+    };
+
+    // Voice Recorder + Drive Upload
+    const htNameInput = document.getElementById('htStudentName');
+    htNameInput.value = localStorage.getItem('provoStudentName') || '';
+    htNameInput.addEventListener('input', () => localStorage.setItem('provoStudentName', htNameInput.value.trim()));
+
+    let mediaRec = null;
+    let audioChunks = [];
+    let recordedBlob = null;
+    let recordedMime = 'audio/webm';
+    let recInterval = null;
+    let recSecs = 0;
+
+    function showRecFb(msg, ok = true) {
+      const box = document.getElementById('recFeedback');
+      box.classList.remove('hidden');
+      box.className = ok
+        ? 'text-xs font-bold p-2.5 rounded-xl bg-emerald-500/15 text-emerald-700 dark:text-emerald-300'
+        : 'text-xs font-bold p-2.5 rounded-xl bg-rose-500/15 text-rose-700 dark:text-rose-300';
+      box.textContent = msg;
+    }
+
+    window.startVoiceRec = async () => {
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        return showRecFb('Microphone recording is not supported in this browser.', false);
+      }
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        audioChunks = [];
+        recordedBlob = null;
+        mediaRec = new MediaRecorder(stream);
+        recordedMime = mediaRec.mimeType || 'audio/webm';
+
+        mediaRec.ondataavailable = (e) => {
+          if (e.data && e.data.size > 0) audioChunks.push(e.data);
+        };
+
+        mediaRec.onstop = () => {
+          stream.getTracks().forEach(t => t.stop());
+          recordedBlob = new Blob(audioChunks, { type: recordedMime });
+          const audioEl = document.getElementById('recPlayback');
+          audioEl.src = URL.createObjectURL(recordedBlob);
+          audioEl.classList.remove('hidden');
+          document.getElementById('btnSendAudioDrive').disabled = false;
+          showRecFb('✓ Recording ready! Listen to check or send it to your teacher.', true);
+        };
+
+        mediaRec.start();
+        recSecs = 0;
+        document.getElementById('recTimer').textContent = 'Recording: 0s';
+        document.getElementById('btnRecStart').disabled = true;
+        document.getElementById('btnRecStop').disabled = false;
+        document.getElementById('btnSendAudioDrive').disabled = true;
+        document.getElementById('recFeedback').classList.add('hidden');
+
+        recInterval = setInterval(() => {
+          recSecs++;
+          document.getElementById('recTimer').textContent = `Recording: ${recSecs}s`;
+        }, 1000);
+      } catch (err) {
+        showRecFb('Please allow microphone access to record your answer.', false);
+      }
+    };
+
+    window.stopVoiceRec = () => {
+      if (mediaRec && mediaRec.state !== 'inactive') {
+        mediaRec.stop();
+      }
+      clearInterval(recInterval);
+      document.getElementById('recTimer').textContent = `Recorded (${recSecs}s)`;
+      document.getElementById('btnRecStart').disabled = false;
+      document.getElementById('btnRecStop').disabled = true;
+    };
+
+    window.sendAudioToDrive = async () => {
+      const studentName = htNameInput.value.trim();
+      if (!studentName) {
+        showRecFb('Enter your name first before sending.', false);
+        htNameInput.focus();
+        return;
+      }
+      if (!recordedBlob) {
+        return showRecFb('Record your voice answer first.', false);
+      }
+
+      const sendBtn = document.getElementById('btnSendAudioDrive');
+      const sendLabel = document.getElementById('sendAudioLabel');
+      sendBtn.disabled = true;
+      sendLabel.textContent = 'Sending...';
+
+      try {
+        const reader = new FileReader();
+        reader.onloadend = async () => {
+          const base64Data = (reader.result || '').toString().split(',')[1] || '';
+          try {
+            const res = await fetch(DRIVE_UPLOAD_URL, {
+              method: 'POST',
+              headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+              body: JSON.stringify({
+                studentName,
+                lessonTitle: `Travel-Hotels-Lvl${travelLevel}`,
+                questionNumber: cqIdx + 1,
+                mimeType: recordedMime,
+                audioBase64: base64Data
+              })
+            });
+            const data = await res.json();
+            if (data.status === 'ok') {
+              showRecFb(`✓ Voice note sent to teacher (${data.fileName})!`, true);
+            } else {
+              throw new Error(data.message || 'Upload error');
+            }
+          } catch (e) {
+            showRecFb('Could not send automatically. Check your internet connection and try again.', false);
+          } finally {
+            sendBtn.disabled = false;
+            sendLabel.textContent = 'Send Audio to Teacher';
+          }
+        };
+        reader.readAsDataURL(recordedBlob);
+      } catch (e) {
+        sendBtn.disabled = false;
+        sendLabel.textContent = 'Send Audio to Teacher';
+        showRecFb('Error preparing audio file.', false);
+      }
+    };
+
+    // ==================== 03: 12 HOTEL VOCABULARY CARDS ====================
+    const HT_VOCAB = [
+      { word: "reception / front desk", pos: "noun", meaningA: "The desk at the hotel entrance where staff help guests.", exA: "Go to reception for your room key.", meaningB: "The main service counter in a hotel lobby where guests check in, ask questions, and check out.", exB: "If you need extra pillows, just call the front desk.", photo: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "reservation / booking", pos: "noun", meaningA: "When you book a room before you arrive.", exA: "I have a reservation for two nights.", meaningB: "An advance arrangement holding a room under your name for specific dates.", exB: "I made a reservation online under the name David Hernández.", photo: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "key card", pos: "noun", meaningA: "The plastic card that opens your room door.", exA: "My key card doesn't work.", meaningB: "An electronic plastic card programmed to unlock your room door and elevator.", exB: "Keep your key card away from your phone so it doesn't demagnetize.", photo: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "double / twin room", pos: "nouns", meaningA: "A room with one big bed (double) or two small beds (twin).", exA: "We booked a twin room.", meaningB: "A room with one large bed for two people (double) versus two separate single beds (twin).", exB: "We requested a twin room rather than a double bed.", photo: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "check in / check out", pos: "verbs", meaningA: "Arrive and get your key (check in) or pay and leave (check out).", exA: "Check-out is at eleven o'clock.", meaningB: "Register upon arrival (check in) or settle your bill and return the key on departure (check out).", exB: "We can check in any time after 3:00 p.m.", photo: "https://images.unsplash.com/photo-1520250497591-112f2f40a324?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "late check-out", pos: "noun", meaningA: "Leaving your room later than the normal time.", exA: "Can we have a late check-out?", meaningB: "Permission to stay in your room past the standard departure hour.", exB: "Since our flight is at night, we asked for a late check-out until 2:00 p.m.", photo: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "luggage storage", pos: "noun", meaningA: "A safe room to leave your suitcases for a few hours.", exA: "Do you have luggage storage?", meaningB: "A secure hotel room or locker area where bags are held before check-in or after check-out.", exB: "We left our suitcases in luggage storage while we walked around the center.", photo: "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "breakfast included", pos: "phrase", meaningA: "Breakfast is already paid in your room price.", exA: "Is breakfast included?", meaningB: "Morning meal covered in the total room rate at no extra charge.", exB: "Our booking includes breakfast served from 7:30 to 10:30.", photo: "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "housekeeping", pos: "noun", meaningA: "The hotel staff who clean rooms and bring fresh towels.", exA: "Housekeeping brings clean towels.", meaningB: "The department responsible for cleaning guest rooms and restocking supplies.", exB: "We hung the sign on the door so housekeeping could clean the room.", photo: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "air conditioning / heating", pos: "nouns", meaningA: "The machine that makes the room cool or warm.", exA: "The air conditioning is too cold.", meaningB: "Climate control systems used to cool (AC) or warm a room.", exB: "Could someone look at the air conditioning? It doesn't seem to be working.", photo: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "deposit / city tax", pos: "nouns", meaningA: "Money you pay at arrival (deposit comes back; city tax is local).", exA: "You pay the city tax at check-in.", meaningB: "A refundable security hold (deposit) or a mandatory local tourist fee per night (city tax).", exB: "There is a small city tax of two euros per person per night.", photo: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "amenities", pos: "noun", meaningA: "Useful extras in a hotel, like Wi-Fi, a pool, or a hairdryer.", exA: "Free Wi-Fi is a great amenity.", meaningB: "Facilities and conveniences provided for guests, such as Wi-Fi, gym access, or toiletries.", exB: "The hotel offers great amenities, including a rooftop terrace and free Wi-Fi.", photo: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" }
+    ];
+    let hvIdx = 0;
+    let hvMode = 'single';
+
+    window.setHvMode = (mode) => {
+      hvMode = mode;
+      document.getElementById('hvSingleBox').classList.toggle('hidden', mode !== 'single');
+      const g = document.getElementById('hvGridBox');
+      g.classList.toggle('hidden', mode !== 'grid');
+      g.classList.toggle('grid', mode === 'grid');
+      document.getElementById('btnHvSingle').className = mode === 'single'
+        ? 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-orange-600 text-white transition'
+        : 'px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition';
+      document.getElementById('btnHvGrid').className = mode === 'grid'
+        ? 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-orange-600 text-white transition'
+        : 'px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition';
+      renderHtVocab();
+    };
+
+    function renderHtVocab() {
+      hvIdx = (hvIdx + HT_VOCAB.length) % HT_VOCAB.length;
+      const w = HT_VOCAB[hvIdx];
+      const meaning = travelLevel === 'A' ? w.meaningA : w.meaningB;
+      const ex = travelLevel === 'A' ? w.exA : w.exB;
+      const safeEx = ex.replace(/'/g, "\\'");
+
+      document.getElementById('hvSingleBox').innerHTML = `
+        <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 shadow-xl">
+          <div id="hvPhotoBox" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+          <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">WORD ${hvIdx + 1} / ${HT_VOCAB.length}</span>
+                  <span class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-700 dark:text-orange-300 text-xs font-bold">${w.pos}</span>
+                </div>
+                <button type="button" onclick="speakText('${safeEx}')" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-orange-600 text-white text-xs font-bold">
+                  <i data-lucide="volume-2" class="w-4 h-4"></i> Listen
+                </button>
+              </div>
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">${w.word}</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300">${meaning}</p>
+              <div class="p-4 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/20">
+                <p class="text-sm italic font-semibold text-[#002B5C] dark:text-orange-200">“${ex}”</p>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-sky-400/15">
+              <button type="button" onclick="hvIdx--; renderHtVocab();" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">← Prev</button>
+              <div class="flex flex-wrap gap-1">
+                ${HT_VOCAB.map((_, i) => `<button type="button" onclick="hvIdx=${i}; renderHtVocab();" class="w-7 h-7 rounded-lg text-xs font-bold ${i === hvIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#081526]'}">${i + 1}</button>`).join('')}
+              </div>
+              <button type="button" onclick="hvIdx++; renderHtVocab();" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+            </div>
+          </div>
+        </div>
+      `;
+      mountPhoto(document.getElementById('hvPhotoBox'), w.photo, w.word, w.word.toUpperCase());
+
+      document.getElementById('hvGridBox').innerHTML = HT_VOCAB.map(item => {
+        const m = travelLevel === 'A' ? item.meaningA : item.meaningB;
+        const e = travelLevel === 'A' ? item.exA : item.exB;
+        return `
+          <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl overflow-hidden shadow-md flex flex-col">
+            <img src="${item.photo}" alt="${item.word}" class="h-32 w-full object-cover" loading="lazy" />
+            <div class="p-5 flex-1 flex flex-col justify-between gap-3">
+              <div class="space-y-1.5">
+                <div class="flex items-start justify-between gap-2">
+                  <h4 class="text-lg font-extrabold text-[#002B5C] dark:text-white">${item.word}</h4>
+                  <button type="button" onclick="speakText('${e.replace(/'/g, "\\'")}')" class="p-1.5 rounded-lg bg-[#FFF7ED] dark:bg-[#081526] text-orange-600 dark:text-orange-300"><i data-lucide="volume-2" class="w-4 h-4"></i></button>
+                </div>
+                <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-orange-500/15 text-orange-700 dark:text-orange-300">${item.pos}</span>
+                <p class="text-xs text-slate-600 dark:text-slate-300">${m}</p>
+              </div>
+              <p class="text-xs italic text-[#002B5C] dark:text-orange-200 border-t border-slate-100 dark:border-sky-400/15 pt-2">“${e}”</p>
+            </div>
+          </div>
+        `;
+      }).join('');
+      lucide.createIcons();
+    }
+
+    // ==================== 04: READING & RECEPTION DESK ====================
+    const READING_CONTENT = {
+      A: {
+        title: "Check-In in Lisbon",
+        paragraphs: [
+          "<p><strong>Lucas and Sara</strong> arrive at their hotel in Lisbon at 8:00 p.m. They have a reservation for three nights in a double room.</p>",
+          "<p>At reception, they show their passports and get key card 308. When they open the door, they see two small beds, not one big bed.</p>",
+          "<p>Lucas goes back to reception. The receptionist says sorry and gives them room 412 with a big bed and a nice balcony!</p>"
+        ],
+        pa: [
+          { label: "Message 1 · Wi-Fi & Breakfast", text: "Wi-Fi is free. Breakfast is on floor 1 from 7:30 to 10:00." },
+          { label: "Message 2 · Room Change", text: "Here is your new key card for room 412." },
+          { label: "Message 3 · Check-Out", text: "Check-out is at 11:00. You can leave your bags here." }
+        ],
+        qs: [
+          { q: "1. How many nights do Lucas and Sara stay?", opts: ["Three nights", "Five nights"], ans: 0 },
+          { q: "2. What is wrong with room 308?", opts: ["It has two small beds, not one big bed", "It has no bathroom"], ans: 0 },
+          { q: "3. What does Lucas do?", opts: ["He goes back to reception", "He goes to sleep"], ans: 0 },
+          { q: "4. What is their new room?", opts: ["Room 412 with a balcony", "Room 101"], ans: 0 }
+        ]
+      },
+      B: {
+        title: "A Late Arrival & Room Mix-Up in Lisbon",
+        paragraphs: [
+          "<p><strong>Lucas and Sara</strong> reach their boutique hotel in Lisbon around 8:00 p.m. after a long journey. They booked a double room with breakfast included for three nights.</p>",
+          "<p>After showing their passports at the front desk, they take the elevator up to room 308. However, as soon as they step inside, they notice it's a twin room facing a noisy main street rather than the quiet double room they had requested.</p>",
+          "<p>Lucas heads back downstairs and politely explains the mix-up. The receptionist apologizes, checks availability, and upgrades them to room 412 on the top floor—a quiet double room with a small balcony overlooking the rooftops.</p>"
+        ],
+        pa: [
+          { label: "Reception 1 · Welcome Info", text: "Your room is on the third floor. Wi-Fi is complimentary, and breakfast is served in the courtyard from 7:30 to 10:30." },
+          { label: "Reception 2 · Room Switch", text: "I'm terribly sorry about the mix-up. I've moved you to room 412 on the fourth floor, which has a double bed and a balcony." },
+          { label: "Reception 3 · Departure Info", text: "Standard check-out is at 11:00 a.m., though you're welcome to leave your luggage in our storage room for the afternoon." }
+        ],
+        qs: [
+          { q: "1. What kind of room had Lucas and Sara originally booked?", opts: ["A quiet double room with breakfast included", "A twin room on the ground floor"], ans: 0 },
+          { q: "2. What two things were wrong with room 308?", opts: ["It had twin beds and faced a noisy street", "The key card failed and the AC was broken"], ans: 0 },
+          { q: "3. How did Lucas handle the problem?", opts: ["He went down to reception and explained it politely", "He left a bad review immediately"], ans: 0 },
+          { q: "4. What did the receptionist offer instead?", opts: ["An upgrade to room 412 with a balcony", "A refund for the first night"], ans: 0 }
+        ]
+      }
+    };
+
+    function renderReadingSection() {
+      const pack = READING_CONTENT[travelLevel];
+      document.getElementById('readingStoryTitle').textContent = pack.title;
+      document.getElementById('htReadingBody').innerHTML = pack.paragraphs.join('');
+
+      document.getElementById('paListBox').innerHTML = pack.pa.map((pa, i) => `
+        <div class="p-3 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/20 flex items-center justify-between gap-3">
+          <div>
+            <div class="text-xs font-extrabold text-[#002B5C] dark:text-white">${pa.label}</div>
+            <div id="paTxt${i}" class="hidden text-xs text-slate-600 dark:text-slate-300 mt-1 italic">“${pa.text}”</div>
+          </div>
+          <div class="flex items-center gap-1.5 shrink-0">
+            <button type="button" onclick="speakText('${pa.text.replace(/'/g, "\\'")}')" class="px-3 py-1.5 rounded-xl bg-orange-600 text-white text-xs font-bold inline-flex items-center gap-1">
+              <i data-lucide="volume-2" class="w-3.5 h-3.5"></i> Play
+            </button>
+            <button type="button" onclick="document.getElementById('paTxt${i}').classList.toggle('hidden')" class="px-2.5 py-1.5 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">
+              Text
+            </button>
+          </div>
+        </div>
+      `).join('');
+
+      document.getElementById('readingQuizBox').innerHTML = pack.qs.map((item, qi) => `
+        <div class="p-3.5 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/20 space-y-2">
+          <p class="text-xs sm:text-sm font-bold text-[#002B5C] dark:text-white">${item.q}</p>
+          <div class="grid grid-cols-1 gap-1.5">
+            ${item.opts.map((op, oi) => `
+              <button type="button" onclick="checkReadQ(${qi}, ${oi})" class="text-left px-3 py-2 rounded-xl bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-sky-400/20 hover:border-orange-400 text-xs font-semibold transition">${op}</button>
+            `).join('')}
+          </div>
+          <div id="rqFb${qi}" class="hidden text-xs font-extrabold"></div>
+        </div>
+      `).join('');
+    }
+
+    window.checkReadQ = (qi, oi) => {
+      const fb = document.getElementById(`rqFb${qi}`);
+      fb.classList.remove('hidden');
+      if (oi === READING_CONTENT[travelLevel].qs[qi].ans) {
+        fb.className = 'text-xs font-extrabold text-emerald-600 dark:text-emerald-400';
+        fb.textContent = '✓ Correct!';
+      } else {
+        fb.className = 'text-xs font-extrabold text-rose-600 dark:text-rose-400';
+        fb.textContent = '✗ Check the story again.';
+      }
+    };
+
+    window.speakReadingText = () => speakText(document.getElementById('htReadingBody').innerText);
+
+    // ==================== 05: MULTILEVEL PHRASE & GRAMMAR LAB ====================
+    const PHRASE_LAB = {
+      A: {
+        heading: "Simple & Clear Hotel Sentences (A1–A2)",
+        pill: "A1–A2 · Everyday Basics",
+        practiceTitle: "Quick Check: Choose the Clear Phrase",
+        cards: [
+          { badge: "1. CHECK-IN", color: "bg-[#002B5C]", line1: "“Hello, I have a reservation.”", line2: "“What is the Wi-Fi password?”" },
+          { badge: "2. REQUESTS", color: "bg-orange-700", line1: "“Can I have two extra towels, please?”", line2: "“Can we leave our bags here?”" },
+          { badge: "3. ROOM ISSUES", color: "bg-orange-600", line1: "“The key card doesn't work.”", line2: "“There is no hot water in room 308.”" }
+        ],
+        drills: [
+          { prompt: "1. At reception: “Hello, I ________ a reservation.”", opts: ["have", "am"], ans: 0 },
+          { prompt: "2. Ask for Wi-Fi: “________ is the Wi-Fi password?”", opts: ["What", "Who"], ans: 0 },
+          { prompt: "3. Ask for towels: “________ I have extra towels, please?”", opts: ["Can", "Am"], ans: 0 },
+          { prompt: "4. Broken key card: “My key card ________ work.”", opts: ["doesn't", "don't"], ans: 0 },
+          { prompt: "5. Ask about breakfast: “________ breakfast included?”", opts: ["Is", "Are"], ans: 0 },
+          { prompt: "6. Leave suitcases: “Can we ________ our bags here?”", opts: ["leave", "leaving"], ans: 0 }
+        ]
+      },
+      B: {
+        heading: "Natural & Polite Reception English (B1–B2)",
+        pill: "B1–B2 · Polite & Nuanced",
+        practiceTitle: "Quick Check: Choose the Natural B1–B2 Phrase",
+        cards: [
+          { badge: "1. POLITE REQUESTS", color: "bg-[#002B5C]", line1: "“Would it be possible to get a late check-out tomorrow?”", line2: "“Could we have a room on a higher floor?”" },
+          { badge: "2. REPORTING ISSUES", color: "bg-orange-700", line1: "“I'm afraid the air conditioning isn't working properly.”", line2: "“It seems there's been a mix-up with our room type.”" },
+          { badge: "3. INDIRECT QUESTIONS", color: "bg-orange-600", line1: "“Do you know what time breakfast is served?”", line2: "“Could you tell me if there's somewhere to store our bags?”" }
+        ],
+        drills: [
+          { prompt: "1. Polite request: “________ to get a late check-out?”", opts: ["Would it be possible", "I want possible"], ans: 0 },
+          { prompt: "2. Softening a complaint: “________ the shower isn't draining properly.”", opts: ["I'm afraid", "I afraid"], ans: 0 },
+          { prompt: "3. Indirect question: “Could you tell me what time breakfast ________?”", opts: ["starts", "does start"], ans: 0 },
+          { prompt: "4. Passive service: “Fresh towels ________ to your room shortly.”", opts: ["will be sent", "will send"], ans: 0 },
+          { prompt: "5. Asking permission: “Do you mind ________ we leave our luggage here?”", opts: ["if", "that"], ans: 0 },
+          { prompt: "6. Explaining a booking: “We ________ a double room, not a twin.”", opts: ["had booked", "have book"], ans: 0 }
+        ]
+      }
+    };
+    const gramSolved = {};
+
+    function renderPhraseLab() {
+      const p = PHRASE_LAB[travelLevel];
+      document.getElementById('s5Heading').textContent = p.heading;
+      document.getElementById('s5Pill').textContent = p.pill;
+      document.getElementById('gramPracticeTitle').textContent = p.practiceTitle;
+
+      document.getElementById('phraseTipsGrid').innerHTML = p.cards.map(c => `
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl p-5 space-y-2 shadow-sm">
+          <span class="px-2.5 py-1 rounded-lg ${c.color} text-white text-xs font-extrabold">${c.badge}</span>
+          <div class="p-3 rounded-xl bg-[#FFF7ED] dark:bg-[#081526] text-xs font-semibold space-y-1">
+            <div>• ${c.line1}</div>
+            <div>• ${c.line2}</div>
+          </div>
+        </div>
+      `).join('');
+
+      document.getElementById('gramDrillList').innerHTML = p.drills.map((d, di) => `
+        <div class="p-4 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/20 space-y-2.5">
+          <p class="text-xs sm:text-sm font-bold text-[#002B5C] dark:text-white">${d.prompt}</p>
+          <div class="flex flex-wrap gap-2">
+            ${d.opts.map((op, oi) => `
+              <button type="button" onclick="pickGram(${di}, ${oi})" class="px-3.5 py-2 rounded-xl bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-sky-400/25 hover:border-orange-400 text-xs font-bold transition">${op}</button>
+            `).join('')}
+          </div>
+          <div id="gdFb${di}" class="hidden text-xs font-extrabold"></div>
+        </div>
+      `).join('');
+    }
+
+    window.pickGram = (di, oi) => {
+      const p = PHRASE_LAB[travelLevel];
+      const fb = document.getElementById(`gdFb${di}`);
+      fb.classList.remove('hidden');
+      if (oi === p.drills[di].ans) {
+        gramSolved[`${travelLevel}-${di}`] = true;
+        fb.className = 'text-xs font-extrabold text-emerald-600 dark:text-emerald-400';
+        fb.textContent = '✓ Great choice!';
+      } else {
+        fb.className = 'text-xs font-extrabold text-rose-600 dark:text-rose-400';
+        fb.textContent = '✗ Try the other option.';
+      }
+      const totalForLvl = Object.keys(gramSolved).filter(k => k.startsWith(`${travelLevel}-`)).length;
+      document.getElementById('gramScorePill').textContent = `${totalForLvl} / ${p.drills.length}`;
+    };
+
+    // ==================== 06: INTERACTIVE HOTEL SIMULATOR ====================
+    const SIM_ROUNDS = [
+      {
+        promptA: "Step 1: You arrive at the hotel at 12:00, and your room is ready at 15:00. What can you do with your suitcase?",
+        optsA: ["Use luggage storage", "Go to breakfast"],
+        whyA: "Luggage storage keeps your suitcase safe.",
+        promptB: "Step 1 (Early Arrival): You reach the hotel at noon, three hours before standard check-in. What do you ask at the front desk?",
+        optsB: ["“Could we leave our bags in luggage storage until 3:00?”", "“Can we sleep in the breakfast room?”"],
+        whyB: "Hotels gladly hold luggage so you can explore hands-free.",
+        ans: 0
+      },
+      {
+        promptA: "Step 2: You booked one big bed, but you get two small beds. What is the room called?",
+        optsA: ["A twin room", "A single room"],
+        whyA: "A twin room has two separate beds.",
+        promptB: "Step 2 (Room Check): You reserved a double room, but you walk into a room with two separate beds. How do you describe it to reception?",
+        optsB: ["“We were given a twin room instead of a double.”", "“We were given a suite with a kitchen.”"],
+        whyB: "Twin = two single beds; double = one bed for two.",
+        ans: 0
+      },
+      {
+        promptA: "Step 3: Your plastic key card does not open the door. Who helps you?",
+        optsA: ["Reception / Front desk", "The airport desk"],
+        whyA: "Reception can reprogram your key card in seconds.",
+        promptB: "Step 3 (Door Lock): Your key card flashes red and won't unlock the door. What do you say downstairs?",
+        optsB: ["“Excuse me, my key card seems to have stopped working.”", "“Excuse me, my boarding pass is missing.”"],
+        whyB: "Key cards often demagnetize near phones and are reset at reception.",
+        ans: 0
+      },
+      {
+        promptA: "Step 4: You need clean towels in your bathroom. Who brings them?",
+        optsA: ["Housekeeping", "Customs"],
+        whyA: "Housekeeping takes care of towels and room cleaning.",
+        promptB: "Step 4 (Room Comfort): You'd like fresh towels and extra pillows sent up. Which service do you request?",
+        optsB: ["Housekeeping", "Baggage drop"],
+        whyB: "Housekeeping handles towels, bedding, and room supplies.",
+        ans: 0
+      },
+      {
+        promptA: "Step 5: Your flight is at 8:00 p.m., and check-out is at 11:00 a.m. What do you ask for?",
+        optsA: ["A late check-out", "A window seat"],
+        whyA: "A late check-out gives you extra time in your room.",
+        promptB: "Step 5 (Departure Day): With an evening flight, you'd love to stay in your room until 2:00 p.m. What do you ask?",
+        optsB: ["“Would it be possible to arrange a late check-out?”", "“Could you book me a postal vote?”"],
+        whyB: "Asking early in the morning gives reception time to approve a late check-out.",
+        ans: 0
+      },
+      {
+        promptA: "Step 6: You leave the hotel and pay the local fee per night. What is it called?",
+        optsA: ["City tax", "Exit poll"],
+        whyA: "Many cities charge a small nightly city tax.",
+        promptB: "Step 6 (Settling Up): At check-out, there is a small mandatory charge of €2 per night on your bill. What is it?",
+        optsB: ["Local city / tourist tax", "Overweight baggage fee"],
+        whyB: "City tax is a standard municipal fee collected by hotels.",
+        ans: 0
+      }
+    ];
+    let simIdx = 0;
+    let simScore = 0;
+    let simDone = false;
+
+    function renderSimRound() {
+      const idx = simIdx % SIM_ROUNDS.length;
+      const r = SIM_ROUNDS[idx];
+      simDone = false;
+      const prompt = travelLevel === 'A' ? r.promptA : r.promptB;
+      const opts = travelLevel === 'A' ? r.optsA : r.optsB;
+
+      document.getElementById('simRoundBadge').textContent = `STEP ${idx + 1} / ${SIM_ROUNDS.length}`;
+      document.getElementById('simLevelTag').textContent = travelLevel === 'A' ? 'A1–A2 Quick Decisions' : 'B1–B2 Stay Scenarios';
+      document.getElementById('simPrompt').textContent = prompt;
+      document.getElementById('simFeedback').classList.add('hidden');
+      document.getElementById('simOptions').innerHTML = opts.map((op, i) => `
+        <button type="button" onclick="pickSimOpt(${i})" class="w-full text-left p-4 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border-[1.5px] border-orange-500/20 hover:border-orange-400 text-sm font-extrabold transition">${op}</button>
+      `).join('');
+    }
+
+    window.pickSimOpt = (picked) => {
+      if (simDone) return;
+      simDone = true;
+      const r = SIM_ROUNDS[simIdx % SIM_ROUNDS.length];
+      const why = travelLevel === 'A' ? r.whyA : r.whyB;
+      const fb = document.getElementById('simFeedback');
+      fb.classList.remove('hidden');
+      if (picked === r.ans) {
+        simScore++;
+        fb.className = 'p-4 rounded-2xl text-xs sm:text-sm font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Smooth stay! (+1 pt) — ${why}`;
+      } else {
+        fb.className = 'p-4 rounded-2xl text-xs sm:text-sm font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `✗ Careful! — ${why}`;
+      }
+      document.getElementById('simScoreBadge').textContent = `SCORE: ${simScore} / ${SIM_ROUNDS.length}`;
+    };
+    window.nextSimRound = () => { simIdx++; renderSimRound(); };
+    window.resetSimGame = () => {
+      simIdx = 0;
+      simScore = 0;
+      document.getElementById('simScoreBadge').textContent = `SCORE: 0 / ${SIM_ROUNDS.length}`;
+      renderSimRound();
+    };
+
+    // ==================== 07: 8 MULTILEVEL HOTEL ROLE-PLAYS ====================
+    const HT_CARDS = [
+      {
+        tag: "Checking In",
+        staff: "“Good afternoon! Welcome to Hotel Avenida. Do you have a reservation?”",
+        task: "Say your name, confirm a 3-night reservation, and ask if breakfast is included.",
+        modelA: "“Hello! Yes, I have a reservation for three nights. My name is David. Is breakfast included?”",
+        modelB: "“Good afternoon! Yes, I have a three-night reservation under David Hernández. Could you confirm whether breakfast is included in our rate?”",
+        tip: "Key words: reservation, under the name..., breakfast included.",
+        photo: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Key Card Problem",
+        staff: "“Front desk speaking. How can I help you?”",
+        task: "Explain that you are outside room 308 and your key card is not opening the door.",
+        modelA: "“Hi, I'm outside room 308. My key card doesn't work. Can you help me?”",
+        modelB: "“Hi there, I'm standing outside room 308 and my key card seems to have stopped working. Could someone bring up a new one or reset it?”",
+        tip: "Key words: key card, unlock, reset.",
+        photo: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Air Conditioning",
+        staff: "“Good evening! Is everything okay with your room?”",
+        task: "Say the room is very warm and the air conditioning is not working.",
+        modelA: "“Excuse me, our room is very hot. The air conditioning doesn't work.”",
+        modelB: "“Actually, it's quite warm in our room and the air conditioning doesn't seem to be cooling at all. Could someone take a look at it?”",
+        tip: "Key words: air conditioning, warm/hot, take a look.",
+        photo: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Extra Towels & Pillows",
+        staff: "“Housekeeping, good morning! What do you need for your room?”",
+        task: "Ask for two clean bath towels and one extra pillow for room 412.",
+        modelA: "“Good morning! Can we have two clean towels and one extra pillow in room 412, please?”",
+        modelB: "“Good morning! Would it be possible to have two fresh bath towels and an extra pillow sent up to room 412 whenever convenient?”",
+        tip: "Key words: fresh towels, extra pillow, room number.",
+        photo: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Quiet Room Request",
+        staff: "“How was your first night with us?”",
+        task: "Say the street was very noisy and ask if there is a quieter room at the back.",
+        modelA: "“The street was very noisy last night. Do you have a quiet room, please?”",
+        modelB: "“The staff have been lovely, though the street noise kept us awake last night. Would there be any chance of moving to a quieter room at the back?”",
+        tip: "Key words: street noise, quieter room, availability.",
+        photo: "https://images.unsplash.com/photo-1520250497591-112f2f40a324?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Luggage Storage",
+        staff: "“Thank you for checking out! Are you heading straight to the airport?”",
+        task: "Explain that your train is at 6:00 p.m. and ask if you can leave two suitcases until 5:00.",
+        modelA: "“Our train is at 6:00 p.m. Can we leave our two suitcases here until 5:00, please?”",
+        modelB: "“Actually, our train doesn't leave until 6:00 p.m. Would it be alright if we left our two suitcases in your luggage storage until around 5:00?”",
+        tip: "Key words: luggage storage, until..., pick up.",
+        photo: "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Late Check-Out",
+        staff: "“Just a reminder that check-out tomorrow is at 11:00 a.m.”",
+        task: "Ask if you can stay in the room until 1:00 p.m. and whether there is an extra charge.",
+        modelA: "“Can we check out at 1:00 p.m. tomorrow? Is there an extra price?”",
+        modelB: "“Would it be possible to request a late check-out until 1:00 p.m. tomorrow, and is there an additional fee for that?”",
+        tip: "Key words: late check-out, additional fee / extra charge.",
+        photo: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Checking the Bill",
+        staff: "“Here is your final invoice. Everything is ready for check-out.”",
+        task: "Point out a minibar charge on the bill and say politely that you didn't use the minibar.",
+        modelA: "“Excuse me, there is a minibar charge here, but we didn't use the minibar.”",
+        modelB: "“Excuse me, I noticed a minibar charge on the invoice, but I think that might be a mistake as we didn't take anything from it.”",
+        tip: "Key words: invoice / bill, charge, mistake.",
+        photo: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      }
+    ];
+    let htIdx = 0;
+
+    function renderHtCard() {
+      htIdx = (htIdx + HT_CARDS.length) % HT_CARDS.length;
+      const c = HT_CARDS[htIdx];
+      document.getElementById('htBadge').textContent = `SITUATION ${htIdx + 1} / ${HT_CARDS.length}`;
+      document.getElementById('htTag').textContent = c.tag;
+      document.getElementById('htStaffLine').textContent = c.staff;
+      document.getElementById('htTask').textContent = `Your Turn: ${c.task}`;
+      document.getElementById('htModelLabel').textContent = travelLevel === 'A'
+        ? 'A1–A2 Survival Response'
+        : 'B1–B2 Confident & Polite Response';
+      document.getElementById('htModelAnswer').textContent = travelLevel === 'A' ? c.modelA : c.modelB;
+      document.getElementById('htAltTip').textContent = `💡 ${c.tip}`;
+      mountPhoto(document.getElementById('htPhotoBox'), c.photo, c.tag, c.tag);
+      document.getElementById('htDots').innerHTML = HT_CARDS.map((_, i) => `
+        <button type="button" onclick="htIdx=${i}; renderHtCard();" class="w-6 h-6 rounded-lg text-[11px] font-bold ${
+          i === htIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#081526]'
+        }">${i + 1}</button>
+      `).join('');
+    }
+    window.stepHt = (d) => { htIdx += d; renderHtCard(); };
+    window.speakHtPrompt = () => speakText(HT_CARDS[htIdx].staff);
+    window.speakHtModel = () => speakText(travelLevel === 'A' ? HT_CARDS[htIdx].modelA : HT_CARDS[htIdx].modelB);
+
+    // ==================== 08: ACCOMMODATION DILEMMAS (ONE BY ONE) ====================
+    const DEBATES = [
+      {
+        topic: "Dilemma 1 · Hotel vs. Apartment",
+        questionA: "Hotel or holiday apartment?",
+        aA: "Option A: Hotel. Clean room and 24-hour reception.",
+        bA: "Option B: Apartment. More space and a kitchen.",
+        hintA: "Say which one you like.",
+        questionB: "Full-service hotel or self-catering apartment?",
+        aB: "Option A: A hotel lets you switch off completely with daily housekeeping and reception support.",
+        bB: "Option B: An apartment feels more like home, gives you extra space, and saves money on meals.",
+        hintB: "Think about length of stay and who you're traveling with.",
+        photo: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&amp;fit=crop&amp;w=950&amp;q=80",
+        picked: null
+      },
+      {
+        topic: "Dilemma 2 · Location vs. Budget",
+        questionA: "Small room in the center or big room far away?",
+        aA: "Option A: Small room in the center. Walk everywhere.",
+        bA: "Option B: Big room outside the center. Cheaper and quieter.",
+        hintA: "Walk or take the metro?",
+        questionB: "Compact central hotel or spacious hotel further out?",
+        aB: "Option A: Staying right in the historic center saves commuting time and lets you pop back to rest.",
+        bB: "Option B: Staying a few metro stops away gives you a larger, quieter room at a much better price.",
+        hintB: "Weigh convenience against comfort and budget.",
+        photo: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&amp;fit=crop&amp;w=950&amp;q=80",
+        picked: null
+      },
+      {
+        topic: "Dilemma 3 · Breakfast Choice",
+        questionA: "Hotel breakfast or local café?",
+        aA: "Option A: Hotel breakfast. Fast and easy.",
+        bA: "Option B: Local café. Try local food.",
+        hintA: "Which is better in the morning?",
+        questionB: "Hotel buffet breakfast or exploring local cafés?",
+        aB: "Option A: A hotel buffet is effortless when you want to start sightseeing early without hunting for food.",
+        bB: "Option B: Skipping hotel breakfast lets you try authentic local bakeries and cafés every morning.",
+        hintB: "Compare convenience with local food culture.",
+        photo: "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&amp;fit=crop&amp;w=950&amp;q=80",
+        picked: null
+      },
+      {
+        topic: "Dilemma 4 · Planning Style",
+        questionA: "Book everything early or book at the last minute?",
+        aA: "Option A: Book early. Safe and easy.",
+        bA: "Option B: Book late. More flexible.",
+        hintA: "Are you a planner?",
+        questionB: "Booking accommodation months ahead or keeping plans flexible?",
+        aB: "Option A: Booking well in advance locks in the best locations and gives peace of mind.",
+        bB: "Option B: Leaving bookings flexible lets you change your route depending on weather or mood.",
+        hintB: "Think about peak season vs. off-peak road trips.",
+        photo: "https://images.unsplash.com/photo-1520250497591-112f2f40a324?auto=format&amp;fit=crop&amp;w=950&amp;q=80",
+        picked: null
+      }
+    ];
+    let debIdx = 0;
+
+    function renderDebates() {
+      debIdx = (debIdx + DEBATES.length) % DEBATES.length;
+      const d = DEBATES[debIdx];
+      const q = travelLevel === 'A' ? d.questionA : d.questionB;
+      const optA = travelLevel === 'A' ? d.aA : d.aB;
+      const optB = travelLevel === 'A' ? d.bA : d.bB;
+      const hint = travelLevel === 'A' ? d.hintA : d.hintB;
+      const safeSpeech = `${q} ${optA} Or ${optB}`.replace(/'/g, "\\'");
+
+      document.getElementById('debateStarterBar').innerHTML = travelLevel === 'A'
+        ? '<strong>A1–A2:</strong> “I like Option A. It is easy.” / “I prefer Option B.”'
+        : '<strong>B1–B2:</strong> “Personally, I\'d go for Option A because...” / “On the other hand, Option B makes sense when...”';
+
+      document.getElementById('debateSingleBox').innerHTML = `
+        <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 shadow-xl">
+          <div id="debPhotoBox" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+          <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-5">
+            <div class="space-y-4">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">DILEMMA ${debIdx + 1} / ${DEBATES.length}</span>
+                  <span class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-700 dark:text-orange-300 text-xs font-bold">${d.topic}</span>
+                </div>
+                <button type="button" onclick="speakText('${safeSpeech}')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-orange-600 hover:bg-orange-500 text-white text-xs font-bold transition">
+                  <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                  <span>Listen</span>
+                </button>
+              </div>
+
+              <h3 class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug">${q}</h3>
+
+              <div class="space-y-2.5">
+                <button
+                  type="button"
+                  onclick="selectDebateSide(${debIdx}, 'A')"
+                  class="w-full text-left p-4 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border-[1.5px] ${d.picked === 'A' ? 'border-orange-500 ring-2 ring-orange-500/40' : 'border-orange-500/20 hover:border-orange-400'} text-xs sm:text-sm font-bold transition"
+                >${optA}</button>
+
+                <button
+                  type="button"
+                  onclick="selectDebateSide(${debIdx}, 'B')"
+                  class="w-full text-left p-4 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border-[1.5px] ${d.picked === 'B' ? 'border-orange-500 ring-2 ring-orange-500/40' : 'border-orange-500/20 hover:border-orange-400'} text-xs sm:text-sm font-bold transition"
+                >${optB}</button>
+              </div>
+
+              <p class="text-xs text-slate-500 dark:text-slate-400">💡 ${hint}</p>
+            </div>
+
+            <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-sky-400/15">
+              <button type="button" onclick="debIdx--; renderDebates();" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">← Prev</button>
+              <div class="flex gap-1.5">
+                ${DEBATES.map((_, i) => `<button type="button" onclick="debIdx=${i}; renderDebates();" class="w-7 h-7 rounded-lg text-xs font-bold ${i === debIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#081526]'}">${i + 1}</button>`).join('')}
+              </div>
+              <button type="button" onclick="debIdx++; renderDebates();" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+            </div>
+          </div>
+        </div>
+      `;
+      mountPhoto(document.getElementById('debPhotoBox'), d.photo, d.topic, d.topic.toUpperCase());
+      lucide.createIcons();
+    }
+
+    window.selectDebateSide = (i, side) => {
+      DEBATES[i].picked = side;
+      renderDebates();
+    };
+
+    // Init
+    goStage(0);
+    setTravelLevel('A');
+    setHvMode('single');
+    lucide.createIcons();
+  </script>
+</body>
+</html>

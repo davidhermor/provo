@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TRAVEL ENGLISH · AIRPORT &amp; FLIGHTS | PROVO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <style>
+    @keyframes stageIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .stage-anim { animation: stageIn 0.24s ease-out forwards; }
+  </style>
+</head>
+<body class="bg-[#F2F7FA] text-slate-900 dark:bg-[#061322] dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
+
+  <!-- Sticky Top Bar -->
+  <header class="sticky top-0 z-40 bg-[#002B5C] text-white border-b border-orange-400/35 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2.5">
+        <a href="index.html" class="flex items-center shrink-0" title="PROVO">
+          <img
+            src="https://i.postimg.cc/vBt4qH44/download.png"
+            alt="PROVO"
+            class="h-8 w-auto object-contain block"
+            onerror="this.style.display='none'; document.getElementById('provoFallback').classList.remove('hidden');"
+          />
+          <span id="provoFallback" class="hidden font-extrabold tracking-widest text-lg text-white">PROVO</span>
+        </a>
+        <span class="px-2.5 py-0.5 rounded-full bg-orange-500/25 border border-orange-300/45 text-orange-100 text-[11px] font-bold tracking-wider">
+          TRAVEL · AIRPORT
+        </span>
+        <span id="stageTitleHeader" class="hidden xl:inline-block text-xs font-bold tracking-wider text-orange-200">
+          01 · TRIP BRIEFING
+        </span>
+      </div>
+
+      <div id="stagePills" class="flex items-center gap-1 overflow-x-auto py-1"></div>
+
+      <div class="flex items-center gap-2 shrink-0">
+        <!-- Global Multilevel Switch -->
+        <div class="hidden sm:inline-flex rounded-xl p-0.5 bg-black/30 border border-white/15" title="Switch Expression Complexity">
+          <button id="lvlBtnA" type="button" onclick="setTravelLevel('A')" class="px-2.5 py-1 rounded-lg text-[11px] font-extrabold bg-orange-500 text-slate-950 transition">A1–A2</button>
+          <button id="lvlBtnB" type="button" onclick="setTravelLevel('B')" class="px-2.5 py-1 rounded-lg text-[11px] font-extrabold text-white/80 hover:text-white transition">B1–B2</button>
+        </div>
+
+        <button
+          id="themeBtn"
+          type="button"
+          class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition"
+          title="Toggle Theme"
+        >
+          <i id="themeIcon" data-lucide="sun" class="w-4 h-4"></i>
+        </button>
+        <a
+          href="index.html"
+          class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs font-bold bg-white/10 hover:bg-white/20 text-white transition"
+        >
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          <span class="hidden sm:inline">PORTAL</span>
+        </a>
+      </div>
+    </div>
+    <div class="w-full h-1.5 bg-black/25">
+      <div id="stageProgress" class="h-full bg-orange-400 transition-all duration-300" style="width: 12.5%"></div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl w-full mx-auto px-4 sm:px-6 py-7 sm:py-10 flex-1 flex flex-col justify-center">
+
+    <!-- ==================== 01: TRIP BRIEFING & MULTILEVEL MODE ==================== -->
+    <section data-stage="0" class="stage stage-anim">
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 shadow-xl">
+        <div class="lg:col-span-5 h-64 sm:h-auto relative bg-[#091726] overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&amp;fit=crop&amp;w=1050&amp;q=80"
+            alt="Airplane wing above clouds at sunrise"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#061322]/90 via-[#061322]/25 to-transparent"></div>
+          <div class="absolute bottom-5 left-5 right-5 space-y-1 text-white">
+            <span class="text-xs font-bold tracking-widest text-orange-300 uppercase">PROVO · Travel English Series</span>
+            <p class="text-sm font-semibold text-slate-200">Check-In · Security · Boarding Gate · Flight Delays · Customs</p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 p-7 sm:p-10 flex flex-col justify-center space-y-5">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-orange-500/15 border border-orange-400/35 text-orange-700 dark:text-orange-300 text-xs font-bold tracking-wider">
+              <i data-lucide="plane" class="w-4 h-4"></i>
+              <span>MULTILEVEL · SURVIVAL TO CONFIDENT</span>
+            </span>
+
+            <div class="inline-flex rounded-xl p-1 bg-[#EEF4F8] dark:bg-[#081526] border border-orange-500/25">
+              <button type="button" onclick="setTravelLevel('A')" id="heroLvlA" class="px-3 py-1 rounded-lg text-xs font-extrabold bg-orange-500 text-slate-950 transition">A1–A2 Survival</button>
+              <button type="button" onclick="setTravelLevel('B')" id="heroLvlB" class="px-3 py-1 rounded-lg text-xs font-extrabold text-slate-600 dark:text-slate-300 transition">B1–B2 Confident</button>
+            </div>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight text-[#002B5C] dark:text-white">
+            Airport &amp; Flights: <span class="text-orange-600 dark:text-orange-400">Smooth Takeoff</span>
+          </h1>
+
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            Master every step of an international flight—from dropping off luggage and passing security to handling gate changes and customs—with instant switching between <strong>simple survival lines</strong> and <strong>natural, polite B1–B2 expressions</strong>.
+          </p>
+
+          <!-- Interactive Mini Boarding Pass -->
+          <div class="p-4 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border border-orange-500/25 space-y-2.5">
+            <div class="flex items-center justify-between text-[11px] font-extrabold uppercase tracking-wider text-orange-700 dark:text-orange-300">
+              <span>Sample Boarding Pass · Flight PV-402</span>
+              <span>BCN → LHR</span>
+            </div>
+            <div class="grid grid-cols-4 gap-2 text-center">
+              <div class="p-2 rounded-xl bg-white dark:bg-[#0C1E33]">
+                <div class="text-[10px] text-slate-400 font-bold">TERMINAL</div>
+                <div class="text-sm font-extrabold text-[#002B5C] dark:text-white">T1</div>
+              </div>
+              <div class="p-2 rounded-xl bg-white dark:bg-[#0C1E33]">
+                <div class="text-[10px] text-slate-400 font-bold">GATE</div>
+                <div class="text-sm font-extrabold text-orange-600 dark:text-orange-400">B24</div>
+              </div>
+              <div class="p-2 rounded-xl bg-white dark:bg-[#0C1E33]">
+                <div class="text-[10px] text-slate-400 font-bold">BOARDING</div>
+                <div class="text-sm font-extrabold text-[#002B5C] dark:text-white">09:45</div>
+              </div>
+              <div class="p-2 rounded-xl bg-white dark:bg-[#0C1E33]">
+                <div class="text-[10px] text-slate-400 font-bold">SEAT</div>
+                <div class="text-sm font-extrabold text-[#002B5C] dark:text-white">14A</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-1">
+            <button
+              type="button"
+              onclick="goStage(1)"
+              class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-[#002B5C] via-orange-700 to-orange-500 hover:opacity-95 text-white text-sm sm:text-base font-bold shadow-lg transition"
+            >
+              <span>Enter Airport Lab</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 02: CONVERSATION QUESTIONS + VOICE RECORDER ==================== -->
+    <section data-stage="1" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-orange-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 02 · Conversation Questions &amp; Audio</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">8 Airport &amp; Flight Questions</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Talk through your flight experiences and record a voice note.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 shadow-xl max-w-4xl mx-auto w-full">
+        <div id="cqPhotoBox" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+
+        <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-5">
+          <div class="space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-2">
+                <span id="cqBadge" class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">QUESTION 1 / 8</span>
+                <span id="cqTag" class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-700 dark:text-orange-300 text-xs font-bold"></span>
+              </div>
+              <button type="button" onclick="speakCq()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-orange-600 hover:bg-orange-500 text-white text-xs font-bold transition">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                <span>Listen</span>
+              </button>
+            </div>
+
+            <h3 id="cqQuestion" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+            <p id="cqFollow" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300"></p>
+
+            <div>
+              <button type="button" onclick="document.getElementById('cqStarters').classList.toggle('hidden')" class="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-orange-700 dark:text-orange-300 hover:underline">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                <span>Helpful Starters (A1–B2)</span>
+              </button>
+              <div id="cqStarters" class="hidden mt-2.5 p-3.5 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border border-orange-500/20 text-xs space-y-1"></div>
+            </div>
+
+            <!-- Voice Note Recorder -->
+            <div class="p-4 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border border-orange-500/20 space-y-3">
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-xs font-extrabold uppercase tracking-wider text-orange-700 dark:text-orange-300">Voice Note Answer</span>
+                <span id="recTimer" class="text-xs font-extrabold text-slate-500 dark:text-slate-400">Ready</span>
+              </div>
+
+              <input
+                id="apStudentName"
+                type="text"
+                placeholder="Your name (e.g. Elena Ruiz)"
+                class="w-full px-3 py-2 rounded-xl bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-sky-400/25 text-xs sm:text-sm outline-none focus:border-orange-400"
+              />
+
+              <div class="flex flex-wrap items-center gap-2">
+                <button
+                  id="btnRecStart"
+                  type="button"
+                  onclick="startVoiceRec('Q')"
+                  class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold transition"
+                >
+                  <i data-lucide="mic" class="w-3.5 h-3.5"></i>
+                  <span>Record</span>
+                </button>
+                <button
+                  id="btnRecStop"
+                  type="button"
+                  onclick="stopVoiceRec()"
+                  disabled
+                  class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-700 disabled:opacity-40 text-white text-xs font-bold transition"
+                >
+                  <i data-lucide="square" class="w-3.5 h-3.5"></i>
+                  <span>Stop</span>
+                </button>
+                <button
+                  id="btnSendAudioDrive"
+                  type="button"
+                  onclick="sendAudioToDrive()"
+                  disabled
+                  class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#002B5C] hover:bg-orange-600 disabled:opacity-40 text-white text-xs font-bold transition"
+                >
+                  <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                  <span id="sendAudioLabel">Send Audio to Teacher</span>
+                </button>
+              </div>
+
+              <audio id="recPlayback" controls class="hidden w-full h-9"></audio>
+              <div id="recFeedback" class="hidden text-xs font-bold p-2.5 rounded-xl"></div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-sky-400/15">
+            <button type="button" onclick="stepCq(-1)" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">← Prev</button>
+            <div id="cqDots" class="flex flex-wrap gap-1"></div>
+            <button type="button" onclick="stepCq(1)" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 03: 12 ESSENTIAL AIRPORT VOCABULARY CARDS ==================== -->
+    <section data-stage="2" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-orange-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 03 · Signs &amp; Essential Vocabulary</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">12 Key Airport &amp; Flight Words</h2>
+        </div>
+        <div class="inline-flex rounded-xl p-1 bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 self-start sm:self-auto">
+          <button id="btnAvSingle" type="button" onclick="setAvMode('single')" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-orange-600 text-white transition">1 by 1 Card</button>
+          <button id="btnAvGrid" type="button" onclick="setAvMode('grid')" class="px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition">All 12 Words</button>
+        </div>
+      </div>
+
+      <div id="avSingleBox" class="max-w-4xl mx-auto w-full"></div>
+      <div id="avGridBox" class="hidden grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+    </section>
+
+    <!-- ==================== 04: READING & GATE ANNOUNCEMENTS ==================== -->
+    <section data-stage="3" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-orange-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 04 · Reading &amp; PA Announcements</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">A Tight Connection in Frankfurt</h2>
+        </div>
+        <button type="button" onclick="speakReadingText()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-orange-600 hover:bg-orange-500 text-white text-xs font-bold self-start sm:self-auto transition">
+          <i data-lucide="volume-2" class="w-4 h-4"></i>
+          <span>Listen to Story</span>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div class="lg:col-span-7 space-y-5">
+          <article class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl overflow-hidden shadow-lg">
+            <img
+              src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?auto=format&amp;fit=crop&amp;w=1050&amp;q=80"
+              alt="Airport departure board and terminal"
+              class="h-44 w-full object-cover"
+            />
+            <div id="apReadingBody" class="p-6 sm:p-7 space-y-3.5 text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed">
+              <p>
+                <strong>Nora</strong> is flying from Madrid to Oslo with a 75-minute layover in Frankfurt. Her luggage is checked through to her final destination, so she only has a small carry-on backpack.
+              </p>
+              <p>
+                Because of strong headwinds, her first flight lands 30 minutes late. As soon as she enters the terminal, she checks the departure screens. Her connecting flight is still boarding, but the gate has changed from <strong>A18 to B42</strong>, and she has to pass passport control on the way.
+              </p>
+              <p>
+                Instead of panicking, Nora shows her boarding pass to a ground staff member, who points her toward the fast-track transfer lane. She reaches Gate B42 just as final boarding is called—tired, relieved, and glad she packed essentials in her hand luggage.
+              </p>
+            </div>
+          </article>
+
+          <!-- Interactive PA Gate Announcements -->
+          <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl p-5 sm:p-6 space-y-3 shadow-md">
+            <div class="flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-orange-700 dark:text-orange-300">
+              <i data-lucide="megaphone" class="w-4 h-4"></i>
+              <span>Live Airport PA Announcements (Click to Hear &amp; Decode)</span>
+            </div>
+            <div id="paListBox" class="space-y-2.5"></div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl p-6 space-y-4 shadow-lg">
+          <span class="text-xs font-extrabold uppercase tracking-wider text-orange-600 dark:text-orange-400">Comprehension Check (4 Questions)</span>
+          <div id="readingQuizBox" class="space-y-4"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 05: MULTILEVEL REQUESTS & GRAMMAR MATRIX ==================== -->
+    <section data-stage="4" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-orange-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 05 · Multilevel Upgrade Lab</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">From Simple Requests to Natural Polite English</h2>
+        </div>
+        <span class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-700 dark:text-orange-300 text-xs font-extrabold">A1–A2 → B1–B2 Upgrade</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl p-5 space-y-2 shadow-sm">
+          <span class="px-2.5 py-1 rounded-lg bg-[#002B5C] text-white text-xs font-extrabold">1. ASKING FOR HELP / SEATS</span>
+          <p class="text-xs text-slate-500 dark:text-slate-400"><strong>A1–A2:</strong> Can I have a window seat, please?</p>
+          <p class="text-xs font-semibold text-orange-700 dark:text-orange-300"><strong>B1–B2:</strong> Would it be possible to switch to a window seat if there are any left?</p>
+        </div>
+
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl p-5 space-y-2 shadow-sm">
+          <span class="px-2.5 py-1 rounded-lg bg-orange-700 text-white text-xs font-extrabold">2. EXPLAINING A PROBLEM</span>
+          <p class="text-xs text-slate-500 dark:text-slate-400"><strong>A1–A2:</strong> My bag is missing. It didn't arrive.</p>
+          <p class="text-xs font-semibold text-orange-700 dark:text-orange-300"><strong>B1–B2:</strong> I checked a suitcase in Madrid, but it hasn't come out on the baggage carousel.</p>
+        </div>
+
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl p-5 space-y-2 shadow-sm">
+          <span class="px-2.5 py-1 rounded-lg bg-orange-600 text-white text-xs font-extrabold">3. ASKING ABOUT CONNECTIONS</span>
+          <p class="text-xs text-slate-500 dark:text-slate-400"><strong>A1–A2:</strong> Where is Gate B42? Is my flight late?</p>
+          <p class="text-xs font-semibold text-orange-700 dark:text-orange-300"><strong>B1–B2:</strong> Could you tell me the quickest way to Gate B42? I have a tight connection.</p>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl p-6 sm:p-8 space-y-4 shadow-lg">
+        <div class="flex items-center justify-between gap-2">
+          <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white">Quick Check: Choose the Best Travel Phrase</h3>
+          <span id="gramScorePill" class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-700 dark:text-orange-300 text-xs font-extrabold">0 / 6</span>
+        </div>
+        <div id="gramDrillList" class="grid grid-cols-1 md:grid-cols-2 gap-3"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 06: INTERACTIVE AIRPORT SIMULATOR ==================== -->
+    <section data-stage="5" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-orange-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 06 · Interactive Simulator</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Terminal Challenge: Check-In to Landing (6 Steps)</h2>
+        </div>
+        <div class="flex items-center gap-2">
+          <span id="simScoreBadge" class="px-3.5 py-1.5 rounded-xl bg-[#002B5C] text-orange-300 text-xs font-extrabold">SCORE: 0 / 6</span>
+          <button type="button" onclick="resetSimGame()" class="px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">
+            Restart Trip
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl p-6 sm:p-9 max-w-4xl mx-auto w-full space-y-6 shadow-xl">
+        <div class="flex items-center justify-between gap-2">
+          <span id="simRoundBadge" class="px-3.5 py-1 rounded-full bg-orange-600 text-white text-xs font-extrabold">STEP 1 / 6</span>
+          <span class="text-xs font-bold text-slate-500 dark:text-slate-400">Real-Time Travel Decisions</span>
+        </div>
+
+        <h3 id="simPrompt" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+        <div id="simOptions" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+        <div id="simFeedback" class="hidden p-4 rounded-2xl text-xs sm:text-sm font-bold"></div>
+
+        <div class="flex justify-end">
+          <button type="button" onclick="nextSimRound()" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-[#002B5C] to-orange-600 text-white text-xs sm:text-sm font-bold">
+            Next Step →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 07: 8 REAL AIRPORT ROLE-PLAYS ==================== -->
+    <section data-stage="6" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-orange-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 07 · Real Airport Role-Plays</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">8 Airport Situations (Survival vs. Confident)</h2>
+        </div>
+        <div class="inline-flex rounded-xl p-1 bg-white dark:bg-[#0C1E33] border border-orange-500/25 self-start sm:self-auto">
+          <button type="button" onclick="setTravelLevel('A')" class="lvl-sync-a px-3 py-1 rounded-lg text-xs font-extrabold bg-orange-500 text-slate-950 transition">A1–A2 Simple</button>
+          <button type="button" onclick="setTravelLevel('B')" class="lvl-sync-b px-3 py-1 rounded-lg text-xs font-extrabold text-slate-600 dark:text-slate-300 transition">B1–B2 Polite/Detailed</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 shadow-xl max-w-4xl mx-auto w-full">
+        <div id="apPhotoBox" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+
+        <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-5">
+          <div class="space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-2">
+                <span id="apBadge" class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">SITUATION 1 / 8</span>
+                <span id="apTag" class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-700 dark:text-orange-300 text-xs font-bold"></span>
+              </div>
+              <button type="button" onclick="speakApPrompt()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-orange-600 hover:bg-orange-500 text-white text-xs font-bold transition">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                <span>Listen</span>
+              </button>
+            </div>
+
+            <div class="p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/25">
+              <div class="text-[11px] font-extrabold uppercase tracking-wider text-amber-700 dark:text-amber-300">Staff / Situation Prompt</div>
+              <p id="apStaffLine" class="text-sm sm:text-base font-bold text-[#002B5C] dark:text-white mt-0.5"></p>
+            </div>
+
+            <h3 id="apTask" class="text-lg sm:text-xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+
+            <div class="p-4 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border border-orange-500/25 space-y-2">
+              <div class="flex items-center justify-between">
+                <span id="apModelLabel" class="text-[11px] font-extrabold uppercase tracking-wider text-orange-700 dark:text-orange-300"></span>
+                <button type="button" onclick="speakApModel()" class="text-xs font-bold text-orange-700 dark:text-orange-300 hover:underline inline-flex items-center gap-1">
+                  <i data-lucide="volume-2" class="w-3.5 h-3.5"></i> Hear Answer
+                </button>
+              </div>
+              <p id="apModelAnswer" class="text-sm font-semibold text-slate-800 dark:text-slate-100"></p>
+              <p id="apAltTip" class="text-xs text-slate-500 dark:text-slate-400"></p>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-sky-400/15">
+            <button type="button" onclick="stepAp(-1)" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">← Prev</button>
+            <div id="apDots" class="flex flex-wrap gap-1"></div>
+            <button type="button" onclick="stepAp(1)" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 08: TRAVEL DILEMMAS (ONE BY ONE) ==================== -->
+    <section data-stage="7" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-orange-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 08 · Travel Habits &amp; Dilemmas</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">What Kind of Traveler Are You? (4 Dilemmas)</h2>
+        </div>
+        <span class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-700 dark:text-orange-300 text-xs font-extrabold">1 Dilemma at a Time</span>
+      </div>
+
+      <div id="debateSingleBox" class="max-w-4xl mx-auto w-full"></div>
+
+      <div class="max-w-4xl mx-auto w-full p-5 rounded-3xl bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-md">
+        <div class="space-y-1">
+          <span class="text-xs font-extrabold uppercase tracking-wider text-orange-600 dark:text-orange-400">Multilevel Opinion Starters</span>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+            <strong>A1–A2:</strong> I prefer A because it is easier / faster. &nbsp;|&nbsp; <strong>B1–B2:</strong> Personally, I'd rather go for B since it saves stress at the airport.
+          </p>
+        </div>
+        <button type="button" onclick="goStage(1)" class="px-4 py-2.5 rounded-xl bg-[#002B5C] hover:bg-orange-600 text-white text-xs font-bold shrink-0 transition">
+          Record Final Answer →
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Navigation -->
+  <footer class="border-t border-orange-500/20 bg-white dark:bg-[#061322] py-4 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      <button id="btnPrev" type="button" onclick="goStage(currentStage - 1)" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-300 dark:border-sky-400/25 hover:bg-slate-100 dark:hover:bg-[#132C4A] disabled:opacity-30 text-xs font-bold transition">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Previous</span>
+      </button>
+
+      <span id="stageCounter" class="text-xs font-bold tracking-widest text-slate-500 dark:text-slate-400">
+        01 / 08
+      </span>
+
+      <button id="btnNext" type="button" onclick="goStage(currentStage + 1)" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#002B5C] hover:bg-orange-700 disabled:opacity-30 text-xs font-bold text-white transition">
+        <span>Next</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    const DRIVE_UPLOAD_URL = "https://script.google.com/macros/s/AKfycbwBcX7Z4aABKplkUkpYvM2wEnsBHhWCZzi7dFGDkeUarkXwv-RRI0JXAPDakjkrCrBc/exec";
+
+    const STAGES = [
+      "01 · TRIP BRIEFING",
+      "02 · CONVERSATION",
+      "03 · 12 AIRPORT WORDS",
+      "04 · READING & PA",
+      "05 · PHRASE UPGRADE",
+      "06 · SIMULATOR",
+      "07 · ROLE-PLAYS",
+      "08 · TRAVEL DILEMMAS"
+    ];
+
+    let currentStage = 0;
+    let travelLevel = 'A'; // 'A' = A1-A2 Survival, 'B' = B1-B2 Confident
+    const stageSections = document.querySelectorAll('.stage');
+
+    window.setTravelLevel = (lvl) => {
+      travelLevel = lvl;
+      const isA = lvl === 'A';
+      const activeCls = 'bg-orange-500 text-slate-950';
+      const idleHeader = 'text-white/80 hover:text-white';
+      const idleCard = 'text-slate-600 dark:text-slate-300';
+
+      const bA = document.getElementById('lvlBtnA');
+      const bB = document.getElementById('lvlBtnB');
+      if (bA && bB) {
+        bA.className = `px-2.5 py-1 rounded-lg text-[11px] font-extrabold transition ${isA ? activeCls : idleHeader}`;
+        bB.className = `px-2.5 py-1 rounded-lg text-[11px] font-extrabold transition ${!isA ? activeCls : idleHeader}`;
+      }
+
+      const hA = document.getElementById('heroLvlA');
+      const hB = document.getElementById('heroLvlB');
+      if (hA && hB) {
+        hA.className = `px-3 py-1 rounded-lg text-xs font-extrabold transition ${isA ? activeCls : idleCard}`;
+        hB.className = `px-3 py-1 rounded-lg text-xs font-extrabold transition ${!isA ? activeCls : idleCard}`;
+      }
+
+      document.querySelectorAll('.lvl-sync-a').forEach(el => {
+        el.className = `lvl-sync-a px-3 py-1 rounded-lg text-xs font-extrabold transition ${isA ? activeCls : idleCard}`;
+      });
+      document.querySelectorAll('.lvl-sync-b').forEach(el => {
+        el.className = `lvl-sync-b px-3 py-1 rounded-lg text-xs font-extrabold transition ${!isA ? activeCls : idleCard}`;
+      });
+
+      renderApCard();
+    };
+
+    function goStage(idx) {
+      if (idx < 0 || idx >= stageSections.length) return;
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      currentStage = idx;
+      stageSections.forEach((s, i) => s.classList.toggle('hidden', i !== currentStage));
+      document.getElementById('stageTitleHeader').textContent = STAGES[currentStage];
+      document.getElementById('stageCounter').textContent = `${String(currentStage + 1).padStart(2, '0')} / ${String(stageSections.length).padStart(2, '0')}`;
+      document.getElementById('stageProgress').style.width = `${((currentStage + 1) / stageSections.length) * 100}%`;
+      document.getElementById('btnPrev').disabled = currentStage === 0;
+      document.getElementById('btnNext').disabled = currentStage === stageSections.length - 1;
+      renderStagePills();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      lucide.createIcons();
+    }
+
+    function renderStagePills() {
+      document.getElementById('stagePills').innerHTML = STAGES.map((_, i) => `
+        <button type="button" onclick="goStage(${i})" class="px-2.5 py-1 rounded-lg text-xs font-bold transition ${
+          i === currentStage ? 'bg-orange-500 text-slate-950' : 'text-white/75 hover:text-white hover:bg-white/10'
+        }">${String(i + 1).padStart(2, '0')}</button>
+      `).join('');
+    }
+
+    const themeBtn = document.getElementById('themeBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    if (localStorage.getItem('provoTravelTheme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      themeIcon.setAttribute('data-lucide', 'moon');
+    }
+    themeBtn.addEventListener('click', () => {
+      const dark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('provoTravelTheme', dark ? 'dark' : 'light');
+      themeIcon.setAttribute('data-lucide', dark ? 'sun' : 'moon');
+      lucide.createIcons();
+    });
+
+    function mountPhoto(container, url, altText, fallbackTitle) {
+      container.innerHTML = `<img src="${url}" alt="${altText}" class="w-full h-full object-cover" loading="lazy" />`;
+      const img = container.querySelector('img');
+      if (img) {
+        img.addEventListener('error', () => {
+          container.innerHTML = `
+            <div class="w-full h-full flex flex-col items-center justify-center bg-[#002B5C] text-white p-6 text-center">
+              <i data-lucide="plane" class="w-8 h-8 text-orange-300 mb-2"></i>
+              <span class="text-xs font-extrabold uppercase tracking-widest">${fallbackTitle}</span>
+            </div>
+          `;
+          lucide.createIcons();
+        }, { once: true });
+      }
+    }
+
+    function pickVoice() {
+      if (!('speechSynthesis' in window)) return null;
+      const voices = window.speechSynthesis.getVoices() || [];
+      if (!voices.length) return null;
+      return (
+        voices.find(v => /sonia/i.test(v.name)) ||
+        voices.find(v => /en[-_]GB/i.test(v.lang)) ||
+        voices.find(v => /^en/i.test(v.lang)) ||
+        null
+      );
+    }
+
+    function speakText(text) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      const v = pickVoice();
+      if (v) {
+        u.voice = v;
+        u.lang = v.lang;
+      } else {
+        u.lang = 'en-GB';
+      }
+      u.rate = 0.93;
+      u.pitch = 1.02;
+      window.speechSynthesis.speak(u);
+    }
+
+    // ==================== 02: CONVERSATION QUESTIONS ====================
+    const CQ_CARDS = [
+      { tag: "Flight Experience", q: "Do you enjoy flying, or do you find airports and planes stressful?", follow: "What is your favorite part of a flight—takeoff, landing, or relaxing in your seat?", photo: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&amp;fit=crop&amp;w=950&amp;q=80", starters: ["• A1–A2: I like flying because it is fast.", "• B1–B2: I don't mind flying, though airport queues can be tiring."] },
+      { tag: "Packing Habits", q: "Are you a light packer with just a carry-on bag, or do you pack a big suitcase?", follow: "What is one thing you always put in your hand luggage?", photo: "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?auto=format&amp;fit=crop&amp;w=950&amp;q=80", starters: ["• A1–A2: I usually take a small bag and a backpack.", "• B1–B2: I prefer travelling light so I don't have to wait at baggage claim."] },
+      { tag: "Airport Timing", q: "Do you like arriving at the airport very early, or do you prefer getting there closer to boarding?", follow: "How do you usually pass the time before takeoff?", photo: "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?auto=format&amp;fit=crop&amp;w=950&amp;q=80", starters: ["• A1–A2: I arrive two hours early and read or drink coffee.", "• B1–B2: I like to get there with enough buffer time to avoid rushing."] },
+      { tag: "Seats & Comfort", q: "Do you prefer a window seat or an aisle seat on a plane?", follow: "How do you stay comfortable on a long flight?", photo: "https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&amp;fit=crop&amp;w=950&amp;q=80", starters: ["• A1–A2: I like a window seat to see the clouds.", "• B1–B2: I usually pick an aisle seat so I can stretch my legs easily."] },
+      { tag: "Delays & Changes", q: "Have you ever had a delayed flight, a gate change, or a missed connection?", follow: "How did you handle the situation?", photo: "https://images.unsplash.com/photo-1507812984078-917a274065be?auto=format&amp;fit=crop&amp;w=950&amp;q=80", starters: ["• A1–A2: Once my flight was two hours late.", "• B1–B2: We had a gate change at the last minute, so we checked the screens often."] },
+      { tag: "Security & Rules", q: "What do you find most annoying at airport security?", follow: "Do you usually have your liquids and electronics ready?", photo: "https://images.unsplash.com/photo-1529074963764-98f45c47344b?auto=format&amp;fit=crop&amp;w=950&amp;q=80", starters: ["• A1–A2: Taking out my laptop and liquids is slow.", "• B1–B2: Having to unpack electronics when moving between terminals can be a hassle."] },
+      { tag: "Layovers", q: "Do you like having a layover in another city, or do you always look for direct flights?", follow: "What makes a layover enjoyable or stressful?", photo: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&amp;fit=crop&amp;w=950&amp;q=80", starters: ["• A1–A2: Direct flights are easier for me.", "• B1–B2: A short layover is fine if the connection isn't too tight."] },
+      { tag: "Memorable Trip", q: "Where was your last flight to, or where would you love to fly next?", follow: "Why that place?", photo: "https://images.unsplash.com/photo-1581553680321-4fffae59fccd?auto=format&amp;fit=crop&amp;w=950&amp;q=80", starters: ["• A1–A2: My last flight was to... Next I want to visit...", "• B1–B2: I'd love to fly to... because I've heard..."] }
+    ];
+    let cqIdx = 0;
+
+    function renderCqCard() {
+      cqIdx = (cqIdx + CQ_CARDS.length) % CQ_CARDS.length;
+      const c = CQ_CARDS[cqIdx];
+      document.getElementById('cqBadge').textContent = `QUESTION ${cqIdx + 1} / ${CQ_CARDS.length}`;
+      document.getElementById('cqTag').textContent = c.tag;
+      document.getElementById('cqQuestion').textContent = c.q;
+      document.getElementById('cqFollow').textContent = c.follow;
+      document.getElementById('cqStarters').innerHTML = c.starters.map(s => `<div>${s}</div>`).join('');
+      document.getElementById('cqStarters').classList.add('hidden');
+      mountPhoto(document.getElementById('cqPhotoBox'), c.photo, c.tag, c.tag);
+      document.getElementById('cqDots').innerHTML = CQ_CARDS.map((_, i) => `
+        <button type="button" onclick="cqIdx=${i}; renderCqCard();" class="w-6 h-6 rounded-lg text-[11px] font-bold ${
+          i === cqIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#081526]'
+        }">${i + 1}</button>
+      `).join('');
+    }
+    window.stepCq = (d) => { cqIdx += d; renderCqCard(); };
+    window.speakCq = () => speakText(`${CQ_CARDS[cqIdx].q} ${CQ_CARDS[cqIdx].follow}`);
+
+    // Voice Recorder + Drive Upload
+    const apNameInput = document.getElementById('apStudentName');
+    apNameInput.value = localStorage.getItem('provoStudentName') || '';
+    apNameInput.addEventListener('input', () => localStorage.setItem('provoStudentName', apNameInput.value.trim()));
+
+    let mediaRec = null;
+    let audioChunks = [];
+    let recordedBlob = null;
+    let recordedMime = 'audio/webm';
+    let recInterval = null;
+    let recSecs = 0;
+
+    function showRecFb(msg, ok = true) {
+      const box = document.getElementById('recFeedback');
+      box.classList.remove('hidden');
+      box.className = ok
+        ? 'text-xs font-bold p-2.5 rounded-xl bg-emerald-500/15 text-emerald-700 dark:text-emerald-300'
+        : 'text-xs font-bold p-2.5 rounded-xl bg-rose-500/15 text-rose-700 dark:text-rose-300';
+      box.textContent = msg;
+    }
+
+    window.startVoiceRec = async () => {
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        return showRecFb('Microphone recording is not supported in this browser.', false);
+      }
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        audioChunks = [];
+        recordedBlob = null;
+        mediaRec = new MediaRecorder(stream);
+        recordedMime = mediaRec.mimeType || 'audio/webm';
+
+        mediaRec.ondataavailable = (e) => {
+          if (e.data && e.data.size > 0) audioChunks.push(e.data);
+        };
+
+        mediaRec.onstop = () => {
+          stream.getTracks().forEach(t => t.stop());
+          recordedBlob = new Blob(audioChunks, { type: recordedMime });
+          const audioEl = document.getElementById('recPlayback');
+          audioEl.src = URL.createObjectURL(recordedBlob);
+          audioEl.classList.remove('hidden');
+          document.getElementById('btnSendAudioDrive').disabled = false;
+          showRecFb('✓ Recording ready! Listen to check or send it to your teacher.', true);
+        };
+
+        mediaRec.start();
+        recSecs = 0;
+        document.getElementById('recTimer').textContent = 'Recording: 0s';
+        document.getElementById('btnRecStart').disabled = true;
+        document.getElementById('btnRecStop').disabled = false;
+        document.getElementById('btnSendAudioDrive').disabled = true;
+        document.getElementById('recFeedback').classList.add('hidden');
+
+        recInterval = setInterval(() => {
+          recSecs++;
+          document.getElementById('recTimer').textContent = `Recording: ${recSecs}s`;
+        }, 1000);
+      } catch (err) {
+        showRecFb('Please allow microphone access to record your answer.', false);
+      }
+    };
+
+    window.stopVoiceRec = () => {
+      if (mediaRec && mediaRec.state !== 'inactive') {
+        mediaRec.stop();
+      }
+      clearInterval(recInterval);
+      document.getElementById('recTimer').textContent = `Recorded (${recSecs}s)`;
+      document.getElementById('btnRecStart').disabled = false;
+      document.getElementById('btnRecStop').disabled = true;
+    };
+
+    window.sendAudioToDrive = async () => {
+      const studentName = apNameInput.value.trim();
+      if (!studentName) {
+        showRecFb('Enter your name first before sending.', false);
+        apNameInput.focus();
+        return;
+      }
+      if (!recordedBlob) {
+        return showRecFb('Record your voice answer first.', false);
+      }
+
+      const sendBtn = document.getElementById('btnSendAudioDrive');
+      const sendLabel = document.getElementById('sendAudioLabel');
+      sendBtn.disabled = true;
+      sendLabel.textContent = 'Sending...';
+
+      try {
+        const reader = new FileReader();
+        reader.onloadend = async () => {
+          const base64Data = (reader.result || '').toString().split(',')[1] || '';
+          try {
+            const res = await fetch(DRIVE_UPLOAD_URL, {
+              method: 'POST',
+              headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+              body: JSON.stringify({
+                studentName,
+                lessonTitle: `Travel-Airport-Lvl${travelLevel}`,
+                questionNumber: cqIdx + 1,
+                mimeType: recordedMime,
+                audioBase64: base64Data
+              })
+            });
+            const data = await res.json();
+            if (data.status === 'ok') {
+              showRecFb(`✓ Voice note sent to teacher (${data.fileName})!`, true);
+            } else {
+              throw new Error(data.message || 'Upload error');
+            }
+          } catch (e) {
+            showRecFb('Could not send automatically. Check your internet connection and try again.', false);
+          } finally {
+            sendBtn.disabled = false;
+            sendLabel.textContent = 'Send Audio to Teacher';
+          }
+        };
+        reader.readAsDataURL(recordedBlob);
+      } catch (e) {
+        sendBtn.disabled = false;
+        sendLabel.textContent = 'Send Audio to Teacher';
+        showRecFb('Error preparing audio file.', false);
+      }
+    };
+
+    // ==================== 03: 12 AIRPORT VOCABULARY CARDS ====================
+    const AP_VOCAB = [
+      { word: "boarding pass", pos: "noun", meaning: "The paper or mobile ticket that shows your gate, seat, and boarding time.", ex: "Keep your boarding pass and passport ready before reaching the gate.", photo: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "baggage drop", pos: "noun", meaning: "The desk where you leave checked suitcases if you already checked in online.", ex: "Since we checked in on our phones, we went straight to baggage drop.", photo: "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "carry-on / hand luggage", pos: "noun", meaning: "A small bag or cabin suitcase you take with you onto the plane.", ex: "My carry-on fits easily under the seat in front of me.", photo: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "departure board", pos: "noun", meaning: "The large screen displaying flight times, status, and gate numbers.", ex: "Always check the departure board because gates can change at the last minute.", photo: "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "security check", pos: "noun", meaning: "The area where bags are X-rayed and passengers walk through a scanner.", ex: "Security check took only ten minutes this morning.", photo: "https://images.unsplash.com/photo-1529074963764-98f45c47344b?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "boarding gate", pos: "noun", meaning: "The numbered exit door where passengers wait to enter the aircraft.", ex: "Boarding begins 40 minutes before takeoff at Gate B24.", photo: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "layover / connection", pos: "noun", meaning: "A stop between two flights on the way to your final destination.", ex: "We have a two-hour layover in Munich before our flight to Tokyo.", photo: "https://images.unsplash.com/photo-1507812984078-917a274065be?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "delayed / on time", pos: "adjectives", meaning: "Running later than scheduled (delayed) vs. leaving as planned (on time).", ex: "Good news—the screen says our flight is on time.", photo: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "overhead locker", pos: "noun", meaning: "The storage compartment above the seats inside the airplane cabin.", ex: "Could you help me lift my cabin bag into the overhead locker?", photo: "https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "aisle seat / window seat", pos: "nouns", meaning: "A seat next to the walkway (aisle) or right beside the window.", ex: "I prefer an aisle seat on long flights so I can stand up easily.", photo: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "baggage carousel", pos: "noun", meaning: "The moving belt in Arrivals where you collect your checked suitcases.", ex: "Our bags appeared on baggage carousel number 4.", photo: "https://images.unsplash.com/photo-1581553680321-4fffae59fccd?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "customs", pos: "noun", meaning: "The checkpoint where officials inspect goods brought into a country.", ex: "If you have nothing to declare, walk through the green customs lane.", photo: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&amp;fit=crop&amp;w=800&amp;q=80" }
+    ];
+    let avIdx = 0;
+    let avMode = 'single';
+
+    window.setAvMode = (mode) => {
+      avMode = mode;
+      document.getElementById('avSingleBox').classList.toggle('hidden', mode !== 'single');
+      const g = document.getElementById('avGridBox');
+      g.classList.toggle('hidden', mode !== 'grid');
+      g.classList.toggle('grid', mode === 'grid');
+      document.getElementById('btnAvSingle').className = mode === 'single'
+        ? 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-orange-600 text-white transition'
+        : 'px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition';
+      document.getElementById('btnAvGrid').className = mode === 'grid'
+        ? 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-orange-600 text-white transition'
+        : 'px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition';
+      renderApVocab();
+    };
+
+    function renderApVocab() {
+      avIdx = (avIdx + AP_VOCAB.length) % AP_VOCAB.length;
+      const w = AP_VOCAB[avIdx];
+      const safeEx = w.ex.replace(/'/g, "\\'");
+
+      document.getElementById('avSingleBox').innerHTML = `
+        <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 shadow-xl">
+          <div id="avPhotoBox" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+          <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">WORD ${avIdx + 1} / ${AP_VOCAB.length}</span>
+                  <span class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-700 dark:text-orange-300 text-xs font-bold">${w.pos}</span>
+                </div>
+                <button type="button" onclick="speakText('${safeEx}')" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-orange-600 text-white text-xs font-bold">
+                  <i data-lucide="volume-2" class="w-4 h-4"></i> Listen
+                </button>
+              </div>
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">${w.word}</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300">${w.meaning}</p>
+              <div class="p-4 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border border-orange-500/20">
+                <p class="text-sm italic font-semibold text-[#002B5C] dark:text-orange-200">“${w.ex}”</p>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-sky-400/15">
+              <button type="button" onclick="avIdx--; renderApVocab();" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">← Prev</button>
+              <div class="flex flex-wrap gap-1">
+                ${AP_VOCAB.map((_, i) => `<button type="button" onclick="avIdx=${i}; renderApVocab();" class="w-7 h-7 rounded-lg text-xs font-bold ${i === avIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#081526]'}">${i + 1}</button>`).join('')}
+              </div>
+              <button type="button" onclick="avIdx++; renderApVocab();" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+            </div>
+          </div>
+        </div>
+      `;
+      mountPhoto(document.getElementById('avPhotoBox'), w.photo, w.word, w.word.toUpperCase());
+
+      document.getElementById('avGridBox').innerHTML = AP_VOCAB.map(item => `
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl overflow-hidden shadow-md flex flex-col">
+          <img src="${item.photo}" alt="${item.word}" class="h-32 w-full object-cover" loading="lazy" />
+          <div class="p-5 flex-1 flex flex-col justify-between gap-3">
+            <div class="space-y-1.5">
+              <div class="flex items-start justify-between gap-2">
+                <h4 class="text-lg font-extrabold text-[#002B5C] dark:text-white">${item.word}</h4>
+                <button type="button" onclick="speakText('${item.ex.replace(/'/g, "\\'")}')" class="p-1.5 rounded-lg bg-[#EEF4F8] dark:bg-[#081526] text-orange-600 dark:text-orange-300"><i data-lucide="volume-2" class="w-4 h-4"></i></button>
+              </div>
+              <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-orange-500/15 text-orange-700 dark:text-orange-300">${item.pos}</span>
+              <p class="text-xs text-slate-600 dark:text-slate-300">${item.meaning}</p>
+            </div>
+            <p class="text-xs italic text-[#002B5C] dark:text-orange-200 border-t border-slate-100 dark:border-sky-400/15 pt-2">“${item.ex}”</p>
+          </div>
+        </div>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    // ==================== 04: READING & PA ANNOUNCEMENTS ====================
+    const PA_LINES = [
+      { label: "Announcement 1 · Gate Change", text: "Attention passengers on Flight PV-402 to London: your departure gate has changed from A18 to B24. Please proceed to Gate B24 immediately." },
+      { label: "Announcement 2 · Final Call", text: "This is the final boarding call for passenger Nora Lindqvist flying to Oslo. Please report to Gate B42 immediately as the doors are about to close." },
+      { label: "Announcement 3 · Baggage Arrival", text: "Passengers arriving from Madrid may now collect their checked luggage from baggage carousel number 4." }
+    ];
+
+    function renderPaList() {
+      document.getElementById('paListBox').innerHTML = PA_LINES.map((pa, i) => `
+        <div class="p-3 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border border-orange-500/20 flex items-center justify-between gap-3">
+          <div>
+            <div class="text-xs font-extrabold text-[#002B5C] dark:text-white">${pa.label}</div>
+            <div id="paTxt${i}" class="hidden text-xs text-slate-600 dark:text-slate-300 mt-1 italic">“${pa.text}”</div>
+          </div>
+          <div class="flex items-center gap-1.5 shrink-0">
+            <button type="button" onclick="speakText('${pa.text.replace(/'/g, "\\'")}')" class="px-3 py-1.5 rounded-xl bg-orange-600 text-white text-xs font-bold inline-flex items-center gap-1">
+              <i data-lucide="volume-2" class="w-3.5 h-3.5"></i> Play
+            </button>
+            <button type="button" onclick="document.getElementById('paTxt${i}').classList.toggle('hidden')" class="px-2.5 py-1.5 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">
+              Text
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    const READING_QS = [
+      { q: "1. Where is Nora's checked suitcase sent?", opts: ["Straight through to Oslo", "She has to collect it in Frankfurt"], ans: 0 },
+      { q: "2. Why does her first flight arrive 30 minutes late?", opts: ["Because of strong headwinds", "Because of a strike"], ans: 0 },
+      { q: "3. What changed while she was flying?", opts: ["Her boarding gate moved from A18 to B42", "Her flight was cancelled"], ans: 0 },
+      { q: "4. How does she reach Gate B42 in time?", opts: ["She uses the fast-track transfer lane", "She takes a taxi outside"], ans: 0 }
+    ];
+
+    function renderReadingQuiz() {
+      document.getElementById('readingQuizBox').innerHTML = READING_QS.map((item, qi) => `
+        <div class="p-3.5 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border border-orange-500/20 space-y-2">
+          <p class="text-xs sm:text-sm font-bold text-[#002B5C] dark:text-white">${item.q}</p>
+          <div class="grid grid-cols-1 gap-1.5">
+            ${item.opts.map((op, oi) => `
+              <button type="button" onclick="checkReadQ(${qi}, ${oi})" class="text-left px-3 py-2 rounded-xl bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-sky-400/20 hover:border-orange-400 text-xs font-semibold transition">${op}</button>
+            `).join('')}
+          </div>
+          <div id="rqFb${qi}" class="hidden text-xs font-extrabold"></div>
+        </div>
+      `).join('');
+    }
+
+    window.checkReadQ = (qi, oi) => {
+      const fb = document.getElementById(`rqFb${qi}`);
+      fb.classList.remove('hidden');
+      if (oi === READING_QS[qi].ans) {
+        fb.className = 'text-xs font-extrabold text-emerald-600 dark:text-emerald-400';
+        fb.textContent = '✓ Correct!';
+      } else {
+        fb.className = 'text-xs font-extrabold text-rose-600 dark:text-rose-400';
+        fb.textContent = '✗ Check the story again.';
+      }
+    };
+
+    window.speakReadingText = () => speakText(document.getElementById('apReadingBody').innerText);
+
+    // ==================== 05: PHRASE UPGRADE DRILL ====================
+    const GRAM_DRILLS = [
+      { prompt: "1. Polite seat request: “________ to switch to an aisle seat?”", opts: ["Would it be possible", "I want switch"], ans: 0 },
+      { prompt: "2. Explaining a bag problem: “My suitcase ________ on the carousel yet.”", opts: ["hasn't appeared", "didn't appeared"], ans: 0 },
+      { prompt: "3. Asking for directions: “Could you tell me ________ Gate B24 is?”", opts: ["where", "where is"], ans: 0 },
+      { prompt: "4. Security rule: “You ________ take liquids out of your carry-on.”", opts: ["have to", "must to"], ans: 0 },
+      { prompt: "5. Flight status: “Our flight ________ by 45 minutes due to fog.”", opts: ["has been delayed", "has delayed"], ans: 0 },
+      { prompt: "6. Offering help: “Do you mind ________ I put my backpack here?”", opts: ["if", "that"], ans: 0 }
+    ];
+    const gramSolved = {};
+
+    function renderGramDrills() {
+      document.getElementById('gramDrillList').innerHTML = GRAM_DRILLS.map((d, di) => `
+        <div class="p-4 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border border-orange-500/20 space-y-2.5">
+          <p class="text-xs sm:text-sm font-bold text-[#002B5C] dark:text-white">${d.prompt}</p>
+          <div class="flex flex-wrap gap-2">
+            ${d.opts.map((op, oi) => `
+              <button type="button" onclick="pickGram(${di}, ${oi})" class="px-3.5 py-2 rounded-xl bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-sky-400/25 hover:border-orange-400 text-xs font-bold transition">${op}</button>
+            `).join('')}
+          </div>
+          <div id="gdFb${di}" class="hidden text-xs font-extrabold"></div>
+        </div>
+      `).join('');
+    }
+
+    window.pickGram = (di, oi) => {
+      const fb = document.getElementById(`gdFb${di}`);
+      fb.classList.remove('hidden');
+      if (oi === GRAM_DRILLS[di].ans) {
+        gramSolved[di] = true;
+        fb.className = 'text-xs font-extrabold text-emerald-600 dark:text-emerald-400';
+        fb.textContent = '✓ Natural & accurate!';
+      } else {
+        fb.className = 'text-xs font-extrabold text-rose-600 dark:text-rose-400';
+        fb.textContent = '✗ Try the other option.';
+      }
+      document.getElementById('gramScorePill').textContent = `${Object.keys(gramSolved).length} / ${GRAM_DRILLS.length}`;
+    };
+
+    // ==================== 06: AIRPORT SIMULATOR GAME ====================
+    const SIM_ROUNDS = [
+      { prompt: "Step 1 (Arrival at Terminal): You already checked in online and have one suitcase to drop off. Where do you go?", opts: ["Baggage drop", "Baggage carousel"], ans: 0, why: "Baggage drop is for leaving checked luggage; the carousel is for arrivals." },
+      { prompt: "Step 2 (Security): You have a 500ml bottle of water in your backpack. What should you do before the scanner?", opts: ["Empty or drink it before security", "Put it inside your shoe"], ans: 0, why: "Liquids over 100ml aren't allowed through standard security screening." },
+      { prompt: "Step 3 (Terminal): Your boarding pass says Gate A12, but the departure board says Gate B08. Which one do you follow?", opts: ["Follow the live departure board (Gate B08)", "Wait at Gate A12 anyway"], ans: 0, why: "Departure boards show real-time gate updates." },
+      { prompt: "Step 4 (On Board): You want to stretch your legs easily during a 6-hour flight. Which seat is best?", opts: ["An aisle seat", "A middle seat"], ans: 0, why: "An aisle seat lets you stand up without disturbing neighbors." },
+      { prompt: "Step 5 (Transfer): You have a 50-minute layover and passport control ahead. What do you say to ground staff?", opts: ["“Excuse me, I have a tight connection—which way is Gate B42?”", "“Where is the duty-free perfume shop?”"], ans: 0, why: "Mentioning a tight connection helps staff direct you to fast-track lanes." },
+      { prompt: "Step 6 (Landing): You bought no gifts or restricted goods abroad. Which customs lane do you walk through?", opts: ["The green lane (Nothing to declare)", "The red lane (Goods to declare)"], ans: 0, why: "The green lane is for travelers with nothing to declare." }
+    ];
+    let simIdx = 0;
+    let simScore = 0;
+    let simDone = false;
+
+    function renderSimRound() {
+      const idx = simIdx % SIM_ROUNDS.length;
+      const r = SIM_ROUNDS[idx];
+      simDone = false;
+      document.getElementById('simRoundBadge').textContent = `STEP ${idx + 1} / ${SIM_ROUNDS.length}`;
+      document.getElementById('simPrompt').textContent = r.prompt;
+      document.getElementById('simFeedback').classList.add('hidden');
+      document.getElementById('simOptions').innerHTML = r.opts.map((op, i) => `
+        <button type="button" onclick="pickSimOpt(${i})" class="w-full text-left p-4 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border-[1.5px] border-orange-500/20 hover:border-orange-400 text-sm font-extrabold transition">${op}</button>
+      `).join('');
+    }
+
+    window.pickSimOpt = (picked) => {
+      if (simDone) return;
+      simDone = true;
+      const r = SIM_ROUNDS[simIdx % SIM_ROUNDS.length];
+      const fb = document.getElementById('simFeedback');
+      fb.classList.remove('hidden');
+      if (picked === r.ans) {
+        simScore++;
+        fb.className = 'p-4 rounded-2xl text-xs sm:text-sm font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Smooth move! (+1 pt) — ${r.why}`;
+      } else {
+        fb.className = 'p-4 rounded-2xl text-xs sm:text-sm font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `✗ Careful! — ${r.why}`;
+      }
+      document.getElementById('simScoreBadge').textContent = `SCORE: ${simScore} / ${SIM_ROUNDS.length}`;
+    };
+    window.nextSimRound = () => { simIdx++; renderSimRound(); };
+    window.resetSimGame = () => {
+      simIdx = 0;
+      simScore = 0;
+      document.getElementById('simScoreBadge').textContent = `SCORE: 0 / ${SIM_ROUNDS.length}`;
+      renderSimRound();
+    };
+
+    // ==================== 07: 8 MULTILEVEL AIRPORT ROLE-PLAYS ====================
+    const AP_CARDS = [
+      {
+        tag: "Check-In & Luggage",
+        staff: "“Good morning! Where are you flying today, and are you checking any bags?”",
+        task: "Say your destination, mention one suitcase to check in, and ask for a window seat.",
+        modelA: "“Hi! I'm flying to London. I have one suitcase to check in. Can I have a window seat, please?”",
+        modelB: "“Good morning! I'm heading to London today, and I'd like to check this suitcase in. Also, would it be possible to get a window seat if there are any available?”",
+        tip: "Key words: check in, suitcase, window seat / aisle seat.",
+        photo: "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Overweight Bag",
+        staff: "“Your suitcase is 25 kilos. The limit is 23 kilos. There is an extra fee, or you can move items to your hand luggage.”",
+        task: "Ask to open your suitcase and move a jacket and books into your carry-on bag.",
+        modelA: "“Oh, sorry! Can I open my bag and put my jacket in my backpack?”",
+        modelB: "“Oh, I didn't realize it was over the limit. Do you mind if I step aside for a moment and move a couple of heavy items into my carry-on?”",
+        tip: "Key words: weight limit, carry-on / hand luggage, extra fee.",
+        photo: "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Security Screening",
+        staff: "“Please take liquids, laptops, and large electronics out of your bag and place them in a tray.”",
+        task: "Confirm you have a laptop and a small bottle, and ask if you need to take off your shoes or belt.",
+        modelA: "“Okay, here is my laptop and my small bag of liquids. Do I need to take off my shoes?”",
+        modelB: "“Sure, I've got my laptop and a 100ml toiletry bag right here. Should I take off my belt and boots as well, or can I keep them on?”",
+        tip: "Key words: tray, liquids, electronics, take off.",
+        photo: "https://images.unsplash.com/photo-1529074963764-98f45c47344b?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Finding the Gate",
+        staff: "“Excuse me, you look lost. Can I help you find your gate?”",
+        task: "Show your boarding pass and ask how many minutes it takes to walk to Gate B24.",
+        modelA: "“Yes, please! Where is Gate B24? How many minutes is it on foot?”",
+        modelB: "“That would be great, thanks! I'm looking for Gate B24—could you tell me roughly how long it takes to walk there from here?”",
+        tip: "Key words: departure board, boarding gate, on foot.",
+        photo: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Flight Delay",
+        staff: "“Attention passengers: Flight PV-402 is delayed by 90 minutes due to bad weather.”",
+        task: "Ask at the desk if you will miss your connecting flight and what happens next.",
+        modelA: "“Excuse me, my flight is late. Will I miss my next flight to Oslo?”",
+        modelB: "“Excuse me, since this flight has been delayed by an hour and a half, I'm worried I might miss my connection in Frankfurt. Could you check my options?”",
+        tip: "Key words: delayed, connecting flight / layover, rebook.",
+        photo: "https://images.unsplash.com/photo-1507812984078-917a274065be?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "On Board · Overhead Locker",
+        staff: "“Hi there! Welcome on board. Can I help you find your seat?”",
+        task: "Say your seat is 14A and ask if there is space for your backpack in the overhead locker.",
+        modelA: "“Thank you! My seat is 14A. Can I put my bag up here?”",
+        modelB: "“Thanks very much! I'm in 14A—is there still room in this overhead locker for my carry-on, or should I put it under the seat in front?”",
+        tip: "Key words: overhead locker, row, aisle, under the seat.",
+        photo: "https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Passport Control",
+        staff: "“Passport, please. What is the purpose of your visit, and how long are you staying?”",
+        task: "Explain that you are on holiday for five days and staying at a hotel in the city center.",
+        modelA: "“Here you are. I'm on holiday for five days. I'm staying at a hotel in the center.”",
+        modelB: "“Here is my passport. I'm visiting for tourism—I'll be staying for five nights at a hotel near the city center before flying back on Sunday.”",
+        tip: "Key words: purpose of visit, tourism / business, return ticket.",
+        photo: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Missing Baggage",
+        staff: "“Welcome to Baggage Services. How can I help you?”",
+        task: "Explain that your black suitcase didn't arrive on belt 4 and show your luggage tag.",
+        modelA: "“Hello. My black suitcase didn't arrive on belt 4. Here is my luggage tag.”",
+        modelB: "“Hi, I just arrived from Madrid, and my black suitcase hasn't appeared on carousel 4. Here is my baggage claim tag—could I fill out a report?”",
+        tip: "Key words: baggage carousel / belt, luggage tag, missing bag.",
+        photo: "https://images.unsplash.com/photo-1581553680321-4fffae59fccd?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      }
+    ];
+    let apIdx = 0;
+
+    function renderApCard() {
+      apIdx = (apIdx + AP_CARDS.length) % AP_CARDS.length;
+      const c = AP_CARDS[apIdx];
+      document.getElementById('apBadge').textContent = `SITUATION ${apIdx + 1} / ${AP_CARDS.length}`;
+      document.getElementById('apTag').textContent = c.tag;
+      document.getElementById('apStaffLine').textContent = c.staff;
+      document.getElementById('apTask').textContent = `Your Turn: ${c.task}`;
+      document.getElementById('apModelLabel').textContent = travelLevel === 'A'
+        ? 'A1–A2 Survival Response'
+        : 'B1–B2 Confident & Polite Response';
+      document.getElementById('apModelAnswer').textContent = travelLevel === 'A' ? c.modelA : c.modelB;
+      document.getElementById('apAltTip').textContent = `💡 ${c.tip}`;
+      mountPhoto(document.getElementById('apPhotoBox'), c.photo, c.tag, c.tag);
+      document.getElementById('apDots').innerHTML = AP_CARDS.map((_, i) => `
+        <button type="button" onclick="apIdx=${i}; renderApCard();" class="w-6 h-6 rounded-lg text-[11px] font-bold ${
+          i === apIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#081526]'
+        }">${i + 1}</button>
+      `).join('');
+    }
+    window.stepAp = (d) => { apIdx += d; renderApCard(); };
+    window.speakApPrompt = () => speakText(AP_CARDS[apIdx].staff);
+    window.speakApModel = () => speakText(travelLevel === 'A' ? AP_CARDS[apIdx].modelA : AP_CARDS[apIdx].modelB);
+
+    // ==================== 08: TRAVEL DILEMMAS (ONE BY ONE) ====================
+    const DEBATES = [
+      {
+        topic: "Dilemma 1 · Packing Style",
+        question: "Carry-on only or checked suitcase?",
+        a: "Option A: Traveling with only a carry-on bag saves time and avoids lost luggage.",
+        b: "Option B: Checking a big suitcase is much more comfortable because you don't worry about liquid limits.",
+        hint: "Think about short city breaks vs. longer trips.",
+        photo: "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?auto=format&amp;fit=crop&amp;w=950&amp;q=80",
+        picked: null
+      },
+      {
+        topic: "Dilemma 2 · Arrival Time",
+        question: "How early do you arrive at the airport?",
+        a: "Option A: Arriving 3 hours early lets you relax, grab a coffee, and avoid any stress.",
+        b: "Option B: Arriving 75 minutes before takeoff (with online check-in) saves hours of waiting.",
+        hint: "Are you an early bird or a last-minute traveler?",
+        photo: "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?auto=format&amp;fit=crop&amp;w=950&amp;q=80",
+        picked: null
+      },
+      {
+        topic: "Dilemma 3 · Seat Choice",
+        question: "Window seat or aisle seat?",
+        a: "Option A: Window seat—great views, a wall to lean on, and nobody climbs over you.",
+        b: "Option B: Aisle seat—extra legroom feel and freedom to walk around anytime.",
+        hint: "Does your answer change on a 1-hour flight vs. an 8-hour flight?",
+        photo: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&amp;fit=crop&amp;w=950&amp;q=80",
+        picked: null
+      },
+      {
+        topic: "Dilemma 4 · Layovers",
+        question: "Direct flight or cheaper flight with a layover?",
+        a: "Option A: Paying a bit more for a direct flight is always worth it.",
+        b: "Option B: A flight with a layover is great if it saves money or lets you explore a new airport.",
+        hint: "Weigh budget against travel time and connection stress.",
+        photo: "https://images.unsplash.com/photo-1507812984078-917a274065be?auto=format&amp;fit=crop&amp;w=950&amp;q=80",
+        picked: null
+      }
+    ];
+    let debIdx = 0;
+
+    function renderDebates() {
+      debIdx = (debIdx + DEBATES.length) % DEBATES.length;
+      const d = DEBATES[debIdx];
+      const safeSpeech = `${d.question} ${d.a} Or ${d.b}`.replace(/'/g, "\\'");
+
+      document.getElementById('debateSingleBox').innerHTML = `
+        <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 shadow-xl">
+          <div id="debPhotoBox" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+          <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-5">
+            <div class="space-y-4">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">DILEMMA ${debIdx + 1} / ${DEBATES.length}</span>
+                  <span class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-700 dark:text-orange-300 text-xs font-bold">${d.topic}</span>
+                </div>
+                <button type="button" onclick="speakText('${safeSpeech}')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-orange-600 hover:bg-orange-500 text-white text-xs font-bold transition">
+                  <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                  <span>Listen</span>
+                </button>
+              </div>
+
+              <h3 class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug">${d.question}</h3>
+
+              <div class="space-y-2.5">
+                <button
+                  type="button"
+                  onclick="selectDebateSide(${debIdx}, 'A')"
+                  class="w-full text-left p-4 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border-[1.5px] ${d.picked === 'A' ? 'border-orange-500 ring-2 ring-orange-500/40' : 'border-orange-500/20 hover:border-orange-400'} text-xs sm:text-sm font-bold transition"
+                >${d.a}</button>
+
+                <button
+                  type="button"
+                  onclick="selectDebateSide(${debIdx}, 'B')"
+                  class="w-full text-left p-4 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border-[1.5px] ${d.picked === 'B' ? 'border-orange-500 ring-2 ring-orange-500/40' : 'border-orange-500/20 hover:border-orange-400'} text-xs sm:text-sm font-bold transition"
+                >${d.b}</button>
+              </div>
+
+              <p class="text-xs text-slate-500 dark:text-slate-400">💡 ${d.hint}</p>
+            </div>
+
+            <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-sky-400/15">
+              <button type="button" onclick="debIdx--; renderDebates();" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">← Prev</button>
+              <div class="flex gap-1.5">
+                ${DEBATES.map((_, i) => `<button type="button" onclick="debIdx=${i}; renderDebates();" class="w-7 h-7 rounded-lg text-xs font-bold ${i === debIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#081526]'}">${i + 1}</button>`).join('')}
+              </div>
+              <button type="button" onclick="debIdx++; renderDebates();" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+            </div>
+          </div>
+        </div>
+      `;
+      mountPhoto(document.getElementById('debPhotoBox'), d.photo, d.topic, d.topic.toUpperCase());
+      lucide.createIcons();
+    }
+
+    window.selectDebateSide = (i, side) => {
+      DEBATES[i].picked = side;
+      renderDebates();
+    };
+
+    // Init
+    goStage(0);
+    renderCqCard();
+    setAvMode('single');
+    renderPaList();
+    renderReadingQuiz();
+    renderGramDrills();
+    renderSimRound();
+    renderDebates();
+    lucide.createIcons();
+  </script>
+</body>
+</html>

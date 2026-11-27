@@ -65,6 +65,7 @@
 
     .gate-top-bar {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
@@ -74,6 +75,38 @@
       max-height: 40px;
       width: auto;
       display: block;
+    }
+
+    .gate-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      background: rgba(0, 0, 0, 0.28);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 999px;
+      padding: 0.2rem;
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: rgba(255, 255, 255, 0.8);
+      font-family: inherit;
+      font-size: 0.74rem;
+      font-weight: 800;
+      padding: 0.3rem 0.65rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.16s ease;
+    }
+
+    .lang-btn.active {
+      background: #FFFFFF;
+      color: var(--navy);
     }
 
     .gate-pill {
@@ -284,6 +317,16 @@
       gap: 0.85rem;
     }
 
+    .sample-card.cta-sample {
+      background: linear-gradient(135deg, var(--navy), var(--teal));
+      color: #FFFFFF;
+      border-color: rgba(165, 243, 252, 0.45);
+    }
+
+    .sample-card.cta-sample p {
+      color: #E0F2FE;
+    }
+
     .sample-cat {
       display: inline-block;
       font-size: 0.68rem;
@@ -303,6 +346,7 @@
     .sample-cat.teens { background: #D1FAE5; color: #065F46; }
     .sample-cat.business { background: #E0E7FF; color: #3730A3; }
     .sample-cat.travel { background: #FFEDD5; color: #C2410C; }
+    .sample-cat.cta-badge { background: rgba(255, 255, 255, 0.18); color: #A5F3FC; }
 
     .sample-card h3 {
       font-size: 1.02rem;
@@ -330,6 +374,11 @@
     }
 
     .sample-link:hover { opacity: 0.92; }
+
+    .sample-card.cta-sample .sample-link {
+      background: #FFFFFF;
+      color: var(--navy);
+    }
 
     /* Top Bar */
     header {
@@ -732,35 +781,43 @@
             onerror="this.style.display='none';"
           >
         </a>
-        <span class="gate-pill">PROVO Lab · Interactive Self-Study</span>
+
+        <div class="gate-controls">
+          <div class="lang-switch" role="group" aria-label="Language selector">
+            <button type="button" class="lang-btn active" data-lang="en">ENG</button>
+            <button type="button" class="lang-btn" data-lang="ca">CAT</button>
+            <button type="button" class="lang-btn" data-lang="es">ESP</button>
+          </div>
+          <span class="gate-pill" data-i18n="gate_pill">PROVO Lab · Interactive Self-Study</span>
+        </div>
       </div>
 
       <div class="gate-hero-grid">
         <div class="pitch-box">
-          <h1>Interactive English Practice That <span>Actually Gets You Speaking</span></h1>
-          <p>
+          <h1 data-i18n-html="pitch_title">Interactive English Practice That <span>Actually Gets You Speaking</span></h1>
+          <p data-i18n="pitch_desc">
             PROVO Lab is our interactive English study platform—available as a standalone subscription or alongside your classes. Explore guided stage labs, audio prompts, games, and multilevel travel modules at your own pace.
           </p>
           <div class="pitch-perks">
             <div class="perk-chip">
-              <strong>Guided Stage Labs</strong>
-              <span>Step-by-step speaking, vocabulary, reading, and interactive games.</span>
+              <strong data-i18n="perk_1_t">Guided Stage Labs</strong>
+              <span data-i18n="perk_1_d">Step-by-step speaking, vocabulary, reading, and interactive games.</span>
             </div>
             <div class="perk-chip">
-              <strong>Multilevel &amp; Exam Ready</strong>
-              <span>From Kids and A1–A2 basics to B1–B2 grammar, OTE prep, and Travel English.</span>
+              <strong data-i18n="perk_2_t">Multilevel &amp; Exam Ready</strong>
+              <span data-i18n="perk_2_d">From Kids and A1–A2 basics to B1–B2 grammar, OTE prep, and Travel English.</span>
             </div>
             <div class="perk-chip">
-              <strong>Audio &amp; Voice Practice</strong>
-              <span>Listen to prompts, practice out loud, and record voice responses.</span>
+              <strong data-i18n="perk_3_t">Audio &amp; Voice Practice</strong>
+              <span data-i18n="perk_3_d">Listen to prompts, practice out loud, and record voice responses.</span>
             </div>
           </div>
         </div>
 
         <div class="auth-card">
-          <span class="auth-badge">PROVO Lab Access</span>
-          <h2>Member Sign In</h2>
-          <p class="auth-sub">Sign in with your PROVO Lab email and password to unlock the full library.</p>
+          <span class="auth-badge" data-i18n="auth_badge">PROVO Lab Access</span>
+          <h2 data-i18n="auth_title">Member Sign In</h2>
+          <p class="auth-sub" data-i18n="auth_sub">Sign in with your PROVO Lab email and password to unlock the full library.</p>
 
           <form id="authForm">
             <div class="auth-input-wrap">
@@ -768,6 +825,7 @@
                 type="email"
                 id="portalEmailInput"
                 class="auth-input"
+                data-i18n-ph="ph_email"
                 placeholder="Email address..."
                 autocomplete="email"
                 required
@@ -778,94 +836,112 @@
                 type="password"
                 id="portalPassInput"
                 class="auth-input has-eye"
+                data-i18n-ph="ph_pass"
                 placeholder="Password..."
                 autocomplete="current-password"
                 required
               >
-              <button type="button" id="togglePassEye" class="auth-eye">Show</button>
+              <button type="button" id="togglePassEye" class="auth-eye" data-i18n="btn_show">Show</button>
             </div>
-            <button type="submit" id="authSubmitBtn" class="auth-btn">Sign In to PROVO Lab →</button>
+            <button type="submit" id="authSubmitBtn" class="auth-btn" data-i18n="auth_btn">Sign In to PROVO Lab →</button>
           </form>
           <div id="authError" class="auth-error"></div>
         </div>
       </div>
 
-      <!-- Sample Lesson Per Category -->
+      <!-- Sample Lesson Per Category (8 cards = clean 2x4 grid on desktop) -->
       <section class="showcase-panel">
         <div class="showcase-header">
           <div>
-            <span style="display: block; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; color: #A5F3FC; margin-bottom: 0.25rem;">
+            <span style="display: block; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; color: #A5F3FC; margin-bottom: 0.25rem;" data-i18n="samples_eyebrow">
               Free Sample Lessons by Category
             </span>
-            <h2>Try One Lesson From Every Category</h2>
+            <h2 data-i18n="samples_heading">Try One Lesson From Every Category</h2>
           </div>
-          <p>
+          <p data-i18n="samples_sub">
             Test how PROVO Lab works before signing up—one sample lesson per category open to explore right away.
           </p>
         </div>
 
         <div class="sample-grid">
+          <!-- 1. Kids -->
           <article class="sample-card">
             <div>
               <span class="sample-cat kids">Kids</span>
               <h3>Days of the Week</h3>
-              <p>Playful song, number matching, chant train, and speaking for young learners.</p>
+              <p data-i18n="s1_desc">Playful song, number matching, chant train, and speaking for young learners.</p>
             </div>
-            <a href="kids-days-of-the-week.html" class="sample-link">Try Sample →</a>
+            <a href="kids-days-of-the-week.html" class="sample-link" data-i18n="try_sample">Try Sample →</a>
           </article>
 
+          <!-- 2. A1-A2 -->
           <article class="sample-card">
             <div>
               <span class="sample-cat">A1–A2</span>
               <h3>Feelings &amp; Moods</h3>
-              <p>Everyday emotions, mood shifts, and natural expressions for talking about how you feel.</p>
+              <p data-i18n="s2_desc">Everyday emotions, mood shifts, and natural expressions for talking about how you feel.</p>
             </div>
-            <a href="a1-a2-feelings-moods.html" class="sample-link">Try Sample →</a>
+            <a href="a1-a2-feelings-moods.html" class="sample-link" data-i18n="try_sample">Try Sample →</a>
           </article>
 
+          <!-- 3. B1/B2 -->
           <article class="sample-card">
             <div>
               <span class="sample-cat b1-b2">B1 / B2</span>
               <h3>Mastering The Passive</h3>
-              <p>Shift focus to actions, processes, and natural B1–B2 structures in context.</p>
+              <p data-i18n="s3_desc">Shift focus to actions, processes, and natural B1–B2 structures in context.</p>
             </div>
-            <a href="b1-b2-passive-voice.html" class="sample-link">Try Sample →</a>
+            <a href="b1-b2-passive-voice.html" class="sample-link" data-i18n="try_sample">Try Sample →</a>
           </article>
 
+          <!-- 4. OTE Prep -->
           <article class="sample-card">
             <div>
               <span class="sample-cat ote">OTE Prep</span>
               <h3>Mastering the OTE Essay</h3>
-              <p>Structure clear arguments, organize paragraphs, and write effectively for the exam.</p>
+              <p data-i18n="s4_desc">Structure clear arguments, organize paragraphs, and write effectively for the exam.</p>
             </div>
-            <a href="ote-writing-essay.html" class="sample-link">Try Sample →</a>
+            <a href="ote-writing-essay.html" class="sample-link" data-i18n="try_sample">Try Sample →</a>
           </article>
 
+          <!-- 5. Teens -->
           <article class="sample-card">
             <div>
               <span class="sample-cat teens">Teens</span>
               <h3>Social Media &amp; Your Feed</h3>
-              <p>Relatable conversation prompts about feeds, trends, algorithms, and online habits.</p>
+              <p data-i18n="s5_desc">Relatable conversation prompts about feeds, trends, algorithms, and online habits.</p>
             </div>
-            <a href="teens-social-media.html" class="sample-link">Try Sample →</a>
+            <a href="teens-social-media.html" class="sample-link" data-i18n="try_sample">Try Sample →</a>
           </article>
 
+          <!-- 6. Business English -->
           <article class="sample-card">
             <div>
               <span class="sample-cat business">Business English</span>
               <h3>Writing &amp; Replying to Emails</h3>
-              <p>Clear workplace emails, polite tone adjustments, and practical follow-ups.</p>
+              <p data-i18n="s6_desc">Clear workplace emails, polite tone adjustments, and practical follow-ups.</p>
             </div>
-            <a href="business-emails.html" class="sample-link">Try Sample →</a>
+            <a href="business-emails.html" class="sample-link" data-i18n="try_sample">Try Sample →</a>
           </article>
 
+          <!-- 7. Travel English -->
           <article class="sample-card">
             <div>
               <span class="sample-cat travel">Travel English</span>
               <h3>Airport &amp; Flights: Smooth Takeoff</h3>
-              <p>Multilevel check-in, security, gates, and delays with A1–A2 and B1–B2 switching.</p>
+              <p data-i18n="s7_desc">Multilevel check-in, security, gates, and delays with A1–A2 and B1–B2 switching.</p>
             </div>
-            <a href="travel-airport-flights.html" class="sample-link">Try Sample →</a>
+            <a href="travel-airport-flights.html" class="sample-link" data-i18n="try_sample">Try Sample →</a>
+          </article>
+
+          <!-- 8. Full Access CTA Card -->
+          <article class="sample-card cta-sample">
+            <div>
+              <span class="sample-cat cta-badge">Full Access</span>
+              <h3>Unlock PROVO Lab</h3>
+              <p data-i18n="s8_desc">Want access to all 25+ interactive lessons, audio exercises, and new weekly releases?</p>
+            </div>
+            <a href="https://provo.cat/#contact" class="sample-link" data-i18n="s8_btn">Request Access →</a>
           </article>
         </div>
       </section>
@@ -1265,6 +1341,147 @@
     <strong>PROVO Lab</strong> · Interactive Classroom &amp; Self-Study Portal
   </footer>
 
+  <!-- Gate Language Switcher (ENG first; keeps sample titles & categories in English) -->
+  <script>
+    const GATE_I18N = {
+      en: {
+        gate_pill: "PROVO Lab · Interactive Self-Study",
+        pitch_title: "Interactive English Practice That <span>Actually Gets You Speaking</span>",
+        pitch_desc: "PROVO Lab is our interactive English study platform—available as a standalone subscription or alongside your classes. Explore guided stage labs, audio prompts, games, and multilevel travel modules at your own pace.",
+        perk_1_t: "Guided Stage Labs",
+        perk_1_d: "Step-by-step speaking, vocabulary, reading, and interactive games.",
+        perk_2_t: "Multilevel & Exam Ready",
+        perk_2_d: "From Kids and A1–A2 basics to B1–B2 grammar, OTE prep, and Travel English.",
+        perk_3_t: "Audio & Voice Practice",
+        perk_3_d: "Listen to prompts, practice out loud, and record voice responses.",
+        auth_badge: "PROVO Lab Access",
+        auth_title: "Member Sign In",
+        auth_sub: "Sign in with your PROVO Lab email and password to unlock the full library.",
+        ph_email: "Email address...",
+        ph_pass: "Password...",
+        btn_show: "Show",
+        btn_hide: "Hide",
+        auth_btn: "Sign In to PROVO Lab →",
+        samples_eyebrow: "Free Sample Lessons by Category",
+        samples_heading: "Try One Lesson From Every Category",
+        samples_sub: "Test how PROVO Lab works before signing up—one sample lesson per category open to explore right away.",
+        s1_desc: "Playful song, number matching, chant train, and speaking for young learners.",
+        s2_desc: "Everyday emotions, mood shifts, and natural expressions for talking about how you feel.",
+        s3_desc: "Shift focus to actions, processes, and natural B1–B2 structures in context.",
+        s4_desc: "Structure clear arguments, organize paragraphs, and write effectively for the exam.",
+        s5_desc: "Relatable conversation prompts about feeds, trends, algorithms, and online habits.",
+        s6_desc: "Clear workplace emails, polite tone adjustments, and practical follow-ups.",
+        s7_desc: "Multilevel check-in, security, gates, and delays with A1–A2 and B1–B2 switching.",
+        s8_desc: "Want access to all 25+ interactive lessons, audio exercises, and new weekly releases?",
+        s8_btn: "Request Access →",
+        try_sample: "Try Sample →"
+      },
+      ca: {
+        gate_pill: "PROVO Lab · Autoaprenentatge Interactiu",
+        pitch_title: "Pràctica Interactiva d'Anglès Que <span>Et Fa Parlar de Veritat</span>",
+        pitch_desc: "PROVO Lab és la nostra plataforma interactiva d'estudi d'anglès—disponible per subscripció independent o juntament amb les classes. Explora etapes guiades, àudios, jocs i mòduls de viatge multinivell al teu ritme.",
+        perk_1_t: "Etapes Guiades",
+        perk_1_d: "Speaking pas a pas, vocabulari, lectura i jocs interactius.",
+        perk_2_t: "Multinivell i Exàmens",
+        perk_2_d: "Des de Kids i A1–A2 fins a gramàtica B1–B2, preparació OTE i Travel English.",
+        perk_3_t: "Àudio i Pràctica Oral",
+        perk_3_d: "Escolta frases, parla en veu alta i enregistra respostes de veu.",
+        auth_badge: "Accés PROVO Lab",
+        auth_title: "Inici de Sessió",
+        auth_sub: "Entra amb el teu correu i contrasenya de PROVO Lab per desbloquejar tot el catàleg.",
+        ph_email: "Correu electrònic...",
+        ph_pass: "Contrasenya...",
+        btn_show: "Mostra",
+        btn_hide: "Amaga",
+        auth_btn: "Entrar a PROVO Lab →",
+        samples_eyebrow: "Mostres Gratuïtes per Categoria",
+        samples_heading: "Prova una Lliçó de Cada Categoria",
+        samples_sub: "Comprova com funciona PROVO Lab abans de sol·licitar accés—una lliçó de mostra oberta per categoria.",
+        s1_desc: "Cançó divertida, associació de números, tren dels dies i pràctica oral per als més petits.",
+        s2_desc: "Emocions quotidianes, canvis d'estat d'ànim i expressions naturals per explicar com et sents.",
+        s3_desc: "Canvia el focus cap a l'acció, processos i estructures B1–B2 en context.",
+        s4_desc: "Estructura arguments clars, organitza paràgrafs i redacta amb soltesa per a l'examen.",
+        s5_desc: "Preguntes properes sobre el feed, tendències, algorismes i hàbits digitals.",
+        s6_desc: "Correus professionals clars, ajust de to cortès i seguiments pràctics.",
+        s7_desc: "Facturació, seguretat, portes d'embarcament i retards amb canvi de nivell A1–A2 i B1–B2.",
+        s8_desc: "Vols accés a més de 25 lliçons interactives, àudios i novetats setmanals?",
+        s8_btn: "Demanar Accés →",
+        try_sample: "Prova la Mostra →"
+      },
+      es: {
+        gate_pill: "PROVO Lab · Autoaprendizaje Interactivo",
+        pitch_title: "Práctica Interactiva de Inglés Que <span>Te Hace Hablar de Verdad</span>",
+        pitch_desc: "PROVO Lab es nuestra plataforma interactiva de estudio de inglés—disponible como suscripción independiente o junto a tus clases. Explora etapas guiadas, audios, juegos y módulos de viaje multinivel a tu ritmo.",
+        perk_1_t: "Etapas Guiadas",
+        perk_1_d: "Speaking paso a paso, vocabulario, lectura y juegos interactivos.",
+        perk_2_t: "Multinivel y Exámenes",
+        perk_2_d: "Desde Kids y A1–A2 hasta gramática B1–B2, preparación OTE y Travel English.",
+        perk_3_t: "Audio y Práctica Oral",
+        perk_3_d: "Escucha frases, habla en voz alta y graba respuestas de voz.",
+        auth_badge: "Acceso PROVO Lab",
+        auth_title: "Iniciar Sesión",
+        auth_sub: "Inicia sesión con tu correo y contraseña de PROVO Lab para desbloquear todo el catálogo.",
+        ph_email: "Correo electrónico...",
+        ph_pass: "Contraseña...",
+        btn_show: "Mostrar",
+        btn_hide: "Ocultar",
+        auth_btn: "Entrar a PROVO Lab →",
+        samples_eyebrow: "Muestras Gratuitas por Categoría",
+        samples_heading: "Prueba una Lección de Cada Categoría",
+        samples_sub: "Comprueba cómo funciona PROVO Lab antes de pedir acceso—una lección de muestra abierta por categoría.",
+        s1_desc: "Canción dinámica, asociación con números, tren de la semana y práctica oral para peques.",
+        s2_desc: "Emociones cotidianas, cambios de ánimo y expresiones naturales para contar cómo estás.",
+        s3_desc: "Cambia el foco hacia la acción, procesos y estructuras B1–B2 en contexto.",
+        s4_desc: "Estructura argumentos claros, organiza párrafos y redacta con soltura para el examen.",
+        s5_desc: "Preguntas cercanas sobre el feed, tendencias, algoritmos y hábitos en redes.",
+        s6_desc: "Correos laborales claros, ajuste de tono educado y seguimientos prácticos.",
+        s7_desc: "Facturación, seguridad, puertas de embarque y retrasos con selector A1–A2 y B1–B2.",
+        s8_desc: "¿Quieres acceso a más de 25 lecciones interactivas, audios y novedades semanales?",
+        s8_btn: "Solicitar Acceso →",
+        try_sample: "Probar Muestra →"
+      }
+    };
+
+    (function () {
+      let currentGateLang = localStorage.getItem('provoGateLang') || 'en';
+      const eyeBtn = document.getElementById('togglePassEye');
+      const passInput = document.getElementById('portalPassInput');
+
+      function applyGateLang(lang) {
+        currentGateLang = GATE_I18N[lang] ? lang : 'en';
+        localStorage.setItem('provoGateLang', currentGateLang);
+        const dict = GATE_I18N[currentGateLang];
+
+        document.querySelectorAll('#authGate [data-i18n]').forEach(el => {
+          const k = el.getAttribute('data-i18n');
+          if (dict[k]) el.textContent = dict[k];
+        });
+        document.querySelectorAll('#authGate [data-i18n-html]').forEach(el => {
+          const k = el.getAttribute('data-i18n-html');
+          if (dict[k]) el.innerHTML = dict[k];
+        });
+        document.querySelectorAll('#authGate [data-i18n-ph]').forEach(el => {
+          const k = el.getAttribute('data-i18n-ph');
+          if (dict[k]) el.setAttribute('placeholder', dict[k]);
+        });
+
+        if (passInput && eyeBtn) {
+          eyeBtn.textContent = passInput.type === 'password' ? dict.btn_show : dict.btn_hide;
+        }
+
+        document.querySelectorAll('#authGate .lang-btn').forEach(btn => {
+          btn.classList.toggle('active', btn.getAttribute('data-lang') === currentGateLang);
+        });
+      }
+
+      document.querySelectorAll('#authGate .lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => applyGateLang(btn.getAttribute('data-lang')));
+      });
+
+      applyGateLang(currentGateLang);
+    })();
+  </script>
+
   <!-- Firebase Authentication Module -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
@@ -1299,9 +1516,11 @@
     const userChip = document.getElementById('signedUserChip');
 
     eyeBtn.addEventListener('click', () => {
+      const lang = localStorage.getItem('provoGateLang') || 'en';
+      const dict = GATE_I18N[lang] || GATE_I18N.en;
       const isPass = passInput.type === 'password';
       passInput.type = isPass ? 'text' : 'password';
-      eyeBtn.textContent = isPass ? 'Hide' : 'Show';
+      eyeBtn.textContent = isPass ? dict.btn_hide : dict.btn_show;
     });
 
     onAuthStateChanged(auth, (user) => {
@@ -1341,7 +1560,8 @@
         passInput.focus();
       } finally {
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Sign In to PROVO Lab →';
+        const lang = localStorage.getItem('provoGateLang') || 'en';
+        submitBtn.textContent = (GATE_I18N[lang] || GATE_I18N.en).auth_btn;
       }
     });
 
@@ -1396,7 +1616,7 @@
   </script>
 
   <script>
-    // Dark / Light Theme
+    // Light by default; Dark only if explicitly saved
     (function () {
       const btn = document.getElementById('portalThemeBtn');
       const root = document.documentElement;
@@ -1405,6 +1625,9 @@
       if (saved === 'dark') {
         root.classList.add('dark');
         btn.textContent = '☀️ Light';
+      } else {
+        root.classList.remove('dark');
+        btn.textContent = '🌙 Dark';
       }
 
       btn.addEventListener('click', () => {

@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TRAVEL ENGLISH · RESTAURANTS &amp; DINING | PROVO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <style>
+    @keyframes stageIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .stage-anim { animation: stageIn 0.24s ease-out forwards; }
+  </style>
+</head>
+<body class="bg-[#FFF7ED] text-slate-900 dark:bg-[#061322] dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
+
+  <!-- Sticky Top Bar -->
+  <header class="sticky top-0 z-40 bg-[#002B5C] text-white border-b border-orange-400/35 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2.5">
+        <a href="index.html" class="flex items-center shrink-0" title="PROVO">
+          <img
+            src="https://i.postimg.cc/vBt4qH44/download.png"
+            alt="PROVO"
+            class="h-8 w-auto object-contain block"
+            onerror="this.style.display='none'; document.getElementById('provoFallback').classList.remove('hidden');"
+          />
+          <span id="provoFallback" class="hidden font-extrabold tracking-widest text-lg text-white">PROVO</span>
+        </a>
+        <span class="px-2.5 py-0.5 rounded-full bg-orange-500/25 border border-orange-300/45 text-orange-100 text-[11px] font-bold tracking-wider">
+          TRAVEL · DINING
+        </span>
+        <span id="stageTitleHeader" class="hidden xl:inline-block text-xs font-bold tracking-wider text-orange-200">
+          01 · DINING BRIEFING
+        </span>
+      </div>
+
+      <div id="stagePills" class="flex items-center gap-1 overflow-x-auto py-1"></div>
+
+      <div class="flex items-center gap-2 shrink-0">
+        <!-- Global Multilevel Switch -->
+        <div class="inline-flex rounded-xl p-0.5 bg-black/30 border border-white/15" title="Switch Lesson Level">
+          <button id="lvlBtnA" type="button" onclick="setTravelLevel('A')" class="px-2.5 py-1 rounded-lg text-[11px] font-extrabold bg-orange-500 text-slate-950 transition">A1–A2</button>
+          <button id="lvlBtnB" type="button" onclick="setTravelLevel('B')" class="px-2.5 py-1 rounded-lg text-[11px] font-extrabold text-white/80 hover:text-white transition">B1–B2</button>
+        </div>
+
+        <button
+          id="themeBtn"
+          type="button"
+          class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition"
+          title="Toggle Theme"
+        >
+          <i id="themeIcon" data-lucide="sun" class="w-4 h-4"></i>
+        </button>
+        <a
+          href="index.html"
+          class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs font-bold bg-white/10 hover:bg-white/20 text-white transition"
+        >
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          <span class="hidden sm:inline">PORTAL</span>
+        </a>
+      </div>
+    </div>
+    <div class="w-full h-1.5 bg-black/25">
+      <div id="stageProgress" class="h-full bg-orange-400 transition-all duration-300" style="width: 12.5%"></div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl w-full mx-auto px-4 sm:px-6 py-7 sm:py-10 flex-1 flex flex-col justify-center">
+
+    <!-- ==================== 01: DINING BRIEFING & MULTILEVEL MODE ==================== -->
+    <section data-stage="0" class="stage stage-anim">
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 shadow-xl">
+        <div class="lg:col-span-5 h-64 sm:h-auto relative bg-[#091726] overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&amp;fit=crop&amp;w=1050&amp;q=80"
+            alt="Warm restaurant interior with set tables"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#061322]/90 via-[#061322]/25 to-transparent"></div>
+          <div class="absolute bottom-5 left-5 right-5 space-y-1 text-white">
+            <span class="text-xs font-bold tracking-widest text-orange-300 uppercase">PROVO · Travel English Series</span>
+            <p class="text-sm font-semibold text-slate-200">Table Booking · Ordering · Dietary Notes · Splitting the Bill</p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 p-7 sm:p-10 flex flex-col justify-center space-y-5">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <span id="heroModeBadge" class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-orange-500/15 border border-orange-400/35 text-orange-700 dark:text-orange-300 text-xs font-bold tracking-wider">
+              <i data-lucide="utensils" class="w-4 h-4"></i>
+              <span>LEVEL A1–A2 · CLEAR SURVIVAL ENGLISH</span>
+            </span>
+
+            <div class="inline-flex rounded-xl p-1 bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/25">
+              <button type="button" onclick="setTravelLevel('A')" id="heroLvlA" class="px-3 py-1 rounded-lg text-xs font-extrabold bg-orange-500 text-slate-950 transition">A1–A2 Survival</button>
+              <button type="button" onclick="setTravelLevel('B')" id="heroLvlB" class="px-3 py-1 rounded-lg text-xs font-extrabold text-slate-600 dark:text-slate-300 transition">B1–B2 Confident</button>
+            </div>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight text-[#002B5C] dark:text-white">
+            Restaurants &amp; Dining: <span class="text-orange-600 dark:text-orange-400">Table for Two</span>
+          </h1>
+
+          <p id="heroDesc" class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+
+          <!-- Interactive Mini Menu Card -->
+          <div class="p-4 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/25 space-y-2.5">
+            <div class="flex items-center justify-between text-[11px] font-extrabold uppercase tracking-wider text-orange-700 dark:text-orange-300">
+              <span>Sample Bistro Menu · The Harbour Kitchen</span>
+              <span>TABLE 12</span>
+            </div>
+            <div class="grid grid-cols-4 gap-2 text-center">
+              <div class="p-2 rounded-xl bg-white dark:bg-[#0C1E33]">
+                <div class="text-[10px] text-slate-400 font-bold">STARTER</div>
+                <div class="text-xs sm:text-sm font-extrabold text-[#002B5C] dark:text-white">Tomato Soup</div>
+              </div>
+              <div class="p-2 rounded-xl bg-white dark:bg-[#0C1E33]">
+                <div class="text-[10px] text-slate-400 font-bold">MAIN</div>
+                <div class="text-xs sm:text-sm font-extrabold text-orange-600 dark:text-orange-400">Veg Risotto</div>
+              </div>
+              <div class="p-2 rounded-xl bg-white dark:bg-[#0C1E33]">
+                <div class="text-[10px] text-slate-400 font-bold">SIDE</div>
+                <div class="text-xs sm:text-sm font-extrabold text-[#002B5C] dark:text-white">Green Salad</div>
+              </div>
+              <div class="p-2 rounded-xl bg-white dark:bg-[#0C1E33]">
+                <div class="text-[10px] text-slate-400 font-bold">DRINK</div>
+                <div class="text-xs sm:text-sm font-extrabold text-[#002B5C] dark:text-white">Still Water</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-1">
+            <button
+              type="button"
+              onclick="goStage(1)"
+              class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-[#002B5C] via-orange-700 to-orange-500 hover:opacity-95 text-white text-sm sm:text-base font-bold shadow-lg transition"
+            >
+              <span>Enter Dining Lab</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 02: CONVERSATION QUESTIONS + VOICE RECORDER ==================== -->
+    <section data-stage="1" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-orange-500/20 pb-3">
+        <div>
+          <span id="s2SubBadge" class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 02 · Conversation Questions (A1–A2)</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">8 Eating Out &amp; Restaurant Questions</h2>
+        </div>
+        <div class="inline-flex rounded-xl p-1 bg-white dark:bg-[#0C1E33] border border-orange-500/25 self-start sm:self-auto">
+          <button type="button" onclick="setTravelLevel('A')" class="lvl-sync-a px-3 py-1 rounded-lg text-xs font-extrabold bg-orange-500 text-slate-950 transition">A1–A2</button>
+          <button type="button" onclick="setTravelLevel('B')" class="lvl-sync-b px-3 py-1 rounded-lg text-xs font-extrabold text-slate-600 dark:text-slate-300 transition">B1–B2</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 shadow-xl max-w-4xl mx-auto w-full">
+        <div id="cqPhotoBox" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+
+        <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-5">
+          <div class="space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-2">
+                <span id="cqBadge" class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">QUESTION 1 / 8</span>
+                <span id="cqTag" class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-700 dark:text-orange-300 text-xs font-bold"></span>
+              </div>
+              <button type="button" onclick="speakCq()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-orange-600 hover:bg-orange-500 text-white text-xs font-bold transition">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                <span>Listen</span>
+              </button>
+            </div>
+
+            <h3 id="cqQuestion" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+            <p id="cqFollow" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300"></p>
+
+            <div>
+              <button type="button" onclick="document.getElementById('cqStarters').classList.toggle('hidden')" class="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-orange-700 dark:text-orange-300 hover:underline">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                <span>Helpful Starters</span>
+              </button>
+              <div id="cqStarters" class="hidden mt-2.5 p-3.5 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/20 text-xs space-y-1"></div>
+            </div>
+
+            <!-- Voice Note Recorder -->
+            <div class="p-4 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/20 space-y-3">
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-xs font-extrabold uppercase tracking-wider text-orange-700 dark:text-orange-300">Voice Note Answer</span>
+                <span id="recTimer" class="text-xs font-extrabold text-slate-500 dark:text-slate-400">Ready</span>
+              </div>
+
+              <input
+                id="rsStudentName"
+                type="text"
+                placeholder="Your name (e.g. Elena Ruiz)"
+                class="w-full px-3 py-2 rounded-xl bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-sky-400/25 text-xs sm:text-sm outline-none focus:border-orange-400"
+              />
+
+              <div class="flex flex-wrap items-center gap-2">
+                <button
+                  id="btnRecStart"
+                  type="button"
+                  onclick="startVoiceRec()"
+                  class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold transition"
+                >
+                  <i data-lucide="mic" class="w-3.5 h-3.5"></i>
+                  <span>Record</span>
+                </button>
+                <button
+                  id="btnRecStop"
+                  type="button"
+                  onclick="stopVoiceRec()"
+                  disabled
+                  class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-700 disabled:opacity-40 text-white text-xs font-bold transition"
+                >
+                  <i data-lucide="square" class="w-3.5 h-3.5"></i>
+                  <span>Stop</span>
+                </button>
+                <button
+                  id="btnSendAudioDrive"
+                  type="button"
+                  onclick="sendAudioToDrive()"
+                  disabled
+                  class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#002B5C] hover:bg-orange-600 disabled:opacity-40 text-white text-xs font-bold transition"
+                >
+                  <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                  <span id="sendAudioLabel">Send Audio to Teacher</span>
+                </button>
+              </div>
+
+              <audio id="recPlayback" controls class="hidden w-full h-9"></audio>
+              <div id="recFeedback" class="hidden text-xs font-bold p-2.5 rounded-xl"></div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-sky-400/15">
+            <button type="button" onclick="stepCq(-1)" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">← Prev</button>
+            <div id="cqDots" class="flex flex-wrap gap-1"></div>
+            <button type="button" onclick="stepCq(1)" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 03: 12 ESSENTIAL RESTAURANT VOCABULARY CARDS ==================== -->
+    <section data-stage="2" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-orange-500/20 pb-3">
+        <div>
+          <span id="s3SubBadge" class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 03 · Vocabulary (A1–A2)</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">12 Key Restaurant &amp; Menu Words</h2>
+        </div>
+        <div class="inline-flex rounded-xl p-1 bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 self-start sm:self-auto">
+          <button id="btnRvSingle" type="button" onclick="setRvMode('single')" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-orange-600 text-white transition">1 by 1 Card</button>
+          <button id="btnRvGrid" type="button" onclick="setRvMode('grid')" class="px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition">All 12 Words</button>
+        </div>
+      </div>
+
+      <div id="rvSingleBox" class="max-w-4xl mx-auto w-full"></div>
+      <div id="rvGridBox" class="hidden grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+    </section>
+
+    <!-- ==================== 04: READING & SERVER ANNOUNCEMENTS ==================== -->
+    <section data-stage="3" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-orange-500/20 pb-3">
+        <div>
+          <span id="s4SubBadge" class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 04 · Reading &amp; Table Talk (A1–A2)</span>
+          <h2 id="readingStoryTitle" class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white"></h2>
+        </div>
+        <button type="button" onclick="speakReadingText()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-orange-600 hover:bg-orange-500 text-white text-xs font-bold self-start sm:self-auto transition">
+          <i data-lucide="volume-2" class="w-4 h-4"></i>
+          <span>Listen to Story</span>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div class="lg:col-span-7 space-y-5">
+          <article class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl overflow-hidden shadow-lg">
+            <img
+              src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&amp;fit=crop&amp;w=1050&amp;q=80"
+              alt="Fresh vegetarian pasta and salad on restaurant table"
+              class="h-44 w-full object-cover"
+            />
+            <div id="rsReadingBody" class="p-6 sm:p-7 space-y-3.5 text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed"></div>
+          </article>
+
+          <!-- Server Audio Lines -->
+          <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl p-5 sm:p-6 space-y-3 shadow-md">
+            <div class="flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-orange-700 dark:text-orange-300">
+              <i data-lucide="bell-ring" class="w-4 h-4"></i>
+              <span>Waiter / Waitress Audio (Click to Hear &amp; Decode)</span>
+            </div>
+            <div id="paListBox" class="space-y-2.5"></div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl p-6 space-y-4 shadow-lg">
+          <span class="text-xs font-extrabold uppercase tracking-wider text-orange-600 dark:text-orange-400">Comprehension Check (4 Questions)</span>
+          <div id="readingQuizBox" class="space-y-4"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 05: MULTILEVEL ORDERING & PHRASE LAB ==================== -->
+    <section data-stage="4" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-orange-500/20 pb-3">
+        <div>
+          <span id="s5SubBadge" class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 05 · Ordering Phrases (A1–A2)</span>
+          <h2 id="s5Heading" class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white"></h2>
+        </div>
+        <span id="s5Pill" class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-700 dark:text-orange-300 text-xs font-extrabold"></span>
+      </div>
+
+      <div id="phraseTipsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
+
+      <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl p-6 sm:p-8 space-y-4 shadow-lg">
+        <div class="flex items-center justify-between gap-2">
+          <h3 id="gramPracticeTitle" class="text-lg font-extrabold text-[#002B5C] dark:text-white"></h3>
+          <span id="gramScorePill" class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-700 dark:text-orange-300 text-xs font-extrabold">0 / 6</span>
+        </div>
+        <div id="gramDrillList" class="grid grid-cols-1 md:grid-cols-2 gap-3"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 06: INTERACTIVE RESTAURANT SIMULATOR ==================== -->
+    <section data-stage="5" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-orange-500/20 pb-3">
+        <div>
+          <span id="s6SubBadge" class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 06 · Interactive Simulator (A1–A2)</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Dinner Out Challenge: Seating to Paying (6 Steps)</h2>
+        </div>
+        <div class="flex items-center gap-2">
+          <span id="simScoreBadge" class="px-3.5 py-1.5 rounded-xl bg-[#002B5C] text-orange-300 text-xs font-extrabold">SCORE: 0 / 6</span>
+          <button type="button" onclick="resetSimGame()" class="px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">
+            Restart Meal
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl p-6 sm:p-9 max-w-4xl mx-auto w-full space-y-6 shadow-xl">
+        <div class="flex items-center justify-between gap-2">
+          <span id="simRoundBadge" class="px-3.5 py-1 rounded-full bg-orange-600 text-white text-xs font-extrabold">STEP 1 / 6</span>
+          <span id="simLevelTag" class="text-xs font-bold text-slate-500 dark:text-slate-400"></span>
+        </div>
+
+        <h3 id="simPrompt" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+        <div id="simOptions" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+        <div id="simFeedback" class="hidden p-4 rounded-2xl text-xs sm:text-sm font-bold"></div>
+
+        <div class="flex justify-end">
+          <button type="button" onclick="nextSimRound()" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-[#002B5C] to-orange-600 text-white text-xs sm:text-sm font-bold">
+            Next Step →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 07: 8 REAL RESTAURANT ROLE-PLAYS ==================== -->
+    <section data-stage="6" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-orange-500/20 pb-3">
+        <div>
+          <span id="s7SubBadge" class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 07 · Real Restaurant Role-Plays (A1–A2)</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">8 Table &amp; Ordering Situations</h2>
+        </div>
+        <div class="inline-flex rounded-xl p-1 bg-white dark:bg-[#0C1E33] border border-orange-500/25 self-start sm:self-auto">
+          <button type="button" onclick="setTravelLevel('A')" class="lvl-sync-a px-3 py-1 rounded-lg text-xs font-extrabold bg-orange-500 text-slate-950 transition">A1–A2 Simple</button>
+          <button type="button" onclick="setTravelLevel('B')" class="lvl-sync-b px-3 py-1 rounded-lg text-xs font-extrabold text-slate-600 dark:text-slate-300 transition">B1–B2 Polite/Detailed</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 shadow-xl max-w-4xl mx-auto w-full">
+        <div id="rsPhotoBox" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+
+        <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-5">
+          <div class="space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-2">
+                <span id="rsBadge" class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">SITUATION 1 / 8</span>
+                <span id="rsTag" class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-700 dark:text-orange-300 text-xs font-bold"></span>
+              </div>
+              <button type="button" onclick="speakRsPrompt()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-orange-600 hover:bg-orange-500 text-white text-xs font-bold transition">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                <span>Listen</span>
+              </button>
+            </div>
+
+            <div class="p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/25">
+              <div class="text-[11px] font-extrabold uppercase tracking-wider text-amber-700 dark:text-amber-300">Server / Host Prompt</div>
+              <p id="rsStaffLine" class="text-sm sm:text-base font-bold text-[#002B5C] dark:text-white mt-0.5"></p>
+            </div>
+
+            <h3 id="rsTask" class="text-lg sm:text-xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+
+            <div class="p-4 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/25 space-y-2">
+              <div class="flex items-center justify-between">
+                <span id="rsModelLabel" class="text-[11px] font-extrabold uppercase tracking-wider text-orange-700 dark:text-orange-300"></span>
+                <button type="button" onclick="speakRsModel()" class="text-xs font-bold text-orange-700 dark:text-orange-300 hover:underline inline-flex items-center gap-1">
+                  <i data-lucide="volume-2" class="w-3.5 h-3.5"></i> Hear Answer
+                </button>
+              </div>
+              <p id="rsModelAnswer" class="text-sm font-semibold text-slate-800 dark:text-slate-100"></p>
+              <p id="rsAltTip" class="text-xs text-slate-500 dark:text-slate-400"></p>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-sky-400/15">
+            <button type="button" onclick="stepRs(-1)" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">← Prev</button>
+            <div id="rsDots" class="flex flex-wrap gap-1"></div>
+            <button type="button" onclick="stepRs(1)" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 08: DINING DILEMMAS (ONE BY ONE) ==================== -->
+    <section data-stage="7" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-orange-500/20 pb-3">
+        <div>
+          <span id="s8SubBadge" class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 08 · Dining Dilemmas (A1–A2)</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">How Do You Like Dining Out? (4 Dilemmas)</h2>
+        </div>
+        <span class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-700 dark:text-orange-300 text-xs font-extrabold">1 Dilemma at a Time</span>
+      </div>
+
+      <div id="debateSingleBox" class="max-w-4xl mx-auto w-full"></div>
+
+      <div class="max-w-4xl mx-auto w-full p-5 rounded-3xl bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-md">
+        <div class="space-y-1">
+          <span class="text-xs font-extrabold uppercase tracking-wider text-orange-600 dark:text-orange-400">Opinion Starters for Current Level</span>
+          <p id="debateStarterBar" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300"></p>
+        </div>
+        <button type="button" onclick="goStage(1)" class="px-4 py-2.5 rounded-xl bg-[#002B5C] hover:bg-orange-600 text-white text-xs font-bold shrink-0 transition">
+          Practice Speaking →
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Navigation -->
+  <footer class="border-t border-orange-500/20 bg-white dark:bg-[#061322] py-4 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      <button id="btnPrev" type="button" onclick="goStage(currentStage - 1)" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-300 dark:border-sky-400/25 hover:bg-slate-100 dark:hover:bg-[#132C4A] disabled:opacity-30 text-xs font-bold transition">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Previous</span>
+      </button>
+
+      <span id="stageCounter" class="text-xs font-bold tracking-widest text-slate-500 dark:text-slate-400">
+        01 / 08
+      </span>
+
+      <button id="btnNext" type="button" onclick="goStage(currentStage + 1)" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#002B5C] hover:bg-orange-700 disabled:opacity-30 text-xs font-bold text-white transition">
+        <span>Next</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    const DRIVE_UPLOAD_URL = "https://script.google.com/macros/s/AKfycbwBcX7Z4aABKplkUkpYvM2wEnsBHhWCZzi7dFGDkeUarkXwv-RRI0JXAPDakjkrCrBc/exec";
+
+    const STAGES = [
+      "01 · DINING BRIEFING",
+      "02 · CONVERSATION",
+      "03 · 12 MENU WORDS",
+      "04 · READING & TABLE",
+      "05 · ORDERING LAB",
+      "06 · SIMULATOR",
+      "07 · ROLE-PLAYS",
+      "08 · DINING DILEMMAS"
+    ];
+
+    let currentStage = 0;
+    let travelLevel = 'A'; // 'A' = A1-A2 Survival, 'B' = B1-B2 Confident
+    const stageSections = document.querySelectorAll('.stage');
+
+    function syncLevelBadges() {
+      const tag = travelLevel === 'A' ? 'A1–A2' : 'B1–B2';
+      const heroBadge = document.getElementById('heroModeBadge');
+      if (heroBadge) {
+        heroBadge.innerHTML = `<i data-lucide="utensils" class="w-4 h-4"></i><span>${
+          travelLevel === 'A' ? 'LEVEL A1–A2 · CLEAR SURVIVAL ENGLISH' : 'LEVEL B1–B2 · NATURAL & POLITE FLUENCY'
+        }</span>`;
+      }
+      const heroDesc = document.getElementById('heroDesc');
+      if (heroDesc) {
+        heroDesc.innerHTML = travelLevel === 'A'
+          ? 'Simple, practical English for asking for a table, ordering food and drinks, mentioning allergies, and asking for the bill.'
+          : 'Natural, polite English for asking about ingredients, requesting menu adjustments, handling mix-ups, and splitting the bill smoothly.';
+      }
+      const s2 = document.getElementById('s2SubBadge');
+      if (s2) s2.textContent = `Stage 02 · Conversation Questions (${tag})`;
+      const s3 = document.getElementById('s3SubBadge');
+      if (s3) s3.textContent = `Stage 03 · Vocabulary (${tag})`;
+      const s4 = document.getElementById('s4SubBadge');
+      if (s4) s4.textContent = `Stage 04 · Reading & Table Talk (${tag})`;
+      const s5 = document.getElementById('s5SubBadge');
+      if (s5) s5.textContent = `Stage 05 · Ordering Phrases (${tag})`;
+      const s6 = document.getElementById('s6SubBadge');
+      if (s6) s6.textContent = `Stage 06 · Interactive Simulator (${tag})`;
+      const s7 = document.getElementById('s7SubBadge');
+      if (s7) s7.textContent = `Stage 07 · Real Restaurant Role-Plays (${tag})`;
+      const s8 = document.getElementById('s8SubBadge');
+      if (s8) s8.textContent = `Stage 08 · Dining Dilemmas (${tag})`;
+    }
+
+    function refreshAllStagesForLevel() {
+      syncLevelBadges();
+      renderCqCard();
+      renderRsVocab();
+      renderReadingSection();
+      renderPhraseLab();
+      renderSimRound();
+      renderRsCard();
+      renderDebates();
+      lucide.createIcons();
+    }
+
+    window.setTravelLevel = (lvl) => {
+      travelLevel = lvl;
+      const isA = lvl === 'A';
+      const activeCls = 'bg-orange-500 text-slate-950';
+      const idleHeader = 'text-white/80 hover:text-white';
+      const idleCard = 'text-slate-600 dark:text-slate-300';
+
+      const bA = document.getElementById('lvlBtnA');
+      const bB = document.getElementById('lvlBtnB');
+      if (bA && bB) {
+        bA.className = `px-2.5 py-1 rounded-lg text-[11px] font-extrabold transition ${isA ? activeCls : idleHeader}`;
+        bB.className = `px-2.5 py-1 rounded-lg text-[11px] font-extrabold transition ${!isA ? activeCls : idleHeader}`;
+      }
+
+      const hA = document.getElementById('heroLvlA');
+      const hB = document.getElementById('heroLvlB');
+      if (hA && hB) {
+        hA.className = `px-3 py-1 rounded-lg text-xs font-extrabold transition ${isA ? activeCls : idleCard}`;
+        hB.className = `px-3 py-1 rounded-lg text-xs font-extrabold transition ${!isA ? activeCls : idleCard}`;
+      }
+
+      document.querySelectorAll('.lvl-sync-a').forEach(el => {
+        el.className = `lvl-sync-a px-3 py-1 rounded-lg text-xs font-extrabold transition ${isA ? activeCls : idleCard}`;
+      });
+      document.querySelectorAll('.lvl-sync-b').forEach(el => {
+        el.className = `lvl-sync-b px-3 py-1 rounded-lg text-xs font-extrabold transition ${!isA ? activeCls : idleCard}`;
+      });
+
+      refreshAllStagesForLevel();
+    };
+
+    function goStage(idx) {
+      if (idx < 0 || idx >= stageSections.length) return;
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      currentStage = idx;
+      stageSections.forEach((s, i) => s.classList.toggle('hidden', i !== currentStage));
+      document.getElementById('stageTitleHeader').textContent = STAGES[currentStage];
+      document.getElementById('stageCounter').textContent = `${String(currentStage + 1).padStart(2, '0')} / ${String(stageSections.length).padStart(2, '0')}`;
+      document.getElementById('stageProgress').style.width = `${((currentStage + 1) / stageSections.length) * 100}%`;
+      document.getElementById('btnPrev').disabled = currentStage === 0;
+      document.getElementById('btnNext').disabled = currentStage === stageSections.length - 1;
+      renderStagePills();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      lucide.createIcons();
+    }
+
+    function renderStagePills() {
+      document.getElementById('stagePills').innerHTML = STAGES.map((_, i) => `
+        <button type="button" onclick="goStage(${i})" class="px-2.5 py-1 rounded-lg text-xs font-bold transition ${
+          i === currentStage ? 'bg-orange-500 text-slate-950' : 'text-white/75 hover:text-white hover:bg-white/10'
+        }">${String(i + 1).padStart(2, '0')}</button>
+      `).join('');
+    }
+
+    const themeBtn = document.getElementById('themeBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    if (localStorage.getItem('provoTravelTheme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      themeIcon.setAttribute('data-lucide', 'moon');
+    }
+    themeBtn.addEventListener('click', () => {
+      const dark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('provoTravelTheme', dark ? 'dark' : 'light');
+      themeIcon.setAttribute('data-lucide', dark ? 'sun' : 'moon');
+      lucide.createIcons();
+    });
+
+    function mountPhoto(container, url, altText, fallbackTitle) {
+      container.innerHTML = `<img src="${url}" alt="${altText}" class="w-full h-full object-cover" loading="lazy" />`;
+      const img = container.querySelector('img');
+      if (img) {
+        img.addEventListener('error', () => {
+          container.innerHTML = `
+            <div class="w-full h-full flex flex-col items-center justify-center bg-[#002B5C] text-white p-6 text-center">
+              <i data-lucide="utensils" class="w-8 h-8 text-orange-300 mb-2"></i>
+              <span class="text-xs font-extrabold uppercase tracking-widest">${fallbackTitle}</span>
+            </div>
+          `;
+          lucide.createIcons();
+        }, { once: true });
+      }
+    }
+
+    function pickVoice() {
+      if (!('speechSynthesis' in window)) return null;
+      const voices = window.speechSynthesis.getVoices() || [];
+      if (!voices.length) return null;
+      return (
+        voices.find(v => /sonia/i.test(v.name)) ||
+        voices.find(v => /en[-_]GB/i.test(v.lang)) ||
+        voices.find(v => /^en/i.test(v.lang)) ||
+        null
+      );
+    }
+
+    function speakText(text) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      const v = pickVoice();
+      if (v) {
+        u.voice = v;
+        u.lang = v.lang;
+      } else {
+        u.lang = 'en-GB';
+      }
+      u.rate = travelLevel === 'A' ? 0.89 : 0.96;
+      u.pitch = 1.02;
+      window.speechSynthesis.speak(u);
+    }
+
+    // ==================== 02: CONVERSATION QUESTIONS ====================
+    const CQ_CARDS = [
+      {
+        tag: "Choosing a Place",
+        qA: "How do you choose a restaurant when you visit a new city?",
+        followA: "Do you look at the menu outside or check your phone?",
+        startersA: ["• I look at the menu and prices outside.", "• I check maps and reviews on my phone."],
+        qB: "When you're travelling in an unfamiliar city, how do you usually pick where to eat?",
+        followB: "Do you rely on online ratings, local recommendations, or simply wander away from tourist squares?",
+        startersB: ["• I usually walk a few streets away from main landmarks and look for places busy with locals.", "• Checking recent reviews helps me avoid overpriced tourist traps."],
+        photo: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Ordering Habits",
+        qA: "Do you usually order a starter, a main dish, and a dessert?",
+        followA: "Or just one main dish?",
+        startersA: ["• Usually I order one main dish and water.", "• Sometimes I share a starter and dessert."],
+        qB: "When eating out on holiday, do you tend to order a full three-course meal or share a few dishes?",
+        followB: "Do you enjoy asking the server for daily specials?",
+        startersB: ["• Sharing a couple of starters and a dessert is great when you want to taste more things.", "• I always ask about daily specials because they're usually the freshest option."],
+        photo: "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Trying Local Food",
+        qA: "Do you like trying new local dishes when you travel?",
+        followA: "What is one dish you loved on a trip?",
+        startersA: ["• Yes, I love trying local food!", "• On my last trip I loved..."],
+        qB: "How adventurous are you with unfamiliar dishes and ingredients when you travel abroad?",
+        followB: "Have you ever ordered something off a menu without being completely sure what it was?",
+        startersB: ["• I'm pretty adventurous as long as it fits my diet—trying regional specialties is half the fun.", "• Once I ordered a local dish purely by guesswork and it turned out to be my favorite meal of the trip."],
+        photo: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Dietary Notes",
+        qA: "Are there any foods you don't eat? How do you ask in a restaurant?",
+        followA: "For example: vegetarian, no nuts, or no dairy.",
+        startersA: ["• I'm vegetarian, so I ask for dishes with no meat.", "• I ask: 'Does this have nuts or cheese?'"],
+        qB: "How easy or challenging is it to explain dietary preferences or food allergies when ordering in English?",
+        followB: "What phrases help you double-check hidden ingredients in sauces or soups?",
+        startersB: ["• I always ask whether soups or sauces are made with vegetable stock or meat.", "• Most restaurants abroad are really accommodating if you mention allergies clearly before ordering."],
+        photo: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Drinks & Water",
+        qA: "What do you usually drink with your meal: still water, sparkling water, or juice?",
+        followA: "Do you order coffee after lunch?",
+        startersA: ["• I usually ask for still water.", "• After lunch I like a coffee or tea."],
+        qB: "Do you notice differences in table water and coffee habits when dining in different countries?",
+        followB: "For instance, tap water vs. bottled water, or espresso vs. filter coffee?",
+        startersB: ["• In the UK or US, tap water is usually brought free to the table if you ask for it.", "• Ordering an espresso after dinner feels completely natural in southern Europe, though less common elsewhere."],
+        photo: "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Meal Times",
+        qA: "What time do you usually have lunch and dinner at home?",
+        followA: "Is it earlier or later when you travel?",
+        startersA: ["• At home I have dinner at 9:00 p.m.", "• In other countries, restaurants close earlier."],
+        qB: "Have you ever struggled to find an open kitchen because local mealtimes were much earlier than yours?",
+        followB: "How do you adjust your schedule when travelling to northern Europe or the UK?",
+        startersB: ["• Showing up at 9:30 p.m. in northern Europe often means the kitchen has already closed.", "• Having a bigger afternoon snack makes an earlier dinner around 7:00 p.m. much easier."],
+        photo: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Service & Mix-Ups",
+        qA: "What do you do if the waiter brings the wrong dish or forgets your drink?",
+        followA: "Is it easy for you to say something?",
+        startersA: ["• I say: 'Excuse me, I ordered the pasta, not the soup.'", "• Usually they change it quickly."],
+        qB: "If a dish arrives cold or isn't quite what you ordered, how do you bring it up with the server?",
+        followB: "What makes a restaurant's service feel genuinely welcoming?",
+        startersB: ["• I just catch the server's eye and mention it politely—mistakes happen in busy kitchens.", "• Attentive staff who don't rush you off the table make all the difference."],
+        photo: "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Paying & Tipping",
+        qA: "Do you pay by card or cash in restaurants? Is tipping common in your country?",
+        followA: "What about when you travel abroad?",
+        startersA: ["• I almost always pay by contactless card.", "• In my country tipping is optional."],
+        qB: "How do you navigate tipping customs and service charges when paying the bill abroad?",
+        followB: "Do you prefer splitting the bill equally or paying only for what each person ordered?",
+        startersB: ["• I always check whether a discretionary service charge has already been added to the bill.", "• Splitting the total evenly is quickest with close friends, though itemized works better in larger groups."],
+        photo: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      }
+    ];
+    let cqIdx = 0;
+
+    function renderCqCard() {
+      cqIdx = (cqIdx + CQ_CARDS.length) % CQ_CARDS.length;
+      const c = CQ_CARDS[cqIdx];
+      const qText = travelLevel === 'A' ? c.qA : c.qB;
+      const fText = travelLevel === 'A' ? c.followA : c.followB;
+      const sList = travelLevel === 'A' ? c.startersA : c.startersB;
+
+      document.getElementById('cqBadge').textContent = `QUESTION ${cqIdx + 1} / ${CQ_CARDS.length}`;
+      document.getElementById('cqTag').textContent = c.tag;
+      document.getElementById('cqQuestion').textContent = qText;
+      document.getElementById('cqFollow').textContent = fText;
+      document.getElementById('cqStarters').innerHTML = sList.map(s => `<div>${s}</div>`).join('');
+      document.getElementById('cqStarters').classList.add('hidden');
+      mountPhoto(document.getElementById('cqPhotoBox'), c.photo, c.tag, c.tag);
+      document.getElementById('cqDots').innerHTML = CQ_CARDS.map((_, i) => `
+        <button type="button" onclick="cqIdx=${i}; renderCqCard();" class="w-6 h-6 rounded-lg text-[11px] font-bold ${
+          i === cqIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#081526]'
+        }">${i + 1}</button>
+      `).join('');
+    }
+    window.stepCq = (d) => { cqIdx += d; renderCqCard(); };
+    window.speakCq = () => {
+      const c = CQ_CARDS[cqIdx];
+      speakText(`${travelLevel === 'A' ? c.qA : c.qB} ${travelLevel === 'A' ? c.followA : c.followB}`);
+    };
+
+    // Voice Recorder + Drive Upload
+    const rsNameInput = document.getElementById('rsStudentName');
+    rsNameInput.value = localStorage.getItem('provoStudentName') || '';
+    rsNameInput.addEventListener('input', () => localStorage.setItem('provoStudentName', rsNameInput.value.trim()));
+
+    let mediaRec = null;
+    let audioChunks = [];
+    let recordedBlob = null;
+    let recordedMime = 'audio/webm';
+    let recInterval = null;
+    let recSecs = 0;
+
+    function showRecFb(msg, ok = true) {
+      const box = document.getElementById('recFeedback');
+      box.classList.remove('hidden');
+      box.className = ok
+        ? 'text-xs font-bold p-2.5 rounded-xl bg-emerald-500/15 text-emerald-700 dark:text-emerald-300'
+        : 'text-xs font-bold p-2.5 rounded-xl bg-rose-500/15 text-rose-700 dark:text-rose-300';
+      box.textContent = msg;
+    }
+
+    window.startVoiceRec = async () => {
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        return showRecFb('Microphone recording is not supported in this browser.', false);
+      }
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        audioChunks = [];
+        recordedBlob = null;
+        mediaRec = new MediaRecorder(stream);
+        recordedMime = mediaRec.mimeType || 'audio/webm';
+
+        mediaRec.ondataavailable = (e) => {
+          if (e.data && e.data.size > 0) audioChunks.push(e.data);
+        };
+
+        mediaRec.onstop = () => {
+          stream.getTracks().forEach(t => t.stop());
+          recordedBlob = new Blob(audioChunks, { type: recordedMime });
+          const audioEl = document.getElementById('recPlayback');
+          audioEl.src = URL.createObjectURL(recordedBlob);
+          audioEl.classList.remove('hidden');
+          document.getElementById('btnSendAudioDrive').disabled = false;
+          showRecFb('✓ Recording ready! Listen to check or send it to your teacher.', true);
+        };
+
+        mediaRec.start();
+        recSecs = 0;
+        document.getElementById('recTimer').textContent = 'Recording: 0s';
+        document.getElementById('btnRecStart').disabled = true;
+        document.getElementById('btnRecStop').disabled = false;
+        document.getElementById('btnSendAudioDrive').disabled = true;
+        document.getElementById('recFeedback').classList.add('hidden');
+
+        recInterval = setInterval(() => {
+          recSecs++;
+          document.getElementById('recTimer').textContent = `Recording: ${recSecs}s`;
+        }, 1000);
+      } catch (err) {
+        showRecFb('Please allow microphone access to record your answer.', false);
+      }
+    };
+
+    window.stopVoiceRec = () => {
+      if (mediaRec && mediaRec.state !== 'inactive') {
+        mediaRec.stop();
+      }
+      clearInterval(recInterval);
+      document.getElementById('recTimer').textContent = `Recorded (${recSecs}s)`;
+      document.getElementById('btnRecStart').disabled = false;
+      document.getElementById('btnRecStop').disabled = true;
+    };
+
+    window.sendAudioToDrive = async () => {
+      const studentName = rsNameInput.value.trim();
+      if (!studentName) {
+        showRecFb('Enter your name first before sending.', false);
+        rsNameInput.focus();
+        return;
+      }
+      if (!recordedBlob) {
+        return showRecFb('Record your voice answer first.', false);
+      }
+
+      const sendBtn = document.getElementById('btnSendAudioDrive');
+      const sendLabel = document.getElementById('sendAudioLabel');
+      sendBtn.disabled = true;
+      sendLabel.textContent = 'Sending...';
+
+      try {
+        const reader = new FileReader();
+        reader.onloadend = async () => {
+          const base64Data = (reader.result || '').toString().split(',')[1] || '';
+          try {
+            const res = await fetch(DRIVE_UPLOAD_URL, {
+              method: 'POST',
+              headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+              body: JSON.stringify({
+                studentName,
+                lessonTitle: `Travel-Restaurants-Lvl${travelLevel}`,
+                questionNumber: cqIdx + 1,
+                mimeType: recordedMime,
+                audioBase64: base64Data
+              })
+            });
+            const data = await res.json();
+            if (data.status === 'ok') {
+              showRecFb(`✓ Voice note sent to teacher (${data.fileName})!`, true);
+            } else {
+              throw new Error(data.message || 'Upload error');
+            }
+          } catch (e) {
+            showRecFb('Could not send automatically. Check your internet connection and try again.', false);
+          } finally {
+            sendBtn.disabled = false;
+            sendLabel.textContent = 'Send Audio to Teacher';
+          }
+        };
+        reader.readAsDataURL(recordedBlob);
+      } catch (e) {
+        sendBtn.disabled = false;
+        sendLabel.textContent = 'Send Audio to Teacher';
+        showRecFb('Error preparing audio file.', false);
+      }
+    };
+
+    // ==================== 03: 12 RESTAURANT VOCABULARY CARDS ====================
+    const RS_VOCAB = [
+      { word: "table for two / reservation", pos: "nouns", meaningA: "Asking for a table for two people, or a table booked earlier.", exA: "Good evening, a table for two, please.", meaningB: "Requesting seating for your party or confirming an advance table booking.", exB: "Hi, we have a reservation for two at 8:30 under the name Hernández.", photo: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "starter / main course", pos: "nouns", meaningA: "The small first plate (starter) and the big plate (main course).", exA: "I'd like soup for a starter.", meaningB: "The opening dish before the principal dish of a meal (appetizer / entrée in US English).", exB: "We'll share a bruschetta as a starter and then have pasta for our main course.", photo: "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "daily specials", pos: "noun", meaningA: "Extra dishes the restaurant cooks today that are not on the regular menu.", exA: "What are today's specials?", meaningB: "Dishes prepared specially for the day, often written on a board or announced by the server.", exB: "Could you tell us what the daily specials are today?", photo: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "still / sparkling water", pos: "nouns", meaningA: "Normal water without bubbles (still) or water with bubbles (sparkling).", exA: "A bottle of still water, please.", meaningB: "Flat, non-carbonated water (still) versus carbonated mineral water (sparkling).", exB: "Could we get a large bottle of still water and two glasses, please?", photo: "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "side dish", pos: "noun", meaningA: "A small extra plate like salad, fries, or vegetables.", exA: "It comes with a side dish of salad.", meaningB: "A smaller accompanying portion served alongside a main dish.", exB: "Does the burger come with fries, or do we order side dishes separately?", photo: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "dietary requirements / allergies", pos: "nouns", meaningA: "Foods you cannot or do not eat (like vegetarian, gluten-free, or nut allergy).", exA: "Do you have vegetarian dishes?", meaningB: "Medical allergies or personal dietary choices such as vegetarian, vegan, or gluten-free diets.", exB: "Before we order, I should mention I have a nut allergy.", photo: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "cutlery / napkin", pos: "nouns", meaningA: "Knife, fork, and spoon (cutlery) and the paper or cloth to clean your mouth (napkin).", exA: "Can we have some extra napkins?", meaningB: "Knives, forks, and spoons (cutlery/silverware) and table serviettes (napkins).", exB: "Excuse me, we seem to be missing a set of cutlery.", photo: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "to go / takeaway", pos: "phrases", meaningA: "Food you buy to eat outside or at your hotel, not at the table.", exA: "Two coffees to go, please.", meaningB: "Food or drinks packaged to be eaten away from the restaurant (takeaway in UK, takeout/to go in US).", exB: "Could we have the rest of the pizza boxed up to take away, please?", photo: "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "the bill / the check", pos: "nouns", meaningA: "The paper showing how much money you pay for your meal.", exA: "Can we have the bill, please?", meaningB: "The itemized statement of charges at the end of a meal (bill in UK, check in US).", exB: "Whenever you're ready, could you bring us the bill, please?", photo: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "split the bill", pos: "phrase", meaningA: "Divide the total price between the people at the table.", exA: "Can we split the bill by two?", meaningB: "Divide the total amount equally or pay separately for each person's items.", exB: "Would it be possible to split the bill between the three of us?", photo: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "service charge / tip", pos: "nouns", meaningA: "Extra money for good service (sometimes already on the bill).", exA: "Is service included?", meaningB: "A percentage added automatically for service (service charge) or extra money left voluntarily (tip).", exB: "Let's check if a 10% service charge is already included before leaving a tip.", photo: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "fully booked", pos: "adjective", meaningA: "All tables are taken; there are no free tables right now.", exA: "Sorry, we are fully booked tonight.", meaningB: "Having no available tables left for a given time slot.", exB: "They're fully booked inside, though there's a table free on the terrace.", photo: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&amp;fit=crop&amp;w=800&amp;q=80" }
+    ];
+    let rvIdx = 0;
+    let rvMode = 'single';
+
+    window.setRvMode = (mode) => {
+      rvMode = mode;
+      document.getElementById('rvSingleBox').classList.toggle('hidden', mode !== 'single');
+      const g = document.getElementById('rvGridBox');
+      g.classList.toggle('hidden', mode !== 'grid');
+      g.classList.toggle('grid', mode === 'grid');
+      document.getElementById('btnRvSingle').className = mode === 'single'
+        ? 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-orange-600 text-white transition'
+        : 'px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition';
+      document.getElementById('btnRvGrid').className = mode === 'grid'
+        ? 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-orange-600 text-white transition'
+        : 'px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition';
+      renderRsVocab();
+    };
+
+    function renderRsVocab() {
+      rvIdx = (rvIdx + RS_VOCAB.length) % RS_VOCAB.length;
+      const w = RS_VOCAB[rvIdx];
+      const meaning = travelLevel === 'A' ? w.meaningA : w.meaningB;
+      const ex = travelLevel === 'A' ? w.exA : w.exB;
+      const safeEx = ex.replace(/'/g, "\\'");
+
+      document.getElementById('rvSingleBox').innerHTML = `
+        <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 shadow-xl">
+          <div id="rvPhotoBox" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+          <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">WORD ${rvIdx + 1} / ${RS_VOCAB.length}</span>
+                  <span class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-700 dark:text-orange-300 text-xs font-bold">${w.pos}</span>
+                </div>
+                <button type="button" onclick="speakText('${safeEx}')" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-orange-600 text-white text-xs font-bold">
+                  <i data-lucide="volume-2" class="w-4 h-4"></i> Listen
+                </button>
+              </div>
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">${w.word}</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300">${meaning}</p>
+              <div class="p-4 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/20">
+                <p class="text-sm italic font-semibold text-[#002B5C] dark:text-orange-200">“${ex}”</p>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-sky-400/15">
+              <button type="button" onclick="rvIdx--; renderRsVocab();" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">← Prev</button>
+              <div class="flex flex-wrap gap-1">
+                ${RS_VOCAB.map((_, i) => `<button type="button" onclick="rvIdx=${i}; renderRsVocab();" class="w-7 h-7 rounded-lg text-xs font-bold ${i === rvIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#081526]'}">${i + 1}</button>`).join('')}
+              </div>
+              <button type="button" onclick="rvIdx++; renderRsVocab();" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+            </div>
+          </div>
+        </div>
+      `;
+      mountPhoto(document.getElementById('rvPhotoBox'), w.photo, w.word, w.word.toUpperCase());
+
+      document.getElementById('rvGridBox').innerHTML = RS_VOCAB.map(item => {
+        const m = travelLevel === 'A' ? item.meaningA : item.meaningB;
+        const e = travelLevel === 'A' ? item.exA : item.exB;
+        return `
+          <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl overflow-hidden shadow-md flex flex-col">
+            <img src="${item.photo}" alt="${item.word}" class="h-32 w-full object-cover" loading="lazy" />
+            <div class="p-5 flex-1 flex flex-col justify-between gap-3">
+              <div class="space-y-1.5">
+                <div class="flex items-start justify-between gap-2">
+                  <h4 class="text-lg font-extrabold text-[#002B5C] dark:text-white">${item.word}</h4>
+                  <button type="button" onclick="speakText('${e.replace(/'/g, "\\'")}')" class="p-1.5 rounded-lg bg-[#FFF7ED] dark:bg-[#081526] text-orange-600 dark:text-orange-300"><i data-lucide="volume-2" class="w-4 h-4"></i></button>
+                </div>
+                <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-orange-500/15 text-orange-700 dark:text-orange-300">${item.pos}</span>
+                <p class="text-xs text-slate-600 dark:text-slate-300">${m}</p>
+              </div>
+              <p class="text-xs italic text-[#002B5C] dark:text-orange-200 border-t border-slate-100 dark:border-sky-400/15 pt-2">“${e}”</p>
+            </div>
+          </div>
+        `;
+      }).join('');
+      lucide.createIcons();
+    }
+
+    // ==================== 04: READING & SERVER AUDIO ====================
+    const READING_CONTENT = {
+      A: {
+        title: "Dinner in Edinburgh",
+        paragraphs: [
+          "<p><strong>Clara and Sam</strong> go to a small bistro in Edinburgh at 7:30 p.m. They do not have a reservation, so they ask for a table for two.</p>",
+          "<p>Clara is vegetarian. She asks the waiter: “Which dishes have no meat?” The waiter recommends mushroom risotto and tomato soup.</p>",
+          "<p>The food is delicious. At the end, they ask for the bill and pay by card.</p>"
+        ],
+        pa: [
+          { label: "Server 1 · Welcome", text: "Good evening! Table for two? Follow me, please." },
+          { label: "Server 2 · Specials", text: "Today's special is mushroom risotto with green salad." },
+          { label: "Server 3 · Bill", text: "Here is your bill. Service is not included." }
+        ],
+        qs: [
+          { q: "1. What time do Clara and Sam arrive?", opts: ["At 7:30 p.m.", "At 10:00 p.m."], ans: 0 },
+          { q: "2. Do they have a reservation?", opts: ["No, they ask for a table for two", "Yes, for four people"], ans: 0 },
+          { q: "3. What does the waiter recommend for Clara?", opts: ["Mushroom risotto and tomato soup", "Steak and fries"], ans: 0 },
+          { q: "4. How do they pay at the end?", opts: ["By card", "With coins only"], ans: 0 }
+        ]
+      },
+      B: {
+        title: "Ordering with Dietary Preferences in Edinburgh",
+        paragraphs: [
+          "<p><strong>Clara and Sam</strong> walk into a cozy neighborhood bistro in Edinburgh around 7:30 p.m. Although they didn't book in advance, the host finds them a quiet corner table for two by the window.</p>",
+          "<p>Since Clara follows a vegetarian diet and avoids animal rennet in cheese, she checks with the server before ordering. The waiter kindly goes through the menu, confirming that the roasted vegetable soup is completely plant-based and offering to prepare the wild mushroom risotto without Parmesan.</p>",
+          "<p>They share a starter, enjoy their main courses with a bottle of still water, and ask to split the bill equally at the end of the evening.</p>"
+        ],
+        pa: [
+          { label: "Server 1 · Seating", text: "Good evening! We're quite busy tonight, though I can seat you right away at a table for two by the window." },
+          { label: "Server 2 · Dietary Check", text: "The soup is completely vegan, and the chef can easily make the mushroom risotto without cheese if you prefer." },
+          { label: "Server 3 · Settling Up", text: "Of course, I can split the bill straight down the middle for you. Just tap your card whenever you're ready." }
+        ],
+        qs: [
+          { q: "1. Where did the host seat Clara and Sam?", opts: ["At a corner table for two by the window", "Outside on the pavement"], ans: 0 },
+          { q: "2. Why did Clara ask questions before ordering?", opts: ["She is vegetarian and avoids animal rennet", "She was in a rush to catch a train"], ans: 0 },
+          { q: "3. How did the kitchen adapt the risotto?", opts: ["They prepared it without Parmesan cheese", "They served it cold"], ans: 0 },
+          { q: "4. How did they pay at the end?", opts: ["They split the bill equally and paid by card", "They left without dessert or water"], ans: 0 }
+        ]
+      }
+    };
+
+    function renderReadingSection() {
+      const pack = READING_CONTENT[travelLevel];
+      document.getElementById('readingStoryTitle').textContent = pack.title;
+      document.getElementById('rsReadingBody').innerHTML = pack.paragraphs.join('');
+
+      document.getElementById('paListBox').innerHTML = pack.pa.map((pa, i) => `
+        <div class="p-3 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/20 flex items-center justify-between gap-3">
+          <div>
+            <div class="text-xs font-extrabold text-[#002B5C] dark:text-white">${pa.label}</div>
+            <div id="paTxt${i}" class="hidden text-xs text-slate-600 dark:text-slate-300 mt-1 italic">“${pa.text}”</div>
+          </div>
+          <div class="flex items-center gap-1.5 shrink-0">
+            <button type="button" onclick="speakText('${pa.text.replace(/'/g, "\\'")}')" class="px-3 py-1.5 rounded-xl bg-orange-600 text-white text-xs font-bold inline-flex items-center gap-1">
+              <i data-lucide="volume-2" class="w-3.5 h-3.5"></i> Play
+            </button>
+            <button type="button" onclick="document.getElementById('paTxt${i}').classList.toggle('hidden')" class="px-2.5 py-1.5 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">
+              Text
+            </button>
+          </div>
+        </div>
+      `).join('');
+
+      document.getElementById('readingQuizBox').innerHTML = pack.qs.map((item, qi) => `
+        <div class="p-3.5 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/20 space-y-2">
+          <p class="text-xs sm:text-sm font-bold text-[#002B5C] dark:text-white">${item.q}</p>
+          <div class="grid grid-cols-1 gap-1.5">
+            ${item.opts.map((op, oi) => `
+              <button type="button" onclick="checkReadQ(${qi}, ${oi})" class="text-left px-3 py-2 rounded-xl bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-sky-400/20 hover:border-orange-400 text-xs font-semibold transition">${op}</button>
+            `).join('')}
+          </div>
+          <div id="rqFb${qi}" class="hidden text-xs font-extrabold"></div>
+        </div>
+      `).join('');
+    }
+
+    window.checkReadQ = (qi, oi) => {
+      const fb = document.getElementById(`rqFb${qi}`);
+      fb.classList.remove('hidden');
+      if (oi === READING_CONTENT[travelLevel].qs[qi].ans) {
+        fb.className = 'text-xs font-extrabold text-emerald-600 dark:text-emerald-400';
+        fb.textContent = '✓ Correct!';
+      } else {
+        fb.className = 'text-xs font-extrabold text-rose-600 dark:text-rose-400';
+        fb.textContent = '✗ Check the story again.';
+      }
+    };
+
+    window.speakReadingText = () => speakText(document.getElementById('rsReadingBody').innerText);
+
+    // ==================== 05: MULTILEVEL ORDERING & PHRASE LAB ====================
+    const PHRASE_LAB = {
+      A: {
+        heading: "Simple & Polite Ordering Phrases (A1–A2)",
+        pill: "A1–A2 · Everyday Basics",
+        practiceTitle: "Quick Check: Choose the Clear Phrase",
+        cards: [
+          { badge: "1. ORDERING", color: "bg-[#002B5C]", line1: "“I'd like the pasta, please.”", line2: "“Can I have still water, please?”" },
+          { badge: "2. QUESTIONS", color: "bg-orange-700", line1: "“Does this have meat or nuts?”", line2: "“What do you recommend?”" },
+          { badge: "3. THE BILL", color: "bg-orange-600", line1: "“Can we have the bill, please?”", line2: "“Can we pay by card?”" }
+        ],
+        drills: [
+          { prompt: "1. Order politely: “________ the tomato soup, please.”", opts: ["I'd like", "I liking"], ans: 0 },
+          { prompt: "2. Ask for water: “________ I have still water, please?”", opts: ["Can", "Am"], ans: 0 },
+          { prompt: "3. Check ingredients: “________ this have nuts?”", opts: ["Does", "Do"], ans: 0 },
+          { prompt: "4. Ask for a table: “A table ________ two, please.”", opts: ["for", "at"], ans: 0 },
+          { prompt: "5. Ask for the bill: “Can we have ________, please?”", opts: ["the bill", "a menu"], ans: 0 },
+          { prompt: "6. Coffee to take away: “Two coffees ________, please.”", opts: ["to go", "to went"], ans: 0 }
+        ]
+      },
+      B: {
+        heading: "Natural & Nuanced Dining English (B1–B2)",
+        pill: "B1–B2 · Polite & Detailed",
+        practiceTitle: "Quick Check: Choose the Natural B1–B2 Phrase",
+        cards: [
+          { badge: "1. RECOMMENDATIONS", color: "bg-[#002B5C]", line1: "“What would you recommend from today's specials?”", line2: "“Could we start with something light to share?”" },
+          { badge: "2. CUSTOMIZING DISHES", color: "bg-orange-700", line1: "“Would it be possible to have the dressing on the side?”", line2: "“Could you check whether the sauce contains dairy?”" },
+          { badge: "3. BILL & TAKEAWAY", color: "bg-orange-600", line1: "“Would you mind splitting the bill equally?”", line2: "“Could we have the leftovers boxed up to take away?”" }
+        ],
+        drills: [
+          { prompt: "1. Ask for advice: “What ________ you recommend?”", opts: ["would", "are"], ans: 0 },
+          { prompt: "2. Dressing separate: “Could I have the sauce ________ the side?”", opts: ["on", "in"], ans: 0 },
+          { prompt: "3. Check ingredients: “Could you tell me if this ________ dairy?”", opts: ["contains", "contain"], ans: 0 },
+          { prompt: "4. Split payment: “Would you mind ________ the bill?”", opts: ["splitting", "to split"], ans: 0 },
+          { prompt: "5. Service check: “Is a service charge ________ included?”", opts: ["already", "yet"], ans: 0 },
+          { prompt: "6. Polite correction: “I'm afraid I ________ the risotto, not the fish.”", opts: ["ordered", "order"], ans: 0 }
+        ]
+      }
+    };
+    const gramSolved = {};
+
+    function renderPhraseLab() {
+      const p = PHRASE_LAB[travelLevel];
+      document.getElementById('s5Heading').textContent = p.heading;
+      document.getElementById('s5Pill').textContent = p.pill;
+      document.getElementById('gramPracticeTitle').textContent = p.practiceTitle;
+
+      document.getElementById('phraseTipsGrid').innerHTML = p.cards.map(c => `
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl p-5 space-y-2 shadow-sm">
+          <span class="px-2.5 py-1 rounded-lg ${c.color} text-white text-xs font-extrabold">${c.badge}</span>
+          <div class="p-3 rounded-xl bg-[#FFF7ED] dark:bg-[#081526] text-xs font-semibold space-y-1">
+            <div>• ${c.line1}</div>
+            <div>• ${c.line2}</div>
+          </div>
+        </div>
+      `).join('');
+
+      document.getElementById('gramDrillList').innerHTML = p.drills.map((d, di) => `
+        <div class="p-4 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/20 space-y-2.5">
+          <p class="text-xs sm:text-sm font-bold text-[#002B5C] dark:text-white">${d.prompt}</p>
+          <div class="flex flex-wrap gap-2">
+            ${d.opts.map((op, oi) => `
+              <button type="button" onclick="pickGram(${di}, ${oi})" class="px-3.5 py-2 rounded-xl bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-sky-400/25 hover:border-orange-400 text-xs font-bold transition">${op}</button>
+            `).join('')}
+          </div>
+          <div id="gdFb${di}" class="hidden text-xs font-extrabold"></div>
+        </div>
+      `).join('');
+    }
+
+    window.pickGram = (di, oi) => {
+      const p = PHRASE_LAB[travelLevel];
+      const fb = document.getElementById(`gdFb${di}`);
+      fb.classList.remove('hidden');
+      if (oi === p.drills[di].ans) {
+        gramSolved[`${travelLevel}-${di}`] = true;
+        fb.className = 'text-xs font-extrabold text-emerald-600 dark:text-emerald-400';
+        fb.textContent = '✓ Great choice!';
+      } else {
+        fb.className = 'text-xs font-extrabold text-rose-600 dark:text-rose-400';
+        fb.textContent = '✗ Try the other option.';
+      }
+      const totalForLvl = Object.keys(gramSolved).filter(k => k.startsWith(`${travelLevel}-`)).length;
+      document.getElementById('gramScorePill').textContent = `${totalForLvl} / ${p.drills.length}`;
+    };
+
+    // ==================== 06: INTERACTIVE RESTAURANT SIMULATOR ====================
+    const SIM_ROUNDS = [
+      {
+        promptA: "Step 1: You arrive at the restaurant door with one friend. What do you say?",
+        optsA: ["“A table for two, please.”", "“A ticket to London, please.”"],
+        whyA: "Ask for a table for two.",
+        promptB: "Step 1 (Arrival): You and a friend walk into a bistro without a booking. How do you ask for a seat?",
+        optsB: ["“Good evening! Do you have a table for two available?”", "“Good evening! Could we check in our suitcases?”"],
+        whyB: "Asking if a table is available is natural and polite.",
+        ans: 0
+      },
+      {
+        promptA: "Step 2: You want water without bubbles. Which one do you ask for?",
+        optsA: ["Still water", "Sparkling water"],
+        whyA: "Still water has no bubbles.",
+        promptB: "Step 2 (Drinks): The server asks 'Still or sparkling?' and you prefer plain water without gas. Which do you choose?",
+        optsB: ["Still water, please", "Sparkling water, please"],
+        whyB: "Still = flat water; sparkling = carbonated water.",
+        ans: 0
+      },
+      {
+        promptA: "Step 3: You want to know what the chef cooked specially today. What do you ask?",
+        optsA: ["“What are today's specials?”", "“Where is the elevator?”"],
+        whyA: "Daily specials are today's special dishes.",
+        promptB: "Step 3 (Menu): You see a chalkboard by the bar and want to hear about today's fresh dishes. What do you ask?",
+        optsB: ["“Could you tell us what the daily specials are today?”", "“Could you tell us when check-out is?”"],
+        whyB: "Asking about daily specials often leads to the best seasonal dishes.",
+        ans: 0
+      },
+      {
+        promptA: "Step 4: You want the salad sauce in a small bowl next to the salad. What do you say?",
+        optsA: ["“With the dressing on the side, please.”", "“With the bill on the floor, please.”"],
+        whyA: "'On the side' means served separately.",
+        promptB: "Step 4 (Dietary Note): You'd like the salad dressing served separately so you can add it yourself. How do you ask?",
+        optsB: ["“Would it be possible to have the dressing on the side?”", "“Would it be possible to have a late check-out?”"],
+        whyB: "'On the side' is the standard restaurant phrase for separate sauces or dressings.",
+        ans: 0
+      },
+      {
+        promptA: "Step 5: You cannot finish your pizza and want to take it to your hotel. What do you ask?",
+        optsA: ["“Can I have this to go / in a box, please?”", "“Can I have a window seat, please?”"],
+        whyA: "Restaurants gladly pack leftovers to take away.",
+        promptB: "Step 5 (Leftovers): There's half a pizza left and you don't want to waste it. What do you ask the waiter?",
+        optsB: ["“Could we have the rest boxed up to take away, please?”", "“Could we leave this in luggage storage?”"],
+        whyB: "Asking to have food 'boxed up to take away' is polite and clear.",
+        ans: 0
+      },
+      {
+        promptA: "Step 6: You and your friend want to pay half each. What do you ask?",
+        optsA: ["“Can we split the bill, please?”", "“Can we open the window, please?”"],
+        whyA: "'Split the bill' means divide the total.",
+        promptB: "Step 6 (Paying): You and your friend are paying separately and want to divide the total evenly. What do you ask?",
+        optsB: ["“Would you mind splitting the bill down the middle?”", "“Would you mind resetting our key card?”"],
+        whyB: "'Split the bill down the middle' means 50/50.",
+        ans: 0
+      }
+    ];
+    let simIdx = 0;
+    let simScore = 0;
+    let simDone = false;
+
+    function renderSimRound() {
+      const idx = simIdx % SIM_ROUNDS.length;
+      const r = SIM_ROUNDS[idx];
+      simDone = false;
+      const prompt = travelLevel === 'A' ? r.promptA : r.promptB;
+      const opts = travelLevel === 'A' ? r.optsA : r.optsB;
+
+      document.getElementById('simRoundBadge').textContent = `STEP ${idx + 1} / ${SIM_ROUNDS.length}`;
+      document.getElementById('simLevelTag').textContent = travelLevel === 'A' ? 'A1–A2 Quick Decisions' : 'B1–B2 Dining Scenarios';
+      document.getElementById('simPrompt').textContent = prompt;
+      document.getElementById('simFeedback').classList.add('hidden');
+      document.getElementById('simOptions').innerHTML = opts.map((op, i) => `
+        <button type="button" onclick="pickSimOpt(${i})" class="w-full text-left p-4 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border-[1.5px] border-orange-500/20 hover:border-orange-400 text-sm font-extrabold transition">${op}</button>
+      `).join('');
+    }
+
+    window.pickSimOpt = (picked) => {
+      if (simDone) return;
+      simDone = true;
+      const r = SIM_ROUNDS[simIdx % SIM_ROUNDS.length];
+      const why = travelLevel === 'A' ? r.whyA : r.whyB;
+      const fb = document.getElementById('simFeedback');
+      fb.classList.remove('hidden');
+      if (picked === r.ans) {
+        simScore++;
+        fb.className = 'p-4 rounded-2xl text-xs sm:text-sm font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Great dining move! (+1 pt) — ${why}`;
+      } else {
+        fb.className = 'p-4 rounded-2xl text-xs sm:text-sm font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `✗ Careful! — ${why}`;
+      }
+      document.getElementById('simScoreBadge').textContent = `SCORE: ${simScore} / ${SIM_ROUNDS.length}`;
+    };
+    window.nextSimRound = () => { simIdx++; renderSimRound(); };
+    window.resetSimGame = () => {
+      simIdx = 0;
+      simScore = 0;
+      document.getElementById('simScoreBadge').textContent = `SCORE: 0 / ${SIM_ROUNDS.length}`;
+      renderSimRound();
+    };
+
+    // ==================== 07: 8 MULTILEVEL RESTAURANT ROLE-PLAYS ====================
+    const RS_CARDS = [
+      {
+        tag: "Getting a Table",
+        staff: "“Good evening! Welcome to The Harbour Kitchen. Do you have a reservation?”",
+        task: "Say you don't have a reservation and ask for a table for two, preferably near the window or outside.",
+        modelA: "“Good evening! No, we don't have a reservation. Can we have a table for two, please?”",
+        modelB: "“Good evening! We haven't booked, I'm afraid—do you happen to have a table for two free, ideally near the window or on the terrace?”",
+        tip: "Key words: table for two, reservation, terrace / by the window.",
+        photo: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Dietary & Allergies",
+        staff: "“Are you ready to order, or do you have any questions about the menu?”",
+        task: "Explain that you are vegetarian and ask if the soup or pasta contains any meat or fish.",
+        modelA: "“Excuse me, I'm vegetarian. Does the soup have meat or fish?”",
+        modelB: "“Before we order, I'm vegetarian—could you double-check whether the vegetable soup is made with vegetable stock and has no meat or fish?”",
+        tip: "Key words: vegetarian, ingredients, contains / made with.",
+        photo: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Asking for Recommendations",
+        staff: "“Everything on the menu is fresh today. What kind of food do you feel like?”",
+        task: "Ask what the waiter recommends and order one starter to share plus two main dishes.",
+        modelA: "“What do you recommend? We'd like the salad to share, and two risottos, please.”",
+        modelB: "“What would you recommend from today's menu? We'd love to share a starter first and then have two main courses.”",
+        tip: "Key words: recommend, to share, starter, main course.",
+        photo: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Drinks & Side Dishes",
+        staff: "“And what would you like to drink, and would you like any side dishes?”",
+        task: "Order a large bottle of still water, one lemonade, and a green salad as a side.",
+        modelA: "“A big bottle of still water, one lemonade, and a green salad, please.”",
+        modelB: "“Could we have a large bottle of still water, one lemonade, and a side of green salad to go with our mains, please?”",
+        tip: "Key words: still water, side dish / side of..., to go with.",
+        photo: "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Wrong Order",
+        staff: "“Here is your grilled fish and fries. Enjoy your meal!”",
+        task: "Politely tell the server that you ordered the mushroom risotto, not the fish.",
+        modelA: "“Excuse me, I ordered the mushroom risotto, not the fish.”",
+        modelB: "“Excuse me, I'm terribly sorry to bother you, but I actually ordered the mushroom risotto rather than the fish.”",
+        tip: "Key words: excuse me, actually, ordered.",
+        photo: "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Extra Cutlery & Napkins",
+        staff: "“Is everything okay with your food so far?”",
+        task: "Say the food is great and ask for an extra fork, some napkins, and a little olive oil.",
+        modelA: "“Yes, it's delicious! Can we have a fork, some napkins, and olive oil, please?”",
+        modelB: "“Everything is delicious, thank you! When you get a moment, could you bring us an extra fork, a few napkins, and some olive oil?”",
+        tip: "Key words: extra fork, napkins, when you get a moment.",
+        photo: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Taking Leftovers Home",
+        staff: "“Would you like to see the dessert menu, or are you all finished?”",
+        task: "Say you are full and ask to take the rest of your food in a box.",
+        modelA: "“We are full, thank you! Can we take this food in a box, please?”",
+        modelB: "“We're completely full, thanks! Could we have the leftovers boxed up to take away, please?”",
+        tip: "Key words: full, leftovers, boxed up / to take away.",
+        photo: "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Paying & Splitting the Bill",
+        staff: "“Here is the bill. Will you be paying together or separately?”",
+        task: "Ask if you can split the bill by two and pay by contactless card.",
+        modelA: "“Can we split the bill by two and pay by card, please?”",
+        modelB: "“Would it be possible to split the bill equally between the two of us? We'll both pay by contactless card.”",
+        tip: "Key words: split the bill, equally, contactless card.",
+        photo: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      }
+    ];
+    let rsIdx = 0;
+
+    function renderRsCard() {
+      rsIdx = (rsIdx + RS_CARDS.length) % RS_CARDS.length;
+      const c = RS_CARDS[rsIdx];
+      document.getElementById('rsBadge').textContent = `SITUATION ${rsIdx + 1} / ${RS_CARDS.length}`;
+      document.getElementById('rsTag').textContent = c.tag;
+      document.getElementById('rsStaffLine').textContent = c.staff;
+      document.getElementById('rsTask').textContent = `Your Turn: ${c.task}`;
+      document.getElementById('rsModelLabel').textContent = travelLevel === 'A'
+        ? 'A1–A2 Survival Response'
+        : 'B1–B2 Confident & Polite Response';
+      document.getElementById('rsModelAnswer').textContent = travelLevel === 'A' ? c.modelA : c.modelB;
+      document.getElementById('rsAltTip').textContent = `💡 ${c.tip}`;
+      mountPhoto(document.getElementById('rsPhotoBox'), c.photo, c.tag, c.tag);
+      document.getElementById('rsDots').innerHTML = RS_CARDS.map((_, i) => `
+        <button type="button" onclick="rsIdx=${i}; renderRsCard();" class="w-6 h-6 rounded-lg text-[11px] font-bold ${
+          i === rsIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#081526]'
+        }">${i + 1}</button>
+      `).join('');
+    }
+    window.stepRs = (d) => { rsIdx += d; renderRsCard(); };
+    window.speakRsPrompt = () => speakText(RS_CARDS[rsIdx].staff);
+    window.speakRsModel = () => speakText(travelLevel === 'A' ? RS_CARDS[rsIdx].modelA : RS_CARDS[rsIdx].modelB);
+
+    // ==================== 08: DINING DILEMMAS (ONE BY ONE) ====================
+    const DEBATES = [
+      {
+        topic: "Dilemma 1 · Booking vs. Walking In",
+        questionA: "Book a table or look for a restaurant while walking?",
+        aA: "Option A: Book a table. No waiting.",
+        bA: "Option B: Walk and choose. More fun.",
+        hintA: "Say which one you like.",
+        questionB: "Reserving popular restaurants ahead or choosing spontaneously?",
+        aB: "Option A: Booking ahead guarantees a spot at top-rated places without queuing hungry.",
+        bB: "Option B: Walking around and picking whatever looks lively keeps your evening flexible.",
+        hintB: "Think about busy weekend nights vs. relaxed weekdays.",
+        photo: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&amp;fit=crop&amp;w=950&amp;q=80",
+        picked: null
+      },
+      {
+        topic: "Dilemma 2 · Food Choices",
+        questionA: "Try new local food or eat food you know?",
+        aA: "Option A: Try new local food. Interesting!",
+        bA: "Option B: Eat food I know. Safe and good.",
+        hintA: "Are you adventurous with food?",
+        questionB: "Ordering unfamiliar regional dishes or sticking to safe favorites?",
+        aB: "Option A: Trying local dishes is one of the best ways to experience another culture.",
+        bB: "Option B: Sticking to familiar ingredients avoids unpleasant surprises after a long day.",
+        hintB: "Compare curiosity with comfort.",
+        photo: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&amp;fit=crop&amp;w=950&amp;q=80",
+        picked: null
+      },
+      {
+        topic: "Dilemma 3 · Street Food vs. Sit-Down",
+        questionA: "Fast street food or a slow restaurant dinner?",
+        aA: "Option A: Street food. Quick and cheap.",
+        bA: "Option B: Sit-down restaurant. Relaxing.",
+        hintA: "Fast or slow meal?",
+        questionB: "Quick local street food or a long sit-down restaurant meal?",
+        aB: "Option A: Street food markets let you sample several specialties quickly and affordably.",
+        bB: "Option B: Sitting down at a restaurant gives you time to rest your feet and enjoy the atmosphere.",
+        hintB: "Does your choice differ between lunch and dinner?",
+        photo: "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&amp;fit=crop&amp;w=950&amp;q=80",
+        picked: null
+      },
+      {
+        topic: "Dilemma 4 · Splitting the Bill",
+        questionA: "Split the bill equally or pay only for your food?",
+        aA: "Option A: Split equally. Fast and easy.",
+        bA: "Option B: Pay only for my food. Fair.",
+        hintA: "Which is better with friends?",
+        questionB: "Splitting the bill evenly or paying strictly for what each person ordered?",
+        aB: "Option A: Dividing the total equally saves awkward math when everyone ordered roughly the same.",
+        bB: "Option B: Paying individually is fairer when some people ordered drinks or starters and others didn't.",
+        hintB: "Weigh simplicity against fairness.",
+        photo: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&amp;fit=crop&amp;w=950&amp;q=80",
+        picked: null
+      }
+    ];
+    let debIdx = 0;
+
+    function renderDebates() {
+      debIdx = (debIdx + DEBATES.length) % DEBATES.length;
+      const d = DEBATES[debIdx];
+      const q = travelLevel === 'A' ? d.questionA : d.questionB;
+      const optA = travelLevel === 'A' ? d.aA : d.aB;
+      const optB = travelLevel === 'A' ? d.bA : d.bB;
+      const hint = travelLevel === 'A' ? d.hintA : d.hintB;
+      const safeSpeech = `${q} ${optA} Or ${optB}`.replace(/'/g, "\\'");
+
+      document.getElementById('debateStarterBar').innerHTML = travelLevel === 'A'
+        ? '<strong>A1–A2:</strong> “I like Option A. It is easy.” / “I prefer Option B.”'
+        : '<strong>B1–B2:</strong> “Personally, I\'d go for Option A because...” / “On the other hand, Option B makes sense when...”';
+
+      document.getElementById('debateSingleBox').innerHTML = `
+        <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 shadow-xl">
+          <div id="debPhotoBox" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+          <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-5">
+            <div class="space-y-4">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">DILEMMA ${debIdx + 1} / ${DEBATES.length}</span>
+                  <span class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-700 dark:text-orange-300 text-xs font-bold">${d.topic}</span>
+                </div>
+                <button type="button" onclick="speakText('${safeSpeech}')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-orange-600 hover:bg-orange-500 text-white text-xs font-bold transition">
+                  <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                  <span>Listen</span>
+                </button>
+              </div>
+
+              <h3 class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug">${q}</h3>
+
+              <div class="space-y-2.5">
+                <button
+                  type="button"
+                  onclick="selectDebateSide(${debIdx}, 'A')"
+                  class="w-full text-left p-4 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border-[1.5px] ${d.picked === 'A' ? 'border-orange-500 ring-2 ring-orange-500/40' : 'border-orange-500/20 hover:border-orange-400'} text-xs sm:text-sm font-bold transition"
+                >${optA}</button>
+
+                <button
+                  type="button"
+                  onclick="selectDebateSide(${debIdx}, 'B')"
+                  class="w-full text-left p-4 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border-[1.5px] ${d.picked === 'B' ? 'border-orange-500 ring-2 ring-orange-500/40' : 'border-orange-500/20 hover:border-orange-400'} text-xs sm:text-sm font-bold transition"
+                >${optB}</button>
+              </div>
+
+              <p class="text-xs text-slate-500 dark:text-slate-400">💡 ${hint}</p>
+            </div>
+
+            <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-sky-400/15">
+              <button type="button" onclick="debIdx--; renderDebates();" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">← Prev</button>
+              <div class="flex gap-1.5">
+                ${DEBATES.map((_, i) => `<button type="button" onclick="debIdx=${i}; renderDebates();" class="w-7 h-7 rounded-lg text-xs font-bold ${i === debIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#081526]'}">${i + 1}</button>`).join('')}
+              </div>
+              <button type="button" onclick="debIdx++; renderDebates();" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+            </div>
+          </div>
+        </div>
+      `;
+      mountPhoto(document.getElementById('debPhotoBox'), d.photo, d.topic, d.topic.toUpperCase());
+      lucide.createIcons();
+    }
+
+    window.selectDebateSide = (i, side) => {
+      DEBATES[i].picked = side;
+      renderDebates();
+    };
+
+    // Init
+    goStage(0);
+    setTravelLevel('A');
+    setRvMode('single');
+    lucide.createIcons();
+  </script>
+</body>
+</html>

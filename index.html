@@ -453,6 +453,7 @@
     .card[data-category="ote"]:hover { border-color: #0EA5E9; }
     .card[data-category="teens"]:hover { border-color: #10B981; }
     .card[data-category="business"]:hover { border-color: #6366F1; }
+    .card[data-category="travel"]:hover { border-color: #F97316; }
 
     .card-top {
       display: flex;
@@ -483,6 +484,12 @@
     .tag.teens { background: #D1FAE5; color: #065F46; }
     .tag.business { background: #E0E7FF; color: #3730A3; }
     .tag.b1-b2 { background: #FFE4E6; color: #BE123C; }
+    .tag.travel { background: #FFEDD5; color: #C2410C; }
+
+    html.dark .tag.travel {
+      background: rgba(249, 115, 22, 0.18);
+      color: #FDBA74;
+    }
 
     .status {
       font-size: 0.78rem;
@@ -644,11 +651,25 @@
         <button class="filter-btn" data-filter="ote">OTE Prep (B1 / B2)</button>
         <button class="filter-btn" data-filter="teens">Teens</button>
         <button class="filter-btn" data-filter="business">Business English</button>
+        <button class="filter-btn" data-filter="travel">Travel English</button>
       </div>
-      <span id="visibleCountLabel" class="counter-pill">19 lessons</span>
+      <span id="visibleCountLabel" class="counter-pill">21 lessons</span>
     </div>
 
     <div class="grid" id="lessonGrid">
+
+      <!-- TRAVEL: AIRPORT & FLIGHTS -->
+      <article class="card" data-category="travel">
+        <div>
+          <div class="card-top">
+            <span class="tag travel">Travel English · Multilevel</span>
+            <span class="status">● Available</span>
+          </div>
+          <h2>Airport &amp; Flights: Smooth Takeoff</h2>
+          <p>Practical, multilevel English for check-in, security, boarding gates, flight delays, and baggage claims—with instant switching between A1–A2 survival lines and B1–B2 polite expressions.</p>
+        </div>
+        <a href="travel-airport-flights.html" class="card-btn">Start Lesson →</a>
+      </article>
 
       <!-- B1/B2 ELECTION DAY -->
       <article class="card" data-category="b1-b2">
@@ -661,6 +682,19 @@
           <p>A practical, neutral look at how an election day runs from morning setup to the evening count, with civic vocabulary, process passive, and logistics dilemmas.</p>
         </div>
         <a href="b1-b2-election-day.html" class="card-btn">Start Lesson →</a>
+      </article>
+
+      <!-- A1-A2 BLACK FRIDAY -->
+      <article class="card" data-category="a1-a2">
+        <div>
+          <div class="card-top">
+            <span class="tag">A1–A2 · Conversation &amp; Grammar</span>
+            <span class="status">● Available</span>
+          </div>
+          <h2>Black Friday &amp; Big Sales</h2>
+          <p>Simple, friendly English for talking about November sales, discounts, comparing prices with comparatives, shopping online or in stores, and smart everyday buys.</p>
+        </div>
+        <a href="a1-a2-black-friday.html" class="card-btn">Start Lesson →</a>
       </article>
 
       <!-- A1-A2 FEELINGS & MOODS -->
@@ -793,19 +827,6 @@
         <a href="present-simple.html" class="card-btn">Start Lesson →</a>
       </article>
 
-      <!-- A1-A2 BLACK FRIDAY -->
-      <article class="card" data-category="a1-a2">
-        <div>
-          <div class="card-top">
-            <span class="tag">A1–A2 · Conversation &amp; Grammar</span>
-            <span class="status">● Available</span>
-          </div>
-          <h2>Black Friday &amp; Big Sales</h2>
-          <p>Simple, friendly English for talking about November sales, discounts, comparing prices with comparatives, shopping online or in stores, and smart everyday buys.</p>
-        </div>
-        <a href="a1-a2-black-friday.html" class="card-btn">Start Lesson →</a>
-      </article>
-      
       <!-- POSSESSIVE ADJECTIVES -->
       <article class="card" data-category="a1-a2">
         <div>
@@ -1076,9 +1097,9 @@
     (function () {
       const VISITS_KEY = 'provoLessonVisits';
       const DEFAULTS = [
+        'travel-airport-flights.html',
         'b1-b2-election-day.html',
-        'a1-a2-feelings-moods.html',
-        'teens-social-media.html',
+        'a1-a2-black-friday.html',
         'ote-writing-essay.html'
       ];
 

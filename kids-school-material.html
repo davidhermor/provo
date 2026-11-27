@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KIDS · SCHOOL MATERIAL &amp; THIS / THAT | PROVO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <style>
+    @keyframes stageIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .stage-anim { animation: stageIn 0.24s ease-out forwards; }
+  </style>
+</head>
+<body class="bg-[#FFFBEB] text-slate-900 dark:bg-[#061322] dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
+
+  <!-- Sticky Top Bar -->
+  <header class="sticky top-0 z-40 bg-[#002B5C] text-white border-b border-amber-400/35 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2.5">
+        <a href="index.html" class="flex items-center shrink-0" title="PROVO">
+          <img
+            src="https://i.postimg.cc/vBt4qH44/download.png"
+            alt="PROVO"
+            class="h-8 w-auto object-contain block"
+            onerror="this.style.display='none'; document.getElementById('provoFallback').classList.remove('hidden');"
+          />
+          <span id="provoFallback" class="hidden font-extrabold tracking-widest text-lg text-white">PROVO</span>
+        </a>
+        <span class="px-2.5 py-0.5 rounded-full bg-amber-500/25 border border-amber-300/45 text-amber-100 text-[11px] font-bold tracking-wider">
+          KIDS · SCHOOL &amp; PHONICS
+        </span>
+        <span id="stageTitleHeader" class="hidden xl:inline-block text-xs font-bold tracking-wider text-amber-200">
+          01 · WARM-UP &amp; SONG
+        </span>
+      </div>
+
+      <div id="stagePills" class="flex items-center gap-1 overflow-x-auto py-1"></div>
+
+      <div class="flex items-center gap-2 shrink-0">
+        <button
+          id="themeBtn"
+          type="button"
+          class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition"
+          title="Toggle Theme"
+        >
+          <i id="themeIcon" data-lucide="sun" class="w-4 h-4"></i>
+        </button>
+        <a
+          href="index.html"
+          class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs font-bold bg-white/10 hover:bg-white/20 text-white transition"
+        >
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          <span class="hidden sm:inline">PORTAL</span>
+        </a>
+      </div>
+    </div>
+    <div class="w-full h-1.5 bg-black/25">
+      <div id="stageProgress" class="h-full bg-amber-400 transition-all duration-300" style="width: 14.28%"></div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl w-full mx-auto px-4 sm:px-6 py-7 sm:py-10 flex-1 flex flex-col justify-center">
+
+    <!-- ==================== 01: WARM-UP & SONG VIDEO ==================== -->
+    <section data-stage="0" class="stage stage-anim">
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-amber-500/30 shadow-xl">
+        <div class="lg:col-span-6 p-4 sm:p-6 bg-[#091726] flex flex-col justify-center">
+          <div class="aspect-video w-full rounded-2xl overflow-hidden border border-amber-400/25 shadow-lg">
+            <iframe
+              class="w-full h-full"
+              src="https://www.youtube.com/embed/UKNiCMrd3nU"
+              title="What's This? What's That? | Super Simple Songs"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <p class="text-xs text-amber-200/90 font-semibold mt-3 text-center">
+            Sing along and point: <strong>THIS</strong> (close) vs. <strong>THAT</strong> (far away)!
+          </p>
+        </div>
+
+        <div class="lg:col-span-6 p-7 sm:p-9 flex flex-col justify-center space-y-5">
+          <span class="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-amber-500/15 border border-amber-400/40 text-amber-700 dark:text-amber-300 text-xs font-bold tracking-wider">
+            <i data-lucide="backpack" class="w-4 h-4"></i>
+            <span>KIDS · SPEAKING, THIS/THAT &amp; A–D SOUNDS</span>
+          </span>
+
+          <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight text-[#002B5C] dark:text-white">
+            School Material &amp; <span class="text-amber-500 dark:text-amber-400">What's This / That?</span>
+          </h1>
+
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            Learn everyday school things, say <strong>“This is a...”</strong> and <strong>“That is a...”</strong>, play games, and practice the sounds of letters <strong>A, B, C, and D</strong>.
+          </p>
+
+          <div class="p-4 rounded-2xl bg-amber-50 dark:bg-[#081526] border border-amber-500/25 space-y-1.5">
+            <div class="text-xs font-extrabold uppercase tracking-wider text-amber-700 dark:text-amber-300">Choral Warm-Up</div>
+            <p class="text-sm font-bold text-[#002B5C] dark:text-white">
+              Hold up a pencil and point to a book: “What's this? This is a pencil! What's that? That is a book!”
+            </p>
+          </div>
+
+          <div class="pt-1">
+            <button
+              type="button"
+              onclick="goStage(1)"
+              class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-[#002B5C] via-amber-600 to-amber-500 hover:opacity-95 text-white text-sm sm:text-base font-bold shadow-lg transition"
+            >
+              <span>Let's Play &amp; Speak!</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 02: CONVERSATION QUESTIONS + VOICE RECORDER ==================== -->
+    <section data-stage="1" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-amber-500/25 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-amber-600 dark:text-amber-400 uppercase">Stage 02 · Speaking &amp; Voice Notes</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">6 Fun Speaking Prompts</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Answer out loud or record a voice note!</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-amber-500/30 shadow-xl max-w-4xl mx-auto w-full">
+        <div id="kqPhotoBox" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+
+        <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-5">
+          <div class="space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-2">
+                <span id="kqBadge" class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">CARD 1 / 6</span>
+                <span id="kqTag" class="px-3 py-1 rounded-full bg-amber-500/15 text-amber-700 dark:text-amber-300 text-xs font-bold"></span>
+              </div>
+              <button type="button" onclick="speakKq()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold transition">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                <span>Listen</span>
+              </button>
+            </div>
+
+            <h3 id="kqQuestion" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+            <p id="kqFollow" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300"></p>
+
+            <div>
+              <button type="button" onclick="document.getElementById('kqStarters').classList.toggle('hidden')" class="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-amber-700 dark:text-amber-300 hover:underline">
+                <i data-lucide="sparkles" class="w-4 h-4"></i>
+                <span>Easy Answer Frames</span>
+              </button>
+              <div id="kqStarters" class="hidden mt-2.5 p-3.5 rounded-2xl bg-amber-50 dark:bg-[#081526] border border-amber-500/25 text-xs space-y-1"></div>
+            </div>
+
+            <!-- Voice Note Recorder -->
+            <div class="p-4 rounded-2xl bg-amber-50 dark:bg-[#081526] border border-amber-500/25 space-y-3">
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-xs font-extrabold uppercase tracking-wider text-amber-700 dark:text-amber-300">Voice Note</span>
+                <span id="recTimer" class="text-xs font-extrabold text-slate-500 dark:text-slate-400">Ready</span>
+              </div>
+
+              <input
+                id="kidStudentName"
+                type="text"
+                placeholder="Student name (e.g. Leo)"
+                class="w-full px-3 py-2 rounded-xl bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-sky-400/25 text-xs sm:text-sm outline-none focus:border-amber-400"
+              />
+
+              <div class="flex flex-wrap items-center gap-2">
+                <button
+                  id="btnRecStart"
+                  type="button"
+                  onclick="startVoiceRec()"
+                  class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold transition"
+                >
+                  <i data-lucide="mic" class="w-3.5 h-3.5"></i>
+                  <span>Record</span>
+                </button>
+                <button
+                  id="btnRecStop"
+                  type="button"
+                  onclick="stopVoiceRec()"
+                  disabled
+                  class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-700 disabled:opacity-40 text-white text-xs font-bold transition"
+                >
+                  <i data-lucide="square" class="w-3.5 h-3.5"></i>
+                  <span>Stop</span>
+                </button>
+                <button
+                  id="btnSendAudioDrive"
+                  type="button"
+                  onclick="sendAudioToDrive()"
+                  disabled
+                  class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#002B5C] hover:bg-amber-600 disabled:opacity-40 text-white text-xs font-bold transition"
+                >
+                  <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                  <span id="sendAudioLabel">Send Audio</span>
+                </button>
+              </div>
+
+              <audio id="recPlayback" controls class="hidden w-full h-9"></audio>
+              <div id="recFeedback" class="hidden text-xs font-bold p-2.5 rounded-xl"></div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-sky-400/15">
+            <button type="button" onclick="stepKq(-1)" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">← Prev</button>
+            <div id="kqDots" class="flex flex-wrap gap-1"></div>
+            <button type="button" onclick="stepKq(1)" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 03: 8 SCHOOL MATERIAL WORDS ==================== -->
+    <section data-stage="2" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-amber-500/25 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-amber-600 dark:text-amber-400 uppercase">Stage 03 · School Vocabulary</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">8 School Material Words</h2>
+        </div>
+        <div class="inline-flex rounded-xl p-1 bg-white dark:bg-[#0C1E33] border-[1.5px] border-amber-500/30 self-start sm:self-auto">
+          <button id="btnSwSingle" type="button" onclick="setSwMode('single')" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-amber-600 text-white transition">1 by 1 Card</button>
+          <button id="btnSwGrid" type="button" onclick="setSwMode('grid')" class="px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition">All 8 Words</button>
+        </div>
+      </div>
+
+      <div id="swSingleBox" class="max-w-4xl mx-auto w-full"></div>
+      <div id="swGridBox" class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+    </section>
+
+    <!-- ==================== 04: THIS IS A... / THAT IS A... ==================== -->
+    <section data-stage="3" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-amber-500/25 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-amber-600 dark:text-amber-400 uppercase">Stage 04 · Near vs. Far</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">What's This? · What's That?</h2>
+        </div>
+        <span class="px-3 py-1 rounded-full bg-amber-500/15 text-amber-700 dark:text-amber-300 text-xs font-extrabold">This = Close · That = Far</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-amber-500/30 rounded-3xl p-6 space-y-3 shadow-md">
+          <div class="flex items-center justify-between">
+            <span class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">CLOSE TO YOU (✋)</span>
+            <button type="button" onclick="speakText('What is this? This is a pencil.')" class="px-3 py-1.5 rounded-xl bg-amber-600 text-white text-xs font-bold inline-flex items-center gap-1">
+              <i data-lucide="volume-2" class="w-3.5 h-3.5"></i> Hear
+            </button>
+          </div>
+          <h3 class="text-2xl font-extrabold text-[#002B5C] dark:text-white">This is a...</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300">Use <strong>this</strong> when the object is right here next to you or in your hand.</p>
+          <div class="p-3.5 rounded-2xl bg-amber-50 dark:bg-[#081526] text-sm font-bold text-[#002B5C] dark:text-amber-200">
+            • “What's <strong>this</strong>?” — “<strong>This is a</strong> book!”
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-amber-500/30 rounded-3xl p-6 space-y-3 shadow-md">
+          <div class="flex items-center justify-between">
+            <span class="px-3 py-1 rounded-full bg-amber-600 text-white text-xs font-extrabold">FAR AWAY (👉)</span>
+            <button type="button" onclick="speakText('What is that? That is a school bag.')" class="px-3 py-1.5 rounded-xl bg-amber-600 text-white text-xs font-bold inline-flex items-center gap-1">
+              <i data-lucide="volume-2" class="w-3.5 h-3.5"></i> Hear
+            </button>
+          </div>
+          <h3 class="text-2xl font-extrabold text-[#002B5C] dark:text-white">That is a...</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300">Use <strong>that</strong> when you point to something over there, away from you.</p>
+          <div class="p-3.5 rounded-2xl bg-amber-50 dark:bg-[#081526] text-sm font-bold text-[#002B5C] dark:text-amber-200">
+            • “What's <strong>that</strong>?” — “<strong>That is a</strong> ruler!”
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-amber-500/30 rounded-3xl p-6 sm:p-8 space-y-4 shadow-lg">
+        <div class="flex items-center justify-between gap-2">
+          <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white">Tap the Right Sentence:</h3>
+          <span id="thisThatScore" class="px-3 py-1 rounded-full bg-amber-500/15 text-amber-700 dark:text-amber-300 text-xs font-extrabold">0 / 5</span>
+        </div>
+        <div id="thisThatList" class="grid grid-cols-1 md:grid-cols-2 gap-3"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 05: PHONICS SPOTLIGHT — LETTERS A, B, C, D ==================== -->
+    <section data-stage="4" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-amber-500/25 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-amber-600 dark:text-amber-400 uppercase">Stage 05 · Letter Sounds</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Phonics Spotlight: A, B, C &amp; D</h2>
+        </div>
+        <span class="px-3 py-1 rounded-full bg-amber-500/15 text-amber-700 dark:text-amber-300 text-xs font-extrabold">Listen &amp; Repeat!</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="phonicsGrid"></div>
+
+      <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-amber-500/30 rounded-3xl p-6 space-y-3 shadow-md">
+        <div class="flex items-center justify-between gap-2">
+          <h3 class="text-base sm:text-lg font-extrabold text-[#002B5C] dark:text-white">Sound Match: Which Letter Starts the Word?</h3>
+          <span id="phonicsScore" class="px-3 py-1 rounded-full bg-amber-500/15 text-amber-700 dark:text-amber-300 text-xs font-extrabold">0 / 4</span>
+        </div>
+        <div id="phonicsQuizBox" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 06: QUICK GAME — SCHOOL BAG MYSTERY ==================== -->
+    <section data-stage="5" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-amber-500/25 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-amber-600 dark:text-amber-400 uppercase">Stage 06 · Quick Game</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">School Bag Mystery (6 Rounds)</h2>
+        </div>
+        <div class="flex items-center gap-2">
+          <span id="kidScoreBadge" class="px-3.5 py-1.5 rounded-xl bg-[#002B5C] text-amber-300 text-xs font-extrabold">SCORE: 0 / 6</span>
+          <button type="button" onclick="resetKidGame()" class="px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">
+            Play Again
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-amber-500/30 rounded-3xl p-6 sm:p-9 max-w-4xl mx-auto w-full space-y-6 shadow-xl">
+        <div class="flex items-center justify-between gap-2">
+          <span id="kidRoundBadge" class="px-3.5 py-1 rounded-full bg-amber-600 text-white text-xs font-extrabold">ROUND 1 / 6</span>
+          <span class="text-xs font-bold text-slate-500 dark:text-slate-400">Kids Classroom Challenge</span>
+        </div>
+
+        <h3 id="kidPrompt" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+        <div id="kidOptions" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+        <div id="kidFeedback" class="hidden p-4 rounded-2xl text-xs sm:text-sm font-bold"></div>
+
+        <div class="flex justify-end">
+          <button type="button" onclick="nextKidRound()" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-[#002B5C] to-amber-600 text-white text-xs sm:text-sm font-bold">
+            Next Clue →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 07: SHOW & TELL (ONE BY ONE) ==================== -->
+    <section data-stage="6" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-amber-500/25 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-amber-600 dark:text-amber-400 uppercase">Stage 07 · Show &amp; Tell</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Point &amp; Say Challenges (4 Cards)</h2>
+        </div>
+        <span class="px-3 py-1 rounded-full bg-amber-500/15 text-amber-700 dark:text-amber-300 text-xs font-extrabold">1 Challenge at a Time</span>
+      </div>
+
+      <div id="showTellSingleBox" class="max-w-4xl mx-auto w-full"></div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Navigation -->
+  <footer class="border-t border-amber-500/25 bg-white dark:bg-[#061322] py-4 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      <button id="btnPrev" type="button" onclick="goStage(currentStage - 1)" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-300 dark:border-sky-400/25 hover:bg-slate-100 dark:hover:bg-[#132C4A] disabled:opacity-30 text-xs font-bold transition">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Previous</span>
+      </button>
+
+      <span id="stageCounter" class="text-xs font-bold tracking-widest text-slate-500 dark:text-slate-400">
+        01 / 07
+      </span>
+
+      <button id="btnNext" type="button" onclick="goStage(currentStage + 1)" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#002B5C] hover:bg-amber-700 disabled:opacity-30 text-xs font-bold text-white transition">
+        <span>Next</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    const DRIVE_UPLOAD_URL = "https://script.google.com/macros/s/AKfycbwBcX7Z4aABKplkUkpYvM2wEnsBHhWCZzi7dFGDkeUarkXwv-RRI0JXAPDakjkrCrBc/exec";
+
+    const STAGES = [
+      "01 · WARM-UP & SONG",
+      "02 · SPEAKING + AUDIO",
+      "03 · 8 SCHOOL WORDS",
+      "04 · THIS / THAT",
+      "05 · SOUNDS A B C D",
+      "06 · QUICK GAME",
+      "07 · SHOW & TELL"
+    ];
+
+    let currentStage = 0;
+    const stageSections = document.querySelectorAll('.stage');
+
+    function goStage(idx) {
+      if (idx < 0 || idx >= stageSections.length) return;
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      currentStage = idx;
+      stageSections.forEach((s, i) => s.classList.toggle('hidden', i !== currentStage));
+      document.getElementById('stageTitleHeader').textContent = STAGES[currentStage];
+      document.getElementById('stageCounter').textContent = `${String(currentStage + 1).padStart(2, '0')} / ${String(stageSections.length).padStart(2, '0')}`;
+      document.getElementById('stageProgress').style.width = `${((currentStage + 1) / stageSections.length) * 100}%`;
+      document.getElementById('btnPrev').disabled = currentStage === 0;
+      document.getElementById('btnNext').disabled = currentStage === stageSections.length - 1;
+      renderStagePills();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      lucide.createIcons();
+    }
+
+    function renderStagePills() {
+      document.getElementById('stagePills').innerHTML = STAGES.map((_, i) => `
+        <button type="button" onclick="goStage(${i})" class="px-2.5 py-1 rounded-lg text-xs font-bold transition ${
+          i === currentStage ? 'bg-amber-500 text-slate-950' : 'text-white/75 hover:text-white hover:bg-white/10'
+        }">${String(i + 1).padStart(2, '0')}</button>
+      `).join('');
+    }
+
+    const themeBtn = document.getElementById('themeBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    if (localStorage.getItem('provoKidsSchoolTheme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      themeIcon.setAttribute('data-lucide', 'moon');
+    }
+    themeBtn.addEventListener('click', () => {
+      const dark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('provoKidsSchoolTheme', dark ? 'dark' : 'light');
+      themeIcon.setAttribute('data-lucide', dark ? 'sun' : 'moon');
+      lucide.createIcons();
+    });
+
+    function mountPhoto(container, url, altText, fallbackTitle) {
+      container.innerHTML = `<img src="${url}" alt="${altText}" class="w-full h-full object-cover" loading="lazy" />`;
+      const img = container.querySelector('img');
+      if (img) {
+        img.addEventListener('error', () => {
+          container.innerHTML = `
+            <div class="w-full h-full flex flex-col items-center justify-center bg-[#002B5C] text-white p-6 text-center">
+              <i data-lucide="backpack" class="w-8 h-8 text-amber-300 mb-2"></i>
+              <span class="text-xs font-extrabold uppercase tracking-widest">${fallbackTitle}</span>
+            </div>
+          `;
+          lucide.createIcons();
+        }, { once: true });
+      }
+    }
+
+    function pickVoice() {
+      if (!('speechSynthesis' in window)) return null;
+      const voices = window.speechSynthesis.getVoices() || [];
+      if (!voices.length) return null;
+      return (
+        voices.find(v => /sonia/i.test(v.name)) ||
+        voices.find(v => /en[-_]GB/i.test(v.lang)) ||
+        voices.find(v => /^en/i.test(v.lang)) ||
+        null
+      );
+    }
+
+    function speakText(text) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      const v = pickVoice();
+      if (v) {
+        u.voice = v;
+        u.lang = v.lang;
+      } else {
+        u.lang = 'en-GB';
+      }
+      u.rate = 0.88;
+      u.pitch = 1.06;
+      window.speechSynthesis.speak(u);
+    }
+
+    // ==================== 02: CONVERSATION QUESTIONS + VOICE RECORDER ====================
+    const KQ_CARDS = [
+      { tag: "In Your Bag", q: "What is in your school bag today?", follow: "Hold up one thing and say: “This is a...”", photo: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&amp;fit=crop&amp;w=900&amp;q=80", starters: ["• This is a pencil!", "• I have a book and an eraser."] },
+      { tag: "Point & Say", q: "Point to something far from your chair. What's that?", follow: "Try: “That is a desk / chair / board.”", photo: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&amp;fit=crop&amp;w=900&amp;q=80", starters: ["• That is a desk!", "• That is a window!"] },
+      { tag: "Favorite Item", q: "What is your favorite school thing—a pencil, crayons, or a notebook?", follow: "What color is it?", photo: "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&amp;fit=crop&amp;w=900&amp;q=80", starters: ["• My favorite is my blue pencil!", "• I like crayons!"] },
+      { tag: "Drawing Time", q: "Do you like drawing and coloring at school?", follow: "What do you use to color?", photo: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&amp;fit=crop&amp;w=900&amp;q=80", starters: ["• Yes, I do! I use crayons.", "• I like drawing animals."] },
+      { tag: "Letter Sounds", q: "Can you say a word starting with B, C, or D?", follow: "Examples: book, bag, cat, crayon, dog, desk.", photo: "https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?auto=format&amp;fit=crop&amp;w=900&amp;q=80", starters: ["• B is for book and bag!", "• C is for cat! D is for dog!"] },
+      { tag: "Classroom Helper", q: "Which school object do you use every single day in class?", follow: "Show it to the class!", photo: "https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&amp;fit=crop&amp;w=900&amp;q=80", starters: ["• I use a pencil every day.", "• I use my book in class."] }
+    ];
+    let kqIdx = 0;
+
+    function renderKqCard() {
+      kqIdx = (kqIdx + KQ_CARDS.length) % KQ_CARDS.length;
+      const c = KQ_CARDS[kqIdx];
+      document.getElementById('kqBadge').textContent = `CARD ${kqIdx + 1} / ${KQ_CARDS.length}`;
+      document.getElementById('kqTag').textContent = c.tag;
+      document.getElementById('kqQuestion').textContent = c.q;
+      document.getElementById('kqFollow').textContent = c.follow;
+      document.getElementById('kqStarters').innerHTML = c.starters.map(s => `<div>${s}</div>`).join('');
+      document.getElementById('kqStarters').classList.add('hidden');
+      mountPhoto(document.getElementById('kqPhotoBox'), c.photo, c.tag, c.tag);
+      document.getElementById('kqDots').innerHTML = KQ_CARDS.map((_, i) => `
+        <button type="button" onclick="kqIdx=${i}; renderKqCard();" class="w-6 h-6 rounded-lg text-[11px] font-bold ${
+          i === kqIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#081526]'
+        }">${i + 1}</button>
+      `).join('');
+    }
+    window.stepKq = (d) => { kqIdx += d; renderKqCard(); };
+    window.speakKq = () => speakText(`${KQ_CARDS[kqIdx].q} ${KQ_CARDS[kqIdx].follow}`);
+
+    // Voice Recorder + Drive Upload
+    const kidNameInput = document.getElementById('kidStudentName');
+    kidNameInput.value = localStorage.getItem('provoStudentName') || '';
+    kidNameInput.addEventListener('input', () => localStorage.setItem('provoStudentName', kidNameInput.value.trim()));
+
+    let mediaRec = null;
+    let audioChunks = [];
+    let recordedBlob = null;
+    let recordedMime = 'audio/webm';
+    let recInterval = null;
+    let recSecs = 0;
+
+    function showRecFb(msg, ok = true) {
+      const box = document.getElementById('recFeedback');
+      box.classList.remove('hidden');
+      box.className = ok
+        ? 'text-xs font-bold p-2.5 rounded-xl bg-emerald-500/15 text-emerald-700 dark:text-emerald-300'
+        : 'text-xs font-bold p-2.5 rounded-xl bg-rose-500/15 text-rose-700 dark:text-rose-300';
+      box.textContent = msg;
+    }
+
+    window.startVoiceRec = async () => {
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        return showRecFb('Microphone recording is not supported in this browser.', false);
+      }
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        audioChunks = [];
+        recordedBlob = null;
+        mediaRec = new MediaRecorder(stream);
+        recordedMime = mediaRec.mimeType || 'audio/webm';
+
+        mediaRec.ondataavailable = (e) => {
+          if (e.data && e.data.size > 0) audioChunks.push(e.data);
+        };
+
+        mediaRec.onstop = () => {
+          stream.getTracks().forEach(t => t.stop());
+          recordedBlob = new Blob(audioChunks, { type: recordedMime });
+          const audioEl = document.getElementById('recPlayback');
+          audioEl.src = URL.createObjectURL(recordedBlob);
+          audioEl.classList.remove('hidden');
+          document.getElementById('btnSendAudioDrive').disabled = false;
+          showRecFb('✓ Great voice note! Ready to send.', true);
+        };
+
+        mediaRec.start();
+        recSecs = 0;
+        document.getElementById('recTimer').textContent = 'Recording: 0s';
+        document.getElementById('btnRecStart').disabled = true;
+        document.getElementById('btnRecStop').disabled = false;
+        document.getElementById('btnSendAudioDrive').disabled = true;
+        document.getElementById('recFeedback').classList.add('hidden');
+
+        recInterval = setInterval(() => {
+          recSecs++;
+          document.getElementById('recTimer').textContent = `Recording: ${recSecs}s`;
+        }, 1000);
+      } catch (err) {
+        showRecFb('Please allow microphone access to record.', false);
+      }
+    };
+
+    window.stopVoiceRec = () => {
+      if (mediaRec && mediaRec.state !== 'inactive') {
+        mediaRec.stop();
+      }
+      clearInterval(recInterval);
+      document.getElementById('recTimer').textContent = `Recorded (${recSecs}s)`;
+      document.getElementById('btnRecStart').disabled = false;
+      document.getElementById('btnRecStop').disabled = true;
+    };
+
+    window.sendAudioToDrive = async () => {
+      const studentName = kidNameInput.value.trim();
+      if (!studentName) {
+        showRecFb('Type your name first!', false);
+        kidNameInput.focus();
+        return;
+      }
+      if (!recordedBlob) {
+        return showRecFb('Record your voice first!', false);
+      }
+
+      const sendBtn = document.getElementById('btnSendAudioDrive');
+      const sendLabel = document.getElementById('sendAudioLabel');
+      sendBtn.disabled = true;
+      sendLabel.textContent = 'Sending...';
+
+      try {
+        const reader = new FileReader();
+        reader.onloadend = async () => {
+          const base64Data = (reader.result || '').toString().split(',')[1] || '';
+          try {
+            const res = await fetch(DRIVE_UPLOAD_URL, {
+              method: 'POST',
+              headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+              body: JSON.stringify({
+                studentName,
+                lessonTitle: 'Kids-School-Material',
+                questionNumber: kqIdx + 1,
+                mimeType: recordedMime,
+                audioBase64: base64Data
+              })
+            });
+            const data = await res.json();
+            if (data.status === 'ok') {
+              showRecFb(`✓ Sent! (${data.fileName})`, true);
+            } else {
+              throw new Error(data.message || 'Upload error');
+            }
+          } catch (e) {
+            showRecFb('Could not send. Check internet and try again.', false);
+          } finally {
+            sendBtn.disabled = false;
+            sendLabel.textContent = 'Send Audio';
+          }
+        };
+        reader.readAsDataURL(recordedBlob);
+      } catch (e) {
+        sendBtn.disabled = false;
+        sendLabel.textContent = 'Send Audio';
+        showRecFb('Error preparing audio.', false);
+      }
+    };
+
+    // ==================== 03: 8 SCHOOL MATERIAL WORDS ====================
+    const SCHOOL_WORDS = [
+      { word: "pencil", ex: "This is a yellow pencil.", photo: "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "book", ex: "That is a big book.", photo: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "school bag", ex: "This is my school bag.", photo: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "ruler", ex: "That is a long ruler.", photo: "https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "eraser", ex: "This is a small eraser.", photo: "https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "scissors", ex: "Careful! Those are scissors.", photo: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "desk", ex: "That is my school desk.", photo: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "crayons", ex: "I have colorful crayons.", photo: "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&amp;fit=crop&amp;w=800&amp;q=80" }
+    ];
+    let swIdx = 0;
+    let swMode = 'single';
+
+    window.setSwMode = (mode) => {
+      swMode = mode;
+      document.getElementById('swSingleBox').classList.toggle('hidden', mode !== 'single');
+      const g = document.getElementById('swGridBox');
+      g.classList.toggle('hidden', mode !== 'grid');
+      g.classList.toggle('grid', mode === 'grid');
+      document.getElementById('btnSwSingle').className = mode === 'single'
+        ? 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-amber-600 text-white transition'
+        : 'px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition';
+      document.getElementById('btnSwGrid').className = mode === 'grid'
+        ? 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-amber-600 text-white transition'
+        : 'px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition';
+      renderSchoolWords();
+    };
+
+    function renderSchoolWords() {
+      swIdx = (swIdx + SCHOOL_WORDS.length) % SCHOOL_WORDS.length;
+      const w = SCHOOL_WORDS[swIdx];
+      const safeEx = w.ex.replace(/'/g, "\\'");
+
+      document.getElementById('swSingleBox').innerHTML = `
+        <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-amber-500/30 shadow-xl">
+          <div id="swPhotoBox" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+          <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between gap-2">
+                <span class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">WORD ${swIdx + 1} / ${SCHOOL_WORDS.length}</span>
+                <button type="button" onclick="speakText('${w.word}. ${safeEx}')" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-amber-600 text-white text-xs font-bold">
+                  <i data-lucide="volume-2" class="w-4 h-4"></i> Listen
+                </button>
+              </div>
+              <h3 class="text-3xl font-extrabold text-[#002B5C] dark:text-white">${w.word}</h3>
+              <div class="p-4 rounded-2xl bg-amber-50 dark:bg-[#081526] border border-amber-500/25">
+                <p class="text-base font-bold text-[#002B5C] dark:text-amber-200">“${w.ex}”</p>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-sky-400/15">
+              <button type="button" onclick="swIdx--; renderSchoolWords();" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">← Prev</button>
+              <div class="flex flex-wrap gap-1">
+                ${SCHOOL_WORDS.map((_, i) => `<button type="button" onclick="swIdx=${i}; renderSchoolWords();" class="w-7 h-7 rounded-lg text-xs font-bold ${i === swIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#081526]'}">${i + 1}</button>`).join('')}
+              </div>
+              <button type="button" onclick="swIdx++; renderSchoolWords();" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+            </div>
+          </div>
+        </div>
+      `;
+      mountPhoto(document.getElementById('swPhotoBox'), w.photo, w.word, w.word.toUpperCase());
+
+      document.getElementById('swGridBox').innerHTML = SCHOOL_WORDS.map(item => `
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-amber-500/30 rounded-3xl overflow-hidden shadow-md flex flex-col">
+          <img src="${item.photo}" alt="${item.word}" class="h-28 w-full object-cover" loading="lazy" />
+          <div class="p-4 flex-1 flex flex-col justify-between gap-2">
+            <div class="flex items-center justify-between gap-2">
+              <h4 class="text-lg font-extrabold text-[#002B5C] dark:text-white">${item.word}</h4>
+              <button type="button" onclick="speakText('${item.word}. ${item.ex.replace(/'/g, "\\'")}')" class="p-1.5 rounded-lg bg-amber-50 dark:bg-[#081526] text-amber-600 dark:text-amber-300"><i data-lucide="volume-2" class="w-4 h-4"></i></button>
+            </div>
+            <p class="text-xs font-semibold text-slate-600 dark:text-slate-300">“${item.ex}”</p>
+          </div>
+        </div>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    // ==================== 04: THIS IS A... / THAT IS A... PRACTICE ====================
+    const THIS_THAT_QS = [
+      { prompt: "1. The pencil is in your hand: “________ is a pencil.”", opts: ["This", "That"], ans: 0 },
+      { prompt: "2. You point to a book far away: “________ is a book.”", opts: ["This", "That"], ans: 1 },
+      { prompt: "3. Question for a close eraser: “What's ________?”", opts: ["this", "that"], ans: 0 },
+      { prompt: "4. Question for a ruler across the room: “What's ________?”", opts: ["this", "that"], ans: 1 },
+      { prompt: "5. Your bag is right next to you: “________ is my school bag.”", opts: ["This", "That"], ans: 0 }
+    ];
+    const ttSolved = {};
+
+    function renderThisThat() {
+      document.getElementById('thisThatList').innerHTML = THIS_THAT_QS.map((item, qi) => `
+        <div class="p-4 rounded-2xl bg-amber-50 dark:bg-[#081526] border border-amber-500/25 space-y-2">
+          <p class="text-xs sm:text-sm font-bold text-[#002B5C] dark:text-white">${item.prompt}</p>
+          <div class="flex gap-2">
+            ${item.opts.map((op, oi) => `
+              <button type="button" onclick="checkTt(${qi}, ${oi})" class="px-4 py-2 rounded-xl bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-sky-400/25 hover:border-amber-400 text-xs font-extrabold transition">${op}</button>
+            `).join('')}
+          </div>
+          <div id="ttFb${qi}" class="hidden text-xs font-extrabold"></div>
+        </div>
+      `).join('');
+    }
+
+    window.checkTt = (qi, oi) => {
+      const fb = document.getElementById(`ttFb${qi}`);
+      fb.classList.remove('hidden');
+      if (oi === THIS_THAT_QS[qi].ans) {
+        ttSolved[qi] = true;
+        fb.className = 'text-xs font-extrabold text-emerald-600 dark:text-emerald-400';
+        fb.textContent = '✓ Great job!';
+      } else {
+        fb.className = 'text-xs font-extrabold text-rose-600 dark:text-rose-400';
+        fb.textContent = '✗ Try again!';
+      }
+      document.getElementById('thisThatScore').textContent = `${Object.keys(ttSolved).length} / ${THIS_THAT_QS.length}`;
+    };
+
+    // ==================== 05: PHONICS A, B, C, D ====================
+    const PHONICS_ITEMS = [
+      { letter: "Aa", sound: "/æ/", sample: "apple", extra: "ant · alligator", speak: "A. Apple, ant." },
+      { letter: "Bb", sound: "/b/", sample: "book", extra: "bag · ball", speak: "B. Book, bag, ball." },
+      { letter: "Cc", sound: "/k/", sample: "cat", extra: "crayon · car", speak: "C. Cat, crayon." },
+      { letter: "Dd", sound: "/d/", sample: "desk", extra: "dog · duck", speak: "D. Desk, dog, duck." }
+    ];
+
+    const PHONICS_QUIZ = [
+      { prompt: "1. ________ is for BOOK and BAG.", opts: ["B", "D"], ans: 0 },
+      { prompt: "2. ________ is for CAT and CRAYON.", opts: ["A", "C"], ans: 1 },
+      { prompt: "3. ________ is for DESK and DOG.", opts: ["D", "B"], ans: 0 },
+      { prompt: "4. ________ is for APPLE.", opts: ["C", "A"], ans: 1 }
+    ];
+    const phSolved = {};
+
+    function renderPhonics() {
+      document.getElementById('phonicsGrid').innerHTML = PHONICS_ITEMS.map(p => `
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-amber-500/30 rounded-3xl p-5 text-center space-y-2 shadow-sm">
+          <div class="text-4xl font-extrabold text-amber-600 dark:text-amber-400">${p.letter}</div>
+          <div class="text-xs font-bold text-slate-500 dark:text-slate-400">Sound: ${p.sound}</div>
+          <div class="text-lg font-extrabold text-[#002B5C] dark:text-white">${p.sample}</div>
+          <div class="text-xs text-slate-600 dark:text-slate-300">${p.extra}</div>
+          <button type="button" onclick="speakText('${p.speak}')" class="mt-1 inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-amber-600 text-white text-xs font-bold">
+            <i data-lucide="volume-2" class="w-3.5 h-3.5"></i> Say Sound
+          </button>
+        </div>
+      `).join('');
+
+      document.getElementById('phonicsQuizBox').innerHTML = PHONICS_QUIZ.map((pq, i) => `
+        <div class="p-3.5 rounded-2xl bg-amber-50 dark:bg-[#081526] border border-amber-500/25 space-y-2">
+          <p class="text-xs sm:text-sm font-bold text-[#002B5C] dark:text-white">${pq.prompt}</p>
+          <div class="flex gap-2">
+            ${pq.opts.map((op, oi) => `
+              <button type="button" onclick="checkPh(${i}, ${oi})" class="px-4 py-1.5 rounded-xl bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-sky-400/25 hover:border-amber-400 text-xs font-extrabold">${op}</button>
+            `).join('')}
+          </div>
+          <div id="phFb${i}" class="hidden text-xs font-extrabold"></div>
+        </div>
+      `).join('');
+    }
+
+    window.checkPh = (i, oi) => {
+      const fb = document.getElementById(`phFb${i}`);
+      fb.classList.remove('hidden');
+      if (oi === PHONICS_QUIZ[i].ans) {
+        phSolved[i] = true;
+        fb.className = 'text-xs font-extrabold text-emerald-600 dark:text-emerald-400';
+        fb.textContent = '✓ Awesome!';
+      } else {
+        fb.className = 'text-xs font-extrabold text-rose-600 dark:text-rose-400';
+        fb.textContent = '✗ Listen to the first sound!';
+      }
+      document.getElementById('phonicsScore').textContent = `${Object.keys(phSolved).length} / ${PHONICS_QUIZ.length}`;
+    };
+
+    // ==================== 06: QUICK GAME — SCHOOL BAG MYSTERY ====================
+    const KID_ROUNDS = [
+      { prompt: "You write with it on paper. It starts with P...", opts: ["a pencil", "a book"], ans: 0, why: "You write with a pencil!" },
+      { prompt: "You carry it on your back to school. It starts with S...", opts: ["a school bag", "an eraser"], ans: 0, why: "A school bag carries your things." },
+      { prompt: "You use it to rub out a mistake. It starts with E...", opts: ["an eraser", "a desk"], ans: 0, why: "An eraser rubs out pencil marks." },
+      { prompt: "You read pages and stories inside it. It starts with B...", opts: ["a book", "a ruler"], ans: 0, why: "You read a book!" },
+      { prompt: "You sit at it in the classroom. It starts with D...", opts: ["a desk", "crayons"], ans: 0, why: "You sit at a desk." },
+      { prompt: "You measure straight lines with it. It starts with R...", opts: ["a ruler", "a cat"], ans: 0, why: "A ruler helps draw straight lines." }
+    ];
+    let kidIdx = 0;
+    let kidScore = 0;
+    let kidDone = false;
+
+    function renderKidRound() {
+      const idx = kidIdx % KID_ROUNDS.length;
+      const r = KID_ROUNDS[idx];
+      kidDone = false;
+      document.getElementById('kidRoundBadge').textContent = `ROUND ${idx + 1} / ${KID_ROUNDS.length}`;
+      document.getElementById('kidPrompt').textContent = r.prompt;
+      document.getElementById('kidFeedback').classList.add('hidden');
+      document.getElementById('kidOptions').innerHTML = r.opts.map((op, i) => `
+        <button type="button" onclick="pickKidOpt(${i})" class="w-full text-left p-4 rounded-2xl bg-amber-50 dark:bg-[#081526] border-[1.5px] border-amber-500/25 hover:border-amber-400 text-sm font-extrabold transition">${op}</button>
+      `).join('');
+    }
+
+    window.pickKidOpt = (picked) => {
+      if (kidDone) return;
+      kidDone = true;
+      const r = KID_ROUNDS[kidIdx % KID_ROUNDS.length];
+      const fb = document.getElementById('kidFeedback');
+      fb.classList.remove('hidden');
+      if (picked === r.ans) {
+        kidScore++;
+        fb.className = 'p-4 rounded-2xl text-xs sm:text-sm font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Super! (+1 pt) — ${r.why}`;
+      } else {
+        fb.className = 'p-4 rounded-2xl text-xs sm:text-sm font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `✗ Oops! — ${r.why}`;
+      }
+      document.getElementById('kidScoreBadge').textContent = `SCORE: ${kidScore} / ${KID_ROUNDS.length}`;
+    };
+    window.nextKidRound = () => { kidIdx++; renderKidRound(); };
+    window.resetKidGame = () => {
+      kidIdx = 0;
+      kidScore = 0;
+      document.getElementById('kidScoreBadge').textContent = `SCORE: 0 / ${KID_ROUNDS.length}`;
+      renderKidRound();
+    };
+
+    // ==================== 07: SHOW & TELL (ONE BY ONE) ====================
+    const SHOW_TELL = [
+      { badge: "CHALLENGE 1 / 4", title: "Hold It Up: “This is a...”", prompt: "Pick up a pencil, eraser, or book right next to you and say: “This is a [item]!”", photo: "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&amp;fit=crop&amp;w=900&amp;q=80", speak: "This is a pencil!" },
+      { badge: "CHALLENGE 2 / 4", title: "Point Across the Room: “That is a...”", prompt: "Point to a desk, door, or bag far from you and say: “That is a [item]!”", photo: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&amp;fit=crop&amp;w=900&amp;q=80", speak: "That is a desk!" },
+      { badge: "CHALLENGE 3 / 4", title: "Ask a Friend: “What's this / that?”", prompt: "Ask your partner or teacher: “What's this?” when touching something, and “What's that?” when pointing!", photo: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&amp;fit=crop&amp;w=900&amp;q=80", speak: "What's this? What's that?" },
+      { badge: "CHALLENGE 4 / 4", title: "ABC Sound Rap: A, B, C, D", prompt: "Say four words together: Apple, Book, Cat, Desk!", photo: "https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?auto=format&amp;fit=crop&amp;w=900&amp;q=80", speak: "Apple, book, cat, desk!" }
+    ];
+    let stIdx = 0;
+
+    function renderShowTell() {
+      stIdx = (stIdx + SHOW_TELL.length) % SHOW_TELL.length;
+      const s = SHOW_TELL[stIdx];
+      const safeSp = s.speak.replace(/'/g, "\\'");
+
+      document.getElementById('showTellSingleBox').innerHTML = `
+        <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-amber-500/30 shadow-xl">
+          <div id="stPhotoBox" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+          <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-5">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between gap-2">
+                <span class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">${s.badge}</span>
+                <button type="button" onclick="speakText('${safeSp}')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-600 text-white text-xs font-bold">
+                  <i data-lucide="volume-2" class="w-3.5 h-3.5"></i> Example
+                </button>
+              </div>
+              <h3 class="text-2xl font-extrabold text-[#002B5C] dark:text-white">${s.title}</h3>
+              <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">${s.prompt}</p>
+              <div class="p-4 rounded-2xl bg-amber-50 dark:bg-[#081526] border border-amber-500/25">
+                <span class="text-xs font-extrabold uppercase text-amber-700 dark:text-amber-300">Model</span>
+                <p class="text-base font-bold text-[#002B5C] dark:text-amber-200 mt-0.5">“${s.speak}”</p>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-sky-400/15">
+              <button type="button" onclick="stIdx--; renderShowTell();" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">← Prev</button>
+              <div class="flex gap-1.5">
+                ${SHOW_TELL.map((_, i) => `<button type="button" onclick="stIdx=${i}; renderShowTell();" class="w-7 h-7 rounded-lg text-xs font-bold ${i === stIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#081526]'}">${i + 1}</button>`).join('')}
+              </div>
+              <button type="button" onclick="stIdx++; renderShowTell();" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+            </div>
+          </div>
+        </div>
+      `;
+      mountPhoto(document.getElementById('stPhotoBox'), s.photo, s.title, s.title.toUpperCase());
+      lucide.createIcons();
+    }
+
+    // Init
+    goStage(0);
+    renderKqCard();
+    setSwMode('single');
+    renderThisThat();
+    renderPhonics();
+    renderKidRound();
+    renderShowTell();
+    lucide.createIcons();
+  </script>
+</body>
+</html>

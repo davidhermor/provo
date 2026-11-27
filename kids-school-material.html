@@ -90,7 +90,7 @@
           <div class="absolute inset-0 bg-gradient-to-t from-[#071324]/90 via-[#071324]/25 to-transparent"></div>
           <div class="absolute bottom-5 left-5 right-5 space-y-1 text-white">
             <span class="text-xs font-bold tracking-widest text-amber-300">PROVO · KIDS ADVENTURE</span>
-            <p class="text-sm font-semibold text-slate-200">SCHOOL MATERIAL · WHAT'S THIS? · THIS IS A... · A · B · C · D</p>
+            <p class="text-sm font-semibold text-slate-200">SCHOOL MATERIAL · WHAT'S THIS? · A · B · C · D</p>
           </div>
         </div>
 
@@ -125,7 +125,7 @@
       </div>
     </section>
 
-    <!-- ==================== 02: SAY & LISTEN (8 SCHOOL ITEMS WITH CLEAR ICONS) ==================== -->
+    <!-- ==================== 02: SAY & LISTEN (8 SCHOOL ITEMS) ==================== -->
     <section data-stage="1" class="stage hidden stage-anim space-y-6">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-amber-400/30 pb-3">
         <div>
@@ -157,7 +157,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0D1F38] border-[1.5px] border-amber-400/35 shadow-xl max-w-4xl mx-auto w-full">
         <div class="lg:col-span-5 h-56 lg:h-auto bg-gradient-to-br from-[#002B5C] via-amber-600 to-amber-500 flex flex-col items-center justify-center p-7 text-center text-white space-y-2">
           <span class="px-3.5 py-1 rounded-full bg-black/25 text-xs font-extrabold tracking-wider">WHAT'S THIS?</span>
-          <div id="ttBigIcon" class="text-7xl leading-none drop-shadow">✏️</div>
+          <div id="ttBigVisual" class="flex items-center justify-center my-1"></div>
           <div id="ttBigHint" class="text-sm font-extrabold tracking-wider text-amber-100">HOLD IT UP!</div>
         </div>
 
@@ -251,7 +251,10 @@
         <div id="builderItemPool" class="flex flex-wrap gap-2"></div>
 
         <div class="p-4 rounded-2xl bg-[#FFFBEB] dark:bg-[#071324] border-2 border-amber-400/45 flex flex-wrap items-center justify-between gap-3">
-          <p id="builtSentenceOut" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white">“THIS IS A PENCIL!”</p>
+          <div class="flex items-center gap-3">
+            <span id="builderIconPreview" class="flex items-center justify-center"></span>
+            <p id="builtSentenceOut" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white">“THIS IS A PENCIL!”</p>
+          </div>
           <button type="button" onclick="speakBuiltSentence()" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#002B5C] hover:bg-amber-600 text-white text-xs font-extrabold transition">
             <i data-lucide="volume-2" class="w-4 h-4"></i>
             <span>SAY IT</span>
@@ -289,7 +292,7 @@
 
         <div class="p-6 rounded-3xl bg-[#FFFBEB] dark:bg-[#071324] border-2 border-amber-400/35 text-center space-y-2">
           <div class="text-xs font-extrabold tracking-widest text-amber-600 dark:text-amber-300">WHAT'S THIS?</div>
-          <div id="speedIconBig" class="text-7xl leading-none">✏️</div>
+          <div id="speedVisualBig" class="flex items-center justify-center py-1"></div>
         </div>
 
         <h3 class="text-lg sm:text-xl font-extrabold text-[#002B5C] dark:text-white">TAP THE RIGHT ANSWER:</h3>
@@ -473,25 +476,63 @@
       }
     }
 
-    // ==================== DATA: 8 SCHOOL ITEMS (CLEAR ICONS, DESK = PUPITRE) ====================
+    // ==================== CUSTOM SVG ICONS FOR ERASER & DESK + UNIFIED ICON RENDERER ====================
+    function renderSchoolIcon(key, sizeClass = "text-5xl") {
+      if (key === "ERASER") {
+        const px = sizeClass.includes("8xl") ? 92 : sizeClass.includes("7xl") ? 76 : sizeClass.includes("5xl") ? 52 : 32;
+        return `
+          <svg width="${px}" height="${px}" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="ERASER">
+            <g transform="rotate(-24 32 32)">
+              <rect x="10" y="20" width="44" height="24" rx="6" fill="#FB7185" stroke="#881337" stroke-width="2.5"/>
+              <rect x="26" y="20" width="16" height="24" fill="#38BDF8" stroke="#0C4A6E" stroke-width="2"/>
+              <path d="M12 24H24" stroke="#FFE4E6" stroke-width="2.5" stroke-linecap="round"/>
+            </g>
+          </svg>
+        `;
+      }
+      if (key === "DESK") {
+        const px = sizeClass.includes("8xl") ? 92 : sizeClass.includes("7xl") ? 76 : sizeClass.includes("5xl") ? 52 : 32;
+        return `
+          <svg width="${px}" height="${px}" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="DESK">
+            <rect x="6" y="18" width="52" height="8" rx="3" fill="#F59E0B" stroke="#78350F" stroke-width="2.5"/>
+            <rect x="10" y="26" width="44" height="12" fill="#D97706" stroke="#78350F" stroke-width="2.2"/>
+            <line x1="22" y1="30" x2="42" y2="30" stroke="#FEF3C7" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 38V52M52 38V52M12 45H52" stroke="#475569" stroke-width="3.5" stroke-linecap="round"/>
+          </svg>
+        `;
+      }
+      const emojiMap = {
+        PENCIL: "✏️",
+        BOOK: "📘",
+        "SCHOOL BAG": "🎒",
+        RULER: "📏",
+        SCISSORS: "✂️",
+        CRAYON: "🖍️",
+        APPLE: "🍎"
+      };
+      return `<span class="${sizeClass} leading-none inline-block">${emojiMap[key] || "✏️"}</span>`;
+    }
+
+    // ==================== DATA: 8 SCHOOL ITEMS ====================
     const SCHOOL_ITEMS = [
-      { item: "PENCIL", article: "A", icon: "✏️", badge: "WRITING", color: "#EF4444" },
-      { item: "BOOK", article: "A", icon: "📘", badge: "READING", color: "#3B82F6" },
-      { item: "SCHOOL BAG", article: "A", icon: "🎒", badge: "CARRY", color: "#F97316" },
-      { item: "RULER", article: "A", icon: "📏", badge: "MEASURE", color: "#EAB308" },
-      { item: "ERASER", article: "AN", icon: "🧽", badge: "RUB OUT", color: "#EC4899" },
-      { item: "SCISSORS", article: "A PAIR OF", icon: "✂️", badge: "CUT", color: "#22C55E" },
-      { item: "DESK", article: "A", icon: "🖥️", badge: "CLASS DESK", color: "#06B6D4" },
-      { item: "CRAYON", article: "A", icon: "🖍️", badge: "COLOR", color: "#A855F7" }
+      { item: "PENCIL", article: "A", badge: "WRITE", color: "#EF4444" },
+      { item: "BOOK", article: "A", badge: "READ", color: "#3B82F6" },
+      { item: "SCHOOL BAG", article: "A", badge: "CARRY", color: "#F97316" },
+      { item: "RULER", article: "A", badge: "MEASURE", color: "#EAB308" },
+      { item: "ERASER", article: "AN", badge: "ERASE", color: "#EC4899" },
+      { item: "SCISSORS", article: "A PAIR OF", badge: "CUT", color: "#22C55E" },
+      { item: "DESK", article: "A", badge: "TABLE", color: "#06B6D4" },
+      { item: "CRAYON", article: "A", badge: "COLOR", color: "#A855F7" }
     ];
 
     document.getElementById('coverSchoolPills').innerHTML = SCHOOL_ITEMS.map(it => `
-      <button type="button" onclick="speakKidText('${it.item}')" style="background:${it.color}" class="px-3.5 py-1.5 rounded-full text-white text-xs font-extrabold shadow hover:scale-105 transition">
-        ${it.icon} ${it.item}
+      <button type="button" onclick="speakKidText('${it.item}')" style="background:${it.color}" class="px-3.5 py-1.5 rounded-full text-white text-xs font-extrabold shadow hover:scale-105 transition inline-flex items-center gap-1.5">
+        ${renderSchoolIcon(it.item, "text-base")}
+        <span>${it.item}</span>
       </button>
     `).join('');
 
-    // ==================== 02: 8 SCHOOL ITEMS CARDS (ICON VIEW) ====================
+    // ==================== 02: 8 SCHOOL ITEMS CARDS ====================
     let itemIdx = 0;
     let itemView = 'single';
 
@@ -520,7 +561,7 @@
           <div class="grid grid-cols-1 md:grid-cols-12">
             <div style="background:${it.color}" class="md:col-span-5 h-56 md:h-auto flex flex-col items-center justify-center p-7 text-center text-white space-y-2">
               <span class="px-3 py-1 rounded-full bg-black/25 text-xs font-extrabold tracking-wider">${it.badge}</span>
-              <div class="text-8xl leading-none drop-shadow">${it.icon}</div>
+              <div class="py-1">${renderSchoolIcon(it.item, "text-8xl")}</div>
               <span class="text-sm font-extrabold tracking-widest">${it.item}</span>
             </div>
             <div class="md:col-span-7 p-6 sm:p-9 flex flex-col justify-between space-y-5">
@@ -560,7 +601,7 @@
               <span style="background:${d.color}" class="px-2.5 py-0.5 rounded-full text-white text-[10px] font-extrabold">${d.badge}</span>
               <span class="text-xs font-extrabold text-slate-400">${d.article}</span>
             </div>
-            <div class="text-5xl py-1">${d.icon}</div>
+            <div class="flex items-center justify-center py-1">${renderSchoolIcon(d.item, "text-5xl")}</div>
             <h4 class="text-xl font-extrabold text-[#002B5C] dark:text-white">${d.item}</h4>
           </div>
           <button type="button" onclick="speakKidText('This is ${d.article.toLowerCase()} ${d.item.toLowerCase()}!')" class="w-full py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-white text-xs font-extrabold inline-flex items-center justify-center gap-1.5 transition">
@@ -574,12 +615,12 @@
 
     // ==================== 03: WHAT'S THIS? -> THIS IS A... CHALLENGE ====================
     const THIS_THAT_CHALLENGE = [
-      { icon: "✏️", hint: "HOLD IT UP!", prompt: "WHAT'S THIS?", ans: "THIS IS A PENCIL", opts: ["THIS IS A PENCIL", "THIS IS A BOOK"] },
-      { icon: "📘", hint: "OPEN IT!", prompt: "WHAT'S THIS?", ans: "THIS IS A BOOK", opts: ["THIS IS A RULER", "THIS IS A BOOK"] },
-      { icon: "🎒", hint: "ON YOUR BACK!", prompt: "WHAT'S THIS?", ans: "THIS IS A SCHOOL BAG", opts: ["THIS IS A SCHOOL BAG", "THIS IS AN ERASER"] },
-      { icon: "📏", hint: "STRAIGHT LINE!", prompt: "WHAT'S THIS?", ans: "THIS IS A RULER", opts: ["THIS IS A CRAYON", "THIS IS A RULER"] },
-      { icon: "🧽", hint: "RUB IT OUT!", prompt: "WHAT'S THIS?", ans: "THIS IS AN ERASER", opts: ["THIS IS AN ERASER", "THIS IS A DESK"] },
-      { icon: "🖍️", hint: "COLOR IT!", prompt: "WHAT'S THIS?", ans: "THIS IS A CRAYON", opts: ["THIS IS A PENCIL", "THIS IS A CRAYON"] }
+      { itemKey: "PENCIL", hint: "HOLD IT UP!", prompt: "WHAT'S THIS?", ans: "THIS IS A PENCIL", opts: ["THIS IS A PENCIL", "THIS IS A BOOK"] },
+      { itemKey: "BOOK", hint: "OPEN IT!", prompt: "WHAT'S THIS?", ans: "THIS IS A BOOK", opts: ["THIS IS A RULER", "THIS IS A BOOK"] },
+      { itemKey: "SCHOOL BAG", hint: "CARRY IT!", prompt: "WHAT'S THIS?", ans: "THIS IS A SCHOOL BAG", opts: ["THIS IS A SCHOOL BAG", "THIS IS AN ERASER"] },
+      { itemKey: "RULER", hint: "STRAIGHT LINE!", prompt: "WHAT'S THIS?", ans: "THIS IS A RULER", opts: ["THIS IS A CRAYON", "THIS IS A RULER"] },
+      { itemKey: "ERASER", hint: "RUB IT OUT!", prompt: "WHAT'S THIS?", ans: "THIS IS AN ERASER", opts: ["THIS IS AN ERASER", "THIS IS A DESK"] },
+      { itemKey: "DESK", hint: "CLASS TABLE!", prompt: "WHAT'S THIS?", ans: "THIS IS A DESK", opts: ["THIS IS A PENCIL", "THIS IS A DESK"] }
     ];
 
     let ttIdx = 0;
@@ -589,7 +630,7 @@
     function renderTt() {
       ttIdx = (ttIdx + THIS_THAT_CHALLENGE.length) % THIS_THAT_CHALLENGE.length;
       const g = THIS_THAT_CHALLENGE[ttIdx];
-      document.getElementById('ttBigIcon').textContent = g.icon;
+      document.getElementById('ttBigVisual').innerHTML = renderSchoolIcon(g.itemKey, "text-7xl");
       document.getElementById('ttBigHint').textContent = g.hint;
       document.getElementById('ttBadge').textContent = `CLUE ${ttIdx + 1} / 6`;
       document.getElementById('ttPrompt').textContent = g.prompt;
@@ -632,20 +673,23 @@
 
     // ==================== 05: SOUNDS A, B, C, D & THIS IS A BUILDER ====================
     const ABCD_SOUNDS = [
-      { letter: "A", sound: "/æ/", word: "APPLE", icon: "🍎", speak: "A. Apple!" },
-      { letter: "B", sound: "/b/", word: "BOOK", icon: "📘", speak: "B. Book!" },
-      { letter: "C", sound: "/k/", word: "CRAYON", icon: "🖍️", speak: "C. Crayon!" },
-      { letter: "D", sound: "/d/", word: "DESK", icon: "🖥️", speak: "D. Desk!" }
+      { letter: "A", sound: "/æ/", word: "APPLE", itemKey: "APPLE", speak: "A. Apple!" },
+      { letter: "B", sound: "/b/", word: "BOOK", itemKey: "BOOK", speak: "B. Book!" },
+      { letter: "C", sound: "/k/", word: "CRAYON", itemKey: "CRAYON", speak: "C. Crayon!" },
+      { letter: "D", sound: "/d/", word: "DESK", itemKey: "DESK", speak: "D. Desk!" }
     ];
 
     let builderItem = "PENCIL";
 
     function renderAbcdAndBuilder() {
       document.getElementById('abcdGrid').innerHTML = ABCD_SOUNDS.map(a => `
-        <button type="button" onclick="speakKidText('${a.speak}')" class="p-4 rounded-2xl bg-white dark:bg-[#0D1F38] border-2 border-amber-400/40 hover:border-amber-400 hover:scale-105 transition text-center space-y-1 shadow-sm">
+        <button type="button" onclick="speakKidText('${a.speak}')" class="p-4 rounded-2xl bg-white dark:bg-[#0D1F38] border-2 border-amber-400/40 hover:border-amber-400 hover:scale-105 transition text-center space-y-1.5 shadow-sm">
           <div class="text-4xl font-extrabold text-amber-500">${a.letter}</div>
           <div class="text-xs font-bold text-slate-500 dark:text-slate-400">${a.sound}</div>
-          <div class="text-sm font-extrabold text-[#002B5C] dark:text-white">${a.icon} ${a.word}</div>
+          <div class="flex items-center justify-center gap-1.5 text-sm font-extrabold text-[#002B5C] dark:text-white">
+            ${renderSchoolIcon(a.itemKey, "text-xl")}
+            <span>${a.word}</span>
+          </div>
         </button>
       `).join('');
 
@@ -655,18 +699,23 @@
         { label: "SCHOOL BAG", art: "a" },
         { label: "RULER", art: "a" },
         { label: "ERASER", art: "an" },
+        { label: "DESK", art: "a" },
         { label: "CRAYON", art: "a" }
       ];
 
       document.getElementById('builderItemPool').innerHTML = picks.map(p => `
-        <button type="button" onclick="builderItem='${p.label}'; speakKidText('This is ${p.art} ${p.label.toLowerCase()}!'); renderAbcdAndBuilder();" class="px-3.5 py-2 rounded-xl text-xs font-extrabold border-2 transition ${
+        <button type="button" onclick="builderItem='${p.label}'; speakKidText('This is ${p.art} ${p.label.toLowerCase()}!'); renderAbcdAndBuilder();" class="px-3.5 py-2 rounded-xl text-xs font-extrabold border-2 transition inline-flex items-center gap-1.5 ${
           builderItem === p.label
             ? 'bg-[#002B5C] border-[#002B5C] text-white'
             : 'bg-amber-400/20 border-amber-400 text-[#002B5C] dark:text-amber-200'
-        }">${p.label}</button>
+        }">
+          ${renderSchoolIcon(p.label, "text-base")}
+          <span>${p.label}</span>
+        </button>
       `).join('');
 
       const currentObj = picks.find(x => x.label === builderItem) || picks[0];
+      document.getElementById('builderIconPreview').innerHTML = renderSchoolIcon(currentObj.label, "text-5xl");
       document.getElementById('builtSentenceOut').textContent = `“THIS IS ${currentObj.art.toUpperCase()} ${currentObj.label}!”`;
     }
 
@@ -679,12 +728,12 @@
 
     // ==================== 06: WHAT'S THIS? SPEED TAP GAME ====================
     const SPEED_ROUNDS = [
-      { icon: "✏️", ans: "THIS IS A PENCIL!", opts: ["THIS IS A PENCIL!", "THIS IS A BOOK!", "THIS IS A RULER!"] },
-      { icon: "📘", ans: "THIS IS A BOOK!", opts: ["THIS IS A CRAYON!", "THIS IS A BOOK!", "THIS IS A DESK!"] },
-      { icon: "🎒", ans: "THIS IS A SCHOOL BAG!", opts: ["THIS IS A SCHOOL BAG!", "THIS IS A PENCIL!", "THIS IS AN ERASER!"] },
-      { icon: "📏", ans: "THIS IS A RULER!", opts: ["THIS IS A BOOK!", "THIS IS A RULER!", "THIS IS A CRAYON!"] },
-      { icon: "🖥️", ans: "THIS IS A DESK!", opts: ["THIS IS A PENCIL!", "THIS IS A SCHOOL BAG!", "THIS IS A DESK!"] },
-      { icon: "🖍️", ans: "THIS IS A CRAYON!", opts: ["THIS IS A CRAYON!", "THIS IS A RULER!", "THIS IS A BOOK!"] }
+      { itemKey: "PENCIL", ans: "THIS IS A PENCIL!", opts: ["THIS IS A PENCIL!", "THIS IS A BOOK!", "THIS IS A RULER!"] },
+      { itemKey: "BOOK", ans: "THIS IS A BOOK!", opts: ["THIS IS A CRAYON!", "THIS IS A BOOK!", "THIS IS A DESK!"] },
+      { itemKey: "SCHOOL BAG", ans: "THIS IS A SCHOOL BAG!", opts: ["THIS IS A SCHOOL BAG!", "THIS IS A PENCIL!", "THIS IS AN ERASER!"] },
+      { itemKey: "ERASER", ans: "THIS IS AN ERASER!", opts: ["THIS IS A BOOK!", "THIS IS AN ERASER!", "THIS IS A CRAYON!"] },
+      { itemKey: "DESK", ans: "THIS IS A DESK!", opts: ["THIS IS A PENCIL!", "THIS IS A SCHOOL BAG!", "THIS IS A DESK!"] },
+      { itemKey: "CRAYON", ans: "THIS IS A CRAYON!", opts: ["THIS IS A CRAYON!", "THIS IS A RULER!", "THIS IS A BOOK!"] }
     ];
 
     let speedIdx = 0;
@@ -697,7 +746,7 @@
       const item = SPEED_ROUNDS[idx];
       speedAnswered = false;
       document.getElementById('speedRoundBadge').textContent = `ROUND ${idx + 1} / ${SPEED_ROUNDS.length}`;
-      document.getElementById('speedIconBig').textContent = item.icon;
+      document.getElementById('speedVisualBig').innerHTML = renderSchoolIcon(item.itemKey, "text-7xl");
       document.getElementById('speedFeedback').classList.add('hidden');
 
       document.getElementById('speedOptions').innerHTML = item.opts.map(op => `
@@ -743,10 +792,50 @@
 
     // ==================== 07: A · B · C · D SOUND & WORD MATCH ====================
     const PH_MATCH_ITEMS = [
-      { letter: "A", sound: "/æ/", ans: "🍎 APPLE", choices: ["🍎 APPLE", "📘 BOOK", "🖥️ DESK"], speak: "A. Apple!" },
-      { letter: "B", sound: "/b/", ans: "📘 BOOK", choices: ["🖍️ CRAYON", "📘 BOOK", "🍎 APPLE"], speak: "B. Book!" },
-      { letter: "C", sound: "/k/", ans: "🖍️ CRAYON", choices: ["🖥️ DESK", "🍎 APPLE", "🖍️ CRAYON"], speak: "C. Crayon!" },
-      { letter: "D", sound: "/d/", ans: "🖥️ DESK", choices: ["📘 BOOK", "🖥️ DESK", "🖍️ CRAYON"], speak: "D. Desk!" }
+      {
+        letter: "A",
+        sound: "/æ/",
+        ans: "APPLE",
+        choices: [
+          { label: "APPLE", key: "APPLE" },
+          { label: "BOOK", key: "BOOK" },
+          { label: "DESK", key: "DESK" }
+        ],
+        speak: "A. Apple!"
+      },
+      {
+        letter: "B",
+        sound: "/b/",
+        ans: "BOOK",
+        choices: [
+          { label: "CRAYON", key: "CRAYON" },
+          { label: "BOOK", key: "BOOK" },
+          { label: "APPLE", key: "APPLE" }
+        ],
+        speak: "B. Book!"
+      },
+      {
+        letter: "C",
+        sound: "/k/",
+        ans: "CRAYON",
+        choices: [
+          { label: "DESK", key: "DESK" },
+          { label: "APPLE", key: "APPLE" },
+          { label: "CRAYON", key: "CRAYON" }
+        ],
+        speak: "C. Crayon!"
+      },
+      {
+        letter: "D",
+        sound: "/d/",
+        ans: "DESK",
+        choices: [
+          { label: "BOOK", key: "BOOK" },
+          { label: "DESK", key: "DESK" },
+          { label: "CRAYON", key: "CRAYON" }
+        ],
+        speak: "D. Desk!"
+      }
     ];
 
     let currentPhIdx = 0;
@@ -767,8 +856,9 @@
       document.getElementById('phMatchPromptOut').textContent = `SOUND ${item.sound} — WHICH WORD STARTS WITH ${item.letter}?`;
 
       document.getElementById('phMatchChoices').innerHTML = item.choices.map(ch => `
-        <button type="button" onclick="checkPhMatch('${ch}')" class="p-3.5 rounded-2xl bg-white dark:bg-[#0D1F38] hover:border-amber-400 border-[1.5px] border-amber-400/35 text-sm font-extrabold text-[#002B5C] dark:text-white transition">
-          ${ch}
+        <button type="button" onclick="checkPhMatch('${ch.label}')" class="p-3.5 rounded-2xl bg-white dark:bg-[#0D1F38] hover:border-amber-400 border-[1.5px] border-amber-400/35 text-sm font-extrabold text-[#002B5C] dark:text-white transition inline-flex items-center justify-center gap-2">
+          ${renderSchoolIcon(ch.key, "text-2xl")}
+          <span>${ch.label}</span>
         </button>
       `).join('');
     }

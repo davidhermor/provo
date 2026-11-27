@@ -43,7 +43,7 @@
       transition: background-color 0.2s ease, color 0.2s ease;
     }
 
-    /* Password Gate */
+    /* Firebase Auth Gate */
     #authGate {
       position: fixed;
       inset: 0;
@@ -110,7 +110,7 @@
 
     .auth-input {
       width: 100%;
-      padding: 0.9rem 3rem 0.9rem 1rem;
+      padding: 0.9rem 1rem;
       border-radius: 14px;
       border: 1.5px solid var(--border);
       background: var(--surface-alt);
@@ -121,11 +121,15 @@
       outline: none;
     }
 
+    .auth-input.has-eye {
+      padding-right: 3.4rem;
+    }
+
     .auth-input:focus { border-color: var(--teal); }
 
     .auth-eye {
       position: absolute;
-      right: 0.8rem;
+      right: 0.85rem;
       top: 50%;
       transform: translateY(-50%);
       background: none;
@@ -147,13 +151,19 @@
       font-size: 0.95rem;
       font-weight: 800;
       cursor: pointer;
+      transition: opacity 0.18s ease;
+    }
+
+    .auth-btn:disabled {
+      opacity: 0.65;
+      cursor: wait;
     }
 
     .auth-error {
       color: #E11D48;
       font-size: 0.82rem;
       font-weight: 700;
-      margin-top: 0.7rem;
+      margin-top: 0.75rem;
       min-height: 1.2rem;
     }
 
@@ -194,6 +204,20 @@
       gap: 0.5rem;
     }
 
+    .user-chip {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: #A5F3FC;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 999px;
+      padding: 0.35rem 0.75rem;
+      max-width: 190px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
     .ctrl-btn {
       background: rgba(255, 255, 255, 0.11);
       color: #FFFFFF;
@@ -209,7 +233,7 @@
 
     .ctrl-btn:hover { background: rgba(255, 255, 255, 0.22); }
 
-    /* Asymmetric Editorial Hero with Lighter Blue Gradient */
+    /* Asymmetric Editorial Hero */
     .hero-wrap {
       background: linear-gradient(135deg, var(--navy) 0%, var(--ocean) 55%, var(--teal) 100%);
       color: #FFFFFF;
@@ -518,14 +542,14 @@
       .hero-grid { grid-template-columns: 1fr; }
     }
 
-    @media (max-width: 520px) {
-      .header-badge { display: none; }
+    @media (max-width: 560px) {
+      .user-chip { display: none; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Student Password Gate -->
+  <!-- Student Login Gate (Firebase Authentication) -->
   <div id="authGate">
     <div style="width: 100%; max-width: 420px; display: flex; flex-direction: column; align-items: center;">
       <img
@@ -537,23 +561,33 @@
       >
 
       <div class="auth-card" style="width: 100%;">
-        <span class="auth-badge">Students Only</span>
-        <h2>Student Portal Access</h2>
-        <p>Enter your classroom password to unlock all interactive lessons and exam activities.</p>
+        <span class="auth-badge">Registered Students</span>
+        <h2>Student Portal Sign In</h2>
+        <p>Sign in with your registered student email and password to unlock all lessons.</p>
 
         <form id="authForm">
           <div class="auth-input-wrap">
             <input
+              type="email"
+              id="portalEmailInput"
+              class="auth-input"
+              placeholder="Student email..."
+              autocomplete="email"
+              required
+            >
+          </div>
+          <div class="auth-input-wrap">
+            <input
               type="password"
               id="portalPassInput"
-              class="auth-input"
-              placeholder="Enter password..."
-              autocomplete="off"
+              class="auth-input has-eye"
+              placeholder="Password..."
+              autocomplete="current-password"
               required
             >
             <button type="button" id="togglePassEye" class="auth-eye">Show</button>
           </div>
-          <button type="submit" class="auth-btn">Enter Portal →</button>
+          <button type="submit" id="authSubmitBtn" class="auth-btn">Sign In →</button>
         </form>
         <div id="authError" class="auth-error"></div>
       </div>
@@ -572,8 +606,9 @@
     </a>
 
     <div class="header-actions">
+      <span id="signedUserChip" class="user-chip" style="display: none;"></span>
       <button id="portalThemeBtn" type="button" class="ctrl-btn" title="Toggle Dark Mode">🌙 Dark</button>
-      <button id="portalLockBtn" type="button" class="ctrl-btn" title="Lock Portal">🔒 Lock</button>
+      <button id="portalLogoutBtn" type="button" class="ctrl-btn" title="Sign Out">Sign Out</button>
     </div>
   </header>
 
@@ -610,10 +645,23 @@
         <button class="filter-btn" data-filter="teens">Teens</button>
         <button class="filter-btn" data-filter="business">Business English</button>
       </div>
-      <span id="visibleCountLabel" class="counter-pill">18 lessons</span>
+      <span id="visibleCountLabel" class="counter-pill">19 lessons</span>
     </div>
 
     <div class="grid" id="lessonGrid">
+
+      <!-- B1/B2 ELECTION DAY -->
+      <article class="card" data-category="b1-b2">
+        <div>
+          <div class="card-top">
+            <span class="tag b1-b2">B1 / B2 · Conversation Class</span>
+            <span class="status">● Available</span>
+          </div>
+          <h2>Election Day: Behind the Scenes</h2>
+          <p>A practical, neutral look at how an election day runs from morning setup to the evening count, with civic vocabulary, process passive, and logistics dilemmas.</p>
+        </div>
+        <a href="b1-b2-election-day.html" class="card-btn">Start Lesson →</a>
+      </article>
 
       <!-- A1-A2 FEELINGS & MOODS -->
       <article class="card" data-category="a1-a2">
@@ -745,19 +793,6 @@
         <a href="present-simple.html" class="card-btn">Start Lesson →</a>
       </article>
 
-            <!-- A1-A2 BLACK FRIDAY -->
-      <article class="card" data-category="a1-a2">
-        <div>
-          <div class="card-top">
-            <span class="tag">A1–A2 · Conversation Class</span>
-            <span class="status">● Available</span>
-          </div>
-          <h2>Black Friday &amp; Big Sales</h2>
-          <p>Simple, friendly English for talking about November sales, discounts, prices, shopping online or in stores, and smart everyday buys.</p>
-        </div>
-        <a href="a1-a2-black-friday.html" class="card-btn">Start Lesson →</a>
-      </article>
-
       <!-- POSSESSIVE ADJECTIVES -->
       <article class="card" data-category="a1-a2">
         <div>
@@ -873,49 +908,89 @@
     <strong>PROVO</strong> · Interactive Classroom &amp; Self-Study Portal
   </footer>
 
-  <script>
-    // Password Gate Logic
-    (function () {
-      const PASS = 'IMAPROVOSTUDENT';
-      const STORAGE_KEY = 'provoStudentUnlocked';
-      const gate = document.getElementById('authGate');
-      const form = document.getElementById('authForm');
-      const input = document.getElementById('portalPassInput');
-      const errorBox = document.getElementById('authError');
-      const eyeBtn = document.getElementById('togglePassEye');
-      const lockBtn = document.getElementById('portalLockBtn');
+  <!-- Firebase Authentication Module -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+    import {
+      getAuth,
+      signInWithEmailAndPassword,
+      onAuthStateChanged,
+      signOut
+    } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
 
-      if (localStorage.getItem(STORAGE_KEY) === 'true') {
+    const firebaseConfig = {
+      apiKey: "AIzaSyCBgI_8VFgMjt0cz7inOr5tZR3VE6JnuBY",
+      authDomain: "provo-portal.firebaseapp.com",
+      projectId: "provo-portal",
+      storageBucket: "provo-portal.firebasestorage.app",
+      messagingSenderId: "839121194319",
+      appId: "1:839121194319:web:6307dc9fc798298d05093a",
+      measurementId: "G-Q8K3L9JVCK"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const gate = document.getElementById('authGate');
+    const form = document.getElementById('authForm');
+    const emailInput = document.getElementById('portalEmailInput');
+    const passInput = document.getElementById('portalPassInput');
+    const submitBtn = document.getElementById('authSubmitBtn');
+    const errorBox = document.getElementById('authError');
+    const eyeBtn = document.getElementById('togglePassEye');
+    const logoutBtn = document.getElementById('portalLogoutBtn');
+    const userChip = document.getElementById('signedUserChip');
+
+    eyeBtn.addEventListener('click', () => {
+      const isPass = passInput.type === 'password';
+      passInput.type = isPass ? 'text' : 'password';
+      eyeBtn.textContent = isPass ? 'Hide' : 'Show';
+    });
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
         gate.classList.add('hidden');
-      }
-
-      eyeBtn.addEventListener('click', () => {
-        const isPass = input.type === 'password';
-        input.type = isPass ? 'text' : 'password';
-        eyeBtn.textContent = isPass ? 'Hide' : 'Show';
-      });
-
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const typed = input.value.trim().toUpperCase();
-        if (typed === PASS) {
-          localStorage.setItem(STORAGE_KEY, 'true');
-          gate.classList.add('hidden');
-          errorBox.textContent = '';
-          input.value = '';
-        } else {
-          errorBox.textContent = 'Incorrect password. Please try again.';
-          input.focus();
-        }
-      });
-
-      lockBtn.addEventListener('click', () => {
-        localStorage.removeItem(STORAGE_KEY);
-        gate.classList.remove('hidden');
-        input.value = '';
         errorBox.textContent = '';
-      });
-    })();
+        userChip.textContent = user.email;
+        userChip.style.display = 'inline-block';
+      } else {
+        gate.classList.remove('hidden');
+        userChip.style.display = 'none';
+      }
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = emailInput.value.trim();
+      const password = passInput.value;
+      errorBox.textContent = '';
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Signing in...';
+
+      try {
+        await signInWithEmailAndPassword(auth, email, password);
+        passInput.value = '';
+      } catch (err) {
+        const code = err && err.code ? err.code : '';
+        if (code === 'auth/invalid-credential' || code === 'auth/wrong-password' || code === 'auth/user-not-found') {
+          errorBox.textContent = 'Invalid email or password. Please check your credentials.';
+        } else if (code === 'auth/too-many-requests') {
+          errorBox.textContent = 'Too many failed attempts. Please wait a moment and try again.';
+        } else if (code === 'auth/operation-not-allowed') {
+          errorBox.textContent = 'Email/Password sign-in is not enabled yet in Firebase Authentication.';
+        } else {
+          errorBox.textContent = 'Could not sign in. Please try again.';
+        }
+        passInput.focus();
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Sign In →';
+      }
+    });
+
+    logoutBtn.addEventListener('click', async () => {
+      await signOut(auth);
+    });
   </script>
 
   <script>
@@ -988,9 +1063,9 @@
     (function () {
       const VISITS_KEY = 'provoLessonVisits';
       const DEFAULTS = [
+        'b1-b2-election-day.html',
         'a1-a2-feelings-moods.html',
         'teens-social-media.html',
-        'b1-b2-passive-voice.html',
         'ote-writing-essay.html'
       ];
 

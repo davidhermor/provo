@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TRAVEL ENGLISH · DIRECTIONS &amp; CITY TRANSPORT | PROVO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <style>
+    @keyframes stageIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .stage-anim { animation: stageIn 0.24s ease-out forwards; }
+  </style>
+</head>
+<body class="bg-[#FFF7ED] text-slate-900 dark:bg-[#061322] dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
+
+  <!-- Sticky Top Bar -->
+  <header class="sticky top-0 z-40 bg-[#002B5C] text-white border-b border-orange-400/35 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2.5">
+        <a href="index.html" class="flex items-center shrink-0" title="PROVO">
+          <img
+            src="https://i.postimg.cc/vBt4qH44/download.png"
+            alt="PROVO"
+            class="h-8 w-auto object-contain block"
+            onerror="this.style.display='none'; document.getElementById('provoFallback').classList.remove('hidden');"
+          />
+          <span id="provoFallback" class="hidden font-extrabold tracking-widest text-lg text-white">PROVO</span>
+        </a>
+        <span class="px-2.5 py-0.5 rounded-full bg-orange-500/25 border border-orange-300/45 text-orange-100 text-[11px] font-bold tracking-wider">
+          TRAVEL · TRANSIT
+        </span>
+        <span id="stageTitleHeader" class="hidden xl:inline-block text-xs font-bold tracking-wider text-orange-200">
+          01 · TRANSIT BRIEFING
+        </span>
+      </div>
+
+      <div id="stagePills" class="flex items-center gap-1 overflow-x-auto py-1"></div>
+
+      <div class="flex items-center gap-2 shrink-0">
+        <!-- Global Multilevel Switch -->
+        <div class="inline-flex rounded-xl p-0.5 bg-black/30 border border-white/15" title="Switch Lesson Level">
+          <button id="lvlBtnA" type="button" onclick="setTravelLevel('A')" class="px-2.5 py-1 rounded-lg text-[11px] font-extrabold bg-orange-500 text-slate-950 transition">A1–A2</button>
+          <button id="lvlBtnB" type="button" onclick="setTravelLevel('B')" class="px-2.5 py-1 rounded-lg text-[11px] font-extrabold text-white/80 hover:text-white transition">B1–B2</button>
+        </div>
+
+        <button
+          id="themeBtn"
+          type="button"
+          class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition"
+          title="Toggle Theme"
+        >
+          <i id="themeIcon" data-lucide="sun" class="w-4 h-4"></i>
+        </button>
+        <a
+          href="index.html"
+          class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs font-bold bg-white/10 hover:bg-white/20 text-white transition"
+        >
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          <span class="hidden sm:inline">PORTAL</span>
+        </a>
+      </div>
+    </div>
+    <div class="w-full h-1.5 bg-black/25">
+      <div id="stageProgress" class="h-full bg-orange-400 transition-all duration-300" style="width: 12.5%"></div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl w-full mx-auto px-4 sm:px-6 py-7 sm:py-10 flex-1 flex flex-col justify-center">
+
+    <!-- ==================== 01: TRANSIT BRIEFING & MULTILEVEL MODE ==================== -->
+    <section data-stage="0" class="stage stage-anim">
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 shadow-xl">
+        <div class="lg:col-span-5 h-64 sm:h-auto relative bg-[#091726] overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&amp;fit=crop&amp;w=1050&amp;q=80"
+            alt="City train and metro station platform"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#061322]/90 via-[#061322]/25 to-transparent"></div>
+          <div class="absolute bottom-5 left-5 right-5 space-y-1 text-white">
+            <span class="text-xs font-bold tracking-widest text-orange-300 uppercase">PROVO · Travel English Series</span>
+            <p class="text-sm font-semibold text-slate-200">Street Directions · Metro &amp; Trains · Tickets · Stops &amp; Transfers</p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 p-7 sm:p-10 flex flex-col justify-center space-y-5">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <span id="heroModeBadge" class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-orange-500/15 border border-orange-400/35 text-orange-700 dark:text-orange-300 text-xs font-bold tracking-wider">
+              <i data-lucide="compass" class="w-4 h-4"></i>
+              <span>LEVEL A1–A2 · CLEAR SURVIVAL ENGLISH</span>
+            </span>
+
+            <div class="inline-flex rounded-xl p-1 bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/25">
+              <button type="button" onclick="setTravelLevel('A')" id="heroLvlA" class="px-3 py-1 rounded-lg text-xs font-extrabold bg-orange-500 text-slate-950 transition">A1–A2 Survival</button>
+              <button type="button" onclick="setTravelLevel('B')" id="heroLvlB" class="px-3 py-1 rounded-lg text-xs font-extrabold text-slate-600 dark:text-slate-300 transition">B1–B2 Confident</button>
+            </div>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight text-[#002B5C] dark:text-white">
+            Directions &amp; Transit: <span class="text-orange-600 dark:text-orange-400">Finding Your Way</span>
+          </h1>
+
+          <p id="heroDesc" class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+
+          <!-- Interactive Mini Transit Pass -->
+          <div class="p-4 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/25 space-y-2.5">
+            <div class="flex items-center justify-between text-[11px] font-extrabold uppercase tracking-wider text-orange-700 dark:text-orange-300">
+              <span>City Metro &amp; Rail Pass · Zone 1–2</span>
+              <span>VALID 24H</span>
+            </div>
+            <div class="grid grid-cols-4 gap-2 text-center">
+              <div class="p-2 rounded-xl bg-white dark:bg-[#0C1E33]">
+                <div class="text-[10px] text-slate-400 font-bold">LINE</div>
+                <div class="text-sm font-extrabold text-[#002B5C] dark:text-white">Green L3</div>
+              </div>
+              <div class="p-2 rounded-xl bg-white dark:bg-[#0C1E33]">
+                <div class="text-[10px] text-slate-400 font-bold">PLATFORM</div>
+                <div class="text-sm font-extrabold text-orange-600 dark:text-orange-400">2 · North</div>
+              </div>
+              <div class="p-2 rounded-xl bg-white dark:bg-[#0C1E33]">
+                <div class="text-[10px] text-slate-400 font-bold">CHANGE AT</div>
+                <div class="text-sm font-extrabold text-[#002B5C] dark:text-white">Central</div>
+              </div>
+              <div class="p-2 rounded-xl bg-white dark:bg-[#0C1E33]">
+                <div class="text-[10px] text-slate-400 font-bold">EXIT</div>
+                <div class="text-sm font-extrabold text-[#002B5C] dark:text-white">Museum</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-1">
+            <button
+              type="button"
+              onclick="goStage(1)"
+              class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-[#002B5C] via-orange-700 to-orange-500 hover:opacity-95 text-white text-sm sm:text-base font-bold shadow-lg transition"
+            >
+              <span>Enter Transit Lab</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 02: CONVERSATION QUESTIONS + VOICE RECORDER ==================== -->
+    <section data-stage="1" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-orange-500/20 pb-3">
+        <div>
+          <span id="s2SubBadge" class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 02 · Conversation Questions (A1–A2)</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">8 City Travel &amp; Directions Questions</h2>
+        </div>
+        <div class="inline-flex rounded-xl p-1 bg-white dark:bg-[#0C1E33] border border-orange-500/25 self-start sm:self-auto">
+          <button type="button" onclick="setTravelLevel('A')" class="lvl-sync-a px-3 py-1 rounded-lg text-xs font-extrabold bg-orange-500 text-slate-950 transition">A1–A2</button>
+          <button type="button" onclick="setTravelLevel('B')" class="lvl-sync-b px-3 py-1 rounded-lg text-xs font-extrabold text-slate-600 dark:text-slate-300 transition">B1–B2</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 shadow-xl max-w-4xl mx-auto w-full">
+        <div id="cqPhotoBox" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+
+        <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-5">
+          <div class="space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-2">
+                <span id="cqBadge" class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">QUESTION 1 / 8</span>
+                <span id="cqTag" class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-700 dark:text-orange-300 text-xs font-bold"></span>
+              </div>
+              <button type="button" onclick="speakCq()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-orange-600 hover:bg-orange-500 text-white text-xs font-bold transition">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                <span>Listen</span>
+              </button>
+            </div>
+
+            <h3 id="cqQuestion" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+            <p id="cqFollow" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300"></p>
+
+            <div>
+              <button type="button" onclick="document.getElementById('cqStarters').classList.toggle('hidden')" class="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-orange-700 dark:text-orange-300 hover:underline">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                <span>Helpful Starters</span>
+              </button>
+              <div id="cqStarters" class="hidden mt-2.5 p-3.5 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/20 text-xs space-y-1"></div>
+            </div>
+
+            <!-- Voice Note Recorder -->
+            <div class="p-4 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/20 space-y-3">
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-xs font-extrabold uppercase tracking-wider text-orange-700 dark:text-orange-300">Voice Note Answer</span>
+                <span id="recTimer" class="text-xs font-extrabold text-slate-500 dark:text-slate-400">Ready</span>
+              </div>
+
+              <input
+                id="trStudentName"
+                type="text"
+                placeholder="Your name (e.g. Elena Ruiz)"
+                class="w-full px-3 py-2 rounded-xl bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-sky-400/25 text-xs sm:text-sm outline-none focus:border-orange-400"
+              />
+
+              <div class="flex flex-wrap items-center gap-2">
+                <button
+                  id="btnRecStart"
+                  type="button"
+                  onclick="startVoiceRec()"
+                  class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold transition"
+                >
+                  <i data-lucide="mic" class="w-3.5 h-3.5"></i>
+                  <span>Record</span>
+                </button>
+                <button
+                  id="btnRecStop"
+                  type="button"
+                  onclick="stopVoiceRec()"
+                  disabled
+                  class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-700 disabled:opacity-40 text-white text-xs font-bold transition"
+                >
+                  <i data-lucide="square" class="w-3.5 h-3.5"></i>
+                  <span>Stop</span>
+                </button>
+                <button
+                  id="btnSendAudioDrive"
+                  type="button"
+                  onclick="sendAudioToDrive()"
+                  disabled
+                  class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#002B5C] hover:bg-orange-600 disabled:opacity-40 text-white text-xs font-bold transition"
+                >
+                  <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                  <span id="sendAudioLabel">Send Audio to Teacher</span>
+                </button>
+              </div>
+
+              <audio id="recPlayback" controls class="hidden w-full h-9"></audio>
+              <div id="recFeedback" class="hidden text-xs font-bold p-2.5 rounded-xl"></div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-sky-400/15">
+            <button type="button" onclick="stepCq(-1)" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">← Prev</button>
+            <div id="cqDots" class="flex flex-wrap gap-1"></div>
+            <button type="button" onclick="stepCq(1)" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 03: 12 ESSENTIAL DIRECTIONS & TRANSIT WORDS ==================== -->
+    <section data-stage="2" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-orange-500/20 pb-3">
+        <div>
+          <span id="s3SubBadge" class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 03 · Vocabulary (A1–A2)</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">12 Key Directions &amp; Transport Words</h2>
+        </div>
+        <div class="inline-flex rounded-xl p-1 bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 self-start sm:self-auto">
+          <button id="btnTvSingle" type="button" onclick="setTvMode('single')" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-orange-600 text-white transition">1 by 1 Card</button>
+          <button id="btnTvGrid" type="button" onclick="setTvMode('grid')" class="px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition">All 12 Words</button>
+        </div>
+      </div>
+
+      <div id="tvSingleBox" class="max-w-4xl mx-auto w-full"></div>
+      <div id="tvGridBox" class="hidden grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+    </section>
+
+    <!-- ==================== 04: READING & STATION ANNOUNCEMENTS ==================== -->
+    <section data-stage="3" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-orange-500/20 pb-3">
+        <div>
+          <span id="s4SubBadge" class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 04 · Reading &amp; Station Alerts (A1–A2)</span>
+          <h2 id="readingStoryTitle" class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white"></h2>
+        </div>
+        <button type="button" onclick="speakReadingText()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-orange-600 hover:bg-orange-500 text-white text-xs font-bold self-start sm:self-auto transition">
+          <i data-lucide="volume-2" class="w-4 h-4"></i>
+          <span>Listen to Story</span>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div class="lg:col-span-7 space-y-5">
+          <article class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl overflow-hidden shadow-lg">
+            <img
+              src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&amp;fit=crop&amp;w=1050&amp;q=80"
+              alt="City street crossroads and tram tracks"
+              class="h-44 w-full object-cover"
+            />
+            <div id="trReadingBody" class="p-6 sm:p-7 space-y-3.5 text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed"></div>
+          </article>
+
+          <!-- Station Audio Announcements -->
+          <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl p-5 sm:p-6 space-y-3 shadow-md">
+            <div class="flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-orange-700 dark:text-orange-300">
+              <i data-lucide="megaphone" class="w-4 h-4"></i>
+              <span>Station &amp; Bus Audio (Click to Hear &amp; Decode)</span>
+            </div>
+            <div id="paListBox" class="space-y-2.5"></div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl p-6 space-y-4 shadow-lg">
+          <span class="text-xs font-extrabold uppercase tracking-wider text-orange-600 dark:text-orange-400">Comprehension Check (4 Questions)</span>
+          <div id="readingQuizBox" class="space-y-4"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 05: MULTILEVEL DIRECTIONS & PHRASE LAB ==================== -->
+    <section data-stage="4" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-orange-500/20 pb-3">
+        <div>
+          <span id="s5SubBadge" class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 05 · Directions Phrases (A1–A2)</span>
+          <h2 id="s5Heading" class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white"></h2>
+        </div>
+        <span id="s5Pill" class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-700 dark:text-orange-300 text-xs font-extrabold"></span>
+      </div>
+
+      <div id="phraseTipsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
+
+      <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl p-6 sm:p-8 space-y-4 shadow-lg">
+        <div class="flex items-center justify-between gap-2">
+          <h3 id="gramPracticeTitle" class="text-lg font-extrabold text-[#002B5C] dark:text-white"></h3>
+          <span id="gramScorePill" class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-700 dark:text-orange-300 text-xs font-extrabold">0 / 6</span>
+        </div>
+        <div id="gramDrillList" class="grid grid-cols-1 md:grid-cols-2 gap-3"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 06: INTERACTIVE CITY TRANSIT SIMULATOR ==================== -->
+    <section data-stage="5" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-orange-500/20 pb-3">
+        <div>
+          <span id="s6SubBadge" class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 06 · Interactive Simulator (A1–A2)</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">City Navigation Challenge: Ticket to Stop (6 Steps)</h2>
+        </div>
+        <div class="flex items-center gap-2">
+          <span id="simScoreBadge" class="px-3.5 py-1.5 rounded-xl bg-[#002B5C] text-orange-300 text-xs font-extrabold">SCORE: 0 / 6</span>
+          <button type="button" onclick="resetSimGame()" class="px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">
+            Restart Route
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl p-6 sm:p-9 max-w-4xl mx-auto w-full space-y-6 shadow-xl">
+        <div class="flex items-center justify-between gap-2">
+          <span id="simRoundBadge" class="px-3.5 py-1 rounded-full bg-orange-600 text-white text-xs font-extrabold">STEP 1 / 6</span>
+          <span id="simLevelTag" class="text-xs font-bold text-slate-500 dark:text-slate-400"></span>
+        </div>
+
+        <h3 id="simPrompt" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+        <div id="simOptions" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+        <div id="simFeedback" class="hidden p-4 rounded-2xl text-xs sm:text-sm font-bold"></div>
+
+        <div class="flex justify-end">
+          <button type="button" onclick="nextSimRound()" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-[#002B5C] to-orange-600 text-white text-xs sm:text-sm font-bold">
+            Next Step →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 07: 8 REAL STREET & TRANSIT ROLE-PLAYS ==================== -->
+    <section data-stage="6" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-orange-500/20 pb-3">
+        <div>
+          <span id="s7SubBadge" class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 07 · Real Street &amp; Transit Role-Plays (A1–A2)</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">8 Directions &amp; Transport Situations</h2>
+        </div>
+        <div class="inline-flex rounded-xl p-1 bg-white dark:bg-[#0C1E33] border border-orange-500/25 self-start sm:self-auto">
+          <button type="button" onclick="setTravelLevel('A')" class="lvl-sync-a px-3 py-1 rounded-lg text-xs font-extrabold bg-orange-500 text-slate-950 transition">A1–A2 Simple</button>
+          <button type="button" onclick="setTravelLevel('B')" class="lvl-sync-b px-3 py-1 rounded-lg text-xs font-extrabold text-slate-600 dark:text-slate-300 transition">B1–B2 Polite/Detailed</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 shadow-xl max-w-4xl mx-auto w-full">
+        <div id="trPhotoBox" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+
+        <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-5">
+          <div class="space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-2">
+                <span id="trBadge" class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">SITUATION 1 / 8</span>
+                <span id="trTag" class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-700 dark:text-orange-300 text-xs font-bold"></span>
+              </div>
+              <button type="button" onclick="speakTrPrompt()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-orange-600 hover:bg-orange-500 text-white text-xs font-bold transition">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                <span>Listen</span>
+              </button>
+            </div>
+
+            <div class="p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/25">
+              <div class="text-[11px] font-extrabold uppercase tracking-wider text-amber-700 dark:text-amber-300">Local / Staff Prompt</div>
+              <p id="trStaffLine" class="text-sm sm:text-base font-bold text-[#002B5C] dark:text-white mt-0.5"></p>
+            </div>
+
+            <h3 id="trTask" class="text-lg sm:text-xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+
+            <div class="p-4 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/25 space-y-2">
+              <div class="flex items-center justify-between">
+                <span id="trModelLabel" class="text-[11px] font-extrabold uppercase tracking-wider text-orange-700 dark:text-orange-300"></span>
+                <button type="button" onclick="speakTrModel()" class="text-xs font-bold text-orange-700 dark:text-orange-300 hover:underline inline-flex items-center gap-1">
+                  <i data-lucide="volume-2" class="w-3.5 h-3.5"></i> Hear Answer
+                </button>
+              </div>
+              <p id="trModelAnswer" class="text-sm font-semibold text-slate-800 dark:text-slate-100"></p>
+              <p id="trAltTip" class="text-xs text-slate-500 dark:text-slate-400"></p>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-sky-400/15">
+            <button type="button" onclick="stepTr(-1)" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">← Prev</button>
+            <div id="trDots" class="flex flex-wrap gap-1"></div>
+            <button type="button" onclick="stepTr(1)" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 08: CITY TRANSIT DILEMMAS (ONE BY ONE) ==================== -->
+    <section data-stage="7" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-orange-500/20 pb-3">
+        <div>
+          <span id="s8SubBadge" class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 08 · Transit Dilemmas (A1–A2)</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">How Do You Explore a City? (4 Dilemmas)</h2>
+        </div>
+        <span class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-700 dark:text-orange-300 text-xs font-extrabold">1 Dilemma at a Time</span>
+      </div>
+
+      <div id="debateSingleBox" class="max-w-4xl mx-auto w-full"></div>
+
+      <div class="max-w-4xl mx-auto w-full p-5 rounded-3xl bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-md">
+        <div class="space-y-1">
+          <span class="text-xs font-extrabold uppercase tracking-wider text-orange-600 dark:text-orange-400">Opinion Starters for Current Level</span>
+          <p id="debateStarterBar" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300"></p>
+        </div>
+        <button type="button" onclick="goStage(1)" class="px-4 py-2.5 rounded-xl bg-[#002B5C] hover:bg-orange-600 text-white text-xs font-bold shrink-0 transition">
+          Practice Speaking →
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Navigation -->
+  <footer class="border-t border-orange-500/20 bg-white dark:bg-[#061322] py-4 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      <button id="btnPrev" type="button" onclick="goStage(currentStage - 1)" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-300 dark:border-sky-400/25 hover:bg-slate-100 dark:hover:bg-[#132C4A] disabled:opacity-30 text-xs font-bold transition">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Previous</span>
+      </button>
+
+      <span id="stageCounter" class="text-xs font-bold tracking-widest text-slate-500 dark:text-slate-400">
+        01 / 08
+      </span>
+
+      <button id="btnNext" type="button" onclick="goStage(currentStage + 1)" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#002B5C] hover:bg-orange-700 disabled:opacity-30 text-xs font-bold text-white transition">
+        <span>Next</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    const DRIVE_UPLOAD_URL = "https://script.google.com/macros/s/AKfycbwBcX7Z4aABKplkUkpYvM2wEnsBHhWCZzi7dFGDkeUarkXwv-RRI0JXAPDakjkrCrBc/exec";
+
+    const STAGES = [
+      "01 · TRANSIT BRIEFING",
+      "02 · CONVERSATION",
+      "03 · 12 TRANSIT WORDS",
+      "04 · READING & ALERTS",
+      "05 · DIRECTIONS LAB",
+      "06 · SIMULATOR",
+      "07 · ROLE-PLAYS",
+      "08 · TRANSIT DILEMMAS"
+    ];
+
+    let currentStage = 0;
+    let travelLevel = 'A'; // 'A' = A1-A2 Survival, 'B' = B1-B2 Confident
+    const stageSections = document.querySelectorAll('.stage');
+
+    function syncLevelBadges() {
+      const tag = travelLevel === 'A' ? 'A1–A2' : 'B1–B2';
+      const heroBadge = document.getElementById('heroModeBadge');
+      if (heroBadge) {
+        heroBadge.innerHTML = `<i data-lucide="compass" class="w-4 h-4"></i><span>${
+          travelLevel === 'A' ? 'LEVEL A1–A2 · CLEAR SURVIVAL ENGLISH' : 'LEVEL B1–B2 · NATURAL & POLITE FLUENCY'
+        }</span>`;
+      }
+      const heroDesc = document.getElementById('heroDesc');
+      if (heroDesc) {
+        heroDesc.innerHTML = travelLevel === 'A'
+          ? 'Simple, practical English for asking street directions, buying metro or bus tickets, finding the right platform, and getting off at the right stop.'
+          : 'Natural, polite English for navigating complex metro transfers, understanding station announcements, handling service disruptions, and asking locals for shortcuts.';
+      }
+      const s2 = document.getElementById('s2SubBadge');
+      if (s2) s2.textContent = `Stage 02 · Conversation Questions (${tag})`;
+      const s3 = document.getElementById('s3SubBadge');
+      if (s3) s3.textContent = `Stage 03 · Vocabulary (${tag})`;
+      const s4 = document.getElementById('s4SubBadge');
+      if (s4) s4.textContent = `Stage 04 · Reading & Station Alerts (${tag})`;
+      const s5 = document.getElementById('s5SubBadge');
+      if (s5) s5.textContent = `Stage 05 · Directions Phrases (${tag})`;
+      const s6 = document.getElementById('s6SubBadge');
+      if (s6) s6.textContent = `Stage 06 · Interactive Simulator (${tag})`;
+      const s7 = document.getElementById('s7SubBadge');
+      if (s7) s7.textContent = `Stage 07 · Real Street & Transit Role-Plays (${tag})`;
+      const s8 = document.getElementById('s8SubBadge');
+      if (s8) s8.textContent = `Stage 08 · Transit Dilemmas (${tag})`;
+    }
+
+    function refreshAllStagesForLevel() {
+      syncLevelBadges();
+      renderCqCard();
+      renderTvVocab();
+      renderReadingSection();
+      renderPhraseLab();
+      renderSimRound();
+      renderTrCard();
+      renderDebates();
+      lucide.createIcons();
+    }
+
+    window.setTravelLevel = (lvl) => {
+      travelLevel = lvl;
+      const isA = lvl === 'A';
+      const activeCls = 'bg-orange-500 text-slate-950';
+      const idleHeader = 'text-white/80 hover:text-white';
+      const idleCard = 'text-slate-600 dark:text-slate-300';
+
+      const bA = document.getElementById('lvlBtnA');
+      const bB = document.getElementById('lvlBtnB');
+      if (bA && bB) {
+        bA.className = `px-2.5 py-1 rounded-lg text-[11px] font-extrabold transition ${isA ? activeCls : idleHeader}`;
+        bB.className = `px-2.5 py-1 rounded-lg text-[11px] font-extrabold transition ${!isA ? activeCls : idleHeader}`;
+      }
+
+      const hA = document.getElementById('heroLvlA');
+      const hB = document.getElementById('heroLvlB');
+      if (hA && hB) {
+        hA.className = `px-3 py-1 rounded-lg text-xs font-extrabold transition ${isA ? activeCls : idleCard}`;
+        hB.className = `px-3 py-1 rounded-lg text-xs font-extrabold transition ${!isA ? activeCls : idleCard}`;
+      }
+
+      document.querySelectorAll('.lvl-sync-a').forEach(el => {
+        el.className = `lvl-sync-a px-3 py-1 rounded-lg text-xs font-extrabold transition ${isA ? activeCls : idleCard}`;
+      });
+      document.querySelectorAll('.lvl-sync-b').forEach(el => {
+        el.className = `lvl-sync-b px-3 py-1 rounded-lg text-xs font-extrabold transition ${!isA ? activeCls : idleCard}`;
+      });
+
+      refreshAllStagesForLevel();
+    };
+
+    function goStage(idx) {
+      if (idx < 0 || idx >= stageSections.length) return;
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      currentStage = idx;
+      stageSections.forEach((s, i) => s.classList.toggle('hidden', i !== currentStage));
+      document.getElementById('stageTitleHeader').textContent = STAGES[currentStage];
+      document.getElementById('stageCounter').textContent = `${String(currentStage + 1).padStart(2, '0')} / ${String(stageSections.length).padStart(2, '0')}`;
+      document.getElementById('stageProgress').style.width = `${((currentStage + 1) / stageSections.length) * 100}%`;
+      document.getElementById('btnPrev').disabled = currentStage === 0;
+      document.getElementById('btnNext').disabled = currentStage === stageSections.length - 1;
+      renderStagePills();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      lucide.createIcons();
+    }
+
+    function renderStagePills() {
+      document.getElementById('stagePills').innerHTML = STAGES.map((_, i) => `
+        <button type="button" onclick="goStage(${i})" class="px-2.5 py-1 rounded-lg text-xs font-bold transition ${
+          i === currentStage ? 'bg-orange-500 text-slate-950' : 'text-white/75 hover:text-white hover:bg-white/10'
+        }">${String(i + 1).padStart(2, '0')}</button>
+      `).join('');
+    }
+
+    const themeBtn = document.getElementById('themeBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    if (localStorage.getItem('provoTravelTheme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      themeIcon.setAttribute('data-lucide', 'moon');
+    }
+    themeBtn.addEventListener('click', () => {
+      const dark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('provoTravelTheme', dark ? 'dark' : 'light');
+      themeIcon.setAttribute('data-lucide', dark ? 'sun' : 'moon');
+      lucide.createIcons();
+    });
+
+    function mountPhoto(container, url, altText, fallbackTitle) {
+      container.innerHTML = `<img src="${url}" alt="${altText}" class="w-full h-full object-cover" loading="lazy" />`;
+      const img = container.querySelector('img');
+      if (img) {
+        img.addEventListener('error', () => {
+          container.innerHTML = `
+            <div class="w-full h-full flex flex-col items-center justify-center bg-[#002B5C] text-white p-6 text-center">
+              <i data-lucide="compass" class="w-8 h-8 text-orange-300 mb-2"></i>
+              <span class="text-xs font-extrabold uppercase tracking-widest">${fallbackTitle}</span>
+            </div>
+          `;
+          lucide.createIcons();
+        }, { once: true });
+      }
+    }
+
+    function pickVoice() {
+      if (!('speechSynthesis' in window)) return null;
+      const voices = window.speechSynthesis.getVoices() || [];
+      if (!voices.length) return null;
+      return (
+        voices.find(v => /sonia/i.test(v.name)) ||
+        voices.find(v => /en[-_]GB/i.test(v.lang)) ||
+        voices.find(v => /^en/i.test(v.lang)) ||
+        null
+      );
+    }
+
+    function speakText(text) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      const v = pickVoice();
+      if (v) {
+        u.voice = v;
+        u.lang = v.lang;
+      } else {
+        u.lang = 'en-GB';
+      }
+      u.rate = travelLevel === 'A' ? 0.89 : 0.96;
+      u.pitch = 1.02;
+      window.speechSynthesis.speak(u);
+    }
+
+    // ==================== 02: CONVERSATION QUESTIONS ====================
+    const CQ_CARDS = [
+      {
+        tag: "Walking vs. Metro",
+        qA: "Do you prefer walking around a new city or taking the metro and bus?",
+        followA: "Why?",
+        startersA: ["• I like walking because I can see the streets and shops.", "• I take the metro when the place is far."],
+        qB: "When exploring a new city, do you prefer covering as much ground as possible on foot or relying on public transit?",
+        followB: "How do you decide when to walk versus hop on a tram or metro?",
+        startersB: ["• Walking helps me get a real feel for different neighborhoods and stumble across cool squares.", "• If two sights are more than thirty minutes apart, taking the metro saves energy."],
+        photo: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Maps vs. Locals",
+        qA: "Do you use maps on your phone, or do you ask people in the street?",
+        followA: "Is it easy to follow directions in English?",
+        startersA: ["• I usually use maps on my phone.", "• When my battery is low, I ask people in the street."],
+        qB: "Do you rely entirely on GPS apps when navigating abroad, or do you still ask locals for directions?",
+        followB: "What makes spoken directions easy or confusing to follow in another language?",
+        startersB: ["• Phone maps are great until GPS struggles between tall buildings or underground exits.", "• Landmarks like bridges, churches, or roundabouts are way easier to remember than street names."],
+        photo: "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Tickets & Passes",
+        qA: "Do you buy single tickets or a 24-hour / multi-day travel card?",
+        followA: "Which is easier for you?",
+        startersA: ["• I like a 24-hour travel card.", "• You don't need to buy a ticket every time."],
+        qB: "When using public transport in a foreign city, do you prefer contactless tap-in or buying a multi-day travel pass?",
+        followB: "Have you ever been confused by transport zones or ticket validation machines?",
+        startersB: ["• Tapping a contactless bank card straight at the gate is by far the smoothest system.", "• Transport zones can be tricky—especially when travelling to or from the airport."],
+        photo: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Getting Lost",
+        qA: "Did you ever take the wrong train or get off at the wrong stop?",
+        followA: "What did you do?",
+        startersA: ["• Yes! Once I took the train in the wrong direction.", "• I got off at the next station and crossed the platform."],
+        qB: "Tell us about a time you ended up on the wrong train, bus, or direction while travelling.",
+        followB: "Did that detour lead you anywhere interesting?",
+        startersB: ["• I once hopped on an express train that skipped my stop completely, so I had to backtrack.", "• Getting slightly lost in Venice actually led us to a quiet canal with no crowds at all."],
+        photo: "https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Buses & Trams",
+        qA: "Do you like city buses and trams, or do you prefer the underground metro?",
+        followA: "What is good about each one?",
+        startersA: ["• Buses and trams let you see the city through the window.", "• The metro is faster when there is traffic."],
+        qB: "What are the pros and cons of above-ground trams and buses compared to underground metro networks?",
+        followB: "Which cities you've visited had the easiest transport system?",
+        startersB: ["• Trams give you a free sightseeing tour while getting from A to B, whereas metros beat rush-hour traffic.", "• Cities with clear color-coded lines and English signage make transfers effortless."],
+        photo: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Taxis & Ride Apps",
+        qA: "When do you take a taxi or ride app on a trip?",
+        followA: "With heavy luggage or late at night?",
+        startersA: ["• I take a taxi when I have big suitcases.", "• Also late at night when buses stop."],
+        qB: "In what situations do you opt for a taxi or ride-hailing app instead of public transport?",
+        followB: "How do you make sure the driver knows your exact drop-off point?",
+        startersB: ["• Late-night arrivals with heavy luggage or travelling in a group of four often make a cab worth it.", "• Showing the exact address pin on the map avoids any confusion over street pronunciation."],
+        photo: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Bikes & Scooters",
+        qA: "Have you ever rented a city bike or e-scooter on holiday?",
+        followA: "Is cycling safe in big cities?",
+        startersA: ["• Yes, I rented a bike in the park.", "• Bike lanes make it safe and fun."],
+        qB: "Have you ever used public bike-share schemes or rented bicycles to explore a city?",
+        followB: "What makes a city genuinely bike-friendly for visitors?",
+        startersB: ["• Cycling along river paths or dedicated bike lanes is a brilliant way to cover coastal cities.", "• Clear cycle paths separated from buses make all the difference if you don't know the streets."],
+        photo: "https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Airport to City",
+        qA: "How do you usually go from the airport to the city center?",
+        followA: "By train, express bus, or taxi?",
+        startersA: ["• I usually take the airport train or express bus.", "• It is cheaper than a taxi."],
+        qB: "What's your preferred way to get from an airport into the city center after landing?",
+        followB: "Do you research the transfer route before flying or figure it out on arrival?",
+        startersB: ["• I always check the fastest rail or shuttle link before I fly so I'm not tired and guessing at arrivals.", "• Direct airport trains are hard to beat because they avoid highway traffic completely."],
+        photo: "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      }
+    ];
+    let cqIdx = 0;
+
+    function renderCqCard() {
+      cqIdx = (cqIdx + CQ_CARDS.length) % CQ_CARDS.length;
+      const c = CQ_CARDS[cqIdx];
+      const qText = travelLevel === 'A' ? c.qA : c.qB;
+      const fText = travelLevel === 'A' ? c.followA : c.followB;
+      const sList = travelLevel === 'A' ? c.startersA : c.startersB;
+
+      document.getElementById('cqBadge').textContent = `QUESTION ${cqIdx + 1} / ${CQ_CARDS.length}`;
+      document.getElementById('cqTag').textContent = c.tag;
+      document.getElementById('cqQuestion').textContent = qText;
+      document.getElementById('cqFollow').textContent = fText;
+      document.getElementById('cqStarters').innerHTML = sList.map(s => `<div>${s}</div>`).join('');
+      document.getElementById('cqStarters').classList.add('hidden');
+      mountPhoto(document.getElementById('cqPhotoBox'), c.photo, c.tag, c.tag);
+      document.getElementById('cqDots').innerHTML = CQ_CARDS.map((_, i) => `
+        <button type="button" onclick="cqIdx=${i}; renderCqCard();" class="w-6 h-6 rounded-lg text-[11px] font-bold ${
+          i === cqIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#081526]'
+        }">${i + 1}</button>
+      `).join('');
+    }
+    window.stepCq = (d) => { cqIdx += d; renderCqCard(); };
+    window.speakCq = () => {
+      const c = CQ_CARDS[cqIdx];
+      speakText(`${travelLevel === 'A' ? c.qA : c.qB} ${travelLevel === 'A' ? c.followA : c.followB}`);
+    };
+
+    // Voice Recorder + Drive Upload
+    const trNameInput = document.getElementById('trStudentName');
+    trNameInput.value = localStorage.getItem('provoStudentName') || '';
+    trNameInput.addEventListener('input', () => localStorage.setItem('provoStudentName', trNameInput.value.trim()));
+
+    let mediaRec = null;
+    let audioChunks = [];
+    let recordedBlob = null;
+    let recordedMime = 'audio/webm';
+    let recInterval = null;
+    let recSecs = 0;
+
+    function showRecFb(msg, ok = true) {
+      const box = document.getElementById('recFeedback');
+      box.classList.remove('hidden');
+      box.className = ok
+        ? 'text-xs font-bold p-2.5 rounded-xl bg-emerald-500/15 text-emerald-700 dark:text-emerald-300'
+        : 'text-xs font-bold p-2.5 rounded-xl bg-rose-500/15 text-rose-700 dark:text-rose-300';
+      box.textContent = msg;
+    }
+
+    window.startVoiceRec = async () => {
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        return showRecFb('Microphone recording is not supported in this browser.', false);
+      }
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        audioChunks = [];
+        recordedBlob = null;
+        mediaRec = new MediaRecorder(stream);
+        recordedMime = mediaRec.mimeType || 'audio/webm';
+
+        mediaRec.ondataavailable = (e) => {
+          if (e.data && e.data.size > 0) audioChunks.push(e.data);
+        };
+
+        mediaRec.onstop = () => {
+          stream.getTracks().forEach(t => t.stop());
+          recordedBlob = new Blob(audioChunks, { type: recordedMime });
+          const audioEl = document.getElementById('recPlayback');
+          audioEl.src = URL.createObjectURL(recordedBlob);
+          audioEl.classList.remove('hidden');
+          document.getElementById('btnSendAudioDrive').disabled = false;
+          showRecFb('✓ Recording ready! Listen to check or send it to your teacher.', true);
+        };
+
+        mediaRec.start();
+        recSecs = 0;
+        document.getElementById('recTimer').textContent = 'Recording: 0s';
+        document.getElementById('btnRecStart').disabled = true;
+        document.getElementById('btnRecStop').disabled = false;
+        document.getElementById('btnSendAudioDrive').disabled = true;
+        document.getElementById('recFeedback').classList.add('hidden');
+
+        recInterval = setInterval(() => {
+          recSecs++;
+          document.getElementById('recTimer').textContent = `Recording: ${recSecs}s`;
+        }, 1000);
+      } catch (err) {
+        showRecFb('Please allow microphone access to record your answer.', false);
+      }
+    };
+
+    window.stopVoiceRec = () => {
+      if (mediaRec && mediaRec.state !== 'inactive') {
+        mediaRec.stop();
+      }
+      clearInterval(recInterval);
+      document.getElementById('recTimer').textContent = `Recorded (${recSecs}s)`;
+      document.getElementById('btnRecStart').disabled = false;
+      document.getElementById('btnRecStop').disabled = true;
+    };
+
+    window.sendAudioToDrive = async () => {
+      const studentName = trNameInput.value.trim();
+      if (!studentName) {
+        showRecFb('Enter your name first before sending.', false);
+        trNameInput.focus();
+        return;
+      }
+      if (!recordedBlob) {
+        return showRecFb('Record your voice answer first.', false);
+      }
+
+      const sendBtn = document.getElementById('btnSendAudioDrive');
+      const sendLabel = document.getElementById('sendAudioLabel');
+      sendBtn.disabled = true;
+      sendLabel.textContent = 'Sending...';
+
+      try {
+        const reader = new FileReader();
+        reader.onloadend = async () => {
+          const base64Data = (reader.result || '').toString().split(',')[1] || '';
+          try {
+            const res = await fetch(DRIVE_UPLOAD_URL, {
+              method: 'POST',
+              headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+              body: JSON.stringify({
+                studentName,
+                lessonTitle: `Travel-Directions-Lvl${travelLevel}`,
+                questionNumber: cqIdx + 1,
+                mimeType: recordedMime,
+                audioBase64: base64Data
+              })
+            });
+            const data = await res.json();
+            if (data.status === 'ok') {
+              showRecFb(`✓ Voice note sent to teacher (${data.fileName})!`, true);
+            } else {
+              throw new Error(data.message || 'Upload error');
+            }
+          } catch (e) {
+            showRecFb('Could not send automatically. Check your internet connection and try again.', false);
+          } finally {
+            sendBtn.disabled = false;
+            sendLabel.textContent = 'Send Audio to Teacher';
+          }
+        };
+        reader.readAsDataURL(recordedBlob);
+      } catch (e) {
+        sendBtn.disabled = false;
+        sendLabel.textContent = 'Send Audio to Teacher';
+        showRecFb('Error preparing audio file.', false);
+      }
+    };
+
+    // ==================== 03: 12 DIRECTIONS & TRANSIT VOCABULARY CARDS ====================
+    const TV_VOCAB = [
+      { word: "straight ahead", pos: "adverb", meaningA: "Continue walking forward without turning.", exA: "Go straight ahead for two minutes.", meaningB: "Continue directly forward along the same street or corridor without turning.", exB: "Walk straight ahead past the bridge until you reach the main square.", photo: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "on the corner", pos: "phrase", meaningA: "Where two streets meet.", exA: "The café is on the corner.", meaningB: "Located at the exact point where two intersecting streets meet.", exB: "You'll see the pharmacy right on the corner of High Street and Park Road.", photo: "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "pedestrian crossing / crosswalk", pos: "noun", meaningA: "The painted lines where people cross the road safely.", exA: "Cross at the pedestrian crossing.", meaningB: "A marked section of road where vehicles stop so pedestrians can cross safely.", exB: "Use the pedestrian crossing just beyond the traffic lights.", photo: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "roundabout", pos: "noun", meaningA: "A circular road junction where cars drive around an island.", exA: "Turn left at the roundabout.", meaningB: "A circular traffic intersection where vehicles travel in one direction around a central island.", exB: "Take the second exit at the roundabout and the station is on your right.", photo: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "single / return ticket", pos: "nouns", meaningA: "A ticket to go there (single) or go and come back (return).", exA: "Two return tickets to Central, please.", meaningB: "A one-way fare (single) versus a round-trip ticket covering both outward and return journeys (return).", exB: "A day return ticket is usually cheaper than buying two singles.", photo: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "travel card / day pass", pos: "nouns", meaningA: "A card for unlimited metro and bus rides for one or more days.", exA: "We bought a 24-hour travel card.", meaningB: "A reusable transit card or pass allowing unlimited rides within selected zones for a set period.", exB: "If you're taking more than three rides today, a day pass pays for itself.", photo: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "platform", pos: "noun", meaningA: "The place next to the tracks where you wait for your train.", exA: "The train leaves from platform 2.", meaningB: "The raised walkway beside railway or metro tracks where passengers board and alight.", exB: "Make sure you're on platform 2 for northbound trains.", photo: "https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "change trains / transfer", pos: "verbs", meaningA: "Get off one metro or train line and take another line.", exA: "Change at Central Station for Line 3.", meaningB: "Switch from one transit line or vehicle to another to complete your route.", exB: "Take the Blue Line to Central and change onto the Green Line.", photo: "https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "stop / final stop (terminus)", pos: "nouns", meaningA: "Where the bus or metro stops, and the very last station on the line.", exA: "Get off at the third stop.", meaningB: "An intermediate station (stop) versus the final station at the end of a route (terminus).", exB: "Stay on the train until the final stop—you can't miss it.", photo: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "landmark", pos: "noun", meaningA: "A famous building, bridge, or statue that helps you know where you are.", exA: "The clock tower is a good landmark.", meaningB: "An easily recognizable building, monument, or feature used as a navigation reference.", exB: "Keep the cathedral on your left and you'll find the square easily.", photo: "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "timetable / schedule", pos: "nouns", meaningA: "The list showing what time buses or trains arrive and leave.", exA: "Check the bus timetable.", meaningB: "The published list of departure and arrival times for trains, trams, or buses.", exB: "According to the timetable, trains run every six minutes until midnight.", photo: "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "tap in / tap out", pos: "phrasal verbs", meaningA: "Touch your card or phone on the yellow reader when entering and leaving.", exA: "Remember to tap out at the exit.", meaningB: "Touch a contactless card or travel pass against the reader at entry and exit gates to calculate the fare.", exB: "Don't forget to tap out when leaving the station or you'll be charged the maximum fare.", photo: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&amp;fit=crop&amp;w=800&amp;q=80" }
+    ];
+    let tvIdx = 0;
+    let tvMode = 'single';
+
+    window.setTvMode = (mode) => {
+      tvMode = mode;
+      document.getElementById('tvSingleBox').classList.toggle('hidden', mode !== 'single');
+      const g = document.getElementById('tvGridBox');
+      g.classList.toggle('hidden', mode !== 'grid');
+      g.classList.toggle('grid', mode === 'grid');
+      document.getElementById('btnTvSingle').className = mode === 'single'
+        ? 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-orange-600 text-white transition'
+        : 'px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition';
+      document.getElementById('btnTvGrid').className = mode === 'grid'
+        ? 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-orange-600 text-white transition'
+        : 'px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition';
+      renderTvVocab();
+    };
+
+    function renderTvVocab() {
+      tvIdx = (tvIdx + TV_VOCAB.length) % TV_VOCAB.length;
+      const w = TV_VOCAB[tvIdx];
+      const meaning = travelLevel === 'A' ? w.meaningA : w.meaningB;
+      const ex = travelLevel === 'A' ? w.exA : w.exB;
+      const safeEx = ex.replace(/'/g, "\\'");
+
+      document.getElementById('tvSingleBox').innerHTML = `
+        <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 shadow-xl">
+          <div id="tvPhotoBox" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+          <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">WORD ${tvIdx + 1} / ${TV_VOCAB.length}</span>
+                  <span class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-700 dark:text-orange-300 text-xs font-bold">${w.pos}</span>
+                </div>
+                <button type="button" onclick="speakText('${safeEx}')" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-orange-600 text-white text-xs font-bold">
+                  <i data-lucide="volume-2" class="w-4 h-4"></i> Listen
+                </button>
+              </div>
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">${w.word}</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300">${meaning}</p>
+              <div class="p-4 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/20">
+                <p class="text-sm italic font-semibold text-[#002B5C] dark:text-orange-200">“${ex}”</p>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-sky-400/15">
+              <button type="button" onclick="tvIdx--; renderTvVocab();" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">← Prev</button>
+              <div class="flex flex-wrap gap-1">
+                ${TV_VOCAB.map((_, i) => `<button type="button" onclick="tvIdx=${i}; renderTvVocab();" class="w-7 h-7 rounded-lg text-xs font-bold ${i === tvIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#081526]'}">${i + 1}</button>`).join('')}
+              </div>
+              <button type="button" onclick="tvIdx++; renderTvVocab();" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+            </div>
+          </div>
+        </div>
+      `;
+      mountPhoto(document.getElementById('tvPhotoBox'), w.photo, w.word, w.word.toUpperCase());
+
+      document.getElementById('tvGridBox').innerHTML = TV_VOCAB.map(item => {
+        const m = travelLevel === 'A' ? item.meaningA : item.meaningB;
+        const e = travelLevel === 'A' ? item.exA : item.exB;
+        return `
+          <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl overflow-hidden shadow-md flex flex-col">
+            <img src="${item.photo}" alt="${item.word}" class="h-32 w-full object-cover" loading="lazy" />
+            <div class="p-5 flex-1 flex flex-col justify-between gap-3">
+              <div class="space-y-1.5">
+                <div class="flex items-start justify-between gap-2">
+                  <h4 class="text-lg font-extrabold text-[#002B5C] dark:text-white">${item.word}</h4>
+                  <button type="button" onclick="speakText('${e.replace(/'/g, "\\'")}')" class="p-1.5 rounded-lg bg-[#FFF7ED] dark:bg-[#081526] text-orange-600 dark:text-orange-300"><i data-lucide="volume-2" class="w-4 h-4"></i></button>
+                </div>
+                <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-orange-500/15 text-orange-700 dark:text-orange-300">${item.pos}</span>
+                <p class="text-xs text-slate-600 dark:text-slate-300">${m}</p>
+              </div>
+              <p class="text-xs italic text-[#002B5C] dark:text-orange-200 border-t border-slate-100 dark:border-sky-400/15 pt-2">“${e}”</p>
+            </div>
+          </div>
+        `;
+      }).join('');
+      lucide.createIcons();
+    }
+
+    // ==================== 04: READING & STATION ANNOUNCEMENTS ====================
+    const READING_CONTENT = {
+      A: {
+        title: "Finding the Museum in Dublin",
+        paragraphs: [
+          "<p><strong>Mateo</strong> wants to visit the National Museum in Dublin. He buys a day pass at the tram station and takes the Green Line.</p>",
+          "<p>He gets off at St Stephen's Green stop. Outside the station, he asks a woman: “Excuse me, how do I get to the museum?”</p>",
+          "<p>She says: “Go straight ahead, turn right at the corner, and the museum is next to the library.” Mateo finds it in five minutes!</p>"
+        ],
+        pa: [
+          { label: "Tram 1 · Next Stop", text: "Next stop: St Stephen's Green. Change here for city buses." },
+          { label: "Directions 2 · Street", text: "Go straight ahead and turn right at the corner." },
+          { label: "Ticket 3 · Reminder", text: "Please tap your travel card on the yellow reader." }
+        ],
+        qs: [
+          { q: "1. What ticket does Mateo buy?", opts: ["A day pass", "A plane ticket"], ans: 0 },
+          { q: "2. Where does he get off the tram?", opts: ["At St Stephen's Green", "At the airport"], ans: 0 },
+          { q: "3. Which way does he turn at the corner?", opts: ["Turn right", "Turn back"], ans: 0 },
+          { q: "4. What is next to the museum?", opts: ["The library", "A stadium"], ans: 0 }
+        ]
+      },
+      B: {
+        title: "Navigating a Line Closure in Dublin",
+        paragraphs: [
+          "<p><strong>Mateo</strong> sets out from his hotel in Dublin aiming to reach the National Museum before a guided tour at 11:00 a.m. He tops up a contactless travel card and heads down to the Green Line tram stop.</p>",
+          "<p>Just as he arrives, a digital notice announces that part of the line is closed for weekend track maintenance, and passengers need to take a replacement bus for three stops. Rather than guessing, Mateo asks a uniformed inspector which bus stop to use.</p>",
+          "<p>Following the inspector's advice, he catches bus 39A, gets off near Trinity College, walks straight ahead past the main gate, and turns right at the corner—arriving outside the museum with ten minutes to spare.</p>"
+        ],
+        pa: [
+          { label: "Station 1 · Service Alert", text: "Attention passengers: due to weekend track works, Green Line trams are suspended between Central and Park. Please use replacement bus 39A." },
+          { label: "Bus 2 · Stop Announcement", text: "This stop is College Green. Alight here for the National Museum and the Old Library." },
+          { label: "Inspector 3 · Walking Tip", text: "Once you get off the bus, walk straight ahead for two blocks and turn right at the traffic lights—you'll see the museum entrance right ahead." }
+        ],
+        qs: [
+          { q: "1. Why couldn't Mateo take the tram all the way to his stop?", opts: ["Part of the line was closed for weekend track works", "He forgot to buy a ticket"], ans: 0 },
+          { q: "2. How did he find out which replacement bus to take?", opts: ["He asked a uniformed inspector at the stop", "He took a taxi instead"], ans: 0 },
+          { q: "3. Where did he get off bus 39A?", opts: ["Near Trinity College / College Green", "Outside the airport terminal"], ans: 0 },
+          { q: "4. Did he arrive in time for his 11:00 a.m. tour?", opts: ["Yes, with ten minutes to spare", "No, he arrived an hour late"], ans: 0 }
+        ]
+      }
+    };
+
+    function renderReadingSection() {
+      const pack = READING_CONTENT[travelLevel];
+      document.getElementById('readingStoryTitle').textContent = pack.title;
+      document.getElementById('trReadingBody').innerHTML = pack.paragraphs.join('');
+
+      document.getElementById('paListBox').innerHTML = pack.pa.map((pa, i) => `
+        <div class="p-3 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/20 flex items-center justify-between gap-3">
+          <div>
+            <div class="text-xs font-extrabold text-[#002B5C] dark:text-white">${pa.label}</div>
+            <div id="paTxt${i}" class="hidden text-xs text-slate-600 dark:text-slate-300 mt-1 italic">“${pa.text}”</div>
+          </div>
+          <div class="flex items-center gap-1.5 shrink-0">
+            <button type="button" onclick="speakText('${pa.text.replace(/'/g, "\\'")}')" class="px-3 py-1.5 rounded-xl bg-orange-600 text-white text-xs font-bold inline-flex items-center gap-1">
+              <i data-lucide="volume-2" class="w-3.5 h-3.5"></i> Play
+            </button>
+            <button type="button" onclick="document.getElementById('paTxt${i}').classList.toggle('hidden')" class="px-2.5 py-1.5 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">
+              Text
+            </button>
+          </div>
+        </div>
+      `).join('');
+
+      document.getElementById('readingQuizBox').innerHTML = pack.qs.map((item, qi) => `
+        <div class="p-3.5 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/20 space-y-2">
+          <p class="text-xs sm:text-sm font-bold text-[#002B5C] dark:text-white">${item.q}</p>
+          <div class="grid grid-cols-1 gap-1.5">
+            ${item.opts.map((op, oi) => `
+              <button type="button" onclick="checkReadQ(${qi}, ${oi})" class="text-left px-3 py-2 rounded-xl bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-sky-400/20 hover:border-orange-400 text-xs font-semibold transition">${op}</button>
+            `).join('')}
+          </div>
+          <div id="rqFb${qi}" class="hidden text-xs font-extrabold"></div>
+        </div>
+      `).join('');
+    }
+
+    window.checkReadQ = (qi, oi) => {
+      const fb = document.getElementById(`rqFb${qi}`);
+      fb.classList.remove('hidden');
+      if (oi === READING_CONTENT[travelLevel].qs[qi].ans) {
+        fb.className = 'text-xs font-extrabold text-emerald-600 dark:text-emerald-400';
+        fb.textContent = '✓ Correct!';
+      } else {
+        fb.className = 'text-xs font-extrabold text-rose-600 dark:text-rose-400';
+        fb.textContent = '✗ Check the story again.';
+      }
+    };
+
+    window.speakReadingText = () => speakText(document.getElementById('trReadingBody').innerText);
+
+    // ==================== 05: MULTILEVEL DIRECTIONS & PHRASE LAB ====================
+    const PHRASE_LAB = {
+      A: {
+        heading: "Simple Directions & Ticket Phrases (A1–A2)",
+        pill: "A1–A2 · Everyday Basics",
+        practiceTitle: "Quick Check: Choose the Clear Phrase",
+        cards: [
+          { badge: "1. ASKING THE WAY", color: "bg-[#002B5C]", line1: "“Excuse me, where is the metro station?”", line2: "“How do I get to the museum?”" },
+          { badge: "2. GIVING DIRECTIONS", color: "bg-orange-700", line1: "“Go straight ahead and turn left.”", line2: "“It is on the corner, next to the bank.”" },
+          { badge: "3. TRAINS & BUSES", color: "bg-orange-600", line1: "“Two return tickets, please.”", line2: "“Does this bus go to Central Station?”" }
+        ],
+        drills: [
+          { prompt: "1. Ask politely: “________, where is the train station?”", opts: ["Excuse me", "Sorry me"], ans: 0 },
+          { prompt: "2. Walk forward: “Go ________ ahead for two minutes.”", opts: ["straight", "right"], ans: 0 },
+          { prompt: "3. Location: “The pharmacy is ________ the corner.”", opts: ["on", "in"], ans: 0 },
+          { prompt: "4. Ask about a bus: “________ this bus go to the center?”", opts: ["Does", "Do"], ans: 0 },
+          { prompt: "5. Buy tickets: “Two ________ tickets, please.”", opts: ["return", "returning"], ans: 0 },
+          { prompt: "6. Leave the bus: “Get ________ at the third stop.”", opts: ["off", "out of"], ans: 0 }
+        ]
+      },
+      B: {
+        heading: "Natural & Polite Navigation English (B1–B2)",
+        pill: "B1–B2 · Polite & Nuanced",
+        practiceTitle: "Quick Check: Choose the Natural B1–B2 Phrase",
+        cards: [
+          { badge: "1. INDIRECT QUESTIONS", color: "bg-[#002B5C]", line1: "“Could you tell me the quickest way to the old town?”", line2: "“Do you happen to know if this train stops at Central?”" },
+          { badge: "2. TRANSFERS & STOPS", color: "bg-orange-700", line1: "“How many stops is it from here, and do I need to change?”", line2: "“Which exit should I take for the riverfront?”" },
+          { badge: "3. LANDMARKS & TIME", color: "bg-orange-600", line1: "“Is it within walking distance, or should I grab a tram?”", line2: "“Take the second exit at the roundabout and keep left.”" }
+        ],
+        drills: [
+          { prompt: "1. Indirect question: “Could you tell me where the station ________?”", opts: ["is", "is it"], ans: 0 },
+          { prompt: "2. Asking locals: “Do you ________ to know which bus goes to the port?”", opts: ["happen", "happens"], ans: 0 },
+          { prompt: "3. Distance check: “Is the museum ________ walking distance?”", opts: ["within", "inside"], ans: 0 },
+          { prompt: "4. Roundabout exit: “Take the second ________ at the roundabout.”", opts: ["exit", "outgoing"], ans: 0 },
+          { prompt: "5. Transfer check: “Do I need to ________ lines at Central?”", opts: ["change", "exchange"], ans: 0 },
+          { prompt: "6. Contactless gate: “Remember to ________ out when you leave.”", opts: ["tap", "press"], ans: 0 }
+        ]
+      }
+    };
+    const gramSolved = {};
+
+    function renderPhraseLab() {
+      const p = PHRASE_LAB[travelLevel];
+      document.getElementById('s5Heading').textContent = p.heading;
+      document.getElementById('s5Pill').textContent = p.pill;
+      document.getElementById('gramPracticeTitle').textContent = p.practiceTitle;
+
+      document.getElementById('phraseTipsGrid').innerHTML = p.cards.map(c => `
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl p-5 space-y-2 shadow-sm">
+          <span class="px-2.5 py-1 rounded-lg ${c.color} text-white text-xs font-extrabold">${c.badge}</span>
+          <div class="p-3 rounded-xl bg-[#FFF7ED] dark:bg-[#081526] text-xs font-semibold space-y-1">
+            <div>• ${c.line1}</div>
+            <div>• ${c.line2}</div>
+          </div>
+        </div>
+      `).join('');
+
+      document.getElementById('gramDrillList').innerHTML = p.drills.map((d, di) => `
+        <div class="p-4 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/20 space-y-2.5">
+          <p class="text-xs sm:text-sm font-bold text-[#002B5C] dark:text-white">${d.prompt}</p>
+          <div class="flex flex-wrap gap-2">
+            ${d.opts.map((op, oi) => `
+              <button type="button" onclick="pickGram(${di}, ${oi})" class="px-3.5 py-2 rounded-xl bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-sky-400/25 hover:border-orange-400 text-xs font-bold transition">${op}</button>
+            `).join('')}
+          </div>
+          <div id="gdFb${di}" class="hidden text-xs font-extrabold"></div>
+        </div>
+      `).join('');
+    }
+
+    window.pickGram = (di, oi) => {
+      const p = PHRASE_LAB[travelLevel];
+      const fb = document.getElementById(`gdFb${di}`);
+      fb.classList.remove('hidden');
+      if (oi === p.drills[di].ans) {
+        gramSolved[`${travelLevel}-${di}`] = true;
+        fb.className = 'text-xs font-extrabold text-emerald-600 dark:text-emerald-400';
+        fb.textContent = '✓ Great choice!';
+      } else {
+        fb.className = 'text-xs font-extrabold text-rose-600 dark:text-rose-400';
+        fb.textContent = '✗ Try the other option.';
+      }
+      const totalForLvl = Object.keys(gramSolved).filter(k => k.startsWith(`${travelLevel}-`)).length;
+      document.getElementById('gramScorePill').textContent = `${totalForLvl} / ${p.drills.length}`;
+    };
+
+    // ==================== 06: INTERACTIVE CITY TRANSIT SIMULATOR ====================
+    const SIM_ROUNDS = [
+      {
+        promptA: "Step 1: You want to go and come back on the train today. Which ticket do you buy?",
+        optsA: ["A return ticket", "A single ticket"],
+        whyA: "A return ticket covers going and coming back.",
+        promptB: "Step 1 (Ticket Machine): You're taking the suburban train into town this morning and returning tonight. Which ticket is best?",
+        optsB: ["A day return ticket", "A single one-way ticket"],
+        whyB: "A day return covers both legs and usually costs less than two singles.",
+        ans: 0
+      },
+      {
+        promptA: "Step 2: You are on the Blue Line, and your hotel is on the Green Line. What do you do at Central Station?",
+        optsA: ["Change trains to the Green Line", "Stay on the Blue Line"],
+        whyA: "Change trains at the interchange station.",
+        promptB: "Step 2 (Interchange): You're on the Blue Line, but your destination is two stops along the Green Line. What's your move at Central?",
+        optsB: ["Get off and transfer to the Green Line", "Wait at the terminus"],
+        whyB: "Transferring lines at Central connects you directly to your stop.",
+        ans: 0
+      },
+      {
+        promptA: "Step 3: You want to cross a busy street safely. Where do you walk?",
+        optsA: ["At the pedestrian crossing", "In the middle of the roundabout"],
+        whyA: "Always use the pedestrian crossing.",
+        promptB: "Step 3 (On Foot): You come out of the station onto a busy avenue. Where should you cross to the other side?",
+        optsB: ["At the pedestrian crossing by the lights", "Straight across the roundabout"],
+        whyB: "Pedestrian crossings give you safe right-of-way.",
+        ans: 0
+      },
+      {
+        promptA: "Step 4: Someone tells you: 'Go straight ahead and turn left at the corner.' Which way do you go first?",
+        optsA: ["Walk forward (straight ahead)", "Turn right immediately"],
+        whyA: "First go straight ahead, then turn left at the corner.",
+        promptB: "Step 4 (Following Directions): A local says, 'Head straight ahead for two blocks, then take the first left on the corner.' What do you do?",
+        optsB: ["Walk straight for two blocks, then turn left", "Turn left right away"],
+        whyB: "Following directions step by step keeps you on the right block.",
+        ans: 0
+      },
+      {
+        promptA: "Step 5: You are on a city bus and your stop is next. What do you press?",
+        optsA: ["The red 'Stop' button", "The driver's horn"],
+        whyA: "Press the 'Stop' button so the bus driver stops.",
+        promptB: "Step 5 (On the Bus): The screen displays your stop next, and nobody is standing by the doors. What should you do?",
+        optsB: ["Press the 'Stop' bell before the bus passes", "Wait until the bus leaves the stop"],
+        whyB: "Buses only stop at request stops if someone presses the bell.",
+        ans: 0
+      },
+      {
+        promptA: "Step 6: You leave the metro station with your travel card. What do you do at the exit gate?",
+        optsA: ["Tap out on the reader", "Throw the card on the floor"],
+        whyA: "Tap out so the gate opens and calculates the right fare.",
+        promptB: "Step 6 (Station Exit): You used a contactless bank card to tap in at the start of your ride. What do you do at the exit barrier?",
+        optsB: ["Tap out with the exact same card or device", "Use a different card to exit"],
+        whyB: "Always tap out with the same card/phone you tapped in with.",
+        ans: 0
+      }
+    ];
+    let simIdx = 0;
+    let simScore = 0;
+    let simDone = false;
+
+    function renderSimRound() {
+      const idx = simIdx % SIM_ROUNDS.length;
+      const r = SIM_ROUNDS[idx];
+      simDone = false;
+      const prompt = travelLevel === 'A' ? r.promptA : r.promptB;
+      const opts = travelLevel === 'A' ? r.optsA : r.optsB;
+
+      document.getElementById('simRoundBadge').textContent = `STEP ${idx + 1} / ${SIM_ROUNDS.length}`;
+      document.getElementById('simLevelTag').textContent = travelLevel === 'A' ? 'A1–A2 Quick Decisions' : 'B1–B2 Transit Scenarios';
+      document.getElementById('simPrompt').textContent = prompt;
+      document.getElementById('simFeedback').classList.add('hidden');
+      document.getElementById('simOptions').innerHTML = opts.map((op, i) => `
+        <button type="button" onclick="pickSimOpt(${i})" class="w-full text-left p-4 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border-[1.5px] border-orange-500/20 hover:border-orange-400 text-sm font-extrabold transition">${op}</button>
+      `).join('');
+    }
+
+    window.pickSimOpt = (picked) => {
+      if (simDone) return;
+      simDone = true;
+      const r = SIM_ROUNDS[simIdx % SIM_ROUNDS.length];
+      const why = travelLevel === 'A' ? r.whyA : r.whyB;
+      const fb = document.getElementById('simFeedback');
+      fb.classList.remove('hidden');
+      if (picked === r.ans) {
+        simScore++;
+        fb.className = 'p-4 rounded-2xl text-xs sm:text-sm font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Right route! (+1 pt) — ${why}`;
+      } else {
+        fb.className = 'p-4 rounded-2xl text-xs sm:text-sm font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `✗ Careful! — ${why}`;
+      }
+      document.getElementById('simScoreBadge').textContent = `SCORE: ${simScore} / ${SIM_ROUNDS.length}`;
+    };
+    window.nextSimRound = () => { simIdx++; renderSimRound(); };
+    window.resetSimGame = () => {
+      simIdx = 0;
+      simScore = 0;
+      document.getElementById('simScoreBadge').textContent = `SCORE: 0 / ${SIM_ROUNDS.length}`;
+      renderSimRound();
+    };
+
+    // ==================== 07: 8 REAL STREET & TRANSIT ROLE-PLAYS ====================
+    const TR_CARDS = [
+      {
+        tag: "Buying a Travel Pass",
+        staff: "“Next please! Welcome to Central Ticket Office. How can I help you?”",
+        task: "Ask for two 24-hour travel cards for zones 1 and 2 and ask if you can pay by card.",
+        modelA: "“Hello! Two 24-hour travel cards for zones 1 and 2, please. Can I pay by card?”",
+        modelB: "“Hi there! Could I get two 24-hour travel passes covering zones 1 and 2, please? Also, is contactless card fine?”",
+        tip: "Key words: 24-hour travel card, zones 1 and 2, contactless.",
+        photo: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Asking Street Directions",
+        staff: "“Sure, I know the area well! Where are you trying to get to?”",
+        task: "Ask for the quickest walking route to the National Museum and how many minutes it takes.",
+        modelA: "“Excuse me, how do I get to the National Museum on foot? How many minutes is it?”",
+        modelB: "“Excuse me, could you tell me the quickest way to walk to the National Museum from here, and roughly how long it takes?”",
+        tip: "Key words: on foot, quickest way, roughly how long.",
+        photo: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Checking the Right Platform",
+        staff: "“Careful—trains on platform 1 go south toward the port, not north.”",
+        task: "Ask which platform goes north to King's Cross and how many stops it is.",
+        modelA: "“Oh, thank you! Which platform goes north to King's Cross? How many stops is it?”",
+        modelB: "“Oh, good thing I checked—thanks! Which platform do I need for northbound trains to King's Cross, and how many stops away is it?”",
+        tip: "Key words: northbound / southbound, platform, stops away.",
+        photo: "https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Changing Lines",
+        staff: "“This is the Blue Line. If you want the Green Line, you'll need to transfer.”",
+        task: "Ask where you need to change lines and whether the Green Line is well signposted.",
+        modelA: "“Where do I change to the Green Line? Are there signs?”",
+        modelB: "“Could you tell me which station we change at for the Green Line, and whether the transfer is clearly signposted?”",
+        tip: "Key words: change at / transfer, signposted.",
+        photo: "https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "On the Bus",
+        staff: "“Morning! Where are you heading on this bus?”",
+        task: "Ask if this bus stops near the Botanic Gardens and ask the driver to let you know when to get off.",
+        modelA: "“Good morning! Does this bus stop near the Botanic Gardens? Can you tell me when to get off?”",
+        modelB: "“Good morning! Does this route stop near the Botanic Gardens? Would you mind giving me a shout when we get close?”",
+        tip: "Key words: stop near, let me know / give me a shout, get off.",
+        photo: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Taking a Taxi",
+        staff: "“Hop in! Where are we going today?”",
+        task: "Give the hotel address (24 Park Lane), mention you have a train at 6:00, and ask how long the ride takes.",
+        modelA: "“To 24 Park Lane, please. We have a train at 6:00. How many minutes is it?”",
+        modelB: "“To 24 Park Lane, please—we're catching a train at 6:00, so could you tell me roughly how long the drive takes with this traffic?”",
+        tip: "Key words: drop-off address, traffic, how long the drive takes.",
+        photo: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Roadworks & Detour",
+        staff: "“Sorry, this street is closed today for roadworks. You can't walk through here.”",
+        task: "Ask how to walk around the closed street to reach the main square.",
+        modelA: "“Oh, okay. How can we walk to the main square around this street?”",
+        modelB: "“Oh, I see—thanks for letting us know! What's the easiest detour around the roadworks to reach the main square?”",
+        tip: "Key words: roadworks, detour, around.",
+        photo: "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Airport Express Train",
+        staff: "“Airport Express desk! Are you flying from Terminal 1 or Terminal 2?”",
+        task: "Say you're flying from Terminal 1 and ask how often the express train leaves.",
+        modelA: "“Terminal 1, please. How often does the train leave?”",
+        modelB: "“We're flying out of Terminal 1—could you tell me how frequently the express train runs and which platform it leaves from?”",
+        tip: "Key words: Terminal 1, how often / how frequently, express train.",
+        photo: "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      }
+    ];
+    let trIdx = 0;
+
+    function renderTrCard() {
+      trIdx = (trIdx + TR_CARDS.length) % TR_CARDS.length;
+      const c = TR_CARDS[trIdx];
+      document.getElementById('trBadge').textContent = `SITUATION ${trIdx + 1} / ${TR_CARDS.length}`;
+      document.getElementById('trTag').textContent = c.tag;
+      document.getElementById('trStaffLine').textContent = c.staff;
+      document.getElementById('trTask').textContent = `Your Turn: ${c.task}`;
+      document.getElementById('trModelLabel').textContent = travelLevel === 'A'
+        ? 'A1–A2 Survival Response'
+        : 'B1–B2 Confident & Polite Response';
+      document.getElementById('trModelAnswer').textContent = travelLevel === 'A' ? c.modelA : c.modelB;
+      document.getElementById('trAltTip').textContent = `💡 ${c.tip}`;
+      mountPhoto(document.getElementById('trPhotoBox'), c.photo, c.tag, c.tag);
+      document.getElementById('trDots').innerHTML = TR_CARDS.map((_, i) => `
+        <button type="button" onclick="trIdx=${i}; renderTrCard();" class="w-6 h-6 rounded-lg text-[11px] font-bold ${
+          i === trIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#081526]'
+        }">${i + 1}</button>
+      `).join('');
+    }
+    window.stepTr = (d) => { trIdx += d; renderTrCard(); };
+    window.speakTrPrompt = () => speakText(TR_CARDS[trIdx].staff);
+    window.speakTrModel = () => speakText(travelLevel === 'A' ? TR_CARDS[trIdx].modelA : TR_CARDS[trIdx].modelB);
+
+    // ==================== 08: CITY TRANSIT DILEMMAS (ONE BY ONE) ====================
+    const DEBATES = [
+      {
+        topic: "Dilemma 1 · Walking vs. Public Transit",
+        questionA: "Walk everywhere or take the metro and bus?",
+        aA: "Option A: Walk everywhere. See more streets and buildings.",
+        bA: "Option B: Take the metro. Faster and less tiring.",
+        hintA: "Say which one you like.",
+        questionB: "Exploring a city mostly on foot or relying on fast metro networks?",
+        aB: "Option A: Walking lets you discover hidden squares, cafés, and architecture you miss underground.",
+        bB: "Option B: Using the metro saves your feet so you have energy to visit more neighborhoods in one day.",
+        hintB: "Think about city size and weather.",
+        photo: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&amp;fit=crop&amp;w=950&amp;q=80",
+        picked: null
+      },
+      {
+        topic: "Dilemma 2 · Phone Map vs. Asking Locals",
+        questionA: "Use your phone map or ask people in the street?",
+        aA: "Option A: Phone map. Always shows where you are.",
+        bA: "Option B: Ask people. Friendly and good English practice.",
+        hintA: "Which do you use more?",
+        questionB: "Following live GPS directions or asking locals along the way?",
+        aB: "Option A: GPS maps keep you on track without having to stop every few blocks.",
+        bB: "Option B: Asking locals often leads to better shortcuts and genuine human interaction.",
+        hintB: "Weigh accuracy against spontaneity.",
+        photo: "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&amp;fit=crop&amp;w=950&amp;q=80",
+        picked: null
+      },
+      {
+        topic: "Dilemma 3 · Travel Pass vs. Single Tickets",
+        questionA: "Buy a day pass or buy single tickets?",
+        aA: "Option A: Day pass. Easy and unlimited rides.",
+        bA: "Option B: Single tickets. Only pay when you ride.",
+        hintA: "How many rides do you take?",
+        questionB: "Unlimited multi-day travel passes or pay-as-you-go single fares?",
+        aB: "Option A: A multi-day pass removes ticket-machine queues and lets you hop on and off freely.",
+        bB: "Option B: Pay-as-you-go makes more sense if you mostly walk and only take one ride a day.",
+        hintB: "Compare convenience with actual usage.",
+        photo: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&amp;fit=crop&amp;w=950&amp;q=80",
+        picked: null
+      },
+      {
+        topic: "Dilemma 4 · Hop-On Sightseeing Bus vs. Regular Bus",
+        questionA: "Tourist bus or normal city bus?",
+        aA: "Option A: Tourist bus. Stops at all famous places.",
+        bA: "Option B: Normal city bus. Much cheaper and local.",
+        hintA: "Which is better for a short visit?",
+        questionB: "Hop-on hop-off sightseeing buses or regular public transit routes?",
+        aB: "Option A: Sightseeing buses connect every major landmark with audio guides when you only have one day.",
+        bB: "Option B: Regular city buses and trams cost a fraction of the price and feel far more authentic.",
+        hintB: "Think about budget vs. convenience.",
+        photo: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&amp;fit=crop&amp;w=950&amp;q=80",
+        picked: null
+      }
+    ];
+    let debIdx = 0;
+
+    function renderDebates() {
+      debIdx = (debIdx + DEBATES.length) % DEBATES.length;
+      const d = DEBATES[debIdx];
+      const q = travelLevel === 'A' ? d.questionA : d.questionB;
+      const optA = travelLevel === 'A' ? d.aA : d.aB;
+      const optB = travelLevel === 'A' ? d.bA : d.bB;
+      const hint = travelLevel === 'A' ? d.hintA : d.hintB;
+      const safeSpeech = `${q} ${optA} Or ${optB}`.replace(/'/g, "\\'");
+
+      document.getElementById('debateStarterBar').innerHTML = travelLevel === 'A'
+        ? '<strong>A1–A2:</strong> “I like Option A. It is easy.” / “I prefer Option B.”'
+        : '<strong>B1–B2:</strong> “Personally, I\'d go for Option A because...” / “On the other hand, Option B makes sense when...”';
+
+      document.getElementById('debateSingleBox').innerHTML = `
+        <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 shadow-xl">
+          <div id="debPhotoBox" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+          <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-5">
+            <div class="space-y-4">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">DILEMMA ${debIdx + 1} / ${DEBATES.length}</span>
+                  <span class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-700 dark:text-orange-300 text-xs font-bold">${d.topic}</span>
+                </div>
+                <button type="button" onclick="speakText('${safeSpeech}')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-orange-600 hover:bg-orange-500 text-white text-xs font-bold transition">
+                  <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                  <span>Listen</span>
+                </button>
+              </div>
+
+              <h3 class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug">${q}</h3>
+
+              <div class="space-y-2.5">
+                <button
+                  type="button"
+                  onclick="selectDebateSide(${debIdx}, 'A')"
+                  class="w-full text-left p-4 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border-[1.5px] ${d.picked === 'A' ? 'border-orange-500 ring-2 ring-orange-500/40' : 'border-orange-500/20 hover:border-orange-400'} text-xs sm:text-sm font-bold transition"
+                >${optA}</button>
+
+                <button
+                  type="button"
+                  onclick="selectDebateSide(${debIdx}, 'B')"
+                  class="w-full text-left p-4 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border-[1.5px] ${d.picked === 'B' ? 'border-orange-500 ring-2 ring-orange-500/40' : 'border-orange-500/20 hover:border-orange-400'} text-xs sm:text-sm font-bold transition"
+                >${optB}</button>
+              </div>
+
+              <p class="text-xs text-slate-500 dark:text-slate-400">💡 ${hint}</p>
+            </div>
+
+            <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-sky-400/15">
+              <button type="button" onclick="debIdx--; renderDebates();" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">← Prev</button>
+              <div class="flex gap-1.5">
+                ${DEBATES.map((_, i) => `<button type="button" onclick="debIdx=${i}; renderDebates();" class="w-7 h-7 rounded-lg text-xs font-bold ${i === debIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#081526]'}">${i + 1}</button>`).join('')}
+              </div>
+              <button type="button" onclick="debIdx++; renderDebates();" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+            </div>
+          </div>
+        </div>
+      `;
+      mountPhoto(document.getElementById('debPhotoBox'), d.photo, d.topic, d.topic.toUpperCase());
+      lucide.createIcons();
+    }
+
+    window.selectDebateSide = (i, side) => {
+      DEBATES[i].picked = side;
+      renderDebates();
+    };
+
+    // Init
+    goStage(0);
+    setTravelLevel('A');
+    setTvMode('single');
+    lucide.createIcons();
+  </script>
+</body>
+</html>

@@ -27,7 +27,7 @@
     .stage-anim { animation: stageIn 0.24s ease-out forwards; }
   </style>
 </head>
-<body class="bg-[#F2F7FA] text-slate-900 dark:bg-[#061322] dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
+<body class="bg-[#FFF7ED] text-slate-900 dark:bg-[#061322] dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
 
   <!-- Sticky Top Bar -->
   <header class="sticky top-0 z-40 bg-[#002B5C] text-white border-b border-orange-400/35 shadow-md">
@@ -54,7 +54,7 @@
 
       <div class="flex items-center gap-2 shrink-0">
         <!-- Global Multilevel Switch -->
-        <div class="hidden sm:inline-flex rounded-xl p-0.5 bg-black/30 border border-white/15" title="Switch Expression Complexity">
+        <div class="inline-flex rounded-xl p-0.5 bg-black/30 border border-white/15" title="Switch Lesson Level">
           <button id="lvlBtnA" type="button" onclick="setTravelLevel('A')" class="px-2.5 py-1 rounded-lg text-[11px] font-extrabold bg-orange-500 text-slate-950 transition">A1–A2</button>
           <button id="lvlBtnB" type="button" onclick="setTravelLevel('B')" class="px-2.5 py-1 rounded-lg text-[11px] font-extrabold text-white/80 hover:text-white transition">B1–B2</button>
         </div>
@@ -102,27 +102,25 @@
 
         <div class="lg:col-span-7 p-7 sm:p-10 flex flex-col justify-center space-y-5">
           <div class="flex flex-wrap items-center justify-between gap-2">
-            <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-orange-500/15 border border-orange-400/35 text-orange-700 dark:text-orange-300 text-xs font-bold tracking-wider">
+            <span id="heroModeBadge" class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-orange-500/15 border border-orange-400/35 text-orange-700 dark:text-orange-300 text-xs font-bold tracking-wider">
               <i data-lucide="plane" class="w-4 h-4"></i>
-              <span>MULTILEVEL · SURVIVAL TO CONFIDENT</span>
+              <span>LEVEL A1–A2 · CLEAR SURVIVAL ENGLISH</span>
             </span>
 
-            <div class="inline-flex rounded-xl p-1 bg-[#EEF4F8] dark:bg-[#081526] border border-orange-500/25">
+            <div class="inline-flex rounded-xl p-1 bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/25">
               <button type="button" onclick="setTravelLevel('A')" id="heroLvlA" class="px-3 py-1 rounded-lg text-xs font-extrabold bg-orange-500 text-slate-950 transition">A1–A2 Survival</button>
               <button type="button" onclick="setTravelLevel('B')" id="heroLvlB" class="px-3 py-1 rounded-lg text-xs font-extrabold text-slate-600 dark:text-slate-300 transition">B1–B2 Confident</button>
             </div>
           </div>
 
           <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight text-[#002B5C] dark:text-white">
-            Airport &amp; Flights: <span class="text-orange-600 dark:text-orange-400">Smooth Takeoff</span>
+            Airport &amp; Flights: <span id="heroTitleAccent" class="text-orange-600 dark:text-orange-400">Smooth Takeoff</span>
           </h1>
 
-          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-            Master every step of an international flight—from dropping off luggage and passing security to handling gate changes and customs—with instant switching between <strong>simple survival lines</strong> and <strong>natural, polite B1–B2 expressions</strong>.
-          </p>
+          <p id="heroDesc" class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed"></p>
 
           <!-- Interactive Mini Boarding Pass -->
-          <div class="p-4 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border border-orange-500/25 space-y-2.5">
+          <div class="p-4 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/25 space-y-2.5">
             <div class="flex items-center justify-between text-[11px] font-extrabold uppercase tracking-wider text-orange-700 dark:text-orange-300">
               <span>Sample Boarding Pass · Flight PV-402</span>
               <span>BCN → LHR</span>
@@ -165,10 +163,13 @@
     <section data-stage="1" class="stage hidden stage-anim space-y-6">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-orange-500/20 pb-3">
         <div>
-          <span class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 02 · Conversation Questions &amp; Audio</span>
+          <span id="s2SubBadge" class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 02 · Conversation Questions (A1–A2)</span>
           <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">8 Airport &amp; Flight Questions</h2>
         </div>
-        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Talk through your flight experiences and record a voice note.</p>
+        <div class="inline-flex rounded-xl p-1 bg-white dark:bg-[#0C1E33] border border-orange-500/25 self-start sm:self-auto">
+          <button type="button" onclick="setTravelLevel('A')" class="lvl-sync-a px-3 py-1 rounded-lg text-xs font-extrabold bg-orange-500 text-slate-950 transition">A1–A2</button>
+          <button type="button" onclick="setTravelLevel('B')" class="lvl-sync-b px-3 py-1 rounded-lg text-xs font-extrabold text-slate-600 dark:text-slate-300 transition">B1–B2</button>
+        </div>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 shadow-xl max-w-4xl mx-auto w-full">
@@ -193,13 +194,13 @@
             <div>
               <button type="button" onclick="document.getElementById('cqStarters').classList.toggle('hidden')" class="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-orange-700 dark:text-orange-300 hover:underline">
                 <i data-lucide="message-circle" class="w-4 h-4"></i>
-                <span>Helpful Starters (A1–B2)</span>
+                <span>Helpful Starters</span>
               </button>
-              <div id="cqStarters" class="hidden mt-2.5 p-3.5 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border border-orange-500/20 text-xs space-y-1"></div>
+              <div id="cqStarters" class="hidden mt-2.5 p-3.5 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/20 text-xs space-y-1"></div>
             </div>
 
             <!-- Voice Note Recorder -->
-            <div class="p-4 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border border-orange-500/20 space-y-3">
+            <div class="p-4 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/20 space-y-3">
               <div class="flex items-center justify-between gap-2">
                 <span class="text-xs font-extrabold uppercase tracking-wider text-orange-700 dark:text-orange-300">Voice Note Answer</span>
                 <span id="recTimer" class="text-xs font-extrabold text-slate-500 dark:text-slate-400">Ready</span>
@@ -216,7 +217,7 @@
                 <button
                   id="btnRecStart"
                   type="button"
-                  onclick="startVoiceRec('Q')"
+                  onclick="startVoiceRec()"
                   class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold transition"
                 >
                   <i data-lucide="mic" class="w-3.5 h-3.5"></i>
@@ -262,7 +263,7 @@
     <section data-stage="2" class="stage hidden stage-anim space-y-6">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-orange-500/20 pb-3">
         <div>
-          <span class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 03 · Signs &amp; Essential Vocabulary</span>
+          <span id="s3SubBadge" class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 03 · Vocabulary (A1–A2)</span>
           <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">12 Key Airport &amp; Flight Words</h2>
         </div>
         <div class="inline-flex rounded-xl p-1 bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 self-start sm:self-auto">
@@ -279,8 +280,8 @@
     <section data-stage="3" class="stage hidden stage-anim space-y-6">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-orange-500/20 pb-3">
         <div>
-          <span class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 04 · Reading &amp; PA Announcements</span>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">A Tight Connection in Frankfurt</h2>
+          <span id="s4SubBadge" class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 04 · Reading &amp; PA (A1–A2)</span>
+          <h2 id="readingStoryTitle" class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white"></h2>
         </div>
         <button type="button" onclick="speakReadingText()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-orange-600 hover:bg-orange-500 text-white text-xs font-bold self-start sm:self-auto transition">
           <i data-lucide="volume-2" class="w-4 h-4"></i>
@@ -296,17 +297,7 @@
               alt="Airport departure board and terminal"
               class="h-44 w-full object-cover"
             />
-            <div id="apReadingBody" class="p-6 sm:p-7 space-y-3.5 text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed">
-              <p>
-                <strong>Nora</strong> is flying from Madrid to Oslo with a 75-minute layover in Frankfurt. Her luggage is checked through to her final destination, so she only has a small carry-on backpack.
-              </p>
-              <p>
-                Because of strong headwinds, her first flight lands 30 minutes late. As soon as she enters the terminal, she checks the departure screens. Her connecting flight is still boarding, but the gate has changed from <strong>A18 to B42</strong>, and she has to pass passport control on the way.
-              </p>
-              <p>
-                Instead of panicking, Nora shows her boarding pass to a ground staff member, who points her toward the fast-track transfer lane. She reaches Gate B42 just as final boarding is called—tired, relieved, and glad she packed essentials in her hand luggage.
-              </p>
-            </div>
+            <div id="apReadingBody" class="p-6 sm:p-7 space-y-3.5 text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed"></div>
           </article>
 
           <!-- Interactive PA Gate Announcements -->
@@ -330,35 +321,17 @@
     <section data-stage="4" class="stage hidden stage-anim space-y-6">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-orange-500/20 pb-3">
         <div>
-          <span class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 05 · Multilevel Upgrade Lab</span>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">From Simple Requests to Natural Polite English</h2>
+          <span id="s5SubBadge" class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 05 · Useful Phrases (A1–A2)</span>
+          <h2 id="s5Heading" class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white"></h2>
         </div>
-        <span class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-700 dark:text-orange-300 text-xs font-extrabold">A1–A2 → B1–B2 Upgrade</span>
+        <span id="s5Pill" class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-700 dark:text-orange-300 text-xs font-extrabold"></span>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl p-5 space-y-2 shadow-sm">
-          <span class="px-2.5 py-1 rounded-lg bg-[#002B5C] text-white text-xs font-extrabold">1. ASKING FOR HELP / SEATS</span>
-          <p class="text-xs text-slate-500 dark:text-slate-400"><strong>A1–A2:</strong> Can I have a window seat, please?</p>
-          <p class="text-xs font-semibold text-orange-700 dark:text-orange-300"><strong>B1–B2:</strong> Would it be possible to switch to a window seat if there are any left?</p>
-        </div>
-
-        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl p-5 space-y-2 shadow-sm">
-          <span class="px-2.5 py-1 rounded-lg bg-orange-700 text-white text-xs font-extrabold">2. EXPLAINING A PROBLEM</span>
-          <p class="text-xs text-slate-500 dark:text-slate-400"><strong>A1–A2:</strong> My bag is missing. It didn't arrive.</p>
-          <p class="text-xs font-semibold text-orange-700 dark:text-orange-300"><strong>B1–B2:</strong> I checked a suitcase in Madrid, but it hasn't come out on the baggage carousel.</p>
-        </div>
-
-        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl p-5 space-y-2 shadow-sm">
-          <span class="px-2.5 py-1 rounded-lg bg-orange-600 text-white text-xs font-extrabold">3. ASKING ABOUT CONNECTIONS</span>
-          <p class="text-xs text-slate-500 dark:text-slate-400"><strong>A1–A2:</strong> Where is Gate B42? Is my flight late?</p>
-          <p class="text-xs font-semibold text-orange-700 dark:text-orange-300"><strong>B1–B2:</strong> Could you tell me the quickest way to Gate B42? I have a tight connection.</p>
-        </div>
-      </div>
+      <div id="phraseTipsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
 
       <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl p-6 sm:p-8 space-y-4 shadow-lg">
         <div class="flex items-center justify-between gap-2">
-          <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white">Quick Check: Choose the Best Travel Phrase</h3>
+          <h3 id="gramPracticeTitle" class="text-lg font-extrabold text-[#002B5C] dark:text-white"></h3>
           <span id="gramScorePill" class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-700 dark:text-orange-300 text-xs font-extrabold">0 / 6</span>
         </div>
         <div id="gramDrillList" class="grid grid-cols-1 md:grid-cols-2 gap-3"></div>
@@ -369,7 +342,7 @@
     <section data-stage="5" class="stage hidden stage-anim space-y-6">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-orange-500/20 pb-3">
         <div>
-          <span class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 06 · Interactive Simulator</span>
+          <span id="s6SubBadge" class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 06 · Interactive Simulator (A1–A2)</span>
           <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Terminal Challenge: Check-In to Landing (6 Steps)</h2>
         </div>
         <div class="flex items-center gap-2">
@@ -383,7 +356,7 @@
       <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl p-6 sm:p-9 max-w-4xl mx-auto w-full space-y-6 shadow-xl">
         <div class="flex items-center justify-between gap-2">
           <span id="simRoundBadge" class="px-3.5 py-1 rounded-full bg-orange-600 text-white text-xs font-extrabold">STEP 1 / 6</span>
-          <span class="text-xs font-bold text-slate-500 dark:text-slate-400">Real-Time Travel Decisions</span>
+          <span id="simLevelTag" class="text-xs font-bold text-slate-500 dark:text-slate-400"></span>
         </div>
 
         <h3 id="simPrompt" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
@@ -402,8 +375,8 @@
     <section data-stage="6" class="stage hidden stage-anim space-y-6">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-orange-500/20 pb-3">
         <div>
-          <span class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 07 · Real Airport Role-Plays</span>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">8 Airport Situations (Survival vs. Confident)</h2>
+          <span id="s7SubBadge" class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 07 · Real Airport Role-Plays (A1–A2)</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">8 Airport Situations</h2>
         </div>
         <div class="inline-flex rounded-xl p-1 bg-white dark:bg-[#0C1E33] border border-orange-500/25 self-start sm:self-auto">
           <button type="button" onclick="setTravelLevel('A')" class="lvl-sync-a px-3 py-1 rounded-lg text-xs font-extrabold bg-orange-500 text-slate-950 transition">A1–A2 Simple</button>
@@ -434,7 +407,7 @@
 
             <h3 id="apTask" class="text-lg sm:text-xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
 
-            <div class="p-4 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border border-orange-500/25 space-y-2">
+            <div class="p-4 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/25 space-y-2">
               <div class="flex items-center justify-between">
                 <span id="apModelLabel" class="text-[11px] font-extrabold uppercase tracking-wider text-orange-700 dark:text-orange-300"></span>
                 <button type="button" onclick="speakApModel()" class="text-xs font-bold text-orange-700 dark:text-orange-300 hover:underline inline-flex items-center gap-1">
@@ -459,7 +432,7 @@
     <section data-stage="7" class="stage hidden stage-anim space-y-6">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-orange-500/20 pb-3">
         <div>
-          <span class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 08 · Travel Habits &amp; Dilemmas</span>
+          <span id="s8SubBadge" class="text-xs font-bold tracking-widest text-orange-600 dark:text-orange-400 uppercase">Stage 08 · Travel Dilemmas (A1–A2)</span>
           <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">What Kind of Traveler Are You? (4 Dilemmas)</h2>
         </div>
         <span class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-700 dark:text-orange-300 text-xs font-extrabold">1 Dilemma at a Time</span>
@@ -469,13 +442,11 @@
 
       <div class="max-w-4xl mx-auto w-full p-5 rounded-3xl bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-md">
         <div class="space-y-1">
-          <span class="text-xs font-extrabold uppercase tracking-wider text-orange-600 dark:text-orange-400">Multilevel Opinion Starters</span>
-          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
-            <strong>A1–A2:</strong> I prefer A because it is easier / faster. &nbsp;|&nbsp; <strong>B1–B2:</strong> Personally, I'd rather go for B since it saves stress at the airport.
-          </p>
+          <span class="text-xs font-extrabold uppercase tracking-wider text-orange-600 dark:text-orange-400">Opinion Starters for Current Level</span>
+          <p id="debateStarterBar" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300"></p>
         </div>
         <button type="button" onclick="goStage(1)" class="px-4 py-2.5 rounded-xl bg-[#002B5C] hover:bg-orange-600 text-white text-xs font-bold shrink-0 transition">
-          Record Final Answer →
+          Practice Speaking →
         </button>
       </div>
     </section>
@@ -519,6 +490,48 @@
     let travelLevel = 'A'; // 'A' = A1-A2 Survival, 'B' = B1-B2 Confident
     const stageSections = document.querySelectorAll('.stage');
 
+    function syncLevelBadges() {
+      const tag = travelLevel === 'A' ? 'A1–A2' : 'B1–B2';
+      const heroBadge = document.getElementById('heroModeBadge');
+      if (heroBadge) {
+        heroBadge.innerHTML = `<i data-lucide="plane" class="w-4 h-4"></i><span>${
+          travelLevel === 'A' ? 'LEVEL A1–A2 · CLEAR SURVIVAL ENGLISH' : 'LEVEL B1–B2 · NATURAL & POLITE FLUENCY'
+        }</span>`;
+      }
+      const heroDesc = document.getElementById('heroDesc');
+      if (heroDesc) {
+        heroDesc.innerHTML = travelLevel === 'A'
+          ? 'Short, clear, everyday English for check-in, security, gates, delays, and bags—so you can ask for what you need with confidence.'
+          : 'Fuller, natural, and polite English for handling connections, explanations, upgrades, and unexpected travel changes smoothly.';
+      }
+      const s2 = document.getElementById('s2SubBadge');
+      if (s2) s2.textContent = `Stage 02 · Conversation Questions (${tag})`;
+      const s3 = document.getElementById('s3SubBadge');
+      if (s3) s3.textContent = `Stage 03 · Vocabulary (${tag})`;
+      const s4 = document.getElementById('s4SubBadge');
+      if (s4) s4.textContent = `Stage 04 · Reading & PA (${tag})`;
+      const s5 = document.getElementById('s5SubBadge');
+      if (s5) s5.textContent = `Stage 05 · Useful Phrases (${tag})`;
+      const s6 = document.getElementById('s6SubBadge');
+      if (s6) s6.textContent = `Stage 06 · Interactive Simulator (${tag})`;
+      const s7 = document.getElementById('s7SubBadge');
+      if (s7) s7.textContent = `Stage 07 · Real Airport Role-Plays (${tag})`;
+      const s8 = document.getElementById('s8SubBadge');
+      if (s8) s8.textContent = `Stage 08 · Travel Dilemmas (${tag})`;
+    }
+
+    function refreshAllStagesForLevel() {
+      syncLevelBadges();
+      renderCqCard();
+      renderApVocab();
+      renderReadingSection();
+      renderPhraseLab();
+      renderSimRound();
+      renderApCard();
+      renderDebates();
+      lucide.createIcons();
+    }
+
     window.setTravelLevel = (lvl) => {
       travelLevel = lvl;
       const isA = lvl === 'A';
@@ -547,7 +560,7 @@
         el.className = `lvl-sync-b px-3 py-1 rounded-lg text-xs font-extrabold transition ${!isA ? activeCls : idleCard}`;
       });
 
-      renderApCard();
+      refreshAllStagesForLevel();
     };
 
     function goStage(idx) {
@@ -625,32 +638,108 @@
       } else {
         u.lang = 'en-GB';
       }
-      u.rate = 0.93;
+      u.rate = travelLevel === 'A' ? 0.89 : 0.96;
       u.pitch = 1.02;
       window.speechSynthesis.speak(u);
     }
 
     // ==================== 02: CONVERSATION QUESTIONS ====================
     const CQ_CARDS = [
-      { tag: "Flight Experience", q: "Do you enjoy flying, or do you find airports and planes stressful?", follow: "What is your favorite part of a flight—takeoff, landing, or relaxing in your seat?", photo: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&amp;fit=crop&amp;w=950&amp;q=80", starters: ["• A1–A2: I like flying because it is fast.", "• B1–B2: I don't mind flying, though airport queues can be tiring."] },
-      { tag: "Packing Habits", q: "Are you a light packer with just a carry-on bag, or do you pack a big suitcase?", follow: "What is one thing you always put in your hand luggage?", photo: "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?auto=format&amp;fit=crop&amp;w=950&amp;q=80", starters: ["• A1–A2: I usually take a small bag and a backpack.", "• B1–B2: I prefer travelling light so I don't have to wait at baggage claim."] },
-      { tag: "Airport Timing", q: "Do you like arriving at the airport very early, or do you prefer getting there closer to boarding?", follow: "How do you usually pass the time before takeoff?", photo: "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?auto=format&amp;fit=crop&amp;w=950&amp;q=80", starters: ["• A1–A2: I arrive two hours early and read or drink coffee.", "• B1–B2: I like to get there with enough buffer time to avoid rushing."] },
-      { tag: "Seats & Comfort", q: "Do you prefer a window seat or an aisle seat on a plane?", follow: "How do you stay comfortable on a long flight?", photo: "https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&amp;fit=crop&amp;w=950&amp;q=80", starters: ["• A1–A2: I like a window seat to see the clouds.", "• B1–B2: I usually pick an aisle seat so I can stretch my legs easily."] },
-      { tag: "Delays & Changes", q: "Have you ever had a delayed flight, a gate change, or a missed connection?", follow: "How did you handle the situation?", photo: "https://images.unsplash.com/photo-1507812984078-917a274065be?auto=format&amp;fit=crop&amp;w=950&amp;q=80", starters: ["• A1–A2: Once my flight was two hours late.", "• B1–B2: We had a gate change at the last minute, so we checked the screens often."] },
-      { tag: "Security & Rules", q: "What do you find most annoying at airport security?", follow: "Do you usually have your liquids and electronics ready?", photo: "https://images.unsplash.com/photo-1529074963764-98f45c47344b?auto=format&amp;fit=crop&amp;w=950&amp;q=80", starters: ["• A1–A2: Taking out my laptop and liquids is slow.", "• B1–B2: Having to unpack electronics when moving between terminals can be a hassle."] },
-      { tag: "Layovers", q: "Do you like having a layover in another city, or do you always look for direct flights?", follow: "What makes a layover enjoyable or stressful?", photo: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&amp;fit=crop&amp;w=950&amp;q=80", starters: ["• A1–A2: Direct flights are easier for me.", "• B1–B2: A short layover is fine if the connection isn't too tight."] },
-      { tag: "Memorable Trip", q: "Where was your last flight to, or where would you love to fly next?", follow: "Why that place?", photo: "https://images.unsplash.com/photo-1581553680321-4fffae59fccd?auto=format&amp;fit=crop&amp;w=950&amp;q=80", starters: ["• A1–A2: My last flight was to... Next I want to visit...", "• B1–B2: I'd love to fly to... because I've heard..."] }
+      {
+        tag: "Flight Experience",
+        qA: "Do you like flying? Is the airport easy or stressful for you?",
+        followA: "Say one thing you like and one thing you don't like.",
+        startersA: ["• I like flying because it is fast.", "• Airports can be busy and tiring."],
+        qB: "How do you generally feel about flying and navigating busy terminals?",
+        followB: "Which part of a flight do you find most relaxing or most stressful?",
+        startersB: ["• I don't mind flying, though security queues can test my patience.", "• Once I'm settled in my seat with a book, I find it quite relaxing."],
+        photo: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Packing Habits",
+        qA: "Do you take a small bag or a big suitcase?",
+        followA: "What is in your hand bag?",
+        startersA: ["• I take a small bag and a backpack.", "• I put my charger, book, and water bottle inside."],
+        qB: "Do you tend to travel light with cabin baggage or check a larger suitcase?",
+        followB: "What essentials do you always keep in your carry-on in case of delays?",
+        startersB: ["• I prefer travelling light so I can walk straight out of arrivals.", "• I always pack a spare top, medications, and chargers in my carry-on."],
+        photo: "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Airport Timing",
+        qA: "Do you arrive early at the airport or late?",
+        followA: "What do you do while you wait?",
+        startersA: ["• I arrive two hours early.", "• I drink coffee and look at my phone."],
+        qB: "How far in advance do you like to get to the airport before a flight?",
+        followB: "Does your timing change depending on whether it's a domestic or international trip?",
+        startersB: ["• I usually aim for two hours ahead for short flights and three for long ones.", "• Having extra buffer time helps me stay calm if there's traffic."],
+        photo: "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Seats & Comfort",
+        qA: "Window seat or aisle seat? Which do you like?",
+        followA: "Why?",
+        startersA: ["• I like a window seat.", "• I like an aisle seat to stand up."],
+        qB: "Do you usually go for a window or an aisle seat on a flight?",
+        followB: "How do you stay comfortable when you have a flight longer than three hours?",
+        startersB: ["• I tend to pick an aisle seat so I don't have to disturb anyone.", "• A neck pillow and layers of clothing make a big difference on longer flights."],
+        photo: "https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Delays & Changes",
+        qA: "Was your flight ever late? What happened?",
+        followA: "Did you wait at the airport?",
+        startersA: ["• Yes, my flight was two hours late.", "• We waited near the gate and read."],
+        qB: "Have you ever experienced a significant delay, gate change, or rebooked flight?",
+        followB: "What advice would you give someone stuck waiting at a terminal?",
+        startersB: ["• We had a last-minute gate change in another terminal, so we kept an eye on the app.", "• Check official screens first and keep essential items handy in case plans shift."],
+        photo: "https://images.unsplash.com/photo-1507812984078-917a274065be?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Security & Rules",
+        qA: "Is airport security easy or slow for you?",
+        followA: "Do you have liquids or a laptop?",
+        startersA: ["• Sometimes it is slow.", "• I take out my laptop and liquids."],
+        qB: "What do you find most frustrating about airport security checks?",
+        followB: "How do you organize your bag to get through screening faster?",
+        startersB: ["• Repacking electronics and toiletries after the scanner can be a bit of a chore.", "• I keep liquids in a clear zip bag at the top of my backpack."],
+        photo: "https://images.unsplash.com/photo-1529074963764-98f45c47344b?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Layovers",
+        qA: "Do you like direct flights or flights with a stop?",
+        followA: "Which is better for you?",
+        startersA: ["• I like direct flights.", "• A short stop is okay."],
+        qB: "Would you rather pay more for a direct flight or save money with a layover?",
+        followB: "How much transfer time feels comfortable to you in a big hub airport?",
+        startersB: ["• On tight schedules I gladly pay extra for a non-stop flight.", "• At least ninety minutes gives enough breathing room even with a slow queue."],
+        photo: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      },
+      {
+        tag: "Memorable Trip",
+        qA: "Where did you fly on your last trip? Where do you want to fly next?",
+        followA: "Say the city or country.",
+        startersA: ["• My last flight was to...", "• Next, I want to fly to..."],
+        qB: "Where was your most memorable flight destination recently, and where are you hoping to fly next?",
+        followB: "What makes that destination appealing to you?",
+        startersB: ["• My last trip by plane was to..., where we spent a few days exploring...", "• I'd love to fly to... next because I've heard great things about..."],
+        photo: "https://images.unsplash.com/photo-1581553680321-4fffae59fccd?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+      }
     ];
     let cqIdx = 0;
 
     function renderCqCard() {
       cqIdx = (cqIdx + CQ_CARDS.length) % CQ_CARDS.length;
       const c = CQ_CARDS[cqIdx];
+      const qText = travelLevel === 'A' ? c.qA : c.qB;
+      const fText = travelLevel === 'A' ? c.followA : c.followB;
+      const sList = travelLevel === 'A' ? c.startersA : c.startersB;
+
       document.getElementById('cqBadge').textContent = `QUESTION ${cqIdx + 1} / ${CQ_CARDS.length}`;
       document.getElementById('cqTag').textContent = c.tag;
-      document.getElementById('cqQuestion').textContent = c.q;
-      document.getElementById('cqFollow').textContent = c.follow;
-      document.getElementById('cqStarters').innerHTML = c.starters.map(s => `<div>${s}</div>`).join('');
+      document.getElementById('cqQuestion').textContent = qText;
+      document.getElementById('cqFollow').textContent = fText;
+      document.getElementById('cqStarters').innerHTML = sList.map(s => `<div>${s}</div>`).join('');
       document.getElementById('cqStarters').classList.add('hidden');
       mountPhoto(document.getElementById('cqPhotoBox'), c.photo, c.tag, c.tag);
       document.getElementById('cqDots').innerHTML = CQ_CARDS.map((_, i) => `
@@ -660,7 +749,10 @@
       `).join('');
     }
     window.stepCq = (d) => { cqIdx += d; renderCqCard(); };
-    window.speakCq = () => speakText(`${CQ_CARDS[cqIdx].q} ${CQ_CARDS[cqIdx].follow}`);
+    window.speakCq = () => {
+      const c = CQ_CARDS[cqIdx];
+      speakText(`${travelLevel === 'A' ? c.qA : c.qB} ${travelLevel === 'A' ? c.followA : c.followB}`);
+    };
 
     // Voice Recorder + Drive Upload
     const apNameInput = document.getElementById('apStudentName');
@@ -790,18 +882,18 @@
 
     // ==================== 03: 12 AIRPORT VOCABULARY CARDS ====================
     const AP_VOCAB = [
-      { word: "boarding pass", pos: "noun", meaning: "The paper or mobile ticket that shows your gate, seat, and boarding time.", ex: "Keep your boarding pass and passport ready before reaching the gate.", photo: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
-      { word: "baggage drop", pos: "noun", meaning: "The desk where you leave checked suitcases if you already checked in online.", ex: "Since we checked in on our phones, we went straight to baggage drop.", photo: "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
-      { word: "carry-on / hand luggage", pos: "noun", meaning: "A small bag or cabin suitcase you take with you onto the plane.", ex: "My carry-on fits easily under the seat in front of me.", photo: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
-      { word: "departure board", pos: "noun", meaning: "The large screen displaying flight times, status, and gate numbers.", ex: "Always check the departure board because gates can change at the last minute.", photo: "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
-      { word: "security check", pos: "noun", meaning: "The area where bags are X-rayed and passengers walk through a scanner.", ex: "Security check took only ten minutes this morning.", photo: "https://images.unsplash.com/photo-1529074963764-98f45c47344b?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
-      { word: "boarding gate", pos: "noun", meaning: "The numbered exit door where passengers wait to enter the aircraft.", ex: "Boarding begins 40 minutes before takeoff at Gate B24.", photo: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
-      { word: "layover / connection", pos: "noun", meaning: "A stop between two flights on the way to your final destination.", ex: "We have a two-hour layover in Munich before our flight to Tokyo.", photo: "https://images.unsplash.com/photo-1507812984078-917a274065be?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
-      { word: "delayed / on time", pos: "adjectives", meaning: "Running later than scheduled (delayed) vs. leaving as planned (on time).", ex: "Good news—the screen says our flight is on time.", photo: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
-      { word: "overhead locker", pos: "noun", meaning: "The storage compartment above the seats inside the airplane cabin.", ex: "Could you help me lift my cabin bag into the overhead locker?", photo: "https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
-      { word: "aisle seat / window seat", pos: "nouns", meaning: "A seat next to the walkway (aisle) or right beside the window.", ex: "I prefer an aisle seat on long flights so I can stand up easily.", photo: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
-      { word: "baggage carousel", pos: "noun", meaning: "The moving belt in Arrivals where you collect your checked suitcases.", ex: "Our bags appeared on baggage carousel number 4.", photo: "https://images.unsplash.com/photo-1581553680321-4fffae59fccd?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
-      { word: "customs", pos: "noun", meaning: "The checkpoint where officials inspect goods brought into a country.", ex: "If you have nothing to declare, walk through the green customs lane.", photo: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&amp;fit=crop&amp;w=800&amp;q=80" }
+      { word: "boarding pass", pos: "noun", meaningA: "Your ticket for the plane with your gate and seat.", exA: "Here is my boarding pass.", meaningB: "The digital or printed pass showing your flight details, boarding time, gate, and seat.", exB: "Keep your boarding pass and ID handy as you approach the gate.", photo: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "baggage drop", pos: "noun", meaningA: "The place to leave a big bag.", exA: "We go to baggage drop first.", meaningB: "The counter where you hand over checked luggage after checking in online.", exB: "Since we checked in online, we headed straight to baggage drop.", photo: "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "carry-on / hand luggage", pos: "noun", meaningA: "A small bag you take on the plane.", exA: "My carry-on bag is small.", meaningB: "A cabin bag or backpack you bring into the aircraft rather than checking in.", exB: "My carry-on fits comfortably under the seat in front of me.", photo: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "departure board", pos: "noun", meaningA: "The big screen with flight times and gates.", exA: "Look at the departure board.", meaningB: "The live display showing scheduled times, gate assignments, and status updates.", exB: "Always check the departure board in case your gate changes.", photo: "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "security check", pos: "noun", meaningA: "Where they check your bag and body before flying.", exA: "Security check is fast today.", meaningB: "The screening checkpoint where bags go through X-ray machines and passengers pass scanners.", exB: "Security check took less than ten minutes this morning.", photo: "https://images.unsplash.com/photo-1529074963764-98f45c47344b?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "boarding gate", pos: "noun", meaningA: "The door where you get on the plane.", exA: "Our gate is B24.", meaningB: "The numbered departure area where passengers line up to board the aircraft.", exB: "Boarding starts forty minutes before takeoff at Gate B24.", photo: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "layover / connection", pos: "noun", meaningA: "A stop in another city between two flights.", exA: "I have a stop in Madrid.", meaningB: "A scheduled stop between flights on a multi-leg journey to your final destination.", exB: "We have a ninety-minute layover in Frankfurt before our flight to Oslo.", photo: "https://images.unsplash.com/photo-1507812984078-917a274065be?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "delayed / on time", pos: "adjectives", meaningA: "Late (delayed) or not late (on time).", exA: "The flight is delayed.", meaningB: "Behind schedule (delayed) versus departing right on time.", exB: "Fortunately, the flight is running on time today.", photo: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "overhead locker", pos: "noun", meaningA: "The bag space above your head in the plane.", exA: "Put your bag in the overhead locker.", meaningB: "The enclosed storage bin above the passenger seats inside the cabin.", exB: "Could you help me lift my cabin bag into the overhead locker?", photo: "https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "aisle seat / window seat", pos: "nouns", meaningA: "Next to the walkway or next to the window.", exA: "I want a window seat.", meaningB: "A seat beside the cabin aisle or beside the aircraft window.", exB: "I prefer an aisle seat on long flights so I can get up easily.", photo: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "baggage carousel", pos: "noun", meaningA: "The moving belt where you get your suitcase.", exA: "My bag is on carousel 4.", meaningB: "The rotating conveyor belt in Arrivals where checked luggage is delivered.", exB: "Our suitcases came out on baggage carousel number 4.", photo: "https://images.unsplash.com/photo-1581553680321-4fffae59fccd?auto=format&amp;fit=crop&amp;w=800&amp;q=80" },
+      { word: "customs", pos: "noun", meaningA: "Where officers check things you bring into a country.", exA: "Walk through green customs.", meaningB: "The border control point where officials inspect goods brought into a country.", exB: "If you have nothing to declare, take the green customs channel.", photo: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&amp;fit=crop&amp;w=800&amp;q=80" }
     ];
     let avIdx = 0;
     let avMode = 'single';
@@ -824,7 +916,9 @@
     function renderApVocab() {
       avIdx = (avIdx + AP_VOCAB.length) % AP_VOCAB.length;
       const w = AP_VOCAB[avIdx];
-      const safeEx = w.ex.replace(/'/g, "\\'");
+      const meaning = travelLevel === 'A' ? w.meaningA : w.meaningB;
+      const ex = travelLevel === 'A' ? w.exA : w.exB;
+      const safeEx = ex.replace(/'/g, "\\'");
 
       document.getElementById('avSingleBox').innerHTML = `
         <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 shadow-xl">
@@ -841,9 +935,9 @@
                 </button>
               </div>
               <h3 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">${w.word}</h3>
-              <p class="text-sm text-slate-600 dark:text-slate-300">${w.meaning}</p>
-              <div class="p-4 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border border-orange-500/20">
-                <p class="text-sm italic font-semibold text-[#002B5C] dark:text-orange-200">“${w.ex}”</p>
+              <p class="text-sm text-slate-600 dark:text-slate-300">${meaning}</p>
+              <div class="p-4 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/20">
+                <p class="text-sm italic font-semibold text-[#002B5C] dark:text-orange-200">“${ex}”</p>
               </div>
             </div>
 
@@ -859,35 +953,78 @@
       `;
       mountPhoto(document.getElementById('avPhotoBox'), w.photo, w.word, w.word.toUpperCase());
 
-      document.getElementById('avGridBox').innerHTML = AP_VOCAB.map(item => `
-        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl overflow-hidden shadow-md flex flex-col">
-          <img src="${item.photo}" alt="${item.word}" class="h-32 w-full object-cover" loading="lazy" />
-          <div class="p-5 flex-1 flex flex-col justify-between gap-3">
-            <div class="space-y-1.5">
-              <div class="flex items-start justify-between gap-2">
-                <h4 class="text-lg font-extrabold text-[#002B5C] dark:text-white">${item.word}</h4>
-                <button type="button" onclick="speakText('${item.ex.replace(/'/g, "\\'")}')" class="p-1.5 rounded-lg bg-[#EEF4F8] dark:bg-[#081526] text-orange-600 dark:text-orange-300"><i data-lucide="volume-2" class="w-4 h-4"></i></button>
+      document.getElementById('avGridBox').innerHTML = AP_VOCAB.map(item => {
+        const m = travelLevel === 'A' ? item.meaningA : item.meaningB;
+        const e = travelLevel === 'A' ? item.exA : item.exB;
+        return `
+          <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl overflow-hidden shadow-md flex flex-col">
+            <img src="${item.photo}" alt="${item.word}" class="h-32 w-full object-cover" loading="lazy" />
+            <div class="p-5 flex-1 flex flex-col justify-between gap-3">
+              <div class="space-y-1.5">
+                <div class="flex items-start justify-between gap-2">
+                  <h4 class="text-lg font-extrabold text-[#002B5C] dark:text-white">${item.word}</h4>
+                  <button type="button" onclick="speakText('${e.replace(/'/g, "\\'")}')" class="p-1.5 rounded-lg bg-[#FFF7ED] dark:bg-[#081526] text-orange-600 dark:text-orange-300"><i data-lucide="volume-2" class="w-4 h-4"></i></button>
+                </div>
+                <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-orange-500/15 text-orange-700 dark:text-orange-300">${item.pos}</span>
+                <p class="text-xs text-slate-600 dark:text-slate-300">${m}</p>
               </div>
-              <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-orange-500/15 text-orange-700 dark:text-orange-300">${item.pos}</span>
-              <p class="text-xs text-slate-600 dark:text-slate-300">${item.meaning}</p>
+              <p class="text-xs italic text-[#002B5C] dark:text-orange-200 border-t border-slate-100 dark:border-sky-400/15 pt-2">“${e}”</p>
             </div>
-            <p class="text-xs italic text-[#002B5C] dark:text-orange-200 border-t border-slate-100 dark:border-sky-400/15 pt-2">“${item.ex}”</p>
           </div>
-        </div>
-      `).join('');
+        `;
+      }).join('');
       lucide.createIcons();
     }
 
     // ==================== 04: READING & PA ANNOUNCEMENTS ====================
-    const PA_LINES = [
-      { label: "Announcement 1 · Gate Change", text: "Attention passengers on Flight PV-402 to London: your departure gate has changed from A18 to B24. Please proceed to Gate B24 immediately." },
-      { label: "Announcement 2 · Final Call", text: "This is the final boarding call for passenger Nora Lindqvist flying to Oslo. Please report to Gate B42 immediately as the doors are about to close." },
-      { label: "Announcement 3 · Baggage Arrival", text: "Passengers arriving from Madrid may now collect their checked luggage from baggage carousel number 4." }
-    ];
+    const READING_CONTENT = {
+      A: {
+        title: "Nora's Trip to Oslo",
+        paragraphs: [
+          "<p><strong>Nora</strong> flies from Madrid to Oslo with a stop in Frankfurt. She has a small backpack with her.</p>",
+          "<p>The first plane is 30 minutes late. Nora looks at the screen. Her next gate is now <strong>B42</strong>, not A18.</p>",
+          "<p>A worker shows her the fast way. Nora arrives at Gate B42 just in time for the plane!</p>"
+        ],
+        pa: [
+          { label: "Announcement 1 · Gate Change", text: "Flight PV-402 to London: new gate is B24." },
+          { label: "Announcement 2 · Final Call", text: "Last call for Nora to Oslo at Gate B42." },
+          { label: "Announcement 3 · Bags", text: "Bags from Madrid are on belt 4." }
+        ],
+        qs: [
+          { q: "1. Where does Nora have a stop?", opts: ["In Frankfurt", "In London"], ans: 0 },
+          { q: "2. Why is she in a hurry?", opts: ["Her first plane is 30 minutes late", "She forgot her bag"], ans: 0 },
+          { q: "3. What is her new gate?", opts: ["Gate B42", "Gate A18"], ans: 0 },
+          { q: "4. Does she catch the next plane?", opts: ["Yes, just in time", "No, she misses it"], ans: 0 }
+        ]
+      },
+      B: {
+        title: "A Tight Connection in Frankfurt",
+        paragraphs: [
+          "<p><strong>Nora</strong> is flying from Madrid to Oslo with a 75-minute layover in Frankfurt. Her luggage is checked through to her final destination, so she only has a small carry-on backpack.</p>",
+          "<p>Because of strong headwinds, her first flight lands 30 minutes late. As soon as she enters the terminal, she checks the departure screens. Her connecting flight is still boarding, but the gate has changed from <strong>A18 to B42</strong>, and she has to pass passport control on the way.</p>",
+          "<p>Instead of panicking, Nora shows her boarding pass to a ground staff member, who points her toward the fast-track transfer lane. She reaches Gate B42 just as final boarding is called—tired, relieved, and glad she packed essentials in her hand luggage.</p>"
+        ],
+        pa: [
+          { label: "Announcement 1 · Gate Change", text: "Attention passengers on Flight PV-402 to London: your departure gate has changed from A18 to B24. Please proceed to Gate B24 immediately." },
+          { label: "Announcement 2 · Final Call", text: "This is the final boarding call for passenger Nora Lindqvist flying to Oslo. Please report to Gate B42 immediately as the doors are about to close." },
+          { label: "Announcement 3 · Baggage Arrival", text: "Passengers arriving from Madrid may now collect their checked luggage from baggage carousel number 4." }
+        ],
+        qs: [
+          { q: "1. Where is Nora's checked suitcase sent?", opts: ["Straight through to Oslo", "She has to collect it in Frankfurt"], ans: 0 },
+          { q: "2. Why does her first flight arrive 30 minutes late?", opts: ["Because of strong headwinds", "Because of a strike"], ans: 0 },
+          { q: "3. What changed while she was flying?", opts: ["Her boarding gate moved from A18 to B42", "Her flight was cancelled"], ans: 0 },
+          { q: "4. How does she reach Gate B42 in time?", opts: ["She uses the fast-track transfer lane", "She takes a taxi outside"], ans: 0 }
+        ]
+      }
+    };
 
-    function renderPaList() {
-      document.getElementById('paListBox').innerHTML = PA_LINES.map((pa, i) => `
-        <div class="p-3 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border border-orange-500/20 flex items-center justify-between gap-3">
+    function renderReadingSection() {
+      const pack = READING_CONTENT[travelLevel];
+      document.getElementById('readingStoryTitle').textContent = pack.title;
+      document.getElementById('apReadingBody').innerHTML = pack.paragraphs.join('');
+
+      document.getElementById('paListBox').innerHTML = pack.pa.map((pa, i) => `
+        <div class="p-3 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/20 flex items-center justify-between gap-3">
           <div>
             <div class="text-xs font-extrabold text-[#002B5C] dark:text-white">${pa.label}</div>
             <div id="paTxt${i}" class="hidden text-xs text-slate-600 dark:text-slate-300 mt-1 italic">“${pa.text}”</div>
@@ -902,18 +1039,9 @@
           </div>
         </div>
       `).join('');
-    }
 
-    const READING_QS = [
-      { q: "1. Where is Nora's checked suitcase sent?", opts: ["Straight through to Oslo", "She has to collect it in Frankfurt"], ans: 0 },
-      { q: "2. Why does her first flight arrive 30 minutes late?", opts: ["Because of strong headwinds", "Because of a strike"], ans: 0 },
-      { q: "3. What changed while she was flying?", opts: ["Her boarding gate moved from A18 to B42", "Her flight was cancelled"], ans: 0 },
-      { q: "4. How does she reach Gate B42 in time?", opts: ["She uses the fast-track transfer lane", "She takes a taxi outside"], ans: 0 }
-    ];
-
-    function renderReadingQuiz() {
-      document.getElementById('readingQuizBox').innerHTML = READING_QS.map((item, qi) => `
-        <div class="p-3.5 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border border-orange-500/20 space-y-2">
+      document.getElementById('readingQuizBox').innerHTML = pack.qs.map((item, qi) => `
+        <div class="p-3.5 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/20 space-y-2">
           <p class="text-xs sm:text-sm font-bold text-[#002B5C] dark:text-white">${item.q}</p>
           <div class="grid grid-cols-1 gap-1.5">
             ${item.opts.map((op, oi) => `
@@ -928,7 +1056,7 @@
     window.checkReadQ = (qi, oi) => {
       const fb = document.getElementById(`rqFb${qi}`);
       fb.classList.remove('hidden');
-      if (oi === READING_QS[qi].ans) {
+      if (oi === READING_CONTENT[travelLevel].qs[qi].ans) {
         fb.className = 'text-xs font-extrabold text-emerald-600 dark:text-emerald-400';
         fb.textContent = '✓ Correct!';
       } else {
@@ -939,20 +1067,65 @@
 
     window.speakReadingText = () => speakText(document.getElementById('apReadingBody').innerText);
 
-    // ==================== 05: PHRASE UPGRADE DRILL ====================
-    const GRAM_DRILLS = [
-      { prompt: "1. Polite seat request: “________ to switch to an aisle seat?”", opts: ["Would it be possible", "I want switch"], ans: 0 },
-      { prompt: "2. Explaining a bag problem: “My suitcase ________ on the carousel yet.”", opts: ["hasn't appeared", "didn't appeared"], ans: 0 },
-      { prompt: "3. Asking for directions: “Could you tell me ________ Gate B24 is?”", opts: ["where", "where is"], ans: 0 },
-      { prompt: "4. Security rule: “You ________ take liquids out of your carry-on.”", opts: ["have to", "must to"], ans: 0 },
-      { prompt: "5. Flight status: “Our flight ________ by 45 minutes due to fog.”", opts: ["has been delayed", "has delayed"], ans: 0 },
-      { prompt: "6. Offering help: “Do you mind ________ I put my backpack here?”", opts: ["if", "that"], ans: 0 }
-    ];
+    // ==================== 05: MULTILEVEL PHRASE & GRAMMAR LAB ====================
+    const PHRASE_LAB = {
+      A: {
+        heading: "Simple & Clear Airport Sentences (A1–A2)",
+        pill: "A1–A2 · Everyday Basics",
+        practiceTitle: "Quick Check: Choose the Clear Phrase",
+        cards: [
+          { badge: "1. SEATS & BAGS", color: "bg-[#002B5C]", line1: "“Can I have a window seat, please?”", line2: "“I have one bag to check in.”" },
+          { badge: "2. QUESTIONS", color: "bg-orange-700", line1: "“Where is Gate B24?”", line2: "“Is the flight on time?”" },
+          { badge: "3. HELP", color: "bg-orange-600", line1: "“My bag is not here.”", line2: "“Can you help me, please?”" }
+        ],
+        drills: [
+          { prompt: "1. Ask for a seat: “________ a window seat, please?”", opts: ["Can I have", "I have"], ans: 0 },
+          { prompt: "2. Ask about a gate: “________ Gate B24?”", opts: ["Where is", "Where are"], ans: 0 },
+          { prompt: "3. Say your bag is late: “My suitcase ________ here.”", opts: ["is not", "are not"], ans: 0 },
+          { prompt: "4. Ask about time: “________ my flight on time?”", opts: ["Is", "Are"], ans: 0 },
+          { prompt: "5. Ask for help: “________ help me, please?”", opts: ["Can you", "You can"], ans: 0 },
+          { prompt: "6. Say where you go: “I am ________ to London.”", opts: ["flying", "fly"], ans: 0 }
+        ]
+      },
+      B: {
+        heading: "Natural & Polite Travel Expressions (B1–B2)",
+        pill: "B1–B2 · Polite & Nuanced",
+        practiceTitle: "Quick Check: Choose the Natural B1–B2 Phrase",
+        cards: [
+          { badge: "1. POLITE REQUESTS", color: "bg-[#002B5C]", line1: "“Would it be possible to switch to an aisle seat?”", line2: "“Do you mind if I put my bag here?”" },
+          { badge: "2. EXPLAINING ISSUES", color: "bg-orange-700", line1: "“My suitcase hasn't appeared on the carousel yet.”", line2: "“I'm worried I might miss my connection.”" },
+          { badge: "3. INDIRECT QUESTIONS", color: "bg-orange-600", line1: "“Could you tell me the quickest way to Gate B42?”", line2: "“Do you know if there's a delay?”" }
+        ],
+        drills: [
+          { prompt: "1. Polite request: “________ to switch to an aisle seat?”", opts: ["Would it be possible", "I want switch"], ans: 0 },
+          { prompt: "2. Unfinished luggage arrival: “My suitcase ________ on the carousel yet.”", opts: ["hasn't appeared", "didn't appeared"], ans: 0 },
+          { prompt: "3. Indirect question: “Could you tell me ________ Gate B24 is?”", opts: ["where", "where is"], ans: 0 },
+          { prompt: "4. Security obligation: “You ________ take liquids out of your carry-on.”", opts: ["have to", "must to"], ans: 0 },
+          { prompt: "5. Passive delay: “Our flight ________ by 45 minutes due to fog.”", opts: ["has been delayed", "has delayed"], ans: 0 },
+          { prompt: "6. Asking permission: “Do you mind ________ I put my backpack here?”", opts: ["if", "that"], ans: 0 }
+        ]
+      }
+    };
     const gramSolved = {};
 
-    function renderGramDrills() {
-      document.getElementById('gramDrillList').innerHTML = GRAM_DRILLS.map((d, di) => `
-        <div class="p-4 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border border-orange-500/20 space-y-2.5">
+    function renderPhraseLab() {
+      const p = PHRASE_LAB[travelLevel];
+      document.getElementById('s5Heading').textContent = p.heading;
+      document.getElementById('s5Pill').textContent = p.pill;
+      document.getElementById('gramPracticeTitle').textContent = p.practiceTitle;
+
+      document.getElementById('phraseTipsGrid').innerHTML = p.cards.map(c => `
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 rounded-3xl p-5 space-y-2 shadow-sm">
+          <span class="px-2.5 py-1 rounded-lg ${c.color} text-white text-xs font-extrabold">${c.badge}</span>
+          <div class="p-3 rounded-xl bg-[#FFF7ED] dark:bg-[#081526] text-xs font-semibold space-y-1">
+            <div>• ${c.line1}</div>
+            <div>• ${c.line2}</div>
+          </div>
+        </div>
+      `).join('');
+
+      document.getElementById('gramDrillList').innerHTML = p.drills.map((d, di) => `
+        <div class="p-4 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border border-orange-500/20 space-y-2.5">
           <p class="text-xs sm:text-sm font-bold text-[#002B5C] dark:text-white">${d.prompt}</p>
           <div class="flex flex-wrap gap-2">
             ${d.opts.map((op, oi) => `
@@ -965,27 +1138,77 @@
     }
 
     window.pickGram = (di, oi) => {
+      const p = PHRASE_LAB[travelLevel];
       const fb = document.getElementById(`gdFb${di}`);
       fb.classList.remove('hidden');
-      if (oi === GRAM_DRILLS[di].ans) {
-        gramSolved[di] = true;
+      if (oi === p.drills[di].ans) {
+        gramSolved[`${travelLevel}-${di}`] = true;
         fb.className = 'text-xs font-extrabold text-emerald-600 dark:text-emerald-400';
-        fb.textContent = '✓ Natural & accurate!';
+        fb.textContent = '✓ Great choice!';
       } else {
         fb.className = 'text-xs font-extrabold text-rose-600 dark:text-rose-400';
         fb.textContent = '✗ Try the other option.';
       }
-      document.getElementById('gramScorePill').textContent = `${Object.keys(gramSolved).length} / ${GRAM_DRILLS.length}`;
+      const totalForLvl = Object.keys(gramSolved).filter(k => k.startsWith(`${travelLevel}-`)).length;
+      document.getElementById('gramScorePill').textContent = `${totalForLvl} / ${p.drills.length}`;
     };
 
-    // ==================== 06: AIRPORT SIMULATOR GAME ====================
+    // ==================== 06: INTERACTIVE AIRPORT SIMULATOR ====================
     const SIM_ROUNDS = [
-      { prompt: "Step 1 (Arrival at Terminal): You already checked in online and have one suitcase to drop off. Where do you go?", opts: ["Baggage drop", "Baggage carousel"], ans: 0, why: "Baggage drop is for leaving checked luggage; the carousel is for arrivals." },
-      { prompt: "Step 2 (Security): You have a 500ml bottle of water in your backpack. What should you do before the scanner?", opts: ["Empty or drink it before security", "Put it inside your shoe"], ans: 0, why: "Liquids over 100ml aren't allowed through standard security screening." },
-      { prompt: "Step 3 (Terminal): Your boarding pass says Gate A12, but the departure board says Gate B08. Which one do you follow?", opts: ["Follow the live departure board (Gate B08)", "Wait at Gate A12 anyway"], ans: 0, why: "Departure boards show real-time gate updates." },
-      { prompt: "Step 4 (On Board): You want to stretch your legs easily during a 6-hour flight. Which seat is best?", opts: ["An aisle seat", "A middle seat"], ans: 0, why: "An aisle seat lets you stand up without disturbing neighbors." },
-      { prompt: "Step 5 (Transfer): You have a 50-minute layover and passport control ahead. What do you say to ground staff?", opts: ["“Excuse me, I have a tight connection—which way is Gate B42?”", "“Where is the duty-free perfume shop?”"], ans: 0, why: "Mentioning a tight connection helps staff direct you to fast-track lanes." },
-      { prompt: "Step 6 (Landing): You bought no gifts or restricted goods abroad. Which customs lane do you walk through?", opts: ["The green lane (Nothing to declare)", "The red lane (Goods to declare)"], ans: 0, why: "The green lane is for travelers with nothing to declare." }
+      {
+        promptA: "Step 1: You have one big bag to leave. Where do you go?",
+        optsA: ["Baggage drop", "Baggage carousel"],
+        whyA: "Baggage drop is for leaving bags.",
+        promptB: "Step 1 (Arrival at Terminal): You already checked in online and have one suitcase to check in. Where do you head?",
+        optsB: ["Baggage drop", "Baggage carousel"],
+        whyB: "Baggage drop is for checked luggage before flying; the carousel is for arrivals.",
+        ans: 0
+      },
+      {
+        promptA: "Step 2: You have a big bottle of water at security. What do you do?",
+        optsA: ["Drink it or throw it away", "Keep it in your pocket"],
+        whyA: "Big liquids cannot pass security.",
+        promptB: "Step 2 (Security): You have a 500ml water bottle in your backpack. What is the best move before screening?",
+        optsB: ["Finish or empty it before security", "Leave it inside your boots"],
+        whyB: "Liquids over 100ml aren't allowed through standard security lanes.",
+        ans: 0
+      },
+      {
+        promptA: "Step 3: Your ticket says Gate A12, but the screen says Gate B08. Where do you go?",
+        optsA: ["Gate B08 (on the screen)", "Gate A12"],
+        whyA: "The screen shows the new gate.",
+        promptB: "Step 3 (Terminal): Your boarding pass lists Gate A12, but the departure board shows Gate B08. Which do you follow?",
+        optsB: ["The live departure board (Gate B08)", "The old gate on your pass"],
+        whyB: "Departure boards display real-time gate updates.",
+        ans: 0
+      },
+      {
+        promptA: "Step 4: You want to stand up easily on the plane. Which seat is good?",
+        optsA: ["An aisle seat", "A middle seat"],
+        whyA: "An aisle seat is next to the walkway.",
+        promptB: "Step 4 (On Board): You want easy access to the aisle during a long flight. Which seat suits you better?",
+        optsB: ["An aisle seat", "A middle seat"],
+        whyB: "An aisle seat lets you get up without climbing over other passengers.",
+        ans: 0
+      },
+      {
+        promptA: "Step 5: You have little time for your next flight. What do you ask?",
+        optsA: ["“Where is Gate B42? My flight is soon.”", "“Where is the café?”"],
+        whyA: "Ask for the gate quickly.",
+        promptB: "Step 5 (Transfer): You have a tight 50-minute connection ahead. What do you ask ground staff?",
+        optsB: ["“Excuse me, I have a tight connection—which way is Gate B42?”", "“Could you recommend a souvenir shop?”"],
+        whyB: "Explaining a tight connection helps staff point you to fast-track routes.",
+        ans: 0
+      },
+      {
+        promptA: "Step 6: You arrive and have nothing to declare. Which door?",
+        optsA: ["Green door (Nothing to declare)", "Red door"],
+        whyA: "Green is for nothing to declare.",
+        promptB: "Step 6 (Landing): You're entering the country with nothing to declare. Which customs lane do you take?",
+        optsB: ["The green lane (Nothing to declare)", "The red lane (Goods to declare)"],
+        whyB: "The green lane is for passengers with nothing to declare.",
+        ans: 0
+      }
     ];
     let simIdx = 0;
     let simScore = 0;
@@ -995,11 +1218,15 @@
       const idx = simIdx % SIM_ROUNDS.length;
       const r = SIM_ROUNDS[idx];
       simDone = false;
+      const prompt = travelLevel === 'A' ? r.promptA : r.promptB;
+      const opts = travelLevel === 'A' ? r.optsA : r.optsB;
+
       document.getElementById('simRoundBadge').textContent = `STEP ${idx + 1} / ${SIM_ROUNDS.length}`;
-      document.getElementById('simPrompt').textContent = r.prompt;
+      document.getElementById('simLevelTag').textContent = travelLevel === 'A' ? 'A1–A2 Quick Decisions' : 'B1–B2 Travel Scenarios';
+      document.getElementById('simPrompt').textContent = prompt;
       document.getElementById('simFeedback').classList.add('hidden');
-      document.getElementById('simOptions').innerHTML = r.opts.map((op, i) => `
-        <button type="button" onclick="pickSimOpt(${i})" class="w-full text-left p-4 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border-[1.5px] border-orange-500/20 hover:border-orange-400 text-sm font-extrabold transition">${op}</button>
+      document.getElementById('simOptions').innerHTML = opts.map((op, i) => `
+        <button type="button" onclick="pickSimOpt(${i})" class="w-full text-left p-4 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border-[1.5px] border-orange-500/20 hover:border-orange-400 text-sm font-extrabold transition">${op}</button>
       `).join('');
     }
 
@@ -1007,15 +1234,16 @@
       if (simDone) return;
       simDone = true;
       const r = SIM_ROUNDS[simIdx % SIM_ROUNDS.length];
+      const why = travelLevel === 'A' ? r.whyA : r.whyB;
       const fb = document.getElementById('simFeedback');
       fb.classList.remove('hidden');
       if (picked === r.ans) {
         simScore++;
         fb.className = 'p-4 rounded-2xl text-xs sm:text-sm font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
-        fb.textContent = `✓ Smooth move! (+1 pt) — ${r.why}`;
+        fb.textContent = `✓ Smooth move! (+1 pt) — ${why}`;
       } else {
         fb.className = 'p-4 rounded-2xl text-xs sm:text-sm font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
-        fb.textContent = `✗ Careful! — ${r.why}`;
+        fb.textContent = `✗ Careful! — ${why}`;
       }
       document.getElementById('simScoreBadge').textContent = `SCORE: ${simScore} / ${SIM_ROUNDS.length}`;
     };
@@ -1131,37 +1359,53 @@
     const DEBATES = [
       {
         topic: "Dilemma 1 · Packing Style",
-        question: "Carry-on only or checked suitcase?",
-        a: "Option A: Traveling with only a carry-on bag saves time and avoids lost luggage.",
-        b: "Option B: Checking a big suitcase is much more comfortable because you don't worry about liquid limits.",
-        hint: "Think about short city breaks vs. longer trips.",
+        questionA: "Small bag or big suitcase?",
+        aA: "Option A: Small bag. Fast and easy.",
+        bA: "Option B: Big suitcase. More space for clothes.",
+        hintA: "Say which one you like.",
+        questionB: "Carry-on only or checked suitcase?",
+        aB: "Option A: Traveling with only a carry-on bag saves time and avoids lost luggage.",
+        bB: "Option B: Checking a big suitcase is much more comfortable because you don't worry about liquid limits.",
+        hintB: "Think about short city breaks vs. longer trips.",
         photo: "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?auto=format&amp;fit=crop&amp;w=950&amp;q=80",
         picked: null
       },
       {
         topic: "Dilemma 2 · Arrival Time",
-        question: "How early do you arrive at the airport?",
-        a: "Option A: Arriving 3 hours early lets you relax, grab a coffee, and avoid any stress.",
-        b: "Option B: Arriving 75 minutes before takeoff (with online check-in) saves hours of waiting.",
-        hint: "Are you an early bird or a last-minute traveler?",
+        questionA: "Early at the airport or not so early?",
+        aA: "Option A: Early. No stress.",
+        bA: "Option B: Not so early. Less waiting.",
+        hintA: "Are you early or late?",
+        questionB: "How early do you arrive at the airport?",
+        aB: "Option A: Arriving 3 hours early lets you relax, grab a coffee, and avoid any stress.",
+        bB: "Option B: Arriving 75 minutes before takeoff (with online check-in) saves hours of waiting.",
+        hintB: "Are you an early bird or a last-minute traveler?",
         photo: "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?auto=format&amp;fit=crop&amp;w=950&amp;q=80",
         picked: null
       },
       {
         topic: "Dilemma 3 · Seat Choice",
-        question: "Window seat or aisle seat?",
-        a: "Option A: Window seat—great views, a wall to lean on, and nobody climbs over you.",
-        b: "Option B: Aisle seat—extra legroom feel and freedom to walk around anytime.",
-        hint: "Does your answer change on a 1-hour flight vs. an 8-hour flight?",
+        questionA: "Window seat or aisle seat?",
+        aA: "Option A: Window seat. Nice view.",
+        bA: "Option B: Aisle seat. Easy to stand up.",
+        hintA: "Which seat do you want?",
+        questionB: "Window seat or aisle seat?",
+        aB: "Option A: Window seat—great views, a wall to lean on, and nobody climbs over you.",
+        bB: "Option B: Aisle seat—extra legroom feel and freedom to walk around anytime.",
+        hintB: "Does your answer change on a 1-hour flight vs. an 8-hour flight?",
         photo: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&amp;fit=crop&amp;w=950&amp;q=80",
         picked: null
       },
       {
         topic: "Dilemma 4 · Layovers",
-        question: "Direct flight or cheaper flight with a layover?",
-        a: "Option A: Paying a bit more for a direct flight is always worth it.",
-        b: "Option B: A flight with a layover is great if it saves money or lets you explore a new airport.",
-        hint: "Weigh budget against travel time and connection stress.",
+        questionA: "Direct flight or flight with a stop?",
+        aA: "Option A: Direct flight. Faster.",
+        bA: "Option B: Flight with a stop. Cheaper.",
+        hintA: "Which is better for you?",
+        questionB: "Direct flight or cheaper flight with a layover?",
+        aB: "Option A: Paying a bit more for a direct flight is always worth it.",
+        bB: "Option B: A flight with a layover is great if it saves money or lets you explore a new airport.",
+        hintB: "Weigh budget against travel time and connection stress.",
         photo: "https://images.unsplash.com/photo-1507812984078-917a274065be?auto=format&amp;fit=crop&amp;w=950&amp;q=80",
         picked: null
       }
@@ -1171,7 +1415,15 @@
     function renderDebates() {
       debIdx = (debIdx + DEBATES.length) % DEBATES.length;
       const d = DEBATES[debIdx];
-      const safeSpeech = `${d.question} ${d.a} Or ${d.b}`.replace(/'/g, "\\'");
+      const q = travelLevel === 'A' ? d.questionA : d.questionB;
+      const optA = travelLevel === 'A' ? d.aA : d.aB;
+      const optB = travelLevel === 'A' ? d.bA : d.bB;
+      const hint = travelLevel === 'A' ? d.hintA : d.hintB;
+      const safeSpeech = `${q} ${optA} Or ${optB}`.replace(/'/g, "\\'");
+
+      document.getElementById('debateStarterBar').innerHTML = travelLevel === 'A'
+        ? '<strong>A1–A2:</strong> “I like Option A. It is easy.” / “I prefer Option B.”'
+        : '<strong>B1–B2:</strong> “Personally, I\'d go for Option A because...” / “On the other hand, Option B makes sense when...”';
 
       document.getElementById('debateSingleBox').innerHTML = `
         <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-orange-500/25 shadow-xl">
@@ -1189,23 +1441,23 @@
                 </button>
               </div>
 
-              <h3 class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug">${d.question}</h3>
+              <h3 class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug">${q}</h3>
 
               <div class="space-y-2.5">
                 <button
                   type="button"
                   onclick="selectDebateSide(${debIdx}, 'A')"
-                  class="w-full text-left p-4 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border-[1.5px] ${d.picked === 'A' ? 'border-orange-500 ring-2 ring-orange-500/40' : 'border-orange-500/20 hover:border-orange-400'} text-xs sm:text-sm font-bold transition"
-                >${d.a}</button>
+                  class="w-full text-left p-4 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border-[1.5px] ${d.picked === 'A' ? 'border-orange-500 ring-2 ring-orange-500/40' : 'border-orange-500/20 hover:border-orange-400'} text-xs sm:text-sm font-bold transition"
+                >${optA}</button>
 
                 <button
                   type="button"
                   onclick="selectDebateSide(${debIdx}, 'B')"
-                  class="w-full text-left p-4 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border-[1.5px] ${d.picked === 'B' ? 'border-orange-500 ring-2 ring-orange-500/40' : 'border-orange-500/20 hover:border-orange-400'} text-xs sm:text-sm font-bold transition"
-                >${d.b}</button>
+                  class="w-full text-left p-4 rounded-2xl bg-[#FFF7ED] dark:bg-[#081526] border-[1.5px] ${d.picked === 'B' ? 'border-orange-500 ring-2 ring-orange-500/40' : 'border-orange-500/20 hover:border-orange-400'} text-xs sm:text-sm font-bold transition"
+                >${optB}</button>
               </div>
 
-              <p class="text-xs text-slate-500 dark:text-slate-400">💡 ${d.hint}</p>
+              <p class="text-xs text-slate-500 dark:text-slate-400">💡 ${hint}</p>
             </div>
 
             <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-sky-400/15">
@@ -1229,13 +1481,8 @@
 
     // Init
     goStage(0);
-    renderCqCard();
+    setTravelLevel('A');
     setAvMode('single');
-    renderPaList();
-    renderReadingQuiz();
-    renderGramDrills();
-    renderSimRound();
-    renderDebates();
     lucide.createIcons();
   </script>
 </body>

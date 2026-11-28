@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>B1 / B2 · ELECTION DAY &amp; CIVIC LIFE | PROVO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <style>
+    @keyframes stageIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .stage-anim { animation: stageIn 0.24s ease-out forwards; }
+  </style>
+</head>
+<body class="bg-[#F4F7FA] text-slate-900 dark:bg-[#061322] dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
+
+  <!-- Sticky Top Bar -->
+  <header class="sticky top-0 z-40 bg-[#002B5C] text-white border-b border-rose-400/35 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2.5">
+        <a href="index.html" class="flex items-center shrink-0" title="PROVO">
+          <img
+            src="https://i.postimg.cc/vBt4qH44/download.png"
+            alt="PROVO"
+            class="h-8 w-auto object-contain block"
+            onerror="this.style.display='none'; document.getElementById('provoFallback').classList.remove('hidden');"
+          />
+          <span id="provoFallback" class="hidden font-extrabold tracking-widest text-lg text-white">PROVO</span>
+        </a>
+        <span class="px-2.5 py-0.5 rounded-full bg-rose-500/25 border border-rose-300/45 text-rose-100 text-[11px] font-bold tracking-wider">
+          B1 / B2 · CIVIC LIFE
+        </span>
+        <span id="stageTitleHeader" class="hidden xl:inline-block text-xs font-bold tracking-wider text-rose-200">
+          01 · BRIEFING
+        </span>
+      </div>
+
+      <div id="stagePills" class="flex items-center gap-1 overflow-x-auto py-1"></div>
+
+      <div class="flex items-center gap-2 shrink-0">
+        <button
+          id="themeBtn"
+          type="button"
+          class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition"
+          title="Toggle Theme"
+        >
+          <i id="themeIcon" data-lucide="sun" class="w-4 h-4"></i>
+        </button>
+        <a
+          href="index.html"
+          class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs font-bold bg-white/10 hover:bg-white/20 text-white transition"
+        >
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          <span class="hidden sm:inline">PORTAL</span>
+        </a>
+      </div>
+    </div>
+    <div class="w-full h-1.5 bg-black/25">
+      <div id="stageProgress" class="h-full bg-rose-400 transition-all duration-300" style="width: 14.28%"></div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl w-full mx-auto px-4 sm:px-6 py-7 sm:py-10 flex-1 flex flex-col justify-center">
+
+    <!-- ==================== 01: BRIEFING & WARM-UP ==================== -->
+    <section data-stage="0" class="stage stage-anim">
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-rose-500/25 shadow-xl">
+        <div class="lg:col-span-5 h-64 sm:h-auto relative bg-[#091726] overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=1050&q=80"
+            alt="Ballot box on election day"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#061322]/90 via-[#061322]/25 to-transparent"></div>
+          <div class="absolute bottom-5 left-5 right-5 space-y-1 text-white">
+            <span class="text-xs font-bold tracking-widest text-rose-300 uppercase">PROVO · Civic &amp; Practical English</span>
+            <p class="text-sm font-semibold text-slate-200">Polling Stations · Ballots · Turnout · Process &amp; Logistics</p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 p-7 sm:p-10 flex flex-col justify-center space-y-5">
+          <span class="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-rose-500/15 border border-rose-400/35 text-rose-700 dark:text-rose-300 text-xs font-bold tracking-wider">
+            <i data-lucide="landmark" class="w-4 h-4"></i>
+            <span>B1 / B2 · CONVERSATION CLASS</span>
+          </span>
+
+          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight text-[#002B5C] dark:text-white">
+            Election Day: <span class="text-rose-600 dark:text-rose-400">Behind the Scenes</span>
+          </h1>
+
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            Explore how an election day actually runs from morning setup to the evening count—focusing on civic logistics, voter habits, institutional vocabulary, passive process structures, and practical dilemmas.
+          </p>
+
+          <div class="p-4 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border border-rose-500/20 space-y-2">
+            <div class="text-xs font-extrabold uppercase tracking-wider text-rose-700 dark:text-rose-300">Neutral Warm-Up Prompt</div>
+            <p class="text-sm sm:text-base font-bold text-[#002B5C] dark:text-white">
+              “How does the atmosphere in a town or city change on an election Sunday compared to a regular weekend?”
+            </p>
+            <p class="text-xs text-slate-600 dark:text-slate-300">
+              Discourse frame: <em>“What stands out to me on election Sundays is...”</em> or <em>“In my neighborhood, people usually...”</em>
+            </p>
+          </div>
+
+          <div class="pt-1">
+            <button
+              type="button"
+              onclick="goStage(1)"
+              class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-[#002B5C] via-rose-700 to-rose-600 hover:opacity-95 text-white text-sm sm:text-base font-bold shadow-lg transition"
+            >
+              <span>Start Conversation Lab</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 02: 10 NEUTRAL SPEAKING CARDS + VOICE RECORDER ==================== -->
+    <section data-stage="1" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-rose-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-rose-600 dark:text-rose-400 uppercase">Stage 02 · Civic Conversation &amp; Voice Notes</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">10 Discussion Cards: Process, Habits &amp; Logistics</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Share observations about how voting works in practice.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-rose-500/25 shadow-xl max-w-4xl mx-auto w-full">
+        <div id="elPhotoBox" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+
+        <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-5">
+          <div class="space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-2">
+                <span id="elBadge" class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">CARD 1 / 10</span>
+                <span id="elTag" class="px-3 py-1 rounded-full bg-rose-500/15 text-rose-700 dark:text-rose-300 text-xs font-bold"></span>
+              </div>
+              <button type="button" onclick="speakElQ()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold transition">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                <span>Listen</span>
+              </button>
+            </div>
+
+            <h3 id="elQuestion" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+            <p id="elFollow" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300"></p>
+
+            <div>
+              <button type="button" onclick="document.getElementById('elStarters').classList.toggle('hidden')" class="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-rose-700 dark:text-rose-300 hover:underline">
+                <i data-lucide="message-square" class="w-4 h-4"></i>
+                <span>B1 / B2 Discourse Frames</span>
+              </button>
+              <div id="elStarters" class="hidden mt-2.5 p-3.5 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border border-rose-500/20 text-xs space-y-1"></div>
+            </div>
+
+            <!-- Voice Note Recorder -->
+            <div class="p-4 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border border-rose-500/20 space-y-3">
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-xs font-extrabold uppercase tracking-wider text-rose-700 dark:text-rose-300">Optional Voice Note</span>
+                <span id="recTimer" class="text-xs font-extrabold text-slate-500 dark:text-slate-400">Ready</span>
+              </div>
+
+              <input
+                id="elStudentName"
+                type="text"
+                placeholder="Your name (e.g. Marc Soler)"
+                class="w-full px-3 py-2 rounded-xl bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-sky-400/25 text-xs sm:text-sm outline-none focus:border-rose-400"
+              />
+
+              <div class="flex flex-wrap items-center gap-2">
+                <button
+                  id="btnRecStart"
+                  type="button"
+                  onclick="startVoiceRec()"
+                  class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold transition"
+                >
+                  <i data-lucide="mic" class="w-3.5 h-3.5"></i>
+                  <span>Record</span>
+                </button>
+                <button
+                  id="btnRecStop"
+                  type="button"
+                  onclick="stopVoiceRec()"
+                  disabled
+                  class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-700 disabled:opacity-40 text-white text-xs font-bold transition"
+                >
+                  <i data-lucide="square" class="w-3.5 h-3.5"></i>
+                  <span>Stop</span>
+                </button>
+                <button
+                  id="btnSendAudioDrive"
+                  type="button"
+                  onclick="sendAudioToDrive()"
+                  disabled
+                  class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#002B5C] hover:bg-rose-600 disabled:opacity-40 text-white text-xs font-bold transition"
+                >
+                  <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                  <span id="sendAudioLabel">Send Audio to Teacher</span>
+                </button>
+              </div>
+
+              <audio id="recPlayback" controls class="hidden w-full h-9"></audio>
+              <div id="recFeedback" class="hidden text-xs font-bold p-2.5 rounded-xl"></div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-sky-400/15">
+            <button type="button" onclick="stepEl(-1)" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">← Prev</button>
+            <div id="elDots" class="flex flex-wrap gap-1"></div>
+            <button type="button" onclick="stepEl(1)" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 03: 12 CIVIC & ELECTORAL VOCABULARY CARDS ==================== -->
+    <section data-stage="2" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-rose-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-rose-600 dark:text-rose-400 uppercase">Stage 03 · Institutional Vocabulary</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">12 Key Election &amp; Voting Terms</h2>
+        </div>
+        <div class="inline-flex rounded-xl p-1 bg-white dark:bg-[#0C1E33] border-[1.5px] border-rose-500/25 self-start sm:self-auto">
+          <button id="btnEvSingle" type="button" onclick="setEvMode('single')" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-rose-600 text-white transition">1 by 1 Card</button>
+          <button id="btnEvGrid" type="button" onclick="setEvMode('grid')" class="px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition">All 12 Terms</button>
+        </div>
+      </div>
+
+      <div id="evSingleBox" class="max-w-4xl mx-auto w-full"></div>
+      <div id="evGridBox" class="hidden grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+    </section>
+
+    <!-- ==================== 04: READING & COMPREHENSION ==================== -->
+    <section data-stage="3" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-rose-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-rose-600 dark:text-rose-400 uppercase">Stage 04 · Reading &amp; Process</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">How an Election Day Actually Works Behind the Scenes</h2>
+        </div>
+        <button type="button" onclick="speakReadingText()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold self-start sm:self-auto transition">
+          <i data-lucide="volume-2" class="w-4 h-4"></i>
+          <span>Listen to Article</span>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <article class="lg:col-span-7 bg-white dark:bg-[#0C1E33] border-[1.5px] border-rose-500/25 rounded-3xl overflow-hidden shadow-lg">
+          <img
+            src="https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=1050&q=80"
+            alt="Polling station preparation"
+            class="h-48 w-full object-cover"
+          />
+          <div id="elReadingBody" class="p-6 sm:p-8 space-y-4 text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed">
+            <p>
+              For most voters, casting a ballot takes less than ten minutes. Yet behind that brief visit to a local school or community center lies a carefully coordinated civic operation run largely by ordinary citizens.
+            </p>
+            <p>
+              Before polling stations open—typically at 8:00 or 9:00 a.m.—poll workers arrive early to check the sealed ballot boxes, organize the printed ballot papers, and verify the electoral roll. In several European countries, including Spain, polling station staff are selected at random from registered voters, while in others they are trained civic volunteers or municipal employees.
+            </p>
+            <p>
+              Throughout the day, voters present their ID, have their names ticked off the register, and step behind a privacy screen or into a polling booth before dropping their envelope into the box. Postal votes that arrived earlier are added only after the doors close. Once voting ends, every single ballot is unfolded and counted by hand in front of accredited observers, and the official tally is signed before being transmitted to the central database.
+            </p>
+          </div>
+        </article>
+
+        <div class="lg:col-span-5 bg-white dark:bg-[#0C1E33] border-[1.5px] border-rose-500/25 rounded-3xl p-6 space-y-4 shadow-lg">
+          <span class="text-xs font-extrabold uppercase tracking-wider text-rose-600 dark:text-rose-400">Comprehension Check (4 Questions)</span>
+          <div id="readingQuizBox" class="space-y-4"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 05: GRAMMAR SPOTLIGHT — PROCESS PASSIVE & MODALS ==================== -->
+    <section data-stage="4" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-rose-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-rose-600 dark:text-rose-400 uppercase">Stage 05 · Grammar Spotlight</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Describing Official Rules &amp; Procedures (B1 / B2)</h2>
+        </div>
+        <span class="px-3 py-1 rounded-full bg-rose-500/15 text-rose-700 dark:text-rose-300 text-xs font-extrabold">Process Passive + Institutional Modals</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-rose-500/25 rounded-3xl p-5 space-y-2 shadow-sm">
+          <span class="px-2.5 py-1 rounded-lg bg-[#002B5C] text-white text-xs font-extrabold">1. PROCESS PASSIVE</span>
+          <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white">be + past participle</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300">Used when the step itself matters more than who performs it.</p>
+          <div class="p-3 rounded-xl bg-[#EEF4F8] dark:bg-[#081526] text-xs font-semibold space-y-1">
+            <div>• Ballot boxes <strong>are sealed</strong> before voting begins.</div>
+            <div>• Every paper ballot <strong>is counted</strong> by hand at night.</div>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-rose-500/25 rounded-3xl p-5 space-y-2 shadow-sm">
+          <span class="px-2.5 py-1 rounded-lg bg-rose-700 text-white text-xs font-extrabold">2. OBLIGATION &amp; RULES</span>
+          <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white">have to / must / be required to</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300">Formal and everyday ways to explain voter and staff duties.</p>
+          <div class="p-3 rounded-xl bg-[#EEF4F8] dark:bg-[#081526] text-xs font-semibold space-y-1">
+            <div>• Voters <strong>have to show</strong> valid photo ID.</div>
+            <div>• Poll workers <strong>are required to stay</strong> until the tally is signed.</div>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-rose-500/25 rounded-3xl p-5 space-y-2 shadow-sm">
+          <span class="px-2.5 py-1 rounded-lg bg-rose-600 text-white text-xs font-extrabold">3. PERMISSION &amp; OPTIONS</span>
+          <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white">be allowed to / can apply for</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300">Explaining alternatives like postal ballots or time off work.</p>
+          <div class="p-3 rounded-xl bg-[#EEF4F8] dark:bg-[#081526] text-xs font-semibold space-y-1">
+            <div>• Citizens away from home <strong>can apply for</strong> a postal vote.</div>
+            <div>• Employees <strong>are allowed to take</strong> paid time off to vote.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-rose-500/25 rounded-3xl p-6 sm:p-8 space-y-4 shadow-lg">
+        <div class="flex items-center justify-between gap-2">
+          <h3 class="text-lg font-extrabold text-[#002B5C] dark:text-white">Practice Lab: Complete the Procedure</h3>
+          <span id="gramScorePill" class="px-3 py-1 rounded-full bg-rose-500/15 text-rose-700 dark:text-rose-300 text-xs font-extrabold">0 / 6</span>
+        </div>
+        <div id="gramDrillList" class="grid grid-cols-1 md:grid-cols-2 gap-3"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 06: QUICK GAME — "ELECTION DAY LOGISTICS RUSH" ==================== -->
+    <section data-stage="5" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-rose-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-rose-600 dark:text-rose-400 uppercase">Stage 06 · Interactive Challenge</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">Election Day Logistics Rush (6 Rounds)</h2>
+        </div>
+        <div class="flex items-center gap-2">
+          <span id="elScoreBadge" class="px-3.5 py-1.5 rounded-xl bg-[#002B5C] text-rose-300 text-xs font-extrabold">SCORE: 0 / 6</span>
+          <button type="button" onclick="resetElGame()" class="px-3.5 py-1.5 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">
+            Restart
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-rose-500/25 rounded-3xl p-6 sm:p-9 max-w-4xl mx-auto w-full space-y-6 shadow-xl">
+        <div class="flex items-center justify-between gap-2">
+          <span id="elRoundBadge" class="px-3.5 py-1 rounded-full bg-rose-600 text-white text-xs font-extrabold">ROUND 1 / 6</span>
+          <span class="text-xs font-bold text-slate-500 dark:text-slate-400">Civic Vocabulary &amp; Protocol</span>
+        </div>
+
+        <h3 id="elPrompt" class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug"></h3>
+        <div id="elOptions" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+        <div id="elFeedback" class="hidden p-4 rounded-2xl text-xs sm:text-sm font-bold"></div>
+
+        <div class="flex justify-end">
+          <button type="button" onclick="nextElRound()" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-[#002B5C] to-rose-600 text-white text-xs sm:text-sm font-bold">
+            Next Scenario →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 07: CIVIC DESIGN DILEMMAS (ONE BY ONE) ==================== -->
+    <section data-stage="6" class="stage hidden stage-anim space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-rose-500/20 pb-3">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-rose-600 dark:text-rose-400 uppercase">Stage 07 · Civic Logistics Clinic</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">How Would You Organize Voting? (4 Civic Dilemmas)</h2>
+        </div>
+        <span class="px-3 py-1 rounded-full bg-rose-500/15 text-rose-700 dark:text-rose-300 text-xs font-extrabold">1 Dilemma at a Time · B1 / B2</span>
+      </div>
+
+      <div id="debateSingleBox" class="max-w-4xl mx-auto w-full"></div>
+
+      <div class="max-w-4xl mx-auto w-full p-5 rounded-3xl bg-white dark:bg-[#0C1E33] border-[1.5px] border-rose-500/25 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-md">
+        <div class="space-y-1">
+          <span class="text-xs font-extrabold uppercase tracking-wider text-rose-600 dark:text-rose-400">Balanced B1 / B2 Phrases</span>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+            <strong>• On the one hand..., on the other hand...</strong> &nbsp;|&nbsp; <strong>• From a practical point of view...</strong> &nbsp;|&nbsp; <strong>• The main drawback would be...</strong>
+          </p>
+        </div>
+        <button type="button" onclick="goStage(1)" class="px-4 py-2.5 rounded-xl bg-[#002B5C] hover:bg-rose-600 text-white text-xs font-bold shrink-0 transition">
+          Record Final Reflection →
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Navigation -->
+  <footer class="border-t border-rose-500/20 bg-white dark:bg-[#061322] py-4 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      <button id="btnPrev" type="button" onclick="goStage(currentStage - 1)" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-300 dark:border-sky-400/25 hover:bg-slate-100 dark:hover:bg-[#132C4A] disabled:opacity-30 text-xs font-bold transition">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Previous</span>
+      </button>
+
+      <span id="stageCounter" class="text-xs font-bold tracking-widest text-slate-500 dark:text-slate-400">
+        01 / 07
+      </span>
+
+      <button id="btnNext" type="button" onclick="goStage(currentStage + 1)" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#002B5C] hover:bg-rose-700 disabled:opacity-30 text-xs font-bold text-white transition">
+        <span>Next</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    const DRIVE_UPLOAD_URL = "https://script.google.com/macros/s/AKfycbwBcX7Z4aABKplkUkpYvM2wEnsBHhWCZzi7dFGDkeUarkXwv-RRI0JXAPDakjkrCrBc/exec";
+
+    const STAGES = [
+      "01 · BRIEFING",
+      "02 · 10 CARDS + AUDIO",
+      "03 · 12 CIVIC TERMS",
+      "04 · READING",
+      "05 · GRAMMAR SPOTLIGHT",
+      "06 · LOGISTICS RUSH",
+      "07 · CIVIC CLINIC"
+    ];
+
+    let currentStage = 0;
+    const stageSections = document.querySelectorAll('.stage');
+
+    function goStage(idx) {
+      if (idx < 0 || idx >= stageSections.length) return;
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      currentStage = idx;
+      stageSections.forEach((s, i) => s.classList.toggle('hidden', i !== currentStage));
+      document.getElementById('stageTitleHeader').textContent = STAGES[currentStage];
+      document.getElementById('stageCounter').textContent = `${String(currentStage + 1).padStart(2, '0')} / ${String(stageSections.length).padStart(2, '0')}`;
+      document.getElementById('stageProgress').style.width = `${((currentStage + 1) / stageSections.length) * 100}%`;
+      document.getElementById('btnPrev').disabled = currentStage === 0;
+      document.getElementById('btnNext').disabled = currentStage === stageSections.length - 1;
+      renderStagePills();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      lucide.createIcons();
+    }
+
+    function renderStagePills() {
+      document.getElementById('stagePills').innerHTML = STAGES.map((_, i) => `
+        <button type="button" onclick="goStage(${i})" class="px-2.5 py-1 rounded-lg text-xs font-bold transition ${
+          i === currentStage ? 'bg-rose-600 text-white' : 'text-white/75 hover:text-white hover:bg-white/10'
+        }">${String(i + 1).padStart(2, '0')}</button>
+      `).join('');
+    }
+
+    const themeBtn = document.getElementById('themeBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    if (localStorage.getItem('provoElectionTheme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      themeIcon.setAttribute('data-lucide', 'moon');
+    }
+    themeBtn.addEventListener('click', () => {
+      const dark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('provoElectionTheme', dark ? 'dark' : 'light');
+      themeIcon.setAttribute('data-lucide', dark ? 'sun' : 'moon');
+      lucide.createIcons();
+    });
+
+    function mountPhoto(container, url, altText, fallbackTitle) {
+      container.innerHTML = `<img src="${url}" alt="${altText}" class="w-full h-full object-cover" loading="lazy" />`;
+      const img = container.querySelector('img');
+      if (img) {
+        img.addEventListener('error', () => {
+          container.innerHTML = `
+            <div class="w-full h-full flex flex-col items-center justify-center bg-[#002B5C] text-white p-6 text-center">
+              <i data-lucide="landmark" class="w-8 h-8 text-rose-300 mb-2"></i>
+              <span class="text-xs font-extrabold uppercase tracking-widest">${fallbackTitle}</span>
+            </div>
+          `;
+          lucide.createIcons();
+        }, { once: true });
+      }
+    }
+
+    function pickVoice() {
+      if (!('speechSynthesis' in window)) return null;
+      const voices = window.speechSynthesis.getVoices() || [];
+      if (!voices.length) return null;
+      return (
+        voices.find(v => /sonia/i.test(v.name)) ||
+        voices.find(v => /en[-_]GB/i.test(v.lang)) ||
+        voices.find(v => /^en/i.test(v.lang)) ||
+        null
+      );
+    }
+
+    function speakText(text) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      const v = pickVoice();
+      if (v) {
+        u.voice = v;
+        u.lang = v.lang;
+      } else {
+        u.lang = 'en-GB';
+      }
+      u.rate = 0.93;
+      u.pitch = 1.02;
+      window.speechSynthesis.speak(u);
+    }
+
+    // ==================== 02: 10 NEUTRAL CONVERSATION CARDS + VOICE RECORDER ====================
+    const EL_CARDS = [
+      { tag: "Sunday Atmosphere", q: "How does a typical election Sunday feel in your town or city compared to an ordinary weekend?", follow: "Are streets and cafés busier or quieter than usual?", photo: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=950&q=80", starters: ["• Usually the morning feels quite lively around schools and cafés.", "• People often combine going to vote with a walk or coffee."] },
+      { tag: "Polling Station Duty", q: "Have you—or anyone you know—ever been called to work at a polling station for the day?", follow: "What do you think is the hardest part of spending 13 or 14 hours at a ballot table?", photo: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=950&q=80", starters: ["• A friend of mine had to be at the school by 8 a.m. and...", "• I imagine staying focused during the late-night count is exhausting."] },
+      { tag: "In-Person vs. Postal", q: "What are the practical pros and cons of voting in person versus applying for a postal vote?", follow: "Think about students away from home, shift workers, or travelers.", photo: "https://images.unsplash.com/photo-1586769852044-692d6e3703f0?auto=format&fit=crop&w=950&q=80", starters: ["• Postal voting is super helpful if you live or study in another city.", "• On the other hand, applying ahead of time takes extra planning."] },
+      { tag: "Voter Turnout", q: "What everyday factors—such as weather, opening hours, or clear information—affect voter turnout?", follow: "Why do some people stay home even when they care about local issues?", photo: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=950&q=80", starters: ["• Bad weather or long queues can discourage people who are in a rush.", "• Clear information about where to go makes a noticeable difference."] },
+      { tag: "First Time Voting", q: "Do you remember the first time you went to a polling station, or how you pictured the process?", follow: "Was it simpler or more formal than you expected?", photo: "https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=950&q=80", starters: ["• At first I wasn't sure which table to go to, so I checked the list outside.", "• Everything felt surprisingly calm and well organized."] },
+      { tag: "Election Night", q: "Do you ever watch the live count and results on Sunday evening, or do you prefer reading a summary on Monday?", follow: "Why do evening broadcasts get so much attention?", photo: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=950&q=80", starters: ["• I usually check the main headlines before going to sleep.", "• Watching live maps and percentages can feel a bit like a sports final."] },
+      { tag: "Everyday Venues", q: "What kinds of buildings—such as primary schools, libraries, or sports centers—are used as polling stations in your area?", follow: "Does it feel unusual walking into a classroom or gym on a Sunday to vote?", photo: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=950&q=80", starters: ["• In my neighborhood, local primary schools are always used as polling stations.", "• It feels a bit nostalgic walking past school corridors on a Sunday morning."] },
+      { tag: "Information Overload", q: "In the weeks leading up to an election, how do people avoid feeling overwhelmed by headlines and social media?", follow: "Where do you look for clear, factual information on practical issues?", photo: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=950&q=80", starters: ["• Many people mute noisy social feeds and stick to a couple of reliable outlets.", "• Comparing short summaries is easier than following every daily headline."] },
+      { tag: "Compulsory vs. Voluntary", q: "In countries like Australia or Belgium, voting is compulsory by law, whereas elsewhere it is voluntary. How does that change things?", follow: "Would a mandatory system work well everywhere?", photo: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=950&q=80", starters: ["• When voting is compulsory, turnout is naturally much higher.", "• However, some people feel participation should remain a personal choice."] },
+      { tag: "Voter Cards & Queues", q: "How are voters organized by surname or street at local polling stations so people find their ballot table quickly?", follow: "Have you ever seen long queues at peak hours, or is it usually quick?", photo: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=950&q=80", starters: ["• Usually the tables are divided alphabetically by surname, so you check the sign at the entrance.", "• Midday tends to be busier, whereas early morning or late afternoon is much faster."] }
+    ];
+    let elIdx = 0;
+
+    function renderElCard() {
+      elIdx = (elIdx + EL_CARDS.length) % EL_CARDS.length;
+      const c = EL_CARDS[elIdx];
+      document.getElementById('elBadge').textContent = `CARD ${elIdx + 1} / ${EL_CARDS.length}`;
+      document.getElementById('elTag').textContent = c.tag;
+      document.getElementById('elQuestion').textContent = c.q;
+      document.getElementById('elFollow').textContent = c.follow;
+      document.getElementById('elStarters').innerHTML = c.starters.map(s => `<div>${s}</div>`).join('');
+      document.getElementById('elStarters').classList.add('hidden');
+      mountPhoto(document.getElementById('elPhotoBox'), c.photo, c.tag, c.tag);
+      document.getElementById('elDots').innerHTML = EL_CARDS.map((_, i) => `
+        <button type="button" onclick="elIdx=${i}; renderElCard();" class="w-6 h-6 rounded-lg text-[11px] font-bold ${
+          i === elIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#081526]'
+        }">${i + 1}</button>
+      `).join('');
+    }
+    window.stepEl = (d) => { elIdx += d; renderElCard(); };
+    window.speakElQ = () => speakText(`${EL_CARDS[elIdx].q} ${EL_CARDS[elIdx].follow}`);
+
+    // Voice Recorder + Drive Upload
+    const elNameInput = document.getElementById('elStudentName');
+    elNameInput.value = localStorage.getItem('provoStudentName') || '';
+    elNameInput.addEventListener('input', () => localStorage.setItem('provoStudentName', elNameInput.value.trim()));
+
+    let mediaRec = null;
+    let audioChunks = [];
+    let recordedBlob = null;
+    let recordedMime = 'audio/webm';
+    let recInterval = null;
+    let recSecs = 0;
+
+    function showRecFb(msg, ok = true) {
+      const box = document.getElementById('recFeedback');
+      box.classList.remove('hidden');
+      box.className = ok
+        ? 'text-xs font-bold p-2.5 rounded-xl bg-emerald-500/15 text-emerald-700 dark:text-emerald-300'
+        : 'text-xs font-bold p-2.5 rounded-xl bg-rose-500/15 text-rose-700 dark:text-rose-300';
+      box.textContent = msg;
+    }
+
+    window.startVoiceRec = async () => {
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        return showRecFb('Microphone recording is not supported in this browser.', false);
+      }
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        audioChunks = [];
+        recordedBlob = null;
+        mediaRec = new MediaRecorder(stream);
+        recordedMime = mediaRec.mimeType || 'audio/webm';
+
+        mediaRec.ondataavailable = (e) => {
+          if (e.data && e.data.size > 0) audioChunks.push(e.data);
+        };
+
+        mediaRec.onstop = () => {
+          stream.getTracks().forEach(t => t.stop());
+          recordedBlob = new Blob(audioChunks, { type: recordedMime });
+          const audioEl = document.getElementById('recPlayback');
+          audioEl.src = URL.createObjectURL(recordedBlob);
+          audioEl.classList.remove('hidden');
+          document.getElementById('btnSendAudioDrive').disabled = false;
+          showRecFb('✓ Recording ready! Listen to check or send it to your teacher.', true);
+        };
+
+        mediaRec.start();
+        recSecs = 0;
+        document.getElementById('recTimer').textContent = 'Recording: 0s';
+        document.getElementById('btnRecStart').disabled = true;
+        document.getElementById('btnRecStop').disabled = false;
+        document.getElementById('btnSendAudioDrive').disabled = true;
+        document.getElementById('recFeedback').classList.add('hidden');
+
+        recInterval = setInterval(() => {
+          recSecs++;
+          document.getElementById('recTimer').textContent = `Recording: ${recSecs}s`;
+        }, 1000);
+      } catch (err) {
+        showRecFb('Please allow microphone access to record your answer.', false);
+      }
+    };
+
+    window.stopVoiceRec = () => {
+      if (mediaRec && mediaRec.state !== 'inactive') {
+        mediaRec.stop();
+      }
+      clearInterval(recInterval);
+      document.getElementById('recTimer').textContent = `Recorded (${recSecs}s)`;
+      document.getElementById('btnRecStart').disabled = false;
+      document.getElementById('btnRecStop').disabled = true;
+    };
+
+    window.sendAudioToDrive = async () => {
+      const studentName = elNameInput.value.trim();
+      if (!studentName) {
+        showRecFb('Enter your name first before sending.', false);
+        elNameInput.focus();
+        return;
+      }
+      if (!recordedBlob) {
+        return showRecFb('Record your voice answer first.', false);
+      }
+
+      const sendBtn = document.getElementById('btnSendAudioDrive');
+      const sendLabel = document.getElementById('sendAudioLabel');
+      sendBtn.disabled = true;
+      sendLabel.textContent = 'Sending...';
+
+      try {
+        const reader = new FileReader();
+        reader.onloadend = async () => {
+          const base64Data = (reader.result || '').toString().split(',')[1] || '';
+          try {
+            const res = await fetch(DRIVE_UPLOAD_URL, {
+              method: 'POST',
+              headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+              body: JSON.stringify({
+                studentName,
+                lessonTitle: 'B1-B2-Election-Day',
+                questionNumber: elIdx + 1,
+                mimeType: recordedMime,
+                audioBase64: base64Data
+              })
+            });
+            const data = await res.json();
+            if (data.status === 'ok') {
+              showRecFb(`✓ Voice note sent to teacher (${data.fileName})!`, true);
+            } else {
+              throw new Error(data.message || 'Upload error');
+            }
+          } catch (e) {
+            showRecFb('Could not send automatically. Check your internet connection and try again.', false);
+          } finally {
+            sendBtn.disabled = false;
+            sendLabel.textContent = 'Send Audio to Teacher';
+          }
+        };
+        reader.readAsDataURL(recordedBlob);
+      } catch (e) {
+        sendBtn.disabled = false;
+        sendLabel.textContent = 'Send Audio to Teacher';
+        showRecFb('Error preparing audio file.', false);
+      }
+    };
+
+    // ==================== 03: 12 CIVIC & ELECTORAL VOCABULARY CARDS ====================
+    const EL_VOCAB = [
+      { word: "polling station", pos: "noun", meaning: "The building (often a school or town hall) where people go to vote.", ex: "Our local primary school turns into a polling station every election Sunday.", photo: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=800&q=80" },
+      { word: "ballot box", pos: "noun", meaning: "The sealed transparent or wooden container where voters drop their votes.", ex: "Each ballot box is sealed at 8:00 a.m. and opened only when polls close.", photo: "https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=800&q=80" },
+      { word: "cast a ballot / vote", pos: "collocation", meaning: "To officially submit your vote in an election.", ex: "Over two million citizens cast their ballots before midday.", photo: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80" },
+      { word: "voter turnout", pos: "noun", meaning: "The percentage of eligible voters who actually participate in an election.", ex: "Voter turnout tends to be higher when the weather is mild.", photo: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80" },
+      { word: "postal vote", pos: "noun", meaning: "A ballot sent by mail before election day by someone who cannot attend in person.", ex: "She applied for a postal vote because she was working abroad that week.", photo: "https://images.unsplash.com/photo-1586769852044-692d6e3703f0?auto=format&fit=crop&w=800&q=80" },
+      { word: "electoral roll", pos: "noun", meaning: "The official list of people registered to vote in a given area.", ex: "Poll workers check your ID against the electoral roll before you vote.", photo: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80" },
+      { word: "polling booth", pos: "noun", meaning: "A small private stall with a curtain where voters choose their ballot in secret.", ex: "Privacy is guaranteed inside the polling booth.", photo: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80" },
+      { word: "poll worker", pos: "noun", meaning: "A citizen or official responsible for managing a ballot table and counting votes.", ex: "Three poll workers sit at each table throughout the day.", photo: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" },
+      { word: "blank vote / spoilt ballot", pos: "nouns", meaning: "An empty envelope (blank vote) or an invalid/damaged ballot paper (spoilt ballot).", ex: "Blank votes and spoilt ballots are recorded separately during the count.", photo: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80" },
+      { word: "tally / count the ballots", pos: "noun / verb", meaning: "The official count of all votes cast at a polling station.", ex: "The final tally is signed by everyone at the table.", photo: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80" },
+      { word: "exit poll", pos: "noun", meaning: "A survey taken immediately after people leave a polling station.", ex: "Broadcasters often publish exit polls right after the doors close.", photo: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" },
+      { word: "constituency", pos: "noun", meaning: "A geographical voting district represented in an assembly or parliament.", ex: "Each constituency has a set number of polling stations.", photo: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" }
+    ];
+    let evIdx = 0;
+    let evMode = 'single';
+
+    window.setEvMode = (mode) => {
+      evMode = mode;
+      document.getElementById('evSingleBox').classList.toggle('hidden', mode !== 'single');
+      const g = document.getElementById('evGridBox');
+      g.classList.toggle('hidden', mode !== 'grid');
+      g.classList.toggle('grid', mode === 'grid');
+      document.getElementById('btnEvSingle').className = mode === 'single'
+        ? 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-rose-600 text-white transition'
+        : 'px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition';
+      document.getElementById('btnEvGrid').className = mode === 'grid'
+        ? 'px-3.5 py-1.5 rounded-lg text-xs font-bold bg-rose-600 text-white transition'
+        : 'px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-600 dark:text-slate-300 transition';
+      renderElVocab();
+    };
+
+    function renderElVocab() {
+      evIdx = (evIdx + EL_VOCAB.length) % EL_VOCAB.length;
+      const w = EL_VOCAB[evIdx];
+      const safeEx = w.ex.replace(/'/g, "\\'");
+
+      document.getElementById('evSingleBox').innerHTML = `
+        <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-rose-500/25 shadow-xl">
+          <div id="evPhotoBox" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+          <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">TERM ${evIdx + 1} / ${EL_VOCAB.length}</span>
+                  <span class="px-3 py-1 rounded-full bg-rose-500/15 text-rose-700 dark:text-rose-300 text-xs font-bold">${w.pos}</span>
+                </div>
+                <button type="button" onclick="speakText('${safeEx}')" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-rose-600 text-white text-xs font-bold">
+                  <i data-lucide="volume-2" class="w-4 h-4"></i> Listen
+                </button>
+              </div>
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-[#002B5C] dark:text-white">${w.word}</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300">${w.meaning}</p>
+              <div class="p-4 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border border-rose-500/20">
+                <p class="text-sm italic font-semibold text-[#002B5C] dark:text-rose-200">“${w.ex}”</p>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-sky-400/15">
+              <button type="button" onclick="evIdx--; renderElVocab();" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">← Prev</button>
+              <div class="flex flex-wrap gap-1">
+                ${EL_VOCAB.map((_, i) => `<button type="button" onclick="evIdx=${i}; renderElVocab();" class="w-7 h-7 rounded-lg text-xs font-bold ${i === evIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#081526]'}">${i + 1}</button>`).join('')}
+              </div>
+              <button type="button" onclick="evIdx++; renderElVocab();" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+            </div>
+          </div>
+        </div>
+      `;
+      mountPhoto(document.getElementById('evPhotoBox'), w.photo, w.word, w.word.toUpperCase());
+
+      document.getElementById('evGridBox').innerHTML = EL_VOCAB.map(item => `
+        <div class="bg-white dark:bg-[#0C1E33] border-[1.5px] border-rose-500/25 rounded-3xl overflow-hidden shadow-md flex flex-col">
+          <img src="${item.photo}" alt="${item.word}" class="h-32 w-full object-cover" loading="lazy" />
+          <div class="p-5 flex-1 flex flex-col justify-between gap-3">
+            <div class="space-y-1.5">
+              <div class="flex items-start justify-between gap-2">
+                <h4 class="text-lg font-extrabold text-[#002B5C] dark:text-white">${item.word}</h4>
+                <button type="button" onclick="speakText('${item.ex.replace(/'/g, "\\'")}')" class="p-1.5 rounded-lg bg-[#EEF4F8] dark:bg-[#081526] text-rose-600 dark:text-rose-300"><i data-lucide="volume-2" class="w-4 h-4"></i></button>
+              </div>
+              <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300">${item.pos}</span>
+              <p class="text-xs text-slate-600 dark:text-slate-300">${item.meaning}</p>
+            </div>
+            <p class="text-xs italic text-[#002B5C] dark:text-rose-200 border-t border-slate-100 dark:border-sky-400/15 pt-2">“${item.ex}”</p>
+          </div>
+        </div>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    // ==================== 04: READING & COMPREHENSION ====================
+    const READING_QS = [
+      { q: "1. What do poll workers do before polling stations open?", opts: ["Check sealed ballot boxes and verify the electoral roll", "Announce early exit poll results"], ans: 0 },
+      { q: "2. How are polling station staff chosen in countries like Spain?", opts: ["Selected at random from registered voters", "Hired from private event companies"], ans: 0 },
+      { q: "3. When are postal votes added to the ballot boxes?", opts: ["First thing at 8:00 a.m.", "Only after the doors close in the evening"], ans: 1 },
+      { q: "4. How are paper ballots counted at the end of the day?", opts: ["Unfolded and counted by hand in front of observers", "Sent unopened to another city"], ans: 0 }
+    ];
+
+    function renderReadingQuiz() {
+      document.getElementById('readingQuizBox').innerHTML = READING_QS.map((item, qi) => `
+        <div class="p-3.5 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border border-rose-500/20 space-y-2">
+          <p class="text-xs sm:text-sm font-bold text-[#002B5C] dark:text-white">${item.q}</p>
+          <div class="grid grid-cols-1 gap-1.5">
+            ${item.opts.map((op, oi) => `
+              <button type="button" onclick="checkReadQ(${qi}, ${oi})" class="text-left px-3 py-2 rounded-xl bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-sky-400/20 hover:border-rose-400 text-xs font-semibold transition">${op}</button>
+            `).join('')}
+          </div>
+          <div id="rqFb${qi}" class="hidden text-xs font-extrabold"></div>
+        </div>
+      `).join('');
+    }
+
+    window.checkReadQ = (qi, oi) => {
+      const fb = document.getElementById(`rqFb${qi}`);
+      fb.classList.remove('hidden');
+      if (oi === READING_QS[qi].ans) {
+        fb.className = 'text-xs font-extrabold text-emerald-600 dark:text-emerald-400';
+        fb.textContent = '✓ Exact!';
+      } else {
+        fb.className = 'text-xs font-extrabold text-rose-600 dark:text-rose-400';
+        fb.textContent = '✗ Re-read the passage carefully.';
+      }
+    };
+
+    window.speakReadingText = () => {
+      speakText(document.getElementById('elReadingBody').innerText);
+    };
+
+    // ==================== 05: GRAMMAR SPOTLIGHT DRILL ====================
+    const GRAM_DRILLS = [
+      { prompt: "1. Every paper ballot ________ by hand after polls close.", opts: ["is counted", "counts"], ans: 0 },
+      { prompt: "2. Voters ________ show valid identification at the table.", opts: ["are required to", "are requiring to"], ans: 0 },
+      { prompt: "3. Ballot boxes ________ before the first voter arrives.", opts: ["are sealed", "sealed"], ans: 0 },
+      { prompt: "4. Citizens traveling on Sunday ________ apply for a postal vote in advance.", opts: ["are allowed to", "must to"], ans: 0 },
+      { prompt: "5. The official tally ________ by all members of the ballot table.", opts: ["is signed", "signs"], ans: 0 },
+      { prompt: "6. Polling station staff ________ arrive an hour before opening.", opts: ["have to", "has to"], ans: 0 }
+    ];
+    const gramSolved = {};
+
+    function renderGramDrills() {
+      document.getElementById('gramDrillList').innerHTML = GRAM_DRILLS.map((d, di) => `
+        <div class="p-4 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border border-rose-500/20 space-y-2.5">
+          <p class="text-xs sm:text-sm font-bold text-[#002B5C] dark:text-white">${d.prompt}</p>
+          <div class="flex flex-wrap gap-2">
+            ${d.opts.map((op, oi) => `
+              <button type="button" onclick="pickGram(${di}, ${oi})" class="px-3.5 py-2 rounded-xl bg-white dark:bg-[#0C1E33] border border-slate-200 dark:border-sky-400/25 hover:border-rose-400 text-xs font-bold transition">${op}</button>
+            `).join('')}
+          </div>
+          <div id="gdFb${di}" class="hidden text-xs font-extrabold"></div>
+        </div>
+      `).join('');
+    }
+
+    window.pickGram = (di, oi) => {
+      const fb = document.getElementById(`gdFb${di}`);
+      fb.classList.remove('hidden');
+      if (oi === GRAM_DRILLS[di].ans) {
+        gramSolved[di] = true;
+        fb.className = 'text-xs font-extrabold text-emerald-600 dark:text-emerald-400';
+        fb.textContent = '✓ Spot on!';
+      } else {
+        fb.className = 'text-xs font-extrabold text-rose-600 dark:text-rose-400';
+        fb.textContent = '✗ Try the other form.';
+      }
+      document.getElementById('gramScorePill').textContent = `${Object.keys(gramSolved).length} / ${GRAM_DRILLS.length}`;
+    };
+
+    // ==================== 06: LOGISTICS RUSH GAME ====================
+    const EL_ROUNDS = [
+      { prompt: "What term describes the percentage of registered citizens who actually go to vote?", opts: ["Voter turnout", "Exit poll"], ans: 0, why: "Voter turnout measures overall participation." },
+      { prompt: "Someone puts an empty envelope into the ballot box with nothing inside. That is a...", opts: ["blank vote", "constituency"], ans: 0, why: "An empty envelope counts as a blank vote." },
+      { prompt: "You will be away on a work trip on election Sunday. You apply ahead of time for a...", opts: ["postal vote", "polling booth"], ans: 0, why: "A postal vote lets registered citizens vote by mail." },
+      { prompt: "Where do voters step behind a curtain to choose their ballot privately?", opts: ["Inside a polling booth", "At the exit poll"], ans: 0, why: "A polling booth protects ballot secrecy." },
+      { prompt: "What is the official list of eligible voters assigned to a polling station called?", opts: ["The electoral roll", "A spoilt ballot"], ans: 0, why: "The electoral roll (or register) lists registered voters." },
+      { prompt: "What do TV networks often publish at 8:00 p.m. based on interviews outside polling stations?", opts: ["An exit poll", "A ballot box"], ans: 0, why: "Exit polls survey voters right after they leave." }
+    ];
+    let elRoundIdx = 0;
+    let elScore = 0;
+    let elDone = false;
+
+    function renderElRound() {
+      const idx = elRoundIdx % EL_ROUNDS.length;
+      const r = EL_ROUNDS[idx];
+      elDone = false;
+      document.getElementById('elRoundBadge').textContent = `ROUND ${idx + 1} / ${EL_ROUNDS.length}`;
+      document.getElementById('elPrompt').textContent = r.prompt;
+      document.getElementById('elFeedback').classList.add('hidden');
+      document.getElementById('elOptions').innerHTML = r.opts.map((op, i) => `
+        <button type="button" onclick="pickElOpt(${i})" class="w-full text-left p-4 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border-[1.5px] border-rose-500/20 hover:border-rose-400 text-sm font-extrabold transition">${op}</button>
+      `).join('');
+    }
+
+    window.pickElOpt = (picked) => {
+      if (elDone) return;
+      elDone = true;
+      const r = EL_ROUNDS[elRoundIdx % EL_ROUNDS.length];
+      const fb = document.getElementById('elFeedback');
+      fb.classList.remove('hidden');
+      if (picked === r.ans) {
+        elScore++;
+        fb.className = 'p-4 rounded-2xl text-xs sm:text-sm font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
+        fb.textContent = `✓ Correct! (+1 pt) — ${r.why}`;
+      } else {
+        fb.className = 'p-4 rounded-2xl text-xs sm:text-sm font-bold bg-rose-500/15 text-rose-700 dark:text-rose-300';
+        fb.textContent = `✗ Not quite — ${r.why}`;
+      }
+      document.getElementById('elScoreBadge').textContent = `SCORE: ${elScore} / ${EL_ROUNDS.length}`;
+    };
+    window.nextElRound = () => { elRoundIdx++; renderElRound(); };
+    window.resetElGame = () => {
+      elRoundIdx = 0;
+      elScore = 0;
+      document.getElementById('elScoreBadge').textContent = `SCORE: 0 / ${EL_ROUNDS.length}`;
+      renderElRound();
+    };
+
+    // ==================== 07: CIVIC DESIGN DILEMMAS (ONE BY ONE) ====================
+    const DEBATES = [
+      {
+        topic: "Dilemma 1 · Sunday vs. Weekday Voting",
+        question: "Which day works better for holding an election?",
+        a: "Option A: Holding elections on a Sunday gives more people free time to visit polling stations.",
+        b: "Option B: Holding elections on a weekday (with paid time off) avoids disrupting weekend plans.",
+        hint: "Which day encourages higher turnout without creating bottlenecks?",
+        photo: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=950&q=80",
+        picked: null
+      },
+      {
+        topic: "Dilemma 2 · Paper Ballots vs. Digital Voting",
+        question: "Should elections stick to physical paper ballots or move toward digital voting?",
+        a: "Option A: Physical paper ballots counted in public are transparent and easy to audit.",
+        b: "Option B: Secure digital voting would speed up results and simplify voting from abroad.",
+        hint: "Weigh speed and convenience against public trust and simplicity.",
+        photo: "https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=950&q=80",
+        picked: null
+      },
+      {
+        topic: "Dilemma 3 · Polling Station Staffing",
+        question: "How should ballot tables at polling stations be staffed?",
+        a: "Option A: Random citizen selection shares civic responsibility fairly across society.",
+        b: "Option B: Paid, trained volunteers would run polling stations more smoothly and avoid last-minute excuses.",
+        hint: "Compare civic duty with operational efficiency.",
+        photo: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=950&q=80",
+        picked: null
+      },
+      {
+        topic: "Dilemma 4 · Voluntary vs. Compulsory Voting",
+        question: "Should voting remain completely voluntary or become compulsory by law?",
+        a: "Option A: Voting should remain strictly voluntary so participation is a free choice.",
+        b: "Option B: Compulsory voting (with a blank-vote option) ensures everyone's presence is counted.",
+        hint: "How does each model affect turnout and engagement?",
+        photo: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=950&q=80",
+        picked: null
+      }
+    ];
+    let debIdx = 0;
+
+    function renderDebates() {
+      debIdx = (debIdx + DEBATES.length) % DEBATES.length;
+      const d = DEBATES[debIdx];
+      const safeSpeech = `${d.question} ${d.a} Or ${d.b}`.replace(/'/g, "\\'");
+
+      document.getElementById('debateSingleBox').innerHTML = `
+        <div class="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden bg-white dark:bg-[#0C1E33] border-[1.5px] border-rose-500/25 shadow-xl">
+          <div id="debPhotoBox" class="lg:col-span-5 h-56 lg:h-auto bg-[#091726] relative overflow-hidden"></div>
+          <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-5">
+            <div class="space-y-4">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="px-3 py-1 rounded-full bg-[#002B5C] text-white text-xs font-extrabold">DILEMMA ${debIdx + 1} / ${DEBATES.length}</span>
+                  <span class="px-3 py-1 rounded-full bg-rose-500/15 text-rose-700 dark:text-rose-300 text-xs font-bold">${d.topic}</span>
+                </div>
+                <button type="button" onclick="speakText('${safeSpeech}')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold transition">
+                  <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                  <span>Listen</span>
+                </button>
+              </div>
+
+              <h3 class="text-xl sm:text-2xl font-extrabold text-[#002B5C] dark:text-white leading-snug">${d.question}</h3>
+
+              <div class="space-y-2.5">
+                <button
+                  type="button"
+                  onclick="selectDebateSide(${debIdx}, 'A')"
+                  class="w-full text-left p-4 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border-[1.5px] ${d.picked === 'A' ? 'border-rose-500 ring-2 ring-rose-500/40' : 'border-rose-500/20 hover:border-rose-400'} text-xs sm:text-sm font-bold transition"
+                >${d.a}</button>
+
+                <button
+                  type="button"
+                  onclick="selectDebateSide(${debIdx}, 'B')"
+                  class="w-full text-left p-4 rounded-2xl bg-[#EEF4F8] dark:bg-[#081526] border-[1.5px] ${d.picked === 'B' ? 'border-rose-500 ring-2 ring-rose-500/40' : 'border-rose-500/20 hover:border-rose-400'} text-xs sm:text-sm font-bold transition"
+                >${d.b}</button>
+              </div>
+
+              <p class="text-xs text-slate-500 dark:text-slate-400">💡 ${d.hint}</p>
+            </div>
+
+            <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-sky-400/15">
+              <button type="button" onclick="debIdx--; renderDebates();" class="px-4 py-2 rounded-xl border border-slate-300 dark:border-sky-400/25 text-xs font-bold">← Prev</button>
+              <div class="flex gap-1.5">
+                ${DEBATES.map((_, i) => `<button type="button" onclick="debIdx=${i}; renderDebates();" class="w-7 h-7 rounded-lg text-xs font-bold ${i === debIdx ? 'bg-[#002B5C] text-white' : 'bg-slate-100 dark:bg-[#081526]'}">${i + 1}</button>`).join('')}
+              </div>
+              <button type="button" onclick="debIdx++; renderDebates();" class="px-4 py-2 rounded-xl bg-[#002B5C] text-white text-xs font-bold">Next →</button>
+            </div>
+          </div>
+        </div>
+      `;
+      mountPhoto(document.getElementById('debPhotoBox'), d.photo, d.topic, d.topic.toUpperCase());
+      lucide.createIcons();
+    }
+
+    window.selectDebateSide = (i, side) => {
+      DEBATES[i].picked = side;
+      renderDebates();
+    };
+
+    // Init
+    goStage(0);
+    renderElCard();
+    setEvMode('single');
+    renderReadingQuiz();
+    renderGramDrills();
+    renderElRound();
+    renderDebates();
+    lucide.createIcons();
+  </script>
+</body>
+</html>

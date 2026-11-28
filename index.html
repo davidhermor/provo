@@ -1693,8 +1693,8 @@
     })();
   </script>
 
-  <script>
-    // Automatic Most Visited Tracker (localStorage)
+<script>
+    // Automatic Most Visited Tracker (cumulative in localStorage, clean tag only)
     (function () {
       const VISITS_KEY = 'provoLessonVisits';
       const DEFAULTS = [
@@ -1757,7 +1757,7 @@
           <a href="${item.href}" class="quick-item" data-track-href="${item.href}">
             <div>
               <strong>${item.title}</strong>
-              <small>${item.tag}${item.count > 0 ? ` · Opened ${item.count}×` : ''}</small>
+              <small>${item.tag}</small>
             </div>
             <span class="quick-arrow">→</span>
           </a>
